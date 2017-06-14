@@ -44,9 +44,7 @@ module.exports = {
     	],
     	"quotes": [2, "single", { "allowTemplateLiterals": true }],
     	"no-undefined": [2]
-    //     // "indent": [2, 'tab', {SwitchCase: 1, VariableDeclarator: 1, ObjectExpression: 2}],
     //     "no-console": 0,
-    //     "no-redeclare": 0,
     //     "no-sparse-arrays": 0,
     //     "one-var-declaration-per-line": [2, "always"],
     //     "no-mixed-spaces-and-tabs": 0,
