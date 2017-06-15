@@ -1,7 +1,7 @@
 {
-  "name": "@alloyteam/eslint-config-standard",
+  "name": "@alloyteam/eslint-config-react",
   "version": "0.0.1",
-  "description": "alloyteam eslint standard code guide",
+  "description": "alloyteam eslint react code guide",
   "main": "./eslintrc.js",
   "scripts": {
     "test": "eslint -c eslintrc.js ./test/src/*.js"
@@ -23,7 +23,12 @@
   },
   "homepage": "https://github.com/steamerjs/code-lint#readme",
   "dependencies": {
+    "@alloyteam/eslint-config-standard": "^0.0.1",
+    "eslint-plugin-react": "^7.1.0"
+  },
+  "devDependencies": {
     "babel-eslint": "^7.2.3",
+    "eslint": "^4.0.0",
     "eslint-plugin-babel": "^4.1.1",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-html": "^3.0.0",
@@ -31,8 +36,5 @@
     "eslint-plugin-node": "^5.0.0",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1"
-  },
-  "devDependencies": {
-    "eslint": "^4.0.0"
   }
 }

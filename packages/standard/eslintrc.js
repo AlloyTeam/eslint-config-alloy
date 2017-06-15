@@ -27,6 +27,8 @@ module.exports = {
     	"max-len": ["error", 80, 4],
     	"indent": 0,
     	"no-tabs": 0,
+        "no-trailing-spaces": 0,
+        "no-mixed-spaces-and-tabs": 1,
     	"no-redeclare": 0,
     	"semi": [2, "always"],
     	"eol-last": 0,
