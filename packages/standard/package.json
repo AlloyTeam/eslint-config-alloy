@@ -1,6 +1,6 @@
 {
   "name": "@alloyteam/eslint-config-standard",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "alloyteam eslint standard code guide",
   "main": "./eslintrc.js",
   "scripts": {
