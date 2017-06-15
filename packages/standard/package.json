@@ -4,7 +4,7 @@
   "description": "alloyteam eslint standard code guide",
   "main": "index.js",
   "scripts": {
-    "test": "eslint -c eslintrc.js ./test/src/*.js"
+    "test": "eslint -c eslintrc.js ./test/src/es6.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,8 @@
   },
   "homepage": "https://github.com/steamerjs/code-lint#readme",
   "dependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint-plugin-babel": "^4.1.1",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-html": "^3.0.0",
     "eslint-plugin-import": "^2.3.0",

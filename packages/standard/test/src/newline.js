@@ -28,7 +28,9 @@ function noblank() {
     return 2;
 }
 
-if (true) {
+var cond;
+
+if (cond) {
     var v6 = 6;
 } else {
     var v7 = 7;
