@@ -22,6 +22,9 @@
     "url": "https://github.com/steamerjs/code-lint/issues"
   },
   "homepage": "https://github.com/steamerjs/code-lint#readme",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "@alloyteam/eslint-config-standard": "^0.0.1",
     "eslint-plugin-react": "^7.1.0"
