@@ -1,18 +1,14 @@
 // es6
-// wrong end at line
+
+import React, { Component } from 'react';
 function Decorator() {
 
 }
 
 @Decorator
 class newClass {
-
+	a = this.b;
 }
-
-
-
-
-import React, { Component } from 'react';
 
 var b = (c) => {
 	return 1;

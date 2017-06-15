@@ -4,7 +4,7 @@
   "description": "alloyteam eslint standard code guide",
   "main": "index.js",
   "scripts": {
-    "test": "eslint -c eslintrc.js ./test/src/es6.js"
+    "test": "eslint -c eslintrc.js ./test/src/*.js"
   },
   "repository": {
     "type": "git",

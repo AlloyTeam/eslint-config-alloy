@@ -44,9 +44,10 @@ module.exports = {
     	],
     	"quotes": [2, "single", { "allowTemplateLiterals": true }],
     	"no-undefined": [2],
+        "import/first": 0,
         "no-await-in-loop": 1,
         "babel/new-cap": [1, {"capIsNew": false}],
-        "babel/object-curly-spacing": 1,
+        "babel/object-curly-spacing": 0,
         "babel/no-invalid-this": 0
     },
     "globals": {
