@@ -27,6 +27,7 @@ module.exports = {
         "max-len": [2, {"code": 120, "tabWidth": 4}],
     	"indent": 0,
     	"no-tabs": 0,
+        "brace-style": [2, "stroustrup"],
         "no-trailing-spaces": 0,
         "no-mixed-spaces-and-tabs": 0,
     	"no-redeclare": 0,

@@ -43,13 +43,9 @@ npm run lint
 
 ```javascript
 module.exports = {
-    "env": {},
     "extends": [
         "@alloyteam/eslint-config-standard",
-    ],
-    "plugins": [],
-    "rules": {},
-    "globals": {}
+    ]
 };
 ```
 
@@ -57,17 +53,11 @@ module.exports = {
 
 ```javasciprt
 module.exports = {
-    "env": {},
     "extends": [
         "@alloyteam/eslint-config-react",
-    ],
-    "plugins": [],
-    "rules": {},
-    "globals": {}
+    ]
 };
 ```
-
-
 
 
 ## Reference 
