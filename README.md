@@ -5,12 +5,14 @@
 ### Install Shareable Config
 
 There are two configs contained in this repo:
-* @alloyteam/eslint-config-standard
-* @alloyteam/eslint-config-react
+* [@alloyteam/eslint-config-standard](https://github.com/steamerjs/code-lint/tree/master/packages/standard)
+* [@alloyteam/eslint-config-react](https://github.com/steamerjs/code-lint/tree/master/packages/react)
 
 ```javascript
 npm i --save-dev @alloyteam/eslint-config-standard
 ```
+
+`@alloyteam/eslint-config-standard` has alread extend `@alloyteam/eslint-config-react`, so if you have already used the previous one, you don't have to use the other one.
 
 
 ### Global
