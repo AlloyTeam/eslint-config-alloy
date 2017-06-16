@@ -24,7 +24,7 @@ eslint -c eslintrc.js xxx.js
 ### Local
 
 ```javascript
-npm install -g eslint
+npm install --save-dev eslint
 
 // in package.json
 scripts: {
