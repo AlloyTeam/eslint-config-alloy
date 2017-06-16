@@ -24,7 +24,7 @@ module.exports = {
         "babel",
     ],
     rules: {
-        "max-len": [2, {"code": 120, 4}],
+        "max-len": [2, {"code": 120, "tabWidth": 4}],
     	"indent": 0,
     	"no-tabs": 0,
         "no-trailing-spaces": 0,
