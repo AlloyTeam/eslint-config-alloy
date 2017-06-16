@@ -1,0 +1,1 @@
+## @alloyteam/eslint-config-standard
