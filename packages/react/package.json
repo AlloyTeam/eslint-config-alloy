@@ -1,6 +1,6 @@
 {
   "name": "@alloyteam/eslint-config-react",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "description": "alloyteam eslint react code guide",
   "main": "./eslintrc.js",
   "scripts": {
@@ -26,7 +26,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@alloyteam/eslint-config-standard": "^0.0.5",
+    "@alloyteam/eslint-config-standard": "^0.0.7",
     "eslint-plugin-react": "^7.1.0"
   },
   "devDependencies": {
