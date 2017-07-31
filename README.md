@@ -7,6 +7,7 @@
 There are two configs contained in this repo:
 * [@alloyteam/eslint-config-standard](https://github.com/steamerjs/code-lint/tree/master/packages/standard)
 * [@alloyteam/eslint-config-react](https://github.com/steamerjs/code-lint/tree/master/packages/react)
+* [@alloyteam/eslint-config-vue](https://github.com/steamerjs/code-lint/tree/master/packages/vue)
 
 ```javascript
 npm i --save-dev @alloyteam/eslint-config-standard
