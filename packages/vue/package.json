@@ -1,10 +1,10 @@
 {
-  "name": "@alloyteam/eslint-config-react",
-  "version": "0.0.5",
-  "description": "alloyteam eslint react code guide",
+  "name": "@alloyteam/eslint-config-vue",
+  "version": "0.0.1",
+  "description": "alloyteam eslint vue code guide",
   "main": "./eslintrc.js",
   "scripts": {
-    "test": "eslint -c eslintrc.js ./test/src/*.js"
+    "test": "eslint -c eslintrc.js --ext .js,.vue ./test/src/"
   },
   "repository": {
     "type": "git",
@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@alloyteam/eslint-config-standard": "^0.0.5",
-    "eslint-plugin-react": "^7.1.0"
+    "eslint-plugin-vue": "^3.8.0"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",

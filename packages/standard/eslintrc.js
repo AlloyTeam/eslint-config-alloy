@@ -10,7 +10,7 @@ module.exports = {
     ],
     "parser": "babel-eslint",
     "parserOptions": {
-        "ecmaVersion": 6 ,
+        "ecmaVersion": 6,
         "ecmaFeatures": {
             "experimentalObjectRestSpread": true,
             "jsx": true,
@@ -61,5 +61,7 @@ module.exports = {
         "Vue": true,
         "Mqq": true,
         "mqq": true,
+        "define": true,
+        "QReport": true,  
     }
 };
