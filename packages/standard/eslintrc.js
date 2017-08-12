@@ -30,6 +30,7 @@ module.exports = {
         "no-trailing-spaces": 0,
         "no-mixed-spaces-and-tabs": 1,
     	"no-redeclare": 0,
+        "no-mixed-operators": 0,
     	"semi": [2, "always"],
     	"eol-last": 0,
     	"no-unused-vars": [1, {"args": "none", "varsIgnorePattern": "React|Preact|Root|Vue"}],
@@ -58,5 +59,7 @@ module.exports = {
         "Vue": true,
         "Mqq": true,
         "mqq": true,
+        "$": true,
+        "define": true,
     }
 };
