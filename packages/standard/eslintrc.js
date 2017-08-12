@@ -10,7 +10,7 @@ module.exports = {
     ],
     "parser": "babel-eslint",
     "parserOptions": {
-        "ecmaVersion": 6 ,
+        "ecmaVersion": 6,
         "ecmaFeatures": {
             "experimentalObjectRestSpread": true,
             "jsx": true,
@@ -24,16 +24,17 @@ module.exports = {
         "babel",
     ],
     rules: {
-    	"max-len": ["error", 80, 4],
+        "max-len": [2, {"code": 120, "tabWidth": 4}],
     	"indent": 0,
     	"no-tabs": 0,
+        "brace-style": [2, "stroustrup"],
         "no-trailing-spaces": 0,
-        "no-mixed-spaces-and-tabs": 1,
+        "no-mixed-spaces-and-tabs": 0,
     	"no-redeclare": 0,
         "no-mixed-operators": 0,
     	"semi": [2, "always"],
     	"eol-last": 0,
-    	"no-unused-vars": [1, {"args": "none", "varsIgnorePattern": "React|Preact|Root|Vue"}],
+    	"no-unused-vars": [1, {"args": "none", "varsIgnorePattern": "React|Preact|Root|Vue|h"}],
     	"space-before-function-paren": 0,
     	"one-var": 0,
     	"one-var-declaration-per-line": [2, "initializations"],
@@ -47,6 +48,8 @@ module.exports = {
     	],
     	"quotes": [2, "single", { "allowTemplateLiterals": true }],
     	"no-undefined": [2],
+        "operator-linebreak": [2, "before"],
+        "no-useless-escape": 0,
         "import/first": 0,
         "no-await-in-loop": 1,
         "babel/new-cap": [1, {"capIsNew": false}],
@@ -61,5 +64,6 @@ module.exports = {
         "mqq": true,
         "$": true,
         "define": true,
+        "QReport": true,  
     }
 };
