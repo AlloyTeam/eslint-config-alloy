@@ -13,7 +13,7 @@ There are two configs contained in this repo:
 npm i --save-dev @alloyteam/eslint-config-standard
 ```
 
-`@alloyteam/eslint-config-standard` has alread extend `@alloyteam/eslint-config-react`, so if you have already used the previous one, you don't have to use the other one.
+`@alloyteam/eslint-config-react` has alread extend `@alloyteam/eslint-config-standard`, so if you have already used the `react` one, you don't have to use the other one.
 
 
 ### Global
