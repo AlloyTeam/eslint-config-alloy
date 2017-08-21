@@ -5,7 +5,7 @@ module.exports = {
     ],
 
     "plugins": [
-        
+        "vue"
     ],
     "rules": {
         "no-new": [0], // 用vue的时候，免不了new Vue但是不赋值

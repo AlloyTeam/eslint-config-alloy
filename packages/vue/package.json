@@ -30,6 +30,8 @@
     "eslint-plugin-vue": "^3.8.0"
   },
   "devDependencies": {
+    "@alloyteam/eslint-config-react": "0.0.5",
+    "@alloyteam/stylelint-config-standard": "0.0.2",
     "babel-eslint": "^7.2.3",
     "eslint": "^4.0.0",
     "eslint-config-standard": "^10.2.1",
