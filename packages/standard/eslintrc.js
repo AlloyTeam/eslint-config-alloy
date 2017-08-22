@@ -22,60 +22,80 @@ module.exports = {
     rules: {
         //
         //
+        //
         // 可能的错误
         // 这些规则与 JavaScript 代码中可能的语法错误或逻辑错误有关
         //
+        // 禁止 for 循环出现方向错误的循环，比如 for (i = 0; i < 10; i--)
         'for-direction': 'error',
-        // getter 必须有返回值，而且不能是 return;
+        // getter 必须有返回值，并且禁止返回空，比如 return;
         'getter-return': [
             'error',
             {
                 allowImplicit: false
             }
         ],
+        // 禁止将 await 写在循环里，因为这样就无法同时发送多个异步请求了
+        // 关闭此规则，因为要求太严格了，有时需要在循环中写 await
         'no-await-in-loop': 'off',
+        // 禁止与负零进行比较
         'no-compare-neg-zero': 'error',
-        // if, for, while, do...while 里不允许有赋值语句，除非这个赋值语句被括号包起来了
+        // 禁止在 if, for, while 里使用赋值语句，除非这个赋值语句被括号包起来了
         'no-cond-assign': [
             'error',
             'except-parens'
         ],
-        // 允许使用 console
+        // 禁止使用 console
+        // 关闭此规则，因为 console 的使用很常见
         'no-console': 'off',
-        // 不允许有类似 for(;;) 这样无法终结的循环，除非循环内部有 break 语句
+        // 禁止将常量作为 if, for, while 里的测试条件，比如 if (true), for (;;)，除非循环内部有 break 语句
         'no-constant-condition': [
             'error',
             {
                 checkLoops: false
             }
         ],
+        // 禁止在正则表达式中出现 Ctrl 键的 ASCII 表示，即禁止使用 /\x1f/
+        // 开启此规则，因为字符串中一般不会出现 Ctrl 键，所以一旦出现了，可能是一个代码错误
         'no-control-regex': 'error',
+        // 禁止使用 debugger @fix
         'no-debugger': 'error',
+        // 禁止在函数参数中出现重复名称的参数
         'no-dupe-args': 'error',
+        // 禁止在对象字面量中出现重复名称的键名
         'no-dupe-keys': 'error',
+        // 禁止在 switch 语句中出现重复测试表达式的 case
         'no-duplicate-case': 'error',
-        // 任何时候都不允许有空的代码块
+        // 禁止出现空代码块
         'no-empty': [
             'error',
             {
                 allowEmptyCatch: true
             }
         ],
+        // 禁止在正则表达式中使用空的字符集 []
         'no-empty-character-class': 'error',
+        // 禁止将 catch 的第一个参数 error 重新赋值
         'no-ex-assign': 'error',
+        // 禁止在测试表达式中使用 Boolean
         'no-extra-boolean-cast': 'error',
-        // 不允许有多余的括号
-        // 多余的括号可以使代码更清晰，故不开启这个规则
+        // 禁止出现多余的括号，比如 (a * b) + c
+        // 关闭此规则，因为多余的括号可以使代码更清晰
         'no-extra-parens': 'off',
+        // 禁止出现多于的分号
         'no-extra-semi': 'error',
+        // 禁止将一个函数申明重新赋值，如：
+        // function foo() {}
+        // foo = bar
         'no-func-assign': 'error',
-        // if 里不允许有函数申明，也不允许有 var
+        // 禁止在 if 内出现函数申明或使用 var 定义变量
         'no-inner-declarations': [
             'error',
             'both'
         ],
+        // 禁止出现非法的正则表达式
         'no-invalid-regexp': 'error',
-        // 不允许有特殊空白符（比如全角空格），除非是出现在字符串、正则表达式或模版字符串中
+        // 禁止使用特殊空白符（比如全角空格），除非是出现在字符串、正则表达式或模版字符串中
         'no-irregular-whitespace': [
             'error',
             {
@@ -86,27 +106,42 @@ module.exports = {
                 skipTemplates: true
             }
         ],
+        // 禁止将 Math, JSON 或 Reflect 直接作为函数调用，必须作为类使用
         'no-obj-calls': 'error',
-        // 很多地方会用到 isOwnProperty，故这个检查不开启
+        // 禁止使用 hasOwnProperty, isPrototypeOf 或 propertyIsEnumerable
+        // 关闭此规则，因为很多地方会用到 hasOwnProperty
         'no-prototype-builtins': 'off',
+        // 禁止在正则表达式中出现连续的空格，必须使用 /foo {3}bar/ 代替
         'no-regex-spaces': 'error',
+        // 禁止在数组中出现连续的逗号，如 let foo = [,,]
         'no-sparse-arrays': 'error',
+        // 禁止在普通字符串中出现模版字符串的变量形式，如 'Hello ${name}!'
         'no-template-curly-in-string': 'error',
+        // 禁止出现难以理解的多行表达式，如：
+        // let x = function () {}
+        // `hello`
         'no-unexpected-multiline': 'error',
+        // 禁止在 return, throw, break 或 continue 之后还有代码
         'no-unreachable': 'error',
+        // 禁止在 finally 中出现 return, throw, break 或 continue
         'no-unsafe-finally': 'error',
+        // 禁止在 in 或 instanceof 操作符的左侧使用感叹号，如 if (!key in object)
         'no-unsafe-negation': 'error',
+        // 必须使用 isNaN(foo) 而不是 foo === NaN
         'use-isnan': 'error',
-        // 长期的规划中，可能会使用 TypeScript，就不需要 jsdoc 而且这个检查的要求太严格了
+        // 注释必须符合 jsdoc 的规范
+        // 关闭此规则，因为 jsdoc 要求太严格
         'valid-jsdoc': 'off',
+        // typeof 表达式比较的对象必须是 'undefined', 'object', 'boolean', 'number', 'string', 'function' 或 'symbol'
         'valid-typeof': 'error',
 
+        //
         //
         //
         // 最佳实践
         // 这些规则通过一些最佳实践帮助你避免问题
         //
-        // 有 setter 的地方必须有 getter，而有 getter 的地方可以没有 setter
+        // 有 setter 的地方必须有 getter，有 getter 的地方可以没有 setter
         'accessor-pairs': [
             'error',
             {
@@ -114,48 +149,60 @@ module.exports = {
                 getWithoutSet: false
             }
         ],
-        // 允许在 Array.prototype.map 内 return undefined
+        // 数组的一些方法（map, reduce 等）的回调函数中，必须有返回值
+        // 关闭此规则，因为太严格了
         'array-callback-return': 'off',
+        // 将 var 定义的变量视为块作用域，禁止在块外使用
         'block-scoped-var': 'error',
-        // 这条规则的含义是：Class 里面凡是没有用到 this 的方法都应该申明为静态方法，这个规则太严格了，故不开启
+        // 在类的非静态方法中，必须存在对 this 的引用
+        // 关闭此规则，因为太严格了
         'class-methods-use-this': 'off',
-        // 最佳实践中，一个函数的复杂度最好只有 4-6，所以我们的终极目标是 5，当然可以慢慢改进
+        // 禁止函数的循环复杂度超过 10，https://en.wikipedia.org/wiki/Cyclomatic_complexity
         'complexity': [
             'error',
             {
-                max: 5
+                max: 10
             }
         ],
-        // 允许一个代码块中在不同分支 return 不同的类型
+        // 禁止函数在不同分支返回不同类型的值
+        // 关闭此规则，因为太严格了
         'consistent-return': 'off',
-        // if, while 后面必须要有 {
+        // if 后面必须要有 {，除非是单行 if
         'curly': [
             'error',
             'multi-line',
             'consistent'
         ],
-        // switch case 可以没有 default
+        // switch 语句必须有 default
+        // 关闭此规则，因为太严格了
         'default-case': 'off',
-        // 链式调用的时候，dot 放在第二行开头处，而不是第一行结尾处
+        // 链式调用的时候，点号必须放在第二行开头处，禁止放在第一行结尾处
         'dot-location': [
             'error',
             'property'
         ],
-        // 允许 foo["bar"]，不强制要求写成 foo.bar。原因是要写一系列属性的时候，可以更统一
+        // 禁止出现 foo['bar']，必须写成 foo.bar
+        // 关闭此规则，因为当需要写一系列属性的时候，可以更统一
         'dot-notation': 'off',
-        // 任何时候都必须用 === 或 !== 而不是 == 或 !=
+        // 必须使用 === 或 !==，禁止使用 == 或 !=
         'eqeqeq': [
             'error',
             'always'
         ],
+        // for in 内部必须有 hasOwnProperty
         'guard-for-in': 'error',
-        // 允许使用 alert
+        // 禁止使用 alert
+        // 关闭此规则，因为 alert 很常用
         'no-alert': 'off',
+        // 禁止使用 caller 或 callee
         'no-caller': 'error',
+        // switch 的 case 内有变量定义的时候，必须使用大括号将 case 内变成一个代码块
         'no-case-declarations': 'error',
-        // 正则表达式中不需要转义 =
+        // 禁止在正则表达式中出现没必要的转义符
+        // 关闭此规则，因为多于的转义符没有害处，反而还可以使代码更易懂
         'no-div-regex': 'off',
-        // 允许 else 里面有 return
+        // 禁止在 else 内使用 return，必须改为提前结束
+        // 关闭此规则，因为 else 中使用 return 可以使代码结构更清晰
         'no-else-return': 'off',
         // 不允许有空函数，除非是将一个空函数设置为某个项的默认值
         'no-empty-function': [
@@ -167,27 +214,46 @@ module.exports = {
                 ]
             }
         ],
+        // 禁止解构中出现空 {} 或 []
         'no-empty-pattern': 'error',
+        // 禁止使用 foo == null 或 foo != null，必须使用 foo === null 或 foo !== null
         'no-eq-null': 'error',
+        // 禁止使用 eval
         'no-eval': 'error',
+        // 禁止修改原生对象
         'no-extend-native': 'error',
+        // 禁止出现没必要的 bind
         'no-extra-bind': 'error',
+        // 禁止出现没必要的 label
         'no-extra-label': 'error',
+        // switch 的 case 内必须有 break, return 或 throw
         'no-fallthrough': 'error',
+        // 表示小数时，禁止省略 0，比如 .5
         'no-floating-decimal': 'error',
+        // 禁止对全局变量赋值
         'no-global-assign': 'error',
-        // 不允许使用 !! ~ 等难以理解的运算符
-        // 为了性能考虑，不开启此规则
+        // 禁止使用 !! ~ 等难以理解的运算符
+        // 关闭此规则，因为它们的性能更好
         'no-implicit-coercion': 'off',
+        // 禁止在全局作用域下定义变量或申明函数
         'no-implicit-globals': 'error',
+        // 禁止在 setTimeout 或 setInterval 中传入字符串，如 setTimeout('alert("Hi!")', 100);
         'no-implied-eval': 'error',
-        // this 的使用很灵活，事件回调中可以表示当前元素，函数也可以先用 this，等以后被调用的时候再 call
-        // 故关闭此规则
+        // 禁止在类之外的地方使用 this
+        // 关闭此规则，因为 this 的使用很灵活，事件回调中可以表示当前元素，函数也可以先用 this，等以后被调用的时候再 call
         'no-invalid-this': 'off',
+        // 禁止使用 __iterator__
         'no-iterator': 'error',
+        // 禁止使用 label
         'no-labels': 'error',
+        // 禁止使用没必要的 {} 作为代码块
         'no-lone-blocks': 'error',
+        // 禁止在循环内的函数中出现循环体条件语句中定义的变量，比如：
+        // for (var i = 0; i < 10; i++) {
+        //     (function () { return i })();
+        // }
         'no-loop-func': 'error',
+        // 禁止使用除下面列出的
         // 除了下面列出的数字外，不允许使用其他的 magic number
         'no-magic-numbers': [
             'error',
@@ -204,7 +270,7 @@ module.exports = {
                 detectObjects: false
             }
         ],
-        // 不允许有连续多个空格，除非是注释前，或对其对象的属性，或对其变量定义，或对其 import
+        // 禁止出现连续的多个空格，除非是注释前，或对齐对象的属性、变量定义、import 等
         'no-multi-spaces': [
             'error',
             {
@@ -217,32 +283,48 @@ module.exports = {
                 }
             }
         ],
+        // 禁止使用 \ 来换行字符串
         'no-multi-str': 'error',
+        // 禁止直接 new 一个类而不赋值
         'no-new': 'error',
+        // 禁止使用 new Function，比如 let x = new Function("a", "b", "return a + b");
         'no-new-func': 'error',
+        // 禁止使用 new 来生成 String, Number 或 Boolean
         'no-new-wrappers': 'error',
+        // 禁止使用 0 开头的数字表示八进制数
         'no-octal': 'error',
+        // 禁止使用八进制的转义符
         'no-octal-escape': 'error',
+        // 禁止对函数的参数重新赋值
         'no-param-reassign': 'error',
+        // 禁止使用 __proto__
         'no-proto': 'error',
+        // 禁止重复定义变量
         'no-redeclare': 'error',
-        'no-restricted-properties': 'error',
-        // 用于限制某个具体的 api 不能使用，一般是废弃 api 的时候再用
+        // 禁止使用指定的对象属性
+        // 关闭此规则，因为它用于限制某个具体的 api 不能使用
         'no-restricted-properties': 'off',
-        // 不要在 return 语句里面赋值
+        // 禁止在 return 语句里赋值
         'no-return-assign': [
             'error',
             'always'
         ],
+        // 禁止在 return 语句里使用 await
         'no-return-await': 'error',
-        // javascript:void(0) 应该被允许
+        // 禁止出现 location.href = 'javascript:void(0)';
+        // 关闭此规则，因为 javascript:void(0) 应该允许使用
         'no-script-url': 'off',
+        // 禁止将自己赋值给自己
         'no-self-assign': 'error',
+        // 禁止将自己与自己比较
         'no-self-compare': 'error',
+        // 禁止使用逗号操作符
         'no-sequences': 'error',
+        // 禁止 throw 字面量，必须 throw 一个 Error 对象
         'no-throw-literal': 'error',
+        // 循环内必须对循环条件的变量有修改
         'no-unmodified-loop-condition': 'error',
-        // 禁止无用的表达式，除非它是 a && b() 或 a ? b() : c() 或 tag`some tagged template string`
+        // 禁止无用的表达式
         'no-unused-expressions': [
             'error',
             {
@@ -251,23 +333,35 @@ module.exports = {
                 allowTaggedTemplates: true
             }
         ],
+        // 禁止出现没用的 label
         'no-unused-labels': 'error',
+        // 禁止出现没必要的 call 或 apply
         'no-useless-call': 'error',
+        // 禁止出现没必要的字符串连接
         'no-useless-concat': 'error',
-        // 没必要的转义，允许使用没必要的转义，关闭此规则
+        // 禁止出现没必要的转义
+        // 关闭此规则，因为转义可以使代码更易懂
         'no-useless-escape': 'off',
-        // 没必要限制 return
+        // 禁止没必要的 return
+        // 关闭此规则，因为没必要限制 return
         'no-useless-return': 'off',
+        // 禁止使用 void
         'no-void': 'error',
-        // 允许注释中出现 TODO 和 FIXME
+        // 禁止注释中出现 TODO 和 FIXME
+        // 关闭此规则，因为 TODO 很常用
         'no-warning-comments': 'off',
+        // 禁止使用 with
         'no-with': 'error',
+        // Promise 的 reject 中必须传入 Error 对象，而不是字面量
         'prefer-promise-reject-errors': 'error',
+        // parseInt 必须传入第二个参数
         'radix': 'error',
+        // async 函数中必须存在 await 语句
         'require-await': 'error',
-        // var 没必要全部定义在最前面
+        // var 必须在作用域的最前面
+        // 关闭此规则，因为 var 不在最前面也是很常见的用法
         'vars-on-top': 'off',
-        // iife 的格式
+        // 立即执行的函数必须符合如下格式 (function () { alert('Hello') })()
         'wrap-iife': [
             'error',
             'inside',
@@ -275,7 +369,7 @@ module.exports = {
                 functionPrototypeMethods: true
             }
         ],
-        // 使用 if (foo === 5) 而不是 if (5 === foo)
+        // 必须使用 if (foo === 5) 而不是 if (5 === foo)
         'yoda': [
             'error',
             'never',
@@ -286,10 +380,11 @@ module.exports = {
 
         //
         //
+        //
         // 严格模式
         // 这些规则与严格模式指令有关
         //
-        // strict mode 已经不再需要了
+        // 禁止使用 'strict';
         'strict': [
             'error',
             'never'
@@ -297,38 +392,55 @@ module.exports = {
 
         //
         //
+        //
         // 变量
         // 这些规则与变量申明有关
         //
-        // 变量在定义的时候需不需要被赋值，这个不需要有强制性的要求
+        // 变量必须在定义的时候赋值
+        // 关闭此规则，因为先定义后赋值很常见
         'init-declarations': 'off',
-        // catch 的参数名可以与前面定义的变量重复
+        // 禁止 catch 的参数名与定义过的变量重复
+        // 关闭此规则，因为太严格了
         'no-catch-shadow': 'off',
+        // 禁止使用 delete
         'no-delete-var': 'error',
+        // 禁止 label 名称与定义过的变量重复
         'no-label-var': 'error',
-        // 用于限制某个具体的变量名不能使用，目前不需要
+        // 禁止使用指定的全局变量
+        // 关闭此规则，因为它用于限制某个具体的变量名不能使用
         'no-restricted-globals': 'off',
-        // 不同作用域下不允许重复定义同名变量
+        // 禁止变量名与上层作用域内的定义过的变量重复
         'no-shadow': [
             'error',
             {
                 builtinGlobals: false,
                 hoist: 'functions',
                 allow: [
+                    'resolve',
+                    'reject',
+                    'done',
+                    'cb',
+                    'callback',
+                    'error',
+                    'err',
+                    'e'
                 ]
             }
         ],
+        // 禁止使用保留字作为变量名
         'no-shadow-restricted-names': 'error',
-        // 不允许使用未定义的变量
+        // 禁止使用未定义的变量
         'no-undef': [
             'error',
             {
                 typeof: false
             }
         ],
+        // 禁止将 undefined 赋值给变量
         'no-undef-init': 'error',
+        // 禁止对 undefined 重新赋值
         'no-undefined': 'error',
-        // 定义了的变量必须使用，函数参数可以忽略，catch 的参数可以忽略
+        // 定义过的变量必须使用
         'no-unused-vars': [
             'error',
             {
@@ -337,7 +449,7 @@ module.exports = {
                 caughtErrors: 'none'
             }
         ],
-        // 先定义后使用，除非是函数申明
+        // 变量必须先定义后使用
         'no-use-before-define': [
             'error',
             {
@@ -349,28 +461,41 @@ module.exports = {
 
         //
         //
+        //
         // Node.js 和 CommonJS
         // 这些规则与在 Node.js 中运行的代码或浏览器中使用的 CommonJS 有关
         //
-        // Limitations 太多了，故关闭这个检查
+        // callback 之后必须立即 return
+        // 关闭此规则，因为 Limitations 太多了
         'callback-return': 'off',
-        // 由于有的时候还是需要条件加载，所以暂时这个规则没有必要开启
+        // require 必须在全局作用域下
+        // 关闭此规则，因为条件加载很常见
         'global-require': 'off',
+        // callback 中的 error 必须被处理
         'handle-callback-err': 'error',
+        // 禁止直接使用 Buffer
         'no-buffer-constructor': 'error',
-        // 这条规则的含义是：相同类型的 require 必须 group 在一起，这太严格了
+        // 相同类型的 require 必须放在一起
+        // 关闭此规则，因为太严格了
         'no-mixed-requires': 'off',
+        // 禁止直接 new require('foo')
         'no-new-require': 'error',
+        // 禁止对 __dirname 或 __filename 使用字符串连接
         'no-path-concat': 'error',
-        // 允许使用 process.env.NODE_ENV
+        // 禁止使用 process.env.NODE_ENV
+        // 关闭此规则，因为使用很常见
         'no-process-env': 'off',
-        // 允许使用 process.exit(0)
+        // 禁止使用 process.exit(0)
+        // 关闭此规则，因为使用很常见
         'no-process-exit': 'off',
-        // 用于自定义限制一些 modules 的使用，现在不需要
+        // 禁止使用指定的模块
+        // 关闭此规则，因为它用于限制某个具体的模块不能使用
         'no-restricted-modules': 'off',
-        // 允许使用 node 中的同步的方法，如 fs.readFileSync
+        // 禁止使用 node 中的同步的方法，比如 fs.readFileSync
+        // 关闭此规则，因为使用很常见
         'no-sync': 'off',
 
+        //
         //
         //
         // 风格问题
@@ -612,18 +737,8 @@ module.exports = {
         // 随便使用 x += y 或 x = x + y
         'operator-assignment': 'off',
         // 需要换行的时候，+ 放在行末
-        'operator-linebreak': [
-            'error',
-            'after',
-            {
-                overrides: {
-                    '&&': 'ignore',
-                    '||': 'ignore',
-                    '?': 'ignore',
-                    ':': 'ignore'
-                }
-            }
-        ],
+        // 不开启
+        'operator-linebreak': 'off',
         // 代码块首尾不要空行，不开启此规则
         'padded-blocks': 'off',
         // 对什么地方需要空行不做限制
@@ -730,14 +845,17 @@ module.exports = {
 
         //
         //
+        //
         // ECMAScript 6
         // 这些规则与 ES6（即通常所说的 ES2015）有关
         //
-        // 箭头函数的返回值，应该允许灵活设置：既可以 () => 0，也可以 () => { return 0; }
+        // 箭头函数能够省略 return 的时候，必须省略，比如必须写成 () => 0，禁止写成 () => { return 0 }
+        // 关闭此规则，因为箭头函数的返回值，应该允许灵活设置
         'arrow-body-style': 'off',
-        // 箭头函数只有一个参数的时候括号可加可不加
+        // 箭头函数只有一个参数的时候，必须加括号
+        // 关闭此规则，因为应该允许灵活设置
         'arrow-parens': 'off',
-        // 箭头函数前后必须有空格
+        // 箭头函数的箭头前后必须有空格
         'arrow-spacing': [
             'error',
             {
@@ -745,8 +863,9 @@ module.exports = {
                 after: true
             }
         ],
+        // constructor 中必须有 super
         'constructor-super': 'error',
-        // generator 的 * 前不能有空格，后面需要有空格
+        // generator 的 * 前面禁止有空格，后面必须有空格
         'generator-star-spacing': [
             'error',
             {
@@ -754,49 +873,73 @@ module.exports = {
                 after: true
             }
         ],
+        // 禁止对定义过的 class 重新赋值
         'no-class-assign': 'error',
+        // 禁止出现难以理解的箭头函数，比如 let x = a => 1 ? 2 : 3
         'no-confusing-arrow': 'error',
+        // 禁止对使用 const 定义的常量重新赋值
         'no-const-assign': 'error',
+        // 禁止重复定义类
         'no-dupe-class-members': 'error',
+        // 禁止重复 import 模块
         'no-duplicate-imports': 'error',
+        // 禁止使用 new 来生成 Symbol 
         'no-new-symbol': 'error',
-        // 当需要限制制定包的引入的时候再开启
+        // 禁止 import 指定的模块
+        // 关闭此规则，因为它用于限制某个具体的模块不能使用
         'no-restricted-imports': 'off',
+        // 禁止在 super 被调用之前使用 this 或 super
         'no-this-before-super': 'error',
+        // 禁止出现没必要的计算键名，比如 let a = { ['0']: 0 };
         'no-useless-computed-key': 'error',
+        // 禁止出现没必要的 constructor，比如 constructor(value) { super(value) }
         'no-useless-constructor': 'error',
+        // 禁止解构时出现同样名字的的重命名，比如 let { foo: foo } = bar;
         'no-useless-rename': 'error',
+        // 禁止出现 var
         'no-var': 'error',
-        // 使用 a = {b} 而不是 a = {b: b}
-        // 不强制要求
+        // 必须使用 a = {b} 而不是 a = {b: b}
+        // 关闭此规则，因为没必要强制要求
         'object-shorthand': "off",
-        // 不强制使用箭头函数
+        // 必须使用箭头函数作为回调
+        // 关闭此规则，因为没必要强制要求
         'prefer-arrow-callback': 'off',
-        // 不强制使用 const
+        // 申明后不再被修改的变量必须使用 const 来申明
+        // 关闭此规则，因为没必要强制要求
         'prefer-const': 'off',
-        // 不强制使用解构
+        // 必须使用解构
+        // 关闭此规则，因为没必要强制要求
         'prefer-destructuring': 'off',
-        'prefer-numeric-literals': 'error',
-        // 使用 ...args 替代 arguments，没必要开启
+        // 必须使用 0b11111011 而不是 parseInt('111110111', 2)
+        // 关闭此规则，因为没必要强制要求
+        'prefer-numeric-literals': 'off',
+        // 必须使用 ...args 而不是 arguments
+        // 关闭此规则，因为没必要强制要求
         'prefer-rest-params': 'off',
-        // 使用 ... 替代 apply。没必要开启，apply 的应用还是很广泛的
+        // 必须使用 ... 而不是 apply，比如 foo(...args)
+        // 关闭此规则，因为 apply 很常用
         'prefer-spread': 'off',
+        // 必须使用模版字面量而不是字符串连接
+        // 关闭此规则，因为字符串连接很常用
         'prefer-template': 'off',
+        // generator 函数内必须有 yield
         'require-yield': 'error',
-        // ... 的后面不要空格
+        // ... 的后面禁止有空格
         'rest-spread-spacing': [
             'error',
             'never'
         ],
-        // 没必要排序 imports
+        // import 必须按规则排序
+        // 关闭此规则，因为没必要强制要求
         'sort-imports': 'off',
+        // 创建 Symbol 时必须传入参数
         'symbol-description': 'error',
-        // ${name} 内的首尾不要有空格
+        // ${name} 内的首尾禁止有空格
         'template-curly-spacing': [
             'error',
             'never'
         ],
-        // yield* 后面要空格
+        // yield* 后面必须要有空格
         'yield-star-spacing': [
             'error',
             'after'
