@@ -1,4 +1,15 @@
 /**
+ * AlloyTeam 的 ESLint 规则
+ * 
+ * 本规则中包含了所有 ESLint 规则，依据以下三条原则进行配置：
+ * 
+ * 1. 能够帮助发现代码错误的规则，全部开启
+ * 2. 配置不依赖于某个具体项目，需要尽可能的合理
+ * 3. 帮助保持代码风格统一，而不是限制开发体验
+ * 
+ * @fix 表示此配置支持 --fix
+ * @off 表示此配置被关闭了，并且后面说明了关闭的原因
+ * 
  * 本规则基于 ESLint 4.2.0
  */
 
@@ -22,7 +33,6 @@ module.exports = {
     rules: {
         //
         //
-        //
         // 可能的错误
         // 这些规则与 JavaScript 代码中可能的语法错误或逻辑错误有关
         //
@@ -36,7 +46,7 @@ module.exports = {
             }
         ],
         // 禁止将 await 写在循环里，因为这样就无法同时发送多个异步请求了
-        // 关闭此规则，因为要求太严格了，有时需要在循环中写 await
+        // @off 要求太严格了，有时需要在循环中写 await
         'no-await-in-loop': 'off',
         // 禁止与负零进行比较
         'no-compare-neg-zero': 'error',
@@ -46,7 +56,7 @@ module.exports = {
             'except-parens'
         ],
         // 禁止使用 console
-        // 关闭此规则，因为 console 的使用很常见
+        // @off console 的使用很常见
         'no-console': 'off',
         // 禁止将常量作为 if, for, while 里的测试条件，比如 if (true), for (;;)，除非循环内部有 break 语句
         'no-constant-condition': [
@@ -58,7 +68,7 @@ module.exports = {
         // 禁止在正则表达式中出现 Ctrl 键的 ASCII 表示，即禁止使用 /\x1f/
         // 开启此规则，因为字符串中一般不会出现 Ctrl 键，所以一旦出现了，可能是一个代码错误
         'no-control-regex': 'error',
-        // 禁止使用 debugger @fix
+        // @fix 禁止使用 debugger
         'no-debugger': 'error',
         // 禁止在函数参数中出现重复名称的参数
         'no-dupe-args': 'error',
@@ -77,12 +87,12 @@ module.exports = {
         'no-empty-character-class': 'error',
         // 禁止将 catch 的第一个参数 error 重新赋值
         'no-ex-assign': 'error',
-        // 禁止在测试表达式中使用 Boolean
+        // @fix 禁止在测试表达式中使用 Boolean
         'no-extra-boolean-cast': 'error',
-        // 禁止出现多余的括号，比如 (a * b) + c
-        // 关闭此规则，因为多余的括号可以使代码更清晰
+        // @fix 禁止出现多余的括号，比如 (a * b) + c
+        // @off 多余的括号可以使代码更清晰
         'no-extra-parens': 'off',
-        // 禁止出现多于的分号
+        // @fix 禁止出现多于的分号
         'no-extra-semi': 'error',
         // 禁止将一个函数申明重新赋值，如：
         // function foo() {}
@@ -109,9 +119,9 @@ module.exports = {
         // 禁止将 Math, JSON 或 Reflect 直接作为函数调用，必须作为类使用
         'no-obj-calls': 'error',
         // 禁止使用 hasOwnProperty, isPrototypeOf 或 propertyIsEnumerable
-        // 关闭此规则，因为很多地方会用到 hasOwnProperty
+        // @off 很多地方会用到 hasOwnProperty
         'no-prototype-builtins': 'off',
-        // 禁止在正则表达式中出现连续的空格，必须使用 /foo {3}bar/ 代替
+        // @fix 禁止在正则表达式中出现连续的空格，必须使用 /foo {3}bar/ 代替
         'no-regex-spaces': 'error',
         // 禁止在数组中出现连续的逗号，如 let foo = [,,]
         'no-sparse-arrays': 'error',
@@ -125,17 +135,18 @@ module.exports = {
         'no-unreachable': 'error',
         // 禁止在 finally 中出现 return, throw, break 或 continue
         'no-unsafe-finally': 'error',
-        // 禁止在 in 或 instanceof 操作符的左侧使用感叹号，如 if (!key in object)
+        // @fix 禁止在 in 或 instanceof 操作符的左侧使用感叹号，如 if (!key in object)
         'no-unsafe-negation': 'error',
         // 必须使用 isNaN(foo) 而不是 foo === NaN
         'use-isnan': 'error',
         // 注释必须符合 jsdoc 的规范
-        // 关闭此规则，因为 jsdoc 要求太严格
+        // @off jsdoc 要求太严格
         'valid-jsdoc': 'off',
         // typeof 表达式比较的对象必须是 'undefined', 'object', 'boolean', 'number', 'string', 'function' 或 'symbol'
         'valid-typeof': 'error',
 
-        //
+
+
         //
         //
         // 最佳实践
@@ -150,12 +161,12 @@ module.exports = {
             }
         ],
         // 数组的一些方法（map, reduce 等）的回调函数中，必须有返回值
-        // 关闭此规则，因为太严格了
+        // @off 太严格了
         'array-callback-return': 'off',
         // 将 var 定义的变量视为块作用域，禁止在块外使用
         'block-scoped-var': 'error',
         // 在类的非静态方法中，必须存在对 this 的引用
-        // 关闭此规则，因为太严格了
+        // @off 太严格了
         'class-methods-use-this': 'off',
         // 禁止函数的循环复杂度超过 10，https://en.wikipedia.org/wiki/Cyclomatic_complexity
         'complexity': [
@@ -165,26 +176,26 @@ module.exports = {
             }
         ],
         // 禁止函数在不同分支返回不同类型的值
-        // 关闭此规则，因为太严格了
+        // @off 太严格了
         'consistent-return': 'off',
-        // if 后面必须要有 {，除非是单行 if
+        // @fix if 后面必须要有 {，除非是单行 if
         'curly': [
             'error',
             'multi-line',
             'consistent'
         ],
         // switch 语句必须有 default
-        // 关闭此规则，因为太严格了
+        // @off 太严格了
         'default-case': 'off',
-        // 链式调用的时候，点号必须放在第二行开头处，禁止放在第一行结尾处
+        // @fix 链式调用的时候，点号必须放在第二行开头处，禁止放在第一行结尾处
         'dot-location': [
             'error',
             'property'
         ],
-        // 禁止出现 foo['bar']，必须写成 foo.bar
-        // 关闭此规则，因为当需要写一系列属性的时候，可以更统一
+        // @fix 禁止出现 foo['bar']，必须写成 foo.bar
+        // @off 当需要写一系列属性的时候，可以更统一
         'dot-notation': 'off',
-        // 必须使用 === 或 !==，禁止使用 == 或 !=
+        // @fix 必须使用 === 或 !==，禁止使用 == 或 !=
         'eqeqeq': [
             'error',
             'always'
@@ -192,17 +203,17 @@ module.exports = {
         // for in 内部必须有 hasOwnProperty
         'guard-for-in': 'error',
         // 禁止使用 alert
-        // 关闭此规则，因为 alert 很常用
+        // @off alert 很常用
         'no-alert': 'off',
         // 禁止使用 caller 或 callee
         'no-caller': 'error',
         // switch 的 case 内有变量定义的时候，必须使用大括号将 case 内变成一个代码块
         'no-case-declarations': 'error',
         // 禁止在正则表达式中出现没必要的转义符
-        // 关闭此规则，因为多于的转义符没有害处，反而还可以使代码更易懂
+        // @off 多于的转义符没有害处，反而还可以使代码更易懂
         'no-div-regex': 'off',
-        // 禁止在 else 内使用 return，必须改为提前结束
-        // 关闭此规则，因为 else 中使用 return 可以使代码结构更清晰
+        // @fix 禁止在 else 内使用 return，必须改为提前结束
+        // @off else 中使用 return 可以使代码结构更清晰
         'no-else-return': 'off',
         // 不允许有空函数，除非是将一个空函数设置为某个项的默认值
         'no-empty-function': [
@@ -222,25 +233,25 @@ module.exports = {
         'no-eval': 'error',
         // 禁止修改原生对象
         'no-extend-native': 'error',
-        // 禁止出现没必要的 bind
+        // @fix 禁止出现没必要的 bind
         'no-extra-bind': 'error',
-        // 禁止出现没必要的 label
+        // @fix 禁止出现没必要的 label
         'no-extra-label': 'error',
         // switch 的 case 内必须有 break, return 或 throw
         'no-fallthrough': 'error',
-        // 表示小数时，禁止省略 0，比如 .5
+        // @fix 表示小数时，禁止省略 0，比如 .5
         'no-floating-decimal': 'error',
         // 禁止对全局变量赋值
         'no-global-assign': 'error',
-        // 禁止使用 !! ~ 等难以理解的运算符
-        // 关闭此规则，因为它们的性能更好
+        // @fix 禁止使用 !! ~ 等难以理解的运算符
+        // @off 它们的性能更好
         'no-implicit-coercion': 'off',
         // 禁止在全局作用域下定义变量或申明函数
         'no-implicit-globals': 'error',
         // 禁止在 setTimeout 或 setInterval 中传入字符串，如 setTimeout('alert("Hi!")', 100);
         'no-implied-eval': 'error',
         // 禁止在类之外的地方使用 this
-        // 关闭此规则，因为 this 的使用很灵活，事件回调中可以表示当前元素，函数也可以先用 this，等以后被调用的时候再 call
+        // @off this 的使用很灵活，事件回调中可以表示当前元素，函数也可以先用 this，等以后被调用的时候再 call
         'no-invalid-this': 'off',
         // 禁止使用 __iterator__
         'no-iterator': 'error',
@@ -270,7 +281,7 @@ module.exports = {
                 detectObjects: false
             }
         ],
-        // 禁止出现连续的多个空格，除非是注释前，或对齐对象的属性、变量定义、import 等
+        // @fix 禁止出现连续的多个空格，除非是注释前，或对齐对象的属性、变量定义、import 等
         'no-multi-spaces': [
             'error',
             {
@@ -302,7 +313,7 @@ module.exports = {
         // 禁止重复定义变量
         'no-redeclare': 'error',
         // 禁止使用指定的对象属性
-        // 关闭此规则，因为它用于限制某个具体的 api 不能使用
+        // @off 它用于限制某个具体的 api 不能使用
         'no-restricted-properties': 'off',
         // 禁止在 return 语句里赋值
         'no-return-assign': [
@@ -312,7 +323,7 @@ module.exports = {
         // 禁止在 return 语句里使用 await
         'no-return-await': 'error',
         // 禁止出现 location.href = 'javascript:void(0)';
-        // 关闭此规则，因为 javascript:void(0) 应该允许使用
+        // @off javascript:void(0) 应该允许使用
         'no-script-url': 'off',
         // 禁止将自己赋值给自己
         'no-self-assign': 'error',
@@ -333,22 +344,22 @@ module.exports = {
                 allowTaggedTemplates: true
             }
         ],
-        // 禁止出现没用的 label
+        // @fix 禁止出现没用的 label
         'no-unused-labels': 'error',
         // 禁止出现没必要的 call 或 apply
         'no-useless-call': 'error',
         // 禁止出现没必要的字符串连接
         'no-useless-concat': 'error',
         // 禁止出现没必要的转义
-        // 关闭此规则，因为转义可以使代码更易懂
+        // @off 转义可以使代码更易懂
         'no-useless-escape': 'off',
-        // 禁止没必要的 return
-        // 关闭此规则，因为没必要限制 return
+        // @fix 禁止没必要的 return
+        // @off 没必要限制 return
         'no-useless-return': 'off',
         // 禁止使用 void
         'no-void': 'error',
         // 禁止注释中出现 TODO 和 FIXME
-        // 关闭此规则，因为 TODO 很常用
+        // @off TODO 很常用
         'no-warning-comments': 'off',
         // 禁止使用 with
         'no-with': 'error',
@@ -359,9 +370,9 @@ module.exports = {
         // async 函数中必须存在 await 语句
         'require-await': 'error',
         // var 必须在作用域的最前面
-        // 关闭此规则，因为 var 不在最前面也是很常见的用法
+        // @off var 不在最前面也是很常见的用法
         'vars-on-top': 'off',
-        // 立即执行的函数必须符合如下格式 (function () { alert('Hello') })()
+        // @fix 立即执行的函数必须符合如下格式 (function () { alert('Hello') })()
         'wrap-iife': [
             'error',
             'inside',
@@ -369,7 +380,7 @@ module.exports = {
                 functionPrototypeMethods: true
             }
         ],
-        // 必须使用 if (foo === 5) 而不是 if (5 === foo)
+        // @fix 必须使用 if (foo === 5) 而不是 if (5 === foo)
         'yoda': [
             'error',
             'never',
@@ -378,36 +389,38 @@ module.exports = {
             }
         ],
 
-        //
+
+
         //
         //
         // 严格模式
         // 这些规则与严格模式指令有关
         //
-        // 禁止使用 'strict';
+        // @fix 禁止使用 'strict';
         'strict': [
             'error',
             'never'
         ],
 
-        //
+
+
         //
         //
         // 变量
         // 这些规则与变量申明有关
         //
         // 变量必须在定义的时候赋值
-        // 关闭此规则，因为先定义后赋值很常见
+        // @off 先定义后赋值很常见
         'init-declarations': 'off',
         // 禁止 catch 的参数名与定义过的变量重复
-        // 关闭此规则，因为太严格了
+        // @off 太严格了
         'no-catch-shadow': 'off',
         // 禁止使用 delete
         'no-delete-var': 'error',
         // 禁止 label 名称与定义过的变量重复
         'no-label-var': 'error',
         // 禁止使用指定的全局变量
-        // 关闭此规则，因为它用于限制某个具体的变量名不能使用
+        // @off 它用于限制某个具体的变量名不能使用
         'no-restricted-globals': 'off',
         // 禁止变量名与上层作用域内的定义过的变量重复
         'no-shadow': [
@@ -436,7 +449,7 @@ module.exports = {
                 typeof: false
             }
         ],
-        // 禁止将 undefined 赋值给变量
+        // @fix 禁止将 undefined 赋值给变量
         'no-undef-init': 'error',
         // 禁止对 undefined 重新赋值
         'no-undefined': 'error',
@@ -459,77 +472,79 @@ module.exports = {
             }
         ],
 
-        //
+
+
         //
         //
         // Node.js 和 CommonJS
         // 这些规则与在 Node.js 中运行的代码或浏览器中使用的 CommonJS 有关
         //
         // callback 之后必须立即 return
-        // 关闭此规则，因为 Limitations 太多了
+        // @off Limitations 太多了
         'callback-return': 'off',
         // require 必须在全局作用域下
-        // 关闭此规则，因为条件加载很常见
+        // @off 条件加载很常见
         'global-require': 'off',
         // callback 中的 error 必须被处理
         'handle-callback-err': 'error',
         // 禁止直接使用 Buffer
         'no-buffer-constructor': 'error',
         // 相同类型的 require 必须放在一起
-        // 关闭此规则，因为太严格了
+        // @off 太严格了
         'no-mixed-requires': 'off',
         // 禁止直接 new require('foo')
         'no-new-require': 'error',
         // 禁止对 __dirname 或 __filename 使用字符串连接
         'no-path-concat': 'error',
         // 禁止使用 process.env.NODE_ENV
-        // 关闭此规则，因为使用很常见
+        // @off 使用很常见
         'no-process-env': 'off',
         // 禁止使用 process.exit(0)
-        // 关闭此规则，因为使用很常见
+        // @off 使用很常见
         'no-process-exit': 'off',
         // 禁止使用指定的模块
-        // 关闭此规则，因为它用于限制某个具体的模块不能使用
+        // @off 它用于限制某个具体的模块不能使用
         'no-restricted-modules': 'off',
         // 禁止使用 node 中的同步的方法，比如 fs.readFileSync
-        // 关闭此规则，因为使用很常见
+        // @off 使用很常见
         'no-sync': 'off',
 
-        //
+
+
         //
         //
         // 风格问题
         // 这些规则与代码风格有关，所以是非常主观的
         //
-        // 配置数组的中括号内前后的换行格式
-        // 关闭此规则，因为配置项无法配制成想要的样子
+        // @fix 配置数组的中括号内前后的换行格式
+        // @off 配置项无法配制成想要的样子
         'array-bracket-newline': 'off',
-        // 数组的括号内的前后禁止有空格
+        // @fix 数组的括号内的前后禁止有空格
         'array-bracket-spacing': [
             'error',
             'never'
         ],
-        // 配置数组的元素之间的换行格式
-        // 关闭此规则，允许一行包含多个元素，方便大数量的数组的书写
+        // @fix 配置数组的元素之间的换行格式
+        // @off 允许一行包含多个元素，方便大数量的数组的书写
         'array-element-newline': 'off',
-        // 代码块如果在一行内，那么大括号内的首尾必须有空格，比如 function () { alert('Hello') }
+        // @fix 代码块如果在一行内，那么大括号内的首尾必须有空格，比如 function () { alert('Hello') }
         'block-spacing': [
             'error',
             'always'
         ],
-        // if 与 else 的大括号风格必须一致
-        // 关闭此规则，因为 else 代码块可能前面需要有一行注释
+        // @fix if 与 else 的大括号风格必须一致
+        // @off else 代码块可能前面需要有一行注释
         'brace-style': 'off',
         // 变量名必须是 camelcase 风格的
-        // 关闭此规则，因为很多 api 或文件名都不是 camelcase
+        // @off 很多 api 或文件名都不是 camelcase
         'camelcase': 'off',
-        // 注释的首字母必须大写
-        // 关闭此规则，因为没必要限制
+        // @fix 注释的首字母必须大写
+        // @off 没必要限制
         'capitalized-comments': 'off',
-        // 对象的最后一个属性末尾必须有逗号
-        // 关闭此规则，因为没必要限制
+        // @fix 对象的最后一个属性末尾必须有逗号
+        // @off 没必要限制
         'comma-dangle': 'off',
-        // 逗号前禁止有空格，逗号后必须要有空格
+        // @fix 逗号前禁止有空格，逗号后必须要有空格
         'comma-spacing': [
             'error',
             {
@@ -537,26 +552,28 @@ module.exports = {
                 'after': true
             }
         ],
-        // 禁止在行首写逗号
+        // @fix 禁止在行首写逗号
         'comma-style': [
             'error',
             'last'
         ],
-        // 用作对象属性时，中括号内的首尾不要有空格
+        // @fix 用作对象的计算属性时，中括号内的首尾禁止有空格
         'computed-property-spacing': [
             'error',
             'never'
         ],
-        // 这个配置用于限制 this 的别名，若需要限制，请在项目中单独配置
+        // 限制 this 的别名
+        // @off 没必要限制
         'consistent-this': 'off',
-        // 没必要要求最后一行必须有一个空行
+        // @fix 文件最后一行必须有一个空行
+        // @off 没必要限制
         'eol-last': 'off',
-        // 函数名和执行它的括号之间不要有空格
+        // @fix 函数名和执行它的括号之间禁止有空格
         'func-call-spacing': [
             'error',
             'never'
         ],
-        // 函数赋值给变量的时候，函数名需要和变量名一致
+        // 函数赋值给变量的时候，函数名必须与变量名一致
         'func-name-matching': [
             'error',
             'always',
@@ -564,17 +581,22 @@ module.exports = {
                 includeCommonJSModuleExports: false
             }
         ],
-        // 没必要要求函数必须加名字
+        // 函数必须有名字
+        // @off 没必要限制
         'func-names': 'off',
-        // 函数申明和函数表达式都可以用，没必要限制
+        // 必须只使用函数申明或只使用函数表达式
+        // @off 没必要限制
         'func-style': 'off',
-        // 变量名限制请在项目中单独配置
+        // 禁止使用指定的标识符
+        // @off 它用于限制某个具体的标识符不能使用
         'id-blacklist': 'off',
-        // 没必要限制变量名长度
+        // 限制变量名长度
+        // @off 没必要限制变量名长度
         'id-length': 'off',
-        // 没必要限制变量名
-        'id-length': 'off',
-        // 1 tab === 4 spaces
+        // 限制变量名必须匹配指定的正则表达式
+        // @off 没必要限制变量名
+        'id-match': 'off',
+        // @fix 一个缩进必须用四个空格替代
         'indent': [
             'error',
             4,
@@ -595,12 +617,12 @@ module.exports = {
                 flatTernaryExpressions: true
             }
         ],
-        // jsx 中的属性用双引号
+        // @fix jsx 中的属性必须用双引号
         'jsx-quotes': [
             'error',
             'prefer-double'
         ],
-        // object 中冒号前面不要空格，后面要空格
+        // @fix 对象字面量中冒号前面禁止有空格，后面必须有空格
         'key-spacing': [
             'error',
             {
@@ -609,7 +631,7 @@ module.exports = {
                 mode: 'strict',
             }
         ],
-        // if, function 等 keyword 前后都要有空格
+        // @fix 关键字前后必须有空格
         'keyword-spacing': [
             'error',
             {
@@ -617,39 +639,46 @@ module.exports = {
                 after: true
             }
         ],
-        // 注释可以写在上一行或这一行末尾
+        // 单行注释必须写在上一行
+        // @off 没必要限制
         'line-comment-position': 'off',
-        // LF 或 CRLF 都行
+        // @fix 限制换行符为 LF 或 CRLF
+        // @off 没必要限制
         'linebreak-style': 'off',
-        // 注释前后是否有空行无所谓
+        // @fix 注释前后必须有空行
+        // @off 没必要限制
         'lines-around-comment': 'off',
-        // if 的深度不允许超过 5
+        // 代码块嵌套的深度禁止超过 5 层
         'max-depth': [
             'error',
             5
         ],
-        // 现在编辑器已经很智能了，不需要限制一行的长度
+        // 限制一行的长度
+        // @off 现在编辑器已经很智能了，不需要限制一行的长度
         'max-len': 'off',
-        // 一个文件最多的行数
-        // 没必要限制，关闭此规则
+        // 限制一个文件最多的行数
+        // @off 没必要限制
         'max-lines': 'off',
-        // callback 嵌套最多 3 层，多了请用 async await 替代
+        // 回调函数嵌套禁止超过 3 层，多了请用 async await 替代
         'max-nested-callbacks': [
             'error',
             3
         ],
-        // 人能记住的参数最多是 7 个
+        // 函数的参数禁止超过 7 个
         'max-params': [
             'error',
             7
         ],
-        // 已限制了 function 的最大长度，这个实在没有必要了
+        // 限制函数块中的语句数量
+        // @off 没必要限制
         'max-statements': 'off',
-        // 没有必要限制
+        // 限制一行中的语句数量
+        // @off 没必要限制
         'max-statements-per-line': 'off',
-        // 三元表达式应该可以随意使用
+        // 三元表达式必须得换行
+        // @off 三元表达式可以随意使用
         'multiline-ternary': 'off',
-        // new 后面的类名应该是大写开头的，大写开头的允许不用 new
+        // new 后面的类名必须首字母大写
         'new-cap': [
             'error',
             {
@@ -658,24 +687,34 @@ module.exports = {
                 properties: true
             }
         ],
+        // @fix new 后面的类必须有小括号
         'new-parens': 'error',
-        // 链式调用没必要强制换行
+        // 链式调用必须换行
+        // @off 没必要限制
         'newline-per-chained-call': 'off',
+        // 禁止使用 Array 构造函数
         'no-array-constructor': 'error',
-        // 位运算允许使用
+        // 禁止使用位运算
+        // @off 位运算很常见
         'no-bitwise': 'off',
-        // continue 是基本语法，允许使用
+        // 禁止使用 continue
+        // @off continue 很常用
         'no-continue': 'off',
-        // 允许 inline 注释
+        // 禁止在代码后添加内联注释
+        // @off 内联注释很常用
         'no-inline-comments': 'off',
-        // 单独的 if 有时可以把逻辑表达的更清楚
+        // @fix 禁止 else 中只有一个单独的 if
+        // @off 单独的 if 可以把逻辑表达的更清楚
         'no-lonely-if': 'off',
-        // 使用者自己去判断如何 mix 操作符
+        // 禁止混用不同的操作符，比如 let foo = a && b < 0 || c > 0 || d + 1 === 0
+        // @off 太严格了，可以由使用者自己去判断如何混用操作符
         'no-mixed-operators': 'off',
+        // 禁止混用空格和缩进
         'no-mixed-spaces-and-tabs': 'error',
-        // a = b = c = 5 这种用法很常见
+        // 禁止连续赋值，比如 a = b = c = 5
+        // @off 没必要限制
         'no-multi-assign': 'off',
-        // 不能有超过三行的连续空行
+        // @fix 禁止出现超过三行的连续空行
         'no-multiple-empty-lines': [
             'error',
             {
@@ -684,23 +723,41 @@ module.exports = {
                 maxBOF: 1
             }
         ],
-        // if 里面允许有 !==
+        // 禁止 if 里面有否定的表达式，比如：
+        // if (a !== b) {
+        //     doSomething();
+        // } else {
+        //     doSomethingElse();
+        // }
+        // @off 否定的表达式可以把逻辑表达的更清楚
         'no-negated-condition': 'off',
-        // a ? b : c ? d : e 这种写法可以允许
+        // 禁止使用嵌套的三元表达式，比如 a ? b : c ? d : e
+        // @off 没必要限制
         'no-nested-ternary': 'off',
+        // 禁止直接 new Object
         'no-new-object': 'error',
-        // a++ 允许
+        // 禁止使用 ++ 或 --
+        // @off 没必要限制
         'no-plusplus': 'off',
-        // 与其他配置重合，比如 no-with
+        // 禁止使用特定的语法
+        // @off 它用于限制某个具体的语法不能使用
         'no-restricted-syntax': 'off',
+        // 禁止使用 tabs
         'no-tabs': 'error',
+        // 禁止使用三元表达式
+        // @off 三元表达式很常用
+        'no-ternary': 'off',
+        // @fix 禁止行尾有空格
         'no-trailing-spaces': 'error',
-        // 变量名允许有 _
+        // 禁止变量名出现下划线
+        // @off 下划线在变量名中很常用
         'no-underscore-dangle': 'off',
-        // 使用 !a 替代 a ? false : true，不开启此规则，因为后者表达的更清晰
+        // @fix 必须使用 !a 替代 a ? false : true
+        // @off 后者表达的更清晰
         'no-unneeded-ternary': 'off',
+        // @fix 禁止属性前有空格，比如 foo. bar()
         'no-whitespace-before-property': 'error',
-        // 不允许 if 后面不加大括号而写两行代码
+        // @fix 禁止 if 后面不加大括号而写两行代码
         'nonblock-statement-body-position': [
             'error',
             'beside',
@@ -710,7 +767,7 @@ module.exports = {
                 }
             }
         ],
-        // obj 中每行一项
+        // @fix 大括号内的首尾必须有换行
         'object-curly-newline': [
             'error',
             {
@@ -718,7 +775,7 @@ module.exports = {
                 consistent: true
             }
         ],
-        // obj 占用一行，则大括号内的首尾不需要空格
+        // @fix 对象字面量只有一行时，大括号内的首尾必须有空格
         'object-curly-spacing': [
             'error',
             'always',
@@ -727,30 +784,37 @@ module.exports = {
                 objectsInObjects: false
             }
         ],
-        // 允许 obj 写在一行
+        // @fix 对象字面量内的属性每行必须只有一个
+        // @off 没必要限制
         'object-property-newline': 'off',
-        // 必须每行一个 var
+        // 禁止变量申明时用逗号一次申明多个
         'one-var': [
             'error',
             'never'
         ],
-        // 必须每行一个 var
+        // @fix 变量申明必须每行一个
         'one-var-declaration-per-line': [
             'error',
             'always'
         ],
-        // 随便使用 x += y 或 x = x + y
+        // @fix 必须使用 x = x + y 而不是 x += y
+        // @off 没必要限制
         'operator-assignment': 'off',
-        // 需要换行的时候，+ 放在行末
-        // 不开启
+        // @fix 需要换行的时候，操作符必须放在行末，比如：
+        // let foo = 1 +
+        //     2
+        // @off 有时放在第二行开始处更易读
         'operator-linebreak': 'off',
-        // 代码块首尾不要空行，不开启此规则
+        // @fix 代码块首尾必须要空行
+        // @off 没必要限制
         'padded-blocks': 'off',
-        // 对什么地方需要空行不做限制
+        // @fix 限制语句之间的空行规则，比如变量定义完之后必须要空行
+        // @off 没必要限制
         'padding-line-between-statements': 'off',
-        // 对象的 key 什么时候需要加引号不做限制
+        // @fix 对象字面量的键名禁止用引号括起来
+        // @off 没必要限制
         'quote-props': 'off',
-        // 只允许使用单引号
+        // @fix 必须使用单引号，禁止使用双引号
         'quotes': [
             'error',
             'single',
@@ -759,9 +823,10 @@ module.exports = {
                 allowTemplateLiterals: true
             }
         ],
-        // 对 jsdoc 格式注释不作要求
+        // 必须使用 jsdoc 风格的注释
+        // @off 太严格了
         'require-jsdoc': 'off',
-        // 结尾必须有 ;
+        // @fix 结尾必须有分号
         'semi': [
             'error',
             'always',
@@ -769,7 +834,7 @@ module.exports = {
                 omitLastInOneLineBlock: true
             }
         ],
-        // ; 前不允许有空格，; 后必须有空格
+        // @fix 一行有多个语句时，分号前面禁止有空格，分号后面必须有空格
         'semi-spacing': [
             'error',
             {
@@ -777,21 +842,23 @@ module.exports = {
                 after: true
             }
         ],
-        // ; 只能在行尾，不能在行首
+        // @fix 分号必须写在行尾，禁止在行首出现
         'semi-style': [
             'error',
             'last'
         ],
-        // 没必要必须排序 keys
+        // 对象字面量的键名必须排好序
+        // @off 没必要限制
         'sort-keys': 'off',
-        // 没必要排序 vars
+        // 变量申明必须排好序
+        // @off 没必要限制
         'sort-vars': 'off',
-        // 代码块前要有空格
+        // @fix if, function 等的大括号之前必须要有空格，比如 if (a) {
         'space-before-blocks': [
             'error',
             'always'
         ],
-        // function 前是否必须要空格
+        // @fix function 的小括号之前必须要有空格
         'space-before-function-paren': [
             'error',
             {
@@ -800,13 +867,16 @@ module.exports = {
                 asyncArrow: 'always'
             }
         ],
-        // () 内的首尾不要有空格
+        // @fix 小括号内的首尾禁止有空格
         'space-in-parens': [
             'error',
             'never'
         ],
+        // @fix 操作符左右必须有空格，比如 let sum = 1 + 2;
         'space-infix-ops': 'error',
-        // 一元操作符必须有空格
+        // @fix new, typeof 等后面必须有空格，++, -- 等禁止有空格，比如：
+        // let foo = new Person();
+        // bar = bar++;
         'space-unary-ops': [
             'error',
             {
@@ -814,7 +884,7 @@ module.exports = {
                 nonwords: false
             }
         ],
-        // 注释前后得有空格
+        // @fix 注释前后必须有空格
         'spaced-comment': [
             'error',
             'always',
@@ -827,7 +897,7 @@ module.exports = {
                 }
             }
         ],
-        // case 的冒号前不能有空格，冒号后必须有空格
+        // @fix case 的冒号前禁止有空格，冒号后必须有空格
         'switch-colon-spacing': [
             'error',
             {
@@ -835,32 +905,34 @@ module.exports = {
                 before: false
             }
         ],
-        // tag`Hello World` 不能有空格
+        // @fix 模版字符串的 tag 之后禁止有空格，比如 tag`Hello World`
         'template-tag-spacing': [
             'error',
             'never'
         ],
-        // 文件开头不允许有 BOM
+        // @fix 文件开头禁止有 BOM
         'unicode-bom': [
             'error',
             'never'
         ],
-        // RegExp 不需要括号包起来
+        // @fix 正则表达式必须有括号包起来
+        // @off 没必要限制
         'wrap-regex': 'off',
 
-        //
+
+
         //
         //
         // ECMAScript 6
         // 这些规则与 ES6（即通常所说的 ES2015）有关
         //
-        // 箭头函数能够省略 return 的时候，必须省略，比如必须写成 () => 0，禁止写成 () => { return 0 }
-        // 关闭此规则，因为箭头函数的返回值，应该允许灵活设置
+        // @fix 箭头函数能够省略 return 的时候，必须省略，比如必须写成 () => 0，禁止写成 () => { return 0 }
+        // @off 箭头函数的返回值，应该允许灵活设置
         'arrow-body-style': 'off',
-        // 箭头函数只有一个参数的时候，必须加括号
-        // 关闭此规则，因为应该允许灵活设置
+        // @fix 箭头函数只有一个参数的时候，必须加括号
+        // @off 应该允许灵活设置
         'arrow-parens': 'off',
-        // 箭头函数的箭头前后必须有空格
+        // @fix 箭头函数的箭头前后必须有空格
         'arrow-spacing': [
             'error',
             {
@@ -870,7 +942,7 @@ module.exports = {
         ],
         // constructor 中必须有 super
         'constructor-super': 'error',
-        // generator 的 * 前面禁止有空格，后面必须有空格
+        // @fix generator 的 * 前面禁止有空格，后面必须有空格
         'generator-star-spacing': [
             'error',
             {
@@ -880,7 +952,7 @@ module.exports = {
         ],
         // 禁止对定义过的 class 重新赋值
         'no-class-assign': 'error',
-        // 禁止出现难以理解的箭头函数，比如 let x = a => 1 ? 2 : 3
+        // @fix 禁止出现难以理解的箭头函数，比如 let x = a => 1 ? 2 : 3
         'no-confusing-arrow': 'error',
         // 禁止对使用 const 定义的常量重新赋值
         'no-const-assign': 'error',
@@ -891,60 +963,60 @@ module.exports = {
         // 禁止使用 new 来生成 Symbol 
         'no-new-symbol': 'error',
         // 禁止 import 指定的模块
-        // 关闭此规则，因为它用于限制某个具体的模块不能使用
+        // @off 它用于限制某个具体的模块不能使用
         'no-restricted-imports': 'off',
         // 禁止在 super 被调用之前使用 this 或 super
         'no-this-before-super': 'error',
-        // 禁止出现没必要的计算键名，比如 let a = { ['0']: 0 };
+        // @fix 禁止出现没必要的计算键名，比如 let a = { ['0']: 0 };
         'no-useless-computed-key': 'error',
         // 禁止出现没必要的 constructor，比如 constructor(value) { super(value) }
         'no-useless-constructor': 'error',
-        // 禁止解构时出现同样名字的的重命名，比如 let { foo: foo } = bar;
+        // @fix 禁止解构时出现同样名字的的重命名，比如 let { foo: foo } = bar;
         'no-useless-rename': 'error',
-        // 禁止出现 var
+        // @fix 禁止出现 var
         'no-var': 'error',
-        // 必须使用 a = {b} 而不是 a = {b: b}
-        // 关闭此规则，因为没必要强制要求
+        // @fix 必须使用 a = {b} 而不是 a = {b: b}
+        // @off 没必要强制要求
         'object-shorthand': "off",
-        // 必须使用箭头函数作为回调
-        // 关闭此规则，因为没必要强制要求
+        // @fix 必须使用箭头函数作为回调
+        // @off 没必要强制要求
         'prefer-arrow-callback': 'off',
-        // 申明后不再被修改的变量必须使用 const 来申明
-        // 关闭此规则，因为没必要强制要求
+        // @fix 申明后不再被修改的变量必须使用 const 来申明
+        // @off 没必要强制要求
         'prefer-const': 'off',
         // 必须使用解构
-        // 关闭此规则，因为没必要强制要求
+        // @off 没必要强制要求
         'prefer-destructuring': 'off',
-        // 必须使用 0b11111011 而不是 parseInt('111110111', 2)
-        // 关闭此规则，因为没必要强制要求
+        // @fix 必须使用 0b11111011 而不是 parseInt('111110111', 2)
+        // @off 没必要强制要求
         'prefer-numeric-literals': 'off',
         // 必须使用 ...args 而不是 arguments
-        // 关闭此规则，因为没必要强制要求
+        // @off 没必要强制要求
         'prefer-rest-params': 'off',
-        // 必须使用 ... 而不是 apply，比如 foo(...args)
-        // 关闭此规则，因为 apply 很常用
+        // @fix 必须使用 ... 而不是 apply，比如 foo(...args)
+        // @off  apply 很常用
         'prefer-spread': 'off',
-        // 必须使用模版字面量而不是字符串连接
-        // 关闭此规则，因为字符串连接很常用
+        // @fix 必须使用模版字面量而不是字符串连接
+        // @off 字符串连接很常用
         'prefer-template': 'off',
         // generator 函数内必须有 yield
         'require-yield': 'error',
-        // ... 的后面禁止有空格
+        // @fix ... 的后面禁止有空格
         'rest-spread-spacing': [
             'error',
             'never'
         ],
-        // import 必须按规则排序
-        // 关闭此规则，因为没必要强制要求
+        // @fix import 必须按规则排序
+        // @off 没必要强制要求
         'sort-imports': 'off',
         // 创建 Symbol 时必须传入参数
         'symbol-description': 'error',
-        // ${name} 内的首尾禁止有空格
+        // @fix ${name} 内的首尾禁止有空格
         'template-curly-spacing': [
             'error',
             'never'
         ],
-        // yield* 后面必须要有空格
+        // @fix yield* 后面必须要有空格
         'yield-star-spacing': [
             'error',
             'after'
