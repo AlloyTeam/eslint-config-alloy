@@ -1,22 +1,29 @@
 {
   "name": "@alloyteam/eslint-config-standard",
-  "version": "0.0.9",
-  "description": "alloyteam eslint standard code guide",
-  "main": "./eslintrc.js",
+  "version": "1.0.0-beta.1",
+  "description": "AlloyTeam standard ESLint configuration",
+  "main": "index.js",
   "scripts": {
-    "test": "eslint -c eslintrc.js ./test/src/*.js"
+    "start": "npm run lint && npm test",
+    "test": "node ./test/index.js",
+    "lint": "eslint . --ignore-pattern bad.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/steamerjs/code-lint.git"
   },
   "keywords": [
-    "alloyteam",
     "eslint",
-    "code",
-    "guide"
+    "eslintconfig",
+    "config",
+    "alloyteam",
+    "javascript",
+    "styleguide"
   ],
-  "author": "heyli",
+  "author": "xcatliu <xcatliu@gmail.com>",
+  "contributors": [
+    "heyli <lcxfs1991@gmail.com>"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/steamerjs/code-lint/issues"
@@ -26,16 +33,9 @@
     "access": "public"
   },
   "dependencies": {
-    "babel-eslint": "^7.2.3",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-babel": "^4.1.1",
-    "eslint-plugin-html": "^3.0.0",
-    "eslint-plugin-import": "^2.3.0",
-    "eslint-plugin-node": "^5.0.0",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^3.0.1"
+    "babel-eslint": "^7.2.3"
   },
   "devDependencies": {
-    "eslint": "^4.0.0"
+    "eslint": "^4.2.0"
   }
 }
