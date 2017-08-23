@@ -29,7 +29,6 @@ module.exports = {
         commonjs: true,
         es6: true
     },
-    root: true,
     rules: {
         //
         //
@@ -109,7 +108,6 @@ module.exports = {
         'no-irregular-whitespace': [
             'error',
             {
-                
                 skipStrings: true,
                 skipComments: false,
                 skipRegExps: true,
@@ -264,23 +262,9 @@ module.exports = {
         //     (function () { return i })();
         // }
         'no-loop-func': 'error',
-        // 禁止使用除下面列出的
-        // 除了下面列出的数字外，不允许使用其他的 magic number
-        'no-magic-numbers': [
-            'error',
-            {
-                ignore: [
-                    -1,
-                    0,
-                    1,
-                    2,
-                    100
-                ],
-                ignoreArrayIndexes: true,
-                enforceConst: true,
-                detectObjects: false
-            }
-        ],
+        // 禁止使用 magic numbers
+        // @off 太严格了
+        'no-magic-numbers': 'off',
         // @fixable 禁止出现连续的多个空格，除非是注释前，或对齐对象的属性、变量定义、import 等
         'no-multi-spaces': [
             'error',
@@ -602,18 +586,6 @@ module.exports = {
             4,
             {
                 SwitchCase: 1,
-                VariableDeclarator: 1,
-                outerIIFEBody: 1,
-                MemberExpression: 1,
-                FunctionDeclaration: {
-                    body: 1,
-                    parameters: 1
-                },
-                CallExpression: {
-                    arguments: 1
-                },
-                ArrayExpression: 1,
-                ObjectExpression: 1,
                 flatTernaryExpressions: true
             }
         ],
@@ -977,7 +949,7 @@ module.exports = {
         'no-var': 'error',
         // @fixable 必须使用 a = {b} 而不是 a = {b: b}
         // @off 没必要强制要求
-        'object-shorthand': "off",
+        'object-shorthand': 'off',
         // @fixable 必须使用箭头函数作为回调
         // @off 没必要强制要求
         'prefer-arrow-callback': 'off',

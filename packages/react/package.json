@@ -1,43 +1,39 @@
 {
-  "name": "@alloyteam/eslint-config-react",
-  "version": "0.0.9",
-  "description": "alloyteam eslint react code guide",
-  "main": "./eslintrc.js",
-  "scripts": {
-    "test": "eslint -c eslintrc.js ./test/src/*.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/steamerjs/code-lint.git"
-  },
-  "keywords": [
-    "alloyteam",
-    "eslint",
-    "code",
-    "guide"
-  ],
-  "author": "heyli",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/steamerjs/code-lint/issues"
-  },
-  "homepage": "https://github.com/steamerjs/code-lint#readme",
-  "publishConfig": {
-    "access": "public"
-  },
-  "dependencies": {
-    "@alloyteam/eslint-config-standard": "^0.0.9",
-    "eslint-plugin-react": "^7.1.0"
-  },
-  "devDependencies": {
-    "babel-eslint": "^7.2.3",
-    "eslint": "^4.0.0",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-babel": "^4.1.1",
-    "eslint-plugin-html": "^3.0.0",
-    "eslint-plugin-import": "^2.3.0",
-    "eslint-plugin-node": "^5.0.0",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^3.0.1"
-  }
+    "name": "@alloyteam/eslint-config-react",
+    "version": "0.0.9",
+    "description": "AlloyTeam react ESLint configuration",
+    "main": "index.js",
+    "scripts": {
+        "test": "eslint ./test/src/*.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/steamerjs/code-lint.git"
+    },
+    "keywords": [
+        "eslint",
+        "react",
+        "eslintconfig",
+        "config",
+        "alloyteam",
+        "javascript",
+        "styleguide"
+    ],
+    "author": "xcatliu <xcatliu@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/steamerjs/code-lint/issues"
+    },
+    "homepage": "https://github.com/steamerjs/code-lint#readme",
+    "publishConfig": {
+        "access": "public"
+    },
+    "dependencies": {
+        "@alloyteam/eslint-config-standard": "^0.0.9",
+        "eslint-plugin-react": "^7.1.0",
+        "babel-eslint": "^7.2.3"
+    },
+    "devDependencies": {
+        "eslint": "^4.2.0"
+    }
 }

@@ -1,7 +1,7 @@
 /**
  * AlloyTeam 的 ESLint 规则 - React 部分
  * 
- * 本规则中包含了所有 eslint-plugin-react 规则，依据以下三条原则进行配置：
+ * 本规则在 @alloyteam/eslint-config-standard 的基础上，增加了所有 eslint-plugin-react 规则，依据以下三条原则进行配置：
  * 
  * 1. 能够帮助发现代码错误的规则，全部开启
  * 2. 配置不依赖于某个具体项目，需要尽可能的合理
@@ -16,7 +16,6 @@
 module.exports = {
     extends: [
         '@alloyteam/eslint-config-standard',
-        './eslintrc-react.js',
     ]
     plugins: [
         'react'
