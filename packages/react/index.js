@@ -223,4 +223,4 @@ module.exports = {
         // @off 没必要限制
         'react/jsx-wrap-multilines': 'off'
     }
-}
+};
