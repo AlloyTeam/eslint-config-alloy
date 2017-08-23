@@ -1,44 +1,44 @@
 {
-    "name": "@alloyteam/eslint-config-react",
-    "version": "0.0.9",
-    "description": "AlloyTeam react ESLint configuration",
-    "main": "index.js",
-    "scripts": {
-        "start": "npm run lint && npm test",
-        "test": "node ./test/index.js",
-        "lint": "eslint . --ignore-pattern bad.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/steamerjs/code-lint.git"
-    },
-    "keywords": [
-        "eslint",
-        "react",
-        "eslintconfig",
-        "config",
-        "alloyteam",
-        "javascript",
-        "styleguide"
-    ],
-    "author": "xcatliu <xcatliu@gmail.com>",
-    "contributors": [
-        "heyli <lcxfs1991@gmail.com>"
-    ],
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/steamerjs/code-lint/issues"
-    },
-    "homepage": "https://github.com/steamerjs/code-lint#readme",
-    "publishConfig": {
-        "access": "public"
-    },
-    "dependencies": {
-        "@alloyteam/eslint-config-standard": "^0.0.9",
-        "eslint-plugin-react": "^7.1.0",
-        "babel-eslint": "^7.2.3"
-    },
-    "devDependencies": {
-        "eslint": "^4.2.0"
-    }
+  "name": "@alloyteam/eslint-config-react",
+  "version": "1.0.0-beta.1",
+  "description": "AlloyTeam react ESLint configuration",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run lint && npm test",
+    "test": "node ./test/index.js",
+    "lint": "eslint . --ignore-pattern bad.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steamerjs/code-lint.git"
+  },
+  "keywords": [
+    "eslint",
+    "react",
+    "eslintconfig",
+    "config",
+    "alloyteam",
+    "javascript",
+    "styleguide"
+  ],
+  "author": "xcatliu <xcatliu@gmail.com>",
+  "contributors": [
+    "heyli <lcxfs1991@gmail.com>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/steamerjs/code-lint/issues"
+  },
+  "homepage": "https://github.com/steamerjs/code-lint#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@alloyteam/eslint-config-standard": "^0.0.9",
+    "eslint-plugin-react": "^7.1.0",
+    "babel-eslint": "^7.2.3"
+  },
+  "devDependencies": {
+    "eslint": "^4.2.0"
+  }
 }

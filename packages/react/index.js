@@ -15,7 +15,7 @@
 
 module.exports = {
     extends: [
-        '@alloyteam/eslint-config-standard',
+        '@alloyteam/eslint-config-standard@1.0.0-beta.1',
     ],
     plugins: [
         'react'
