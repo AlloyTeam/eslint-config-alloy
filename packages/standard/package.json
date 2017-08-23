@@ -4,7 +4,9 @@
     "description": "AlloyTeam standard ESLint configuration",
     "main": "index.js",
     "scripts": {
-        "test": "eslint ./test/src/*.js"
+        "start": "npm run lint && npm test",
+        "test": "node ./test/index.js",
+        "lint": "eslint . --ignore-pattern bad.js"
     },
     "repository": {
         "type": "git",
@@ -19,6 +21,9 @@
         "styleguide"
     ],
     "author": "xcatliu <xcatliu@gmail.com>",
+    "contributors": [
+        "heyli <lcxfs1991@gmail.com>"
+    ],
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/steamerjs/code-lint/issues"

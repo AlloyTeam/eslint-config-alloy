@@ -1,6 +1,6 @@
-# AlloyTeam 的 ESLint 规则 - React 版
+# AlloyTeam ESLint 规则 - React 版
 
-本规则在 @alloyteam/eslint-config-standard 的基础上，增加了所有 [eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react) 规则，依据以下三条原则进行配置：
+本规则在[标准规则](https://github.com/steamerjs/code-lint/tree/master/packages/standard)的基础上，增加了所有 [eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react) 规则，依据以下三条原则进行配置：
 
 1. 能够帮助发现代码错误的规则，全部开启
 2. 配置不依赖于某个具体项目，需要尽可能的合理
@@ -10,7 +10,7 @@
 
 ## 使用方法
 
-### 安装 @alloyteam/eslint-config-react
+### 安装
 
 ```bash
 npm install --dev @alloyteam/eslint-config-react eslint-plugin-react babel-eslint
@@ -57,4 +57,10 @@ module.exports = {
         // ]
     }
 };
+```
+
+## Testing
+
+```bash
+npm test
 ```

@@ -16,7 +16,7 @@
 module.exports = {
     extends: [
         '@alloyteam/eslint-config-standard',
-    ]
+    ],
     plugins: [
         'react'
     ],
@@ -143,7 +143,7 @@ module.exports = {
         // @fixable 结束标签必须与开始标签的那一行对齐
         // @off 已经在 jsx-indent 中限制了
         'react/jsx-closing-tag-location': 'off',
-        // @fixable 大括号内前后必须有空格
+        // @fixable 大括号内前后禁止有空格
         'react/jsx-curly-spacing': [
             'error',
             {

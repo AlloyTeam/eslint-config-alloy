@@ -1,4 +1,4 @@
-# AlloyTeam 的 ESLint 规则
+# AlloyTeam ESLint 规则
 
 本规则中包含了[所有 ESLint 规则](https://eslint.org/docs/rules/)，依据以下三条原则进行配置：
 
@@ -10,7 +10,7 @@
 
 ## 使用方法
 
-### 安装 @alloyteam/eslint-config-standard
+### 安装
 
 ```bash
 npm install --dev @alloyteam/eslint-config-standard babel-eslint
@@ -47,4 +47,10 @@ module.exports = {
         // ]
     }
 };
+```
+
+## Testing
+
+```bash
+npm test
 ```
