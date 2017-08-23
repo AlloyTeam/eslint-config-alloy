@@ -7,7 +7,7 @@
  * 2. 配置不依赖于某个具体项目，需要尽可能的合理
  * 3. 帮助保持代码风格统一，而不是限制开发体验
  * 
- * @fix 表示此配置支持 --fix
+ * @fixable 表示此配置支持 --fix
  * @off 表示此配置被关闭了，并且后面说明了关闭的原因
  * 
  * 本规则基于 eslint-plugin-react 7.1.0
@@ -89,7 +89,7 @@ module.exports = {
         'react/no-string-refs': 'error',
         // 禁止在组件的内部存在未转义的 >, ", ' 或 }
         'react/no-unescaped-entities': 'error',
-        // @fix 禁止出现 HTML 中的属性，如 class
+        // @fixable 禁止出现 HTML 中的属性，如 class
         'react/no-unknown-property': 'error',
         // 禁止出现未使用的 propTypes
         // @off 不强制要求写 propTypes
@@ -118,10 +118,10 @@ module.exports = {
         'react/require-optimization': 'off',
         // render 方法中必须有返回值
         'react/require-render-return': 'error',
-        // @fix 组件内没有 children 时，必须使用自闭和写法
+        // @fixable 组件内没有 children 时，必须使用自闭和写法
         // @off 没必要限制
         'react/self-closing-comp': 'off',
-        // @fix 组件内方法必须按照一定规则排序
+        // @fixable 组件内方法必须按照一定规则排序
         'react/sort-comp': 'error',
         // propTypes 的熟悉必须按照字母排序
         // @off 没必要限制
@@ -130,10 +130,10 @@ module.exports = {
         'react/style-prop-object': 'error',
         // HTML 中的自闭和标签禁止有 children
         'react/void-dom-elements-no-children': 'error',
-        // @fix 布尔值的属性必须显式的写 someprop={true}
+        // @fixable 布尔值的属性必须显式的写 someprop={true}
         // @off 没必要限制
         'react/jsx-boolean-value': 'off',
-        // @fix 自闭和标签的反尖括号必须与尖括号的那一行对齐
+        // @fixable 自闭和标签的反尖括号必须与尖括号的那一行对齐
         'react/jsx-closing-bracket-location': [
             'error',
             {
@@ -141,10 +141,10 @@ module.exports = {
                 selfClosing: 'line-aligned'
             }
         ],
-        // @fix 结束标签必须与开始标签的那一行对齐
+        // @fixable 结束标签必须与开始标签的那一行对齐
         // @off 已经在 jsx-indent 中限制了
         'react/jsx-closing-tag-location': 'off',
-        // @fix 大括号内前后必须有空格
+        // @fixable 大括号内前后必须有空格
         'react/jsx-curly-spacing': [
             'error',
             {
@@ -158,7 +158,7 @@ module.exports = {
                 }
             }
         ],
-        // @fix props 与 value 之间的等号前后禁止有空格
+        // @fixable props 与 value 之间的等号前后禁止有空格
         'react/jsx-equals-spacing': [
             'error',
             'never'
@@ -166,25 +166,25 @@ module.exports = {
         // 限制文件后缀
         // @off 没必要限制
         'react/jsx-filename-extension': 'off',
-        // @fix 第一个 prop 必须得换行
+        // @fixable 第一个 prop 必须得换行
         // @off 没必要限制
         'react/jsx-first-prop-new-line': 'off',
         // handler 的名称必须是 onXXX 或 handleXXX
         // @off 没必要限制
         'react/jsx-handler-names': 'off',
-        // @fix jsx 的 children 缩进必须为四个空格
+        // @fixable jsx 的 children 缩进必须为四个空格
         'react/jsx-indent': [
             'error',
             4
         ],
-        // @fix jsx 的 props 缩进必须为四个空格
+        // @fixable jsx 的 props 缩进必须为四个空格
         'react/jsx-indent-props': [
             'error',
             4
         ],
         // 数组中的 jsx 必须有 key
         'react/jsx-key': 'error',
-        // @fix 限制每行的 props 数量
+        // @fixable 限制每行的 props 数量
         // @off 没必要限制
         'react/jsx-max-props-per-line': 'off',
         // jsx 中禁止使用 bind
@@ -204,10 +204,10 @@ module.exports = {
         'react/jsx-no-undef': 'error',
         // 禁止使用 pascal 写法的 jsx，比如 <TEST_COMPONENT>
         'react/jsx-pascal-case': 'error',
-        // props 必须排好序
+        // @fixable props 必须排好序
         // @off 没必要限制
         'react/jsx-sort-props': 'off',
-        // jsx 的开始和闭合处禁止有空格
+        // @fixable jsx 的开始和闭合处禁止有空格
         'react/jsx-tag-spacing': [
             'error',
             {
@@ -220,7 +220,7 @@ module.exports = {
         'react/jsx-uses-react': 'error',
         // 定义了的 jsx element 必须使用
         'react/jsx-uses-vars': 'error',
-        // @fix 多行的 jsx 必须有括号包起来
+        // @fixable 多行的 jsx 必须有括号包起来
         // @off 没必要限制
         'react/jsx-wrap-multilines': 'off'
     }
