@@ -4,6 +4,7 @@
 
 - [标准规则](https://github.com/steamerjs/eslint-config-alloy/tree/master/index.js)：包含[所有 ESLint 规则](https://eslint.org/docs/rules/)
 - [React 版](https://github.com/steamerjs/eslint-config-alloy/tree/master/react.js)：在标准规则的基础上，增加了所有 [eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react) 规则
+- [Vue 版](https://github.com/steamerjs/eslint-config-alloy/tree/master/vue.js)：在标准规则的基础上，增加了所有 [eslint-plugin-vue](https://github.com/vuejs/eslint-plugin-vue) 规则
 
 ## 配置原则
 
@@ -30,13 +31,12 @@ npm install --save-dev eslint-config-alloy babel-eslint
 ```js
 module.exports = {
     extends: [
-        '@alloyteam/eslint-config-standard',
+        'eslint-config-alloy',
     ],
     globals: {
         // 这里填入你的项目需要的全局变量
         // 这里值为 false 表示这个全局变量不允许被重新赋值，比如：
         //
-        // React: false,
         // jQuery: false,
         // $: false
     },
@@ -78,8 +78,7 @@ module.exports = {
         // 这里值为 false 表示这个全局变量不允许被重新赋值，比如：
         //
         // React: false,
-        // jQuery: false,
-        // $: false
+        // ReactDOM: false
     },
     rules: {
         // 这里填入你的项目需要的个性化配置，比如：
@@ -102,6 +101,45 @@ module.exports = {
         // 'react/jsx-indent-props': [
         //     'error',
         //     2
+        // ]
+    }
+};
+```
+
+### Vue 版
+
+#### 安装
+
+```bash
+npm install --save-dev eslint-config-alloy eslint-plugin-vue babel-eslint
+```
+
+### 配置你的 .eslintrc.js
+
+在你的项目根目录下创建 `.eslintrc.js`，并将以下内容复制到文件中：
+
+```js
+module.exports = {
+    extends: [
+        'eslint-config-alloy/vue',
+    ],
+    globals: {
+        // 这里填入你的项目需要的全局变量
+        // 这里值为 false 表示这个全局变量不允许被重新赋值，比如：
+        //
+        // Vue: false
+    },
+    rules: {
+        // 这里填入你的项目需要的个性化配置，比如：
+        //
+        // // @fixable 一个缩进必须用两个空格替代
+        // 'indent': [
+        //     'error',
+        //     2,
+        //     {
+        //         SwitchCase: 1,
+        //         flatTernaryExpressions: true
+        //     }
         // ]
     }
 };
