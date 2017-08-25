@@ -1,1 +1,0 @@
-## @alloyteam/eslint-config-vue

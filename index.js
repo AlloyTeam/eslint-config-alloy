@@ -29,6 +29,8 @@ module.exports = {
         commonjs: true,
         es6: true
     },
+    // 以当前目录为根目录，不再向上查找 .eslintrc.js
+    root: true,
     rules: {
         //
         //
