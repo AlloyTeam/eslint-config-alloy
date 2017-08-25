@@ -20,7 +20,7 @@
 #### 安装
 
 ```bash
-npm install --dev eslint-config-alloy babel-eslint
+npm install --dev eslint-config-alloy@1.0.0-beta.2 babel-eslint
 ```
 
 ### 配置你的 .eslintrc.js
@@ -61,7 +61,7 @@ module.exports = {
 #### 安装
 
 ```bash
-npm install --dev eslint-config-alloy eslint-plugin-react babel-eslint
+npm install --dev eslint-config-alloy@1.0.0-beta.2 eslint-plugin-react babel-eslint
 ```
 
 #### 配置你的 .eslintrc.js
