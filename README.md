@@ -2,8 +2,8 @@
 
 本规则包含以下几种配置项：
 
-- [标准规则](https://github.com/steamerjs/eslintrc/tree/master/index.js)：包含[所有 ESLint 规则](https://eslint.org/docs/rules/)
-- [React 版](https://github.com/steamerjs/eslintrc/tree/master/react.js)：在标准规则的基础上，增加了所有 [eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react) 规则
+- [标准规则](https://github.com/steamerjs/eslint-config-alloy/tree/master/index.js)：包含[所有 ESLint 规则](https://eslint.org/docs/rules/)
+- [React 版](https://github.com/steamerjs/eslint-config-alloy/tree/master/react.js)：在标准规则的基础上，增加了所有 [eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react) 规则
 
 ## 配置原则
 

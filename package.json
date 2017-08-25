@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/steamerjs/eslintrc.git"
+    "url": "git+https://github.com/steamerjs/eslint-config-alloy.git"
   },
   "keywords": [
     "eslint",
@@ -30,9 +30,9 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/steamerjs/eslintrc/issues"
+    "url": "https://github.com/steamerjs/eslint-config-alloy/issues"
   },
-  "homepage": "https://github.com/steamerjs/eslintrc#readme",
+  "homepage": "https://github.com/steamerjs/eslint-config-alloy#readme",
   "publishConfig": {
     "access": "public"
   },
