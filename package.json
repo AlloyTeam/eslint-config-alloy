@@ -1,5 +1,46 @@
 {
+  "name": "eslint-config-alloy",
+  "version": "1.0.0",
+  "description": "AlloyTeam ESLint Configuration",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run lint && npm test",
+    "test": "node ./test/index.js",
+    "lint": "eslint . --ignore-pattern bad.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/steamerjs/eslintrc.git"
+  },
+  "keywords": [
+    "eslint",
+    "eslintrc",
+    "eslintconfig",
+    "config",
+    "alloy",
+    "alloyteam",
+    "javascript",
+    "styleguide",
+    "react",
+    "vue"
+  ],
+  "author": "xcatliu <xcatliu@gmail.com>",
+  "contributors": [
+    "heyli <lcxfs1991@gmail.com>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/steamerjs/eslintrc/issues"
+  },
+  "homepage": "https://github.com/steamerjs/eslintrc#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint-plugin-react": "^7.3.0"
+  },
   "devDependencies": {
-    "lerna": "^2.0.0"
+    "eslint": "^4.5.0"
   }
 }
