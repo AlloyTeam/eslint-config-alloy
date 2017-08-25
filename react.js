@@ -1,7 +1,7 @@
 /**
  * AlloyTeam 的 ESLint 规则 - React 部分
  * 
- * 本规则在 @alloyteam/eslint-config-standard 的基础上，增加了所有 eslint-plugin-react 规则，依据以下三条原则进行配置：
+ * 本规则在 eslint-config-alloy 的基础上，增加了所有 eslint-plugin-react 规则，依据以下三条原则进行配置：
  * 
  * 1. 能够帮助发现代码错误的规则，全部开启
  * 2. 配置不依赖于某个具体项目，需要尽可能的合理
@@ -10,12 +10,12 @@
  * @fixable 表示此配置支持 --fix
  * @off 表示此配置被关闭了，并且后面说明了关闭的原因
  * 
- * 本规则基于 eslint-plugin-react 7.1.0
+ * 本规则基于 eslint-plugin-react@7.3.0
  */
 
 module.exports = {
     extends: [
-        '@alloyteam/eslint-config-standard@1.0.0-beta.1',
+        './index.js',
     ],
     plugins: [
         'react'
@@ -82,8 +82,8 @@ module.exports = {
         // 禁止使用 setState
         // @off setState 很常用
         'react/no-set-state': 'off',
-        // 禁止拼写错误 7.1.0 暂不支持，需要升级 eslint-plugin-react
-        // 'react/no-typos': 'error',
+        // 禁止拼写错误
+        'react/no-typos': 'error',
         // 禁止使用字符串 ref
         'react/no-string-refs': 'error',
         // 禁止在组件的内部存在未转义的 >, ", ' 或 }
@@ -93,6 +93,9 @@ module.exports = {
         // 禁止出现未使用的 propTypes
         // @off 不强制要求写 propTypes
         'react/no-unused-prop-types': 'off',
+        // 定义过的 state 必须使用
+        // @off 没有官方文档，并且存在很多 bug： https://github.com/yannickcr/eslint-plugin-react/search?q=no-unused-state&type=Issues&utf8=%E2%9C%93
+        'react/no-unused-state': 'off',
         // 禁止在 componentWillUpdate 中使用 setState
         'react/no-will-update-set-state': 'error',
         // 必须使用 Class 的形式创建组件
