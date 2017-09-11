@@ -18,6 +18,9 @@ module.exports = {
         './index.js',
         'plugin:vue/base',
     ],
+    plugins: [
+        'vue'
+    ],
     rules: {
         //
         //
