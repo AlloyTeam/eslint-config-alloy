@@ -1,5 +1,7 @@
 # AlloyTeam ESLint 规则
 
+[![Build Status](https://img.shields.io/travis/AlloyTeam/eslint-config-alloy.svg)](https://travis-ci.org/AlloyTeam/eslint-config-alloy) [![npm package](https://img.shields.io/npm/v/eslint-config-alloy.svg)](https://www.npmjs.org/package/eslint-config-alloy) [![npm downloads](http://img.shields.io/npm/dm/eslint-config-alloy.svg)](https://www.npmjs.org/package/eslint-config-alloy)
+
 - [配置原则](#配置原则)
 - [配置解读](#配置解读)
 - [使用方法](#使用方法)
