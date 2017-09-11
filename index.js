@@ -195,10 +195,13 @@ module.exports = {
         // @fixable 禁止出现 foo['bar']，必须写成 foo.bar
         // @off 当需要写一系列属性的时候，可以更统一
         'dot-notation': 'off',
-        // @fixable 必须使用 === 或 !==，禁止使用 == 或 !=
+        // @fixable 必须使用 === 或 !==，禁止使用 == 或 !=，与 null 比较时除外
         'eqeqeq': [
             'error',
-            'always'
+            'always',
+            {
+                null: 'ignore'
+            }
         ],
         // for in 内部必须有 hasOwnProperty
         'guard-for-in': 'error',
@@ -228,7 +231,8 @@ module.exports = {
         // 禁止解构中出现空 {} 或 []
         'no-empty-pattern': 'error',
         // 禁止使用 foo == null 或 foo != null，必须使用 foo === null 或 foo !== null
-        'no-eq-null': 'error',
+        // @off foo == null 用于判断 foo 不是 undefined 并且不是 null，比较常用，故允许此写法
+        'no-eq-null': 'off',
         // 禁止使用 eval
         'no-eval': 'error',
         // 禁止修改原生对象
