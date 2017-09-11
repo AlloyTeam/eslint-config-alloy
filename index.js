@@ -358,7 +358,8 @@ module.exports = {
         // parseInt 必须传入第二个参数
         'radix': 'error',
         // async 函数中必须存在 await 语句
-        'require-await': 'error',
+        // @off async function 中没有 await 的写法很常见，比如 koa 的示例中就有这种用法
+        'require-await': 'off',
         // var 必须在作用域的最前面
         // @off var 不在最前面也是很常见的用法
         'vars-on-top': 'off',
