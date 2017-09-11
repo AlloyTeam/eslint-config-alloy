@@ -59,7 +59,7 @@ module.exports = {
         // 禁止使用 console
         // @off console 的使用很常见
         'no-console': 'off',
-        // 禁止将常量作为 if, for, while 里的测试条件，比如 if (true), for (;;)，除非循环内部有 break 语句
+        // 禁止将常量作为 if 或三元表达式的测试条件，比如 if (true), let foo = 0 ? 'foo' : 'bar'
         'no-constant-condition': [
             'error',
             {
