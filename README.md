@@ -241,6 +241,23 @@ module.exports = {
 };
 ```
 
+#### 在VSCode中使用
+在VSCode中，默认有可能并不识别 `.vue` 文件，你需要做如下配置。
+
+```
+文件 => 首选项 => 设置 
+
+做如下配置，便可支持ESLint检测 .vue 文件
+{
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "html",
+        "vue"
+    ]
+}
+```
+
 ## Testing
 
 ```bash
