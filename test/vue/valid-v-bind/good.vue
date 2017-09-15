@@ -1,4 +1,4 @@
-<!-- 语法正确的 v-bind -->
+<!-- good 语法正确的 v-bind -->
 <template>
     <div>
         <div v-bind="foo"></div>

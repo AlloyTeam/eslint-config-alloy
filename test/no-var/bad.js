@@ -1,2 +1,2 @@
-// bad, 使用 var
+// bad 禁止使用 var
 var foo = 1;
