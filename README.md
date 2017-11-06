@@ -207,7 +207,7 @@ module.exports = {
 #### 安装
 
 ```bash
-npm install --save-dev eslint-config-alloy eslint-plugin-vue babel-eslint
+npm install --save-dev eslint-config-alloy eslint-plugin-vue@3 babel-eslint
 ```
 
 #### 配置 .eslintrc.js
