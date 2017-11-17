@@ -1,23 +1,18 @@
 /**
- * AlloyTeam 的 ESLint 规则 - Vue 版
- * 
- * 本规则在 eslint-config-alloy 的基础上，增加了所有 eslint-plugin-vue 规则，依据以下三条原则进行配置：
- * 
- * 1. 能够帮助发现代码错误的规则，全部开启
- * 2. 配置不应该依赖于某个具体项目，而应尽可能的合理
- * 3. 帮助保持团队的代码风格统一，而不是限制开发体验
- * 
+ * AlloyTeam ESLint 规则 - Vue
+ *
+ * 包含所有 ESLint 规则，以及所有 eslint-plugin-vue 规则
+ * 使用 vue-eslint-parser 作为解析器
+ *
  * @fixable 表示此配置支持 --fix
  * @off 表示此配置被关闭了，并且后面说明了关闭的原因
- * 
- * 本规则基于 eslint-plugin-vue@3.12.0
  */
 
 module.exports = {
     extends: [
-        './index.js',
-        'plugin:vue/base',
+        './index.js'
     ],
+    parser: 'vue-eslint-parser',
     plugins: [
         'vue'
     ],

@@ -1,16 +1,11 @@
 /**
  * AlloyTeam ESLint 规则
- * 
- * 本规则中包含了所有 ESLint 规则，依据以下三条原则进行配置：
- * 
- * 1. 能够帮助发现代码错误的规则，全部开启
- * 2. 配置不应该依赖于某个具体项目，而应尽可能的合理
- * 3. 帮助保持团队的代码风格统一，而不是限制开发体验
- * 
+ *
+ * 包含所有 ESLint 规则
+ * 使用 babel-eslint 作为解析器
+ *
  * @fixable 表示此配置支持 --fix
  * @off 表示此配置被关闭了，并且后面说明了关闭的原因
- * 
- * 本规则基于 ESLint 4.5.0
  */
 
 module.exports = {
@@ -864,7 +859,7 @@ module.exports = {
                 nonwords: false
             }
         ],
-        // @fixable 注释前后必须有空格
+        // @fixable 注释的斜线或 * 后必须有空格
         'spaced-comment': [
             'error',
             'always',
@@ -940,7 +935,7 @@ module.exports = {
         'no-dupe-class-members': 'error',
         // 禁止重复 import 模块
         'no-duplicate-imports': 'error',
-        // 禁止使用 new 来生成 Symbol 
+        // 禁止使用 new 来生成 Symbol
         'no-new-symbol': 'error',
         // 禁止 import 指定的模块
         // @off 它用于限制某个具体的模块不能使用

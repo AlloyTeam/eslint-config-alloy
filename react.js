@@ -1,16 +1,11 @@
 /**
- * AlloyTeam 的 ESLint 规则 - React 版
- * 
- * 本规则在 eslint-config-alloy 的基础上，增加了所有 eslint-plugin-react 规则，依据以下三条原则进行配置：
- * 
- * 1. 能够帮助发现代码错误的规则，全部开启
- * 2. 配置不应该依赖于某个具体项目，而应尽可能的合理
- * 3. 帮助保持团队的代码风格统一，而不是限制开发体验
- * 
+ * AlloyTeam ESLint 规则 - React
+ *
+ * 包含所有 ESLint 规则，以及所有 eslint-plugin-react 规则
+ * 使用 babel-eslint 作为解析器
+ *
  * @fixable 表示此配置支持 --fix
  * @off 表示此配置被关闭了，并且后面说明了关闭的原因
- * 
- * 本规则基于 eslint-plugin-react@7.3.0
  */
 
 module.exports = {
@@ -20,13 +15,6 @@ module.exports = {
     plugins: [
         'react'
     ],
-    settings: {
-        react: {
-            createClass: 'createReactClass', // 创建组件的工厂方法，默认为 'createReactClass'
-            pragma: 'React', // React 的指令名称，默认为 'React'
-            version: '15.0' // React 的版本号，默认为最新的稳定版
-        }
-    },
     rules: {
         // 布尔值类型的 propTypes 的 name 必须为 is 或 has 开头
         // @off 不强制要求写 propTypes
