@@ -2,34 +2,14 @@
 
 [![Build Status](https://img.shields.io/travis/AlloyTeam/eslint-config-alloy.svg)](https://travis-ci.org/AlloyTeam/eslint-config-alloy) [![npm package](https://img.shields.io/npm/v/eslint-config-alloy.svg)](https://www.npmjs.org/package/eslint-config-alloy) [![npm downloads](http://img.shields.io/npm/dm/eslint-config-alloy.svg)](https://www.npmjs.org/package/eslint-config-alloy)
 
-- [配置原则](#配置原则)
-- [配置解读](#配置解读)
-- [使用方法](#使用方法)
-  - [标准规则](#标准规则)
-  - [React](#react)
-  - [Vue](#vue)
-  - [TypeScript](#typescript)
-  - [TypeScript React](#typescript-react)
-- [Troubleshootings](#troubleshootings)
-
----
-
-本规则包含以下几种配置项：
-
 名称 | 包含规则 | 解析器
 --- | --- | ---
-[标准规则][] | [ESLint 规则][] | [babel-eslint][]
-[React][] | [ESLint 规则][]、[eslint-plugin-react][] | [babel-eslint][]
-[Vue][] | [ESLint 规则][]、[eslint-plugin-vue][] | [vue-eslint-parser@2.0.1-beta.2][]
-[TypeScript][] | [ESLint 规则][]、[eslint-plugin-typescript][] | [typescript-eslint-parser][]
-[TypeScript React][] | [ESLint 规则][]、[eslint-plugin-typescript][]、[eslint-plugin-react][] | [typescript-eslint-parser][]
+[标准规则][#标准规则] | [ESLint 规则][] | [babel-eslint][]
+[React][#react] | ESLint 规则、[eslint-plugin-react][] | babel-eslint
+[Vue][#vue] | ESLint 规则、[eslint-plugin-vue][] | [vue-eslint-parser@2.0.1-beta.2][]
+[TypeScript][#typescript] | ESLint 规则、[eslint-plugin-typescript][] | [typescript-eslint-parser][]
+[TypeScript React][#typescript-react] | ESLint 规则、eslint-plugin-typescript、eslint-plugin-react | typescript-eslint-parser
 
-
-[标准规则]: https://github.com/AlloyTeam/eslint-config-alloy/tree/master/index.js
-[React]: https://github.com/AlloyTeam/eslint-config-alloy/tree/master/react.js
-[Vue]: https://github.com/AlloyTeam/eslint-config-alloy/tree/master/vue.js
-[TypeScript]: https://github.com/AlloyTeam/eslint-config-alloy/tree/master/typescript.js
-[TypeScript React]: https://github.com/AlloyTeam/eslint-config-alloy/tree/master/typescript-react.js
 [babel-eslint]: https://github.com/babel/babel-eslint
 [vue-eslint-parser@2.0.1-beta.2]: https://github.com/mysticatea/vue-eslint-parser/tree/v2.0.1-beta.2
 [typescript-eslint-parser]: https://github.com/eslint/typescript-eslint-parser
