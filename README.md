@@ -4,11 +4,11 @@
 
 名称 | 包含规则 | 解析器
 --- | --- | ---
-[标准规则][#标准规则] | [ESLint 规则][] | [babel-eslint][]
-[React][#react] | ESLint 规则、[eslint-plugin-react][] | babel-eslint
-[Vue][#vue] | ESLint 规则、[eslint-plugin-vue][] | [vue-eslint-parser@2.0.1-beta.2][]
-[TypeScript][#typescript] | ESLint 规则、[eslint-plugin-typescript][] | [typescript-eslint-parser][]
-[TypeScript React][#typescript-react] | ESLint 规则、eslint-plugin-typescript、eslint-plugin-react | typescript-eslint-parser
+[标准规则](#标准规则) | [ESLint 规则][] | [babel-eslint][]
+[React](#react) | ESLint 规则、[eslint-plugin-react][] | babel-eslint
+[Vue](#vue) | ESLint 规则、[eslint-plugin-vue][] | [vue-eslint-parser@2.0.1-beta.2][]
+[TypeScript](#typescript) | ESLint 规则、[eslint-plugin-typescript][] | [typescript-eslint-parser][]
+[TypeScript React](#typescript-react) | ESLint 规则、eslint-plugin-typescript、eslint-plugin-react | typescript-eslint-parser
 
 [babel-eslint]: https://github.com/babel/babel-eslint
 [vue-eslint-parser@2.0.1-beta.2]: https://github.com/mysticatea/vue-eslint-parser/tree/v2.0.1-beta.2
