@@ -80,7 +80,7 @@ module.exports = {
         'typescript/no-unused-vars': 'error',
         // 变量必须先定义后使用
         // @off eslint 原生已支持 no-use-before-define
-        'typescript/no-use-before-define': 'error',
+        'typescript/no-use-before-define': 'off',
         // 使用 namespace 代替 module
         // @off typescirpt/no-namespace 已经禁用了 namespace 和 module
         'typescript/prefer-namespace-keyword': 'off',

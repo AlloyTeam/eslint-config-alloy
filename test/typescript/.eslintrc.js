@@ -1,6 +1,6 @@
 module.exports = {
     extends: [
-        '../../react.js'
+        '../../typescript.js'
     ],
     rules: {
         'no-unused-vars': 'off'

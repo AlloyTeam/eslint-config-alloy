@@ -6,7 +6,9 @@ const cli = new CLIEngine();
 
 const goodReport = cli.executeOnFiles([
     './**/good.js',
-    './**/good.vue'
+    './**/good.vue',
+    './**/good.ts',
+    './**/good.tsx'
 ]);
 
 goodReport.results.forEach((goodReportForOneFile) => {
@@ -15,7 +17,9 @@ goodReport.results.forEach((goodReportForOneFile) => {
 
 const badReport = cli.executeOnFiles([
     './**/bad.js',
-    './**/bad.vue'
+    './**/bad.vue',
+    './**/bad.ts',
+    './**/bad.tsx'
 ]);
 
 badReport.results.forEach((badReportForOneFile) => {

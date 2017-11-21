@@ -36,14 +36,15 @@
   "publishConfig": {
     "access": "public"
   },
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "babel-eslint": "^8.0.2",
     "eslint": "^4.11.0",
     "eslint-plugin-react": "^7.4.0",
     "eslint-plugin-typescript": "^0.8.0",
     "eslint-plugin-vue": "^3.13.1",
+    "typescript": "^2.6.1",
     "typescript-eslint-parser": "^9.0.0",
     "vue-eslint-parser": "^2.0.1-beta.2"
-  },
-  "devDependencies": {}
+  }
 }

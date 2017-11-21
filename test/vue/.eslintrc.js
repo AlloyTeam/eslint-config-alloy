@@ -1,6 +1,6 @@
 module.exports = {
     extends: [
-        '../../vue.js',
+        '../../vue.js'
     ],
     rules: {
         'no-unused-vars': 'off'
