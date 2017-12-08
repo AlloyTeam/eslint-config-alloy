@@ -209,8 +209,8 @@ module.exports = {
         'no-caller': 'error',
         // switch 的 case 内有变量定义的时候，必须使用大括号将 case 内变成一个代码块
         'no-case-declarations': 'error',
-        // 禁止在正则表达式中出现没必要的转义符
-        // @off 多于的转义符没有害处，反而还可以使代码更易懂
+        // 禁止在正则表达式中出现形似除法操作符的开头，如 let a = /=foo/
+        // @off 有代码高亮的话，在阅读这种代码时，也完全不会产生歧义或理解上的困难
         'no-div-regex': 'off',
         // @fixable 禁止在 else 内使用 return，必须改为提前结束
         // @off else 中使用 return 可以使代码结构更清晰
