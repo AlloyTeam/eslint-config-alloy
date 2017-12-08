@@ -245,8 +245,15 @@ module.exports = {
         // 禁止对全局变量赋值
         'no-global-assign': 'error',
         // @fixable 禁止使用 !! ~ 等难以理解的运算符
-        // @off 它们的性能更好
-        'no-implicit-coercion': 'off',
+        // 仅允许使用 !!
+        'no-implicit-coercion': [
+            'error',
+            {
+                allow: [
+                    '!!'
+                ]
+            }
+        ],
         // 禁止在全局作用域下定义变量或申明函数
         'no-implicit-globals': 'error',
         // 禁止在 setTimeout 或 setInterval 中传入字符串，如 setTimeout('alert("Hi!")', 100);
