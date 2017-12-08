@@ -937,7 +937,12 @@ module.exports = {
         // 禁止对定义过的 class 重新赋值
         'no-class-assign': 'error',
         // @fixable 禁止出现难以理解的箭头函数，比如 let x = a => 1 ? 2 : 3
-        'no-confusing-arrow': 'error',
+        'no-confusing-arrow': [
+            'error',
+            {
+                allowParens: true
+            }
+        ],
         // 禁止对使用 const 定义的常量重新赋值
         'no-const-assign': 'error',
         // 禁止重复定义类
