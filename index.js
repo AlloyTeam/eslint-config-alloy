@@ -86,9 +86,11 @@ module.exports = {
         'no-ex-assign': 'error',
         // @fixable 禁止在测试表达式中使用 Boolean
         'no-extra-boolean-cast': 'error',
-        // @fixable 禁止出现多余的括号，比如 (a * b) + c
-        // @off 多余的括号可以使代码更清晰
-        'no-extra-parens': 'off',
+        // @fixable 禁止函数表达式中出现多余的括号，比如 let foo = (function () { return 1 })
+        'no-extra-parens': [
+            'error',
+            'functions'
+        ],
         // @fixable 禁止出现多于的分号
         'no-extra-semi': 'error',
         // 禁止将一个函数申明重新赋值，如：
