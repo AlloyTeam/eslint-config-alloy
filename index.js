@@ -454,7 +454,8 @@ module.exports = {
             {
                 vars: 'all',
                 args: 'none',
-                caughtErrors: 'none'
+                caughtErrors: 'none',
+                ignoreRestSiblings: true
             }
         ],
         // 变量必须先定义后使用
