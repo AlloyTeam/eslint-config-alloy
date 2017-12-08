@@ -418,23 +418,8 @@ module.exports = {
         // @off 它用于限制某个具体的变量名不能使用
         'no-restricted-globals': 'off',
         // 禁止变量名与上层作用域内的定义过的变量重复
-        'no-shadow': [
-            'error',
-            {
-                builtinGlobals: false,
-                hoist: 'functions',
-                allow: [
-                    'resolve',
-                    'reject',
-                    'done',
-                    'cb',
-                    'callback',
-                    'error',
-                    'err',
-                    'e'
-                ]
-            }
-        ],
+        // @off 很多时候函数的形参和传参是同名的
+        'no-shadow': 'off',
         // 禁止使用保留字作为变量名
         'no-shadow-restricted-names': 'error',
         // 禁止使用未定义的变量
