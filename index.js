@@ -259,8 +259,7 @@ module.exports = {
         // 禁止在 setTimeout 或 setInterval 中传入字符串，如 setTimeout('alert("Hi!")', 100);
         'no-implied-eval': 'error',
         // 禁止在类之外的地方使用 this
-        // @off this 的使用很灵活，事件回调中可以表示当前元素，函数也可以先用 this，等以后被调用的时候再 call
-        'no-invalid-this': 'off',
+        'no-invalid-this': 'error',
         // 禁止使用 __iterator__
         'no-iterator': 'error',
         // 禁止使用 label
