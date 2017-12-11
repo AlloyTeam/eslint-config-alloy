@@ -250,11 +250,35 @@ module.exports = {
         "javascriptreact",
         "html",
         "vue",
-         {
+        "typescript",
+        "typescriptreact"
+    ]
+}
+```
+
+### VSCode 中的 autoFixOnSave 没有效果
+
+如果需要针对 `.vue`、`.ts` 和 `.tsx` 文件开启 ESLint 的 autoFix，则需要配置成：
+
+```json
+{
+    "eslint.autoFixOnSave": true,
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "html",
+        {
+            "language": "vue",
+            "autoFix": true
+        },
+        {
             "language": "typescript",
             "autoFix": true
         },
-        "typescriptreact"
+        {
+            "language": "typescriptreact",
+            "autoFix": true
+        }
     ]
 }
 ```
