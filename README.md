@@ -250,7 +250,10 @@ module.exports = {
         "javascriptreact",
         "html",
         "vue",
-        "typescript",
+         {
+            "language": "typescript",
+            "autoFix": true
+        },
         "typescriptreact"
     ]
 }
