@@ -129,7 +129,7 @@ module.exports = {
 安装：
 
 ```bash
-npm install --save-dev eslint vue-eslint-parser@2.0.1-beta.2 eslint-plugin-vue@3 eslint-config-alloy
+npm install --save-dev eslint babel-eslint vue-eslint-parser@2.0.1-beta.2 eslint-plugin-vue@3 eslint-config-alloy
 ```
 
 在你的项目根目录下创建 `.eslintrc.js`，并将以下内容复制到文件中：
