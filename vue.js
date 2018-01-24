@@ -27,7 +27,7 @@ module.exports = {
         // 禁止出现语法错误
         'vue/no-parsing-error': 'error',
         // 禁止覆盖保留字
-        'vue/no-reservered-keys': 'error',
+        'vue/no-reserved-keys': 'error',
         // 组件的 data 属性的值必须是一个函数
         // @off 没必要限制
         'vue/no-shared-component-data': 'off',
