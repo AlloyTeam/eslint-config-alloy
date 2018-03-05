@@ -1,0 +1,6 @@
+{
+    "typescript/adjacent-overload-signatures": {
+        "good": "// good 函数有重载时，必须将重载成员分组在一起\r\ninterface Foo {\r\n    foo(s: string): void;\r\n    foo(n: number): void;\r\n    foo(sn: string | number): void;\r\n    bar(): void;\r\n}\r\n",
+        "bad": "// bad 函数有重载时，必须将重载成员分组在一起\r\ninterface Foo {\r\n    foo(s: string): void;\r\n    foo(n: number): void;\r\n    bar(): void;\r\n    foo(sn: string | number): void;\r\n}\r\n"
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "no-undef": "禁止使用未定义的变量\n@off 接口定义会报错",
+    "spaced-comment": "注释的斜线或 * 后必须有空格\n@off 三斜线注释会报错",
+    "typescript/adjacent-overload-signatures": "函数有重载时，必须将重载成员分组在一起",
+    "typescript/class-name-casing": "类和接口的命名必须遵守帕斯卡命名法，比如 PersianCat",
+    "typescript/explicit-member-accessibility": "必须手动指定类的属性和方法的可访问性（private 或 public）\n@off 太严格了",
+    "typescript/interface-name-prefix": "接口必须以 I 开头\n@off 没必要限制",
+    "typescript/member-delimiter-style": "接口和类型字面量中每一行都必须以分号结尾",
+    "typescript/menber-naming": "私有变量命名必须以下划线开头\n@off 没必要限制",
+    "typescript/member-ordering": "属性和方法必须按照排序规则排序",
+    "typescript/no-angle-bracket-type-assertion": "必须使用 as 进行类型断言\n@off 没必要限制，在 React 项目中需要限制",
+    "typescript/no-array-constructor": "禁止使用 Array 构造函数来初始化数组，除非指定了泛型，或传入的是单个数字\n开启，可以帮助发现错误",
+    "typescript/no-empty-interface": "禁止使用空接口\n@off 没必要限制",
+    "typescript/no-explicit-any": "禁止使用 any\n@off 太严格了",
+    "typescript/no-namespace": "禁止使用 namespace 和 module\n用 namespace 或 module 来定义模块是以前的用法，现在已经有了 import 和 export",
+    "typescript/no-parameter-properties": "禁止在给构造函数的参数添加修饰符\n@off 没必要限制",
+    "typescript/no-triple-slash-reference": "禁止使用三斜线注释\n@off 没必要限制",
+    "typescript/no-type-alias": "限制 type 的使用\n@off 没必要限制",
+    "typescript/no-unused-vars": "定义过的变量必须使用\neslint 原生的 no-unused-vars 无法使用，需要使用 typescript/no-unused-vars",
+    "typescript/no-use-before-define": "变量必须先定义后使用\n@off eslint 原生已支持 no-use-before-define",
+    "typescript/prefer-namespace-keyword": "使用 namespace 代替 module\n@off typescirpt/no-namespace 已经禁用了 namespace 和 module",
+    "typescript/type-annotation-spacing": "类型定义的冒号前后是否需要空格\n默认冒号前必须没有空格，冒号后必须有空格"
+}

@@ -1,0 +1,10 @@
+{
+    "vue/no-parsing-error": {
+        "good": "<!-- good 正确的语法 -->\r\n<template>\r\n    <div>{{message}}</div>\r\n</template>",
+        "bad": "<!-- bad 错误的语法 -->\r\n<template>\r\n    <div>{{message.}}</div>\r\n</template>"
+    },
+    "vue/valid-v-bind": {
+        "good": "<!-- good 语法正确的 v-bind -->\r\n<template>\r\n    <div>\r\n        <div v-bind=\"foo\"></div>\r\n        <div v-bind:aaa=\"foo\"></div>\r\n        <div :aaa=\"foo\"></div>\r\n        <div :aaa.prop=\"foo\"></div>\r\n    </div>\r\n</template>",
+        "bad": "<!-- bad 语法错误的 v-bind -->\r\n<template>\r\n    <div>\r\n        <div v-bind></div>\r\n        <div :aaa></div>\r\n        <div v-bind:aaa.bbb=\"foo\"></div>\r\n    </div>\r\n</template>"
+    }
+}

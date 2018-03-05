@@ -1,0 +1,4 @@
+{
+    "react/jsx-indent": "@fixable 限制 jsx 的 children 缩进规则\n@off 开启的话 eslint 会报错 Cannot read property 'type' of null",
+    "react/sort-comp": "组件内方法必须按照一定规则排序\n@off 还不支持 properties https://github.com/yannickcr/eslint-plugin-react/issues/1342"
+}

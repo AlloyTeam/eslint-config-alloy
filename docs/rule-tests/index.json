@@ -1,0 +1,44 @@
+{
+    "array-callback-return": {
+        "good": "// good 数组的 map 方法的回调函数有返回值\r\nlet foo = [1, 2, 3].map((num) => { return num * num });",
+        "bad": "// bad 数组的 map 方法的回调函数缺少返回值\r\nlet foo = [1, 2, 3].map((num) => { console.log(num * num) });"
+    },
+    "complexity": {
+        "good": "// good 禁止循环复杂度超过 20，https://en.wikipedia.org/wiki/Cyclomatic_complexity\r\nfunction foo() {\r\n    let i;\r\n    if (i === 1) {\r\n        console.log(i);\r\n    }\r\n    if (i === 2) {\r\n        console.log(i);\r\n    }\r\n    if (i === 3) {\r\n        console.log(i);\r\n    }\r\n    if (i === 4) {\r\n        console.log(i);\r\n    }\r\n    if (i === 5) {\r\n        console.log(i);\r\n    }\r\n    if (i === 6) {\r\n        console.log(i);\r\n    }\r\n    if (i === 7) {\r\n        console.log(i);\r\n    }\r\n    if (i === 8) {\r\n        console.log(i);\r\n    }\r\n    if (i === 9) {\r\n        console.log(i);\r\n    }\r\n    if (i === 10) {\r\n        console.log(i);\r\n    }\r\n    bar(i);\r\n}\r\n\r\nfunction bar(i) {\r\n    if (i === 11) {\r\n        console.log(i);\r\n    }\r\n    if (i === 12) {\r\n        console.log(i);\r\n    }\r\n    if (i === 13) {\r\n        console.log(i);\r\n    }\r\n    if (i === 14) {\r\n        console.log(i);\r\n    }\r\n    if (i === 15) {\r\n        console.log(i);\r\n    }\r\n    if (i === 16) {\r\n        console.log(i);\r\n    }\r\n    if (i === 17) {\r\n        console.log(i);\r\n    }\r\n    if (i === 18) {\r\n        console.log(i);\r\n    }\r\n    if (i === 19) {\r\n        console.log(i);\r\n    }\r\n    if (i === 20) {\r\n        console.log(i);\r\n    }\r\n}",
+        "bad": "// bad 禁止循环复杂度超过 20，https://en.wikipedia.org/wiki/Cyclomatic_complexity\r\nfunction foo() {\r\n    let i;\r\n    if (i === 1) {\r\n        console.log(i);\r\n    }\r\n    if (i === 2) {\r\n        console.log(i);\r\n    }\r\n    if (i === 3) {\r\n        console.log(i);\r\n    }\r\n    if (i === 4) {\r\n        console.log(i);\r\n    }\r\n    if (i === 5) {\r\n        console.log(i);\r\n    }\r\n    if (i === 6) {\r\n        console.log(i);\r\n    }\r\n    if (i === 7) {\r\n        console.log(i);\r\n    }\r\n    if (i === 8) {\r\n        console.log(i);\r\n    }\r\n    if (i === 9) {\r\n        console.log(i);\r\n    }\r\n    if (i === 10) {\r\n        console.log(i);\r\n    }\r\n    if (i === 11) {\r\n        console.log(i);\r\n    }\r\n    if (i === 12) {\r\n        console.log(i);\r\n    }\r\n    if (i === 13) {\r\n        console.log(i);\r\n    }\r\n    if (i === 14) {\r\n        console.log(i);\r\n    }\r\n    if (i === 15) {\r\n        console.log(i);\r\n    }\r\n    if (i === 16) {\r\n        console.log(i);\r\n    }\r\n    if (i === 17) {\r\n        console.log(i);\r\n    }\r\n    if (i === 18) {\r\n        console.log(i);\r\n    }\r\n    if (i === 19) {\r\n        console.log(i);\r\n    }\r\n    if (i === 20) {\r\n        console.log(i);\r\n    }\r\n}"
+    },
+    "eqeqeq": {
+        "good": "// bad 禁止使用 == 或 !=\r\nif (foo === 1) {\r\n    console.log('foo is 1');\r\n}\r\n\r\n// good 与 null 比较时，允许使用 == 或 !=\r\nif (foo == null) {\r\n    console.log('foo is null or undefined');\r\n}",
+        "bad": "// bad 禁止使用 == 或 !=\r\nif (foo == 1) {\r\n    console.log('foo is 1');\r\n}\r\n"
+    },
+    "no-confusing-arrow": {
+        "good": "// good 使用圆括号或花括号\r\nlet x = foo => (a ? 1 : 2);\r\nlet y = foo => { return a ? 1 : 2 };",
+        "bad": "// bad 容易混淆的箭头函数和三元表达式\r\nlet x = foo => a ? 1 : 2;"
+    },
+    "no-constant-condition": {
+        "bad": "// bad 禁止将常量作为 if 或三元表达式的测试条件\r\nif (true) {\r\n    console.log('true');\r\n}\r\n\r\nconst foo = 0 ? 'bar' : 'baz';\r\n"
+    },
+    "no-extra-parens": {
+        "good": "// good 函数表达式中不使用多于的括号\r\nlet foo = function () { return 1 };\r\n\r\n// good 普通的表达式中允许出现多于的括号\r\nlet bar = (a * b) + c;",
+        "bad": "// bad 函数表达式中使用了多于的括号\r\nlet foo = (function () { return 1 });"
+    },
+    "no-implicit-coercion": {
+        "good": "// good 不使用 ~ 等难以理解的运算符\r\nlet b2 = foo.indexOf('.') !== -1;\r\nlet n = Number(foo);\r\nlet n2 = Number(foo);\r\nlet s = String(foo);\r\nfoo = String(foo);\r\n\r\n// good 可以使用 !!\r\nlet b = !!foo;",
+        "bad": "// bad 使用了 ~ 等难以理解的运算符\r\nlet b = ~foo.indexOf('.');\r\nlet n = +foo;\r\nlet n = 1 * foo;\r\nlet s = '' + foo;\r\nfoo += ``;"
+    },
+    "no-script-url": {
+        "good": "// good 不使用 javascript:void(0)\r\nlet foo = document.createElement('a');\r\na.href = '';\r\nfoo.addEventListener('click', (e) => {\r\n    e.preventDefault();\r\n});",
+        "bad": "// bad 使用了 javascript:void(0)\r\nlet foo = document.createElement('a');\r\na.href = 'javascript:void(0)';"
+    },
+    "no-var": {
+        "good": "// good 可以使用 let 和 const\r\nlet foo = 1;\r\nconst bar = 2;",
+        "bad": "// bad 禁止使用 var\r\nvar foo = 1;"
+    },
+    "require-await": {
+        "good": "// good 允许 async function 中没有 await\r\nasync function foo() {\r\n    console.log('foo');\r\n}"
+    },
+    "space-before-function-paren": {
+        "good": "// good 函数名称后禁止有空格\r\nfunction foo() {\r\n    console.log('foo');\r\n}\r\n\r\n// good 箭头函数的箭头前后必须有空格\r\nlet bar = () => {\r\n    console.log('bar');\r\n};\r\n\r\n// good 匿名函数的 function 后面不限制有没有空格\r\nbar = function () {\r\n};\r\nbar = function() {\r\n};\r\n",
+        "bad": "// bad 函数名称后禁止有空格\r\nfunction foo () {\r\n    console.log('foo');\r\n}\r\n\r\n// bad 箭头函数的箭头前后必须有空格\r\nlet bar = ()=>{\r\n    console.log('bar');\r\n};\r\n"
+    }
+}

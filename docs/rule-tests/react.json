@@ -1,0 +1,6 @@
+{
+    "react/jsx-curly-spacing": {
+        "good": "// good 大括号内前后必须没有空格\r\nlet foo = <img width={100} />;\r\nlet bar = <div style={{ color: 'red' }} />;\r\n",
+        "bad": "// bad 禁止大括号内前后有空格\r\nlet foo = <img width={ 100 } />;\r\nlet bar = <div style={ { color: 'red' } } />;\r\n"
+    }
+}
