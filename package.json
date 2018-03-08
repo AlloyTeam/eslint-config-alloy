@@ -4,7 +4,8 @@
   "description": "AlloyTeam ESLint 规则",
   "main": "index.js",
   "scripts": {
-    "start": "npm run lint && npm test",
+    "start": "npm run lint && npm test && parcel site/index.html",
+    "build": "node ./scripts/build.js",
     "test": "node ./test/index.js",
     "lint": "eslint --ext .js,.vue --ignore-pattern bad.* ."
   },
@@ -45,6 +46,9 @@
     "eslint-plugin-typescript": "^0.8.0",
     "eslint-plugin-vue": "^3.13.1",
     "fs-extra": "^5.0.0",
+    "parcel-bundler": "^1.6.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "typescript": "^2.6.1",
     "typescript-eslint-parser": "^9.0.0",
     "vue-eslint-parser": "^2.0.1-beta.2"

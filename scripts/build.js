@@ -42,11 +42,11 @@ function buildRuleComments(filename) {
         }
     });
 
-    fse.outputFileSync(path.resolve(__dirname, `../docs/rule-comments/${filename}.json`), JSON.stringify(ruleComments, null, 4), 'utf-8');
+    fse.outputFileSync(path.resolve(__dirname, `../site/rule-comments/${filename}.json`), JSON.stringify(ruleComments, null, 4), 'utf-8');
 }
 
 function copyRules(filename) {
-    fse.copySync(path.resolve(__dirname, `../${filename}.js`), path.resolve(__dirname, `../docs/rules/${filename}.js`));
+    fse.copySync(path.resolve(__dirname, `../${filename}.js`), path.resolve(__dirname, `../site/rules/${filename}.js`));
 }
 
 function buildRuleTests(dirname) {
@@ -76,5 +76,5 @@ function buildRuleTests(dirname) {
         };
     });
 
-    fse.outputFileSync(path.resolve(__dirname, `../docs/rule-tests/${dirname}.json`), JSON.stringify(ruleTests, null, 4), 'utf-8');
+    fse.outputFileSync(path.resolve(__dirname, `../site/rule-tests/${dirname}.json`), JSON.stringify(ruleTests, null, 4), 'utf-8');
 }
