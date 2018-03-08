@@ -29,7 +29,7 @@ function buildRuleComments(filename) {
         if (rulesStart) {
             if (token.type === 'CommentLine') {
                 // 如果是注释，则存储在 commentLines 中
-                commentLines.push(token.value.trim());
+                commentLines.push(token.value.replace(/^ /, ''));
                 // 如果时空行注释，则清除当前存储的注释
                 if (token.value === '') {
                     commentLines = [];

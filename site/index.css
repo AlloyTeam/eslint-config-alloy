@@ -1,0 +1,18 @@
+@import '../node_modules/mobi.css/dist/mobi.css';
+@import '../node_modules/mobi-plugin-color/dist/mobi-plugin-color.css';
+
+.site-off {
+    background-color: #f8dddd;
+}
+.table td,
+.table th {
+    border: 0;
+}
+
+.site-key {
+    width: 150px;
+}
+.site-comment-off,
+.site-comment-fixable {
+    padding: 0 4px 2px 2px;
+}
