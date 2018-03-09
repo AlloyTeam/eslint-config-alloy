@@ -10,19 +10,23 @@ import ruleTestsIndex from './rule-tests/index';
 // const codeRegexp = new RegExp(`${codeCharacterWithoutSpace}${codeCharacter}+${codeCharacterWithoutSpace}`, 'g');
 
 class App extends React.Component {
-    renderRuleTr(key) {
+    renderRule(key) {
         const isOff = ruleCommentsIndex[key].indexOf('@off') !== -1;
         return (
-            <tr key={key} className={isOff ? 'site-off' : ''}>
-                <td className="site-key">
+            <div className={`flex-left flex-wrap top-gap ${isOff ? 'units-gap-big site-off' : 'units-gap'}`}>
+                <div className="unit-1-3 unit-1-on-mobile site-desc">
                     <a href={`https://eslint.org/docs/rules/${key}`}>
                         {key}
                     </a>
-                </td>
-                <td>{this.renderRuleComment(ruleCommentsIndex[key])}</td>
-                <td>{this.renderRuleTestGood(ruleTestsIndex[key])}</td>
-                <td>{this.renderRuleTestBad(ruleTestsIndex[key])}</td>
-            </tr>
+                    {this.renderRuleComment(ruleCommentsIndex[key])}
+                </div>
+                <div className="unit-1-3 unit-1-on-mobile">
+                    {this.renderRuleTestGood(ruleTestsIndex[key])}
+                </div>
+                <div className="unit-1-3 unit-1-on-mobile">
+                    {this.renderRuleTestBad(ruleTestsIndex[key])}
+                </div>
+            </div>
         );
     }
     renderRuleComment(comment) {
@@ -38,30 +42,26 @@ class App extends React.Component {
         content = content.replace('禁止', '<strong class="text-danger">$&</strong>');
         content = content.replace('必须', '<strong class="text-primary">$&</strong>');
         return (
-            <div dangerouslySetInnerHTML={{ __html: content }} />
+            <p className="top-gap-0" dangerouslySetInnerHTML={{ __html: content }} />
         );
     }
     renderRuleTestGood(test) {
-        if (!test) return null;
+        if (!test || !test.good) return null;
         return (
-            <pre><code>{test.good}</code></pre>
+            <pre className="language-javascript site-good"><code dangerouslySetInnerHTML={{ __html: test.good }}></code></pre>
         );
     }
     renderRuleTestBad(test) {
-        if (!test) return null;
+        if (!test || !test.bad) return null;
         return (
-            <pre><code>{test.bad}</code></pre>
+            <pre className="language-javascript site-bad"><code dangerouslySetInnerHTML={{ __html: test.bad }}></code></pre>
         );
     }
     render() {
         return (
             <div className="flex-center">
                 <div className="container-fluid">
-                    <table className="table">
-                        <tbody>
-                            {Object.keys(rulesIndex.rules).map(this.renderRuleTr.bind(this))}
-                        </tbody>
-                    </table>
+                    {Object.keys(rulesIndex.rules).map(this.renderRule.bind(this))}
                 </div>
             </div>
         );

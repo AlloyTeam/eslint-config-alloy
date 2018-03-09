@@ -4,9 +4,9 @@
   "description": "AlloyTeam ESLint 规则",
   "main": "index.js",
   "scripts": {
-    "start": "npm run lint && npm test && parcel site/index.html",
-    "build": "node ./scripts/build.js",
-    "test": "node ./test/index.js",
+    "start": "npm test && npm run site",
+    "site": "node ./scripts/build.js && parcel site/index.html",
+    "test": "npm run lint && node ./test/index.js",
     "lint": "eslint --ext .js,.vue --ignore-pattern bad.* ."
   },
   "repository": {
@@ -49,6 +49,7 @@
     "mobi-plugin-color": "^1.0.0",
     "mobi.css": "^3.1.1",
     "parcel-bundler": "^1.6.2",
+    "prismjs": "^1.12.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "typescript": "^2.6.1",

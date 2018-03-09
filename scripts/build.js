@@ -2,6 +2,7 @@ const path = require('path');
 const fse = require('fs-extra');
 
 const babylon = require('babylon');
+const Prism = require('prismjs');
 
 const rules = ['index', 'react', 'vue', 'typescript', 'typescript-react'];
 
@@ -57,23 +58,20 @@ function buildRuleTests(dirname) {
     const ruleTests = {};
     const dirnameList = fse.readdirSync(path.resolve(__dirname, `../test/${dirname}`));
     dirnameList.forEach((subDirname) => {
-        let good;
-        let bad;
+        ruleTests[`${prefix}${subDirname}`] = {
+            good: '',
+            bad: ''
+        };
         const subDirpath = path.resolve(__dirname, `../test/${dirname}/${subDirname}`);
         if (!fse.lstatSync(subDirpath).isDirectory()) {
             return;
         }
+
         fse.readdirSync(subDirpath).forEach((filename) => {
-            if (filename.indexOf('good') === 0) {
-                good = fse.readFileSync(path.resolve(subDirpath, filename), 'utf-8');
-            } else if (filename.indexOf('bad') === 0) {
-                bad = fse.readFileSync(path.resolve(subDirpath, filename), 'utf-8');
-            }
+            const goodOrBad = filename.indexOf('good') === 0 ? 'good' : 'bad';
+            const highlightedContent = Prism.highlight(fse.readFileSync(path.resolve(subDirpath, filename), 'utf-8'), Prism.languages.javascript);
+            ruleTests[`${prefix}${subDirname}`][goodOrBad] = highlightedContent;
         });
-        ruleTests[`${prefix}${subDirname}`] = {
-            good,
-            bad
-        };
     });
 
     fse.outputFileSync(path.resolve(__dirname, `../site/rule-tests/${dirname}.json`), JSON.stringify(ruleTests, null, 4), 'utf-8');
