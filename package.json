@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm test && npm run site",
+    "build": "node ./scripts/build.js && parcel build site/index.html --out-dir docs --public-url ./",
     "site": "node ./scripts/build.js && parcel site/index.html",
     "test": "npm run lint && node ./test/index.js",
     "lint": "eslint --ext .js,.vue --ignore-pattern bad.* ."
