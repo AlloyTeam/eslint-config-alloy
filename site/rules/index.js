@@ -47,7 +47,7 @@ module.exports = {
         'no-await-in-loop': 'off',
         // 禁止与负零进行比较
         'no-compare-neg-zero': 'error',
-        // 禁止在 if, for, while 里使用赋值语句，除非这个赋值语句被括号包起来了
+        // 禁止在条件判断中使用赋值语句，除非这个赋值语句被括号包起来了
         'no-cond-assign': [
             'error',
             'except-parens'
@@ -55,7 +55,7 @@ module.exports = {
         // 禁止使用 console
         // @off console 的使用很常见
         'no-console': 'off',
-        // 禁止将常量作为 if 或三元表达式的测试条件，比如 if (true), let foo = 0 ? 'foo' : 'bar'
+        // 禁止将常量作为分支条件判断中的测试条件，但允许作为循环条件判断中的测试条件
         'no-constant-condition': [
             'error',
             {

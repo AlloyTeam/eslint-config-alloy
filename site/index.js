@@ -13,7 +13,7 @@ class App extends React.Component {
     renderRule(key) {
         const isOff = ruleCommentsIndex[key].indexOf('@off') !== -1;
         return (
-            <div className={`flex-left flex-wrap top-gap ${isOff ? 'units-gap-big site-off' : 'units-gap'}`}>
+            <div className={`flex-left flex-wrap top-gap ${isOff ? 'units-gap-big bg-faded' : 'units-gap'}`}>
                 <div className="unit-1-3 unit-1-on-mobile site-desc">
                     <a href={`https://eslint.org/docs/rules/${key}`}>
                         {key}
