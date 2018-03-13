@@ -2,6 +2,8 @@
 
 [![Build Status](https://img.shields.io/travis/AlloyTeam/eslint-config-alloy.svg)](https://travis-ci.org/AlloyTeam/eslint-config-alloy) [![npm package](https://img.shields.io/npm/v/eslint-config-alloy.svg)](https://www.npmjs.org/package/eslint-config-alloy) [![npm downloads](http://img.shields.io/npm/dm/eslint-config-alloy.svg)](https://www.npmjs.org/package/eslint-config-alloy)
 
+[点击浏览规则描述及示例](https://alloyteam.github.io/eslint-config-alloy/)
+
 名称 | 包含规则 | 解析器
 --- | --- | ---
 [标准规则](#标准规则) | [ESLint 规则][] | [babel-eslint][]
