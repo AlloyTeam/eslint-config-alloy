@@ -91,18 +91,18 @@ module.exports = {
             'error',
             'functions'
         ],
-        // @fixable 禁止出现多于的分号
+        // @fixable 禁止出现多余的分号
         'no-extra-semi': 'error',
-        // 禁止将一个函数申明重新赋值，如：
+        // 禁止将一个函数声明重新赋值，如：
         // function foo() {}
         // foo = bar
         'no-func-assign': 'error',
-        // 禁止在 if 内出现函数申明或使用 var 定义变量
+        // 禁止在 if 代码块内出现函数声明
         'no-inner-declarations': [
             'error',
             'both'
         ],
-        // 禁止出现非法的正则表达式
+        // 禁止在 RegExp 构造函数中出现非法的正则表达式
         'no-invalid-regexp': 'error',
         // 禁止使用特殊空白符（比如全角空格），除非是出现在字符串、正则表达式或模版字符串中
         'no-irregular-whitespace': [
@@ -114,10 +114,10 @@ module.exports = {
                 skipTemplates: true
             }
         ],
-        // 禁止将 Math, JSON 或 Reflect 直接作为函数调用，必须作为类使用
+        // 禁止将 Math, JSON 或 Reflect 直接作为函数调用
         'no-obj-calls': 'error',
         // 禁止使用 hasOwnProperty, isPrototypeOf 或 propertyIsEnumerable
-        // @off 很多地方会用到 hasOwnProperty
+        // @off hasOwnProperty 比较常用
         'no-prototype-builtins': 'off',
         // @fixable 禁止在正则表达式中出现连续的空格，必须使用 /foo {3}bar/ 代替
         'no-regex-spaces': 'error',
@@ -564,7 +564,7 @@ module.exports = {
         // 函数必须有名字
         // @off 没必要限制
         'func-names': 'off',
-        // 必须只使用函数申明或只使用函数表达式
+        // 必须只使用函数声明或只使用函数表达式
         // @off 没必要限制
         'func-style': 'off',
         // 禁止使用指定的标识符
