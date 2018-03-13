@@ -2,9 +2,6 @@
 @import '../node_modules/mobi-plugin-color/dist/mobi-plugin-color.css';
 @import '../node_modules/prismjs/themes/prism-solarizedlight.css';
 
-.site-off {
-    background-color: #f8dddd;
-}
 .site-desc {
     margin: 0.5em 0 0.8em;
 }

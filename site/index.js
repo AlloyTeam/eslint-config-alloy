@@ -21,10 +21,10 @@ class App extends React.Component {
                     {this.renderRuleComment(ruleCommentsIndex[key])}
                 </div>
                 <div className="unit-1-3 unit-1-on-mobile">
-                    {this.renderRuleTestGood(ruleTestsIndex[key])}
+                    {this.renderRuleTestBad(ruleTestsIndex[key])}
                 </div>
                 <div className="unit-1-3 unit-1-on-mobile">
-                    {this.renderRuleTestBad(ruleTestsIndex[key])}
+                    {this.renderRuleTestGood(ruleTestsIndex[key])}
                 </div>
             </div>
         );

@@ -47,7 +47,7 @@ module.exports = {
         'no-await-in-loop': 'off',
         // 禁止与负零进行比较
         'no-compare-neg-zero': 'error',
-        // 禁止在条件判断中使用赋值语句，除非这个赋值语句被括号包起来了
+        // 禁止在测试表达式中使用赋值语句，除非这个赋值语句被括号包起来了
         'no-cond-assign': [
             'error',
             'except-parens'
@@ -55,7 +55,7 @@ module.exports = {
         // 禁止使用 console
         // @off console 的使用很常见
         'no-console': 'off',
-        // 禁止将常量作为分支条件判断中的测试条件，但允许作为循环条件判断中的测试条件
+        // 禁止将常量作为分支条件判断中的测试表达式，但允许作为循环条件判断中的测试表达式
         'no-constant-condition': [
             'error',
             {
@@ -63,7 +63,7 @@ module.exports = {
             }
         ],
         // 禁止在正则表达式中出现 Ctrl 键的 ASCII 表示，即禁止使用 /\x1f/
-        // 开启此规则，因为字符串中一般不会出现 Ctrl 键，所以一旦出现了，可能是一个代码错误
+        // @off 几乎不会遇到这种场景
         'no-control-regex': 'error',
         // @fixable 禁止使用 debugger
         'no-debugger': 'error',
@@ -84,7 +84,7 @@ module.exports = {
         'no-empty-character-class': 'error',
         // 禁止将 catch 的第一个参数 error 重新赋值
         'no-ex-assign': 'error',
-        // @fixable 禁止在测试表达式中使用 Boolean
+        // @fixable 禁止在测试表达式中使用 !! 或 Boolean
         'no-extra-boolean-cast': 'error',
         // @fixable 禁止函数表达式中出现多余的括号，比如 let foo = (function () { return 1 })
         'no-extra-parens': [
