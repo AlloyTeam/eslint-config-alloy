@@ -11,14 +11,11 @@
     padding: 0 4px 2px 2px;
 }
 
-.site-good {
-    background-color: #dff1df !important;
-}
-.site-bad {
-    background-color: #f8dddd !important;
-}
-.site-good,
-.site-bad {
+.site-code {
     max-height: 300px;
     border-radius: 0 !important;
+}
+
+.site-code-tag {
+    padding: 0 4px 2px;
 }

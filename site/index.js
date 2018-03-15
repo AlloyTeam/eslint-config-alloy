@@ -13,7 +13,7 @@ class App extends React.Component {
     renderRule(key) {
         const isOff = ruleCommentsIndex[key].indexOf('@off') !== -1;
         return (
-            <div className={`flex-left flex-wrap top-gap-big ${isOff ? 'units-gap-big bg-faded' : 'units-gap'}`}>
+            <div key={key} className={`flex-left flex-wrap top-gap-big ${isOff ? 'units-gap-big bg-faded' : 'units-gap'}`}>
                 <div className="unit-1-3 unit-1-on-mobile site-desc">
                     <a href={`https://eslint.org/docs/rules/${key}`}>
                         {key}
@@ -48,13 +48,21 @@ class App extends React.Component {
     renderRuleTestGood(test) {
         if (!test || !test.good) return null;
         return (
-            <pre className="language-javascript site-good"><code dangerouslySetInnerHTML={{ __html: test.good }}></code></pre>
+            <pre className="language-javascript site-code">
+                <code dangerouslySetInnerHTML={{
+                    __html: test.good.replace(/(\/\/ )(good)/, '$1<span class="bg-success text-inverse site-code-tag">$2</span>')
+                }}></code>
+            </pre>
         );
     }
     renderRuleTestBad(test) {
         if (!test || !test.bad) return null;
         return (
-            <pre className="language-javascript site-bad"><code dangerouslySetInnerHTML={{ __html: test.bad }}></code></pre>
+            <pre className="language-javascript site-code">
+                <code dangerouslySetInnerHTML={{
+                    __html: test.bad.replace(/(\/\/ )(bad)/, '$1<span class="bg-danger text-inverse site-code-tag">$2</span>')
+                }}></code>
+            </pre>
         );
     }
     render() {
