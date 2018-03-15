@@ -5,15 +5,11 @@ import rulesIndex from './rules/index';
 import ruleCommentsIndex from './rule-comments/index';
 import ruleTestsIndex from './rule-tests/index';
 
-// const codeCharacter = '[ a-zA-Z0-9()=;<@/,?[{}``"!_+\'\\]\\-\\\\]';
-// const codeCharacterWithoutSpace = '[a-zA-Z0-9()=;<@/,?[{}``"!_+\'\\]\\-\\\\]';
-// const codeRegexp = new RegExp(`${codeCharacterWithoutSpace}${codeCharacter}+${codeCharacterWithoutSpace}`, 'g');
-
 class App extends React.Component {
     renderRule(key) {
         const isOff = ruleCommentsIndex[key].indexOf('@off') !== -1;
         return (
-            <div key={key} className={`flex-left flex-wrap top-gap-big ${isOff ? 'units-gap-big bg-faded' : 'units-gap'}`}>
+            <div key={key} className={`flex-left flex-wrap top-gap-big units-gap  ${isOff ? 'bg-faded site-table-row-wide' : ''}`}>
                 <div className="unit-1-3 unit-1-on-mobile site-desc">
                     <a href={`https://eslint.org/docs/rules/${key}`}>
                         {key}
@@ -30,17 +26,13 @@ class App extends React.Component {
         );
     }
     renderRuleComment(comment) {
-        let content = comment;
-        // content = content.replace(codeRegexp, (match) => {
-        //     if (match === '@off' || match === '@fixable') return match;
-        //     return `<code>${match}</code>`;
-        // });
-        content = content.replace(/ /g, '&nbsp;');
-        content = content.replace(/\r\n/g, '<br />').replace(/\n/g, '<br />');
-        content = content.replace('@off', '<span class="text-inverse bg-danger text-small site-comment-off">$&</span>');
-        content = content.replace('@fixable', '<span class="text-inverse bg-success text-small site-comment-fixable">$&</span>');
-        content = content.replace('禁止', '<strong class="text-danger">$&</strong>');
-        content = content.replace('必须', '<strong class="text-primary">$&</strong>');
+        let content = comment
+            .replace(/ /g, '&nbsp;')
+            .replace(/\r\n/g, '<br />').replace(/\n/g, '<br />')
+            .replace('@off', '<span class="text-inverse bg-danger text-small site-comment-off">$&</span>')
+            .replace('@fixable', '<span class="text-inverse bg-success text-small site-comment-fixable">$&</span>')
+            .replace('禁止', '<strong class="text-danger">$&</strong>')
+            .replace('必须', '<strong class="text-primary">$&</strong>');
         return (
             <p className="top-gap-0" dangerouslySetInnerHTML={{ __html: content }} />
         );
@@ -65,10 +57,20 @@ class App extends React.Component {
             </pre>
         );
     }
+    renderTableHead() {
+        return (
+            <div className="flex-left flex-wrap top-gap-big bg-faded units-gap site-table-head site-table-row-wide">
+                <h3 className="unit-1-3 unit-1-on-mobile site-table-title">规则说明</h3>
+                <h3 className="unit-1-3 unit-1-on-mobile text-danger site-table-title">错误的写法</h3>
+                <h3 className="unit-1-3 unit-1-on-mobile text-success site-table-title">正确的写法</h3>
+            </div>
+        );
+    }
     render() {
         return (
             <div className="flex-center">
-                <div className="container-fluid">
+                <div className="container-fluid site-container">
+                    {this.renderTableHead()}
                     {Object.keys(rulesIndex.rules).map(this.renderRule.bind(this))}
                 </div>
             </div>

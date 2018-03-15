@@ -2,6 +2,25 @@
 @import '../node_modules/mobi-plugin-color/dist/mobi-plugin-color.css';
 @import '../node_modules/prismjs/themes/prism-solarizedlight.css';
 
+.site-table-row-wide {
+    margin-left: -.9375rem;
+    margin-right: -.9375rem;
+}
+.site-table-row-wide > *:first-child {
+    padding-left: 0.9375rem;
+}
+.site-table-row-wide > *:last-child {
+    padding-right: 0.9375rem;
+}
+
+.site-table-head {
+    align-self: flex-start;
+    position: sticky;
+    top: -1px;
+}
+.site-table-title {
+    margin: 0.5em 0;
+}
 .site-desc {
     margin: 0.5em 0 0.8em;
 }
@@ -10,12 +29,11 @@
 .site-comment-fixable {
     padding: 0 4px 2px 2px;
 }
+.site-code-tag {
+    padding: 0 4px 2px;
+}
 
 .site-code {
     max-height: 300px;
     border-radius: 0 !important;
-}
-
-.site-code-tag {
-    padding: 0 4px 2px;
 }
