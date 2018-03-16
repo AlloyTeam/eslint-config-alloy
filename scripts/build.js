@@ -7,8 +7,8 @@ const Prism = require('prismjs');
 const rules = ['index', 'react', 'vue', 'typescript', 'typescript-react'];
 
 rules.forEach((rule) => {
+    copyRuleConfigs(rule);
     buildRuleComments(rule);
-    copyRules(rule);
     buildRuleTests(rule);
 });
 
@@ -46,8 +46,8 @@ function buildRuleComments(filename) {
     fse.outputFileSync(path.resolve(__dirname, `../site/rule-comments/${filename}.json`), JSON.stringify(ruleComments, null, 4), 'utf-8');
 }
 
-function copyRules(filename) {
-    fse.copySync(path.resolve(__dirname, `../${filename}.js`), path.resolve(__dirname, `../site/rules/${filename}.js`));
+function copyRuleConfigs(filename) {
+    fse.copySync(path.resolve(__dirname, `../${filename}.js`), path.resolve(__dirname, `../site/rule-configs/${filename}.js`));
 }
 
 function buildRuleTests(dirname) {

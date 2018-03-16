@@ -1,26 +1,67 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import rulesIndex from './rules/index';
-import ruleCommentsIndex from './rule-comments/index';
-import ruleTestsIndex from './rule-tests/index';
+import ruleConfigIndex from './rule-configs/index.js';
+import ruleCommentIndex from './rule-comments/index.json';
+import ruleTestIndex from './rule-tests/index.json';
+
+import ruleeConfigReact from './rule-configs/react.js';
+import ruleCommentReact from './rule-comments/react.json';
+import ruleTestReact from './rule-tests/react.json';
+
+const RULE_DATA_MAP = {
+    index: {
+        key: 'index',
+        config: ruleConfigIndex,
+        comment: ruleCommentIndex,
+        test: ruleTestIndex,
+        getDetailLink: (key) => {
+            return `https://eslint.org/docs/rules/${key}`;
+        }
+    },
+    react: {
+        key: 'react',
+        config: ruleeConfigReact,
+        comment: ruleCommentReact,
+        test: ruleTestReact,
+        getDetailLink: (key) => {
+            return `https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/${key.replace('react/', '')}.md`;
+        }
+    }
+};
 
 class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            ruleData: RULE_DATA_MAP.index,
+            showOff: true
+        };
+    }
+    handleRuleSetChange(e) {
+        this.setState({ ruleData: RULE_DATA_MAP[e.target.value] });
+    }
+    handleShowOffChange(e) {
+        this.setState({
+            showOff: e.target.checked
+        });
+    }
     renderRule(key) {
-        const isOff = ruleCommentsIndex[key].indexOf('@off') !== -1;
+        const isOff = this.state.ruleData.comment[key].indexOf('@off') !== -1;
+        if (isOff && !this.state.showOff) return null;
         return (
-            <div key={key} className={`flex-left flex-wrap top-gap-big units-gap  ${isOff ? 'bg-faded site-table-row-wide' : ''}`}>
+            <div id={key} key={key} className={`flex-left flex-wrap top-gap-big units-gap site-row ${isOff ? 'bg-faded site-row-wide' : ''}`}>
                 <div className="unit-1-3 unit-1-on-mobile site-desc">
-                    <a href={`https://eslint.org/docs/rules/${key}`}>
+                    <a href={this.state.ruleData.getDetailLink(key)}>
                         {key}
                     </a>
-                    {this.renderRuleComment(ruleCommentsIndex[key])}
+                    {this.renderRuleComment(this.state.ruleData.comment[key])}
                 </div>
                 <div className="unit-1-3 unit-1-on-mobile">
-                    {this.renderRuleTestBad(ruleTestsIndex[key])}
+                    {this.renderRuleTestBad(this.state.ruleData.test[key])}
                 </div>
                 <div className="unit-1-3 unit-1-on-mobile">
-                    {this.renderRuleTestGood(ruleTestsIndex[key])}
+                    {this.renderRuleTestGood(this.state.ruleData.test[key])}
                 </div>
             </div>
         );
@@ -57,21 +98,46 @@ class App extends React.Component {
             </pre>
         );
     }
-    renderTableHead() {
+    renderTableHeader() {
         return (
-            <div className="flex-left flex-wrap top-gap-big bg-faded units-gap site-table-head site-table-row-wide">
-                <h3 className="unit-1-3 unit-1-on-mobile site-table-title">规则说明</h3>
-                <h3 className="unit-1-3 unit-1-on-mobile text-danger site-table-title">错误的写法</h3>
-                <h3 className="unit-1-3 unit-1-on-mobile text-success site-table-title">正确的写法</h3>
+            <div className="flex-left flex-wrap units-gap hide-on-mobile">
+                <h3 className="unit-1-3 unit-1-on-mobile site-table-header-text">规则说明</h3>
+                <h3 className="unit-1-3 unit-1-on-mobile text-danger site-table-header-text">错误的示例</h3>
+                <h3 className="unit-1-3 unit-1-on-mobile text-success site-table-header-text">正确的示例</h3>
+            </div>
+        );
+    }
+    renderHeader() {
+        return (
+            <div className="flex-center">
+                <div className="container-fluid">
+                    <h1>AlloyTeam ESLint 规则</h1>
+                    <form className="top-gap site-form">
+                        <label>
+                            切换规则：
+                            <select value={this.state.ruleData.key} onChange={this.handleRuleSetChange.bind(this)}>
+                                <option value="index">标准规则</option>
+                                <option value="react">React</option>
+                            </select>
+                        </label>
+                        <label>
+                            <input type="checkbox" checked={this.state.showOff} onChange={this.handleShowOffChange.bind(this)} />
+                            显示已禁用的规则
+                        </label>
+                    </form>
+                </div>
             </div>
         );
     }
     render() {
         return (
-            <div className="flex-center">
-                <div className="container-fluid site-container">
-                    {this.renderTableHead()}
-                    {Object.keys(rulesIndex.rules).map(this.renderRule.bind(this))}
+            <div>
+                {this.renderHeader()}
+                <div className="flex-center">
+                    <div className="container-fluid">
+                        {this.renderTableHeader()}
+                        {Object.keys(this.state.ruleData.config.rules).map(this.renderRule.bind(this))}
+                    </div>
                 </div>
             </div>
         );
