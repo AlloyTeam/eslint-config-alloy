@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import GitHubCorners from './GitHubCorners';
+
 import ruleConfigIndex from './rule-configs/index.js';
 import ruleCommentIndex from './rule-comments/index.json';
 import ruleTestIndex from './rule-tests/index.json';
@@ -132,6 +134,7 @@ class App extends React.Component {
     render() {
         return (
             <div>
+                <GitHubCorners />
                 {this.renderHeader()}
                 <div className="flex-center">
                     <div className="container-fluid">
