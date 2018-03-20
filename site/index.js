@@ -52,7 +52,7 @@ class App extends React.Component {
         const isOff = this.state.ruleData.comment[key].indexOf('@off') !== -1;
         if (isOff && !this.state.showOff) return null;
         return (
-            <div id={key} key={key} className={`flex-left flex-wrap top-gap-big units-gap site-row ${isOff ? 'bg-faded site-row-wide' : ''}`}>
+            <div id={key} key={key} className={`flex-left flex-wrap top-gap-big units-gap site-row ${isOff ? 'site-row-off site-row-wide' : ''}`}>
                 <div className="unit-1-3 unit-1-on-mobile site-desc">
                     <a href={this.state.ruleData.getDetailLink(key)}>
                         {key}
@@ -134,7 +134,7 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <GitHubCorners />
+                <GitHubCorners href="https://github.com/AlloyTeam/eslint-config-alloy" />
                 {this.renderHeader()}
                 <div className="flex-center">
                     <div className="container-fluid">

@@ -16,6 +16,9 @@
 .site-row-wide > *:last-child {
     padding-right: 0.9375rem;
 }
+.site-row-off {
+    background: url("./off.svg");
+}
 
 /* 表单 */
 .site-form > label {
