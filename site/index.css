@@ -39,7 +39,7 @@
 }
 .site-comment-off,
 .site-comment-fixable {
-    padding: 0 4px 2px 2px;
+    padding: 0 0.2em 0.1em 0.1em;
 }
 
 /* 代码 */
@@ -48,5 +48,5 @@
     border-radius: 0 !important;
 }
 .site-code-tag {
-    padding: 0 4px 2px;
+    padding: 0.1em 0.2em;
 }
