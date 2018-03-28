@@ -53,8 +53,8 @@
     "prismjs": "^1.12.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "typescript": "^2.6.1",
-    "typescript-eslint-parser": "^9.0.0",
+    "typescript": "^2.7.2",
+    "typescript-eslint-parser": "^14.0.0",
     "vue-eslint-parser": "^2.0.1-beta.2"
   }
 }
