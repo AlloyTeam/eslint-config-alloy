@@ -126,8 +126,8 @@ module.exports = {
         // 禁止在普通字符串中出现 es2015 的模版字符串的变量形式，如 'Hello ${name}!'
         'no-template-curly-in-string': 'error',
         // 禁止出现难以理解的多行表达式，如：
-        // let x = function () {}
-        // `hello`
+        // let foo = bar
+        // [1, 2, 3].forEach(baz);
         'no-unexpected-multiline': 'error',
         // 禁止在 return, throw, break 或 continue 之后还有代码
         'no-unreachable': 'error',

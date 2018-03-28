@@ -26,7 +26,7 @@
     "no-regex-spaces": "@fixable 禁止在正则表达式中出现连续的空格，必须使用 /foo {3}bar/ 代替",
     "no-sparse-arrays": "禁止在数组中出现连续的逗号，如 let foo = [,,]",
     "no-template-curly-in-string": "禁止在普通字符串中出现 es2015 的模版字符串的变量形式，如 'Hello ${name}!'",
-    "no-unexpected-multiline": "禁止出现难以理解的多行表达式，如：\nlet x = function () {}\n`hello`",
+    "no-unexpected-multiline": "禁止出现难以理解的多行表达式，如：\nlet foo = bar\n[1, 2, 3].forEach(baz);",
     "no-unreachable": "禁止在 return, throw, break 或 continue 之后还有代码",
     "no-unsafe-finally": "禁止在 finally 中出现 return, throw, break 或 continue",
     "no-unsafe-negation": "@fixable 禁止在 in 或 instanceof 操作符的左侧使用感叹号，如 if (!key in object)",
