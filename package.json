@@ -24,7 +24,8 @@
     "javascript",
     "styleguide",
     "react",
-    "vue"
+    "vue",
+    "typescript"
   ],
   "author": "xcatliu <xcatliu@gmail.com>",
   "contributors": [
@@ -34,7 +35,7 @@
   "bugs": {
     "url": "https://github.com/AlloyTeam/eslint-config-alloy/issues"
   },
-  "homepage": "https://github.com/AlloyTeam/eslint-config-alloy#readme",
+  "homepage": "https://alloyteam.github.io/eslint-config-alloy/",
   "publishConfig": {
     "access": "public"
   },
