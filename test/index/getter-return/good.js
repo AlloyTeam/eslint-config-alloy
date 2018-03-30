@@ -4,11 +4,6 @@ let user = {
         return 'Alex';
     }
 };
-Object.defineProperty(user, 'age', {
-    get: function () {
-        return 18;
-    }
-});
 class User {
     get name() {
         return this.name;

@@ -85,7 +85,7 @@ class App extends React.Component {
         return (
             <pre className="language-javascript site-code">
                 <code dangerouslySetInnerHTML={{
-                    __html: test.good.replace(/(\/\/ )(good)/, '$1<span class="bg-success text-inverse site-code-tag">$2</span>')
+                    __html: test.good.replace(/(\/\/ )(good)/g, '$1<span class="bg-success text-inverse site-code-tag">$2</span>')
                 }}></code>
             </pre>
         );
@@ -95,7 +95,7 @@ class App extends React.Component {
         return (
             <pre className="language-javascript site-code">
                 <code dangerouslySetInnerHTML={{
-                    __html: test.bad.replace(/(\/\/ )(bad)/, '$1<span class="bg-danger text-inverse site-code-tag">$2</span>')
+                    __html: test.bad.replace(/(\/\/ )(bad)/g, '$1<span class="bg-danger text-inverse site-code-tag">$2</span>')
                 }}></code>
             </pre>
         );
