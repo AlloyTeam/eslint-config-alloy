@@ -150,7 +150,7 @@ module.exports = {
         // 最佳实践
         // 这些规则通过一些最佳实践帮助你避免问题
         //
-        // 有 setter 的地方必须有 getter，有 getter 的地方可以没有 setter
+        // setter 必须有对应的 getter，getter 可以没有对应的 setter
         'accessor-pairs': [
             'error',
             {

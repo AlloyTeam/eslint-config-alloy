@@ -33,7 +33,7 @@
     "use-isnan": "必须使用 isNaN(foo) 而不是 foo === NaN",
     "valid-jsdoc": "注释必须符合 jsdoc 的规范\n@off jsdoc 要求太严格",
     "valid-typeof": "typeof 表达式比较的对象必须是 'undefined', 'object', 'boolean', 'number', 'string', 'function' 或 'symbol'",
-    "accessor-pairs": "有 setter 的地方必须有 getter，有 getter 的地方可以没有 setter",
+    "accessor-pairs": "setter 必须有对应的 getter，getter 可以没有对应的 setter",
     "array-callback-return": "数组的方法除了 forEach 之外，回调函数必须有返回值",
     "block-scoped-var": "将 var 定义的变量视为块作用域，禁止在块外使用",
     "class-methods-use-this": "在类的非静态方法中，必须存在对 this 的引用\n@off 太严格了",
