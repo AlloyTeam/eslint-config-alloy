@@ -1,7 +1,7 @@
 {
     "no-undef": "禁止使用未定义的变量\n@off 接口定义会报错",
     "spaced-comment": "注释的斜线或 * 后必须有空格\n@off 三斜线注释会报错",
-    "typescript/adjacent-overload-signatures": "函数有重载时，必须将重载成员分组在一起",
+    "typescript/adjacent-overload-signatures": "函数有重载时，必须将重载成员分组在一起\n@off 该规则现在有 bug https://github.com/AlloyTeam/eslint-config-alloy/issues/38",
     "typescript/class-name-casing": "类和接口的命名必须遵守帕斯卡命名法，比如 PersianCat",
     "typescript/explicit-member-accessibility": "必须手动指定类的属性和方法的可访问性（private 或 public）\n@off 太严格了",
     "typescript/interface-name-prefix": "接口必须以 I 开头\n@off 没必要限制",

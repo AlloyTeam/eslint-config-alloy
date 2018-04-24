@@ -65,7 +65,7 @@ module.exports = {
         ],
         // 禁止在正则表达式中出现 Ctrl 键的 ASCII 表示，即禁止使用 /\x1f/
         // @off 几乎不会遇到这种场景
-        'no-control-regex': 'error',
+        'no-control-regex': 'off',
         // @fixable 禁止使用 debugger
         'no-debugger': 'error',
         // 禁止在函数参数中出现重复名称的参数
@@ -124,7 +124,7 @@ module.exports = {
         'no-regex-spaces': 'error',
         // 禁止在数组中出现连续的逗号，如 let foo = [,,]
         'no-sparse-arrays': 'error',
-        // 禁止在普通字符串中出现 es2015 的模版字符串的变量形式，如 'Hello ${name}!'
+        // 禁止在普通字符串中出现模版字符串里的变量形式，如 'Hello ${name}!'
         'no-template-curly-in-string': 'error',
         // 禁止出现难以理解的多行表达式，如：
         // let foo = bar
