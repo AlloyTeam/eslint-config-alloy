@@ -13,6 +13,19 @@ module.exports = {
         './index.js'
     ],
     parser: 'vue-eslint-parser',
+    parserOptions: {
+        // 设置 js 的解析器为 babel-eslint
+        // https://github.com/mysticatea/vue-eslint-parser#-options
+        parser: 'babel-eslint',
+        ecmaVersion: 2017,
+        sourceType: 'module',
+        ecmaFeatures: {
+            // @TODO Deprecated https://eslint.org/docs/user-guide/configuring#deprecated
+            experimentalObjectRestSpread: true,
+            jsx: false,
+            modules: true
+        }
+    },
     plugins: [
         'vue'
     ],

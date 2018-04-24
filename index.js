@@ -14,6 +14,7 @@ module.exports = {
         ecmaVersion: 2017,
         sourceType: 'module',
         ecmaFeatures: {
+            // @TODO Deprecated https://eslint.org/docs/user-guide/configuring#deprecated
             experimentalObjectRestSpread: true,
             jsx: true,
             modules: true
@@ -73,7 +74,7 @@ module.exports = {
         'no-dupe-keys': 'error',
         // 禁止在 switch 语句中出现重复测试表达式的 case
         'no-duplicate-case': 'error',
-        // 禁止出现空代码块
+        // 禁止出现空代码块，允许 catch 为空代码块
         'no-empty': [
             'error',
             {
@@ -946,7 +947,7 @@ module.exports = {
         'no-useless-constructor': 'error',
         // @fixable 禁止解构时出现同样名字的的重命名，比如 let { foo: foo } = bar;
         'no-useless-rename': 'error',
-        // @fixable 禁止出现 var
+        // @fixable 禁止使用 var
         'no-var': 'error',
         // @fixable 必须使用 a = {b} 而不是 a = {b: b}
         // @off 没必要强制要求
@@ -969,7 +970,7 @@ module.exports = {
         // @fixable 必须使用 ... 而不是 apply，比如 foo(...args)
         // @off  apply 很常用
         'prefer-spread': 'off',
-        // @fixable 必须使用模版字面量而不是字符串连接
+        // @fixable 必须使用模版字符串而不是字符串连接
         // @off 字符串连接很常用
         'prefer-template': 'off',
         // generator 函数内必须有 yield

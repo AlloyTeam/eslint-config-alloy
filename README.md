@@ -8,7 +8,7 @@
 --- | --- | ---
 [标准规则](#标准规则) | [ESLint 规则][] | [babel-eslint][]
 [React](#react) | ESLint 规则、[eslint-plugin-react][] | babel-eslint
-[Vue](#vue) | ESLint 规则、[eslint-plugin-vue][] | [vue-eslint-parser@2.0.1-beta.2][]
+[Vue](#vue) | ESLint 规则、[eslint-plugin-vue][] | [vue-eslint-parser@2.0.1-beta.2][] babel-eslint
 [TypeScript](#typescript) | ESLint 规则、[eslint-plugin-typescript][] | [typescript-eslint-parser][]
 [TypeScript React](#typescript-react) | ESLint 规则、eslint-plugin-typescript、eslint-plugin-react | typescript-eslint-parser
 
@@ -131,7 +131,7 @@ module.exports = {
 安装：
 
 ```bash
-npm install --save-dev eslint babel-eslint vue-eslint-parser@2.0.1-beta.2 eslint-plugin-vue@3 eslint-config-alloy
+npm install --save-dev eslint babel-eslint vue-eslint-parser@2.0.1-beta.2 babel-eslint eslint-plugin-vue@3 eslint-config-alloy
 ```
 
 在你的项目根目录下创建 `.eslintrc.js`，并将以下内容复制到文件中：
