@@ -85,7 +85,7 @@ module.exports = {
         'no-empty-character-class': 'error',
         // 禁止将 catch 的第一个参数 error 重新赋值
         'no-ex-assign': 'error',
-        // @fixable 禁止在测试表达式中使用 !! 或 Boolean
+        // @fixable 禁止不必要的布尔类型转换，比如 !! 或 Boolean
         'no-extra-boolean-cast': 'error',
         // @fixable 禁止函数表达式中出现多余的括号，比如 let foo = (function () { return 1 })
         'no-extra-parens': [

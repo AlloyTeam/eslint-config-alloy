@@ -14,7 +14,7 @@
     "no-empty": "禁止出现空代码块，允许 catch 为空代码块",
     "no-empty-character-class": "禁止在正则表达式中使用空的字符集 []",
     "no-ex-assign": "禁止将 catch 的第一个参数 error 重新赋值",
-    "no-extra-boolean-cast": "@fixable 禁止在测试表达式中使用 !! 或 Boolean",
+    "no-extra-boolean-cast": "@fixable 禁止不必要的布尔类型转换，比如 !! 或 Boolean",
     "no-extra-parens": "@fixable 禁止函数表达式中出现多余的括号，比如 let foo = (function () { return 1 })",
     "no-extra-semi": "@fixable 禁止出现多余的分号",
     "no-func-assign": "禁止将一个函数声明重新赋值，如：\nfunction foo() {}\nfoo = bar",
