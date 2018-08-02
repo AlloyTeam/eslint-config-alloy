@@ -168,8 +168,10 @@ module.exports = {
 安装：
 
 ```bash
-npm install --save-dev eslint typescript typescript-eslint-parser eslint-plugin-typescript eslint-config-alloy
+npm install --save-dev eslint typescript typescript-eslint-parser babel-eslint eslint-plugin-typescript eslint-config-alloy
 ```
+
+注意：由于继承了基础规则，所以如果不安装 babel-eslint 就会报错。
 
 在你的项目根目录下创建 `.eslintrc.js`，并将以下内容复制到文件中：
 
