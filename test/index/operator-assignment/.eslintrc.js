@@ -1,9 +1,10 @@
 module.exports = {
     rules: {
         /**
-         * @memberof stylistic-issues
-         * @description @fixable 必须使用 x = x + y 而不是 x += y
-         * @off 没必要限制
+         * @category stylistic-issues
+         * @description 必须使用 x = x + y 而不是 x += y
+         * @reason 没必要限制
+         * @fixable
          */
         'operator-assignment': 'off'
     }

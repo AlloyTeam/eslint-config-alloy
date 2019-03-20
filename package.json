@@ -41,6 +41,8 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "@types/babylon": "^6.16.5",
+    "@types/node": "^11.11.4",
     "babel-eslint": "^8.0.2",
     "babylon": "^6.18.0",
     "eslint": "^4.11.0",

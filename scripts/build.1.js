@@ -3,7 +3,7 @@ const fse = require('fs-extra');
 
 const babylon = require('babylon');
 
-const rules = ['react', 'vue'];
+const rules = ['index'];
 
 rules.forEach((rule) => {
     buildRuleComments(rule);

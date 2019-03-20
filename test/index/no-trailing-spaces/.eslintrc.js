@@ -1,8 +1,9 @@
 module.exports = {
     rules: {
         /**
-         * @memberof stylistic-issues
-         * @description @fixable 禁止行尾有空格
+         * @category stylistic-issues
+         * @description 禁止行尾有空格
+         * @fixable
          */
         'no-trailing-spaces': 'error'
     }

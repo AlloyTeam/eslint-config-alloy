@@ -1,10 +1,9 @@
 module.exports = {
     rules: {
         /**
-         * @memberof stylistic-issues
-         * @description @fixable new, typeof 等后面必须有空格，++, -- 等禁止有空格，比如：
-         * let foo = new Person();
-         * bar = bar++;
+         * @category stylistic-issues
+         * @description new, typeof 等后面必须有空格，++, -- 等禁止有空格
+         * @fixable
          */
         'space-unary-ops': [
             'error',

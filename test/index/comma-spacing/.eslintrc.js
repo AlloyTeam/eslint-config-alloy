@@ -1,8 +1,9 @@
 module.exports = {
     rules: {
         /**
-         * @memberof stylistic-issues
-         * @description @fixable 逗号前禁止有空格，逗号后必须要有空格
+         * @category stylistic-issues
+         * @description 逗号前禁止有空格，逗号后必须要有空格
+         * @fixable
          */
         'comma-spacing': [
             'error',

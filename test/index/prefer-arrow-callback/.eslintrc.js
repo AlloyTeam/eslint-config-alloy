@@ -1,9 +1,10 @@
 module.exports = {
     rules: {
         /**
-         * @memberof ecmascript-6
-         * @description @fixable 必须使用箭头函数作为回调
-         * @off 没必要强制要求
+         * @category ecmascript-6
+         * @description 必须使用箭头函数作为回调
+         * @reason 没必要强制要求
+         * @fixable
          */
         'prefer-arrow-callback': 'off'
     }

@@ -1,9 +1,10 @@
 module.exports = {
     rules: {
         /**
-         * @memberof stylistic-issues
-         * @description @fixable 对象的最后一个属性末尾必须有逗号
-         * @off 没必要限制
+         * @category stylistic-issues
+         * @description 对象的最后一个属性末尾必须有逗号
+         * @reason 没必要限制
+         * @fixable
          */
         'comma-dangle': 'off'
     }

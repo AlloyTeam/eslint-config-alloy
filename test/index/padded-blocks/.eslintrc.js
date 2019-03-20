@@ -1,9 +1,10 @@
 module.exports = {
     rules: {
         /**
-         * @memberof stylistic-issues
-         * @description @fixable 代码块首尾必须要空行
-         * @off 没必要限制
+         * @category stylistic-issues
+         * @description 代码块首尾必须要空行
+         * @reason 没必要限制
+         * @fixable
          */
         'padded-blocks': 'off'
     }

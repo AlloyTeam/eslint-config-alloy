@@ -1,8 +1,9 @@
 module.exports = {
     rules: {
         /**
-         * @memberof stylistic-issues
-         * @description @fixable 结尾必须有分号
+         * @category stylistic-issues
+         * @description 结尾必须有分号
+         * @fixable
          */
         semi: [
             'error',

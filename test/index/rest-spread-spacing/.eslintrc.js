@@ -1,8 +1,9 @@
 module.exports = {
     rules: {
         /**
-         * @memberof ecmascript-6
-         * @description @fixable ... 的后面禁止有空格
+         * @category ecmascript-6
+         * @description ... 的后面禁止有空格
+         * @fixable
          */
         'rest-spread-spacing': ['error', 'never']
     }

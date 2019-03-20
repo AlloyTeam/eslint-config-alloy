@@ -1,8 +1,9 @@
 module.exports = {
     rules: {
         /**
-         * @memberof ecmascript-6
-         * @description @fixable ${name} 内的首尾禁止有空格
+         * @category ecmascript-6
+         * @description ${name} 内的首尾禁止有空格
+         * @fixable
          */
         'template-curly-spacing': ['error', 'never']
     }

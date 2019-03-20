@@ -1,9 +1,10 @@
 module.exports = {
     rules: {
         /**
-         * @memberof best-practices
-         * @description @fixable 禁止没必要的 return
-         * @off 没必要限制 return
+         * @category best-practices
+         * @description 禁止没必要的 return
+         * @reason 没必要限制 return
+         * @fixable
          */
         'no-useless-return': 'off'
     }

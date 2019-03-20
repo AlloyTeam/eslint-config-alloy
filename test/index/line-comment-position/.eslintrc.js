@@ -1,9 +1,9 @@
 module.exports = {
     rules: {
         /**
-         * @memberof stylistic-issues
+         * @category stylistic-issues
          * @description 单行注释必须写在上一行
-         * @off 没必要限制
+         * @reason 没必要限制
          */
         'line-comment-position': 'off'
     }

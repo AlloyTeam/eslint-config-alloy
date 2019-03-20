@@ -1,8 +1,9 @@
 module.exports = {
     rules: {
         /**
-         * @memberof stylistic-issues
-         * @description @fixable 一个缩进必须用四个空格替代
+         * @category stylistic-issues
+         * @description 一个缩进必须用四个空格替代
+         * @fixable
          */
         indent: [
             'error',

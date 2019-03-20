@@ -1,8 +1,9 @@
 module.exports = {
     rules: {
         /**
-         * @memberof stylistic-issues
-         * @description @fixable 对象字面量中冒号前面禁止有空格，后面必须有空格
+         * @category stylistic-issues
+         * @description 对象字面量中冒号前面禁止有空格，后面必须有空格
+         * @fixable
          */
         'key-spacing': [
             'error',

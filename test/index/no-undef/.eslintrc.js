@@ -1,7 +1,7 @@
 module.exports = {
     rules: {
         /**
-         * @memberof variables
+         * @category variables
          * @description 禁止使用未定义的变量
          */
         'no-undef': [

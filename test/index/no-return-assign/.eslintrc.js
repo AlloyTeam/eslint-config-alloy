@@ -1,7 +1,7 @@
 module.exports = {
     rules: {
         /**
-         * @memberof best-practices
+         * @category best-practices
          * @description 禁止在 return 语句里赋值
          */
         'no-return-assign': ['error', 'always']

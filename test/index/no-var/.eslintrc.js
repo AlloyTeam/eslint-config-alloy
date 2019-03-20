@@ -1,8 +1,9 @@
 module.exports = {
     rules: {
         /**
-         * @memberof ecmascript-6
-         * @description @fixable 禁止使用 var
+         * @category ecmascript-6
+         * @description 禁止使用 var
+         * @fixable
          */
         'no-var': 'error'
     }
