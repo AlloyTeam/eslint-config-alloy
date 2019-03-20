@@ -204,7 +204,7 @@
     "sort-keys": "对象字面量的键名必须排好序\n@off 没必要限制",
     "sort-vars": "变量申明必须排好序\n@off 没必要限制",
     "space-before-blocks": "@fixable if, function 等的大括号之前必须要有空格，比如 if (a) {",
-    "space-before-function-paren": "@fixable function 的小括号之前必须要有空格",
+    "space-before-function-paren": "@fixable 命名函数表达式括号前禁止有空格，箭头函数表达式括号前面必须有一个空格",
     "space-in-parens": "@fixable 小括号内的首尾禁止有空格",
     "space-infix-ops": "@fixable 操作符左右必须有空格，比如 let sum = 1 + 2;",
     "space-unary-ops": "@fixable new, typeof 等后面必须有空格，++, -- 等禁止有空格，比如：\nlet foo = new Person();\nbar = bar++;",

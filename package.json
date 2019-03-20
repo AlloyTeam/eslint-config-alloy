@@ -51,6 +51,7 @@
     "mobi-plugin-color": "^1.0.0",
     "mobi.css": "^3.1.1",
     "parcel-bundler": "^1.6.2",
+    "prettier": "^1.16.4",
     "prismjs": "^1.12.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
