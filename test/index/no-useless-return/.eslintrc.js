@@ -2,7 +2,7 @@ module.exports = {
     rules: {
         /**
          * 禁止没必要的 return
-         * @category best-practices
+         * @category Best Practices
          * @reason 没必要限制 return
          * @fixable
          */

@@ -2,7 +2,7 @@ module.exports = {
     rules: {
         /**
          * 变量必须先定义后使用
-         * @category variables
+         * @category Variables
          */
         'no-use-before-define': [
             'error',

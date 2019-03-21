@@ -2,7 +2,7 @@ module.exports = {
     rules: {
         /**
          * 禁止使用 void
-         * @category best-practices
+         * @category Best Practices
          */
         'no-void': 'error'
     }

@@ -2,7 +2,7 @@ module.exports = {
     rules: {
         /**
          * 禁止 if 里面有否定的表达式，比如：
-         * @category stylistic-issues
+         * @category Stylistic Issues
          * if (a !== b) {
          *     doSomething();
          * } else {

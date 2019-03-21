@@ -10,17 +10,32 @@ enum RuleNamespaces {
     vue = 'vue'
 }
 
-interface RuleMeta {
+const RuleCategoryPriority = {
+    'Possible Errors': 0,
+    'Best Practices': 1,
+    'Strict Mode': 2,
+    Variables: 3,
+    'Node.js and CommonJS': 4,
+    'Stylistic Issues': 5,
+    'ECMAScript 6': 6,
+    '': 99
+};
+
+type RuleCategory = keyof typeof RuleCategoryPriority;
+
+interface Rule {
+    name: string;
+    value: any;
     description: string;
-    category?: string;
+    category: RuleCategory;
     reason?: string;
     fixable?: boolean;
     [key: string]: string | boolean | undefined;
 }
 
-class EslintrcBuilder {
+class Builder {
     private namespace: RuleNamespaces;
-    private ruleList: string[];
+    private ruleList: Rule[];
 
     public constructor(namespace: RuleNamespaces) {
         this.namespace = namespace;
@@ -50,49 +65,45 @@ class EslintrcBuilder {
                     ruleName,
                     '.eslintrc.js'
                 );
-                const fileContent = fs.readFileSync(filePath, 'utf-8');
-                const comments = /\/\*\*.*\*\//gms.exec(fileContent);
-                let meta: RuleMeta = {
-                    description: ''
-                };
-                if (comments !== null) {
-                    const commentsAST = doctrine.parse(comments[0], { unwrap: true });
-                    meta.description = commentsAST.description;
-                    commentsAST.tags.forEach(({ title, description }) => {
-                        meta[title] = description === null ? true : description;
-                    });
+                return this.getRule(filePath);
+            })
+            .sort((aRule, bRule) => {
+                const aRuleCategory = aRule.category;
+                const bRuleCategory = bRule.category;
+
+                if (RuleCategoryPriority[aRuleCategory] > RuleCategoryPriority[bRuleCategory]) {
+                    return 1;
                 }
-                // const ruleContent = fileContent.replace(/^.*\n.*\n/, '').replace(/.*\n.*\n$/, '');
-                // console.log(ruleContent);
-
-                // let ruleMeta = {};
-
-                return '';
+                if (RuleCategoryPriority[aRuleCategory] < RuleCategoryPriority[bRuleCategory]) {
+                    return -1;
+                }
+                return aRule.name > bRule.name ? 1 : -1;
             });
-        // .sort((aRuleJson, bRuleJson) => {
-        //     const aRuleCategory = aRuleJson.meta.category;
-        //     const bRuleCategory = bRuleJson.meta.category;
-
-        //     if (
-        //         Builder.RuleCategoryPriority[aRuleCategory] >
-        //         Builder.RuleCategoryPriority[bRuleCategory]
-        //     ) {
-        //         return 1;
-        //     }
-        //     if (
-        //         Builder.RuleCategoryPriority[aRuleCategory] <
-        //         Builder.RuleCategoryPriority[bRuleCategory]
-        //     ) {
-        //         return -1;
-        //     }
-        //     return this.getRuleName(aRuleJson) > this.getRuleName(bRuleJson) ? 1 : -1;
-        // });
 
         return ruleList;
     }
 
-    private getRuleMeta() {}
+    private getRule(filePath: string) {
+        const fileModule = require(filePath);
+        const ruleName = Object.keys(fileModule.rules)[0];
+        const fileContent = fs.readFileSync(filePath, 'utf-8');
+        const comments = /\/\*\*.*\*\//gms.exec(fileContent);
+        let rule: Rule = {
+            name: ruleName,
+            value: fileModule.rules[ruleName],
+            description: '',
+            category: ''
+        };
+        if (comments !== null) {
+            const commentsAST = doctrine.parse(comments[0], { unwrap: true });
+            rule.description = commentsAST.description;
+            commentsAST.tags.forEach(({ title, description }) => {
+                rule[title] = description === null ? true : description;
+            });
+        }
+        return rule;
+    }
 }
 
-const builder = new EslintrcBuilder(RuleNamespaces.index);
+const builder = new Builder(RuleNamespaces.index);
 builder.build();

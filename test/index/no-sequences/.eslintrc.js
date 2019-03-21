@@ -2,7 +2,7 @@ module.exports = {
     rules: {
         /**
          * 禁止使用逗号操作符
-         * @category best-practices
+         * @category Best Practices
          */
         'no-sequences': 'error'
     }

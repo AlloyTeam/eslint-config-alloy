@@ -2,7 +2,7 @@ module.exports = {
     rules: {
         /**
          * 禁止使用 with
-         * @category best-practices
+         * @category Best Practices
          */
         'no-with': 'error'
     }

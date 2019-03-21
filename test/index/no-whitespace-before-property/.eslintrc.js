@@ -2,7 +2,7 @@ module.exports = {
     rules: {
         /**
          * 禁止属性前有空格，比如 foo. bar()
-         * @category stylistic-issues
+         * @category Stylistic Issues
          * @fixable
          */
         'no-whitespace-before-property': 'error'

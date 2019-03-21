@@ -2,7 +2,7 @@ module.exports = {
     rules: {
         /**
          * 结尾必须有分号
-         * @category stylistic-issues
+         * @category Stylistic Issues
          * @fixable
          */
         semi: [

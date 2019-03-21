@@ -2,7 +2,7 @@ module.exports = {
     rules: {
         /**
          * 禁止直接 new Object
-         * @category stylistic-issues
+         * @category Stylistic Issues
          */
         'no-new-object': 'error'
     }

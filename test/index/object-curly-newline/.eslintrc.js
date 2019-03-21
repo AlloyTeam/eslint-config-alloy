@@ -2,7 +2,7 @@ module.exports = {
     rules: {
         /**
          * 大括号内的首尾必须有换行
-         * @category stylistic-issues
+         * @category Stylistic Issues
          * @fixable
          */
         'object-curly-newline': [

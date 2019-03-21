@@ -2,7 +2,7 @@ module.exports = {
     rules: {
         /**
          * 禁止使用 delete
-         * @category variables
+         * @category Variables
          */
         'no-delete-var': 'error'
     }

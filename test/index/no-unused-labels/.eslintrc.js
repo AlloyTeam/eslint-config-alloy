@@ -2,7 +2,7 @@ module.exports = {
     rules: {
         /**
          * 禁止出现没用的 label
-         * @category best-practices
+         * @category Best Practices
          * @fixable
          */
         'no-unused-labels': 'error'

@@ -2,7 +2,7 @@ module.exports = {
     rules: {
         /**
          * 禁止直接使用 Buffer
-         * @category nodejs-and-commonjs
+         * @category Node.js and CommonJS
          */
         'no-buffer-constructor': 'error'
     }

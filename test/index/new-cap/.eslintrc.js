@@ -2,7 +2,7 @@ module.exports = {
     rules: {
         /**
          * new 后面的类名必须首字母大写
-         * @category stylistic-issues
+         * @category Stylistic Issues
          */
         'new-cap': [
             'error',

@@ -2,7 +2,7 @@ module.exports = {
     rules: {
         /**
          * 禁止将自己与自己比较
-         * @category best-practices
+         * @category Best Practices
          */
         'no-self-compare': 'error'
     }

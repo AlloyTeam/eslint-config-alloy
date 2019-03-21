@@ -2,7 +2,7 @@ module.exports = {
     rules: {
         /**
          * 禁止将自己赋值给自己
-         * @category best-practices
+         * @category Best Practices
          */
         'no-self-assign': 'error'
     }

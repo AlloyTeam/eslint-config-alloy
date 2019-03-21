@@ -2,7 +2,7 @@ module.exports = {
     rules: {
         /**
          * 禁止在 return 语句里赋值
-         * @category best-practices
+         * @category Best Practices
          */
         'no-return-assign': ['error', 'always']
     }
