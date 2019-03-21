@@ -45,6 +45,7 @@
     "@types/node": "^11.11.4",
     "babel-eslint": "^8.0.2",
     "babylon": "^6.18.0",
+    "doctrine": "^3.0.0",
     "eslint": "^4.11.0",
     "eslint-plugin-react": "^7.4.0",
     "eslint-plugin-typescript": "^0.8.0",
