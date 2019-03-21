@@ -1,8 +1,9 @@
 module.exports = {
     rules: {
         /**
+         * 注释的斜线或 * 后必须有空格
+         *
          * @category stylistic-issues
-         * @description 注释的斜线或 * 后必须有空格
          * @fixable
          */
         'spaced-comment': [

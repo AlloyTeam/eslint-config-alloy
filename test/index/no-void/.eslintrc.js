@@ -1,8 +1,9 @@
 module.exports = {
     rules: {
         /**
+         * 禁止使用 void
+         *
          * @category best-practices
-         * @description 禁止使用 void
          */
         'no-void': 'error'
     }

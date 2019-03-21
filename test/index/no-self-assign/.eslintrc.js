@@ -1,8 +1,9 @@
 module.exports = {
     rules: {
         /**
+         * 禁止将自己赋值给自己
+         *
          * @category best-practices
-         * @description 禁止将自己赋值给自己
          */
         'no-self-assign': 'error'
     }

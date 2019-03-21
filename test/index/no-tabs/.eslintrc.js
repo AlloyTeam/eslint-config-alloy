@@ -1,8 +1,9 @@
 module.exports = {
     rules: {
         /**
+         * 禁止使用 tabs
+         *
          * @category stylistic-issues
-         * @description 禁止使用 tabs
          */
         'no-tabs': 'error'
     }

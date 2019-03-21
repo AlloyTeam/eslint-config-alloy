@@ -1,8 +1,9 @@
 module.exports = {
     rules: {
         /**
+         * 代码块首尾必须要空行
+         *
          * @category stylistic-issues
-         * @description 代码块首尾必须要空行
          * @reason 没必要限制
          * @fixable
          */

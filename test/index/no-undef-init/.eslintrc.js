@@ -1,8 +1,9 @@
 module.exports = {
     rules: {
         /**
+         * 禁止将 undefined 赋值给变量
+         *
          * @category variables
-         * @description 禁止将 undefined 赋值给变量
          * @fixable
          */
         'no-undef-init': 'error'

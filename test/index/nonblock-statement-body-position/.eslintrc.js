@@ -1,8 +1,9 @@
 module.exports = {
     rules: {
         /**
+         * 禁止 if 后面不加大括号而写两行代码
+         *
          * @category stylistic-issues
-         * @description 禁止 if 后面不加大括号而写两行代码
          * @fixable
          */
         'nonblock-statement-body-position': [

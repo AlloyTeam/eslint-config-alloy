@@ -28,18 +28,22 @@ class EslintrcBuilder {
     private getRuleList() {
         const ruleList = fs
             .readdirSync(path.resolve(__dirname, '../test', this.namespace))
-            .filter(
-                (filename) =>
-                    fs
-                        .lstatSync(path.resolve(__dirname, '../test', this.namespace, filename))
-                        .isDirectory() && filename === 'accessor-pairs'
+            .filter((filename) =>
+                fs
+                    .lstatSync(path.resolve(__dirname, '../test', this.namespace, filename))
+                    .isDirectory()
             )
             .map((ruleName) => {
                 const fileContent = fs.readFileSync(
                     path.resolve(__dirname, '../test', this.namespace, ruleName, '.eslintrc.js'),
                     'utf-8'
                 );
-                fileContent.replace(/(@category.*)(\n.*)(@description.*)\n/, '$3$2$1\n');
+                const newFileContent = fileContent.replace(/@description (.*)\n/, '$1\n');
+                fs.writeFileSync(
+                    path.resolve(__dirname, '../test', this.namespace, ruleName, '.eslintrc.js'),
+                    newFileContent,
+                    'utf-8'
+                );
                 // const fileAST = babylon.parse(fileContent);
                 // fileAST.tokens.forEach((token) => {
                 //     console.log(token);

@@ -1,8 +1,9 @@
 module.exports = {
     rules: {
         /**
+         * new 后面的类名必须首字母大写
+         *
          * @category stylistic-issues
-         * @description new 后面的类名必须首字母大写
          */
         'new-cap': [
             'error',

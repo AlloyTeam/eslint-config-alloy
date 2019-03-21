@@ -1,8 +1,9 @@
 module.exports = {
     rules: {
         /**
+         * 禁止使用八进制的转义符
+         *
          * @category best-practices
-         * @description 禁止使用八进制的转义符
          */
         'no-octal-escape': 'error'
     }
