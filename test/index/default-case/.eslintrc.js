@@ -2,7 +2,6 @@ module.exports = {
     rules: {
         /**
          * switch 语句必须有 default
-         *
          * @category best-practices
          * @reason 太严格了
          */

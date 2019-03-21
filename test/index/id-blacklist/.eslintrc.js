@@ -2,7 +2,6 @@ module.exports = {
     rules: {
         /**
          * 禁止使用指定的标识符
-         *
          * @category stylistic-issues
          * @reason 它用于限制某个具体的标识符不能使用
          */

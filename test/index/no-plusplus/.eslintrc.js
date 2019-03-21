@@ -2,7 +2,6 @@ module.exports = {
     rules: {
         /**
          * 禁止使用 ++ 或 --
-         *
          * @category stylistic-issues
          * @reason 没必要限制
          */
