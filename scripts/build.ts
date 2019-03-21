@@ -1,12 +1,21 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
+import * as doctrine from 'doctrine';
 // import * as babylon from 'babylon';
 
 enum RuleNamespaces {
     index = 'index',
     react = 'react',
     vue = 'vue'
+}
+
+interface RuleMeta {
+    description: string;
+    category?: string;
+    reason?: string;
+    fixable?: boolean;
+    [key: string]: string | boolean | undefined;
 }
 
 class EslintrcBuilder {
@@ -28,30 +37,31 @@ class EslintrcBuilder {
     private getRuleList() {
         const ruleList = fs
             .readdirSync(path.resolve(__dirname, '../test', this.namespace))
-            .filter((filename) =>
+            .filter((ruleName) =>
                 fs
-                    .lstatSync(path.resolve(__dirname, '../test', this.namespace, filename))
+                    .lstatSync(path.resolve(__dirname, '../test', this.namespace, ruleName))
                     .isDirectory()
             )
             .map((ruleName) => {
-                const fileContent = fs.readFileSync(
-                    path.resolve(__dirname, '../test', this.namespace, ruleName, '.eslintrc.js'),
-                    'utf-8'
+                const filePath = path.resolve(
+                    __dirname,
+                    '../test',
+                    this.namespace,
+                    ruleName,
+                    '.eslintrc.js'
                 );
-                const newFileContent = fileContent.replace(/@description (.*)\n/, '$1\n');
-                fs.writeFileSync(
-                    path.resolve(__dirname, '../test', this.namespace, ruleName, '.eslintrc.js'),
-                    newFileContent,
-                    'utf-8'
-                );
-                // const fileAST = babylon.parse(fileContent);
-                // fileAST.tokens.forEach((token) => {
-                //     console.log(token);
-                // });
-                // const comments = /\/\*\*.*\*\//gms.exec(fileContent);
-                // if (comments !== null) {
-                //     console.log(comments[0]);
-                // }
+                const fileContent = fs.readFileSync(filePath, 'utf-8');
+                const comments = /\/\*\*.*\*\//gms.exec(fileContent);
+                let meta: RuleMeta = {
+                    description: ''
+                };
+                if (comments !== null) {
+                    const commentsAST = doctrine.parse(comments[0], { unwrap: true });
+                    meta.description = commentsAST.description;
+                    commentsAST.tags.forEach(({ title, description }) => {
+                        meta[title] = description === null ? true : description;
+                    });
+                }
                 // const ruleContent = fileContent.replace(/^.*\n.*\n/, '').replace(/.*\n.*\n$/, '');
                 // console.log(ruleContent);
 
@@ -80,6 +90,8 @@ class EslintrcBuilder {
 
         return ruleList;
     }
+
+    private getRuleMeta() {}
 }
 
 const builder = new EslintrcBuilder(RuleNamespaces.index);

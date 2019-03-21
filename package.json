@@ -42,6 +42,7 @@
   "dependencies": {},
   "devDependencies": {
     "@types/babylon": "^6.16.5",
+    "@types/doctrine": "0.0.3",
     "@types/node": "^11.11.4",
     "babel-eslint": "^8.0.2",
     "babylon": "^6.18.0",
