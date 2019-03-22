@@ -40,10 +40,7 @@
         "access": "public"
     },
     "dependencies": {},
-    "peerDependencies": {
-        "eslint": "^4.11.0",
-        "eslint-plugin-react": "^7.4.0"
-    },
+    "peerDependencies": {},
     "devDependencies": {
         "@types/babylon": "^6.16.5",
         "@types/doctrine": "0.0.3",
@@ -52,6 +49,8 @@
         "babel-eslint": "^8.0.2",
         "babylon": "^6.18.0",
         "doctrine": "^3.0.0",
+        "eslint": "^5.15.3",
+        "eslint-plugin-react": "^7.4.0",
         "eslint-plugin-typescript": "^0.8.0",
         "eslint-plugin-vue": "^3.13.1",
         "fs-extra": "^5.0.0",

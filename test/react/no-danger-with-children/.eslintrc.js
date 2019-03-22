@@ -1,8 +1,7 @@
 module.exports = {
     rules: {
         /**
-         * @memberof
-         * @description 禁止在使用了 dangerouslySetInnerHTML 的组建内添加 children
+         * 禁止在使用了 dangerouslySetInnerHTML 的组建内添加 children
          */
         'react/no-danger-with-children': 'error'
     }
