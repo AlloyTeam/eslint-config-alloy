@@ -2,13 +2,11 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 import * as doctrine from 'doctrine';
-// import * as babylon from 'babylon';
+import * as prettier from 'prettier';
 
-enum RuleNamespaces {
-    index = 'index',
-    react = 'react',
-    vue = 'vue'
-}
+const pkg = require('../package.json');
+
+type RuleNamespaces = 'index' | 'react' | 'vue';
 
 const RuleCategoryPriority = {
     'Possible Errors': 0,
@@ -30,20 +28,74 @@ interface Rule {
     category: RuleCategory;
     reason?: string;
     fixable?: boolean;
+    comments: string;
     [key: string]: string | boolean | undefined;
 }
 
-class Builder {
-    private namespace: RuleNamespaces;
-    private ruleList: Rule[];
+interface RuleMap {
+    [key: string]: Rule;
+}
 
-    public constructor(namespace: RuleNamespaces) {
+class Builder {
+    private namespace: RuleNamespaces = 'index';
+    private ruleList: Rule[] = [];
+    private ruleMap: RuleMap = {};
+    private rulesContent: string = '';
+    private baseEslintrcContent = this.getBaseEslintrc();
+
+    public build(namespace: RuleNamespaces) {
         this.namespace = namespace;
         this.ruleList = this.getRuleList();
+        this.ruleMap = this.getRuleMap();
+        this.rulesContent = this.getRulesContent();
+        this.buildRulesJson();
+        this.buildEslintConfig();
     }
 
-    public build() {
-        console.log(this.ruleList);
+    private buildRulesJson() {
+        fs.writeFileSync(
+            path.resolve(__dirname, '../site/rules.json'),
+            prettier.format(JSON.stringify(this.ruleMap), {
+                ...require('../prettier.config'),
+                parser: 'json'
+            }),
+            'utf-8'
+        );
+    }
+
+    private buildEslintConfig() {
+        const eslintConfigContent = `
+/**
+ * ${pkg.description}
+ * ${pkg.homepage}
+ *
+ * 贡献者：
+ *     ${pkg.author}
+ *     ${pkg.contributors.join('\n *     ')}
+ *
+ * 依赖版本：
+ *     ${Object.keys(pkg.peerDependencies)
+     .map((key) => `${key} ${pkg.peerDependencies[key]}`)
+     .join('\n *     ')}
+ *
+ * 此文件是由脚本 scripts/build.ts 自动生成
+ * 
+ * @category 此规则属于哪种分类
+ * @reason 为什么要开启（关闭）此规则
+ * @fixable 支持自动修复
+ */
+${this.baseEslintrcContent.replace('};', `,rules:{${this.rulesContent}}};`)}
+        `;
+
+        fs.writeFileSync(
+            path.resolve(__dirname, '../index.js'),
+            // 使用 prettier 格式化文件内容
+            prettier.format(eslintConfigContent, {
+                ...require('../prettier.config'),
+                parser: 'babel'
+            }),
+            'utf-8'
+        );
     }
 
     /**
@@ -92,7 +144,8 @@ class Builder {
             name: ruleName,
             value: fileModule.rules[ruleName],
             description: '',
-            category: ''
+            category: '',
+            comments: ''
         };
         if (comments !== null) {
             const commentsAST = doctrine.parse(comments[0], { unwrap: true });
@@ -100,10 +153,31 @@ class Builder {
             commentsAST.tags.forEach(({ title, description }) => {
                 rule[title] = description === null ? true : description;
             });
+            rule.comments = comments[0];
         }
         return rule;
     }
+
+    private getRuleMap() {
+        return this.ruleList.reduce<RuleMap>((prev, rule) => {
+            prev[rule.name] = rule;
+            return prev;
+        }, {});
+    }
+
+    private getBaseEslintrc() {
+        return fs.readFileSync(path.resolve(__dirname, '../test/.eslintrc.js'), 'utf-8');
+    }
+
+    private getRulesContent() {
+        return this.ruleList
+            .map(
+                (rule) =>
+                    `\n${rule.comments}\n'${rule.name}': ${JSON.stringify(rule.value, null, 4)},`
+            )
+            .join('');
+    }
 }
 
-const builder = new Builder(RuleNamespaces.index);
-builder.build();
+const builder = new Builder();
+builder.build('index');

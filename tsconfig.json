@@ -3,6 +3,7 @@
         "module": "commonjs",
         "strict": true,
         "noUnusedLocals": true,
-        "noUnusedParameters": true
+        "noUnusedParameters": true,
+        "resolveJsonModule": true
     }
 }
