@@ -132,6 +132,13 @@
         "comments": "/**\n         * 禁止出现多余的分号\n         * @category Possible Errors\n         * @fixable\n         */",
         "fixable": true
     },
+    "no-func-assign": {
+        "name": "no-func-assign",
+        "value": "error",
+        "description": "禁止将一个函数声明重新赋值，如：",
+        "category": "Possible Errors",
+        "comments": "/**\n         * 禁止将一个函数声明重新赋值，如：\n         * @category Possible Errors\n         */"
+    },
     "no-inner-declarations": {
         "name": "no-inner-declarations",
         "value": ["error", "both"],
@@ -197,6 +204,13 @@
         "description": "禁止在普通字符串中出现模版字符串里的变量形式，如 'Hello ${name}!'",
         "category": "Possible Errors",
         "comments": "/**\n         * 禁止在普通字符串中出现模版字符串里的变量形式，如 'Hello ${name}!'\n         * @category Possible Errors\n         */"
+    },
+    "no-unexpected-multiline": {
+        "name": "no-unexpected-multiline",
+        "value": "error",
+        "description": "禁止出现难以理解的多行表达式",
+        "category": "Possible Errors",
+        "comments": "/**\n         * 禁止出现难以理解的多行表达式\n         * @category Possible Errors\n         */"
     },
     "no-unreachable": {
         "name": "no-unreachable",
@@ -432,13 +446,6 @@
         "comments": "/**\n         * 表示小数时，禁止省略 0，比如 .5\n         * @category Best Practices\n         * @fixable\n         */",
         "fixable": true
     },
-    "no-func-assign": {
-        "name": "no-func-assign",
-        "value": "error",
-        "description": "禁止将一个函数声明重新赋值，如：",
-        "category": "Possible Errors\nfunction foo() {}\nfoo = bar",
-        "comments": "/**\n         * 禁止将一个函数声明重新赋值，如：\n         * @category Possible Errors\n         * function foo() {}\n         * foo = bar\n         */"
-    },
     "no-global-assign": {
         "name": "no-global-assign",
         "value": "error",
@@ -500,9 +507,9 @@
     "no-loop-func": {
         "name": "no-loop-func",
         "value": "error",
-        "description": "禁止在循环内的函数中出现循环体条件语句中定义的变量，比如：",
-        "category": "Best Practices\nfor (var i = 0; i < 10; i++) {\n    (function () { return i })();\n}",
-        "comments": "/**\n         * 禁止在循环内的函数中出现循环体条件语句中定义的变量，比如：\n         * @category Best Practices\n         * for (var i = 0; i < 10; i++) {\n         *     (function () { return i })();\n         * }\n         */"
+        "description": "禁止在循环内的函数中出现循环体条件语句中定义的变量",
+        "category": "Best Practices",
+        "comments": "/**\n         * 禁止在循环内的函数中出现循环体条件语句中定义的变量\n         * @category Best Practices\n         */"
     },
     "no-magic-numbers": {
         "name": "no-magic-numbers",
@@ -537,14 +544,6 @@
         "description": "禁止使用 \\ 来换行字符串",
         "category": "Best Practices",
         "comments": "/**\n         * 禁止使用 \\ 来换行字符串\n         * @category Best Practices\n         */"
-    },
-    "no-negated-condition": {
-        "name": "no-negated-condition",
-        "value": "off",
-        "description": "禁止 if 里面有否定的表达式，比如：",
-        "category": "Stylistic Issues\nif (a !== b) {\n    doSomething();\n} else {\n    doSomethingElse();\n}",
-        "comments": "/**\n         * 禁止 if 里面有否定的表达式，比如：\n         * @category Stylistic Issues\n         * if (a !== b) {\n         *     doSomething();\n         * } else {\n         *     doSomethingElse();\n         * }\n         * @reason 否定的表达式可以把逻辑表达的更清楚\n         */",
-        "reason": "否定的表达式可以把逻辑表达的更清楚"
     },
     "no-new": {
         "name": "no-new",
@@ -658,13 +657,6 @@
         "description": "禁止 throw 字面量，必须 throw 一个 Error 对象",
         "category": "Best Practices",
         "comments": "/**\n         * 禁止 throw 字面量，必须 throw 一个 Error 对象\n         * @category Best Practices\n         */"
-    },
-    "no-unexpected-multiline": {
-        "name": "no-unexpected-multiline",
-        "value": "error",
-        "description": "禁止出现难以理解的多行表达式，如：",
-        "category": "Possible Errors\nlet foo = bar\n[1, 2, 3].forEach(baz);",
-        "comments": "/**\n         * 禁止出现难以理解的多行表达式，如：\n         * @category Possible Errors\n         * let foo = bar\n         * [1, 2, 3].forEach(baz);\n         */"
     },
     "no-unmodified-loop-condition": {
         "name": "no-unmodified-loop-condition",
@@ -1343,6 +1335,14 @@
         "category": "Stylistic Issues",
         "comments": "/**\n         * 禁止出现超过三行的连续空行\n         * @category Stylistic Issues\n         * @fixable\n         */",
         "fixable": true
+    },
+    "no-negated-condition": {
+        "name": "no-negated-condition",
+        "value": "off",
+        "description": "禁止 if 里面有否定的表达式",
+        "category": "Stylistic Issues",
+        "comments": "/**\n         * 禁止 if 里面有否定的表达式\n         * @category Stylistic Issues\n         * @reason 否定的表达式可以把逻辑表达的更清楚\n         */",
+        "reason": "否定的表达式可以把逻辑表达的更清楚"
     },
     "no-nested-ternary": {
         "name": "no-nested-ternary",

@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "start": "npm test && npm run site",
-        "build": "node ./scripts/build.js && parcel build site/index.html --out-dir docs --public-url ./",
+        "build": "ts-node scripts/build.ts",
         "site": "node ./scripts/build.js && parcel site/index.html",
         "test": "npm run lint && node ./test/index.js",
         "lint": "eslint --ext .js,.vue --ignore-pattern bad.* ."
@@ -62,7 +62,8 @@
         "prismjs": "^1.12.2",
         "react": "^16.2.0",
         "react-dom": "^16.2.0",
-        "typescript": "^2.7.2",
+        "ts-node": "^8.0.3",
+        "typescript": "^3.3.4000",
         "typescript-eslint-parser": "^14.0.0",
         "vue-eslint-parser": "^2.0.1-beta.2"
     }

@@ -149,6 +149,11 @@ module.exports = {
          */
         'no-extra-semi': 'error',
         /**
+         * 禁止将一个函数声明重新赋值，如：
+         * @category Possible Errors
+         */
+        'no-func-assign': 'error',
+        /**
          * 禁止在 if 代码块内出现函数声明
          * @category Possible Errors
          */
@@ -198,6 +203,11 @@ module.exports = {
          * @category Possible Errors
          */
         'no-template-curly-in-string': 'error',
+        /**
+         * 禁止出现难以理解的多行表达式
+         * @category Possible Errors
+         */
+        'no-unexpected-multiline': 'error',
         /**
          * 禁止在 return, throw, break 或 continue 之后还有代码
          * @category Possible Errors
@@ -393,13 +403,6 @@ module.exports = {
          */
         'no-floating-decimal': 'error',
         /**
-         * 禁止将一个函数声明重新赋值，如：
-         * @category Possible Errors
-         * function foo() {}
-         * foo = bar
-         */
-        'no-func-assign': 'error',
-        /**
          * 禁止对全局变量赋值
          * @category Best Practices
          */
@@ -447,11 +450,8 @@ module.exports = {
          */
         'no-lone-blocks': 'error',
         /**
-         * 禁止在循环内的函数中出现循环体条件语句中定义的变量，比如：
+         * 禁止在循环内的函数中出现循环体条件语句中定义的变量
          * @category Best Practices
-         * for (var i = 0; i < 10; i++) {
-         *     (function () { return i })();
-         * }
          */
         'no-loop-func': 'error',
         /**
@@ -482,17 +482,6 @@ module.exports = {
          * @category Best Practices
          */
         'no-multi-str': 'error',
-        /**
-         * 禁止 if 里面有否定的表达式，比如：
-         * @category Stylistic Issues
-         * if (a !== b) {
-         *     doSomething();
-         * } else {
-         *     doSomethingElse();
-         * }
-         * @reason 否定的表达式可以把逻辑表达的更清楚
-         */
-        'no-negated-condition': 'off',
         /**
          * 禁止直接 new 一个类而不赋值
          * @category Best Practices
@@ -574,13 +563,6 @@ module.exports = {
          * @category Best Practices
          */
         'no-throw-literal': 'error',
-        /**
-         * 禁止出现难以理解的多行表达式，如：
-         * @category Possible Errors
-         * let foo = bar
-         * [1, 2, 3].forEach(baz);
-         */
-        'no-unexpected-multiline': 'error',
         /**
          * 循环内必须对循环条件的变量有修改
          * @category Best Practices
@@ -1166,6 +1148,12 @@ module.exports = {
                 maxBOF: 1
             }
         ],
+        /**
+         * 禁止 if 里面有否定的表达式
+         * @category Stylistic Issues
+         * @reason 否定的表达式可以把逻辑表达的更清楚
+         */
+        'no-negated-condition': 'off',
         /**
          * 禁止使用嵌套的三元表达式，比如 a ? b : c ? d : e
          * @category Stylistic Issues
