@@ -138,8 +138,9 @@ class Builder {
  *     ${pkg.contributors.join('\n *     ')}
  *
  * 依赖版本：
- *     ${Object.keys(pkg.peerDependencies)
-     .map((key) => `${key} ${pkg.peerDependencies[key]}`)
+ *     ${Object.keys(pkg.devDependencies)
+     .filter((key) => key.indexOf('eslint') !== -1)
+     .map((key) => `${key} ${pkg.devDependencies[key]}`)
      .join('\n *     ')}
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
@@ -147,7 +148,8 @@ class Builder {
  * @category 此规则属于哪种分类
  * @reason 为什么要开启（关闭）此规则
  * @fixable 支持自动修复
- */`;
+ */
+`;
     }
 
     private writeWithPrettier(filePath: string, content: string) {

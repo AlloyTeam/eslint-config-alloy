@@ -63,8 +63,6 @@
         "react": "^16.2.0",
         "react-dom": "^16.2.0",
         "ts-node": "^8.0.3",
-        "typescript": "^3.3.4000",
-        "typescript-eslint-parser": "^14.0.0",
-        "vue-eslint-parser": "^2.0.1-beta.2"
+        "typescript": "^3.3.4000"
     }
 }

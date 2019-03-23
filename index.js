@@ -7,8 +7,12 @@
  *     heyli <lcxfs1991@gmail.com>
  *
  * 依赖版本：
- *     eslint ^4.11.0
+ *     @typescript-eslint/eslint-plugin ^1.5.0
+ *     babel-eslint ^8.0.2
+ *     eslint ^5.15.3
  *     eslint-plugin-react ^7.4.0
+ *     eslint-plugin-typescript ^0.8.0
+ *     eslint-plugin-vue ^3.13.1
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  *
