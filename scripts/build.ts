@@ -139,7 +139,10 @@ class Builder {
  *
  * 依赖版本：
  *     ${Object.keys(pkg.devDependencies)
-     .filter((key) => key.indexOf('eslint') !== -1)
+     .filter((key) => key.indexOf('eslint') !== -1 && key.indexOf('@types') === -1)
+     .sort((a, b) => {
+         return a.indexOf('eslint') > b.indexOf('eslint') ? 1 : -1;
+     })
      .map((key) => `${key} ${pkg.devDependencies[key]}`)
      .join('\n *     ')}
  *

@@ -5,14 +5,14 @@
  * 贡献者：
  *     xcatliu <xcatliu@gmail.com>
  *     heyli <lcxfs1991@gmail.com>
+ *     DiamondYuan <admin@diamondyuan.com>
+ *     Dash Chen <noreply@github.com>
+ *     Swan <noreply@github.com>
  *
  * 依赖版本：
- *     @typescript-eslint/eslint-plugin ^1.5.0
- *     babel-eslint ^8.0.2
  *     eslint ^5.15.3
- *     eslint-plugin-react ^7.4.0
- *     eslint-plugin-typescript ^0.8.0
- *     eslint-plugin-vue ^3.13.1
+ *     eslint-plugin-react ^7.12.4
+ *     babel-eslint ^10.0.1
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  *

@@ -5,14 +5,14 @@
  * 贡献者：
  *     xcatliu <xcatliu@gmail.com>
  *     heyli <lcxfs1991@gmail.com>
+ *     DiamondYuan <admin@diamondyuan.com>
+ *     Dash Chen <noreply@github.com>
+ *     Swan <noreply@github.com>
  *
  * 依赖版本：
- *     @typescript-eslint/eslint-plugin ^1.5.0
- *     babel-eslint ^8.0.2
  *     eslint ^5.15.3
- *     eslint-plugin-react ^7.4.0
- *     eslint-plugin-typescript ^0.8.0
- *     eslint-plugin-vue ^3.13.1
+ *     eslint-plugin-react ^7.12.4
+ *     babel-eslint ^10.0.1
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  *
@@ -24,12 +24,19 @@ module.exports = {
     parser: 'babel-eslint',
     parserOptions: {
         ecmaVersion: 2019,
+        // ECMAScript modules 模式
         sourceType: 'module',
         ecmaFeatures: {
+            // 不允许 return 语句出现在 global 环境下
             globalReturn: false,
+            // 开启全局 script 模式
             impliedStrict: true,
             jsx: true
-        }
+        },
+        // 即使没有 babelrc 配置文件，也使用 babel-eslint 来解析
+        requireConfigFile: false,
+        // 仅允许 import export 语句出现在模块的顶层
+        allowImportExportEverywhere: false
     },
     env: {
         browser: true,
@@ -55,6 +62,12 @@ module.exports = {
                 allowImplicit: false
             }
         ],
+        /**
+         * 禁止将 async 函数做为 new Promise 的回调函数
+         * @category Possible Errors
+         * @reason 出现这种情况时，一般不需要使用 new Promise 实现异步了
+         */
+        'no-async-promise-executor': 'error',
         /**
          * 禁止将 await 写在循环里，因为这样就无法同时发送多个异步请求了
          * @category Possible Errors
@@ -96,14 +109,14 @@ module.exports = {
         /**
          * 禁止使用 debugger
          * @category Possible Errors
-         * @fixable
          */
         'no-debugger': 'error',
         /**
          * 禁止在函数参数中出现重复名称的参数
          * @category Possible Errors
+         * @reason 使用 babel 时，在编译阶段就会报错了
          */
-        'no-dupe-args': 'error',
+        'no-dupe-args': 'off',
         /**
          * 禁止在对象字面量中出现重复名称的键名
          * @category Possible Errors
@@ -181,6 +194,12 @@ module.exports = {
             }
         ],
         /**
+         * 禁止正则表达式中使用肉眼无法区分的特殊字符
+         * @category Possible Errors
+         * @reason 某些特殊字符很难看出差异，最好不要在正则中使用
+         */
+        'no-misleading-character-class': 'error',
+        /**
          * 禁止将 Math, JSON 或 Reflect 直接作为函数调用
          * @category Possible Errors
          */
@@ -228,6 +247,12 @@ module.exports = {
          * @fixable
          */
         'no-unsafe-negation': 'error',
+        /**
+         * 禁止将 await 或 yield 的结果做为运算符的后面项
+         * @category Possible Errors
+         * @reason 这样会导致不符合预期的结果
+         */
+        'require-atomic-updates': 'error',
         /**
          * 必须使用 isNaN(foo) 而不是 foo === NaN
          * @category Possible Errors
@@ -323,6 +348,11 @@ module.exports = {
          * @category Best Practices
          */
         'guard-for-in': 'error',
+        /**
+         * 限制一个文件中类的数量
+         * @category Best Practices
+         */
+        'max-classes-per-file': 'off',
         /**
          * 禁止使用 alert
          * @category Best Practices
@@ -596,6 +626,12 @@ module.exports = {
          */
         'no-useless-call': 'error',
         /**
+         * 禁止在 catch 中仅仅只是把错误 throw 出去
+         * @category Best Practices
+         * @reason 这样的 catch 是没有意义的，等价于直接执行 try 里的代码
+         */
+        'no-useless-catch': 'error',
+        /**
          * 禁止出现没必要的字符串连接
          * @category Best Practices
          */
@@ -630,6 +666,12 @@ module.exports = {
          */
         'no-with': 'error',
         /**
+         * 使用 ES2018 中的正则表达式命名组
+         * @category Best Practices
+         * @reason 正则表达式已经较难理解了，没必要强制加上命名组
+         */
+        'prefer-named-capture-group': 'off',
+        /**
          * Promise 的 reject 中必须传入 Error 对象，而不是字面量
          * @category Best Practices
          */
@@ -645,6 +687,11 @@ module.exports = {
          * @reason async function 中没有 await 的写法很常见，比如 koa 的示例中就有这种用法
          */
         'require-await': 'off',
+        /**
+         * 正则表达式中必须要加上 u 标志
+         * @category Best Practices
+         */
+        'require-unicode-regexp': 'off',
         /**
          * var 必须在作用域的最前面
          * @category Best Practices
@@ -942,6 +989,12 @@ module.exports = {
          */
         'func-style': 'off',
         /**
+         * 函数参数要么同在一行要么每行一个
+         * @category Stylistic Issues
+         * @fixable
+         */
+        'function-paren-newline': ['error', 'multiline'],
+        /**
          * 禁止使用指定的标识符
          * @category Stylistic Issues
          * @reason 它用于限制某个具体的标识符不能使用
@@ -959,6 +1012,12 @@ module.exports = {
          * @reason 没必要限制变量名
          */
         'id-match': 'off',
+        /**
+         * 箭头函数的函数体必须与箭头在同一行，或者被括号包裹
+         * @category Stylistic Issues
+         * @autofix
+         */
+        'implicit-arrow-linebreak': ['error', 'beside'],
         /**
          * 一个缩进必须用四个空格替代
          * @category Stylistic Issues
@@ -1024,6 +1083,13 @@ module.exports = {
          */
         'lines-around-comment': 'off',
         /**
+         * 类的成员之间是否需要空行
+         * @category Stylistic Issues
+         * @reason 有时为了紧凑需要挨在一起，有时为了可读性需要空一行
+         * @fixable
+         */
+        'lines-between-class-members': 'off',
+        /**
          * 代码块嵌套的深度禁止超过 5 层
          * @category Stylistic Issues
          */
@@ -1040,6 +1106,11 @@ module.exports = {
          * @reason 没必要限制
          */
         'max-lines': 'off',
+        /**
+         * 限制函数块中的代码行数
+         * @category Stylistic Issues
+         */
+        'max-lines-per-function': 'off',
         /**
          * 回调函数嵌套禁止超过 3 层，多了请用 async await 替代
          * @category Stylistic Issues
@@ -1062,6 +1133,13 @@ module.exports = {
          * @reason 没必要限制
          */
         'max-statements-per-line': 'off',
+        /**
+         * 约束多行注释的格式
+         * @category Stylistic Issues
+         * @reason 能写注释已经不容易了，不需要限制太多
+         * @fixable
+         */
+        'multiline-comment-style': 'off',
         /**
          * 三元表达式必须得换行
          * @category Stylistic Issues
@@ -1303,6 +1381,12 @@ module.exports = {
          */
         'padding-line-between-statements': 'off',
         /**
+         * 使用 ... 而不是 Object.assign
+         * @category Stylistic Issues
+         * @fixable
+         */
+        'prefer-object-spread': 'error',
+        /**
          * 对象字面量的键名禁止用引号括起来
          * @category Stylistic Issues
          * @reason 没必要限制
@@ -1362,6 +1446,7 @@ module.exports = {
          * 变量申明必须排好序
          * @category Stylistic Issues
          * @reason 没必要限制
+         * @autofix
          */
         'sort-vars': 'off',
         /**
