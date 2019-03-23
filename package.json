@@ -50,7 +50,7 @@
         "babel-eslint": "^10.0.1",
         "babylon": "^6.18.0",
         "doctrine": "^3.0.0",
-        "eslint": "^5.15.3",
+        "eslint": "^4.11.0",
         "eslint-plugin-react": "^7.12.4",
         "fs-extra": "^5.0.0",
         "mobi-plugin-color": "^1.0.0",

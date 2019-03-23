@@ -2,13 +2,6 @@
     "files.eol": "\n",
     "editor.tabSize": 4,
     "editor.formatOnSave": true,
-    "eslint.validate": [
-        "javascript",
-        "javascriptreact",
-        "html",
-        "vue",
-        "typescript",
-        "typescriptreact"
-    ],
+    "eslint.validate": ["javascript", "javascriptreact", "vue", "typescript", "typescriptreact"],
     "typescript.tsdk": "node_modules/typescript/lib"
 }
