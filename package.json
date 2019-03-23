@@ -7,8 +7,8 @@
         "start": "npm test && npm run site",
         "build": "ts-node scripts/build.ts",
         "site": "node ./scripts/build.js && parcel site/index.html",
-        "test": "npm run lint && node ./test/index.js",
-        "lint": "eslint --ext .js,.vue --ignore-pattern bad.* ."
+        "test": "npm run lint && ts-node ./test/index.ts",
+        "lint": "eslint --ext .js,.jsx --ignore-pattern bad.* ."
     },
     "repository": {
         "type": "git",
@@ -44,16 +44,14 @@
     "devDependencies": {
         "@types/babylon": "^6.16.5",
         "@types/doctrine": "0.0.3",
+        "@types/eslint": "^4.16.6",
         "@types/node": "^11.11.4",
         "@types/prettier": "^1.16.1",
-        "@typescript-eslint/eslint-plugin": "^1.5.0",
-        "babel-eslint": "^8.0.2",
+        "babel-eslint": "^10.0.1",
         "babylon": "^6.18.0",
         "doctrine": "^3.0.0",
         "eslint": "^5.15.3",
-        "eslint-plugin-react": "^7.4.0",
-        "eslint-plugin-typescript": "^0.8.0",
-        "eslint-plugin-vue": "^3.13.1",
+        "eslint-plugin-react": "^7.12.4",
         "fs-extra": "^5.0.0",
         "mobi-plugin-color": "^1.0.0",
         "mobi.css": "^3.1.1",
