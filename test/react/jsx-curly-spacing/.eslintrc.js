@@ -1,7 +1,9 @@
 module.exports = {
     rules: {
         /**
-         * @fixable 大括号内前后禁止有空格
+         * 大括号内前后禁止有空格
+         * @category JSX-specific
+         * @fixable
          */
         'react/jsx-curly-spacing': [
             'error',

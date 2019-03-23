@@ -1,7 +1,9 @@
 module.exports = {
     rules: {
         /**
-         * @fixable 禁止出现 HTML 中的属性，如 class
+         * 禁止出现 HTML 中的属性，如 class
+         * @category React
+         * @fixable
          */
         'react/no-unknown-property': 'error'
     }

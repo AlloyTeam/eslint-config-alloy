@@ -16,6 +16,8 @@ const RuleCategoryPriority = {
     'Node.js and CommonJS': 4,
     'Stylistic Issues': 5,
     'ECMAScript 6': 6,
+    React: 7,
+    'JSX-specific': 8,
     '': 99
 };
 
@@ -32,70 +34,60 @@ interface Rule {
     [key: string]: string | boolean | undefined;
 }
 
-interface RuleMap {
-    [key: string]: Rule;
-}
+// interface RuleMap {
+//     [key: string]: Rule;
+// }
 
 class Builder {
     private namespace: RuleNamespaces = 'index';
     private ruleList: Rule[] = [];
-    private ruleMap: RuleMap = {};
+    // private ruleMap: RuleMap = {};
     private rulesContent: string = '';
-    private baseEslintrcContent = this.getBaseEslintrc();
+    private baseEslintrcContent: string = '';
+    private namespaceEslintrcContent: string = '';
 
     public build(namespace: RuleNamespaces) {
         this.namespace = namespace;
         this.ruleList = this.getRuleList();
-        this.ruleMap = this.getRuleMap();
+        // this.ruleMap = this.getRuleMap();
         this.rulesContent = this.getRulesContent();
-        this.buildRulesJson();
-        this.buildEslintConfig();
+        this.baseEslintrcContent = this.getBaseEslintrc();
+        this.namespaceEslintrcContent = this.getNamespaceEslintrc();
+        // this.buildRulesJson();
+        if (this.namespace === 'index') {
+            this.buildIndexEslintrc();
+        } else {
+            this.buildNamespaceEslintrc();
+        }
     }
 
-    private buildRulesJson() {
-        fs.writeFileSync(
-            path.resolve(__dirname, '../site/rules.json'),
-            prettier.format(JSON.stringify(this.ruleMap), {
-                ...require('../prettier.config'),
-                parser: 'json'
-            }),
-            'utf-8'
-        );
+    // private buildRulesJson() {
+    //     fs.writeFileSync(
+    //         path.resolve(__dirname, '../site/rules.json'),
+    //         prettier.format(JSON.stringify(this.ruleMap), {
+    //             ...require('../prettier.config'),
+    //             parser: 'json'
+    //         }),
+    //         'utf-8'
+    //     );
+    // }
+
+    private buildIndexEslintrc() {
+        const eslintrcContent =
+            this.buildEslintrcMeta() +
+            this.baseEslintrcContent.replace('};', `,rules:{${this.rulesContent}}};`);
+
+        this.writeWithPrettier(path.resolve(__dirname, '../index.js'), eslintrcContent);
     }
 
-    private buildEslintConfig() {
-        const eslintConfigContent = `
-/**
- * ${pkg.description}
- * ${pkg.homepage}
- *
- * 贡献者：
- *     ${pkg.author}
- *     ${pkg.contributors.join('\n *     ')}
- *
- * 依赖版本：
- *     ${Object.keys(pkg.peerDependencies)
-     .map((key) => `${key} ${pkg.peerDependencies[key]}`)
-     .join('\n *     ')}
- *
- * 此文件是由脚本 scripts/build.ts 自动生成
- * 
- * @category 此规则属于哪种分类
- * @reason 为什么要开启（关闭）此规则
- * @fixable 支持自动修复
- */
-${this.baseEslintrcContent.replace('};', `,rules:{${this.rulesContent}}};`)}
-        `;
+    private buildNamespaceEslintrc() {
+        const eslintrcContent =
+            this.buildEslintrcMeta() +
+            this.namespaceEslintrcContent
+                .replace('= {', `={extends:['./index.js'],`)
+                .replace('};', `,rules:{${this.rulesContent}}};`);
 
-        fs.writeFileSync(
-            path.resolve(__dirname, '../index.js'),
-            // 使用 prettier 格式化文件内容
-            prettier.format(eslintConfigContent, {
-                ...require('../prettier.config'),
-                parser: 'babel'
-            }),
-            'utf-8'
-        );
+        this.writeWithPrettier(path.resolve(__dirname, `../${this.namespace}.js`), eslintrcContent);
     }
 
     /**
@@ -135,6 +127,41 @@ ${this.baseEslintrcContent.replace('};', `,rules:{${this.rulesContent}}};`)}
         return ruleList;
     }
 
+    private buildEslintrcMeta() {
+        return `
+/**
+ * ${pkg.description}
+ * ${pkg.homepage}
+ *
+ * 贡献者：
+ *     ${pkg.author}
+ *     ${pkg.contributors.join('\n *     ')}
+ *
+ * 依赖版本：
+ *     ${Object.keys(pkg.peerDependencies)
+     .map((key) => `${key} ${pkg.peerDependencies[key]}`)
+     .join('\n *     ')}
+ *
+ * 此文件是由脚本 scripts/build.ts 自动生成
+ * 
+ * @category 此规则属于哪种分类
+ * @reason 为什么要开启（关闭）此规则
+ * @fixable 支持自动修复
+ */`;
+    }
+
+    private writeWithPrettier(filePath: string, content: string) {
+        fs.writeFileSync(
+            filePath,
+            // 使用 prettier 格式化文件内容
+            prettier.format(content, {
+                ...require('../prettier.config'),
+                parser: 'babel'
+            }),
+            'utf-8'
+        );
+    }
+
     private getRule(filePath: string) {
         const fileModule = require(filePath);
         const ruleName = Object.keys(fileModule.rules)[0];
@@ -158,15 +185,26 @@ ${this.baseEslintrcContent.replace('};', `,rules:{${this.rulesContent}}};`)}
         return rule;
     }
 
-    private getRuleMap() {
-        return this.ruleList.reduce<RuleMap>((prev, rule) => {
-            prev[rule.name] = rule;
-            return prev;
-        }, {});
-    }
+    // private getRuleMap() {
+    //     return this.ruleList.reduce<RuleMap>((prev, rule) => {
+    //         prev[rule.name] = rule;
+    //         return prev;
+    //     }, {});
+    // }
 
     private getBaseEslintrc() {
         return fs.readFileSync(path.resolve(__dirname, '../test/.eslintrc.js'), 'utf-8');
+    }
+
+    private getNamespaceEslintrc() {
+        const namespaceEslintrcPath = path.resolve(
+            __dirname,
+            `../test/${this.namespace}/.eslintrc.js`
+        );
+        if (!fs.existsSync(namespaceEslintrcPath)) {
+            return '';
+        }
+        return fs.readFileSync(namespaceEslintrcPath, 'utf-8');
     }
 
     private getRulesContent() {
@@ -181,3 +219,4 @@ ${this.baseEslintrcContent.replace('};', `,rules:{${this.rulesContent}}};`)}
 
 const builder = new Builder();
 builder.build('index');
+builder.build('react');

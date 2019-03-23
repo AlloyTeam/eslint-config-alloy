@@ -46,6 +46,7 @@
         "@types/doctrine": "0.0.3",
         "@types/node": "^11.11.4",
         "@types/prettier": "^1.16.1",
+        "@typescript-eslint/eslint-plugin": "^1.5.0",
         "babel-eslint": "^8.0.2",
         "babylon": "^6.18.0",
         "doctrine": "^3.0.0",
