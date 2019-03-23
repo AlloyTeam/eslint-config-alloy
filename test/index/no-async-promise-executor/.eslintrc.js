@@ -1,0 +1,10 @@
+module.exports = {
+    rules: {
+        /**
+         * 禁止将 async 函数做为 new Promise 的回调函数
+         * @category Possible Errors
+         * @reason 出现这种情况时，一般不需要使用 new Promise 实现异步了
+         */
+        'no-async-promise-executor': 'error'
+    }
+};

@@ -3,7 +3,6 @@ module.exports = {
         /**
          * 禁止使用 debugger
          * @category Possible Errors
-         * @fixable
          */
         'no-debugger': 'error'
     }
