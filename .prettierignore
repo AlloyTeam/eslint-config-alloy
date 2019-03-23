@@ -1,3 +1,6 @@
 test/**/bad.js
+test/**/good.js
 test/**/bad.jsx
+test/**/good.jsx
 test/**/bad.vue
+test/**/good.vue

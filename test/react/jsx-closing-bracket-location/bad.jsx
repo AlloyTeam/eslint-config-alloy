@@ -1,3 +1,7 @@
 function foo() {
-    return <div id="123" class="fasd" />;
+    return (
+        <div
+            id="app"
+            className="foo" />
+    );
 }
