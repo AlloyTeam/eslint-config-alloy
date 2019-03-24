@@ -8,9 +8,12 @@
         "build": "ts-node scripts/build.ts",
         "site": "node ./scripts/build.js && parcel site/index.html",
         "test": "npm run lint && ts-node ./test/index.ts",
-        "lint": "npm run eslint && npm run prettier",
+        "lint": "npm run eslint && npm run prettier && npm run eclint",
         "eslint": "eslint --ext .js,.jsx,.ts --ignore-pattern 'bad.*' .",
-        "prettier": "prettier -l './**/*'"
+        "prettier": "prettier -l './**/*'",
+        "prettier:fix": "prettier --write -l './**/*'",
+        "eclint": "eclint check test",
+        "eclint:fix": "eclint fix test"
     },
     "repository": {
         "type": "git",
@@ -62,6 +65,7 @@
         "babel-eslint": "^10.0.1",
         "babylon": "^6.18.0",
         "doctrine": "^3.0.0",
+        "eclint": "^2.8.1",
         "eslint": "^5.15.3",
         "eslint-config-prettier": "^4.1.0",
         "eslint-plugin-react": "^7.12.4",

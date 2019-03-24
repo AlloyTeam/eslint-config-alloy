@@ -5,7 +5,8 @@
 .editorconfig
 package-lock.json
 
+test
+
 docs
 site
-test
 bak
