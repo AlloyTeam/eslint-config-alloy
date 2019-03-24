@@ -6,7 +6,7 @@ import * as prettier from 'prettier';
 
 const pkg = require('../package.json');
 
-type RuleNamespaces = 'index' | 'react' | 'vue';
+type RuleNamespaces = 'index' | 'react' | 'typescript';
 
 const RuleCategoryPriority = {
     'Possible Errors': 0,
@@ -18,6 +18,7 @@ const RuleCategoryPriority = {
     'ECMAScript 6': 6,
     React: 7,
     'JSX-specific': 8,
+    TypeScript: 9,
     '': 99
 };
 
@@ -139,7 +140,12 @@ class Builder {
  *
  * 依赖版本：
  *     ${Object.keys(pkg.devDependencies)
-     .filter((key) => key.indexOf('eslint') !== -1 && key.indexOf('@types') === -1)
+     .filter(
+         (key) =>
+             key.indexOf('eslint') !== -1 &&
+             key.indexOf('@types') === -1 &&
+             key.indexOf('config') === -1
+     )
      .sort((a, b) => {
          return a.indexOf('eslint') > b.indexOf('eslint') ? 1 : -1;
      })
@@ -147,7 +153,7 @@ class Builder {
      .join('\n *     ')}
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
- * 
+ *
  * @category 此规则属于哪种分类
  * @reason 为什么要开启（关闭）此规则
  * @fixable 支持自动修复
@@ -225,3 +231,4 @@ class Builder {
 const builder = new Builder();
 builder.build('index');
 builder.build('react');
+builder.build('typescript');

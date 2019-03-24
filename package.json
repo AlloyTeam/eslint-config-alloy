@@ -50,12 +50,13 @@
         "@types/eslint": "^4.16.6",
         "@types/node": "^11.11.4",
         "@types/prettier": "^1.16.1",
+        "@typescript-eslint/eslint-plugin": "^1.5.0",
         "babel-eslint": "^10.0.1",
         "babylon": "^6.18.0",
         "doctrine": "^3.0.0",
         "eslint": "^5.15.3",
+        "eslint-config-prettier": "^4.1.0",
         "eslint-plugin-react": "^7.12.4",
-        "fs-extra": "^5.0.0",
         "mobi-plugin-color": "^1.0.0",
         "mobi.css": "^3.1.1",
         "parcel-bundler": "^1.6.2",
@@ -63,7 +64,7 @@
         "prismjs": "^1.12.2",
         "react": "^16.2.0",
         "react-dom": "^16.2.0",
-        "ts-node": "^8.0.3",
+        "ts-node": "^7.0.1",
         "typescript": "^3.3.4000"
     }
 }
