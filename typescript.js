@@ -13,6 +13,7 @@
  *     eslint ^5.15.3
  *     eslint-plugin-react ^7.12.4
  *     babel-eslint ^10.0.1
+ *     @typescript-eslint/eslint-plugin ^1.5.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  *

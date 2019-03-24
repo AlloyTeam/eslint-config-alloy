@@ -13,6 +13,7 @@
  *     eslint ^5.15.3
  *     eslint-plugin-react ^7.12.4
  *     babel-eslint ^10.0.1
+ *     @typescript-eslint/eslint-plugin ^1.5.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  *
@@ -374,9 +375,9 @@ module.exports = {
          */
         'no-empty-pattern': 'error',
         /**
-         * 禁止使用 foo == null 或 foo != null，必须使用 foo === null 或 foo !== null
+         * 禁止使用 foo == null，必须使用 foo === null
          * @category Best Practices
-         * @reason foo == null 用于判断 foo 不是 undefined 并且不是 null，比较常用，故允许此写法
+         * @reason foo == null 比较常用，可以用于判断 foo 不是 undefined 并且不是 null，故允许此写法
          */
         'no-eq-null': 'off',
         /**

@@ -53,7 +53,12 @@
         }
     },
     "dependencies": {},
-    "peerDependencies": {},
+    "peerDependencies": {
+        "@typescript-eslint/eslint-plugin": "^1.5.0",
+        "babel-eslint": "^10.0.1",
+        "eslint": "^5.15.3",
+        "eslint-plugin-react": "^7.12.4"
+    },
     "devDependencies": {
         "@types/babylon": "^6.16.5",
         "@types/doctrine": "0.0.3",

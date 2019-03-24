@@ -138,13 +138,7 @@ class Builder {
  *     ${pkg.contributors.join('\n *     ')}
  *
  * 依赖版本：
- *     ${Object.keys(pkg.devDependencies)
-     .filter(
-         (key) =>
-             key.indexOf('eslint') !== -1 &&
-             key.indexOf('@types') === -1 &&
-             key.indexOf('config') === -1
-     )
+ *     ${Object.keys(pkg.peerDependencies)
      .sort((a, b) => {
          return a.indexOf('eslint') > b.indexOf('eslint') ? 1 : -1;
      })
