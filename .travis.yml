@@ -4,6 +4,7 @@ node_js:
 branches:
     only:
         - master
+        - /^greenkeeper/.*$/
 install:
     - npm install
 script:
