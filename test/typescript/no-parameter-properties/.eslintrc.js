@@ -1,11 +1,9 @@
 module.exports = {
     rules: {
         /**
-         * description
+         * 禁止给类的构造函数的参数添加修饰符
          * @category TypeScript
-         * @reason reason
-         * @fixable
          */
-        '@typescript-eslint/no-parameter-properties': 'off'
+        '@typescript-eslint/no-parameter-properties': 'error'
     }
 };

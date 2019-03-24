@@ -1,10 +1,8 @@
 module.exports = {
     rules: {
         /**
-         * description
+         * 禁止使用类型别名
          * @category TypeScript
-         * @reason reason
-         * @fixable
          */
         '@typescript-eslint/no-type-alias': 'off'
     }

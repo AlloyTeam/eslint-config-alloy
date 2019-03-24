@@ -1,10 +1,8 @@
 module.exports = {
     rules: {
         /**
-         * description
+         * 禁止在接口中定义 constructor，或在类中定义 new
          * @category TypeScript
-         * @reason reason
-         * @fixable
          */
         '@typescript-eslint/no-misused-new': 'off'
     }

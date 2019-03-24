@@ -1,10 +1,8 @@
 module.exports = {
     rules: {
         /**
-         * description
+         * 禁止定义没必要的类，比如只有静态方法的类
          * @category TypeScript
-         * @reason reason
-         * @fixable
          */
         '@typescript-eslint/no-extraneous-class': 'off'
     }

@@ -1,9 +1,8 @@
 module.exports = {
     rules: {
         /**
-         * description
+         * 禁止使用 Array 构造函数
          * @category TypeScript
-         * @reason reason
          * @fixable
          */
         '@typescript-eslint/no-array-constructor': 'off'

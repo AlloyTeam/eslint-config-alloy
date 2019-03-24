@@ -1,9 +1,8 @@
 module.exports = {
     rules: {
         /**
-         * description
+         * 禁止无用的类型断言
          * @category TypeScript
-         * @reason reason
          * @fixable
          */
         '@typescript-eslint/no-unnecessary-type-assertion': 'off'

@@ -14,6 +14,6 @@ insert_final_newline = true
 charset = utf-8
 
 # 4 space indentation
-[*]
-indent_style = space
+# [*]
+# indent_style = space
 # indent_size = 4

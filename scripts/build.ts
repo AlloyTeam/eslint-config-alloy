@@ -4,6 +4,7 @@ import * as path from 'path';
 import * as doctrine from 'doctrine';
 import * as prettier from 'prettier';
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const pkg = require('../package.json');
 
 type RuleNamespaces = 'index' | 'react' | 'typescript';
@@ -172,6 +173,7 @@ class Builder {
     }
 
     private getRule(filePath: string) {
+        // eslint-disable-next-line @typescript-eslint/no-var-requires
         const fileModule = require(filePath);
         const ruleName = Object.keys(fileModule.rules)[0];
         const fileContent = fs.readFileSync(filePath, 'utf-8');

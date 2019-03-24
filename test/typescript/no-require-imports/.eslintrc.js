@@ -1,10 +1,9 @@
 module.exports = {
     rules: {
         /**
-         * description
+         * 禁止使用 require
          * @category TypeScript
-         * @reason reason
-         * @fixable
+         * @reason 有时需要动态引入，还是需要用 require
          */
         '@typescript-eslint/no-require-imports': 'off'
     }

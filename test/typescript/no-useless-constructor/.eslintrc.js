@@ -1,11 +1,9 @@
 module.exports = {
     rules: {
         /**
-         * description
+         * 禁止出现没必要的 constructor
          * @category TypeScript
-         * @reason reason
-         * @fixable
          */
-        '@typescript-eslint/no-useless-constructor': 'off'
+        '@typescript-eslint/no-useless-constructor': 'error'
     }
 };

@@ -1,11 +1,11 @@
 module.exports = {
     rules: {
         /**
-         * description
+         * 禁止使用 module 来定义命名空间
          * @category TypeScript
-         * @reason reason
+         * @reason module 已成为 js 的关键字
          * @fixable
          */
-        '@typescript-eslint/prefer-namespace-keyword': 'off'
+        '@typescript-eslint/prefer-namespace-keyword': 'error'
     }
 };

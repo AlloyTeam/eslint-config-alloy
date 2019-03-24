@@ -1,11 +1,9 @@
 module.exports = {
     rules: {
         /**
-         * description
+         * 类名与接口名必须为驼峰式
          * @category TypeScript
-         * @reason reason
-         * @fixable
          */
-        '@typescript-eslint/class-name-casing': 'off'
+        '@typescript-eslint/class-name-casing': 'error'
     }
 };

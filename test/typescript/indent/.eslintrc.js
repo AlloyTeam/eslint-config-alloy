@@ -1,11 +1,17 @@
 module.exports = {
     rules: {
         /**
-         * description
-         * @category TypeScript
-         * @reason reason
+         * 一个缩进必须用四个空格替代
+         * @category Stylistic Issues
          * @fixable
          */
-        '@typescript-eslint/indent': 'off'
+        '@typescript-eslint/indent': [
+            'error',
+            4,
+            {
+                SwitchCase: 1,
+                flatTernaryExpressions: true
+            }
+        ]
     }
 };

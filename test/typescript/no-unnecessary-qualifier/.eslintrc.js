@@ -1,9 +1,9 @@
 module.exports = {
     rules: {
         /**
-         * description
+         * 在命名空间中，可以直接使用内部变量，不需要添加命名空间前缀
          * @category TypeScript
-         * @reason reason
+         * @reason 已经禁止使用命名空间了
          * @fixable
          */
         '@typescript-eslint/no-unnecessary-qualifier': 'off'

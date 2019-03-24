@@ -1,11 +1,17 @@
 module.exports = {
     rules: {
         /**
-         * description
+         * 禁止使用 namespace 来定义命名空间
          * @category TypeScript
-         * @reason reason
-         * @fixable
+         * @reason 使用 es6 引入模块，才是更标准的方式。
+         * 允许使用 declare namespace ... {} 来定义外部命名空间
          */
-        '@typescript-eslint/no-namespace': 'off'
+        '@typescript-eslint/no-namespace': [
+            'error',
+            {
+                allowDeclarations: true,
+                allowDefinitionFiles: true
+            }
+        ]
     }
 };

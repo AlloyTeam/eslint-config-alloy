@@ -1,11 +1,10 @@
 module.exports = {
     rules: {
         /**
-         * description
+         * 禁止使用三斜杠引入类型定义文件
          * @category TypeScript
-         * @reason reason
-         * @fixable
+         * @reason 三斜杠是已废弃的语法
          */
-        '@typescript-eslint/no-triple-slash-reference': 'off'
+        '@typescript-eslint/no-triple-slash-reference': 'error'
     }
 };

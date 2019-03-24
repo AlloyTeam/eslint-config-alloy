@@ -1,10 +1,8 @@
 module.exports = {
     rules: {
         /**
-         * description
+         * 接口名称必须已 I 开头
          * @category TypeScript
-         * @reason reason
-         * @fixable
          */
         '@typescript-eslint/interface-name-prefix': 'off'
     }

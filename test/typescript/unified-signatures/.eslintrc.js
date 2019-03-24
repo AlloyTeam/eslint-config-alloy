@@ -1,11 +1,9 @@
 module.exports = {
     rules: {
         /**
-         * description
+         * 函数重载时，若能通过联合类型将两个函数的类型声明合为一个，则使用联合类型而不是两个函数声明
          * @category TypeScript
-         * @reason reason
-         * @fixable
          */
-        '@typescript-eslint/unified-signatures': 'off'
+        '@typescript-eslint/unified-signatures': 'error'
     }
 };

@@ -1,11 +1,9 @@
 module.exports = {
     rules: {
         /**
-         * description
+         * 禁止定义空的接口
          * @category TypeScript
-         * @reason reason
-         * @fixable
          */
-        '@typescript-eslint/no-empty-interface': 'off'
+        '@typescript-eslint/no-empty-interface': 'error'
     }
 };

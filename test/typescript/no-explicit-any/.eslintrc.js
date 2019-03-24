@@ -1,10 +1,8 @@
 module.exports = {
     rules: {
         /**
-         * description
+         * 禁止使用 any
          * @category TypeScript
-         * @reason reason
-         * @fixable
          */
         '@typescript-eslint/no-explicit-any': 'off'
     }

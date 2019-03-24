@@ -1,10 +1,8 @@
 module.exports = {
     rules: {
         /**
-         * description
+         * 约束泛型的命名规则
          * @category TypeScript
-         * @reason reason
-         * @fixable
          */
         '@typescript-eslint/generic-type-naming': 'off'
     }

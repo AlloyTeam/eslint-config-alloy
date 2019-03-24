@@ -1,11 +1,10 @@
 module.exports = {
     rules: {
         /**
-         * description
+         * 接口和类型别名的成员之间必须使用分号分隔
          * @category TypeScript
-         * @reason reason
          * @fixable
          */
-        '@typescript-eslint/member-delimiter-style': 'off'
+        '@typescript-eslint/member-delimiter-style': 'error'
     }
 };
