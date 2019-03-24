@@ -1,0 +1,3 @@
+class ValidClassName {}
+
+interface ValidInterface {}

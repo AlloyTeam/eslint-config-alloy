@@ -1,8 +1,4 @@
 module.exports = {
-    extends: [
-        '../../react.js'
-    ],
-    rules: {
-        'no-unused-vars': 'off'
-    }
+    extends: ['../../base.js'],
+    plugins: ['react']
 };

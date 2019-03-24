@@ -1,0 +1,13 @@
+*.md
+*ignore
+
+.DS_Store
+.editorconfig
+package-lock.json
+
+test/**/bad.*
+test/**/good.*
+
+docs
+site
+bak
