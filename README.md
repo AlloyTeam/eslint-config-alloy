@@ -50,7 +50,7 @@ ESLint 的配置多达几百条，逐个查阅是一项非常繁重的工作，�
 安装：
 
 ```bash
-npm install --save-dev eslint babel-eslint eslint-config-alloy@2.0.0-alpha.1
+npm install --save-dev eslint babel-eslint eslint-config-alloy@2.0.0-alpha.2
 ```
 
 在你的项目根目录下创建 `.eslintrc.js`，并将以下内容复制到文件中：
@@ -88,7 +88,7 @@ module.exports = {
 安装：
 
 ```bash
-npm install --save-dev eslint babel-eslint eslint-plugin-react eslint-config-alloy@2.0.0-alpha.1
+npm install --save-dev eslint babel-eslint eslint-plugin-react eslint-config-alloy@2.0.0-alpha.2
 ```
 
 在你的项目根目录下创建 `.eslintrc.js`，并将以下内容复制到文件中：
@@ -136,7 +136,7 @@ module.exports = {
 安装：
 
 ```bash
-npm install --save-dev eslint typescript @typescript-eslint/eslint-plugin eslint-config-alloy@2.0.0-alpha.1
+npm install --save-dev eslint typescript @typescript-eslint/eslint-plugin eslint-config-alloy@2.0.0-alpha.2
 ```
 
 在你的项目根目录下创建 `.eslintrc.js`，并将以下内容复制到文件中：
@@ -183,7 +183,7 @@ module.exports = {
 安装：
 
 ```bash
-npm install --save-dev eslint typescript @typescript-eslint/eslint-plugin eslint-plugin-react eslint-config-alloy@2.0.0-alpha.1
+npm install --save-dev eslint typescript @typescript-eslint/eslint-plugin eslint-plugin-react eslint-config-alloy@2.0.0-alpha.2
 ```
 
 在你的项目根目录下创建 `.eslintrc.js`，并将以下内容复制到文件中：
