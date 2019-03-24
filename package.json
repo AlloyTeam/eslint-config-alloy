@@ -4,9 +4,8 @@
     "description": "AlloyTeam ESLint 规则",
     "main": "index.js",
     "scripts": {
-        "start": "npm test && npm run site",
+        "start": "npm test",
         "build": "ts-node scripts/build.ts",
-        "site": "node ./scripts/build.js && parcel site/index.html",
         "test": "npm run lint && ts-node ./test/index.ts",
         "lint": "npm run eslint && npm run prettier && npm run eclint",
         "eslint": "eslint --ext .js,.jsx,.ts --ignore-pattern 'bad.*' .",
@@ -70,13 +69,7 @@
         "eslint-config-prettier": "^4.1.0",
         "eslint-plugin-react": "^7.12.4",
         "husky": "^1.3.1",
-        "mobi-plugin-color": "^1.0.0",
-        "mobi.css": "^3.1.1",
-        "parcel-bundler": "^1.6.2",
         "prettier": "^1.16.4",
-        "prismjs": "^1.12.2",
-        "react": "^16.2.0",
-        "react-dom": "^16.2.0",
         "ts-node": "^7.0.1",
         "typescript": "^3.3.4000"
     }
