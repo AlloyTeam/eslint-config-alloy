@@ -1,10 +1,10 @@
 language: node_js
 node_js:
-- 6
+    - 10
 branches:
-  only:
-  - master
+    only:
+        - master
 install:
-- npm install
+    - npm install
 script:
-- npm test
+    - npm test

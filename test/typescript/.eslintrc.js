@@ -1,8 +1,5 @@
 module.exports = {
-    extends: [
-        '../../typescript.js'
-    ],
-    rules: {
-        'no-unused-vars': 'off'
-    }
+    extends: ['../../base.js'],
+    parser: '@typescript-eslint/parser',
+    plugins: ['@typescript-eslint']
 };

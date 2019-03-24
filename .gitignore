@@ -1,6 +1,5 @@
 node_modules
 *.log
 dist
-.vscode
 .cache
 .DS_Store
