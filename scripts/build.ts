@@ -44,7 +44,6 @@ class Builder {
     private ruleList: Rule[] = [];
     // private ruleMap: RuleMap = {};
     private rulesContent: string = '';
-    private baseEslintrcContent: string = '';
     private namespaceEslintrcContent: string = '';
 
     public build(namespace: RuleNamespaces) {
@@ -52,7 +51,6 @@ class Builder {
         this.ruleList = this.getRuleList();
         // this.ruleMap = this.getRuleMap();
         this.rulesContent = this.getRulesContent();
-        this.baseEslintrcContent = this.getBaseEslintrc();
         this.namespaceEslintrcContent = this.getNamespaceEslintrc();
         // this.buildRulesJson();
         if (this.namespace === 'index') {
@@ -76,7 +74,7 @@ class Builder {
     private buildIndexEslintrc() {
         const eslintrcContent =
             this.buildEslintrcMeta() +
-            this.baseEslintrcContent.replace('};', `,rules:{${this.rulesContent}}};`);
+            `module.exports={extends:['./base.js'],rules:{${this.rulesContent}}};`;
 
         this.writeWithPrettier(path.resolve(__dirname, '../index.js'), eslintrcContent);
     }
@@ -85,7 +83,7 @@ class Builder {
         const eslintrcContent =
             this.buildEslintrcMeta() +
             this.namespaceEslintrcContent
-                .replace('= {', `={extends:['./index.js'],`)
+                .replace(/extends:.*]/, "extends: ['./index.js']")
                 .replace('};', `,rules:{${this.rulesContent}}};`);
 
         this.writeWithPrettier(path.resolve(__dirname, `../${this.namespace}.js`), eslintrcContent);
@@ -202,10 +200,6 @@ class Builder {
     //         return prev;
     //     }, {});
     // }
-
-    private getBaseEslintrc() {
-        return fs.readFileSync(path.resolve(__dirname, '../test/.eslintrc.js'), 'utf-8');
-    }
 
     private getNamespaceEslintrc() {
         const namespaceEslintrcPath = path.resolve(

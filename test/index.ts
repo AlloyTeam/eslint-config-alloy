@@ -5,7 +5,8 @@ import * as eslint from 'eslint';
 
 const RULE_PREFIX_MAP = {
     index: '',
-    react: 'react/'
+    react: 'react/',
+    typescript: '@typescript-eslint/'
 };
 
 type RulePrefix = keyof typeof RULE_PREFIX_MAP;
@@ -13,14 +14,14 @@ type RulePrefix = keyof typeof RULE_PREFIX_MAP;
 const CLIEngine = eslint.CLIEngine;
 const cli = new CLIEngine({});
 
-const goodReport = cli.executeOnFiles(['./**/good.js', './**/good.jsx']);
+const goodReport = cli.executeOnFiles(['./**/good.js', './**/good.jsx', './**/good.ts']);
 
 goodReport.results.forEach((goodReportForOneFile) => {
     const { errorCount, filePath } = goodReportForOneFile;
     assert.equal(errorCount, 0, `${filePath} should have no error`);
 });
 
-const badReport = cli.executeOnFiles(['./**/bad.js', './**/bad.jsx']);
+const badReport = cli.executeOnFiles(['./**/bad.js', './**/bad.jsx', './**/bad.ts']);
 
 badReport.results.forEach((badReportForOneFile) => {
     const { errorCount, filePath, messages } = badReportForOneFile;
