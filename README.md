@@ -14,7 +14,7 @@ AlloyTeam ESLint 规则不仅是一套科学的 ESLint 配置规范，而且也�
 | [React](#react) | ESLint 规则、[eslint-plugin-react][] | babel-eslint |
 | Vue（移植中） | | |
 | [TypeScript](#typescript) | ESLint 规则、[@typescript-eslint][] |[@typescript-eslint/parser][] |
-| TypeScript React（移植中） | | |
+| [TypeScript React](#typescript-react) | ESLint 规则、@typescript-eslint、eslint-plugin-react | @typescript-eslint/parser |
 | TypeScript Vue（开发中） | | |
 
 [babel-eslint]: https://github.com/babel/babel-eslint
@@ -142,6 +142,54 @@ npm install --save-dev eslint typescript @typescript-eslint/eslint-plugin eslint
 ```js
 module.exports = {
     extends: [
+        'eslint-config-alloy/typescript',
+    ],
+    globals: {
+        // 这里填入你的项目需要的全局变量
+        // 这里值为 false 表示这个全局变量不允许被重新赋值，比如：
+        //
+        // jQuery: false,
+        // $: false
+    },
+    rules: {
+        // 这里填入你的项目需要的个性化配置，比如：
+        //
+        // // 一个缩进必须用两个空格替代
+        // 'indent': [
+        //     'error',
+        //     2,
+        //     {
+        //         SwitchCase: 1,
+        //         flatTernaryExpressions: true
+        //     }
+        // ]
+        // // 一个缩进必须用两个空格替代
+        // '@typescript-eslint/indent': [
+        //     'error',
+        //     2,
+        //     {
+        //         SwitchCase: 1,
+        //         flatTernaryExpressions: true
+        //     }
+        // ]
+    }
+};
+```
+
+### TypeScript React
+
+安装：
+
+```bash
+npm install --save-dev eslint typescript @typescript-eslint/eslint-plugin eslint-plugin-react eslint-config-alloy@2.0.0-alpha.1
+```
+
+在你的项目根目录下创建 `.eslintrc.js`，并将以下内容复制到文件中：
+
+```js
+module.exports = {
+    extends: [
+        'eslint-config-alloy/react',
         'eslint-config-alloy/typescript',
     ],
     globals: {
