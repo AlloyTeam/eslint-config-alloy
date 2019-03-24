@@ -7,7 +7,7 @@ import * as prettier from 'prettier';
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const pkg = require('../package.json');
 
-type RuleNamespaces = 'index' | 'react' | 'typescript';
+type RuleNamespaces = 'index' | 'react' | 'vue' | 'typescript';
 
 const RuleCategoryPriority = {
     'Possible Errors': 0,
@@ -17,9 +17,14 @@ const RuleCategoryPriority = {
     'Node.js and CommonJS': 4,
     'Stylistic Issues': 5,
     'ECMAScript 6': 6,
-    React: 7,
-    'JSX-specific': 8,
-    TypeScript: 9,
+    React: 10,
+    'JSX-specific': 11,
+    'Enabling Correct ESLint Parsing': 20,
+    'Error Prevention': 21,
+    'Improving Readability': 22,
+    'Minimizing Arbitrary Choices and Cognitive Overhead': 23,
+    Uncategorized: 24,
+    TypeScript: 30,
     '': 99
 };
 
@@ -221,4 +226,5 @@ class Builder {
 const builder = new Builder();
 builder.build('index');
 builder.build('react');
+builder.build('vue');
 builder.build('typescript');

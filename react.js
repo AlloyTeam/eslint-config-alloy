@@ -12,6 +12,8 @@
  * 依赖版本：
  *     eslint ^5.15.3
  *     eslint-plugin-react ^7.12.4
+ *     eslint-plugin-vue ^5.2.2
+ *     vue-eslint-parser ^6.0.3
  *     babel-eslint ^10.0.1
  *     @typescript-eslint/eslint-plugin ^1.5.0
  *

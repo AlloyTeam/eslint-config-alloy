@@ -12,15 +12,17 @@ AlloyTeam ESLint 规则不仅是一套科学的 ESLint 配置规范，而且也�
 | --- | --- | --- |
 | [标准规则](#标准规则) | [ESLint 规则][] | [babel-eslint][] |
 | [React](#react) | ESLint 规则、[eslint-plugin-react][] | babel-eslint |
-| Vue（移植中） | | |
+| [Vue](#vue) | ESLint 规则、[eslint-plugin-vue][] | [vue-eslint-parser][] |
 | [TypeScript](#typescript) | ESLint 规则、[@typescript-eslint][] |[@typescript-eslint/parser][] |
 | [TypeScript React](#typescript-react) | ESLint 规则、@typescript-eslint、eslint-plugin-react | @typescript-eslint/parser |
 | TypeScript Vue（开发中） | | |
 
 [babel-eslint]: https://github.com/babel/babel-eslint
+[vue-eslint-parser]: https://github.com/mysticatea/vue-eslint-parser
 [@typescript-eslint/parser]: https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/parser
 [ESLint 规则]: https://eslint.org/docs/rules/
 [eslint-plugin-react]: https://github.com/yannickcr/eslint-plugin-react
+[eslint-plugin-vue]: https://eslint.vuejs.org/rules/
 [@typescript-eslint]: https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin#supported-rules
 
 ## 配置原则
@@ -311,8 +313,8 @@ npm publish
 - [ ] 完成所有的 test/index 下的示例
 - [ ] 完成所有的 test/react 下的示例
 - [x] 完成所有的 test/typescript 下的示例
-- [ ] 移植 bak/vue 的规则，完成 eslint-config-alloy/vue 的配置
-- [ ] 实现 TypeScript React 配置
+- [x] 移植 bak/vue 的规则，完成 eslint-config-alloy/vue 的配置
+- [x] 实现 TypeScript React 配置
 - [ ] 实现 TypeScript Vue 配置
 - [ ] 完成新版网站建设
 
