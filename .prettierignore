@@ -11,3 +11,4 @@ test/**/good.*
 docs
 site
 bak
+.cache
