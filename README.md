@@ -336,7 +336,7 @@ npm test
 # 自动修复格式错误
 npm run prettier:fix
 # 自动修复 test 目录下的格式错误
-npm run eclint:fix
+npm run eslint:fix
 # 发布新版本
 npm version <major|minor|patch>
 git push --follow-tags
