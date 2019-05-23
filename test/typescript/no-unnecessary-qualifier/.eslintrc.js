@@ -5,6 +5,7 @@ module.exports = {
          * @category TypeScript
          * @reason 已经禁止使用命名空间了
          * @fixable
+         * @requires-type-information
          */
         '@typescript-eslint/no-unnecessary-qualifier': 'off'
     }

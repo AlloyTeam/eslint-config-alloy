@@ -1,10 +1,10 @@
 module.exports = {
     rules: {
         /**
-         * 禁止对 array 使用 for in 循环
+         * 禁止对没有 then 方法的对象使用 await
          * @category TypeScript
          * @requires-types-information
          */
-        '@typescript-eslint/no-for-in-array': 'off'
+        '@typescript-eslint/await-thenable': 'off'
     }
 };

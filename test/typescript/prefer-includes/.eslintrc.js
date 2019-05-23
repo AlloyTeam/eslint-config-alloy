@@ -1,10 +1,11 @@
 module.exports = {
     rules: {
         /**
-         * 禁止对 array 使用 for in 循环
+         * 使用 includes 而不是 indexOf
          * @category TypeScript
+         * @fixable
          * @requires-types-information
          */
-        '@typescript-eslint/no-for-in-array': 'off'
+        '@typescript-eslint/prefer-includes': 'off'
     }
 };

@@ -1,10 +1,10 @@
 module.exports = {
     rules: {
         /**
-         * 禁止对 array 使用 for in 循环
+         * 使用 RegExp#exec 而不是 String#match
          * @category TypeScript
          * @requires-types-information
          */
-        '@typescript-eslint/no-for-in-array': 'off'
+        '@typescript-eslint/prefer-regexp-exec': 'off'
     }
 };

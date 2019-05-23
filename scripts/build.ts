@@ -90,7 +90,7 @@ class Builder {
             this.buildEslintrcMeta() +
             this.namespaceEslintrcContent
                 .replace(/extends:.*]/, "extends: ['./index.js']")
-                .replace('};', `,rules:{${this.rulesContent}}};`);
+                .replace(/(,\s*rules: {([\s\S]*?)})?\s*};/, `,rules:{$2,${this.rulesContent}}};`);
 
         this.writeWithPrettier(path.resolve(__dirname, `../${this.namespace}.js`), eslintrcContent);
     }
@@ -224,7 +224,7 @@ class Builder {
 }
 
 const builder = new Builder();
-builder.build('index');
-builder.build('react');
-builder.build('vue');
+// builder.build('index');
+// builder.build('react');
+// builder.build('vue');
 builder.build('typescript');

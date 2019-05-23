@@ -15,7 +15,7 @@
  *     eslint-plugin-vue ^5.2.2
  *     vue-eslint-parser ^6.0.3
  *     babel-eslint ^10.0.1
- *     @typescript-eslint/eslint-plugin ^1.5.0
+ *     @typescript-eslint/eslint-plugin ^1.9.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  *
@@ -28,6 +28,7 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     plugins: ['@typescript-eslint'],
     rules: {
+        semi: 'off',
         /**
          * 一个缩进必须用四个空格替代
          * @category Stylistic Issues
@@ -54,6 +55,12 @@ module.exports = {
          * @fixable
          */
         '@typescript-eslint/array-type': 'off',
+        /**
+         * 禁止对没有 then 方法的对象使用 await
+         * @category TypeScript
+         * @requires-types-information
+         */
+        '@typescript-eslint/await-thenable': 'off',
         /**
          * 是否允许使用 // @ts-ignore 来忽略编译错误
          * @category TypeScript
@@ -182,6 +189,7 @@ module.exports = {
         /**
          * 禁止对 array 使用 for in 循环
          * @category TypeScript
+         * @requires-types-information
          */
         '@typescript-eslint/no-for-in-array': 'off',
         /**
@@ -235,7 +243,12 @@ module.exports = {
          * 禁止将 this 赋值给其他变量，除非是解构赋值
          * @category TypeScript
          */
-        '@typescript-eslint/no-this-alias': 'error',
+        '@typescript-eslint/no-this-alias': [
+            'error',
+            {
+                allowDestructuring: true
+            }
+        ],
         /**
          * 禁止使用三斜杠引入类型定义文件
          * @category TypeScript
@@ -252,12 +265,14 @@ module.exports = {
          * @category TypeScript
          * @reason 已经禁止使用命名空间了
          * @fixable
+         * @requires-type-information
          */
         '@typescript-eslint/no-unnecessary-qualifier': 'off',
         /**
          * 禁止无用的类型断言
          * @category TypeScript
          * @fixable
+         * @requires-type-information
          */
         '@typescript-eslint/no-unnecessary-type-assertion': 'off',
         /**
@@ -284,12 +299,25 @@ module.exports = {
          */
         '@typescript-eslint/no-var-requires': 'error',
         /**
+         * 使用 for 循环遍历数组时，如果 index 仅用于获取成员，则必须使用 for of 循环替代 for 循环
+         * @category TypeScript
+         * @reason for of 循环更加易读
+         */
+        '@typescript-eslint/prefer-for-of': 'error',
+        /**
          * 可以简写为函数类型的接口或字面类似，必须简写
          * @category TypeScript
          * @reason reason
          * @fixable
          */
         '@typescript-eslint/prefer-function-type': 'error',
+        /**
+         * 使用 includes 而不是 indexOf
+         * @category TypeScript
+         * @fixable
+         * @requires-types-information
+         */
+        '@typescript-eslint/prefer-includes': 'off',
         /**
          * 优先使用接口而不是字面类型
          * @category TypeScript
@@ -305,22 +333,61 @@ module.exports = {
          */
         '@typescript-eslint/prefer-namespace-keyword': 'error',
         /**
+         * 使用 RegExp#exec 而不是 String#match
+         * @category TypeScript
+         * @requires-types-information
+         */
+        '@typescript-eslint/prefer-regexp-exec': 'off',
+        /**
+         * 使用 String#startsWith 而不是其他方式
+         * @category TypeScript
+         * @fixable
+         * @requires-types-information
+         */
+        '@typescript-eslint/prefer-string-starts-ends-with': 'off',
+        /**
          * async 函数的返回值必须是 Promise
          * @category TypeScript
          * @reason 有时 async 函数在某个分支是同步的，不需要返回 Promise
+         * @requires-types-information
          */
         '@typescript-eslint/promise-function-async': 'off',
         /**
+         * 使用 sort 时必须传入比较函数
+         * @category TypeScript
+         * @requires-types-information
+         */
+        '@typescript-eslint/require-array-sort-compare': 'off',
+        /**
          * 使用加号时，两者必须同为数字或同为字符串
          * @category TypeScript
+         * @requires-types-information
          */
         '@typescript-eslint/restrict-plus-operands': 'off',
+        /**
+         * 结尾必须有分号
+         * @category TypeScript
+         * @fixable
+         */
+        '@typescript-eslint/semi': [
+            'error',
+            'always',
+            {
+                omitLastInOneLineBlock: true
+            }
+        ],
         /**
          * 类型定义的冒号前面必须没有空格，后面必须有一个空格
          * @category TypeScript
          * @fixable
          */
         '@typescript-eslint/type-annotation-spacing': 'error',
+        /**
+         * 方法调用时需要绑定到正确的 this 上
+         * @category TypeScript
+         * @requires-types-information
+         */
+        '@typescript-eslint/unbound-method': 'off',
         /**
          * 函数重载时，若能通过联合类型将两个函数的类型声明合为一个，则使用联合类型而不是两个函数声明
          * @category TypeScript

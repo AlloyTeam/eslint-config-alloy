@@ -173,7 +173,7 @@ module.exports = {
 安装：
 
 ```bash
-npm install --save-dev eslint typescript @typescript-eslint/eslint-plugin eslint-config-alloy@2.0.0-alpha.2
+npm install --save-dev eslint typescript @typescript-eslint/eslint-plugin eslint-config-alloy@2.0.0-alpha.2 
 ```
 
 在你的项目根目录下创建 `.eslintrc.js`，并将以下内容复制到文件中：
@@ -220,7 +220,7 @@ module.exports = {
 安装：
 
 ```bash
-npm install --save-dev eslint typescript @typescript-eslint/eslint-plugin eslint-plugin-react eslint-config-alloy@2.0.0-alpha.2
+npm install --save-dev eslint typescript @typescript-eslint/eslint-plugin eslint-plugin-react eslint-config-alloy@2.0.0-alpha.2 babel-eslint
 ```
 
 在你的项目根目录下创建 `.eslintrc.js`，并将以下内容复制到文件中：

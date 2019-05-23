@@ -1,10 +1,10 @@
 module.exports = {
     rules: {
         /**
-         * 禁止对 array 使用 for in 循环
+         * 使用 sort 时必须传入比较函数
          * @category TypeScript
          * @requires-types-information
          */
-        '@typescript-eslint/no-for-in-array': 'off'
+        '@typescript-eslint/require-array-sort-compare': 'off'
     }
 };
