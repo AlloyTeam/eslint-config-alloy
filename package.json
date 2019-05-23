@@ -59,7 +59,7 @@
         "eslint": "^5.15.3",
         "eslint-plugin-react": "^7.12.4",
         "eslint-plugin-vue": "^5.2.2",
-        "vue-eslint-parser": "^6.0.3"
+        "vue-eslint-parser": "^5.0.0"
     },
     "devDependencies": {
         "@types/babylon": "^6.16.5",
@@ -82,6 +82,6 @@
         "react": "^16.8.5",
         "ts-node": "^7.0.1",
         "typescript": "^3.4.5",
-        "vue-eslint-parser": "^6.0.3"
+        "vue-eslint-parser": "^5.0.0"
     }
 }
