@@ -2,9 +2,9 @@ module.exports = {
     rules: {
         /**
          * 操作符左右必须有空格
-         * @category Stylistic Issues
+         * @category Uncategorized
          * @fixable
          */
-        'space-infix-ops': 'error'
+        'vue/space-infix-ops': 'error'
     }
 };

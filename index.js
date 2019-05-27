@@ -13,7 +13,7 @@
  *     eslint ^5.15.3
  *     eslint-plugin-react ^7.12.4
  *     eslint-plugin-vue ^5.2.2
- *     vue-eslint-parser ^6.0.3
+ *     vue-eslint-parser ^5.0.0
  *     babel-eslint ^10.0.1
  *     @typescript-eslint/eslint-plugin ^1.9.0
  *
@@ -869,7 +869,7 @@ module.exports = {
          */
         'array-element-newline': 'off',
         /**
-         * 代码块如果在一行内，那么大括号内的首尾必须有空格，比如 function () { alert('Hello') }
+         * 代码块如果在一行内，那么大括号内的首尾必须有空格
          * @category Stylistic Issues
          * @fixable
          */
@@ -897,7 +897,6 @@ module.exports = {
         /**
          * 对象的最后一个属性末尾必须有逗号
          * @category Stylistic Issues
-         * @reason 没必要限制
          * @fixable
          */
         'comma-dangle': 'off',
@@ -1454,7 +1453,7 @@ module.exports = {
          */
         'space-in-parens': ['error', 'never'],
         /**
-         * 操作符左右必须有空格，比如 let sum = 1 + 2;
+         * 操作符左右必须有空格
          * @category Stylistic Issues
          * @fixable
          */

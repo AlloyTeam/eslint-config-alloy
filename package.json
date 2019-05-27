@@ -83,5 +83,10 @@
         "ts-node": "^7.0.1",
         "typescript": "^3.4.5",
         "vue-eslint-parser": "^5.0.0"
+    },
+    "greenkeeper": {
+        "ignore": [
+            "ts-node"
+        ]
     }
 }

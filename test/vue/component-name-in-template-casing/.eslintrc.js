@@ -2,9 +2,9 @@ module.exports = {
     rules: {
         /**
          * 对象的最后一个属性末尾必须有逗号
-         * @category Stylistic Issues
+         * @category Uncategorized
          * @fixable
          */
-        'comma-dangle': 'off'
+        'vue/comma-dangle': 'off'
     }
 };
