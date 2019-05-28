@@ -1,10 +1,10 @@
 module.exports = {
     rules: {
         /**
-         * 布尔值的属性必须显式的写 someprop={true}
+         * 必须使用 React.Fragment 而不是 <></>
          * @category JSX-specific
          * @fixable
          */
-        'react/jsx-boolean-value': 'off'
+        'react/jsx-fragments': ['error', 'syntax']
     }
 };

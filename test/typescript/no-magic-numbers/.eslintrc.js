@@ -2,8 +2,8 @@ module.exports = {
     rules: {
         /**
          * 禁止使用 magic numbers
-         * @category Best Practices
+         * @category TypeScript
          */
-        'no-magic-numbers': 'off'
+        '@typescript-eslint/no-magic-numbers': 'off'
     }
 };

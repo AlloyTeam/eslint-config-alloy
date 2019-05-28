@@ -56,37 +56,36 @@
     "peerDependencies": {
         "@typescript-eslint/eslint-plugin": "^1.9.0",
         "babel-eslint": "^10.0.1",
-        "eslint": "^5.15.3",
-        "eslint-plugin-react": "^7.12.4",
+        "eslint": "^5.16.0",
+        "eslint-plugin-react": "^7.13.0",
         "eslint-plugin-vue": "^5.2.2",
-        "vue-eslint-parser": "^5.0.0"
+        "vue-eslint-parser": "5.0.0"
     },
     "devDependencies": {
-        "@types/babylon": "^6.16.5",
         "@types/doctrine": "0.0.3",
         "@types/eslint": "^4.16.6",
-        "@types/node": "^12.0.0",
-        "@types/prettier": "^1.16.1",
-        "@types/react": "^16.8.8",
+        "@types/node": "^12.0.2",
+        "@types/prettier": "^1.16.4",
+        "@types/react": "^16.8.18",
         "@typescript-eslint/eslint-plugin": "^1.9.0",
         "babel-eslint": "^10.0.1",
-        "babylon": "^6.18.0",
         "doctrine": "^3.0.0",
         "eclint": "^2.8.1",
-        "eslint": "^5.15.3",
-        "eslint-config-prettier": "^4.1.0",
-        "eslint-plugin-react": "^7.12.4",
+        "eslint": "^5.16.0",
+        "eslint-config-prettier": "^4.3.0",
+        "eslint-plugin-react": "^7.13.0",
         "eslint-plugin-vue": "^5.2.2",
-        "husky": "^2.0.0",
-        "prettier": "^1.16.4",
-        "react": "^16.8.5",
+        "husky": "^2.3.0",
+        "prettier": "^1.17.1",
+        "react": "^16.8.6",
         "ts-node": "^7.0.1",
         "typescript": "^3.4.5",
         "vue-eslint-parser": "^5.0.0"
     },
     "greenkeeper": {
         "ignore": [
-            "ts-node"
+            "ts-node",
+            "vue-eslint-parser"
         ]
     }
 }

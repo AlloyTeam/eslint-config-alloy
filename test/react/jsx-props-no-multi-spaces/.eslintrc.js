@@ -1,10 +1,10 @@
 module.exports = {
     rules: {
         /**
-         * 布尔值的属性必须显式的写 someprop={true}
+         * 禁止出现多于的空格
          * @category JSX-specific
          * @fixable
          */
-        'react/jsx-boolean-value': 'off'
+        'react/jsx-props-no-multi-spaces': 'error'
     }
 };

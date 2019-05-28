@@ -10,8 +10,8 @@
  *     Swan <noreply@github.com>
  *
  * 依赖版本：
- *     eslint ^5.15.3
- *     eslint-plugin-react ^7.12.4
+ *     eslint ^5.16.0
+ *     eslint-plugin-react ^7.13.0
  *     eslint-plugin-vue ^5.2.2
  *     vue-eslint-parser ^5.0.0
  *     babel-eslint ^10.0.1

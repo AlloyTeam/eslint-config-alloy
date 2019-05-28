@@ -10,8 +10,8 @@
  *     Swan <noreply@github.com>
  *
  * 依赖版本：
- *     eslint ^5.15.3
- *     eslint-plugin-react ^7.12.4
+ *     eslint ^5.16.0
+ *     eslint-plugin-react ^7.13.0
  *     eslint-plugin-vue ^5.2.2
  *     vue-eslint-parser ^5.0.0
  *     babel-eslint ^10.0.1
@@ -28,6 +28,9 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     plugins: ['@typescript-eslint'],
     rules: {
+        'func-call-spacing': 'off',
+        'no-extra-parens': 'off',
+        'no-magic-numbers': 'off',
         semi: 'off',
         /**
          * 一个缩进必须用四个空格替代
@@ -97,6 +100,12 @@ module.exports = {
          * @reason 将不需要公开的成员设为私有的，可以增强代码的可理解性，对文档输出也很友好
          */
         '@typescript-eslint/explicit-member-accessibility': 'error',
+        /**
+         * 函数名和执行它的括号之间禁止有空格
+         * @category TypeScript
+         * @fixable
+         */
+        '@typescript-eslint/func-call-spacing': ['error', 'never'],
         /**
          * 约束泛型的命名规则
          * @category TypeScript
@@ -182,6 +191,12 @@ module.exports = {
          */
         '@typescript-eslint/no-explicit-any': 'off',
         /**
+         * 禁止函数表达式中出现多余的括号
+         * @category TypeScript
+         * @fixable
+         */
+        '@typescript-eslint/no-extra-parens': ['error', 'functions'],
+        /**
          * 禁止定义没必要的类，比如只有静态方法的类
          * @category TypeScript
          */
@@ -199,6 +214,11 @@ module.exports = {
          * @fixable
          */
         '@typescript-eslint/no-inferrable-types': 'error',
+        /**
+         * 禁止使用 magic numbers
+         * @category TypeScript
+         */
+        '@typescript-eslint/no-magic-numbers': 'off',
         /**
          * 禁止在接口中定义 constructor，或在类中定义 new
          * @category TypeScript

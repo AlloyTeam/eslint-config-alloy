@@ -2,9 +2,9 @@ module.exports = {
     rules: {
         /**
          * 禁止函数表达式中出现多余的括号
-         * @category Possible Errors
+         * @category TypeScript
          * @fixable
          */
-        'no-extra-parens': ['error', 'functions']
+        '@typescript-eslint/no-extra-parens': ['error', 'functions']
     }
 };

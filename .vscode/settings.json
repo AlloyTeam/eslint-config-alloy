@@ -2,7 +2,23 @@
     "files.eol": "\n",
     "editor.tabSize": 4,
     "editor.formatOnSave": true,
-    "eslint.validate": ["javascript", "javascriptreact", "vue", "typescript", "typescriptreact"],
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        {
+            "language": "vue",
+            "autoFix": true
+        },
+        {
+            "language": "typescript",
+            "autoFix": true
+        },
+        {
+            "language": "typescriptreact",
+            "autoFix": true
+        }
+    ],
+    "vetur.format.enable": false,
     "vetur.validation.template": false,
     "typescript.tsdk": "node_modules/typescript/lib"
 }

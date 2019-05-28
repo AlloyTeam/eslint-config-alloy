@@ -10,8 +10,8 @@
  *     Swan <noreply@github.com>
  *
  * 依赖版本：
- *     eslint ^5.15.3
- *     eslint-plugin-react ^7.12.4
+ *     eslint ^5.16.0
+ *     eslint-plugin-react ^7.13.0
  *     eslint-plugin-vue ^5.2.2
  *     vue-eslint-parser ^5.0.0
  *     babel-eslint ^10.0.1
@@ -34,11 +34,21 @@ module.exports = {
          */
         'react/boolean-prop-naming': 'off',
         /**
+         * <button> 必须有 type 属性
+         * @category React
+         */
+        'react/button-has-type': 'off',
+        /**
          * 一个 defaultProps 必须有对应的 propTypes
          * @category React
          * @reason 不强制要求写 propTypes
          */
         'react/default-props-match-prop-types': 'off',
+        /**
+         * props state context 必须用解构赋值
+         * @category React
+         */
+        'react/destructuring-assignment': 'off',
         /**
          * 组件必须有 displayName 属性
          * @category React
@@ -51,6 +61,11 @@ module.exports = {
          * @reason 没必要限制
          */
         'react/forbid-component-props': 'off',
+        /**
+         * 禁止指定的 props
+         * @category React
+         */
+        'react/forbid-dom-props': 'off',
         /**
          * 禁止使用一些指定的 elements
          * @category React
@@ -69,6 +84,11 @@ module.exports = {
          * @reason 不强制要求写 propTypes
          */
         'react/forbid-prop-types': 'off',
+        /**
+         * 禁止在 setState 时使用 this.state
+         * @category React
+         */
+        'react/no-access-state-in-setstate': 'off',
         /**
          * 禁止使用数组的 index 作为 key
          * @category React
@@ -100,11 +120,21 @@ module.exports = {
          */
         'react/no-set-state': 'off',
         /**
+         * 禁止在函数组件中使用 this
+         * @category React
+         */
+        'react/no-this-in-sfc': 'error',
+        /**
          * 禁止出现 HTML 中的属性，如 class
          * @category React
          * @fixable
          */
         'react/no-unknown-property': 'error',
+        /**
+         * 禁止使用不安全的生命周期方法 componentWillMount, componentWillReceiveProps, componentWillUpdate
+         * @category React
+         */
+        'react/no-unsafe': 'error',
         /**
          * 禁止出现未使用的 propTypes
          * @category React
@@ -117,6 +147,11 @@ module.exports = {
          * @reason 没有官方文档，并且存在很多 bug： https://github.com/yannickcr/eslint-plugin-react/search?q=no-unused-state&type=Issues&utf8=%E2%9C%93
          */
         'react/no-unused-state': 'off',
+        /**
+         * 使用 Flow 时，props 必须设置为只读的
+         * @category React
+         */
+        'react/prefer-read-only-props': 'off',
         /**
          * 必须使用 pure function
          * @category React
@@ -167,12 +202,26 @@ module.exports = {
          */
         'react/sort-prop-types': 'off',
         /**
+         * 必须在构造函数中初始化 state
+         * @category React
+         */
+        'react/state-in-constructor': 'off',
+        /**
+         * 类的静态属性必须使用 static 关键字定义
+         * @category React
+         */
+        'react/static-property-placement': 'error',
+        /**
          * 布尔值的属性必须显式的写 someprop={true}
          * @category JSX-specific
-         * @reason 没必要限制
          * @fixable
          */
         'react/jsx-boolean-value': 'off',
+        /**
+         * 禁止兄弟元素之间有空格
+         * @category JSX-specific
+         */
+        'react/jsx-child-element-spacing': 'off',
         /**
          * 自闭和标签的反尖括号必须与尖括号的那一行对齐
          * @category JSX-specific
@@ -192,6 +241,12 @@ module.exports = {
          * @fixable
          */
         'react/jsx-closing-tag-location': 'off',
+        /**
+         * 禁止 jsx 中使用无用的引号
+         * @category JSX-specific
+         * @fixable
+         */
+        'react/jsx-curly-brace-presence': ['error', 'never'],
         /**
          * 大括号内前后禁止有空格
          * @category JSX-specific
@@ -230,6 +285,12 @@ module.exports = {
          */
         'react/jsx-first-prop-new-line': 'off',
         /**
+         * 必须使用 React.Fragment 而不是 <></>
+         * @category JSX-specific
+         * @fixable
+         */
+        'react/jsx-fragments': ['error', 'syntax'],
+        /**
          * handler 的名称必须是 onXXX 或 handleXXX
          * @category JSX-specific
          * @reason 没必要限制
@@ -247,6 +308,11 @@ module.exports = {
          * @fixable
          */
         'react/jsx-indent-props': ['error', 4],
+        /**
+         * 限制 jsx 层级
+         * @category JSX-specific
+         */
+        'react/jsx-max-depth': 'off',
         /**
          * 限制每行的 props 数量
          * @category JSX-specific
@@ -273,12 +339,40 @@ module.exports = {
          */
         'react/jsx-no-target-blank': 'off',
         /**
+         * 禁止有内容的元素写在一行内
+         * @category JSX-specific
+         * @fixable
+         */
+        'react/jsx-one-expression-per-line': 'off',
+        /**
+         * 禁止出现多于的空格
+         * @category JSX-specific
+         * @fixable
+         */
+        'react/jsx-props-no-multi-spaces': 'error',
+        /**
+         * 禁止使用 {...props}
+         * @category JSX-specific
+         */
+        'react/jsx-props-no-spreading': 'off',
+        /**
+         * defaultProps 必须按字母排序
+         * @category JSX-specific
+         */
+        'react/jsx-sort-default-props': 'off',
+        /**
          * props 必须排好序
          * @category JSX-specific
          * @reason 没必要限制
          * @fixable
          */
         'react/jsx-sort-props': 'off',
+        /**
+         * 闭合标签前必须有空格
+         * @category JSX-specific
+         * @fixable
+         */
+        'react/jsx-space-before-closing': ['error', 'always'],
         /**
          * jsx 的开始和闭合处禁止有空格
          * @category JSX-specific

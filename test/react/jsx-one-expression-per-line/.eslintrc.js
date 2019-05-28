@@ -1,10 +1,10 @@
 module.exports = {
     rules: {
         /**
-         * 布尔值的属性必须显式的写 someprop={true}
+         * 禁止有内容的元素写在一行内
          * @category JSX-specific
          * @fixable
          */
-        'react/jsx-boolean-value': 'off'
+        'react/jsx-one-expression-per-line': 'off'
     }
 };

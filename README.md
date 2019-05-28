@@ -4,9 +4,9 @@
 
 AlloyTeam ESLint 规则不仅是一套科学的 ESLint 配置规范，而且也是你配置个性化 ESLint 规则的最佳参考。
 
-此为 v2-alpha 版本，如需 v1 版，请[点击这里](https://github.com/AlloyTeam/eslint-config-alloy/tree/v1)。
+此为 v2 版本，如需 v1 版，请[点击这里](https://github.com/AlloyTeam/eslint-config-alloy/tree/v1)。
 
-### v2 版本还在开发中，欢迎来[一起参与](#contributing)此项目，感谢你的贡献！
+## 规则列表
 
 | 名称 | 包含规则 | 解析器 |
 | --- | --- | --- |
@@ -50,7 +50,7 @@ ESLint 的配置多达几百条，逐个查阅是一项非常繁重的工作，�
 安装：
 
 ```bash
-npm install --save-dev eslint babel-eslint eslint-config-alloy@2.0.0-alpha.3
+npm install --save-dev eslint babel-eslint eslint-config-alloy
 ```
 
 在你的项目根目录下创建 `.eslintrc.js`，并将以下内容复制到文件中：
@@ -88,7 +88,7 @@ module.exports = {
 安装：
 
 ```bash
-npm install --save-dev eslint babel-eslint eslint-plugin-react eslint-config-alloy@2.0.0-alpha.3
+npm install --save-dev eslint babel-eslint eslint-plugin-react eslint-config-alloy
 ```
 
 在你的项目根目录下创建 `.eslintrc.js`，并将以下内容复制到文件中：
@@ -136,8 +136,10 @@ module.exports = {
 安装：
 
 ```bash
-npm install --save-dev eslint babel-eslint vue-eslint-parser eslint-plugin-vue eslint-config-alloy@2.0.0-alpha.3
+npm install --save-dev eslint babel-eslint vue-eslint-parser@5.0.0 eslint-plugin-vue eslint-config-alloy
 ```
+
+注意：由于[这个原因](https://github.com/mysticatea/vue-eslint-parser/issues/46)，不能使用最新版的 vue-eslint-parser，必须使用 5.0.0 版本。
 
 在你的项目根目录下创建 `.eslintrc.js`，并将以下内容复制到文件中：
 
@@ -173,7 +175,7 @@ module.exports = {
 安装：
 
 ```bash
-npm install --save-dev eslint typescript @typescript-eslint/eslint-plugin eslint-config-alloy@2.0.0-alpha.3 
+npm install --save-dev eslint typescript @typescript-eslint/eslint-plugin eslint-config-alloy
 ```
 
 在你的项目根目录下创建 `.eslintrc.js`，并将以下内容复制到文件中：
@@ -220,8 +222,10 @@ module.exports = {
 安装：
 
 ```bash
-npm install --save-dev eslint typescript @typescript-eslint/eslint-plugin eslint-plugin-react eslint-config-alloy@2.0.0-alpha.3 babel-eslint
+npm install --save-dev eslint babel-eslint typescript @typescript-eslint/eslint-plugin eslint-plugin-react eslint-config-alloy
 ```
+
+注意：由于[这个原因](https://github.com/AlloyTeam/eslint-config-alloy/issues/55)，必须也安装 babel-eslint 才能使用 typescript 规则。
 
 在你的项目根目录下创建 `.eslintrc.js`，并将以下内容复制到文件中：
 
@@ -355,6 +359,11 @@ npm publish
 - [x] 移植 bak/vue 的规则，完成 eslint-config-alloy/vue 的配置
 - [x] 实现 TypeScript React 配置
 - [ ] 实现 TypeScript Vue 配置
+- [x] 更新至新版 eslint 规则
+- [x] 更新至新版 react 规则
+- [x] 更新至新版 vue 规则
+- [x] 更新至新版 typescript 规则
+- [x] 添加 Greenkeeper 以保证依赖能够及时更新
 - [ ] 完成新版网站建设
 
 ## 参考

@@ -10,6 +10,8 @@ module.exports = {
     semi: true,
     // 使用单引号
     singleQuote: true,
+    // 对象的 key 仅在必要时用引号
+    quoteProps: 'as-needed',
     // jsx 不使用单引号，而使用双引号
     jsxSingleQuote: false,
     // 末尾不需要逗号
