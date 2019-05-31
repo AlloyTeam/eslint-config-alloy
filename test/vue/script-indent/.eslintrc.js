@@ -8,7 +8,7 @@ module.exports = {
             'error',
             4,
             {
-                SwitchCase: 1
+                switchCase: 1
             }
         ]
     }

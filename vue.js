@@ -422,12 +422,6 @@ module.exports = {
          */
         'vue/component-name-in-template-casing': 'off',
         /**
-         * 链式调用的时候，点号必须放在第二行开头处，禁止放在第一行结尾处
-         * @category Uncategorized
-         * @fixable
-         */
-        'vue/dot-location': ['error', 'property'],
-        /**
          * 必须使用 === 或 !==，禁止使用 == 或 !=，与 null 比较时除外
          * @category Uncategorized
          * @fixable
@@ -453,18 +447,6 @@ module.exports = {
             }
         ],
         /**
-         * 关键字前后必须有空格
-         * @category Uncategorized
-         * @fixable
-         */
-        'vue/keyword-spacing': [
-            'error',
-            {
-                before: true,
-                after: true
-            }
-        ],
-        /**
          * 组件名称必须和文件名一致
          * @category Uncategorized
          */
@@ -475,17 +457,6 @@ module.exports = {
          * @fixable
          */
         'vue/no-boolean-default': 'off',
-        /**
-         * 禁止用已废弃的 scope 属性
-         * @category Uncategorized
-         * @fixable
-         */
-        'vue/no-deprecated-scope-attribute': 'error',
-        /**
-         * 禁止解构中出现空 {} 或 []
-         * @category Uncategorized
-         */
-        'vue/no-empty-pattern': 'error',
         /**
          * 禁止使用特定的语法
          * @category Uncategorized
@@ -518,7 +489,7 @@ module.exports = {
             'error',
             4,
             {
-                SwitchCase: 1
+                switchCase: 1
             }
         ],
         /**
@@ -544,17 +515,6 @@ module.exports = {
          * @category Uncategorized
          * @fixable
          */
-        'vue/v-on-function-call': 'error',
-        /**
-         * 限制 v-slot 的书写样式
-         * @category Uncategorized
-         * @fixable
-         */
-        'vue/v-slot-style': 'error',
-        /**
-         * 禁止非法的 v-slot 格式
-         * @category Uncategorized
-         */
-        'vue/valid-v-slot': 'error'
+        'vue/v-on-function-call': 'error'
     }
 };
