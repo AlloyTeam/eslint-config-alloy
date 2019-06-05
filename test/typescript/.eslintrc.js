@@ -6,6 +6,8 @@ module.exports = {
         'func-call-spacing': 'off',
         'no-extra-parens': 'off',
         'no-magic-numbers': 'off',
-        semi: 'off'
+        'no-unused-vars': 'off',
+        semi: 'off',
+        'react/sort-comp': 'off'
     }
 };

@@ -31,7 +31,9 @@ module.exports = {
         'func-call-spacing': 'off',
         'no-extra-parens': 'off',
         'no-magic-numbers': 'off',
+        'no-unused-vars': 'off',
         semi: 'off',
+        'react/sort-comp': 'off',
         /**
          * 一个缩进必须用四个空格替代
          * @category Stylistic Issues
@@ -195,7 +197,7 @@ module.exports = {
          * @category TypeScript
          * @fixable
          */
-        '@typescript-eslint/no-extra-parens': ['error', 'functions'],
+        '@typescript-eslint/no-extra-parens': 'off',
         /**
          * 禁止定义没必要的类，比如只有静态方法的类
          * @category TypeScript

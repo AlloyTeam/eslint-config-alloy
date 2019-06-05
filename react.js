@@ -368,12 +368,6 @@ module.exports = {
          */
         'react/jsx-sort-props': 'off',
         /**
-         * 闭合标签前必须有空格
-         * @category JSX-specific
-         * @fixable
-         */
-        'react/jsx-space-before-closing': ['error', 'always'],
-        /**
          * jsx 的开始和闭合处禁止有空格
          * @category JSX-specific
          * @fixable

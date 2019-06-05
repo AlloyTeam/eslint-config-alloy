@@ -5,6 +5,6 @@ module.exports = {
          * @category TypeScript
          * @fixable
          */
-        '@typescript-eslint/no-extra-parens': ['error', 'functions']
+        '@typescript-eslint/no-extra-parens': 'off'
     }
 };

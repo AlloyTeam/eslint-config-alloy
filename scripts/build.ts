@@ -148,7 +148,13 @@ class Builder {
  * 依赖版本：
  *     ${Object.keys(pkg.peerDependencies)
      .sort((a, b) => {
-         return a.indexOf('eslint') > b.indexOf('eslint') ? 1 : -1;
+         if (a.indexOf('eslint') > b.indexOf('eslint')) {
+             return 1;
+         } else if (a.indexOf('eslint') < b.indexOf('eslint')) {
+             return -1;
+         } else {
+             return a > b ? 1 : -1;
+         }
      })
      .map((key) => `${key} ${pkg.devDependencies[key]}`)
      .join('\n *     ')}
