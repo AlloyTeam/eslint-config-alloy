@@ -15,7 +15,7 @@
  *     eslint-plugin-vue ^5.2.2
  *     vue-eslint-parser ^5.0.0
  *     babel-eslint ^10.0.1
- *     @typescript-eslint/eslint-plugin ^1.9.0
+ *     @typescript-eslint/eslint-plugin ^1.10.2
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  *
