@@ -1,9 +1,9 @@
 module.exports = {
     rules: {
         /**
-         * 禁止对 undefined 重新赋值
+         * 禁止使用 undefined
          * @category Variables
          */
-        'no-undefined': 'error'
+        'no-undefined': 'off'
     }
 };

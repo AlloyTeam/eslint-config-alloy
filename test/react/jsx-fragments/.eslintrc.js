@@ -5,6 +5,6 @@ module.exports = {
          * @category JSX-specific
          * @fixable
          */
-        'react/jsx-fragments': ['error', 'syntax']
+        'react/jsx-fragments': ['error', 'element']
     }
 };
