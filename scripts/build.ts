@@ -9,6 +9,13 @@ const pkg = require('../package.json');
 
 type RuleNamespaces = 'index' | 'react' | 'vue' | 'typescript';
 
+const RuleNamespaceExtensionMap = {
+    index: 'js',
+    react: 'js',
+    vue: 'vue',
+    typescript: 'ts'
+};
+
 const RuleCategoryPriority = {
     'Possible Errors': 0,
     'Best Practices': 1,
@@ -38,6 +45,8 @@ interface Rule {
     reason?: string;
     fixable?: boolean;
     comments: string;
+    badExample?: string;
+    goodExample?: string;
     [key: string]: string | boolean | undefined;
 }
 
@@ -63,10 +72,19 @@ class Builder {
     private buildRulesJson() {
         fs.writeFileSync(
             path.resolve(__dirname, `../site/config/${this.namespace}.json`),
-            prettier.format(JSON.stringify(this.ruleList), {
-                ...require('../prettier.config'),
-                parser: 'json'
-            }),
+            prettier.format(
+                JSON.stringify(
+                    this.ruleList.map((rule) => {
+                        let newRule = { ...rule };
+                        delete newRule.comments;
+                        return newRule;
+                    })
+                ),
+                {
+                    ...require('../prettier.config'),
+                    parser: 'json'
+                }
+            ),
             'utf-8'
         );
     }
@@ -185,7 +203,9 @@ class Builder {
             value: fileModule.rules[ruleName],
             description: '',
             category: '',
-            comments: ''
+            comments: '',
+            badExample: '',
+            goodExample: ''
         };
         if (comments !== null) {
             const commentsAST = doctrine.parse(comments[0], { unwrap: true });
@@ -194,6 +214,21 @@ class Builder {
                 rule[title] = description === null ? true : description;
             });
             rule.comments = comments[0];
+        }
+        const badFilePath = path.resolve(
+            path.dirname(filePath),
+            `bad.${RuleNamespaceExtensionMap[this.namespace]}`
+        );
+        const goodFilePath = path.resolve(
+            path.dirname(filePath),
+            `good.${RuleNamespaceExtensionMap[this.namespace]}`
+        );
+
+        if (fs.existsSync(badFilePath)) {
+            rule.badExample = fs.readFileSync(badFilePath, 'utf-8');
+        }
+        if (fs.existsSync(goodFilePath)) {
+            rule.goodExample = fs.readFileSync(goodFilePath, 'utf-8');
         }
         return rule;
     }

@@ -4,7 +4,8 @@
         "value": "off",
         "description": "布尔值类型的 propTypes 的 name 必须为 is 或 has 开头",
         "category": "React",
-        "comments": "/**\n         * 布尔值类型的 propTypes 的 name 必须为 is 或 has 开头\n         * @category React\n         * @reason 不强制要求写 propTypes\n         */",
+        "badExample": "",
+        "goodExample": "",
         "reason": "不强制要求写 propTypes"
     },
     {
@@ -12,14 +13,16 @@
         "value": "off",
         "description": "<button> 必须有 type 属性",
         "category": "React",
-        "comments": "/**\n         * <button> 必须有 type 属性\n         * @category React\n         */"
+        "badExample": "",
+        "goodExample": ""
     },
     {
         "name": "react/default-props-match-prop-types",
         "value": "off",
         "description": "一个 defaultProps 必须有对应的 propTypes",
         "category": "React",
-        "comments": "/**\n         * 一个 defaultProps 必须有对应的 propTypes\n         * @category React\n         * @reason 不强制要求写 propTypes\n         */",
+        "badExample": "",
+        "goodExample": "",
         "reason": "不强制要求写 propTypes"
     },
     {
@@ -27,14 +30,16 @@
         "value": "off",
         "description": "props state context 必须用解构赋值",
         "category": "React",
-        "comments": "/**\n         * props state context 必须用解构赋值\n         * @category React\n         */"
+        "badExample": "",
+        "goodExample": ""
     },
     {
         "name": "react/display-name",
         "value": "off",
         "description": "组件必须有 displayName 属性",
         "category": "React",
-        "comments": "/**\n         * 组件必须有 displayName 属性\n         * @category React\n         * @reason 不强制要求写 displayName\n         */",
+        "badExample": "",
+        "goodExample": "",
         "reason": "不强制要求写 displayName"
     },
     {
@@ -42,7 +47,8 @@
         "value": "off",
         "description": "禁止在自定义组件中使用一些指定的 props",
         "category": "React",
-        "comments": "/**\n         * 禁止在自定义组件中使用一些指定的 props\n         * @category React\n         * @reason 没必要限制\n         */",
+        "badExample": "",
+        "goodExample": "",
         "reason": "没必要限制"
     },
     {
@@ -50,14 +56,16 @@
         "value": "off",
         "description": "禁止指定的 props",
         "category": "React",
-        "comments": "/**\n         * 禁止指定的 props\n         * @category React\n         */"
+        "badExample": "",
+        "goodExample": ""
     },
     {
         "name": "react/forbid-elements",
         "value": "off",
         "description": "禁止使用一些指定的 elements",
         "category": "React",
-        "comments": "/**\n         * 禁止使用一些指定的 elements\n         * @category React\n         * @reason 没必要限制\n         */",
+        "badExample": "",
+        "goodExample": "",
         "reason": "没必要限制"
     },
     {
@@ -65,7 +73,8 @@
         "value": "off",
         "description": "禁止直接使用别的组建的 propTypes",
         "category": "React",
-        "comments": "/**\n         * 禁止直接使用别的组建的 propTypes\n         * @category React\n         * @reason 不强制要求写 propTypes\n         */",
+        "badExample": "",
+        "goodExample": "",
         "reason": "不强制要求写 propTypes"
     },
     {
@@ -73,7 +82,8 @@
         "value": "off",
         "description": "禁止使用一些指定的 propTypes",
         "category": "React",
-        "comments": "/**\n         * 禁止使用一些指定的 propTypes\n         * @category React\n         * @reason 不强制要求写 propTypes\n         */",
+        "badExample": "",
+        "goodExample": "",
         "reason": "不强制要求写 propTypes"
     },
     {
@@ -81,14 +91,16 @@
         "value": "off",
         "description": "禁止在 setState 时使用 this.state",
         "category": "React",
-        "comments": "/**\n         * 禁止在 setState 时使用 this.state\n         * @category React\n         */"
+        "badExample": "",
+        "goodExample": ""
     },
     {
         "name": "react/no-array-index-key",
         "value": "off",
         "description": "禁止使用数组的 index 作为 key",
         "category": "React",
-        "comments": "/**\n         * 禁止使用数组的 index 作为 key\n         * @category React\n         * @reason 太严格了\n         */",
+        "badExample": "",
+        "goodExample": "",
         "reason": "太严格了"
     },
     {
@@ -96,7 +108,8 @@
         "value": "off",
         "description": "禁止使用 dangerouslySetInnerHTML",
         "category": "React",
-        "comments": "/**\n         * 禁止使用 dangerouslySetInnerHTML\n         * @category React\n         * @reason 没必要限制\n         */",
+        "badExample": "",
+        "goodExample": "",
         "reason": "没必要限制"
     },
     {
@@ -104,7 +117,8 @@
         "value": "off",
         "description": "禁止在 componentDidMount 里面使用 setState",
         "category": "React",
-        "comments": "/**\n         * 禁止在 componentDidMount 里面使用 setState\n         * @category React\n         * @reason 同构应用需要在 didMount 里写 setState\n         */",
+        "badExample": "",
+        "goodExample": "",
         "reason": "同构应用需要在 didMount 里写 setState"
     },
     {
@@ -112,7 +126,8 @@
         "value": "off",
         "description": "禁止在一个文件创建两个组件",
         "category": "React",
-        "comments": "/**\n         * 禁止在一个文件创建两个组件\n         * @category React\n         * @reason 有一个 bug https://github.com/yannickcr/eslint-plugin-react/issues/1181\n         */",
+        "badExample": "",
+        "goodExample": "",
         "reason": "有一个 bug https://github.com/yannickcr/eslint-plugin-react/issues/1181"
     },
     {
@@ -120,7 +135,8 @@
         "value": "off",
         "description": "禁止使用 setState",
         "category": "React",
-        "comments": "/**\n         * 禁止使用 setState\n         * @category React\n         * @reason setState 很常用\n         */",
+        "badExample": "",
+        "goodExample": "",
         "reason": "setState 很常用"
     },
     {
@@ -128,14 +144,16 @@
         "value": "error",
         "description": "禁止在函数组件中使用 this",
         "category": "React",
-        "comments": "/**\n         * 禁止在函数组件中使用 this\n         * @category React\n         */"
+        "badExample": "",
+        "goodExample": ""
     },
     {
         "name": "react/no-unknown-property",
         "value": "error",
         "description": "禁止出现 HTML 中的属性，如 class",
         "category": "React",
-        "comments": "/**\n         * 禁止出现 HTML 中的属性，如 class\n         * @category React\n         * @fixable\n         */",
+        "badExample": "",
+        "goodExample": "",
         "fixable": true
     },
     {
@@ -143,14 +161,16 @@
         "value": "error",
         "description": "禁止使用不安全的生命周期方法 componentWillMount, componentWillReceiveProps, componentWillUpdate",
         "category": "React",
-        "comments": "/**\n         * 禁止使用不安全的生命周期方法 componentWillMount, componentWillReceiveProps, componentWillUpdate\n         * @category React\n         */"
+        "badExample": "",
+        "goodExample": ""
     },
     {
         "name": "react/no-unused-prop-types",
         "value": "off",
         "description": "禁止出现未使用的 propTypes",
         "category": "React",
-        "comments": "/**\n         * 禁止出现未使用的 propTypes\n         * @category React\n         * @reason 不强制要求写 propTypes\n         */",
+        "badExample": "",
+        "goodExample": "",
         "reason": "不强制要求写 propTypes"
     },
     {
@@ -158,7 +178,8 @@
         "value": "off",
         "description": "定义过的 state 必须使用",
         "category": "React",
-        "comments": "/**\n         * 定义过的 state 必须使用\n         * @category React\n         * @reason 没有官方文档，并且存在很多 bug： https://github.com/yannickcr/eslint-plugin-react/search?q=no-unused-state&type=Issues&utf8=%E2%9C%93\n         */",
+        "badExample": "",
+        "goodExample": "",
         "reason": "没有官方文档，并且存在很多 bug： https://github.com/yannickcr/eslint-plugin-react/search?q=no-unused-state&type=Issues&utf8=%E2%9C%93"
     },
     {
@@ -166,14 +187,16 @@
         "value": "off",
         "description": "使用 Flow 时，props 必须设置为只读的",
         "category": "React",
-        "comments": "/**\n         * 使用 Flow 时，props 必须设置为只读的\n         * @category React\n         */"
+        "badExample": "",
+        "goodExample": ""
     },
     {
         "name": "react/prefer-stateless-function",
         "value": "off",
         "description": "必须使用 pure function",
         "category": "React",
-        "comments": "/**\n         * 必须使用 pure function\n         * @category React\n         * @reason 没必要限制\n         */",
+        "badExample": "",
+        "goodExample": "",
         "reason": "没必要限制"
     },
     {
@@ -181,7 +204,8 @@
         "value": "off",
         "description": "组件必须写 propTypes",
         "category": "React",
-        "comments": "/**\n         * 组件必须写 propTypes\n         * @category React\n         * @reason 不强制要求写 propTypes\n         */",
+        "badExample": "",
+        "goodExample": "",
         "reason": "不强制要求写 propTypes"
     },
     {
@@ -189,7 +213,8 @@
         "value": "off",
         "description": "出现 jsx 的地方必须 import React",
         "category": "React",
-        "comments": "/**\n         * 出现 jsx 的地方必须 import React\n         * @category React\n         * @reason 已经在 no-undef 中限制了\n         */",
+        "badExample": "",
+        "goodExample": "",
         "reason": "已经在 no-undef 中限制了"
     },
     {
@@ -197,7 +222,8 @@
         "value": "off",
         "description": "非 required 的 prop 必须有 defaultProps",
         "category": "React",
-        "comments": "/**\n         * 非 required 的 prop 必须有 defaultProps\n         * @category React\n         * @reason 不强制要求写 propTypes\n         */",
+        "badExample": "",
+        "goodExample": "",
         "reason": "不强制要求写 propTypes"
     },
     {
@@ -205,7 +231,8 @@
         "value": "off",
         "description": "组件必须有 shouldComponentUpdate",
         "category": "React",
-        "comments": "/**\n         * 组件必须有 shouldComponentUpdate\n         * @category React\n         * @reason 没必要限制\n         */",
+        "badExample": "",
+        "goodExample": "",
         "reason": "没必要限制"
     },
     {
@@ -213,7 +240,8 @@
         "value": "off",
         "description": "组件内没有 children 时，必须使用自闭和写法",
         "category": "React",
-        "comments": "/**\n         * 组件内没有 children 时，必须使用自闭和写法\n         * @category React\n         * @reason 没必要限制\n         * @fixable\n         */",
+        "badExample": "",
+        "goodExample": "",
         "reason": "没必要限制",
         "fixable": true
     },
@@ -222,7 +250,8 @@
         "value": "error",
         "description": "组件内方法必须按照一定规则排序",
         "category": "React",
-        "comments": "/**\n         * 组件内方法必须按照一定规则排序\n         * @category React\n         * @fixable\n         */",
+        "badExample": "",
+        "goodExample": "",
         "fixable": true
     },
     {
@@ -230,7 +259,8 @@
         "value": "off",
         "description": "propTypes 的熟悉必须按照字母排序",
         "category": "React",
-        "comments": "/**\n         * propTypes 的熟悉必须按照字母排序\n         * @category React\n         * @reason 没必要限制\n         */",
+        "badExample": "",
+        "goodExample": "",
         "reason": "没必要限制"
     },
     {
@@ -238,21 +268,24 @@
         "value": "off",
         "description": "必须在构造函数中初始化 state",
         "category": "React",
-        "comments": "/**\n         * 必须在构造函数中初始化 state\n         * @category React\n         */"
+        "badExample": "",
+        "goodExample": ""
     },
     {
         "name": "react/static-property-placement",
         "value": "error",
         "description": "类的静态属性必须使用 static 关键字定义",
         "category": "React",
-        "comments": "/**\n         * 类的静态属性必须使用 static 关键字定义\n         * @category React\n         */"
+        "badExample": "",
+        "goodExample": ""
     },
     {
         "name": "react/jsx-boolean-value",
         "value": "off",
         "description": "布尔值的属性必须显式的写 someprop={true}",
         "category": "JSX-specific",
-        "comments": "/**\n         * 布尔值的属性必须显式的写 someprop={true}\n         * @category JSX-specific\n         * @fixable\n         */",
+        "badExample": "",
+        "goodExample": "",
         "fixable": true
     },
     {
@@ -260,14 +293,16 @@
         "value": "off",
         "description": "禁止兄弟元素之间有空格",
         "category": "JSX-specific",
-        "comments": "/**\n         * 禁止兄弟元素之间有空格\n         * @category JSX-specific\n         */"
+        "badExample": "",
+        "goodExample": ""
     },
     {
         "name": "react/jsx-closing-bracket-location",
         "value": ["error", { "nonEmpty": false, "selfClosing": "line-aligned" }],
         "description": "自闭和标签的反尖括号必须与尖括号的那一行对齐",
         "category": "JSX-specific",
-        "comments": "/**\n         * 自闭和标签的反尖括号必须与尖括号的那一行对齐\n         * @category JSX-specific\n         * @fixable\n         */",
+        "badExample": "",
+        "goodExample": "",
         "fixable": true
     },
     {
@@ -275,7 +310,8 @@
         "value": "off",
         "description": "结束标签必须与开始标签的那一行对齐",
         "category": "JSX-specific",
-        "comments": "/**\n         * 结束标签必须与开始标签的那一行对齐\n         * @category JSX-specific\n         * @reason 已经在 jsx-indent 中限制了\n         * @fixable\n         */",
+        "badExample": "",
+        "goodExample": "",
         "reason": "已经在 jsx-indent 中限制了",
         "fixable": true
     },
@@ -284,7 +320,8 @@
         "value": ["error", "never"],
         "description": "禁止 jsx 中使用无用的引号",
         "category": "JSX-specific",
-        "comments": "/**\n         * 禁止 jsx 中使用无用的引号\n         * @category JSX-specific\n         * @fixable\n         */",
+        "badExample": "",
+        "goodExample": "",
         "fixable": true
     },
     {
@@ -300,7 +337,8 @@
         ],
         "description": "大括号内前后禁止有空格",
         "category": "JSX-specific",
-        "comments": "/**\n         * 大括号内前后禁止有空格\n         * @category JSX-specific\n         * @fixable\n         */",
+        "badExample": "// bad 禁止大括号内前后有空格\nlet foo = <img width={ 100 } />;\nlet bar = <div style={ { color: 'red' } } />;\n",
+        "goodExample": "// good 大括号内前后必须没有空格\nlet foo = <img width={100} />;\nlet bar = <div style={{ color: 'red' }} />;\n",
         "fixable": true
     },
     {
@@ -308,7 +346,8 @@
         "value": ["error", "never"],
         "description": "props 与 value 之间的等号前后禁止有空格",
         "category": "JSX-specific",
-        "comments": "/**\n         * props 与 value 之间的等号前后禁止有空格\n         * @category JSX-specific\n         * @fixable\n         */",
+        "badExample": "",
+        "goodExample": "",
         "fixable": true
     },
     {
@@ -316,7 +355,8 @@
         "value": "off",
         "description": "限制文件后缀",
         "category": "JSX-specific",
-        "comments": "/**\n         * 限制文件后缀\n         * @category JSX-specific\n         * @reason 没必要限制\n         */",
+        "badExample": "",
+        "goodExample": "",
         "reason": "没必要限制"
     },
     {
@@ -324,7 +364,8 @@
         "value": "off",
         "description": "第一个 prop 必须得换行",
         "category": "JSX-specific",
-        "comments": "/**\n         * 第一个 prop 必须得换行\n         * @category JSX-specific\n         * @reason 没必要限制\n         * @fixable\n         */",
+        "badExample": "",
+        "goodExample": "",
         "reason": "没必要限制",
         "fixable": true
     },
@@ -333,7 +374,8 @@
         "value": ["error", "element"],
         "description": "必须使用 React.Fragment 而不是 <></>",
         "category": "JSX-specific",
-        "comments": "/**\n         * 必须使用 React.Fragment 而不是 <></>\n         * @category JSX-specific\n         * @fixable\n         */",
+        "badExample": "",
+        "goodExample": "",
         "fixable": true
     },
     {
@@ -341,7 +383,8 @@
         "value": "off",
         "description": "handler 的名称必须是 onXXX 或 handleXXX",
         "category": "JSX-specific",
-        "comments": "/**\n         * handler 的名称必须是 onXXX 或 handleXXX\n         * @category JSX-specific\n         * @reason 没必要限制\n         */",
+        "badExample": "",
+        "goodExample": "",
         "reason": "没必要限制"
     },
     {
@@ -349,7 +392,8 @@
         "value": ["error", 4],
         "description": "jsx 的 children 缩进必须为四个空格",
         "category": "JSX-specific",
-        "comments": "/**\n         * jsx 的 children 缩进必须为四个空格\n         * @category JSX-specific\n         * @fixable\n         */",
+        "badExample": "",
+        "goodExample": "",
         "fixable": true
     },
     {
@@ -357,7 +401,8 @@
         "value": ["error", 4],
         "description": "jsx 的 props 缩进必须为四个空格",
         "category": "JSX-specific",
-        "comments": "/**\n         * jsx 的 props 缩进必须为四个空格\n         * @category JSX-specific\n         * @fixable\n         */",
+        "badExample": "",
+        "goodExample": "",
         "fixable": true
     },
     {
@@ -365,14 +410,16 @@
         "value": "off",
         "description": "限制 jsx 层级",
         "category": "JSX-specific",
-        "comments": "/**\n         * 限制 jsx 层级\n         * @category JSX-specific\n         */"
+        "badExample": "",
+        "goodExample": ""
     },
     {
         "name": "react/jsx-max-props-per-line",
         "value": "off",
         "description": "限制每行的 props 数量",
         "category": "JSX-specific",
-        "comments": "/**\n         * 限制每行的 props 数量\n         * @category JSX-specific\n         * @reason 没必要限制\n         * @fixable\n         */",
+        "badExample": "",
+        "goodExample": "",
         "reason": "没必要限制",
         "fixable": true
     },
@@ -381,7 +428,8 @@
         "value": "off",
         "description": "jsx 中禁止使用 bind",
         "category": "JSX-specific",
-        "comments": "/**\n         * jsx 中禁止使用 bind\n         * @category JSX-specific\n         * @reason 太严格了\n         */",
+        "badExample": "",
+        "goodExample": "",
         "reason": "太严格了"
     },
     {
@@ -389,7 +437,8 @@
         "value": "off",
         "description": "禁止在 jsx 中出现字符串",
         "category": "JSX-specific",
-        "comments": "/**\n         * 禁止在 jsx 中出现字符串\n         * @category JSX-specific\n         * @reason 没必要限制\n         */",
+        "badExample": "",
+        "goodExample": "",
         "reason": "没必要限制"
     },
     {
@@ -397,7 +446,8 @@
         "value": "off",
         "description": "禁止使用 target=\"_blank\"",
         "category": "JSX-specific",
-        "comments": "/**\n         * 禁止使用 target=\"_blank\"\n         * @category JSX-specific\n         * @reason 没必要限制\n         */",
+        "badExample": "",
+        "goodExample": "",
         "reason": "没必要限制"
     },
     {
@@ -405,7 +455,8 @@
         "value": "off",
         "description": "禁止有内容的元素写在一行内",
         "category": "JSX-specific",
-        "comments": "/**\n         * 禁止有内容的元素写在一行内\n         * @category JSX-specific\n         * @fixable\n         */",
+        "badExample": "",
+        "goodExample": "",
         "fixable": true
     },
     {
@@ -413,7 +464,8 @@
         "value": "error",
         "description": "禁止出现多于的空格",
         "category": "JSX-specific",
-        "comments": "/**\n         * 禁止出现多于的空格\n         * @category JSX-specific\n         * @fixable\n         */",
+        "badExample": "",
+        "goodExample": "",
         "fixable": true
     },
     {
@@ -421,21 +473,24 @@
         "value": "off",
         "description": "禁止使用 {...props}",
         "category": "JSX-specific",
-        "comments": "/**\n         * 禁止使用 {...props}\n         * @category JSX-specific\n         */"
+        "badExample": "",
+        "goodExample": ""
     },
     {
         "name": "react/jsx-sort-default-props",
         "value": "off",
         "description": "defaultProps 必须按字母排序",
         "category": "JSX-specific",
-        "comments": "/**\n         * defaultProps 必须按字母排序\n         * @category JSX-specific\n         */"
+        "badExample": "",
+        "goodExample": ""
     },
     {
         "name": "react/jsx-sort-props",
         "value": "off",
         "description": "props 必须排好序",
         "category": "JSX-specific",
-        "comments": "/**\n         * props 必须排好序\n         * @category JSX-specific\n         * @reason 没必要限制\n         * @fixable\n         */",
+        "badExample": "",
+        "goodExample": "",
         "reason": "没必要限制",
         "fixable": true
     },
@@ -447,7 +502,8 @@
         ],
         "description": "jsx 的开始和闭合处禁止有空格",
         "category": "JSX-specific",
-        "comments": "/**\n         * jsx 的开始和闭合处禁止有空格\n         * @category JSX-specific\n         * @fixable\n         */",
+        "badExample": "",
+        "goodExample": "",
         "fixable": true
     },
     {
@@ -455,7 +511,8 @@
         "value": "off",
         "description": "多行的 jsx 必须有括号包起来",
         "category": "JSX-specific",
-        "comments": "/**\n         * 多行的 jsx 必须有括号包起来\n         * @category JSX-specific\n         * @reason 没必要限制\n         * @fixable\n         */",
+        "badExample": "",
+        "goodExample": "",
         "reason": "没必要限制",
         "fixable": true
     },
@@ -464,167 +521,191 @@
         "value": "error",
         "description": "数组中的 jsx 必须有 key",
         "category": "",
-        "comments": "/**\n         * 数组中的 jsx 必须有 key\n         */"
+        "badExample": "",
+        "goodExample": ""
     },
     {
         "name": "react/jsx-no-comment-textnodes",
         "value": "error",
         "description": "禁止在 jsx 中使用像注释的字符串",
         "category": "",
-        "comments": "/**\n         * 禁止在 jsx 中使用像注释的字符串\n         */"
+        "badExample": "",
+        "goodExample": ""
     },
     {
         "name": "react/jsx-no-duplicate-props",
         "value": "error",
         "description": "禁止出现重复的 props",
         "category": "",
-        "comments": "/**\n         * 禁止出现重复的 props\n         */"
+        "badExample": "",
+        "goodExample": ""
     },
     {
         "name": "react/jsx-no-undef",
         "value": "error",
         "description": "禁止使用未定义的 jsx elemet",
         "category": "",
-        "comments": "/**\n         * 禁止使用未定义的 jsx elemet\n         */"
+        "badExample": "",
+        "goodExample": ""
     },
     {
         "name": "react/jsx-pascal-case",
         "value": "error",
         "description": "禁止使用 pascal 写法的 jsx，比如 <TEST_COMPONENT>",
         "category": "",
-        "comments": "/**\n         * 禁止使用 pascal 写法的 jsx，比如 <TEST_COMPONENT>\n         */"
+        "badExample": "",
+        "goodExample": ""
     },
     {
         "name": "react/jsx-uses-react",
         "value": "error",
         "description": "jsx 文件必须 import React",
         "category": "",
-        "comments": "/**\n         * jsx 文件必须 import React\n         */"
+        "badExample": "",
+        "goodExample": ""
     },
     {
         "name": "react/jsx-uses-vars",
         "value": "error",
         "description": "定义了的 jsx element 必须使用",
         "category": "",
-        "comments": "/**\n         * 定义了的 jsx element 必须使用\n         */"
+        "badExample": "",
+        "goodExample": ""
     },
     {
         "name": "react/no-children-prop",
         "value": "error",
         "description": "禁止使用 children 做 props",
         "category": "",
-        "comments": "/**\n         * 禁止使用 children 做 props\n         */"
+        "badExample": "",
+        "goodExample": ""
     },
     {
         "name": "react/no-danger-with-children",
         "value": "error",
         "description": "禁止在使用了 dangerouslySetInnerHTML 的组建内添加 children",
         "category": "",
-        "comments": "/**\n         * 禁止在使用了 dangerouslySetInnerHTML 的组建内添加 children\n         */"
+        "badExample": "",
+        "goodExample": ""
     },
     {
         "name": "react/no-deprecated",
         "value": "error",
         "description": "禁止使用已废弃的 api",
         "category": "",
-        "comments": "/**\n         * 禁止使用已废弃的 api\n         */"
+        "badExample": "",
+        "goodExample": ""
     },
     {
         "name": "react/no-did-update-set-state",
         "value": "error",
         "description": "禁止在 componentDidUpdate 里面使用 setState",
         "category": "",
-        "comments": "/**\n         * 禁止在 componentDidUpdate 里面使用 setState\n         */"
+        "badExample": "",
+        "goodExample": ""
     },
     {
         "name": "react/no-direct-mutation-state",
         "value": "error",
         "description": "禁止直接修改 this.state",
         "category": "",
-        "comments": "/**\n         * 禁止直接修改 this.state\n         */"
+        "badExample": "",
+        "goodExample": ""
     },
     {
         "name": "react/no-find-dom-node",
         "value": "error",
         "description": "禁止使用 findDOMNode",
         "category": "",
-        "comments": "/**\n         * 禁止使用 findDOMNode\n         */"
+        "badExample": "",
+        "goodExample": ""
     },
     {
         "name": "react/no-is-mounted",
         "value": "error",
         "description": "禁止使用 isMounted",
         "category": "",
-        "comments": "/**\n         * 禁止使用 isMounted\n         */"
+        "badExample": "",
+        "goodExample": ""
     },
     {
         "name": "react/no-redundant-should-component-update",
         "value": "error",
         "description": "禁止在 PureComponent 中使用 shouldComponentUpdate",
         "category": "",
-        "comments": "/**\n         * 禁止在 PureComponent 中使用 shouldComponentUpdate\n         */"
+        "badExample": "",
+        "goodExample": ""
     },
     {
         "name": "react/no-render-return-value",
         "value": "error",
         "description": "禁止使用 ReactDOM.render 的返回值",
         "category": "",
-        "comments": "/**\n         * 禁止使用 ReactDOM.render 的返回值\n         */"
+        "badExample": "",
+        "goodExample": ""
     },
     {
         "name": "react/no-string-refs",
         "value": "error",
         "description": "禁止使用字符串 ref",
         "category": "",
-        "comments": "/**\n         * 禁止使用字符串 ref\n         */"
+        "badExample": "",
+        "goodExample": ""
     },
     {
         "name": "react/no-typos",
         "value": "error",
         "description": "禁止拼写错误",
         "category": "",
-        "comments": "/**\n         * 禁止拼写错误\n         */"
+        "badExample": "",
+        "goodExample": ""
     },
     {
         "name": "react/no-unescaped-entities",
         "value": "error",
         "description": "禁止在组件的内部存在未转义的 >, \", ' 或 }",
         "category": "",
-        "comments": "/**\n         * 禁止在组件的内部存在未转义的 >, \", ' 或 }\n         */"
+        "badExample": "",
+        "goodExample": ""
     },
     {
         "name": "react/no-will-update-set-state",
         "value": "error",
         "description": "禁止在 componentWillUpdate 中使用 setState",
         "category": "",
-        "comments": "/**\n         * 禁止在 componentWillUpdate 中使用 setState\n         */"
+        "badExample": "",
+        "goodExample": ""
     },
     {
         "name": "react/prefer-es6-class",
         "value": ["error", "always"],
         "description": "必须使用 Class 的形式创建组件",
         "category": "",
-        "comments": "/**\n         * 必须使用 Class 的形式创建组件\n         */"
+        "badExample": "",
+        "goodExample": ""
     },
     {
         "name": "react/require-render-return",
         "value": "error",
         "description": "render 方法中必须有返回值",
         "category": "",
-        "comments": "/**\n         * render 方法中必须有返回值\n         */"
+        "badExample": "",
+        "goodExample": ""
     },
     {
         "name": "react/style-prop-object",
         "value": "error",
         "description": "style 属性的取值必须是 object",
         "category": "",
-        "comments": "/**\n         * style 属性的取值必须是 object\n         */"
+        "badExample": "",
+        "goodExample": ""
     },
     {
         "name": "react/void-dom-elements-no-children",
         "value": "error",
         "description": "HTML 中的自闭和标签禁止有 children",
         "category": "",
-        "comments": "/**\n         * HTML 中的自闭和标签禁止有 children\n         */"
+        "badExample": "",
+        "goodExample": ""
     }
 ]
