@@ -3,7 +3,6 @@
 
 .DS_Store
 .editorconfig
-package-lock.json
 
 test/**/bad.*
 test/**/good.*
@@ -12,3 +11,8 @@ docs
 site
 bak
 .cache
+.idea
+*.json
+*.log
+*.lock
+node_modules
