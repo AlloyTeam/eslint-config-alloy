@@ -7,8 +7,8 @@
     position: relative;
 }
 .site-row-wide {
-    margin-left: -.9375rem;
-    margin-right: -.9375rem;
+    margin-left: -0.9375rem;
+    margin-right: -0.9375rem;
 }
 .site-row-wide > *:first-child {
     padding-left: 0.9375rem;
@@ -17,7 +17,7 @@
     padding-right: 0.9375rem;
 }
 .site-row-off {
-    background: url("off.svg");
+    background: url('off.svg');
 }
 
 /* 表单 */

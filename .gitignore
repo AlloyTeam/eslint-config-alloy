@@ -1,6 +1,11 @@
-node_modules
-*.log
-dist
-.cache
+## OS
 .DS_Store
 .idea
+*.log
+
+## Local
+node_modules
+
+## Built-files
+dist
+.cache

@@ -1,18 +1,19 @@
+## OS
+.DS_Store
+.idea
+.editorconfig
+package-lock.json
+
+# Ignored suffix
+*.log
 *.md
+*.svg
 *ignore
 
-.DS_Store
-.editorconfig
-
+## Local
 test/**/bad.*
 test/**/good.*
 
+## Built-files
 docs
-site
-bak
 .cache
-.idea
-*.json
-*.log
-*.lock
-node_modules

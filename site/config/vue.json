@@ -4,27 +4,21 @@
         "value": "error",
         "description": "支持在模版中使用 eslint-disable-next-line 等注释",
         "category": "Enabling Correct ESLint Parsing",
-        "comments": "/**\n         * 支持在模版中使用 eslint-disable-next-line 等注释\n         * @category Enabling Correct ESLint Parsing\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * 支持在模版中使用 eslint-disable-next-line 等注释\n         * @category Enabling Correct ESLint Parsing\n         */"
     },
     {
         "name": "vue/jsx-uses-vars",
         "value": "error",
         "description": "定义了的 jsx element 必须使用",
         "category": "Enabling Correct ESLint Parsing",
-        "comments": "/**\n         * 定义了的 jsx element 必须使用\n         * @category Enabling Correct ESLint Parsing\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * 定义了的 jsx element 必须使用\n         * @category Enabling Correct ESLint Parsing\n         */"
     },
     {
         "name": "vue/no-async-in-computed-properties",
         "value": "error",
         "description": "计算属性禁止包含异步方法",
         "category": "Error Prevention",
-        "comments": "/**\n         * 计算属性禁止包含异步方法\n         * @category Error Prevention\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * 计算属性禁止包含异步方法\n         * @category Error Prevention\n         */"
     },
     {
         "name": "vue/no-dupe-keys",
@@ -32,8 +26,6 @@
         "description": "禁止重复的二级键名",
         "category": "Error Prevention",
         "comments": "/**\n         * 禁止重复的二级键名\n         * @category Error Prevention\n         * @reason 没必要限制\n         */",
-        "badExample": "",
-        "goodExample": "",
         "reason": "没必要限制"
     },
     {
@@ -41,27 +33,21 @@
         "value": "error",
         "description": "禁止出现重复的属性",
         "category": "Error Prevention",
-        "comments": "/**\n         * 禁止出现重复的属性\n         * @category Error Prevention\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * 禁止出现重复的属性\n         * @category Error Prevention\n         */"
     },
     {
         "name": "vue/no-parsing-error",
         "value": "error",
         "description": "禁止出现语法错误",
         "category": "Error Prevention",
-        "comments": "/**\n         * 禁止出现语法错误\n         * @category Error Prevention\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * 禁止出现语法错误\n         * @category Error Prevention\n         */"
     },
     {
         "name": "vue/no-reserved-keys",
         "value": "error",
         "description": "禁止覆盖保留字",
         "category": "Error Prevention",
-        "comments": "/**\n         * 禁止覆盖保留字\n         * @category Error Prevention\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * 禁止覆盖保留字\n         * @category Error Prevention\n         */"
     },
     {
         "name": "vue/no-shared-component-data",
@@ -69,8 +55,6 @@
         "description": "组件的 data 属性的值必须是一个函数",
         "category": "Error Prevention",
         "comments": "/**\n         * 组件的 data 属性的值必须是一个函数\n         * @category Error Prevention\n         * @reason 没必要限制\n         */",
-        "badExample": "",
-        "goodExample": "",
         "reason": "没必要限制"
     },
     {
@@ -79,8 +63,6 @@
         "description": "禁止在计算属性中对属性修改",
         "category": "Error Prevention",
         "comments": "/**\n         * 禁止在计算属性中对属性修改\n         * @category Error Prevention\n         * @reason 太严格了\n         */",
-        "badExample": "",
-        "goodExample": "",
         "reason": "太严格了"
     },
     {
@@ -89,8 +71,6 @@
         "description": "禁止 <template> 使用 key 属性",
         "category": "Error Prevention",
         "comments": "/**\n         * 禁止 <template> 使用 key 属性\n         * @category Error Prevention\n         * @reason 太严格了\n         */",
-        "badExample": "",
-        "goodExample": "",
         "reason": "太严格了"
     },
     {
@@ -98,45 +78,35 @@
         "value": "error",
         "description": "禁止在 <textarea> 中出现 {{message}}",
         "category": "Error Prevention",
-        "comments": "/**\n         * 禁止在 <textarea> 中出现 {{message}}\n         * @category Error Prevention\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * 禁止在 <textarea> 中出现 {{message}}\n         * @category Error Prevention\n         */"
     },
     {
         "name": "vue/no-unused-components",
         "value": "error",
         "description": "禁止定义在 components 中的组件未使用",
         "category": "Error Prevention",
-        "comments": "/**\n         * 禁止定义在 components 中的组件未使用\n         * @category Error Prevention\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * 禁止定义在 components 中的组件未使用\n         * @category Error Prevention\n         */"
     },
     {
         "name": "vue/no-unused-vars",
         "value": "error",
         "description": "禁止模版中定义的变量未使用",
         "category": "Error Prevention",
-        "comments": "/**\n         * 禁止模版中定义的变量未使用\n         * @category Error Prevention\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * 禁止模版中定义的变量未使用\n         * @category Error Prevention\n         */"
     },
     {
         "name": "vue/no-use-v-if-with-v-for",
         "value": "error",
         "description": "禁止在同一个元素上使用 v-if 和 v-for 指令",
         "category": "Error Prevention",
-        "comments": "/**\n         * 禁止在同一个元素上使用 v-if 和 v-for 指令\n         * @category Error Prevention\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * 禁止在同一个元素上使用 v-if 和 v-for 指令\n         * @category Error Prevention\n         */"
     },
     {
         "name": "vue/require-component-is",
         "value": "error",
         "description": "<component> 必须有 v-bind:is",
         "category": "Error Prevention",
-        "comments": "/**\n         * <component> 必须有 v-bind:is\n         * @category Error Prevention\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * <component> 必须有 v-bind:is\n         * @category Error Prevention\n         */"
     },
     {
         "name": "vue/require-prop-type-constructor",
@@ -144,8 +114,6 @@
         "description": "props 的取值必须是构造函数",
         "category": "Error Prevention",
         "comments": "/**\n         * props 的取值必须是构造函数\n         * @category Error Prevention\n         * @fixable\n         */",
-        "badExample": "",
-        "goodExample": "",
         "fixable": true
     },
     {
@@ -153,18 +121,14 @@
         "value": "error",
         "description": "render 函数必须有返回值",
         "category": "Error Prevention",
-        "comments": "/**\n         * render 函数必须有返回值\n         * @category Error Prevention\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * render 函数必须有返回值\n         * @category Error Prevention\n         */"
     },
     {
         "name": "vue/require-v-for-key",
         "value": "error",
         "description": "v-for 指令的元素必须有 v-bind:key",
         "category": "Error Prevention",
-        "comments": "/**\n         * v-for 指令的元素必须有 v-bind:key\n         * @category Error Prevention\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * v-for 指令的元素必须有 v-bind:key\n         * @category Error Prevention\n         */"
     },
     {
         "name": "vue/require-valid-default-prop",
@@ -172,8 +136,6 @@
         "description": "prop 的默认值必须匹配它的类型",
         "category": "Error Prevention",
         "comments": "/**\n         * prop 的默认值必须匹配它的类型\n         * @category Error Prevention\n         * @reason 太严格了\n         */",
-        "badExample": "",
-        "goodExample": "",
         "reason": "太严格了"
     },
     {
@@ -181,144 +143,112 @@
         "value": "error",
         "description": "计算属性必须有返回值",
         "category": "Error Prevention",
-        "comments": "/**\n         * 计算属性必须有返回值\n         * @category Error Prevention\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * 计算属性必须有返回值\n         * @category Error Prevention\n         */"
     },
     {
         "name": "vue/use-v-on-exact",
         "value": "error",
         "description": "当一个节点上出现两个 v-on:click 时，其中一个必须为 exact",
         "category": "Error Prevention",
-        "comments": "/**\n         * 当一个节点上出现两个 v-on:click 时，其中一个必须为 exact\n         * @category Error Prevention\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * 当一个节点上出现两个 v-on:click 时，其中一个必须为 exact\n         * @category Error Prevention\n         */"
     },
     {
         "name": "vue/valid-template-root",
         "value": "error",
         "description": "template 的根节点必须合法",
         "category": "Error Prevention",
-        "comments": "/**\n         * template 的根节点必须合法\n         * @category Error Prevention\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * template 的根节点必须合法\n         * @category Error Prevention\n         */"
     },
     {
         "name": "vue/valid-v-bind",
         "value": "error",
         "description": "v-bind 指令必须合法",
         "category": "Error Prevention",
-        "comments": "/**\n         * v-bind 指令必须合法\n         * @category Error Prevention\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * v-bind 指令必须合法\n         * @category Error Prevention\n         */"
     },
     {
         "name": "vue/valid-v-cloak",
         "value": "error",
         "description": "v-cloak 指令必须合法",
         "category": "Error Prevention",
-        "comments": "/**\n         * v-cloak 指令必须合法\n         * @category Error Prevention\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * v-cloak 指令必须合法\n         * @category Error Prevention\n         */"
     },
     {
         "name": "vue/valid-v-else",
         "value": "error",
         "description": "v-else 指令必须合法",
         "category": "Error Prevention",
-        "comments": "/**\n         * v-else 指令必须合法\n         * @category Error Prevention\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * v-else 指令必须合法\n         * @category Error Prevention\n         */"
     },
     {
         "name": "vue/valid-v-else-if",
         "value": "error",
         "description": "v-else-if 指令必须合法",
         "category": "Error Prevention",
-        "comments": "/**\n         * v-else-if 指令必须合法\n         * @category Error Prevention\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * v-else-if 指令必须合法\n         * @category Error Prevention\n         */"
     },
     {
         "name": "vue/valid-v-for",
         "value": "error",
         "description": "v-for 指令必须合法",
         "category": "Error Prevention",
-        "comments": "/**\n         * v-for 指令必须合法\n         * @category Error Prevention\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * v-for 指令必须合法\n         * @category Error Prevention\n         */"
     },
     {
         "name": "vue/valid-v-html",
         "value": "error",
         "description": "v-html 指令必须合法",
         "category": "Error Prevention",
-        "comments": "/**\n         * v-html 指令必须合法\n         * @category Error Prevention\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * v-html 指令必须合法\n         * @category Error Prevention\n         */"
     },
     {
         "name": "vue/valid-v-if",
         "value": "error",
         "description": "v-if 指令必须合法",
         "category": "Error Prevention",
-        "comments": "/**\n         * v-if 指令必须合法\n         * @category Error Prevention\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * v-if 指令必须合法\n         * @category Error Prevention\n         */"
     },
     {
         "name": "vue/valid-v-model",
         "value": "error",
         "description": "v-model 指令必须合法",
         "category": "Error Prevention",
-        "comments": "/**\n         * v-model 指令必须合法\n         * @category Error Prevention\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * v-model 指令必须合法\n         * @category Error Prevention\n         */"
     },
     {
         "name": "vue/valid-v-on",
         "value": "error",
         "description": "v-on 指令必须合法",
         "category": "Error Prevention",
-        "comments": "/**\n         * v-on 指令必须合法\n         * @category Error Prevention\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * v-on 指令必须合法\n         * @category Error Prevention\n         */"
     },
     {
         "name": "vue/valid-v-once",
         "value": "error",
         "description": "v-once 指令必须合法",
         "category": "Error Prevention",
-        "comments": "/**\n         * v-once 指令必须合法\n         * @category Error Prevention\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * v-once 指令必须合法\n         * @category Error Prevention\n         */"
     },
     {
         "name": "vue/valid-v-pre",
         "value": "error",
         "description": "v-pre 指令必须合法",
         "category": "Error Prevention",
-        "comments": "/**\n         * v-pre 指令必须合法\n         * @category Error Prevention\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * v-pre 指令必须合法\n         * @category Error Prevention\n         */"
     },
     {
         "name": "vue/valid-v-show",
         "value": "error",
         "description": "v-show 指令必须合法",
         "category": "Error Prevention",
-        "comments": "/**\n         * v-show 指令必须合法\n         * @category Error Prevention\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * v-show 指令必须合法\n         * @category Error Prevention\n         */"
     },
     {
         "name": "vue/valid-v-text",
         "value": "error",
         "description": "v-text 指令必须合法",
         "category": "Error Prevention",
-        "comments": "/**\n         * v-text 指令必须合法\n         * @category Error Prevention\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * v-text 指令必须合法\n         * @category Error Prevention\n         */"
     },
     {
         "name": "vue/attribute-hyphenation",
@@ -326,8 +256,6 @@
         "description": "限制自定义组件的属性风格",
         "category": "Improving Readability",
         "comments": "/**\n         * 限制自定义组件的属性风格\n         * @category Improving Readability\n         * @reason 没必要限制\n         * @fixable\n         */",
-        "badExample": "",
-        "goodExample": "",
         "reason": "没必要限制",
         "fixable": true
     },
@@ -337,8 +265,6 @@
         "description": "模版中开始标签的反尖括号必须换行",
         "category": "Improving Readability",
         "comments": "/**\n         * 模版中开始标签的反尖括号必须换行\n         * @category Improving Readability\n         * @fixable\n         */",
-        "badExample": "",
-        "goodExample": "",
         "fixable": true
     },
     {
@@ -347,8 +273,6 @@
         "description": "模版中开始标签的反尖括号前禁止有空格，自闭和标签前必须有空格",
         "category": "Improving Readability",
         "comments": "/**\n         * 模版中开始标签的反尖括号前禁止有空格，自闭和标签前必须有空格\n         * @category Improving Readability\n         * @fixable\n         */",
-        "badExample": "",
-        "goodExample": "",
         "fixable": true
     },
     {
@@ -357,8 +281,6 @@
         "description": "html 的结束标签必须符合规定",
         "category": "Improving Readability",
         "comments": "/**\n         * html 的结束标签必须符合规定\n         * @category Improving Readability\n         * @reason 有的标签不必严格符合规定，如 <br> 或 <br/> 都应该是合法的\n         * @fixable\n         */",
-        "badExample": "",
-        "goodExample": "",
         "reason": "有的标签不必严格符合规定，如 <br> 或 <br/> 都应该是合法的",
         "fixable": true
     },
@@ -368,8 +290,6 @@
         "description": "模版中使用 4 个空格缩进",
         "category": "Improving Readability",
         "comments": "/**\n         * 模版中使用 4 个空格缩进\n         * @category Improving Readability\n         * @fixable\n         */",
-        "badExample": "",
-        "goodExample": "",
         "fixable": true
     },
     {
@@ -377,9 +297,7 @@
         "value": "error",
         "description": "html 属性值必须用双引号括起来",
         "category": "Improving Readability",
-        "comments": "/**\n         * html 属性值必须用双引号括起来\n         * @category Improving Readability\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * html 属性值必须用双引号括起来\n         * @category Improving Readability\n         */"
     },
     {
         "name": "vue/html-self-closing",
@@ -387,8 +305,6 @@
         "description": "没有内容时，组件必须自闭和",
         "category": "Improving Readability",
         "comments": "/**\n         * 没有内容时，组件必须自闭和\n         * @category Improving Readability\n         * @reason 没必要限制\n         * @fixable\n         */",
-        "badExample": "",
-        "goodExample": "",
         "reason": "没必要限制",
         "fixable": true
     },
@@ -398,8 +314,6 @@
         "description": "限制每行允许的最多属性数量",
         "category": "Improving Readability",
         "comments": "/**\n         * 限制每行允许的最多属性数量\n         * @category Improving Readability\n         * @reason 没必要限制\n         */",
-        "badExample": "",
-        "goodExample": "",
         "reason": "没必要限制"
     },
     {
@@ -408,8 +322,6 @@
         "description": "多行内容或多行标签时，内容前必须换行",
         "category": "Improving Readability",
         "comments": "/**\n         * 多行内容或多行标签时，内容前必须换行\n         * @category Improving Readability\n         * @fixable\n         */",
-        "badExample": "",
-        "goodExample": "",
         "fixable": true
     },
     {
@@ -418,8 +330,6 @@
         "description": "模版内 mustache 大括号内前后禁止有空格",
         "category": "Improving Readability",
         "comments": "/**\n         * 模版内 mustache 大括号内前后禁止有空格\n         * @category Improving Readability\n         * @fixable\n         */",
-        "badExample": "",
-        "goodExample": "",
         "fixable": true
     },
     {
@@ -428,8 +338,6 @@
         "description": "限制组件的 name 属性的值的风格",
         "category": "Improving Readability",
         "comments": "/**\n         * 限制组件的 name 属性的值的风格\n         * @category Improving Readability\n         * @reason 没必要限制\n         * @fixable\n         */",
-        "badExample": "",
-        "goodExample": "",
         "reason": "没必要限制",
         "fixable": true
     },
@@ -439,8 +347,6 @@
         "description": "禁止出现连续空格",
         "category": "Improving Readability",
         "comments": "/**\n         * 禁止出现连续空格\n         * @category Improving Readability\n         * @fixable\n         */",
-        "badExample": "",
-        "goodExample": "",
         "fixable": true
     },
     {
@@ -449,8 +355,6 @@
         "description": "属性的等号前后禁止有空格",
         "category": "Improving Readability",
         "comments": "/**\n         * 属性的等号前后禁止有空格\n         * @category Improving Readability\n         * @fixable\n         */",
-        "badExample": "",
-        "goodExample": "",
         "fixable": true
     },
     {
@@ -458,9 +362,7 @@
         "value": "off",
         "description": "模版中的变量名禁止与前一个作用域重名",
         "category": "Improving Readability",
-        "comments": "/**\n         * 模版中的变量名禁止与前一个作用域重名\n         * @category Improving Readability\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * 模版中的变量名禁止与前一个作用域重名\n         * @category Improving Readability\n         */"
     },
     {
         "name": "vue/prop-name-casing",
@@ -468,8 +370,6 @@
         "description": "props 必须用驼峰式",
         "category": "Improving Readability",
         "comments": "/**\n         * props 必须用驼峰式\n         * @category Improving Readability\n         * @fixable\n         */",
-        "badExample": "",
-        "goodExample": "",
         "fixable": true
     },
     {
@@ -477,9 +377,7 @@
         "value": "error",
         "description": "props 如果不是 required 的字段，必须有默认值",
         "category": "Improving Readability",
-        "comments": "/**\n         * props 如果不是 required 的字段，必须有默认值\n         * @category Improving Readability\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * props 如果不是 required 的字段，必须有默认值\n         * @category Improving Readability\n         */"
     },
     {
         "name": "vue/require-prop-types",
@@ -487,8 +385,6 @@
         "description": "prop 必须有类型限制",
         "category": "Improving Readability",
         "comments": "/**\n         * prop 必须有类型限制\n         * @category Improving Readability\n         * @reason 没必要限制\n         */",
-        "badExample": "",
-        "goodExample": "",
         "reason": "没必要限制"
     },
     {
@@ -497,8 +393,6 @@
         "description": "单行标签内容必须换行",
         "category": "Improving Readability",
         "comments": "/**\n         * 单行标签内容必须换行\n         * @category Improving Readability\n         * @fixable\n         */",
-        "badExample": "",
-        "goodExample": "",
         "fixable": true
     },
     {
@@ -507,8 +401,6 @@
         "description": "限制 v-bind 的风格",
         "category": "Improving Readability",
         "comments": "/**\n         * 限制 v-bind 的风格\n         * @category Improving Readability\n         * @reason 没必要限制\n         * @fixable\n         */",
-        "badExample": "",
-        "goodExample": "",
         "reason": "没必要限制",
         "fixable": true
     },
@@ -518,8 +410,6 @@
         "description": "限制 v-on 的风格",
         "category": "Improving Readability",
         "comments": "/**\n         * 限制 v-on 的风格\n         * @category Improving Readability\n         * @reason 没必要限制\n         * @fixable\n         */",
-        "badExample": "",
-        "goodExample": "",
         "reason": "没必要限制",
         "fixable": true
     },
@@ -529,8 +419,6 @@
         "description": "标签属性必须按规则排序",
         "category": "Minimizing Arbitrary Choices and Cognitive Overhead",
         "comments": "/**\n         * 标签属性必须按规则排序\n         * @category Minimizing Arbitrary Choices and Cognitive Overhead\n         * @fixable\n         */",
-        "badExample": "",
-        "goodExample": "",
         "fixable": true
     },
     {
@@ -538,27 +426,21 @@
         "value": "off",
         "description": "禁用 v-html",
         "category": "Minimizing Arbitrary Choices and Cognitive Overhead",
-        "comments": "/**\n         * 禁用 v-html\n         * @category Minimizing Arbitrary Choices and Cognitive Overhead\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * 禁用 v-html\n         * @category Minimizing Arbitrary Choices and Cognitive Overhead\n         */"
     },
     {
         "name": "vue/order-in-components",
         "value": "error",
         "description": "组件的属性必须为一定的顺序",
         "category": "Minimizing Arbitrary Choices and Cognitive Overhead",
-        "comments": "/**\n         * 组件的属性必须为一定的顺序\n         * @category Minimizing Arbitrary Choices and Cognitive Overhead\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * 组件的属性必须为一定的顺序\n         * @category Minimizing Arbitrary Choices and Cognitive Overhead\n         */"
     },
     {
         "name": "vue/this-in-template",
         "value": "error",
         "description": "禁止在模版中用 this",
         "category": "Minimizing Arbitrary Choices and Cognitive Overhead",
-        "comments": "/**\n         * 禁止在模版中用 this\n         * @category Minimizing Arbitrary Choices and Cognitive Overhead\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * 禁止在模版中用 this\n         * @category Minimizing Arbitrary Choices and Cognitive Overhead\n         */"
     },
     {
         "name": "vue/array-bracket-spacing",
@@ -566,8 +448,6 @@
         "description": "数组的括号内的前后禁止有空格",
         "category": "Uncategorized",
         "comments": "/**\n         * 数组的括号内的前后禁止有空格\n         * @category Uncategorized\n         * @fixable\n         */",
-        "badExample": "",
-        "goodExample": "",
         "fixable": true
     },
     {
@@ -576,8 +456,6 @@
         "description": "箭头函数的箭头前后必须有空格",
         "category": "Uncategorized",
         "comments": "/**\n         * 箭头函数的箭头前后必须有空格\n         * @category Uncategorized\n         * @fixable\n         */",
-        "badExample": "",
-        "goodExample": "",
         "fixable": true
     },
     {
@@ -586,8 +464,6 @@
         "description": "代码块如果在一行内，那么大括号内的首尾必须有空格",
         "category": "Uncategorized",
         "comments": "/**\n         * 代码块如果在一行内，那么大括号内的首尾必须有空格\n         * @category Uncategorized\n         * @fixable\n         */",
-        "badExample": "",
-        "goodExample": "",
         "fixable": true
     },
     {
@@ -596,8 +472,6 @@
         "description": "if 与 else 的大括号风格必须一致",
         "category": "Uncategorized",
         "comments": "/**\n         * if 与 else 的大括号风格必须一致\n         * @category Uncategorized\n         * @reason else 代码块可能前面需要有一行注释\n         * @fixable\n         */",
-        "badExample": "",
-        "goodExample": "",
         "reason": "else 代码块可能前面需要有一行注释",
         "fixable": true
     },
@@ -607,8 +481,6 @@
         "description": "变量名必须是 camelcase 风格的",
         "category": "Uncategorized",
         "comments": "/**\n         * 变量名必须是 camelcase 风格的\n         * @category Uncategorized\n         * @reason 很多 api 或文件名都不是 camelcase\n         */",
-        "badExample": "",
-        "goodExample": "",
         "reason": "很多 api 或文件名都不是 camelcase"
     },
     {
@@ -617,8 +489,6 @@
         "description": "对象的最后一个属性末尾必须有逗号",
         "category": "Uncategorized",
         "comments": "/**\n         * 对象的最后一个属性末尾必须有逗号\n         * @category Uncategorized\n         * @fixable\n         */",
-        "badExample": "",
-        "goodExample": "",
         "fixable": true
     },
     {
@@ -627,8 +497,6 @@
         "description": "约束自定义标签的命名规则",
         "category": "Uncategorized",
         "comments": "/**\n         * 约束自定义标签的命名规则\n         * @category Uncategorized\n         * @fixable\n         */",
-        "badExample": "",
-        "goodExample": "",
         "fixable": true
     },
     {
@@ -637,8 +505,6 @@
         "description": "必须使用 === 或 !==，禁止使用 == 或 !=，与 null 比较时除外",
         "category": "Uncategorized",
         "comments": "/**\n         * 必须使用 === 或 !==，禁止使用 == 或 !=，与 null 比较时除外\n         * @category Uncategorized\n         * @fixable\n         */",
-        "badExample": "",
-        "goodExample": "",
         "fixable": true
     },
     {
@@ -647,8 +513,6 @@
         "description": "对象字面量中冒号前面禁止有空格，后面必须有空格",
         "category": "Uncategorized",
         "comments": "/**\n         * 对象字面量中冒号前面禁止有空格，后面必须有空格\n         * @category Uncategorized\n         * @fixable\n         */",
-        "badExample": "",
-        "goodExample": "",
         "fixable": true
     },
     {
@@ -656,9 +520,7 @@
         "value": "off",
         "description": "组件名称必须和文件名一致",
         "category": "Uncategorized",
-        "comments": "/**\n         * 组件名称必须和文件名一致\n         * @category Uncategorized\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * 组件名称必须和文件名一致\n         * @category Uncategorized\n         */"
     },
     {
         "name": "vue/no-boolean-default",
@@ -666,8 +528,6 @@
         "description": "禁止给布尔值 props 添加默认值",
         "category": "Uncategorized",
         "comments": "/**\n         * 禁止给布尔值 props 添加默认值\n         * @category Uncategorized\n         * @fixable\n         */",
-        "badExample": "",
-        "goodExample": "",
         "fixable": true
     },
     {
@@ -676,8 +536,6 @@
         "description": "禁止使用特定的语法",
         "category": "Uncategorized",
         "comments": "/**\n         * 禁止使用特定的语法\n         * @category Uncategorized\n         * @reason 它用于限制某个具体的语法不能使用\n         */",
-        "badExample": "",
-        "goodExample": "",
         "reason": "它用于限制某个具体的语法不能使用"
     },
     {
@@ -686,8 +544,6 @@
         "description": "对象字面量只有一行时，大括号内的首尾必须有空格",
         "category": "Uncategorized",
         "comments": "/**\n         * 对象字面量只有一行时，大括号内的首尾必须有空格\n         * @category Uncategorized\n         * @fixable\n         */",
-        "badExample": "",
-        "goodExample": "",
         "fixable": true
     },
     {
@@ -695,18 +551,14 @@
         "value": "error",
         "description": "禁止手动 export default",
         "category": "Uncategorized",
-        "comments": "/**\n         * 禁止手动 export default\n         * @category Uncategorized\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * 禁止手动 export default\n         * @category Uncategorized\n         */"
     },
     {
         "name": "vue/script-indent",
         "value": ["error", 4, { "switchCase": 1 }],
         "description": "一个缩进必须用四个空格替代",
         "category": "Uncategorized",
-        "comments": "/**\n         * 一个缩进必须用四个空格替代\n         * @category Uncategorized\n         */",
-        "badExample": "",
-        "goodExample": ""
+        "comments": "/**\n         * 一个缩进必须用四个空格替代\n         * @category Uncategorized\n         */"
     },
     {
         "name": "vue/space-infix-ops",
@@ -714,8 +566,6 @@
         "description": "操作符左右必须有空格",
         "category": "Uncategorized",
         "comments": "/**\n         * 操作符左右必须有空格\n         * @category Uncategorized\n         * @fixable\n         */",
-        "badExample": "",
-        "goodExample": "",
         "fixable": true
     },
     {
@@ -724,8 +574,6 @@
         "description": "new, typeof 等后面必须有空格，++, -- 等禁止有空格",
         "category": "Uncategorized",
         "comments": "/**\n         * new, typeof 等后面必须有空格，++, -- 等禁止有空格\n         * @category Uncategorized\n         * @fixable\n         */",
-        "badExample": "",
-        "goodExample": "",
         "fixable": true
     },
     {
@@ -734,8 +582,6 @@
         "description": "禁止在 v-on 的值中调用函数",
         "category": "Uncategorized",
         "comments": "/**\n         * 禁止在 v-on 的值中调用函数\n         * @category Uncategorized\n         * @fixable\n         */",
-        "badExample": "",
-        "goodExample": "",
         "fixable": true
     }
 ]

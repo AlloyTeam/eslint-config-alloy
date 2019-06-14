@@ -6,12 +6,12 @@
     "scripts": {
         "start": "npm test",
         "build": "ts-node scripts/build.ts && npm run build:site",
-        "build:site": "rimraf ./site/dist && parcel build site/index.html --out-dir site/dist --public-url ./",
+        "build:site": "rimraf ./docs && parcel build site/index.html --out-dir docs",
         "test": "npm run lint && ts-node ./test/index.ts",
         "lint": "npm run eslint && npm run prettier && npm run eclint",
         "eslint": "eslint --ext .js,.jsx,.ts,.tsx,.vue --ignore-pattern \"bad.*\" .",
-        "prettier": "prettier \"./**/*.+(js|ts)\"",
-        "prettier:fix": "prettier \"./**/*.+(js|ts)\" --write",
+        "prettier": "prettier -l \"./**/*\"",
+        "prettier:fix": "prettier --write -l \"./**/*\"",
         "eclint": "eclint check test",
         "eclint:fix": "eclint fix test"
     },

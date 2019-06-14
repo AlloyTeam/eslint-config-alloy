@@ -12,46 +12,55 @@ const RuleCategoryPriority = {
     'Possible Errors': 0,
     'Best Practices': 1,
     'Strict Mode': 2,
-    'Variables': 3,
+    Variables: 3,
     'Node.js and CommonJS': 4,
     'Stylistic Issues': 5,
     'ECMAScript 6': 6,
-    'React': 10,
+    React: 10,
     'JSX-specific': 11,
     'Enabling Correct ESLint Parsing': 20,
     'Error Prevention': 21,
     'Improving Readability': 22,
     'Minimizing Arbitrary Choices and Cognitive Overhead': 23,
-    'Uncategorized': 24,
-    'TypeScript': 30,
+    Uncategorized: 24,
+    TypeScript: 30,
     '': 99
-}
+};
 
 const rules = [
-    ...indexConfig.map(v => ({
+    ...indexConfig.map((v) => ({
         ...v,
         isOff: v.value === 'off',
         link: `https://eslint.org/docs/rules/${v.name}`,
         namespace: 'index'
     })),
-    ...reactConfig.map(v => ({
+    ...reactConfig.map((v) => ({
         ...v,
         isOff: v.value === 'off',
-        link: `https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/${v.name.replace('react/', '')}.md`,
+        link: `https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/${v.name.replace(
+            'react/',
+            ''
+        )}.md`,
         namespace: 'react'
     })),
-    ...vueConfig.map(v => ({
+    ...vueConfig.map((v) => ({
         ...v,
         isOff: v.value === 'off',
-        link: `https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/${v.name.replace('vue/', '')}.md`,
+        link: `https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/${v.name.replace(
+            'vue/',
+            ''
+        )}.md`,
         namespace: 'vue'
     })),
-    ...typescriptConfig.map(v => ({
+    ...typescriptConfig.map((v) => ({
         ...v,
         isOff: v.value === 'off',
-        link: `https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/${v.name.replace('@typescript-eslint/', '')}.md`,
+        link: `https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/${v.name.replace(
+            '@typescript-eslint/',
+            ''
+        )}.md`,
         namespace: 'typescript'
-    })),
+    }))
 ];
 
 const categories = Object.keys(RuleCategoryPriority);
@@ -82,8 +91,14 @@ class App extends React.Component {
             namespace,
             category,
             ruleData: rules
-                .filter(v => (namespace === 'all' ? true : v.namespace === namespace))
-                .filter(v => (category === 'all' ? true : category === 'off' ? v.isOff : v.category === category))
+                .filter((v) => (namespace === 'all' ? true : v.namespace === namespace))
+                .filter((v) =>
+                    category === 'all'
+                        ? true
+                        : category === 'off'
+                        ? v.isOff
+                        : v.category === category
+                )
         });
     }
 
@@ -111,29 +126,41 @@ class App extends React.Component {
     }
 
     renderRuleDesc(rule) {
-        const category = rule.category ? `<span class="text-inverse bg-danger text-small">${rule.category}</span><br />` : ''
+        const category = rule.category
+            ? `<span class="text-inverse bg-danger text-small">${rule.category}</span><br />`
+            : '';
         const declaration = (rule.description || '')
             .replace(/ /g, '&nbsp;')
-            .replace(/\r\n/g, '<br />').replace(/\n/g, '<br />')
+            .replace(/\r\n/g, '<br />')
+            .replace(/\n/g, '<br />')
             .replace('禁止', '<strong class="text-danger">$&</strong>')
             .replace('必须', '<strong class="text-primary">$&</strong>');
-        const reason = (rule.reason ? '\n不启用原因: ' + rule.reason + '\n' : '').replace('不启用', '<strong class="text-danger">$&</strong>');
+        const reason = (rule.reason ? '\n不启用原因: ' + rule.reason + '\n' : '').replace(
+            '不启用',
+            '<strong class="text-danger">$&</strong>'
+        );
         const content = `${category}${declaration}<br />${reason}`;
 
-        return (
-            <p className="top-gap-0" dangerouslySetInnerHTML={{__html: content}}/>
-        );
+        return <p className="top-gap-0" dangerouslySetInnerHTML={{ __html: content }} />;
     }
 
     renderRuleCode(code) {
         if (!code) return null;
         return (
             <pre className="language-javascript site-code">
-                <code dangerouslySetInnerHTML={{
-                    __html: code
-                        .replace(/(\/\/ )(good)/g, '$1<span class="bg-success text-inverse site-code-tag">$2</span>')
-                        .replace(/(\/\/ )(bad)/g, '$1<span class="bg-danger text-inverse site-code-tag">$2</span>')
-                }}></code>
+                <code
+                    dangerouslySetInnerHTML={{
+                        __html: code
+                            .replace(
+                                /(\/\/ )(good)/g,
+                                '$1<span class="bg-success text-inverse site-code-tag">$2</span>'
+                            )
+                            .replace(
+                                /(\/\/ )(bad)/g,
+                                '$1<span class="bg-danger text-inverse site-code-tag">$2</span>'
+                            )
+                    }}
+                />
             </pre>
         );
     }
@@ -156,7 +183,10 @@ class App extends React.Component {
                     <form className="top-gap site-form">
                         <label>
                             切换规则：
-                            <select value={this.state.namespace} onChange={this.handleNamespaceChanged}>
+                            <select
+                                value={this.state.namespace}
+                                onChange={this.handleNamespaceChanged}
+                            >
                                 <option value="all">全部</option>
                                 <option value="index">标准规则</option>
                                 <option value="react">React</option>
@@ -166,10 +196,21 @@ class App extends React.Component {
                         </label>
                         <label>
                             切换规则类型：
-                            <select value={this.state.category} onChange={this.handleCategoryChanged}>
-                                <option key="all" value="all">全部</option>
-                                <option key="off" value="off">不启用</option>
-                                {categories.map(v => <option key={v} value={v}>{v}</option>)}
+                            <select
+                                value={this.state.category}
+                                onChange={this.handleCategoryChanged}
+                            >
+                                <option key="all" value="all">
+                                    全部
+                                </option>
+                                <option key="off" value="off">
+                                    不启用
+                                </option>
+                                {categories.map((v) => (
+                                    <option key={v} value={v}>
+                                        {v}
+                                    </option>
+                                ))}
                             </select>
                         </label>
                     </form>

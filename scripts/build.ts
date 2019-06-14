@@ -9,22 +9,22 @@ const pkg = require('../package.json');
 
 type RuleNamespaces = 'index' | 'react' | 'vue' | 'typescript';
 
-export const RuleCategoryPriority = {
+const RuleCategoryPriority = {
     'Possible Errors': 0,
     'Best Practices': 1,
     'Strict Mode': 2,
-    'Variables': 3,
+    Variables: 3,
     'Node.js and CommonJS': 4,
     'Stylistic Issues': 5,
     'ECMAScript 6': 6,
-    'React': 10,
+    React: 10,
     'JSX-specific': 11,
     'Enabling Correct ESLint Parsing': 20,
     'Error Prevention': 21,
     'Improving Readability': 22,
     'Minimizing Arbitrary Choices and Cognitive Overhead': 23,
-    'Uncategorized': 24,
-    'TypeScript': 30,
+    Uncategorized: 24,
+    TypeScript: 30,
     '': 99
 };
 
@@ -41,25 +41,18 @@ interface Rule {
     [key: string]: string | boolean | undefined;
 }
 
-// interface RuleMap {
-//     [key: string]: Rule;
-// }
-
 class Builder {
     private namespace: RuleNamespaces = 'index';
     private ruleList: Rule[] = [];
-    // private ruleMap: RuleMap = {};
     private rulesContent: string = '';
     private namespaceEslintrcContent: string = '';
 
     public build(namespace: RuleNamespaces) {
         this.namespace = namespace;
         this.ruleList = this.getRuleList();
-        // this.ruleMap = this.getRuleMap();
         this.rulesContent = this.getRulesContent();
         this.namespaceEslintrcContent = this.getNamespaceEslintrc();
         this.buildRulesJson();
-        this.buildRulesDoc();
         if (this.namespace === 'index') {
             this.buildIndexEslintrc();
         } else {
@@ -73,26 +66,6 @@ class Builder {
             prettier.format(JSON.stringify(this.ruleList), {
                 ...require('../prettier.config'),
                 parser: 'json'
-            }),
-            'utf-8'
-        );
-    }
-
-    private buildRulesDoc() {
-        const header = `## 目录\n${this.ruleList.map(v => `1. [${v.name}](#${v.name})`).join('\n')}`;
-        const content = this.ruleList.map(v => {
-            const badExample = v.badExample ? '```js\n' + v.badExample + '\n```\n' : '';
-            const goodExample = v.goodExample ? '```js\n' + v.goodExample + '\n```' : '';
-            const reason = v.reason ? '\n不启用原因: ' + v.reason+ '\n' : '';
-            return `### ${v.name}\n${v.category? `[${v.category}] ` : ''}${v.description}\n${reason}${badExample}${goodExample}`
-        }).join('\n');
-        const doc = `${header}\n${content}`;
-
-        fs.writeFileSync(
-            path.resolve(__dirname, `../docs/${this.namespace}.md`),
-            prettier.format(doc, {
-                ...require('../prettier.config'),
-                parser: 'markdown'
             }),
             'utf-8'
         );
@@ -136,6 +109,7 @@ class Builder {
                     '../test',
                     this.namespace,
                     ruleName,
+                    '.eslintrc.js'
                 );
                 return this.getRule(filePath);
             })
@@ -201,20 +175,17 @@ class Builder {
     }
 
     private getRule(filePath: string) {
-        const rcFilePath = path.join(filePath, '.eslintrc.js')
         // eslint-disable-next-line @typescript-eslint/no-var-requires
-        const fileModule = require(rcFilePath);
+        const fileModule = require(filePath);
         const ruleName = Object.keys(fileModule.rules)[0];
-        const fileContent = fs.readFileSync(rcFilePath, 'utf-8');
+        const fileContent = fs.readFileSync(filePath, 'utf-8');
         const comments = /\/\*\*.*\*\//gms.exec(fileContent);
         let rule: Rule = {
             name: ruleName,
             value: fileModule.rules[ruleName],
             description: '',
             category: '',
-            comments: '',
-            badExample: '',
-            goodExample: '',
+            comments: ''
         };
         if (comments !== null) {
             const commentsAST = doctrine.parse(comments[0], { unwrap: true });
@@ -223,16 +194,6 @@ class Builder {
                 rule[title] = description === null ? true : description;
             });
             rule.comments = comments[0];
-        }
-
-        const badFilePath = path.join(filePath, 'bad.js');
-        const goodFilePath = path.join(filePath, 'good.js');
-
-        if(fs.existsSync(badFilePath)) {
-            rule.badExample = fs.readFileSync(badFilePath, 'utf-8');
-        }
-        if(fs.existsSync(goodFilePath)) {
-            rule.goodExample = fs.readFileSync(goodFilePath, 'utf-8');
         }
         return rule;
     }
@@ -261,7 +222,7 @@ class Builder {
                 (rule) =>
                     `\n${rule.comments}\n'${rule.name}': ${JSON.stringify(rule.value, null, 4)},`
             )
-            .join('\n');
+            .join('');
     }
 }
 
