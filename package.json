@@ -12,7 +12,7 @@
         "build:eslintrc": "ts-node scripts/build.ts",
         "build:site": "run-s clear:docs build:html",
         "clear:docs": "rimraf ./docs",
-        "build:html": "parcel build site/index.html --out-dir docs",
+        "build:html": "parcel build site/index.html --out-dir docs --public-url ./",
         "test": "npm run lint && ts-node ./test/index.ts",
         "lint": "run-s eslint prettier eclint",
         "eslint": "eslint --ext .js,.jsx,.ts,.tsx,.vue --ignore-pattern \"bad.*\" .",
