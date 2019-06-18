@@ -4,51 +4,19 @@ import * as path from 'path';
 import * as doctrine from 'doctrine';
 import * as prettier from 'prettier';
 
+import {
+    RuleNamespaces,
+    RuleNamespaceExtensionMap,
+    RuleNamespacePrismLanguageMap,
+    RuleCategoryPriority,
+    Rule
+} from '../site/constants/rule';
+
+import '../site/vendor/prism';
+declare const Prism: any;
+
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const pkg = require('../package.json');
-
-type RuleNamespaces = 'index' | 'react' | 'vue' | 'typescript';
-
-const RuleNamespaceExtensionMap = {
-    index: 'js',
-    react: 'js',
-    vue: 'vue',
-    typescript: 'ts'
-};
-
-const RuleCategoryPriority = {
-    'Possible Errors': 0,
-    'Best Practices': 1,
-    'Strict Mode': 2,
-    Variables: 3,
-    'Node.js and CommonJS': 4,
-    'Stylistic Issues': 5,
-    'ECMAScript 6': 6,
-    React: 10,
-    'JSX-specific': 11,
-    'Enabling Correct ESLint Parsing': 20,
-    'Error Prevention': 21,
-    'Improving Readability': 22,
-    'Minimizing Arbitrary Choices and Cognitive Overhead': 23,
-    Uncategorized: 24,
-    TypeScript: 30,
-    '': 99
-};
-
-type RuleCategory = keyof typeof RuleCategoryPriority;
-
-interface Rule {
-    name: string;
-    value: any;
-    description: string;
-    category: RuleCategory;
-    reason?: string;
-    fixable?: boolean;
-    comments: string;
-    badExample?: string;
-    goodExample?: string;
-    [key: string]: string | boolean | undefined;
-}
 
 class Builder {
     private namespace: RuleNamespaces = 'index';
@@ -74,11 +42,15 @@ class Builder {
             path.resolve(__dirname, `../site/config/${this.namespace}.json`),
             prettier.format(
                 JSON.stringify(
-                    this.ruleList.map((rule) => {
-                        let newRule = { ...rule };
-                        delete newRule.comments;
-                        return newRule;
-                    })
+                    this.ruleList.reduce(
+                        (prev, rule) => {
+                            let newRule = { ...rule };
+                            delete newRule.comments;
+                            prev[newRule.name] = newRule;
+                            return prev;
+                        },
+                        {} as any
+                    )
                 ),
                 {
                     ...require('../prettier.config'),
@@ -225,10 +197,18 @@ class Builder {
         );
 
         if (fs.existsSync(badFilePath)) {
-            rule.badExample = fs.readFileSync(badFilePath, 'utf-8');
+            rule.badExample = Prism.highlight(
+                fs.readFileSync(badFilePath, 'utf-8'),
+                Prism.languages[RuleNamespacePrismLanguageMap[this.namespace]],
+                RuleNamespacePrismLanguageMap[this.namespace]
+            );
         }
         if (fs.existsSync(goodFilePath)) {
-            rule.goodExample = fs.readFileSync(goodFilePath, 'utf-8');
+            rule.goodExample = Prism.highlight(
+                fs.readFileSync(goodFilePath, 'utf-8'),
+                Prism.languages[RuleNamespacePrismLanguageMap[this.namespace]],
+                RuleNamespacePrismLanguageMap[this.namespace]
+            );
         }
         return rule;
     }

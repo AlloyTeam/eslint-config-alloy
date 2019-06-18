@@ -5,6 +5,7 @@
         "strict": true,
         "noUnusedLocals": true,
         "noUnusedParameters": true,
-        "resolveJsonModule": true
+        "resolveJsonModule": true,
+        "jsx": "react"
     }
 }

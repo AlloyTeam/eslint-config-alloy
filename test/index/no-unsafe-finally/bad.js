@@ -1,4 +1,3 @@
-// bad finally 中使用了 return, throw, break 或 continue
 function foo() {
     try {
         return 1;

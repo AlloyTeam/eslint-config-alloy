@@ -1,11 +1,8 @@
 @import '../node_modules/mobi.css/dist/mobi.css';
 @import '../node_modules/mobi-plugin-color/dist/mobi-plugin-color.css';
-@import '../node_modules/prismjs/themes/prism-solarizedlight.css';
+@import './vendor/prism.css';
 
 /* 行样式 */
-.site-row {
-    position: relative;
-}
 .site-row-wide {
     margin-left: -0.9375rem;
     margin-right: -0.9375rem;
@@ -17,7 +14,7 @@
     padding-right: 0.9375rem;
 }
 .site-row-off {
-    background: url('off.svg');
+    background: url('./assets/off.svg');
 }
 
 /* 表单 */
@@ -36,10 +33,6 @@
 /* 规则说明 */
 .site-desc {
     margin: 0.5em 0 0.8em;
-}
-.site-comment-off,
-.site-comment-fixable {
-    padding: 0 0.2em 0.1em 0.1em;
 }
 
 /* 代码 */

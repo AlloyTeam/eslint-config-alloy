@@ -1,4 +1,3 @@
-// good 单个函数的循环复杂度小于 20
 function foo() {
     let i;
     if (i === 1) console.log(i); if (i === 2) console.log(i); if (i === 3) console.log(i); if (i === 4) console.log(i); if (i === 5) console.log(i);

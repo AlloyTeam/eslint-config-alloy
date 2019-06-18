@@ -1,4 +1,3 @@
-// good getter 有返回值
 let user = {
     get name() {
         return 'Alex';

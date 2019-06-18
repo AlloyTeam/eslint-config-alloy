@@ -1,0 +1,5 @@
+{
+    "watch": ["test", "scripts"],
+    "ext": "js,jsx,ts,tsx,vue,json",
+    "exec": "ts-node scripts/build.ts"
+}

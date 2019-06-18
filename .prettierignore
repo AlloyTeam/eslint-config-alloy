@@ -8,11 +8,13 @@ package-lock.json
 *.log
 *.md
 *.svg
+*.png
 *ignore
 
 ## Local
 test/**/bad.*
 test/**/good.*
+site/vendor
 
 ## Built-files
 docs
