@@ -1,8 +1,11 @@
+/* eslint-disable max-depth */
 import * as fs from 'fs';
 import * as path from 'path';
 
 import * as doctrine from 'doctrine';
 import * as prettier from 'prettier';
+import { CLIEngine, Linter } from 'eslint';
+const cli = new CLIEngine({});
 
 import {
     RuleNamespaces,
@@ -197,10 +200,14 @@ class Builder {
         );
 
         if (fs.existsSync(badFilePath)) {
-            rule.badExample = Prism.highlight(
-                fs.readFileSync(badFilePath, 'utf-8'),
-                Prism.languages[RuleNamespacePrismLanguageMap[this.namespace]],
-                RuleNamespacePrismLanguageMap[this.namespace]
+            const { results } = cli.executeOnFiles([badFilePath]);
+            rule.badExample = this.insertMark(
+                Prism.highlight(
+                    fs.readFileSync(badFilePath, 'utf-8'),
+                    Prism.languages[RuleNamespacePrismLanguageMap[this.namespace]],
+                    RuleNamespacePrismLanguageMap[this.namespace]
+                ),
+                results[0].messages
             );
         }
         if (fs.existsSync(goodFilePath)) {
@@ -238,6 +245,139 @@ class Builder {
                     `\n${rule.comments}\n'${rule.name}': ${JSON.stringify(rule.value, null, 4)},`
             )
             .join('');
+    }
+
+    /** 依据 ESLint 结果，给 badExample 添加 <mark> 标签 */
+    private insertMark(badExample: string, eslintMessages: Linter.LintMessage[]) {
+        console.log(eslintMessages);
+        let insertedBadExample = badExample;
+        eslintMessages.forEach(
+            // ({ ruleId, severity, message, line, column, endLine, endColumn }) => {
+            ({ ruleId, line, column, endLine, endColumn }) => {
+                /** 标签栈 */
+                let tagStack: string[] = [];
+                /** 当前列数 */
+                let currentColumn = 1;
+                /** 当前行数 */
+                let currentLine = 1;
+                /** 开始的插入位置 */
+                let insertPosition = -1;
+                /** 结束的插入位置 */
+                let endInsertPosition = -1;
+                /** 开始的插入字符 */
+                let insertMark = '<mark>';
+                /** 结束的插入字符 */
+                let endInsertMark = '</mark>';
+                /** 已匹配到开始位置之后，接下来的标签栈长度，可能为负值 */
+                let insideStackLength = 0;
+                for (let i = 0; i < badExample.length; i++) {
+                    console.log('循环开始badExample[i]', badExample[i]);
+                    // 进入标签内部，直到 > 之前都会在里面循环
+                    if (badExample[i] === '<') {
+                        // 是开始标签
+                        if (badExample[i + 1] !== '/') {
+                            let j = i + 1;
+                            while (badExample[j] !== '>') {
+                                j++;
+                            }
+                            // 已匹配到开始位置之后了
+                            if (insertPosition >= 0) {
+                                insideStackLength++;
+                                console.log(insideStackLength);
+                            }
+                            // 入栈
+                            tagStack.push(badExample.slice(i, j + 1));
+                            i = j;
+                            continue;
+                        }
+                        // 是闭合标签
+                        else {
+                            i = i + 2;
+                            while (badExample[i] !== '>') {
+                                i++;
+                            }
+                            // 已匹配到开始位置之后了
+                            if (insertPosition >= 0) {
+                                insideStackLength--;
+                                console.log(insideStackLength);
+                                // 栈长度为负数，需要给 insertMark 添加标签
+                                if (insideStackLength < 0) {
+                                    console.log(badExample);
+                                    console.log(tagStack);
+                                    console.log(ruleId);
+                                    console.log(insertPosition);
+                                    console.log(endInsertPosition);
+                                    console.log(i);
+                                    console.log(line, column);
+                                    console.log(endLine, endColumn);
+                                    const currentTag =
+                                        tagStack[tagStack.length + insideStackLength];
+                                    insertMark =
+                                        currentTag.replace(/<([^ ]+).+/, '</$1>') +
+                                        insertMark +
+                                        currentTag;
+                                }
+                            }
+                            // 出栈
+                            tagStack.pop();
+                            continue;
+                        }
+                    }
+                    console.log('内部循环结束，badExample[i]', badExample[i]);
+                    // 如果还没有确定开始位置，并且下一个字符不是 < 也不是 \n，则开始判断是不是开始位置结束位置
+                    if (
+                        insertPosition === -1 &&
+                        badExample[i + 1] !== '<' &&
+                        badExample[i + 1] !== '\n'
+                    ) {
+                        // 匹配上开始位置
+                        if (currentLine === line && currentColumn === column) {
+                            insertPosition = i;
+                            if (endLine === undefined && endColumn === undefined) {
+                                endInsertPosition = i + 1;
+                                break;
+                            }
+                            continue;
+                        }
+                    }
+                    // 匹配上结束位置
+                    if (currentLine === endLine && currentColumn === endColumn) {
+                        endInsertPosition = i;
+                        break;
+                    }
+                    // 遇到换行符，行数加一
+                    if (badExample[i] === '\n') {
+                        currentLine++;
+                        currentColumn = 1;
+                        continue;
+                    }
+                    // 不在标签内部，列数加一
+                    currentColumn++;
+                }
+                // 栈长度为正数，需要给 endInsertMark 添加标签
+                if (insideStackLength > 0) {
+                    const openedTagStack = tagStack.slice(
+                        tagStack.length - insideStackLength,
+                        tagStack.length
+                    );
+                    endInsertMark =
+                        openedTagStack
+                            .map((s) => s.replace(/<([^ ]+).+/, '</$1>'))
+                            .reverse()
+                            .join('') +
+                        endInsertMark +
+                        openedTagStack.join('');
+                }
+                // 真正开始插入
+                insertedBadExample =
+                    badExample.slice(0, insertPosition) +
+                    insertMark +
+                    badExample.slice(insertPosition, endInsertPosition) +
+                    endInsertMark +
+                    badExample.slice(endInsertPosition);
+            }
+        );
+        return insertedBadExample;
     }
 }
 

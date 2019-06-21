@@ -1,10 +1,7 @@
-import '../site/vendor/prism';
-declare const Prism: any;
+import { CLIEngine } from 'eslint';
 
-Prism.hooks.add('after-tokenize', (env: any) => {
-    console.log(env);
-});
+const cli = new CLIEngine({});
 
-const result = Prism.highlight(`let foo = 1;`, Prism.languages.js, 'js');
+const report = cli.executeOnFiles(['./test/index/accessor-pairs/bad.js']);
 
-console.log(result);
+console.log(report.results[0].messages);
