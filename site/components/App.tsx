@@ -1,6 +1,7 @@
 import * as React from 'react';
+import ReactTooltip = require('react-tooltip');
 
-const { useState } = React;
+const { useState, Fragment } = React;
 
 import { RuleNamespaces } from '../constants/rule';
 import { GitHubCorner } from './GitHubCorner';
@@ -38,10 +39,18 @@ export const App: React.SFC = () => {
     );
 
     return (
-        <React.Fragment>
+        <Fragment>
             <GitHubCorner href="https://github.com/AlloyTeam/eslint-config-alloy" />
             {Header}
             <RuleTable namespace={namespace} shouldHideOff={shouldHideOff} />
-        </React.Fragment>
+            <ReactTooltip
+                className="site-react-tooltip"
+                place="top"
+                type="error"
+                effect="solid"
+                delayHide={100}
+                html={true}
+            />
+        </Fragment>
     );
 };
