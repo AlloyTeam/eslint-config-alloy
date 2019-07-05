@@ -134,16 +134,15 @@ class Builder {
  *     ${pkg.contributors.join('\n *     ')}
  *
  * 依赖版本：
- *     ${Object.keys(pkg.peerDependencies)
-     .sort((a, b) => {
-         if (a.indexOf('eslint') > b.indexOf('eslint')) {
-             return 1;
-         } else if (a.indexOf('eslint') < b.indexOf('eslint')) {
-             return -1;
-         } else {
-             return a > b ? 1 : -1;
-         }
-     })
+ *     ${[
+     'eslint',
+     'babel-eslint',
+     'eslint-plugin-react',
+     'vue-eslint-parser',
+     'eslint-plugin-vue',
+     '@typescript-eslint/parser',
+     '@typescript-eslint/eslint-plugin'
+ ]
      .map((key) => `${key} ${pkg.devDependencies[key]}`)
      .join('\n *     ')}
  *

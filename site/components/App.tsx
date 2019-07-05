@@ -1,7 +1,7 @@
 import * as React from 'react';
 import ReactTooltip = require('react-tooltip');
 
-const { useState, Fragment } = React;
+const { useState, useEffect } = React;
 
 import { RuleNamespaces } from '../constants/rule';
 import { GitHubCorner } from './GitHubCorner';
@@ -10,6 +10,10 @@ import { RuleTable } from './RuleTable';
 export const App: React.SFC = () => {
     const [namespace, updateNamespace] = useState<RuleNamespaces>('index');
     const [shouldHideOff, toggleShouldHideOff] = useState(false);
+
+    useEffect(() => {
+        ReactTooltip.rebuild();
+    }, [namespace]);
 
     const Header = (
         <div className="flex-center">
@@ -39,7 +43,7 @@ export const App: React.SFC = () => {
     );
 
     return (
-        <Fragment>
+        <>
             <GitHubCorner href="https://github.com/AlloyTeam/eslint-config-alloy" />
             {Header}
             <RuleTable namespace={namespace} shouldHideOff={shouldHideOff} />
@@ -51,6 +55,6 @@ export const App: React.SFC = () => {
                 delayHide={100}
                 html={true}
             />
-        </Fragment>
+        </>
     );
 };

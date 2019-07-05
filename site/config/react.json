@@ -324,6 +324,16 @@
         "goodExample": "",
         "fixable": true
     },
+    "react/jsx-curly-newline": {
+        "name": "react/jsx-curly-newline",
+        "value": "error",
+        "description": "限制 jsx 中的大括号内部首尾换行符",
+        "category": "JSX-specific",
+        "badExample": "<span class=\"token keyword\">let</span> foo <span class=\"token operator\">=</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">{</span> <span class=\"token number\">1</span>\n<span class=\"token punctuation\"><mark class=\"eslint-error\" data-tip=\"Unexpected newline before '{'.<br/><span class='eslint-error-rule-id'>eslint(react/jsx-curly-newline)</span>\">}</mark></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">let</span> bar <span class=\"token operator\">=</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">{</span>\n<span class=\"token number\">1</span> <span class=\"token punctuation\"><mark class=\"eslint-error\" data-tip=\"Expected newline before '}'.<br/><span class='eslint-error-rule-id'>eslint(react/jsx-curly-newline)</span>\">}</mark></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>\n",
+        "goodExample": "<span class=\"token keyword\">let</span> foo <span class=\"token operator\">=</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">{</span> <span class=\"token number\">1</span> <span class=\"token punctuation\">}</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span>\n<span class=\"token keyword\">let</span> bar <span class=\"token operator\">=</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">{</span>\n    <span class=\"token number\">1</span>\n<span class=\"token punctuation\">}</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>\n",
+        "fixable": true,
+        "reason": "要么首尾都换行，要么首尾都不换行"
+    },
     "react/jsx-curly-spacing": {
         "name": "react/jsx-curly-spacing",
         "value": [
@@ -371,12 +381,13 @@
     },
     "react/jsx-fragments": {
         "name": "react/jsx-fragments",
-        "value": ["error", "element"],
-        "description": "必须使用 React.Fragment 而不是 <></>",
+        "value": ["error", "syntax"],
+        "description": "必须使用 <></> 而不是 React.Fragment",
         "category": "JSX-specific",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
+        "badExample": "<span class=\"token keyword\">let</span> foo <span class=\"token operator\">=</span> <mark class=\"eslint-error\" data-tip=\"Prefer fragment shorthand over React.Fragment<br/><span class='eslint-error-rule-id'>eslint(react/jsx-fragments)</span>\"><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">React.Fragment</span></span><span class=\"token punctuation\">></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span><span class=\"token class-name\">React.Fra</span></span></span></mark><span class=\"token tag\"><span class=\"token tag\"><span class=\"token class-name\">gment</span></span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>\n",
+        "goodExample": "<span class=\"token keyword\">let</span> foo <span class=\"token operator\">=</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span></span><span class=\"token punctuation\">></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span></span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>\n",
+        "fixable": true,
+        "reason": "<></> 不需要额外引入 Fragment 组件"
     },
     "react/jsx-handler-names": {
         "name": "react/jsx-handler-names",

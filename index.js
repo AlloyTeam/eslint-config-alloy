@@ -11,12 +11,12 @@
  *
  * 依赖版本：
  *     eslint ^5.16.0
- *     eslint-plugin-react ^7.13.0
- *     eslint-plugin-vue ^5.2.2
- *     vue-eslint-parser ^5.0.0
  *     babel-eslint ^10.0.1
- *     @typescript-eslint/eslint-plugin ^1.10.2
+ *     eslint-plugin-react ^7.14.2
+ *     vue-eslint-parser ^5.0.0
+ *     eslint-plugin-vue ^5.2.3
  *     @typescript-eslint/parser ^1.10.2
+ *     @typescript-eslint/eslint-plugin ^1.10.2
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  *
@@ -363,15 +363,11 @@ module.exports = {
          */
         'no-else-return': 'off',
         /**
-         * 不允许有空函数，除非是将一个空函数设置为某个项的默认值
+         * 不允许有空函数
          * @category Best Practices
+         * @reason 有时需要将一个空函数设置为某个项的默认值
          */
-        'no-empty-function': [
-            'error',
-            {
-                allow: ['functions', 'arrowFunctions']
-            }
-        ],
+        'no-empty-function': 'off',
         /**
          * 禁止解构中出现空 {} 或 []
          * @category Best Practices
@@ -554,8 +550,9 @@ module.exports = {
         /**
          * 禁止出现 location.href = 'javascript:void(0)';
          * @category Best Practices
+         * @reason 有些场景下还是需要用到这个
          */
-        'no-script-url': 'error',
+        'no-script-url': 'off',
         /**
          * 禁止将自己赋值给自己
          * @category Best Practices
@@ -991,9 +988,9 @@ module.exports = {
          */
         'id-match': 'off',
         /**
-         * 箭头函数的函数体必须与箭头在同一行，或者被括号包裹
+         * 箭头函数的函数体必须与箭头在同一行
          * @category Stylistic Issues
-         * @autofix
+         * @fixable
          */
         'implicit-arrow-linebreak': ['error', 'beside'],
         /**
@@ -1424,7 +1421,7 @@ module.exports = {
          * 变量申明必须排好序
          * @category Stylistic Issues
          * @reason 没必要限制
-         * @autofix
+         * @fixable
          */
         'sort-vars': 'off',
         /**

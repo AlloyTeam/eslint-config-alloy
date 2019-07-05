@@ -11,12 +11,12 @@
  *
  * 依赖版本：
  *     eslint ^5.16.0
- *     eslint-plugin-react ^7.13.0
- *     eslint-plugin-vue ^5.2.2
- *     vue-eslint-parser ^5.0.0
  *     babel-eslint ^10.0.1
- *     @typescript-eslint/eslint-plugin ^1.10.2
+ *     eslint-plugin-react ^7.14.2
+ *     vue-eslint-parser ^5.0.0
+ *     eslint-plugin-vue ^5.2.3
  *     @typescript-eslint/parser ^1.10.2
+ *     @typescript-eslint/eslint-plugin ^1.10.2
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  *
@@ -249,6 +249,13 @@ module.exports = {
          */
         'react/jsx-curly-brace-presence': ['error', 'never'],
         /**
+         * 限制 jsx 中的大括号内部首尾换行符
+         * @category JSX-specific
+         * @fixable
+         * @reason 要么首尾都换行，要么首尾都不换行
+         */
+        'react/jsx-curly-newline': 'error',
+        /**
          * 大括号内前后禁止有空格
          * @category JSX-specific
          * @fixable
@@ -286,11 +293,12 @@ module.exports = {
          */
         'react/jsx-first-prop-new-line': 'off',
         /**
-         * 必须使用 React.Fragment 而不是 <></>
+         * 必须使用 <></> 而不是 React.Fragment
          * @category JSX-specific
          * @fixable
+         * @reason <></> 不需要额外引入 Fragment 组件
          */
-        'react/jsx-fragments': ['error', 'element'],
+        'react/jsx-fragments': ['error', 'syntax'],
         /**
          * handler 的名称必须是 onXXX 或 handleXXX
          * @category JSX-specific
