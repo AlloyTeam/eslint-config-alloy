@@ -6,7 +6,6 @@ const foo = {
         return this.barValue;
     }
 };
-
 const bar = {
     get foo() {
         return this.fooValue;

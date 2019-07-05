@@ -59,7 +59,6 @@ module.exports = {
         /**
          * 禁止在自定义组件中使用一些指定的 props
          * @category React
-         * @reason 没必要限制
          */
         'react/forbid-component-props': 'off',
         /**
@@ -70,7 +69,6 @@ module.exports = {
         /**
          * 禁止使用一些指定的 elements
          * @category React
-         * @reason 没必要限制
          */
         'react/forbid-elements': 'off',
         /**
@@ -93,13 +91,11 @@ module.exports = {
         /**
          * 禁止使用数组的 index 作为 key
          * @category React
-         * @reason 太严格了
          */
         'react/no-array-index-key': 'off',
         /**
          * 禁止使用 dangerouslySetInnerHTML
          * @category React
-         * @reason 没必要限制
          */
         'react/no-danger': 'off',
         /**
@@ -156,7 +152,6 @@ module.exports = {
         /**
          * 必须使用 pure function
          * @category React
-         * @reason 没必要限制
          */
         'react/prefer-stateless-function': 'off',
         /**
@@ -166,7 +161,7 @@ module.exports = {
          */
         'react/prop-types': 'off',
         /**
-         * 出现 jsx 的地方必须 import React
+         * 出现 jsx 的地方必须导入 React
          * @category React
          * @reason 已经在 no-undef 中限制了
          */
@@ -180,13 +175,11 @@ module.exports = {
         /**
          * 组件必须有 shouldComponentUpdate
          * @category React
-         * @reason 没必要限制
          */
         'react/require-optimization': 'off',
         /**
          * 组件内没有 children 时，必须使用自闭和写法
          * @category React
-         * @reason 没必要限制
          * @fixable
          */
         'react/self-closing-comp': 'off',
@@ -199,7 +192,6 @@ module.exports = {
         /**
          * propTypes 的熟悉必须按照字母排序
          * @category React
-         * @reason 没必要限制
          */
         'react/sort-prop-types': 'off',
         /**
@@ -282,13 +274,11 @@ module.exports = {
         /**
          * 限制文件后缀
          * @category JSX-specific
-         * @reason 没必要限制
          */
         'react/jsx-filename-extension': 'off',
         /**
          * 第一个 prop 必须得换行
          * @category JSX-specific
-         * @reason 没必要限制
          * @fixable
          */
         'react/jsx-first-prop-new-line': 'off',
@@ -302,7 +292,6 @@ module.exports = {
         /**
          * handler 的名称必须是 onXXX 或 handleXXX
          * @category JSX-specific
-         * @reason 没必要限制
          */
         'react/jsx-handler-names': 'off',
         /**
@@ -325,26 +314,22 @@ module.exports = {
         /**
          * 限制每行的 props 数量
          * @category JSX-specific
-         * @reason 没必要限制
          * @fixable
          */
         'react/jsx-max-props-per-line': 'off',
         /**
          * jsx 中禁止使用 bind
          * @category JSX-specific
-         * @reason 太严格了
          */
         'react/jsx-no-bind': 'off',
         /**
          * 禁止在 jsx 中出现字符串
          * @category JSX-specific
-         * @reason 没必要限制
          */
         'react/jsx-no-literals': 'off',
         /**
          * 禁止使用 target="_blank"
          * @category JSX-specific
-         * @reason 没必要限制
          */
         'react/jsx-no-target-blank': 'off',
         /**
@@ -372,7 +357,6 @@ module.exports = {
         /**
          * props 必须排好序
          * @category JSX-specific
-         * @reason 没必要限制
          * @fixable
          */
         'react/jsx-sort-props': 'off',
@@ -392,7 +376,6 @@ module.exports = {
         /**
          * 多行的 jsx 必须有括号包起来
          * @category JSX-specific
-         * @reason 没必要限制
          * @fixable
          */
         'react/jsx-wrap-multilines': 'off',
@@ -417,7 +400,7 @@ module.exports = {
          */
         'react/jsx-pascal-case': 'error',
         /**
-         * jsx 文件必须 import React
+         * jsx 文件必须导入 React
          */
         'react/jsx-uses-react': 'error',
         /**

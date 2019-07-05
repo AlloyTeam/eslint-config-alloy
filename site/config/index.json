@@ -2,17 +2,17 @@
     "for-direction": {
         "name": "for-direction",
         "value": "error",
-        "description": "禁止 for 循环出现方向错误的循环，比如 for (i = 0; i < 10; i--)",
+        "description": "禁止 for 循环出现方向错误的循环",
         "category": "Possible Errors",
-        "badExample": "<mark class=\"eslint-error\" data-tip=\"The update clause in this loop moves the variable in the wrong direction.<br/><span class='eslint-error-rule-id'>eslint(for-direction)</span>\"><span class=\"token keyword\">for</span> <span class=\"token punctuation\">(</span><span class=\"token keyword\">let</span> i <span class=\"token operator\">=</span> <span class=\"token number\">0</span><span class=\"token punctuation\">;</span> i <span class=\"token operator\">&lt;</span> <span class=\"token number\">10</span><span class=\"token punctuation\">;</span> i<span class=\"token operator\">--</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token comment\">// do something</span>\n<span class=\"token punctuation\">}</span></mark>\n",
-        "goodExample": "<span class=\"token keyword\">for</span> <span class=\"token punctuation\">(</span><span class=\"token keyword\">let</span> i <span class=\"token operator\">=</span> <span class=\"token number\">0</span><span class=\"token punctuation\">;</span> i <span class=\"token operator\">&lt;</span> <span class=\"token number\">10</span><span class=\"token punctuation\">;</span> i<span class=\"token operator\">++</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token comment\">// do something</span>\n<span class=\"token punctuation\">}</span>\n"
+        "badExample": "<mark class=\"eslint-error\" data-tip=\"The update clause in this loop moves the variable in the wrong direction.<br/><span class='eslint-error-rule-id'>eslint(for-direction)</span>\"><span class=\"token keyword\">for</span> <span class=\"token punctuation\">(</span><span class=\"token keyword\">let</span> i <span class=\"token operator\">=</span> <span class=\"token number\">0</span><span class=\"token punctuation\">;</span> i <span class=\"token operator\">&lt;</span> <span class=\"token number\">10</span><span class=\"token punctuation\">;</span> i<span class=\"token operator\">--</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span></mark>\n",
+        "goodExample": "<span class=\"token keyword\">for</span> <span class=\"token punctuation\">(</span><span class=\"token keyword\">let</span> i <span class=\"token operator\">=</span> <span class=\"token number\">0</span><span class=\"token punctuation\">;</span> i <span class=\"token operator\">&lt;</span> <span class=\"token number\">10</span><span class=\"token punctuation\">;</span> i<span class=\"token operator\">++</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>\n"
     },
     "getter-return": {
         "name": "getter-return",
         "value": ["error", { "allowImplicit": false }],
-        "description": "getter 必须有返回值，并且禁止返回空，比如 return;",
+        "description": "getter 必须有返回值，并且禁止返回空",
         "category": "Possible Errors",
-        "badExample": "<span class=\"token keyword\">let</span> user <span class=\"token operator\">=</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">get</span> <span class=\"token function\">name</span><span class=\"token punctuation\"><mark class=\"eslint-error\" data-tip=\"Expected to return a value in getter 'name'.<br/><span class='eslint-error-rule-id'>eslint(getter-return)</span>\">(</mark></span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <span class=\"token comment\">// 无返回值</span>\n    <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">class</span> <span class=\"token class-name\">User</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">get</span> <span class=\"token function\">name</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <span class=\"token comment\">// 返回空</span>\n        <mark class=\"eslint-error\" data-tip=\"Expected to return a value in getter 'name'.<br/><span class='eslint-error-rule-id'>eslint(getter-return)</span>\"><span class=\"token keyword\">return</span><span class=\"token punctuation\">;</span></mark>\n    <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span>\n",
+        "badExample": "<span class=\"token keyword\">let</span> user <span class=\"token operator\">=</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">get</span> <span class=\"token function\">name</span><span class=\"token punctuation\"><mark class=\"eslint-error\" data-tip=\"Expected to return a value in getter 'name'.<br/><span class='eslint-error-rule-id'>eslint(getter-return)</span>\">(</mark></span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">class</span> <span class=\"token class-name\">User</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">get</span> <span class=\"token function\">name</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <mark class=\"eslint-error\" data-tip=\"Expected to return a value in getter 'name'.<br/><span class='eslint-error-rule-id'>eslint(getter-return)</span>\"><span class=\"token keyword\">return</span><span class=\"token punctuation\">;</span></mark>\n    <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span>\n",
         "goodExample": "<span class=\"token keyword\">let</span> user <span class=\"token operator\">=</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">get</span> <span class=\"token function\">name</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <span class=\"token keyword\">return</span> <span class=\"token string\">'Alex'</span><span class=\"token punctuation\">;</span>\n    <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">class</span> <span class=\"token class-name\">User</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">get</span> <span class=\"token function\">name</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <span class=\"token keyword\">return</span> <span class=\"token keyword\">this</span><span class=\"token punctuation\">.</span>name<span class=\"token punctuation\">;</span>\n    <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span>\n"
     },
     "no-async-promise-executor": {
@@ -38,16 +38,16 @@
         "value": "error",
         "description": "禁止与负零进行比较",
         "category": "Possible Errors",
-        "badExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span><mark class=\"eslint-error\" data-tip=\"Do not use the '===' operator to compare against -0.<br/><span class='eslint-error-rule-id'>eslint(no-compare-neg-zero)</span>\">foo <span class=\"token operator\">===</span> <span class=\"token operator\">-</span><span class=\"token number\">0</span></mark><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token comment\">// do something</span>\n<span class=\"token punctuation\">}</span>\n",
-        "goodExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>foo <span class=\"token operator\">===</span> <span class=\"token number\">0</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token comment\">// do something</span>\n<span class=\"token punctuation\">}</span>\n"
+        "badExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span><mark class=\"eslint-error\" data-tip=\"Do not use the '===' operator to compare against -0.<br/><span class='eslint-error-rule-id'>eslint(no-compare-neg-zero)</span>\">foo <span class=\"token operator\">===</span> <span class=\"token operator\">-</span><span class=\"token number\">0</span></mark><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>\n",
+        "goodExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>foo <span class=\"token operator\">===</span> <span class=\"token number\">0</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>\n"
     },
     "no-cond-assign": {
         "name": "no-cond-assign",
         "value": ["error", "except-parens"],
         "description": "禁止在测试表达式中使用赋值语句，除非这个赋值语句被括号包起来了",
         "category": "Possible Errors",
-        "badExample": "<span class=\"token comment\">// 这可能是把 === 误写成了 =</span>\n<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span><mark class=\"eslint-error\" data-tip=\"Expected a conditional expression and instead saw an assignment.<br/><span class='eslint-error-rule-id'>eslint(no-cond-assign)</span>\">f</mark>oo <span class=\"token operator\">=</span> <span class=\"token number\">0</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token comment\">// do something</span>\n<span class=\"token punctuation\">}</span>\n",
-        "goodExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>foo <span class=\"token operator\">===</span> <span class=\"token number\">0</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token comment\">// do something</span>\n<span class=\"token punctuation\">}</span>\n\n<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>bar <span class=\"token operator\">===</span> <span class=\"token punctuation\">(</span>foo <span class=\"token operator\">=</span> <span class=\"token number\">0</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token comment\">// do something</span>\n<span class=\"token punctuation\">}</span>\n"
+        "badExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span><mark class=\"eslint-error\" data-tip=\"Expected a conditional expression and instead saw an assignment.<br/><span class='eslint-error-rule-id'>eslint(no-cond-assign)</span>\">f</mark>oo <span class=\"token operator\">=</span> <span class=\"token number\">0</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>\n",
+        "goodExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>foo <span class=\"token operator\">===</span> <span class=\"token number\">0</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>\n<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>bar <span class=\"token operator\">===</span> <span class=\"token punctuation\">(</span>foo <span class=\"token operator\">=</span> <span class=\"token number\">0</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>\n"
     },
     "no-console": {
         "name": "no-console",
@@ -90,7 +90,7 @@
         "category": "Possible Errors",
         "badExample": "",
         "goodExample": "",
-        "reason": "使用 babel 时，在编译阶段就会报错了"
+        "reason": "在编译阶段就会报错了"
     },
     "no-dupe-keys": {
         "name": "no-dupe-keys",
@@ -114,7 +114,7 @@
         "description": "禁止出现空代码块，允许 catch 为空代码块",
         "category": "Possible Errors",
         "badExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>foo<span class=\"token punctuation\">)</span> <mark class=\"eslint-error\" data-tip=\"Empty block statement.<br/><span class='eslint-error-rule-id'>eslint(no-empty)</span>\"><span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span></mark>\n",
-        "goodExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>foo<span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token comment\">// do something</span>\n<span class=\"token punctuation\">}</span>\n"
+        "goodExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>foo<span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token comment\">// do something</span>\n<span class=\"token punctuation\">}</span>\n<span class=\"token keyword\">try</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token comment\">// do something</span>\n<span class=\"token punctuation\">}</span> <span class=\"token keyword\">catch</span> <span class=\"token punctuation\">(</span>e<span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>"
     },
     "no-empty-character-class": {
         "name": "no-empty-character-class",
@@ -129,16 +129,16 @@
         "value": "error",
         "description": "禁止将 catch 的第一个参数 error 重新赋值",
         "category": "Possible Errors",
-        "badExample": "<span class=\"token keyword\">try</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token comment\">// do something</span>\n<span class=\"token punctuation\">}</span> <span class=\"token keyword\">catch</span> <span class=\"token punctuation\">(</span>e<span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <mark class=\"eslint-error\" data-tip=\"Do not assign to the exception parameter.<br/><span class='eslint-error-rule-id'>eslint(no-ex-assign)</span>\">e</mark> <span class=\"token operator\">=</span> <span class=\"token number\">10</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>\n",
-        "goodExample": "<span class=\"token keyword\">try</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token comment\">// do something</span>\n<span class=\"token punctuation\">}</span> <span class=\"token keyword\">catch</span> <span class=\"token punctuation\">(</span>e<span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    console<span class=\"token punctuation\">.</span><span class=\"token function\">error</span><span class=\"token punctuation\">(</span>e<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>\n"
+        "badExample": "<span class=\"token keyword\">try</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span> <span class=\"token keyword\">catch</span> <span class=\"token punctuation\">(</span>e<span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <mark class=\"eslint-error\" data-tip=\"Do not assign to the exception parameter.<br/><span class='eslint-error-rule-id'>eslint(no-ex-assign)</span>\">e</mark> <span class=\"token operator\">=</span> <span class=\"token number\">10</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>\n",
+        "goodExample": "<span class=\"token keyword\">try</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span> <span class=\"token keyword\">catch</span> <span class=\"token punctuation\">(</span>e<span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    console<span class=\"token punctuation\">.</span><span class=\"token function\">error</span><span class=\"token punctuation\">(</span>e<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>\n"
     },
     "no-extra-boolean-cast": {
         "name": "no-extra-boolean-cast",
         "value": "error",
         "description": "禁止不必要的布尔类型转换，比如 !! 或 Boolean",
         "category": "Possible Errors",
-        "badExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span><span class=\"token operator\">!</span><mark class=\"eslint-error\" data-tip=\"Redundant double negation.<br/><span class='eslint-error-rule-id'>eslint(no-extra-boolean-cast)</span>\"><span class=\"token operator\">!</span>foo</mark><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token comment\">// do something</span>\n<span class=\"token punctuation\">}</span>\n\n<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span><mark class=\"eslint-error\" data-tip=\"Redundant Boolean call.<br/><span class='eslint-error-rule-id'>eslint(no-extra-boolean-cast)</span>\"><span class=\"token function\">Boolean</span><span class=\"token punctuation\">(</span>foo<span class=\"token punctuation\">)</span></mark><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token comment\">// do something</span>\n<span class=\"token punctuation\">}</span>\n",
-        "goodExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>foo<span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token comment\">// do something</span>\n<span class=\"token punctuation\">}</span>\n",
+        "badExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span><span class=\"token operator\">!</span><mark class=\"eslint-error\" data-tip=\"Redundant double negation.<br/><span class='eslint-error-rule-id'>eslint(no-extra-boolean-cast)</span>\"><span class=\"token operator\">!</span>foo</mark><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>\n<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span><mark class=\"eslint-error\" data-tip=\"Redundant Boolean call.<br/><span class='eslint-error-rule-id'>eslint(no-extra-boolean-cast)</span>\"><span class=\"token function\">Boolean</span><span class=\"token punctuation\">(</span>foo<span class=\"token punctuation\">)</span></mark><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>\n",
+        "goodExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>foo<span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>\n<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span><span class=\"token operator\">!</span>foo<span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>\n",
         "fixable": true
     },
     "no-extra-parens": {
@@ -147,7 +147,7 @@
         "description": "禁止函数表达式中出现多余的括号",
         "category": "Possible Errors",
         "badExample": "<span class=\"token keyword\">let</span> foo <span class=\"token operator\">=</span> <span class=\"token punctuation\"><mark class=\"eslint-error\" data-tip=\"Unnecessary parentheses around expression.<br/><span class='eslint-error-rule-id'>eslint(no-extra-parens)</span>\">(</mark></span><span class=\"token keyword\">function</span> <span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span> <span class=\"token keyword\">return</span> <span class=\"token number\">1</span> <span class=\"token punctuation\">}</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n",
-        "goodExample": "<span class=\"token keyword\">let</span> <span class=\"token function-variable function\">foo</span> <span class=\"token operator\">=</span> <span class=\"token keyword\">function</span> <span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span> <span class=\"token keyword\">return</span> <span class=\"token number\">1</span> <span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>\n\n<span class=\"token keyword\">let</span> bar <span class=\"token operator\">=</span> <span class=\"token punctuation\">(</span>a <span class=\"token operator\">*</span> b<span class=\"token punctuation\">)</span> <span class=\"token operator\">+</span> c<span class=\"token punctuation\">;</span>\n",
+        "goodExample": "<span class=\"token keyword\">let</span> <span class=\"token function-variable function\">foo</span> <span class=\"token operator\">=</span> <span class=\"token keyword\">function</span> <span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span> <span class=\"token keyword\">return</span> <span class=\"token number\">1</span> <span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">let</span> bar <span class=\"token operator\">=</span> <span class=\"token punctuation\">(</span>a <span class=\"token operator\">*</span> b<span class=\"token punctuation\">)</span> <span class=\"token operator\">+</span> c<span class=\"token punctuation\">;</span>\n",
         "fixable": true
     },
     "no-extra-semi": {
@@ -155,25 +155,25 @@
         "value": "error",
         "description": "禁止出现多余的分号",
         "category": "Possible Errors",
-        "badExample": "<span class=\"token keyword\">let</span> foo <span class=\"token operator\">=</span> <span class=\"token number\">1</span><span class=\"token punctuation\">;</span><span class=\"token punctuation\"><mark class=\"eslint-error\" data-tip=\"Unnecessary semicolon.<br/><span class='eslint-error-rule-id'>eslint(no-extra-semi)</span>\">;</mark></span>\n<span class=\"token keyword\">function</span> <span class=\"token function\">bar</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token comment\">// do something</span>\n<span class=\"token punctuation\">}</span><span class=\"token punctuation\"><mark class=\"eslint-error\" data-tip=\"Unnecessary semicolon.<br/><span class='eslint-error-rule-id'>eslint(no-extra-semi)</span>\">;</mark></span>\n",
-        "goodExample": "<span class=\"token keyword\">let</span> foo <span class=\"token operator\">=</span> <span class=\"token number\">1</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">function</span> <span class=\"token function\">bar</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token comment\">// do something</span>\n<span class=\"token punctuation\">}</span>\n",
+        "badExample": "<span class=\"token keyword\">let</span> foo <span class=\"token operator\">=</span> <span class=\"token number\">1</span><span class=\"token punctuation\">;</span><span class=\"token punctuation\"><mark class=\"eslint-error\" data-tip=\"Unnecessary semicolon.<br/><span class='eslint-error-rule-id'>eslint(no-extra-semi)</span>\">;</mark></span>\n<span class=\"token keyword\">function</span> <span class=\"token function\">bar</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span><span class=\"token punctuation\"><mark class=\"eslint-error\" data-tip=\"Unnecessary semicolon.<br/><span class='eslint-error-rule-id'>eslint(no-extra-semi)</span>\">;</mark></span>\n",
+        "goodExample": "<span class=\"token keyword\">let</span> foo <span class=\"token operator\">=</span> <span class=\"token number\">1</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">function</span> <span class=\"token function\">bar</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>\n",
         "fixable": true
     },
     "no-func-assign": {
         "name": "no-func-assign",
         "value": "error",
-        "description": "禁止将一个函数声明重新赋值，如：",
+        "description": "禁止将一个函数声明重新赋值",
         "category": "Possible Errors",
-        "badExample": "<span class=\"token keyword\">function</span> <span class=\"token function\">foo</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token comment\">// do something</span>\n<span class=\"token punctuation\">}</span>\n<mark class=\"eslint-error\" data-tip=\"'foo' is a function.<br/><span class='eslint-error-rule-id'>eslint(no-func-assign)</span>\">foo</mark> <span class=\"token operator\">=</span> <span class=\"token number\">1</span><span class=\"token punctuation\">;</span>\n",
-        "goodExample": "<span class=\"token keyword\">let</span> <span class=\"token function-variable function\">foo</span> <span class=\"token operator\">=</span> <span class=\"token keyword\">function</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token comment\">// do something</span>\n<span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>\nfoo <span class=\"token operator\">=</span> <span class=\"token number\">1</span><span class=\"token punctuation\">;</span>\n"
+        "badExample": "<span class=\"token keyword\">function</span> <span class=\"token function\">foo</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>\n<mark class=\"eslint-error\" data-tip=\"'foo' is a function.<br/><span class='eslint-error-rule-id'>eslint(no-func-assign)</span>\">foo</mark> <span class=\"token operator\">=</span> <span class=\"token number\">1</span><span class=\"token punctuation\">;</span>\n",
+        "goodExample": "<span class=\"token keyword\">let</span> <span class=\"token function-variable function\">foo</span> <span class=\"token operator\">=</span> <span class=\"token keyword\">function</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>\nfoo <span class=\"token operator\">=</span> <span class=\"token number\">1</span><span class=\"token punctuation\">;</span>\n"
     },
     "no-inner-declarations": {
         "name": "no-inner-declarations",
         "value": ["error", "both"],
         "description": "禁止在 if 代码块内出现函数声明",
         "category": "Possible Errors",
-        "badExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>foo<span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <mark class=\"eslint-error\" data-tip=\"Move function declaration to program root.<br/><span class='eslint-error-rule-id'>eslint(no-inner-declarations)</span>\"><span class=\"token keyword\">function</span> <span class=\"token function\">bar</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <span class=\"token comment\">// do something</span>\n    <span class=\"token punctuation\">}</span></mark>\n<span class=\"token punctuation\">}</span>\n",
-        "goodExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>foo<span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">let</span> <span class=\"token function-variable function\">bar</span> <span class=\"token operator\">=</span> <span class=\"token keyword\">function</span> <span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <span class=\"token comment\">// do something</span>\n    <span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>\n"
+        "badExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>foo<span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <mark class=\"eslint-error\" data-tip=\"Move function declaration to program root.<br/><span class='eslint-error-rule-id'>eslint(no-inner-declarations)</span>\"><span class=\"token keyword\">function</span> <span class=\"token function\">bar</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token punctuation\">}</span></mark>\n<span class=\"token punctuation\">}</span>\n",
+        "goodExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>foo<span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">let</span> <span class=\"token function-variable function\">bar</span> <span class=\"token operator\">=</span> <span class=\"token keyword\">function</span> <span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>\n"
     },
     "no-invalid-regexp": {
         "name": "no-invalid-regexp",
@@ -196,7 +196,7 @@
         ],
         "description": "禁止使用特殊空白符（比如全角空格），除非是出现在字符串、正则表达式或模版字符串中",
         "category": "Possible Errors",
-        "badExample": "<span class=\"token keyword\">function</span> <span class=\"token function\">foo</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span><mark class=\"eslint-error\" data-tip=\"Irregular whitespace not allowed.<br/><span class='eslint-error-rule-id'>eslint(no-irregular-whitespace)</span>\">　</mark><span class=\"token punctuation\">{</span>\n    <span class=\"token comment\">// do something</span>\n<span class=\"token punctuation\">}</span>\n",
+        "badExample": "<span class=\"token keyword\">function</span> <span class=\"token function\">foo</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span><mark class=\"eslint-error\" data-tip=\"Irregular whitespace not allowed.<br/><span class='eslint-error-rule-id'>eslint(no-irregular-whitespace)</span>\">　</mark><span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>\n",
         "goodExample": "<span class=\"token keyword\">let</span> foo <span class=\"token operator\">=</span> <span class=\"token string\">'　'</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">let</span> bar <span class=\"token operator\">=</span> <span class=\"token regex\">/　/</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">let</span> baz <span class=\"token operator\">=</span> <span class=\"token template-string\"><span class=\"token string\">`　`</span></span><span class=\"token punctuation\">;</span>\n"
     },
     "no-misleading-character-class": {
@@ -237,7 +237,7 @@
     "no-sparse-arrays": {
         "name": "no-sparse-arrays",
         "value": "error",
-        "description": "禁止在数组中出现连续的逗号，如 let foo = [,,]",
+        "description": "禁止在数组中出现连续的逗号",
         "category": "Possible Errors",
         "badExample": "<span class=\"token keyword\">let</span> foo <span class=\"token operator\">=</span> <mark class=\"eslint-error\" data-tip=\"Unexpected comma in middle of array.<br/><span class='eslint-error-rule-id'>eslint(no-sparse-arrays)</span>\"><span class=\"token punctuation\">[</span><span class=\"token number\">1</span><span class=\"token punctuation\">,</span> <span class=\"token number\">2</span><span class=\"token punctuation\">,</span><span class=\"token punctuation\">,</span> <span class=\"token number\">3</span><span class=\"token punctuation\">]</span></mark><span class=\"token punctuation\">;</span>\n",
         "goodExample": "<span class=\"token keyword\">let</span> foo <span class=\"token operator\">=</span> <span class=\"token punctuation\">[</span><span class=\"token number\">1</span><span class=\"token punctuation\">,</span> <span class=\"token number\">2</span><span class=\"token punctuation\">,</span> <span class=\"token number\">3</span><span class=\"token punctuation\">]</span><span class=\"token punctuation\">;</span>\n"
@@ -245,7 +245,7 @@
     "no-template-curly-in-string": {
         "name": "no-template-curly-in-string",
         "value": "error",
-        "description": "禁止在普通字符串中出现模版字符串里的变量形式，如 'Hello ${name}!'",
+        "description": "禁止在普通字符串中出现模版字符串里的变量形式",
         "category": "Possible Errors",
         "badExample": "<span class=\"token keyword\">let</span> foo <span class=\"token operator\">=</span> <span class=\"token string\"><mark class=\"eslint-error\" data-tip=\"Unexpected template string expression.<br/><span class='eslint-error-rule-id'>eslint(no-template-curly-in-string)</span>\">'Hello ${bar}'</mark></span><span class=\"token punctuation\">;</span>\n",
         "goodExample": "<span class=\"token keyword\">let</span> foo <span class=\"token operator\">=</span> <span class=\"token string\">'Hello {bar}'</span><span class=\"token punctuation\">;</span>\n"
@@ -253,7 +253,7 @@
     "no-unexpected-multiline": {
         "name": "no-unexpected-multiline",
         "value": "error",
-        "description": "禁止出现难以理解的多行表达式",
+        "description": "禁止出现容易出错的多行表达式",
         "category": "Possible Errors",
         "badExample": "<span class=\"token keyword\">let</span> foo <span class=\"token operator\">=</span> bar\n<span class=\"token punctuation\"><mark class=\"eslint-error\" data-tip=\"Unexpected newline between object and [ of property access.<br/><span class='eslint-error-rule-id'>eslint(no-unexpected-multiline)</span>\">[</mark></span><span class=\"token number\">1</span><span class=\"token punctuation\">,</span> <span class=\"token number\">2</span><span class=\"token punctuation\">,</span> <span class=\"token number\">3</span><span class=\"token punctuation\">]</span><span class=\"token punctuation\">.</span><span class=\"token function\">forEach</span><span class=\"token punctuation\">(</span>baz<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n",
         "goodExample": "<span class=\"token keyword\">let</span> foo1 <span class=\"token operator\">=</span> bar<span class=\"token punctuation\">[</span><span class=\"token number\">1</span><span class=\"token punctuation\">]</span><span class=\"token punctuation\">.</span><span class=\"token function\">forEach</span><span class=\"token punctuation\">(</span>baz<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n\n<span class=\"token keyword\">let</span> foo2 <span class=\"token operator\">=</span> bar<span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">[</span><span class=\"token number\">1</span><span class=\"token punctuation\">,</span> <span class=\"token number\">2</span><span class=\"token punctuation\">,</span> <span class=\"token number\">3</span><span class=\"token punctuation\">]</span><span class=\"token punctuation\">.</span><span class=\"token function\">forEach</span><span class=\"token punctuation\">(</span>baz<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n"
@@ -279,8 +279,8 @@
         "value": "error",
         "description": "禁止在 in 或 instanceof 操作符的左侧使用感叹号，如 if (!key in object)",
         "category": "Possible Errors",
-        "badExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span><mark class=\"eslint-error\" data-tip=\"Unexpected negating the left operand of 'in' operator.<br/><span class='eslint-error-rule-id'>eslint(no-unsafe-negation)</span>\"><span class=\"token operator\">!</span>key</mark> <span class=\"token keyword\">in</span> object<span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token comment\">// do something</span>\n<span class=\"token punctuation\">}</span>\n<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span><mark class=\"eslint-error\" data-tip=\"Unexpected negating the left operand of 'instanceof' operator.<br/><span class='eslint-error-rule-id'>eslint(no-unsafe-negation)</span>\"><span class=\"token operator\">!</span>obj</mark> <span class=\"token keyword\">instanceof</span> <span class=\"token class-name\">SomeClass</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token comment\">// do something</span>\n<span class=\"token punctuation\">}</span>\n",
-        "goodExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span><span class=\"token operator\">!</span><span class=\"token punctuation\">(</span>key <span class=\"token keyword\">in</span> object<span class=\"token punctuation\">)</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token comment\">// do something</span>\n<span class=\"token punctuation\">}</span>\n<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span><span class=\"token operator\">!</span><span class=\"token punctuation\">(</span>obj <span class=\"token keyword\">instanceof</span> <span class=\"token class-name\">SomeClass</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token comment\">// do something</span>\n<span class=\"token punctuation\">}</span>\n",
+        "badExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span><mark class=\"eslint-error\" data-tip=\"Unexpected negating the left operand of 'in' operator.<br/><span class='eslint-error-rule-id'>eslint(no-unsafe-negation)</span>\"><span class=\"token operator\">!</span>key</mark> <span class=\"token keyword\">in</span> object<span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>\n<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span><mark class=\"eslint-error\" data-tip=\"Unexpected negating the left operand of 'instanceof' operator.<br/><span class='eslint-error-rule-id'>eslint(no-unsafe-negation)</span>\"><span class=\"token operator\">!</span>obj</mark> <span class=\"token keyword\">instanceof</span> <span class=\"token class-name\">SomeClass</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>\n",
+        "goodExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span><span class=\"token operator\">!</span><span class=\"token punctuation\">(</span>key <span class=\"token keyword\">in</span> object<span class=\"token punctuation\">)</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>\n<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span><span class=\"token operator\">!</span><span class=\"token punctuation\">(</span>obj <span class=\"token keyword\">instanceof</span> <span class=\"token class-name\">SomeClass</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>\n",
         "fixable": true
     },
     "require-atomic-updates": {
@@ -297,16 +297,16 @@
         "value": "error",
         "description": "必须使用 isNaN(foo) 而不是 foo === NaN",
         "category": "Possible Errors",
-        "badExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span><mark class=\"eslint-error\" data-tip=\"Use the isNaN function to compare with NaN.<br/><span class='eslint-error-rule-id'>eslint(use-isnan)</span>\">foo <span class=\"token operator\">===</span> <span class=\"token number\">NaN</span></mark><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token comment\">// do something</span>\n<span class=\"token punctuation\">}</span>\n",
-        "goodExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span><span class=\"token function\">isNaN</span><span class=\"token punctuation\">(</span>foo<span class=\"token punctuation\">)</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token comment\">// do something</span>\n<span class=\"token punctuation\">}</span>\n"
+        "badExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span><mark class=\"eslint-error\" data-tip=\"Use the isNaN function to compare with NaN.<br/><span class='eslint-error-rule-id'>eslint(use-isnan)</span>\">foo <span class=\"token operator\">===</span> <span class=\"token number\">NaN</span></mark><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>\n",
+        "goodExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span><span class=\"token function\">isNaN</span><span class=\"token punctuation\">(</span>foo<span class=\"token punctuation\">)</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>\n"
     },
     "valid-typeof": {
         "name": "valid-typeof",
         "value": "error",
         "description": "typeof 表达式比较的对象必须是 'undefined', 'object', 'boolean', 'number', 'string', 'function' 或 'symbol'",
         "category": "Possible Errors",
-        "badExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span><span class=\"token keyword\">typeof</span> foo <span class=\"token operator\">===</span> <span class=\"token string\"><mark class=\"eslint-error\" data-tip=\"Invalid typeof comparison value.<br/><span class='eslint-error-rule-id'>eslint(valid-typeof)</span>\">'numbe'</mark></span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token comment\">// do something</span>\n<span class=\"token punctuation\">}</span>\n",
-        "goodExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span><span class=\"token keyword\">typeof</span> foo <span class=\"token operator\">===</span> <span class=\"token string\">'number'</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token comment\">// do something</span>\n<span class=\"token punctuation\">}</span>\n"
+        "badExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span><span class=\"token keyword\">typeof</span> foo <span class=\"token operator\">===</span> <span class=\"token string\"><mark class=\"eslint-error\" data-tip=\"Invalid typeof comparison value.<br/><span class='eslint-error-rule-id'>eslint(valid-typeof)</span>\">'numbe'</mark></span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>\n",
+        "goodExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span><span class=\"token keyword\">typeof</span> foo <span class=\"token operator\">===</span> <span class=\"token string\">'number'</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>\n"
     },
     "accessor-pairs": {
         "name": "accessor-pairs",
@@ -314,7 +314,7 @@
         "description": "setter 必须有对应的 getter，getter 可以没有对应的 setter",
         "category": "Best Practices",
         "badExample": "<span class=\"token keyword\">const</span> foo <span class=\"token operator\">=</span> <mark class=\"eslint-error\" data-tip=\"Getter is not present.<br/><span class='eslint-error-rule-id'>eslint(accessor-pairs)</span>\"><span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">set</span> <span class=\"token function\">bar</span><span class=\"token punctuation\">(</span><span class=\"token parameter\">value</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <span class=\"token keyword\">return</span> <span class=\"token string\">'bar '</span> <span class=\"token operator\">+</span> value<span class=\"token punctuation\">;</span>\n    <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span></mark><span class=\"token punctuation\">;</span>\n",
-        "goodExample": "<span class=\"token keyword\">const</span> foo <span class=\"token operator\">=</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">set</span> <span class=\"token function\">bar</span><span class=\"token punctuation\">(</span><span class=\"token parameter\">value</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <span class=\"token keyword\">this</span><span class=\"token punctuation\">.</span>barValue <span class=\"token operator\">=</span> <span class=\"token string\">'bar '</span> <span class=\"token operator\">+</span> value<span class=\"token punctuation\">;</span>\n    <span class=\"token punctuation\">}</span><span class=\"token punctuation\">,</span>\n    <span class=\"token keyword\">get</span> <span class=\"token function\">bar</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <span class=\"token keyword\">return</span> <span class=\"token keyword\">this</span><span class=\"token punctuation\">.</span>barValue<span class=\"token punctuation\">;</span>\n    <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>\n\n<span class=\"token keyword\">const</span> bar <span class=\"token operator\">=</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">get</span> <span class=\"token function\">foo</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <span class=\"token keyword\">return</span> <span class=\"token keyword\">this</span><span class=\"token punctuation\">.</span>fooValue<span class=\"token punctuation\">;</span>\n    <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>\n"
+        "goodExample": "<span class=\"token keyword\">const</span> foo <span class=\"token operator\">=</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">set</span> <span class=\"token function\">bar</span><span class=\"token punctuation\">(</span><span class=\"token parameter\">value</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <span class=\"token keyword\">this</span><span class=\"token punctuation\">.</span>barValue <span class=\"token operator\">=</span> <span class=\"token string\">'bar '</span> <span class=\"token operator\">+</span> value<span class=\"token punctuation\">;</span>\n    <span class=\"token punctuation\">}</span><span class=\"token punctuation\">,</span>\n    <span class=\"token keyword\">get</span> <span class=\"token function\">bar</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <span class=\"token keyword\">return</span> <span class=\"token keyword\">this</span><span class=\"token punctuation\">.</span>barValue<span class=\"token punctuation\">;</span>\n    <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">const</span> bar <span class=\"token operator\">=</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">get</span> <span class=\"token function\">foo</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <span class=\"token keyword\">return</span> <span class=\"token keyword\">this</span><span class=\"token punctuation\">.</span>fooValue<span class=\"token punctuation\">;</span>\n    <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>\n"
     },
     "array-callback-return": {
         "name": "array-callback-return",
@@ -338,16 +338,16 @@
         "description": "在类的非静态方法中，必须存在对 this 的引用",
         "category": "Best Practices",
         "badExample": "",
-        "goodExample": "",
-        "reason": "太严格了"
+        "goodExample": ""
     },
     "complexity": {
         "name": "complexity",
         "value": ["error", { "max": 20 }],
-        "description": "禁止函数的循环复杂度超过 20，https://en.wikipedia.org/wiki/Cyclomatic_complexity",
+        "description": "禁止函数的循环复杂度超过 20",
         "category": "Best Practices",
         "badExample": "<mark class=\"eslint-error\" data-tip=\"Function 'foo' has a complexity of 21.<br/><span class='eslint-error-rule-id'>eslint(complexity)</span>\"><span class=\"token keyword\">function</span> <span class=\"token function\">foo</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">let</span> i<span class=\"token punctuation\">;</span>\n    <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">1</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">2</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">3</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">4</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">5</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n    <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">6</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">7</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">8</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">9</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">10</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n    <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">11</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">12</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">13</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">14</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">15</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n    <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">16</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">17</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">18</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">19</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">20</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span></mark>\n",
-        "goodExample": "<span class=\"token keyword\">function</span> <span class=\"token function\">foo</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">let</span> i<span class=\"token punctuation\">;</span>\n    <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">1</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">2</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">3</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">4</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">5</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n    <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">6</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">7</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">8</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">9</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">10</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n    <span class=\"token function\">bar</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>\n<span class=\"token keyword\">function</span> <span class=\"token function\">bar</span><span class=\"token punctuation\">(</span><span class=\"token parameter\">i</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">11</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">12</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">13</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">14</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">15</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n    <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">16</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">17</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">18</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">19</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">20</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>\n"
+        "goodExample": "<span class=\"token keyword\">function</span> <span class=\"token function\">foo</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">let</span> i<span class=\"token punctuation\">;</span>\n    <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">1</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">2</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">3</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">4</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">5</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n    <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">6</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">7</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">8</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">9</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">10</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n    <span class=\"token function\">bar</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>\n<span class=\"token keyword\">function</span> <span class=\"token function\">bar</span><span class=\"token punctuation\">(</span><span class=\"token parameter\">i</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">11</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">12</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">13</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">14</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">15</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n    <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">16</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">17</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">18</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">19</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>i <span class=\"token operator\">===</span> <span class=\"token number\">20</span><span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>i<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>\n",
+        "reason": "https://en.wikipedia.org/wiki/Cyclomatic_complexity"
     },
     "consistent-return": {
         "name": "consistent-return",
@@ -355,8 +355,7 @@
         "description": "禁止函数在不同分支返回不同类型的值",
         "category": "Best Practices",
         "badExample": "",
-        "goodExample": "",
-        "reason": "太严格了"
+        "goodExample": ""
     },
     "curly": {
         "name": "curly",
@@ -373,8 +372,7 @@
         "description": "switch 语句必须有 default",
         "category": "Best Practices",
         "badExample": "",
-        "goodExample": "",
-        "reason": "太严格了"
+        "goodExample": ""
     },
     "dot-location": {
         "name": "dot-location",
@@ -637,7 +635,7 @@
                 }
             }
         ],
-        "description": "禁止出现连续的多个空格，除非是注释前，或对齐对象的属性、变量定义、import 等",
+        "description": "禁止出现连续的多个空格，除非是注释前，或对齐对象的属性、变量定义、导入等",
         "category": "Best Practices",
         "badExample": "",
         "goodExample": "",
@@ -910,7 +908,7 @@
         "category": "Best Practices",
         "badExample": "",
         "goodExample": "<span class=\"token keyword\">async</span> <span class=\"token keyword\">function</span> <span class=\"token function\">foo</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span><span class=\"token string\">'foo'</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>\n",
-        "reason": "async function 中没有 await 的写法很常见，比如 koa 的示例中就有这种用法"
+        "reason": "async function 中没有 await 的写法很常见，koa 的示例中就有这种用法"
     },
     "require-unicode-regexp": {
         "name": "require-unicode-regexp",
@@ -1057,8 +1055,7 @@
         "description": "callback 之后必须立即 return",
         "category": "Node.js and CommonJS",
         "badExample": "",
-        "goodExample": "",
-        "reason": "Limitations 太多了"
+        "goodExample": ""
     },
     "global-require": {
         "name": "global-require",
@@ -1091,8 +1088,7 @@
         "description": "相同类型的 require 必须放在一起",
         "category": "Node.js and CommonJS",
         "badExample": "",
-        "goodExample": "",
-        "reason": "太严格了"
+        "goodExample": ""
     },
     "no-new-require": {
         "name": "no-new-require",
@@ -1210,7 +1206,6 @@
         "category": "Stylistic Issues",
         "badExample": "",
         "goodExample": "",
-        "reason": "没必要限制",
         "fixable": true
     },
     "comma-dangle": {
@@ -1255,8 +1250,7 @@
         "description": "限制 this 的别名",
         "category": "Stylistic Issues",
         "badExample": "",
-        "goodExample": "",
-        "reason": "没必要限制"
+        "goodExample": ""
     },
     "eol-last": {
         "name": "eol-last",
@@ -1265,7 +1259,6 @@
         "category": "Stylistic Issues",
         "badExample": "",
         "goodExample": "",
-        "reason": "没必要限制",
         "fixable": true
     },
     "func-call-spacing": {
@@ -1291,8 +1284,7 @@
         "description": "函数必须有名字",
         "category": "Stylistic Issues",
         "badExample": "",
-        "goodExample": "",
-        "reason": "没必要限制"
+        "goodExample": ""
     },
     "func-style": {
         "name": "func-style",
@@ -1300,8 +1292,7 @@
         "description": "必须只使用函数声明或只使用函数表达式",
         "category": "Stylistic Issues",
         "badExample": "",
-        "goodExample": "",
-        "reason": "没必要限制"
+        "goodExample": ""
     },
     "function-paren-newline": {
         "name": "function-paren-newline",
@@ -1309,7 +1300,7 @@
         "description": "函数参数要么同在一行要么每行一个",
         "category": "Stylistic Issues",
         "badExample": "<span class=\"token keyword\">function</span> <span class=\"token function\">foo</span><span class=\"token punctuation\"><mark class=\"eslint-error\" data-tip=\"Expected newline after '('.<br/><span class='eslint-error-rule-id'>eslint(function-paren-newline)</span>\">(</mark></span><span class=\"token parameter\">bar<span class=\"token punctuation\">,</span>\n    baz</span>\n<span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>\n",
-        "goodExample": "<span class=\"token keyword\">function</span> <span class=\"token function\">foo</span><span class=\"token punctuation\">(</span><span class=\"token parameter\">bar<span class=\"token punctuation\">,</span> baz</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>\n\n<span class=\"token keyword\">function</span> <span class=\"token function\">goo</span><span class=\"token punctuation\">(</span>\n    <span class=\"token parameter\">bar<span class=\"token punctuation\">,</span>\n    baz</span>\n<span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>\n",
+        "goodExample": "<span class=\"token keyword\">function</span> <span class=\"token function\">foo</span><span class=\"token punctuation\">(</span><span class=\"token parameter\">bar<span class=\"token punctuation\">,</span> baz</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>\n<span class=\"token keyword\">function</span> <span class=\"token function\">goo</span><span class=\"token punctuation\">(</span>\n    <span class=\"token parameter\">bar<span class=\"token punctuation\">,</span>\n    baz</span>\n<span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>\n",
         "fixable": true
     },
     "id-blacklist": {
@@ -1390,8 +1381,7 @@
         "description": "单行注释必须写在上一行",
         "category": "Stylistic Issues",
         "badExample": "",
-        "goodExample": "",
-        "reason": "没必要限制"
+        "goodExample": ""
     },
     "linebreak-style": {
         "name": "linebreak-style",
@@ -1400,7 +1390,6 @@
         "category": "Stylistic Issues",
         "badExample": "",
         "goodExample": "",
-        "reason": "没必要限制",
         "fixable": true
     },
     "lines-around-comment": {
@@ -1410,7 +1399,6 @@
         "category": "Stylistic Issues",
         "badExample": "",
         "goodExample": "",
-        "reason": "没必要限制",
         "fixable": true
     },
     "lines-between-class-members": {
@@ -1446,8 +1434,7 @@
         "description": "限制一个文件最多的行数",
         "category": "Stylistic Issues",
         "badExample": "",
-        "goodExample": "",
-        "reason": "没必要限制"
+        "goodExample": ""
     },
     "max-lines-per-function": {
         "name": "max-lines-per-function",
@@ -1479,8 +1466,7 @@
         "description": "限制函数块中的语句数量",
         "category": "Stylistic Issues",
         "badExample": "",
-        "goodExample": "",
-        "reason": "没必要限制"
+        "goodExample": ""
     },
     "max-statements-per-line": {
         "name": "max-statements-per-line",
@@ -1488,8 +1474,7 @@
         "description": "限制一行中的语句数量",
         "category": "Stylistic Issues",
         "badExample": "",
-        "goodExample": "",
-        "reason": "没必要限制"
+        "goodExample": ""
     },
     "multiline-comment-style": {
         "name": "multiline-comment-style",
@@ -1533,8 +1518,7 @@
         "description": "链式调用必须换行",
         "category": "Stylistic Issues",
         "badExample": "",
-        "goodExample": "",
-        "reason": "没必要限制"
+        "goodExample": ""
     },
     "no-array-constructor": {
         "name": "no-array-constructor",
@@ -1604,8 +1588,7 @@
         "description": "禁止连续赋值，比如 a = b = c = 5",
         "category": "Stylistic Issues",
         "badExample": "",
-        "goodExample": "",
-        "reason": "没必要限制"
+        "goodExample": ""
     },
     "no-multiple-empty-lines": {
         "name": "no-multiple-empty-lines",
@@ -1631,8 +1614,7 @@
         "description": "禁止使用嵌套的三元表达式，比如 a ? b : c ? d : e",
         "category": "Stylistic Issues",
         "badExample": "",
-        "goodExample": "",
-        "reason": "没必要限制"
+        "goodExample": ""
     },
     "no-new-object": {
         "name": "no-new-object",
@@ -1648,8 +1630,7 @@
         "description": "禁止使用 ++ 或 --",
         "category": "Stylistic Issues",
         "badExample": "",
-        "goodExample": "",
-        "reason": "没必要限制"
+        "goodExample": ""
     },
     "no-restricted-syntax": {
         "name": "no-restricted-syntax",
@@ -1748,7 +1729,6 @@
         "category": "Stylistic Issues",
         "badExample": "",
         "goodExample": "",
-        "reason": "没必要限制",
         "fixable": true
     },
     "one-var": {
@@ -1775,7 +1755,6 @@
         "category": "Stylistic Issues",
         "badExample": "",
         "goodExample": "",
-        "reason": "没必要限制",
         "fixable": true
     },
     "operator-linebreak": {
@@ -1795,7 +1774,6 @@
         "category": "Stylistic Issues",
         "badExample": "",
         "goodExample": "",
-        "reason": "没必要限制",
         "fixable": true
     },
     "padding-line-between-statements": {
@@ -1805,7 +1783,6 @@
         "category": "Stylistic Issues",
         "badExample": "",
         "goodExample": "",
-        "reason": "没必要限制",
         "fixable": true
     },
     "prefer-object-spread": {
@@ -1824,7 +1801,6 @@
         "category": "Stylistic Issues",
         "badExample": "",
         "goodExample": "",
-        "reason": "没必要限制",
         "fixable": true
     },
     "quotes": {
@@ -1869,8 +1845,7 @@
         "description": "对象字面量的键名必须排好序",
         "category": "Stylistic Issues",
         "badExample": "",
-        "goodExample": "",
-        "reason": "没必要限制"
+        "goodExample": ""
     },
     "sort-vars": {
         "name": "sort-vars",
@@ -1879,7 +1854,6 @@
         "category": "Stylistic Issues",
         "badExample": "",
         "goodExample": "",
-        "reason": "没必要限制",
         "fixable": true
     },
     "space-before-blocks": {
@@ -1970,7 +1944,6 @@
         "category": "Stylistic Issues",
         "badExample": "",
         "goodExample": "",
-        "reason": "没必要限制",
         "fixable": true
     },
     "arrow-body-style": {
@@ -2055,7 +2028,7 @@
     "no-duplicate-imports": {
         "name": "no-duplicate-imports",
         "value": "error",
-        "description": "禁止重复 import 模块",
+        "description": "禁止重复导入模块",
         "category": "ECMAScript 6",
         "badExample": "",
         "goodExample": ""
@@ -2071,7 +2044,7 @@
     "no-restricted-imports": {
         "name": "no-restricted-imports",
         "value": "off",
-        "description": "禁止 import 指定的模块",
+        "description": "禁止导入指定的模块",
         "category": "ECMAScript 6",
         "badExample": "",
         "goodExample": "",
@@ -2218,7 +2191,7 @@
     "sort-imports": {
         "name": "sort-imports",
         "value": "off",
-        "description": "import 必须按规则排序",
+        "description": "导入必须按规则排序",
         "category": "ECMAScript 6",
         "badExample": "",
         "goodExample": "",

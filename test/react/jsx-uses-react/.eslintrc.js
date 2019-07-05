@@ -1,7 +1,7 @@
 module.exports = {
     rules: {
         /**
-         * jsx 文件必须 import React
+         * jsx 文件必须导入 React
          */
         'react/jsx-uses-react': 'error'
     }

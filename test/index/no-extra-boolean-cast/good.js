@@ -1,3 +1,4 @@
 if (foo) {
-    // do something
+}
+if (!foo) {
 }

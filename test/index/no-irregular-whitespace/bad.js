@@ -1,3 +1,2 @@
 function foo()　{
-    // do something
 }

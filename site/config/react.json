@@ -48,8 +48,7 @@
         "description": "禁止在自定义组件中使用一些指定的 props",
         "category": "React",
         "badExample": "",
-        "goodExample": "",
-        "reason": "没必要限制"
+        "goodExample": ""
     },
     "react/forbid-dom-props": {
         "name": "react/forbid-dom-props",
@@ -65,8 +64,7 @@
         "description": "禁止使用一些指定的 elements",
         "category": "React",
         "badExample": "",
-        "goodExample": "",
-        "reason": "没必要限制"
+        "goodExample": ""
     },
     "react/forbid-foreign-prop-types": {
         "name": "react/forbid-foreign-prop-types",
@@ -100,8 +98,7 @@
         "description": "禁止使用数组的 index 作为 key",
         "category": "React",
         "badExample": "",
-        "goodExample": "",
-        "reason": "太严格了"
+        "goodExample": ""
     },
     "react/no-danger": {
         "name": "react/no-danger",
@@ -109,8 +106,7 @@
         "description": "禁止使用 dangerouslySetInnerHTML",
         "category": "React",
         "badExample": "",
-        "goodExample": "",
-        "reason": "没必要限制"
+        "goodExample": ""
     },
     "react/no-did-mount-set-state": {
         "name": "react/no-did-mount-set-state",
@@ -196,8 +192,7 @@
         "description": "必须使用 pure function",
         "category": "React",
         "badExample": "",
-        "goodExample": "",
-        "reason": "没必要限制"
+        "goodExample": ""
     },
     "react/prop-types": {
         "name": "react/prop-types",
@@ -211,7 +206,7 @@
     "react/react-in-jsx-scope": {
         "name": "react/react-in-jsx-scope",
         "value": "off",
-        "description": "出现 jsx 的地方必须 import React",
+        "description": "出现 jsx 的地方必须导入 React",
         "category": "React",
         "badExample": "",
         "goodExample": "",
@@ -232,8 +227,7 @@
         "description": "组件必须有 shouldComponentUpdate",
         "category": "React",
         "badExample": "",
-        "goodExample": "",
-        "reason": "没必要限制"
+        "goodExample": ""
     },
     "react/self-closing-comp": {
         "name": "react/self-closing-comp",
@@ -242,7 +236,6 @@
         "category": "React",
         "badExample": "",
         "goodExample": "",
-        "reason": "没必要限制",
         "fixable": true
     },
     "react/sort-comp": {
@@ -260,8 +253,7 @@
         "description": "propTypes 的熟悉必须按照字母排序",
         "category": "React",
         "badExample": "",
-        "goodExample": "",
-        "reason": "没必要限制"
+        "goodExample": ""
     },
     "react/state-in-constructor": {
         "name": "react/state-in-constructor",
@@ -330,7 +322,7 @@
         "description": "限制 jsx 中的大括号内部首尾换行符",
         "category": "JSX-specific",
         "badExample": "<span class=\"token keyword\">let</span> foo <span class=\"token operator\">=</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">{</span> <span class=\"token number\">1</span>\n<span class=\"token punctuation\"><mark class=\"eslint-error\" data-tip=\"Unexpected newline before '{'.<br/><span class='eslint-error-rule-id'>eslint(react/jsx-curly-newline)</span>\">}</mark></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">let</span> bar <span class=\"token operator\">=</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">{</span>\n<span class=\"token number\">1</span> <span class=\"token punctuation\"><mark class=\"eslint-error\" data-tip=\"Expected newline before '}'.<br/><span class='eslint-error-rule-id'>eslint(react/jsx-curly-newline)</span>\">}</mark></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>\n",
-        "goodExample": "<span class=\"token keyword\">let</span> foo <span class=\"token operator\">=</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">{</span> <span class=\"token number\">1</span> <span class=\"token punctuation\">}</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span>\n<span class=\"token keyword\">let</span> bar <span class=\"token operator\">=</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">{</span>\n    <span class=\"token number\">1</span>\n<span class=\"token punctuation\">}</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>\n",
+        "goodExample": "<span class=\"token keyword\">let</span> foo <span class=\"token operator\">=</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">{</span> <span class=\"token number\">1</span> <span class=\"token punctuation\">}</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span>\n<span class=\"token keyword\">let</span> bar <span class=\"token operator\">=</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">{</span>\n    <span class=\"token number\">1</span>\n<span class=\"token punctuation\">}</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>",
         "fixable": true,
         "reason": "要么首尾都换行，要么首尾都不换行"
     },
@@ -366,8 +358,7 @@
         "description": "限制文件后缀",
         "category": "JSX-specific",
         "badExample": "",
-        "goodExample": "",
-        "reason": "没必要限制"
+        "goodExample": ""
     },
     "react/jsx-first-prop-new-line": {
         "name": "react/jsx-first-prop-new-line",
@@ -376,7 +367,6 @@
         "category": "JSX-specific",
         "badExample": "",
         "goodExample": "",
-        "reason": "没必要限制",
         "fixable": true
     },
     "react/jsx-fragments": {
@@ -395,8 +385,7 @@
         "description": "handler 的名称必须是 onXXX 或 handleXXX",
         "category": "JSX-specific",
         "badExample": "",
-        "goodExample": "",
-        "reason": "没必要限制"
+        "goodExample": ""
     },
     "react/jsx-indent": {
         "name": "react/jsx-indent",
@@ -431,7 +420,6 @@
         "category": "JSX-specific",
         "badExample": "",
         "goodExample": "",
-        "reason": "没必要限制",
         "fixable": true
     },
     "react/jsx-no-bind": {
@@ -440,8 +428,7 @@
         "description": "jsx 中禁止使用 bind",
         "category": "JSX-specific",
         "badExample": "",
-        "goodExample": "",
-        "reason": "太严格了"
+        "goodExample": ""
     },
     "react/jsx-no-literals": {
         "name": "react/jsx-no-literals",
@@ -449,8 +436,7 @@
         "description": "禁止在 jsx 中出现字符串",
         "category": "JSX-specific",
         "badExample": "",
-        "goodExample": "",
-        "reason": "没必要限制"
+        "goodExample": ""
     },
     "react/jsx-no-target-blank": {
         "name": "react/jsx-no-target-blank",
@@ -458,8 +444,7 @@
         "description": "禁止使用 target=\"_blank\"",
         "category": "JSX-specific",
         "badExample": "",
-        "goodExample": "",
-        "reason": "没必要限制"
+        "goodExample": ""
     },
     "react/jsx-one-expression-per-line": {
         "name": "react/jsx-one-expression-per-line",
@@ -502,7 +487,6 @@
         "category": "JSX-specific",
         "badExample": "",
         "goodExample": "",
-        "reason": "没必要限制",
         "fixable": true
     },
     "react/jsx-tag-spacing": {
@@ -524,7 +508,6 @@
         "category": "JSX-specific",
         "badExample": "",
         "goodExample": "",
-        "reason": "没必要限制",
         "fixable": true
     },
     "react/jsx-key": {
@@ -570,7 +553,7 @@
     "react/jsx-uses-react": {
         "name": "react/jsx-uses-react",
         "value": "error",
-        "description": "jsx 文件必须 import React",
+        "description": "jsx 文件必须导入 React",
         "category": "",
         "badExample": "",
         "goodExample": ""

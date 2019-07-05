@@ -29,8 +29,7 @@
         "description": "禁止重复的二级键名",
         "category": "Error Prevention",
         "badExample": "",
-        "goodExample": "",
-        "reason": "没必要限制"
+        "goodExample": ""
     },
     "vue/no-duplicate-attributes": {
         "name": "vue/no-duplicate-attributes",
@@ -62,8 +61,7 @@
         "description": "组件的 data 属性的值必须是一个函数",
         "category": "Error Prevention",
         "badExample": "",
-        "goodExample": "",
-        "reason": "没必要限制"
+        "goodExample": ""
     },
     "vue/no-side-effects-in-computed-properties": {
         "name": "vue/no-side-effects-in-computed-properties",
@@ -71,8 +69,7 @@
         "description": "禁止在计算属性中对属性修改",
         "category": "Error Prevention",
         "badExample": "",
-        "goodExample": "",
-        "reason": "太严格了"
+        "goodExample": ""
     },
     "vue/no-template-key": {
         "name": "vue/no-template-key",
@@ -80,8 +77,7 @@
         "description": "禁止 <template> 使用 key 属性",
         "category": "Error Prevention",
         "badExample": "",
-        "goodExample": "",
-        "reason": "太严格了"
+        "goodExample": ""
     },
     "vue/no-textarea-mustache": {
         "name": "vue/no-textarea-mustache",
@@ -154,8 +150,7 @@
         "description": "prop 的默认值必须匹配它的类型",
         "category": "Error Prevention",
         "badExample": "",
-        "goodExample": "",
-        "reason": "太严格了"
+        "goodExample": ""
     },
     "vue/return-in-computed-property": {
         "name": "vue/return-in-computed-property",
@@ -292,7 +287,6 @@
         "category": "Improving Readability",
         "badExample": "",
         "goodExample": "",
-        "reason": "没必要限制",
         "fixable": true
     },
     "vue/html-closing-bracket-newline": {
@@ -347,7 +341,6 @@
         "category": "Improving Readability",
         "badExample": "",
         "goodExample": "",
-        "reason": "没必要限制",
         "fixable": true
     },
     "vue/max-attributes-per-line": {
@@ -356,8 +349,7 @@
         "description": "限制每行允许的最多属性数量",
         "category": "Improving Readability",
         "badExample": "",
-        "goodExample": "",
-        "reason": "没必要限制"
+        "goodExample": ""
     },
     "vue/multiline-html-element-content-newline": {
         "name": "vue/multiline-html-element-content-newline",
@@ -384,7 +376,6 @@
         "category": "Improving Readability",
         "badExample": "",
         "goodExample": "",
-        "reason": "没必要限制",
         "fixable": true
     },
     "vue/no-multi-spaces": {
@@ -436,8 +427,7 @@
         "description": "prop 必须有类型限制",
         "category": "Improving Readability",
         "badExample": "",
-        "goodExample": "",
-        "reason": "没必要限制"
+        "goodExample": ""
     },
     "vue/singleline-html-element-content-newline": {
         "name": "vue/singleline-html-element-content-newline",
@@ -455,7 +445,6 @@
         "category": "Improving Readability",
         "badExample": "",
         "goodExample": "",
-        "reason": "没必要限制",
         "fixable": true
     },
     "vue/v-on-style": {
@@ -465,7 +454,6 @@
         "category": "Improving Readability",
         "badExample": "",
         "goodExample": "",
-        "reason": "没必要限制",
         "fixable": true
     },
     "vue/attributes-order": {

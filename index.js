@@ -28,12 +28,12 @@ module.exports = {
     extends: ['./base.js'],
     rules: {
         /**
-         * 禁止 for 循环出现方向错误的循环，比如 for (i = 0; i < 10; i--)
+         * 禁止 for 循环出现方向错误的循环
          * @category Possible Errors
          */
         'for-direction': 'error',
         /**
-         * getter 必须有返回值，并且禁止返回空，比如 return;
+         * getter 必须有返回值，并且禁止返回空
          * @category Possible Errors
          */
         'getter-return': [
@@ -94,7 +94,7 @@ module.exports = {
         /**
          * 禁止在函数参数中出现重复名称的参数
          * @category Possible Errors
-         * @reason 使用 babel 时，在编译阶段就会报错了
+         * @reason 在编译阶段就会报错了
          */
         'no-dupe-args': 'off',
         /**
@@ -146,7 +146,7 @@ module.exports = {
          */
         'no-extra-semi': 'error',
         /**
-         * 禁止将一个函数声明重新赋值，如：
+         * 禁止将一个函数声明重新赋值
          * @category Possible Errors
          */
         'no-func-assign': 'error',
@@ -197,17 +197,17 @@ module.exports = {
          */
         'no-regex-spaces': 'error',
         /**
-         * 禁止在数组中出现连续的逗号，如 let foo = [,,]
+         * 禁止在数组中出现连续的逗号
          * @category Possible Errors
          */
         'no-sparse-arrays': 'error',
         /**
-         * 禁止在普通字符串中出现模版字符串里的变量形式，如 'Hello ${name}!'
+         * 禁止在普通字符串中出现模版字符串里的变量形式
          * @category Possible Errors
          */
         'no-template-curly-in-string': 'error',
         /**
-         * 禁止出现难以理解的多行表达式
+         * 禁止出现容易出错的多行表达式
          * @category Possible Errors
          */
         'no-unexpected-multiline': 'error',
@@ -267,12 +267,12 @@ module.exports = {
         /**
          * 在类的非静态方法中，必须存在对 this 的引用
          * @category Best Practices
-         * @reason 太严格了
          */
         'class-methods-use-this': 'off',
         /**
-         * 禁止函数的循环复杂度超过 20，https://en.wikipedia.org/wiki/Cyclomatic_complexity
+         * 禁止函数的循环复杂度超过 20
          * @category Best Practices
+         * @reason https://en.wikipedia.org/wiki/Cyclomatic_complexity
          */
         complexity: [
             'error',
@@ -283,7 +283,6 @@ module.exports = {
         /**
          * 禁止函数在不同分支返回不同类型的值
          * @category Best Practices
-         * @reason 太严格了
          */
         'consistent-return': 'off',
         /**
@@ -295,7 +294,6 @@ module.exports = {
         /**
          * switch 语句必须有 default
          * @category Best Practices
-         * @reason 太严格了
          */
         'default-case': 'off',
         /**
@@ -470,7 +468,7 @@ module.exports = {
          */
         'no-magic-numbers': 'off',
         /**
-         * 禁止出现连续的多个空格，除非是注释前，或对齐对象的属性、变量定义、import 等
+         * 禁止出现连续的多个空格，除非是注释前，或对齐对象的属性、变量定义、导入等
          * @category Best Practices
          * @fixable
          */
@@ -660,7 +658,7 @@ module.exports = {
         /**
          * async 函数中必须存在 await 语句
          * @category Best Practices
-         * @reason async function 中没有 await 的写法很常见，比如 koa 的示例中就有这种用法
+         * @reason async function 中没有 await 的写法很常见，koa 的示例中就有这种用法
          */
         'require-await': 'off',
         /**
@@ -786,7 +784,6 @@ module.exports = {
         /**
          * callback 之后必须立即 return
          * @category Node.js and CommonJS
-         * @reason Limitations 太多了
          */
         'callback-return': 'off',
         /**
@@ -808,7 +805,6 @@ module.exports = {
         /**
          * 相同类型的 require 必须放在一起
          * @category Node.js and CommonJS
-         * @reason 太严格了
          */
         'no-mixed-requires': 'off',
         /**
@@ -887,7 +883,6 @@ module.exports = {
         /**
          * 注释的首字母必须大写
          * @category Stylistic Issues
-         * @reason 没必要限制
          * @fixable
          */
         'capitalized-comments': 'off',
@@ -924,13 +919,11 @@ module.exports = {
         /**
          * 限制 this 的别名
          * @category Stylistic Issues
-         * @reason 没必要限制
          */
         'consistent-this': 'off',
         /**
          * 文件最后一行必须有一个空行
          * @category Stylistic Issues
-         * @reason 没必要限制
          * @fixable
          */
         'eol-last': 'off',
@@ -954,13 +947,11 @@ module.exports = {
         /**
          * 函数必须有名字
          * @category Stylistic Issues
-         * @reason 没必要限制
          */
         'func-names': 'off',
         /**
          * 必须只使用函数声明或只使用函数表达式
          * @category Stylistic Issues
-         * @reason 没必要限制
          */
         'func-style': 'off',
         /**
@@ -1040,20 +1031,17 @@ module.exports = {
         /**
          * 单行注释必须写在上一行
          * @category Stylistic Issues
-         * @reason 没必要限制
          */
         'line-comment-position': 'off',
         /**
          * 限制换行符为 LF 或 CRLF
          * @category Stylistic Issues
-         * @reason 没必要限制
          * @fixable
          */
         'linebreak-style': 'off',
         /**
          * 注释前后必须有空行
          * @category Stylistic Issues
-         * @reason 没必要限制
          * @fixable
          */
         'lines-around-comment': 'off',
@@ -1078,7 +1066,6 @@ module.exports = {
         /**
          * 限制一个文件最多的行数
          * @category Stylistic Issues
-         * @reason 没必要限制
          */
         'max-lines': 'off',
         /**
@@ -1099,13 +1086,11 @@ module.exports = {
         /**
          * 限制函数块中的语句数量
          * @category Stylistic Issues
-         * @reason 没必要限制
          */
         'max-statements': 'off',
         /**
          * 限制一行中的语句数量
          * @category Stylistic Issues
-         * @reason 没必要限制
          */
         'max-statements-per-line': 'off',
         /**
@@ -1142,7 +1127,6 @@ module.exports = {
         /**
          * 链式调用必须换行
          * @category Stylistic Issues
-         * @reason 没必要限制
          */
         'newline-per-chained-call': 'off',
         /**
@@ -1189,7 +1173,6 @@ module.exports = {
         /**
          * 禁止连续赋值，比如 a = b = c = 5
          * @category Stylistic Issues
-         * @reason 没必要限制
          */
         'no-multi-assign': 'off',
         /**
@@ -1214,7 +1197,6 @@ module.exports = {
         /**
          * 禁止使用嵌套的三元表达式，比如 a ? b : c ? d : e
          * @category Stylistic Issues
-         * @reason 没必要限制
          */
         'no-nested-ternary': 'off',
         /**
@@ -1225,7 +1207,6 @@ module.exports = {
         /**
          * 禁止使用 ++ 或 --
          * @category Stylistic Issues
-         * @reason 没必要限制
          */
         'no-plusplus': 'off',
         /**
@@ -1312,7 +1293,6 @@ module.exports = {
         /**
          * 对象字面量内的属性每行必须只有一个
          * @category Stylistic Issues
-         * @reason 没必要限制
          * @fixable
          */
         'object-property-newline': 'off',
@@ -1330,7 +1310,6 @@ module.exports = {
         /**
          * 必须使用 x = x + y 而不是 x += y
          * @category Stylistic Issues
-         * @reason 没必要限制
          * @fixable
          */
         'operator-assignment': 'off',
@@ -1344,14 +1323,12 @@ module.exports = {
         /**
          * 代码块首尾必须要空行
          * @category Stylistic Issues
-         * @reason 没必要限制
          * @fixable
          */
         'padded-blocks': 'off',
         /**
          * 限制语句之间的空行规则，比如变量定义完之后必须要空行
          * @category Stylistic Issues
-         * @reason 没必要限制
          * @fixable
          */
         'padding-line-between-statements': 'off',
@@ -1364,7 +1341,6 @@ module.exports = {
         /**
          * 对象字面量的键名禁止用引号括起来
          * @category Stylistic Issues
-         * @reason 没必要限制
          * @fixable
          */
         'quote-props': 'off',
@@ -1414,13 +1390,11 @@ module.exports = {
         /**
          * 对象字面量的键名必须排好序
          * @category Stylistic Issues
-         * @reason 没必要限制
          */
         'sort-keys': 'off',
         /**
          * 变量申明必须排好序
          * @category Stylistic Issues
-         * @reason 没必要限制
          * @fixable
          */
         'sort-vars': 'off',
@@ -1509,7 +1483,6 @@ module.exports = {
         /**
          * 正则表达式必须有括号包起来
          * @category Stylistic Issues
-         * @reason 没必要限制
          * @fixable
          */
         'wrap-regex': 'off',
@@ -1583,7 +1556,7 @@ module.exports = {
          */
         'no-dupe-class-members': 'error',
         /**
-         * 禁止重复 import 模块
+         * 禁止重复导入模块
          * @category ECMAScript 6
          */
         'no-duplicate-imports': 'error',
@@ -1593,7 +1566,7 @@ module.exports = {
          */
         'no-new-symbol': 'error',
         /**
-         * 禁止 import 指定的模块
+         * 禁止导入指定的模块
          * @category ECMAScript 6
          * @reason 它用于限制某个具体的模块不能使用
          */
@@ -1692,7 +1665,7 @@ module.exports = {
          */
         'rest-spread-spacing': ['error', 'never'],
         /**
-         * import 必须按规则排序
+         * 导入必须按规则排序
          * @category ECMAScript 6
          * @reason 没必要强制要求
          * @fixable

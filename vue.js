@@ -66,7 +66,6 @@ module.exports = {
         /**
          * 禁止重复的二级键名
          * @category Error Prevention
-         * @reason 没必要限制
          */
         'vue/no-dupe-keys': 'off',
         /**
@@ -87,19 +86,16 @@ module.exports = {
         /**
          * 组件的 data 属性的值必须是一个函数
          * @category Error Prevention
-         * @reason 没必要限制
          */
         'vue/no-shared-component-data': 'off',
         /**
          * 禁止在计算属性中对属性修改
          * @category Error Prevention
-         * @reason 太严格了
          */
         'vue/no-side-effects-in-computed-properties': 'off',
         /**
          * 禁止 <template> 使用 key 属性
          * @category Error Prevention
-         * @reason 太严格了
          */
         'vue/no-template-key': 'off',
         /**
@@ -146,7 +142,6 @@ module.exports = {
         /**
          * prop 的默认值必须匹配它的类型
          * @category Error Prevention
-         * @reason 太严格了
          */
         'vue/require-valid-default-prop': 'off',
         /**
@@ -232,7 +227,6 @@ module.exports = {
         /**
          * 限制自定义组件的属性风格
          * @category Improving Readability
-         * @reason 没必要限制
          * @fixable
          */
         'vue/attribute-hyphenation': 'off',
@@ -269,14 +263,12 @@ module.exports = {
         /**
          * 没有内容时，组件必须自闭和
          * @category Improving Readability
-         * @reason 没必要限制
          * @fixable
          */
         'vue/html-self-closing': 'off',
         /**
          * 限制每行允许的最多属性数量
          * @category Improving Readability
-         * @reason 没必要限制
          */
         'vue/max-attributes-per-line': 'off',
         /**
@@ -294,7 +286,6 @@ module.exports = {
         /**
          * 限制组件的 name 属性的值的风格
          * @category Improving Readability
-         * @reason 没必要限制
          * @fixable
          */
         'vue/name-property-casing': 'off',
@@ -329,7 +320,6 @@ module.exports = {
         /**
          * prop 必须有类型限制
          * @category Improving Readability
-         * @reason 没必要限制
          */
         'vue/require-prop-types': 'off',
         /**
@@ -341,14 +331,12 @@ module.exports = {
         /**
          * 限制 v-bind 的风格
          * @category Improving Readability
-         * @reason 没必要限制
          * @fixable
          */
         'vue/v-bind-style': 'off',
         /**
          * 限制 v-on 的风格
          * @category Improving Readability
-         * @reason 没必要限制
          * @fixable
          */
         'vue/v-on-style': 'off',
