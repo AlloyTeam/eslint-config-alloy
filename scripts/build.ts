@@ -7,6 +7,7 @@ import * as prettier from 'prettier';
 import { CLIEngine, Linter } from 'eslint';
 const cli = new CLIEngine({});
 import insertTag from 'insert-tag';
+import xmlEscape = require('xml-escape');
 
 import {
     RuleNamespaces,
@@ -253,7 +254,9 @@ class Builder {
         eslintMessages.forEach(({ ruleId, message, line, column, endLine, endColumn }) => {
             insertedBadExample = insertTag(
                 insertedBadExample,
-                `<mark class="eslint-error" data-tip="${message}<br/><span class='eslint-error-rule-id'>eslint(${ruleId})</span>">`,
+                `<mark class="eslint-error" data-tip="${xmlEscape(
+                    `${message}<br/><span class='eslint-error-rule-id'>eslint(${ruleId})</span>`
+                )}">`,
                 [line - 1, column - 1, (endLine || line) - 1, (endColumn || column + 1) - 1]
             );
         });
