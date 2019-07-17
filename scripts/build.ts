@@ -208,14 +208,14 @@ class Builder {
                     RuleNamespacePrismLanguageMap[this.namespace]
                 ),
                 results[0].messages
-            );
+            ).trim();
         }
         if (fs.existsSync(goodFilePath)) {
             rule.goodExample = Prism.highlight(
                 fs.readFileSync(goodFilePath, 'utf-8'),
                 Prism.languages[RuleNamespacePrismLanguageMap[this.namespace]],
                 RuleNamespacePrismLanguageMap[this.namespace]
-            );
+            ).trim();
         }
         return rule;
     }

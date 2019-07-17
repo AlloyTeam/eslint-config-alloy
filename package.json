@@ -79,7 +79,7 @@
         "eslint-plugin-react": "^7.14.2",
         "eslint-plugin-vue": "^5.2.3",
         "husky": "^2.3.0",
-        "insert-tag": "^0.1.0",
+        "insert-tag": "^0.1.2",
         "mobi-plugin-color": "^1.0.0",
         "mobi.css": "^3.1.1",
         "nodemon": "^1.17.5",
