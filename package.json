@@ -90,7 +90,7 @@
         "react": "^16.8.6",
         "react-dom": "^16.8.6",
         "react-tooltip": "^3.10.0",
-        "rimraf": "^2.6.3",
+        "rimraf": "^3.0.0",
         "ts-node": "^7.0.1",
         "typescript": "^3.4.5",
         "vue-eslint-parser": "^5.0.0",
