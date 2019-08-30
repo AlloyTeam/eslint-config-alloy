@@ -26,8 +26,8 @@ const pkg = require('../package.json');
 class Builder {
     private namespace: RuleNamespaces = 'index';
     private ruleList: Rule[] = [];
-    private rulesContent: string = '';
-    private namespaceEslintrcContent: string = '';
+    private rulesContent = '';
+    private namespaceEslintrcContent = '';
 
     public build(namespace: RuleNamespaces) {
         this.namespace = namespace;

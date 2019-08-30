@@ -10,13 +10,13 @@
  *     Swan <noreply@github.com>
  *
  * 依赖版本：
- *     eslint ^5.16.0
+ *     eslint ^6.2.2
  *     babel-eslint ^10.0.1
  *     eslint-plugin-react ^7.14.2
  *     vue-eslint-parser ^5.0.0
  *     eslint-plugin-vue ^5.2.3
- *     @typescript-eslint/parser ^1.10.2
- *     @typescript-eslint/eslint-plugin ^1.10.2
+ *     @typescript-eslint/parser ^2.0.0
+ *     @typescript-eslint/eslint-plugin ^2.0.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  *
@@ -91,6 +91,25 @@ module.exports = {
          * @category TypeScript
          */
         '@typescript-eslint/class-name-casing': 'error',
+        /**
+         * 类型断言必须使用 as Type，禁止使用 <Type>，禁止对对象字面量进行类型断言（断言成 any 是允许的）
+         * @category TypeScript
+         * @reason <Type> 容易被理解为 jsx
+         */
+        '@typescript-eslint/consistent-type-assertions': [
+            'error',
+            {
+                assertionStyle: 'as',
+                objectLiteralTypeAssertions: 'never'
+            }
+        ],
+        /**
+         * 优先使用接口而不是字面类型
+         * @category TypeScript
+         * @reason 接口可以 implement extend 和 merge
+         * @fixable
+         */
+        '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
         /**
          * 函数返回值必须与声明的类型一致
          * @category TypeScript
@@ -172,12 +191,6 @@ module.exports = {
             }
         ],
         /**
-         * 类型断言必须使用 as Type，禁止使用 <Type>
-         * @category TypeScript
-         * @reason <Type> 容易被理解为 jsx
-         */
-        '@typescript-eslint/no-angle-bracket-type-assertion': 'error',
-        /**
          * 禁止使用 Array 构造函数
          * @category TypeScript
          * @fixable
@@ -228,6 +241,12 @@ module.exports = {
          */
         '@typescript-eslint/no-misused-new': 'off',
         /**
+         * 避免错误的使用 Promise
+         * @category TypeScript
+         * @requires-types-information
+         */
+        '@typescript-eslint/no-misused-promises': 'off',
+        /**
          * 禁止使用 namespace 来定义命名空间
          * @category TypeScript
          * @reason 使用 es6 引入模块，才是更标准的方式。
@@ -246,11 +265,6 @@ module.exports = {
          * @reason 使用 non-null 断言时就已经清楚了风险
          */
         '@typescript-eslint/no-non-null-assertion': 'off',
-        /**
-         * 禁止对对象字面量进行类型断言（断言成 any 是允许的）
-         * @category TypeScript
-         */
-        '@typescript-eslint/no-object-literal-type-assertion': 'error',
         /**
          * 禁止给类的构造函数的参数添加修饰符
          * @category TypeScript
@@ -272,12 +286,6 @@ module.exports = {
                 allowDestructuring: true
             }
         ],
-        /**
-         * 禁止使用三斜杠引入类型定义文件
-         * @category TypeScript
-         * @reason 三斜杠是已废弃的语法
-         */
-        '@typescript-eslint/no-triple-slash-reference': 'error',
         /**
          * 禁止使用类型别名
          * @category TypeScript
@@ -342,19 +350,18 @@ module.exports = {
          */
         '@typescript-eslint/prefer-includes': 'off',
         /**
-         * 优先使用接口而不是字面类型
-         * @category TypeScript
-         * @reason 接口可以 implement extend 和 merge
-         * @fixable
-         */
-        '@typescript-eslint/prefer-interface': 'error',
-        /**
          * 禁止使用 module 来定义命名空间
          * @category TypeScript
          * @reason module 已成为 js 的关键字
          * @fixable
          */
         '@typescript-eslint/prefer-namespace-keyword': 'error',
+        /**
+         * 私有变量如果没有在构造函数外被赋值，则必须设为 readonly
+         * @category TypeScript
+         * @requires-types-information
+         */
+        '@typescript-eslint/prefer-readonly': 'off',
         /**
          * 使用 RegExp#exec 而不是 String#match
          * @category TypeScript
@@ -382,6 +389,12 @@ module.exports = {
          */
         '@typescript-eslint/require-array-sort-compare': 'off',
         /**
+         * async 函数中必须存在 await 语句
+         * @category TypeScript
+         * @requires-types-information
+         */
+        '@typescript-eslint/require-await': 'off',
+        /**
          * 使用加号时，两者必须同为数字或同为字符串
          * @category TypeScript
          * @requires-types-information
@@ -400,11 +413,46 @@ module.exports = {
             }
         ],
         /**
+         * 条件判断必须传入布尔值
+         * @category TypeScript
+         * @requires-types-information
+         */
+        '@typescript-eslint/strict-boolean-expressions': 'off',
+        /**
+         * 禁止使用三斜杠导入文件
+         * @category TypeScript
+         * @reason 三斜杠是已废弃的语法，但在类型声明文件中还是可以使用的
+         */
+        '@typescript-eslint/triple-slash-reference': [
+            'error',
+            {
+                path: 'never',
+                types: 'always',
+                lib: 'always'
+            }
+        ],
+        /**
          * 类型定义的冒号前面必须没有空格，后面必须有一个空格
          * @category TypeScript
          * @fixable
          */
         '@typescript-eslint/type-annotation-spacing': 'error',
+        /**
+         * interface 和 type 定义时必须声明成员的类型
+         * @category TypeScript
+         */
+        '@typescript-eslint/typedef': [
+            'error',
+            {
+                arrayDestructuring: false,
+                arrowParameter: false,
+                memberVariableDeclaration: false,
+                objectDestructuring: false,
+                parameter: false,
+                propertyDeclaration: true,
+                variableDeclaration: false
+            }
+        ],
         /**
          * 方法调用时需要绑定到正确的 this 上
          * @category TypeScript

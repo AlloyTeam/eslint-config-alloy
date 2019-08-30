@@ -10,13 +10,13 @@
  *     Swan <noreply@github.com>
  *
  * 依赖版本：
- *     eslint ^5.16.0
+ *     eslint ^6.2.2
  *     babel-eslint ^10.0.1
  *     eslint-plugin-react ^7.14.2
  *     vue-eslint-parser ^5.0.0
  *     eslint-plugin-vue ^5.2.3
- *     @typescript-eslint/parser ^1.10.2
- *     @typescript-eslint/eslint-plugin ^1.10.2
+ *     @typescript-eslint/parser ^2.0.0
+ *     @typescript-eslint/eslint-plugin ^2.0.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  *
@@ -32,6 +32,12 @@ module.exports = {
          * @category Possible Errors
          */
         'for-direction': 'error',
+        /**
+         * 函数参数之间的换行模式必须保持一致
+         * @category Possible Errors
+         * @fixable
+         */
+        'function-call-argument-newline': ['error', 'consistent'],
         /**
          * getter 必须有返回值，并且禁止返回空
          * @category Possible Errors

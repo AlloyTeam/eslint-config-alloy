@@ -6,6 +6,6 @@ module.exports = {
          * @reason 接口可以 implement extend 和 merge
          * @fixable
          */
-        '@typescript-eslint/prefer-interface': 'error'
+        '@typescript-eslint/consistent-type-definitions': ['error', 'interface']
     }
 };

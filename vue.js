@@ -10,13 +10,13 @@
  *     Swan <noreply@github.com>
  *
  * 依赖版本：
- *     eslint ^5.16.0
+ *     eslint ^6.2.2
  *     babel-eslint ^10.0.1
  *     eslint-plugin-react ^7.14.2
  *     vue-eslint-parser ^5.0.0
  *     eslint-plugin-vue ^5.2.3
- *     @typescript-eslint/parser ^1.10.2
- *     @typescript-eslint/eslint-plugin ^1.10.2
+ *     @typescript-eslint/parser ^2.0.0
+ *     @typescript-eslint/eslint-plugin ^2.0.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  *

@@ -1,0 +1,2 @@
+foo('one', 'two',
+'three');
