@@ -21,6 +21,21 @@ const configMap: {
     typescript: require('../config/typescript.json')
 };
 
+const docsUrlMap: { [key in RuleNamespaces]: (rule: string) => string } = {
+    index: (rule) => `https://eslint.org/docs/rules/${rule}`,
+    react: (rule) =>
+        `https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/${rule.replace(
+            /.*\//,
+            ''
+        )}.md`,
+    vue: (rule) => `https://eslint.vuejs.org/rules/${rule.replace(/.*\//, '')}.html`,
+    typescript: (rule) =>
+        `https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/${rule.replace(
+            /.*\//,
+            ''
+        )}.md`
+};
+
 export const RuleTable: React.SFC<RuleTableProps> = ({ namespace, shouldHideOff }) => {
     const currentConfig = configMap[namespace];
     return (
@@ -50,7 +65,7 @@ export const RuleTable: React.SFC<RuleTableProps> = ({ namespace, shouldHideOff 
                         }
                     >
                         <div className="unit-1-3 unit-1-on-mobile site-desc">
-                            <a href={`https://eslint.org/docs/rules/${name}/`}>{name}</a>
+                            <a href={docsUrlMap[namespace](name)}>{name}</a>
                             <p
                                 className="top-gap-0"
                                 dangerouslySetInnerHTML={{
