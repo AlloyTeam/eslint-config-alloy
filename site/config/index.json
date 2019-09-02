@@ -294,11 +294,11 @@
     },
     "require-atomic-updates": {
         "name": "require-atomic-updates",
-        "value": "error",
-        "description": "禁止将 await 或 yield 的结果做为运算符的后面项",
+        "value": "off",
+        "description": "禁止将 await 或 yield 的结果做为运算符的后面项\nhttps://github.com/eslint/eslint/issues/11899\n在上面 issue 修复之前，关闭此规则",
         "category": "Possible Errors",
-        "badExample": "<span class=\"token keyword\">async</span> <span class=\"token keyword\">function</span> <span class=\"token function\">foo</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <mark class=\"eslint-error\" data-tip=\"Possible race condition: `result` might be reassigned based on an outdated value of `result`.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(require-atomic-updates)&lt;/span&gt;\">result <span class=\"token operator\">+=</span> <span class=\"token keyword\">await</span> somethingElse</mark><span class=\"token punctuation\">;</span>\n    <mark class=\"eslint-error\" data-tip=\"Possible race condition: `result` might be reassigned based on an outdated value of `result`.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(require-atomic-updates)&lt;/span&gt;\">result <span class=\"token operator\">=</span> result <span class=\"token operator\">+</span> <span class=\"token keyword\">await</span> somethingElse</mark><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>",
-        "goodExample": "<span class=\"token keyword\">async</span> <span class=\"token keyword\">function</span> <span class=\"token function\">foo</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    result <span class=\"token operator\">=</span> <span class=\"token keyword\">await</span> somethingElse <span class=\"token operator\">+</span> result<span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>",
+        "badExample": "",
+        "goodExample": "",
         "reason": "这样会导致不符合预期的结果"
     },
     "use-isnan": {

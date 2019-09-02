@@ -175,7 +175,7 @@ module.exports = {
 安装：
 
 ```bash
-npm install --save-dev eslint babel-eslint typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-config-alloy
+npm install --save-dev eslint typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-config-alloy
 ```
 
 注意：由于[这个原因](https://github.com/AlloyTeam/eslint-config-alloy/issues/55)，必须也安装 babel-eslint 才能使用 typescript 规则。
@@ -224,7 +224,7 @@ module.exports = {
 安装：
 
 ```bash
-npm install --save-dev eslint babel-eslint typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-react eslint-config-alloy
+npm install --save-dev eslint typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-react eslint-config-alloy
 ```
 
 在你的项目根目录下创建 `.eslintrc.js`，并将以下内容复制到文件中：
