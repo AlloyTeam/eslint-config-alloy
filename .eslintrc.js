@@ -1,5 +1,5 @@
 module.exports = {
-    extends: ['./typescript.js', 'prettier', 'prettier/@typescript-eslint'],
+    extends: ['./index.js', './typescript.js'],
     globals: {
         Prism: false
     }

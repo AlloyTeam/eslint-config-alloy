@@ -280,73 +280,10 @@
         "goodExample": "",
         "fixable": true
     },
-    "react/jsx-child-element-spacing": {
-        "name": "react/jsx-child-element-spacing",
-        "value": "off",
-        "description": "禁止兄弟元素之间有空格",
-        "category": "JSX-specific",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "react/jsx-closing-bracket-location": {
-        "name": "react/jsx-closing-bracket-location",
-        "value": ["error", { "nonEmpty": false, "selfClosing": "line-aligned" }],
-        "description": "自闭和标签的反尖括号必须与尖括号的那一行对齐",
-        "category": "JSX-specific",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
-    "react/jsx-closing-tag-location": {
-        "name": "react/jsx-closing-tag-location",
-        "value": "off",
-        "description": "结束标签必须与开始标签的那一行对齐",
-        "category": "JSX-specific",
-        "badExample": "",
-        "goodExample": "",
-        "reason": "已经在 jsx-indent 中限制了",
-        "fixable": true
-    },
     "react/jsx-curly-brace-presence": {
         "name": "react/jsx-curly-brace-presence",
         "value": ["error", "never"],
         "description": "禁止 jsx 中使用无用的引号",
-        "category": "JSX-specific",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
-    "react/jsx-curly-newline": {
-        "name": "react/jsx-curly-newline",
-        "value": "error",
-        "description": "限制 jsx 中的大括号内部首尾换行符",
-        "category": "JSX-specific",
-        "badExample": "<span class=\"token keyword\">let</span> foo <span class=\"token operator\">=</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">{</span> <span class=\"token number\">1</span>\n<span class=\"token punctuation\"><mark class=\"eslint-error\" data-tip=\"Unexpected newline before &apos;{&apos;.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(react/jsx-curly-newline)&lt;/span&gt;\">}</mark></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">let</span> bar <span class=\"token operator\">=</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">{</span>\n<span class=\"token number\">1</span> <span class=\"token punctuation\"><mark class=\"eslint-error\" data-tip=\"Expected newline before &apos;}&apos;.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(react/jsx-curly-newline)&lt;/span&gt;\">}</mark></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>",
-        "goodExample": "<span class=\"token keyword\">let</span> foo <span class=\"token operator\">=</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">{</span> <span class=\"token number\">1</span> <span class=\"token punctuation\">}</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span>\n<span class=\"token keyword\">let</span> bar <span class=\"token operator\">=</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">{</span>\n    <span class=\"token number\">1</span>\n<span class=\"token punctuation\">}</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>",
-        "fixable": true,
-        "reason": "要么首尾都换行，要么首尾都不换行"
-    },
-    "react/jsx-curly-spacing": {
-        "name": "react/jsx-curly-spacing",
-        "value": [
-            "error",
-            {
-                "when": "never",
-                "attributes": { "allowMultiline": true },
-                "children": true,
-                "spacing": { "objectLiterals": "never" }
-            }
-        ],
-        "description": "大括号内前后禁止有空格",
-        "category": "JSX-specific",
-        "badExample": "<span class=\"token keyword\">let</span> foo <span class=\"token operator\">=</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>img</span> <span class=\"token attr-name\">width</span><span class=\"token script language-javascript\"><span class=\"token script-punctuation punctuation\">=</span><span class=\"token punctuation\"><mark class=\"eslint-error\" data-tip=\"There should be no space after &apos;{&apos;&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(react/jsx-curly-spacing)&lt;/span&gt;\">{</mark></span> <span class=\"token number\">100</span> <span class=\"token punctuation\"><mark class=\"eslint-error\" data-tip=\"There should be no space before &apos;}&apos;&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(react/jsx-curly-spacing)&lt;/span&gt;\">}</mark></span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">let</span> bar <span class=\"token operator\">=</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token attr-name\">style</span><span class=\"token script language-javascript\"><span class=\"token script-punctuation punctuation\">=</span><span class=\"token punctuation\"><mark class=\"eslint-error\" data-tip=\"There should be no space after &apos;{&apos;&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(react/jsx-curly-spacing)&lt;/span&gt;\">{</mark></span> <span class=\"token punctuation\">{</span> color<span class=\"token punctuation\">:</span> <span class=\"token string\">'red'</span> <span class=\"token punctuation\">}</span> <span class=\"token punctuation\"><mark class=\"eslint-error\" data-tip=\"There should be no space before &apos;}&apos;&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(react/jsx-curly-spacing)&lt;/span&gt;\">}</mark></span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>",
-        "goodExample": "<span class=\"token keyword\">let</span> foo <span class=\"token operator\">=</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>img</span> <span class=\"token attr-name\">width</span><span class=\"token script language-javascript\"><span class=\"token script-punctuation punctuation\">=</span><span class=\"token punctuation\">{</span><span class=\"token number\">100</span><span class=\"token punctuation\">}</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">let</span> bar <span class=\"token operator\">=</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token attr-name\">style</span><span class=\"token script language-javascript\"><span class=\"token script-punctuation punctuation\">=</span><span class=\"token punctuation\">{</span><span class=\"token punctuation\">{</span> color<span class=\"token punctuation\">:</span> <span class=\"token string\">'red'</span> <span class=\"token punctuation\">}</span><span class=\"token punctuation\">}</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>",
-        "fixable": true
-    },
-    "react/jsx-equals-spacing": {
-        "name": "react/jsx-equals-spacing",
-        "value": ["error", "never"],
-        "description": "props 与 value 之间的等号前后禁止有空格",
         "category": "JSX-specific",
         "badExample": "",
         "goodExample": "",
@@ -359,15 +296,6 @@
         "category": "JSX-specific",
         "badExample": "",
         "goodExample": ""
-    },
-    "react/jsx-first-prop-new-line": {
-        "name": "react/jsx-first-prop-new-line",
-        "value": "off",
-        "description": "第一个 prop 必须得换行",
-        "category": "JSX-specific",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
     },
     "react/jsx-fragments": {
         "name": "react/jsx-fragments",
@@ -387,24 +315,6 @@
         "badExample": "",
         "goodExample": ""
     },
-    "react/jsx-indent": {
-        "name": "react/jsx-indent",
-        "value": ["error", 4],
-        "description": "jsx 的 children 缩进必须为四个空格",
-        "category": "JSX-specific",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
-    "react/jsx-indent-props": {
-        "name": "react/jsx-indent-props",
-        "value": ["error", 4],
-        "description": "jsx 的 props 缩进必须为四个空格",
-        "category": "JSX-specific",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
     "react/jsx-max-depth": {
         "name": "react/jsx-max-depth",
         "value": "off",
@@ -412,15 +322,6 @@
         "category": "JSX-specific",
         "badExample": "",
         "goodExample": ""
-    },
-    "react/jsx-max-props-per-line": {
-        "name": "react/jsx-max-props-per-line",
-        "value": "off",
-        "description": "限制每行的 props 数量",
-        "category": "JSX-specific",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
     },
     "react/jsx-no-bind": {
         "name": "react/jsx-no-bind",
@@ -446,24 +347,6 @@
         "badExample": "",
         "goodExample": ""
     },
-    "react/jsx-one-expression-per-line": {
-        "name": "react/jsx-one-expression-per-line",
-        "value": "off",
-        "description": "禁止有内容的元素写在一行内",
-        "category": "JSX-specific",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
-    "react/jsx-props-no-multi-spaces": {
-        "name": "react/jsx-props-no-multi-spaces",
-        "value": "error",
-        "description": "禁止出现多于的空格",
-        "category": "JSX-specific",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
     "react/jsx-props-no-spreading": {
         "name": "react/jsx-props-no-spreading",
         "value": "off",
@@ -484,27 +367,6 @@
         "name": "react/jsx-sort-props",
         "value": "off",
         "description": "props 必须排好序",
-        "category": "JSX-specific",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
-    "react/jsx-tag-spacing": {
-        "name": "react/jsx-tag-spacing",
-        "value": [
-            "error",
-            { "closingSlash": "never", "beforeSelfClosing": "always", "afterOpening": "never" }
-        ],
-        "description": "jsx 的开始和闭合处禁止有空格",
-        "category": "JSX-specific",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
-    "react/jsx-wrap-multilines": {
-        "name": "react/jsx-wrap-multilines",
-        "value": "off",
-        "description": "多行的 jsx 必须有括号包起来",
         "category": "JSX-specific",
         "badExample": "",
         "goodExample": "",

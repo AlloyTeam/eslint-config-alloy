@@ -25,29 +25,12 @@
  * @fixable 支持自动修复
  */
 module.exports = {
-    extends: ['./index.js'],
     parser: '@typescript-eslint/parser',
     plugins: ['@typescript-eslint'],
     rules: {
-        'func-call-spacing': 'off',
-        'no-extra-parens': 'off',
         'no-magic-numbers': 'off',
         'no-unused-vars': 'off',
-        semi: 'off',
         'react/sort-comp': 'off',
-        /**
-         * 一个缩进必须用四个空格替代
-         * @category Stylistic Issues
-         * @fixable
-         */
-        '@typescript-eslint/indent': [
-            'error',
-            4,
-            {
-                SwitchCase: 1,
-                flatTernaryExpressions: true
-            }
-        ],
         /**
          * 重载的函数必须写在一起
          * @category TypeScript
@@ -123,12 +106,6 @@ module.exports = {
          */
         '@typescript-eslint/explicit-member-accessibility': 'error',
         /**
-         * 函数名和执行它的括号之间禁止有空格
-         * @category TypeScript
-         * @fixable
-         */
-        '@typescript-eslint/func-call-spacing': ['error', 'never'],
-        /**
          * 约束泛型的命名规则
          * @category TypeScript
          */
@@ -138,12 +115,6 @@ module.exports = {
          * @category TypeScript
          */
         '@typescript-eslint/interface-name-prefix': 'off',
-        /**
-         * 接口和类型别名的成员之间必须使用分号分隔
-         * @category TypeScript
-         * @fixable
-         */
-        '@typescript-eslint/member-delimiter-style': 'error',
         /**
          * 私有成员必须以 _ 开头
          * @category TypeScript
@@ -206,12 +177,6 @@ module.exports = {
          * @category TypeScript
          */
         '@typescript-eslint/no-explicit-any': 'off',
-        /**
-         * 禁止函数表达式中出现多余的括号
-         * @category TypeScript
-         * @fixable
-         */
-        '@typescript-eslint/no-extra-parens': ['error', 'functions'],
         /**
          * 禁止定义没必要的类，比如只有静态方法的类
          * @category TypeScript
@@ -401,18 +366,6 @@ module.exports = {
          */
         '@typescript-eslint/restrict-plus-operands': 'off',
         /**
-         * 结尾必须有分号
-         * @category TypeScript
-         * @fixable
-         */
-        '@typescript-eslint/semi': [
-            'error',
-            'always',
-            {
-                omitLastInOneLineBlock: true
-            }
-        ],
-        /**
          * 条件判断必须传入布尔值
          * @category TypeScript
          * @requires-types-information
@@ -431,12 +384,6 @@ module.exports = {
                 lib: 'always'
             }
         ],
-        /**
-         * 类型定义的冒号前面必须没有空格，后面必须有一个空格
-         * @category TypeScript
-         * @fixable
-         */
-        '@typescript-eslint/type-annotation-spacing': 'error',
         /**
          * interface 和 type 定义时必须声明成员的类型
          * @category TypeScript

@@ -7,15 +7,6 @@
         "badExample": "<mark class=\"eslint-error\" data-tip=\"The update clause in this loop moves the variable in the wrong direction.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(for-direction)&lt;/span&gt;\"><span class=\"token keyword\">for</span> <span class=\"token punctuation\">(</span><span class=\"token keyword\">let</span> i <span class=\"token operator\">=</span> <span class=\"token number\">0</span><span class=\"token punctuation\">;</span> i <span class=\"token operator\">&lt;</span> <span class=\"token number\">10</span><span class=\"token punctuation\">;</span> i<span class=\"token operator\">--</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span></mark>",
         "goodExample": "<span class=\"token keyword\">for</span> <span class=\"token punctuation\">(</span><span class=\"token keyword\">let</span> i <span class=\"token operator\">=</span> <span class=\"token number\">0</span><span class=\"token punctuation\">;</span> i <span class=\"token operator\">&lt;</span> <span class=\"token number\">10</span><span class=\"token punctuation\">;</span> i<span class=\"token operator\">++</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>"
     },
-    "function-call-argument-newline": {
-        "name": "function-call-argument-newline",
-        "value": ["error", "consistent"],
-        "description": "函数参数之间的换行模式必须保持一致",
-        "category": "Possible Errors",
-        "badExample": "<span class=\"token function\">foo</span><span class=\"token punctuation\">(</span><span class=\"token string\">'one'</span><span class=\"token punctuation\">,</span> <span class=\"token string\">'two'</span><span class=\"token punctuation\">,</span>\n<span class=\"token string\">'three'</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span><mark class=\"eslint-error\" data-tip=\"There should be no line break here.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(function-call-argument-newline)&lt;/span&gt;\"></mark>",
-        "goodExample": "<span class=\"token function\">foo</span><span class=\"token punctuation\">(</span><span class=\"token string\">'one'</span><span class=\"token punctuation\">,</span> <span class=\"token string\">'two'</span><span class=\"token punctuation\">,</span> <span class=\"token string\">'three'</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n<span class=\"token function\">bar</span><span class=\"token punctuation\">(</span>\n    <span class=\"token string\">'one'</span><span class=\"token punctuation\">,</span>\n    <span class=\"token string\">'two'</span><span class=\"token punctuation\">,</span>\n    <span class=\"token string\">'three'</span>\n<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>",
-        "fixable": true
-    },
     "getter-return": {
         "name": "getter-return",
         "value": ["error", { "allowImplicit": false }],
@@ -150,24 +141,6 @@
         "goodExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>foo<span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>\n<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span><span class=\"token operator\">!</span>foo<span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>",
         "fixable": true
     },
-    "no-extra-parens": {
-        "name": "no-extra-parens",
-        "value": ["error", "functions"],
-        "description": "禁止函数表达式中出现多余的括号",
-        "category": "Possible Errors",
-        "badExample": "<span class=\"token keyword\">let</span> foo <span class=\"token operator\">=</span> <span class=\"token punctuation\"><mark class=\"eslint-error\" data-tip=\"Unnecessary parentheses around expression.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(no-extra-parens)&lt;/span&gt;\">(</mark></span><span class=\"token keyword\">function</span> <span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span> <span class=\"token keyword\">return</span> <span class=\"token number\">1</span> <span class=\"token punctuation\">}</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>",
-        "goodExample": "<span class=\"token keyword\">let</span> <span class=\"token function-variable function\">foo</span> <span class=\"token operator\">=</span> <span class=\"token keyword\">function</span> <span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span> <span class=\"token keyword\">return</span> <span class=\"token number\">1</span> <span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">let</span> bar <span class=\"token operator\">=</span> <span class=\"token punctuation\">(</span>a <span class=\"token operator\">*</span> b<span class=\"token punctuation\">)</span> <span class=\"token operator\">+</span> c<span class=\"token punctuation\">;</span>",
-        "fixable": true
-    },
-    "no-extra-semi": {
-        "name": "no-extra-semi",
-        "value": "error",
-        "description": "禁止出现多余的分号",
-        "category": "Possible Errors",
-        "badExample": "<span class=\"token keyword\">let</span> foo <span class=\"token operator\">=</span> <span class=\"token number\">1</span><span class=\"token punctuation\">;</span><span class=\"token punctuation\"><mark class=\"eslint-error\" data-tip=\"Unnecessary semicolon.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(no-extra-semi)&lt;/span&gt;\">;</mark></span>\n<span class=\"token keyword\">function</span> <span class=\"token function\">bar</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span><span class=\"token punctuation\"><mark class=\"eslint-error\" data-tip=\"Unnecessary semicolon.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(no-extra-semi)&lt;/span&gt;\">;</mark></span>",
-        "goodExample": "<span class=\"token keyword\">let</span> foo <span class=\"token operator\">=</span> <span class=\"token number\">1</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">function</span> <span class=\"token function\">bar</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>",
-        "fixable": true
-    },
     "no-func-assign": {
         "name": "no-func-assign",
         "value": "error",
@@ -258,14 +231,6 @@
         "category": "Possible Errors",
         "badExample": "<span class=\"token keyword\">let</span> foo <span class=\"token operator\">=</span> <span class=\"token string\"><mark class=\"eslint-error\" data-tip=\"Unexpected template string expression.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(no-template-curly-in-string)&lt;/span&gt;\">'Hello ${bar}'</mark></span><span class=\"token punctuation\">;</span>",
         "goodExample": "<span class=\"token keyword\">let</span> foo <span class=\"token operator\">=</span> <span class=\"token string\">'Hello {bar}'</span><span class=\"token punctuation\">;</span>"
-    },
-    "no-unexpected-multiline": {
-        "name": "no-unexpected-multiline",
-        "value": "error",
-        "description": "禁止出现容易出错的多行表达式",
-        "category": "Possible Errors",
-        "badExample": "<span class=\"token keyword\">let</span> foo <span class=\"token operator\">=</span> bar\n<span class=\"token punctuation\"><mark class=\"eslint-error\" data-tip=\"Unexpected newline between object and [ of property access.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(no-unexpected-multiline)&lt;/span&gt;\">[</mark></span><span class=\"token number\">1</span><span class=\"token punctuation\">,</span> <span class=\"token number\">2</span><span class=\"token punctuation\">,</span> <span class=\"token number\">3</span><span class=\"token punctuation\">]</span><span class=\"token punctuation\">.</span><span class=\"token function\">forEach</span><span class=\"token punctuation\">(</span>baz<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>",
-        "goodExample": "<span class=\"token keyword\">let</span> foo1 <span class=\"token operator\">=</span> bar<span class=\"token punctuation\">[</span><span class=\"token number\">1</span><span class=\"token punctuation\">]</span><span class=\"token punctuation\">.</span><span class=\"token function\">forEach</span><span class=\"token punctuation\">(</span>baz<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n\n<span class=\"token keyword\">let</span> foo2 <span class=\"token operator\">=</span> bar<span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">[</span><span class=\"token number\">1</span><span class=\"token punctuation\">,</span> <span class=\"token number\">2</span><span class=\"token punctuation\">,</span> <span class=\"token number\">3</span><span class=\"token punctuation\">]</span><span class=\"token punctuation\">.</span><span class=\"token function\">forEach</span><span class=\"token punctuation\">(</span>baz<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>"
     },
     "no-unreachable": {
         "name": "no-unreachable",
@@ -366,15 +331,6 @@
         "badExample": "",
         "goodExample": ""
     },
-    "curly": {
-        "name": "curly",
-        "value": ["error", "multi-line", "consistent"],
-        "description": "if 后面必须要有 {，除非是单行 if",
-        "category": "Best Practices",
-        "badExample": "<span class=\"token keyword\"><mark class=\"eslint-error\" data-tip=\"Expected { after &apos;if&apos; condition.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(curly)&lt;/span&gt;\">i</mark>f</span> <span class=\"token punctuation\">(</span>foo<span class=\"token punctuation\">)</span>\n    console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>foo<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>",
-        "goodExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>foo<span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>foo<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>\n<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>foo<span class=\"token punctuation\">)</span> console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>foo<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>",
-        "fixable": true
-    },
     "default-case": {
         "name": "default-case",
         "value": "off",
@@ -382,15 +338,6 @@
         "category": "Best Practices",
         "badExample": "",
         "goodExample": ""
-    },
-    "dot-location": {
-        "name": "dot-location",
-        "value": ["error", "property"],
-        "description": "链式调用的时候，点号必须放在第二行开头处，禁止放在第一行结尾处",
-        "category": "Best Practices",
-        "badExample": "<span class=\"token function\">foo</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\"><mark class=\"eslint-error\" data-tip=\"Expected dot to be on same line as property.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(dot-location)&lt;/span&gt;\">.</mark></span>\n    <span class=\"token function\">bar</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\"><mark class=\"eslint-error\" data-tip=\"Expected dot to be on same line as property.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(dot-location)&lt;/span&gt;\">.</mark></span>\n    <span class=\"token function\">baz</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>",
-        "goodExample": "<span class=\"token function\">foo</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span>\n    <span class=\"token punctuation\">.</span><span class=\"token function\">bar</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span>\n    <span class=\"token punctuation\">.</span><span class=\"token function\">baz</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>",
-        "fixable": true
     },
     "dot-notation": {
         "name": "dot-notation",
@@ -404,11 +351,11 @@
     },
     "eqeqeq": {
         "name": "eqeqeq",
-        "value": ["error", "always", { "null": "ignore" }],
-        "description": "必须使用 === 或 !==，禁止使用 == 或 !=，与 null 比较时除外",
+        "value": ["error", "always"],
+        "description": "必须使用 === 或 !==，禁止使用 == 或 !=",
         "category": "Best Practices",
-        "badExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>foo <span class=\"token operator\"><mark class=\"eslint-error\" data-tip=\"Expected &apos;===&apos; and instead saw &apos;==&apos;.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(eqeqeq)&lt;/span&gt;\">=</mark>=</span> <span class=\"token number\">1</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span><span class=\"token string\">'foo is 1'</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>",
-        "goodExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>foo <span class=\"token operator\">===</span> <span class=\"token number\">1</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span><span class=\"token string\">'foo is 1'</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>\n\n<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>foo <span class=\"token operator\">==</span> <span class=\"token keyword\">null</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span><span class=\"token string\">'foo is null or undefined'</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>",
+        "badExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>foo <span class=\"token operator\"><mark class=\"eslint-error\" data-tip=\"Expected &apos;===&apos; and instead saw &apos;==&apos;.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(eqeqeq)&lt;/span&gt;\">=</mark>=</span> <span class=\"token number\">1</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>\n<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>bar <span class=\"token operator\"><mark class=\"eslint-error\" data-tip=\"Expected &apos;===&apos; and instead saw &apos;==&apos;.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(eqeqeq)&lt;/span&gt;\">=</mark>=</span> <span class=\"token keyword\">null</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>",
+        "goodExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>foo <span class=\"token operator\">===</span> <span class=\"token number\">1</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>",
         "fixable": true
     },
     "guard-for-in": {
@@ -490,12 +437,11 @@
     },
     "no-eq-null": {
         "name": "no-eq-null",
-        "value": "off",
+        "value": "error",
         "description": "禁止使用 foo == null，必须使用 foo === null",
         "category": "Best Practices",
-        "badExample": "",
-        "goodExample": "",
-        "reason": "foo == null 比较常用，可以用于判断 foo 不是 undefined 并且不是 null，故允许此写法"
+        "badExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span><mark class=\"eslint-error\" data-tip=\"Use &apos;===&apos; to compare with null.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(no-eq-null)&lt;/span&gt;\">foo <span class=\"token operator\">==</span> <span class=\"token keyword\">null</span></mark><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>",
+        "goodExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>foo <span class=\"token operator\">===</span> <span class=\"token keyword\">null</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>"
     },
     "no-eval": {
         "name": "no-eval",
@@ -539,15 +485,6 @@
         "badExample": "",
         "goodExample": ""
     },
-    "no-floating-decimal": {
-        "name": "no-floating-decimal",
-        "value": "error",
-        "description": "表示小数时，禁止省略 0，比如 .5",
-        "category": "Best Practices",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
     "no-global-assign": {
         "name": "no-global-assign",
         "value": "error",
@@ -583,12 +520,12 @@
     },
     "no-invalid-this": {
         "name": "no-invalid-this",
-        "value": "off",
+        "value": "error",
         "description": "禁止在类之外的地方使用 this",
         "category": "Best Practices",
-        "badExample": "",
-        "goodExample": "",
-        "reason": "this 的使用很灵活，事件回调中可以表示当前元素，函数也可以先用 this，等以后被调用的时候再 call"
+        "badExample": "<span class=\"token keyword\">function</span> <span class=\"token function\">foo</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\"><mark class=\"eslint-error\" data-tip=\"Unexpected &apos;this&apos;.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(no-invalid-this)&lt;/span&gt;\">this</mark></span><span class=\"token punctuation\">.</span>a <span class=\"token operator\">=</span> <span class=\"token number\">0</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>",
+        "goodExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token function\">constructor</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <span class=\"token keyword\">this</span><span class=\"token punctuation\">.</span>a <span class=\"token operator\">=</span> <span class=\"token number\">0</span><span class=\"token punctuation\">;</span>\n    <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span>",
+        "reason": "只允许在 class 中使用 this"
     },
     "no-iterator": {
         "name": "no-iterator",
@@ -629,26 +566,6 @@
         "category": "Best Practices",
         "badExample": "",
         "goodExample": ""
-    },
-    "no-multi-spaces": {
-        "name": "no-multi-spaces",
-        "value": [
-            "error",
-            {
-                "ignoreEOLComments": true,
-                "exceptions": {
-                    "Property": true,
-                    "BinaryExpression": false,
-                    "VariableDeclarator": true,
-                    "ImportDeclaration": true
-                }
-            }
-        ],
-        "description": "禁止出现连续的多个空格，除非是注释前，或对齐对象的属性、变量定义、导入等",
-        "category": "Best Practices",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
     },
     "no-multi-str": {
         "name": "no-multi-str",
@@ -936,15 +853,6 @@
         "goodExample": "",
         "reason": "var 不在最前面也是很常见的用法"
     },
-    "wrap-iife": {
-        "name": "wrap-iife",
-        "value": ["error", "inside", { "functionPrototypeMethods": true }],
-        "description": "立即执行的函数必须符合如下格式 (function () { alert('Hello') })()",
-        "category": "Best Practices",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
     "yoda": {
         "name": "yoda",
         "value": ["error", "never", { "onlyEquality": true }],
@@ -1151,54 +1059,6 @@
         "goodExample": "",
         "reason": "使用很常见"
     },
-    "array-bracket-newline": {
-        "name": "array-bracket-newline",
-        "value": "off",
-        "description": "配置数组的中括号内前后的换行格式",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "reason": "配置项无法配制成想要的样子",
-        "fixable": true
-    },
-    "array-bracket-spacing": {
-        "name": "array-bracket-spacing",
-        "value": ["error", "never"],
-        "description": "数组的括号内的前后禁止有空格",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
-    "array-element-newline": {
-        "name": "array-element-newline",
-        "value": "off",
-        "description": "配置数组的元素之间的换行格式",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "reason": "允许一行包含多个元素，方便大数量的数组的书写",
-        "fixable": true
-    },
-    "block-spacing": {
-        "name": "block-spacing",
-        "value": ["error", "always"],
-        "description": "代码块如果在一行内，那么大括号内的首尾必须有空格",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
-    "brace-style": {
-        "name": "brace-style",
-        "value": "off",
-        "description": "if 与 else 的大括号风格必须一致",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "reason": "else 代码块可能前面需要有一行注释",
-        "fixable": true
-    },
     "camelcase": {
         "name": "camelcase",
         "value": "off",
@@ -1217,42 +1077,6 @@
         "goodExample": "",
         "fixable": true
     },
-    "comma-dangle": {
-        "name": "comma-dangle",
-        "value": "off",
-        "description": "对象的最后一个属性末尾必须有逗号",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
-    "comma-spacing": {
-        "name": "comma-spacing",
-        "value": ["error", { "before": false, "after": true }],
-        "description": "逗号前禁止有空格，逗号后必须要有空格",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
-    "comma-style": {
-        "name": "comma-style",
-        "value": ["error", "last"],
-        "description": "禁止在行首写逗号",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
-    "computed-property-spacing": {
-        "name": "computed-property-spacing",
-        "value": ["error", "never"],
-        "description": "用作对象的计算属性时，中括号内的首尾禁止有空格",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
     "consistent-this": {
         "name": "consistent-this",
         "value": "off",
@@ -1260,24 +1084,6 @@
         "category": "Stylistic Issues",
         "badExample": "",
         "goodExample": ""
-    },
-    "eol-last": {
-        "name": "eol-last",
-        "value": "off",
-        "description": "文件最后一行必须有一个空行",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
-    "func-call-spacing": {
-        "name": "func-call-spacing",
-        "value": ["error", "never"],
-        "description": "函数名和执行它的括号之间禁止有空格",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
     },
     "func-name-matching": {
         "name": "func-name-matching",
@@ -1302,15 +1108,6 @@
         "category": "Stylistic Issues",
         "badExample": "",
         "goodExample": ""
-    },
-    "function-paren-newline": {
-        "name": "function-paren-newline",
-        "value": ["error", "multiline"],
-        "description": "函数参数要么同在一行要么每行一个",
-        "category": "Stylistic Issues",
-        "badExample": "<span class=\"token keyword\">function</span> <span class=\"token function\">foo</span><span class=\"token punctuation\"><mark class=\"eslint-error\" data-tip=\"Expected newline after &apos;(&apos;.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(function-paren-newline)&lt;/span&gt;\">(</mark></span><span class=\"token parameter\">bar<span class=\"token punctuation\">,</span>\n    baz</span>\n<span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>",
-        "goodExample": "<span class=\"token keyword\">function</span> <span class=\"token function\">foo</span><span class=\"token punctuation\">(</span><span class=\"token parameter\">bar<span class=\"token punctuation\">,</span> baz</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>\n<span class=\"token keyword\">function</span> <span class=\"token function\">goo</span><span class=\"token punctuation\">(</span>\n    <span class=\"token parameter\">bar<span class=\"token punctuation\">,</span>\n    baz</span>\n<span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>",
-        "fixable": true
     },
     "id-blacklist": {
         "name": "id-blacklist",
@@ -1339,51 +1136,6 @@
         "goodExample": "",
         "reason": "没必要限制变量名"
     },
-    "implicit-arrow-linebreak": {
-        "name": "implicit-arrow-linebreak",
-        "value": ["error", "beside"],
-        "description": "箭头函数的函数体必须与箭头在同一行",
-        "category": "Stylistic Issues",
-        "badExample": "<span class=\"token punctuation\">(</span><span class=\"token parameter\">foo</span><span class=\"token punctuation\">)</span> <span class=\"token operator\">=></span>\n  <mark class=\"eslint-error\" data-tip=\"Expected no linebreak before this expression.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(implicit-arrow-linebreak)&lt;/span&gt;\">bar</mark><span class=\"token punctuation\">;</span>\n\n<span class=\"token punctuation\">(</span><span class=\"token parameter\">foo</span><span class=\"token punctuation\">)</span> <span class=\"token operator\">=></span>\n<span class=\"token punctuation\"><mark class=\"eslint-error\" data-tip=\"Expected no linebreak before this expression.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(implicit-arrow-linebreak)&lt;/span&gt;\">(</mark></span>\n  <span class=\"token function\">bar</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span>\n<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>",
-        "goodExample": "<span class=\"token punctuation\">(</span><span class=\"token parameter\">foo</span><span class=\"token punctuation\">)</span> <span class=\"token operator\">=></span> bar<span class=\"token punctuation\">;</span>\n\n<span class=\"token punctuation\">(</span><span class=\"token parameter\">foo</span><span class=\"token punctuation\">)</span> <span class=\"token operator\">=></span> <span class=\"token punctuation\">(</span>\n  <span class=\"token function\">bar</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span>\n<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n\n<span class=\"token punctuation\">(</span><span class=\"token parameter\">foo</span><span class=\"token punctuation\">)</span> <span class=\"token operator\">=></span> <span class=\"token punctuation\">{</span>\n  <span class=\"token keyword\">return</span> <span class=\"token function\">bar</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>",
-        "fixable": true
-    },
-    "indent": {
-        "name": "indent",
-        "value": ["error", 4, { "SwitchCase": 1, "flatTernaryExpressions": true }],
-        "description": "一个缩进必须用四个空格替代",
-        "category": "Stylistic Issues",
-        "badExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>foo<span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<mark class=\"eslint-error\" data-tip=\"Expected indentation of 4 spaces but found 2.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(indent)&lt;/span&gt;\">  </mark><span class=\"token function\">bar</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>\n\n<span class=\"token keyword\">switch</span><span class=\"token punctuation\">(</span>foo<span class=\"token punctuation\">)</span><span class=\"token punctuation\">{</span>\n<mark class=\"eslint-error\" data-tip=\"Expected indentation of 4 spaces but found 0.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(indent)&lt;/span&gt;\"><span class=\"token keyword\">case</span> <span class=\"token string\">'bar'</span><span class=\"token punctuation\">:</span>\n<mark class=\"eslint-error\" data-tip=\"Expected indentation of 8 spaces but found 4.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(indent)&lt;/span&gt;\">    </mark><span class=\"token keyword\">break</span><span class=\"token punctuation\">;</span>\n</mark><mark class=\"eslint-error\" data-tip=\"Expected indentation of 4 spaces but found 0.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(indent)&lt;/span&gt;\"></mark>n\">{</span>\n<mark class=\"eslint-error\" data-tip=\"Expected indentation of 8 spaces but found 4.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(indent)&lt;/span&gt;\"><mark class=\"eslint-error\" data-tip=\"Expected indentation of 4 spaces but found 2.undefinedbr/undefinedundefinedspan class=undefinedeslint-error-rule-idundefinedundefinedeslint(indent)undefined/spanundefined\">  </mark><span class=\"token function\">ba</span></mark><span class=\"token function\">r</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>\n\n<span class=\"token keyword\">switch</span><span class=\"token punctuation\">(</span>foo<span class=\"token punctuation\">)</span><span class=\"token punctuation\">{</span>\n<mark class=\"eslint-error\" data-tip=\"Expected indentation of 4 spaces but found 0.undefinedbr/undefinedundefinedspan class=undefinedeslint-error-rule-idundefinedundefinedeslint(indent)undefined/spanundefined\"><span class=\"token keyword\">case</span> <span class=\"token string\">'bar'</span><span class=\"token punctuation\">:</span>\n<mark class=\"eslint-error\" data-tip=\"Expected indentation of 4 spaces but found 8.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(indent)&lt;/span&gt;\"><mark class=\"eslint-error\" data-tip=\"Expected indentation of 8 spaces but found 4.undefinedbr/undefinedundefinedspan class=undefinedeslint-error-rule-idundefinedundefinedeslint(indent)undefined/spanundefined\">    </mark><span class=\"token keyword\">brea</span></mark><span class=\"token keyword\">k</span><span class=\"token punctuation\">;</span>\n</mark><mark class=\"eslint-error\" data-tip=\"Expected indentation of 4 spaces but found 12.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(indent)&lt;/span&gt;\"><mark class=\"eslint-error\" data-tip=\"Expected indentation of 4 spaces but found 0.undefinedbr/undefinedundefinedspan class=undefinedeslint-error-rule-idundefinedundefinedeslint(indent)undefined/spanundefined\"><span class=\"token keyword\">case</span> <span class=\"token string\">'baz'</span><span class=\"token punctuation\">:</span>\n    <span class=\"token keyword\">break</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>\n\n<span class=\"token keyword\">let</span> a <span class=\"token operator\">=</span>\n    foo <span class=\"token operator\">?</span> bar <span class=\"token punctuation\">:</span>\n        baz <span class=\"token operator\">?</span> qux <span class=\"token punctuation\">:</span>\n            boop<span class=\"token punctuation\">;</span></mark></mark>",
-        "goodExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>foo<span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token function\">bar</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>\n\n<span class=\"token keyword\">switch</span><span class=\"token punctuation\">(</span>foo<span class=\"token punctuation\">)</span><span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">case</span> <span class=\"token string\">'bar'</span><span class=\"token punctuation\">:</span>\n        <span class=\"token keyword\">break</span><span class=\"token punctuation\">;</span>\n    <span class=\"token keyword\">case</span> <span class=\"token string\">'baz'</span><span class=\"token punctuation\">:</span>\n        <span class=\"token keyword\">break</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>\n\n<span class=\"token keyword\">let</span> a <span class=\"token operator\">=</span>\n    foo <span class=\"token operator\">?</span> bar <span class=\"token punctuation\">:</span>\n    baz <span class=\"token operator\">?</span> qux <span class=\"token punctuation\">:</span>\n    boop<span class=\"token punctuation\">;</span>",
-        "fixable": true
-    },
-    "jsx-quotes": {
-        "name": "jsx-quotes",
-        "value": ["error", "prefer-double"],
-        "description": "jsx 中的属性必须用双引号",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
-    "key-spacing": {
-        "name": "key-spacing",
-        "value": ["error", { "beforeColon": false, "afterColon": true, "mode": "strict" }],
-        "description": "对象字面量中冒号前面禁止有空格，后面必须有空格",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
-    "keyword-spacing": {
-        "name": "keyword-spacing",
-        "value": ["error", { "before": true, "after": true }],
-        "description": "关键字前后必须有空格",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
     "line-comment-position": {
         "name": "line-comment-position",
         "value": "off",
@@ -1391,24 +1143,6 @@
         "category": "Stylistic Issues",
         "badExample": "",
         "goodExample": ""
-    },
-    "linebreak-style": {
-        "name": "linebreak-style",
-        "value": "off",
-        "description": "限制换行符为 LF 或 CRLF",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
-    "lines-around-comment": {
-        "name": "lines-around-comment",
-        "value": "off",
-        "description": "注释前后必须有空行",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
     },
     "lines-between-class-members": {
         "name": "lines-between-class-members",
@@ -1427,15 +1161,6 @@
         "category": "Stylistic Issues",
         "badExample": "",
         "goodExample": ""
-    },
-    "max-len": {
-        "name": "max-len",
-        "value": "off",
-        "description": "限制一行的长度",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "reason": "现在编辑器已经很智能了，不需要限制一行的长度"
     },
     "max-lines": {
         "name": "max-lines",
@@ -1495,36 +1220,10 @@
         "reason": "能写注释已经不容易了，不需要限制太多",
         "fixable": true
     },
-    "multiline-ternary": {
-        "name": "multiline-ternary",
-        "value": "off",
-        "description": "三元表达式必须得换行",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "reason": "三元表达式可以随意使用"
-    },
     "new-cap": {
         "name": "new-cap",
         "value": ["error", { "newIsCap": true, "capIsNew": false, "properties": true }],
         "description": "new 后面的类名必须首字母大写",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "new-parens": {
-        "name": "new-parens",
-        "value": "error",
-        "description": "new 后面的类必须有小括号",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
-    "newline-per-chained-call": {
-        "name": "newline-per-chained-call",
-        "value": "off",
-        "description": "链式调用必须换行",
         "category": "Stylistic Issues",
         "badExample": "",
         "goodExample": ""
@@ -1574,23 +1273,6 @@
         "reason": "单独的 if 可以把逻辑表达的更清楚",
         "fixable": true
     },
-    "no-mixed-operators": {
-        "name": "no-mixed-operators",
-        "value": "off",
-        "description": "禁止混用不同的操作符，比如 let foo = a && b < 0 || c > 0 || d + 1 === 0",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "reason": "太严格了，可以由使用者自己去判断如何混用操作符"
-    },
-    "no-mixed-spaces-and-tabs": {
-        "name": "no-mixed-spaces-and-tabs",
-        "value": "error",
-        "description": "禁止混用空格和缩进",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": ""
-    },
     "no-multi-assign": {
         "name": "no-multi-assign",
         "value": "off",
@@ -1598,15 +1280,6 @@
         "category": "Stylistic Issues",
         "badExample": "",
         "goodExample": ""
-    },
-    "no-multiple-empty-lines": {
-        "name": "no-multiple-empty-lines",
-        "value": ["error", { "max": 3, "maxEOF": 1, "maxBOF": 1 }],
-        "description": "禁止出现超过三行的连续空行",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
     },
     "no-negated-condition": {
         "name": "no-negated-condition",
@@ -1650,14 +1323,6 @@
         "goodExample": "",
         "reason": "它用于限制某个具体的语法不能使用"
     },
-    "no-tabs": {
-        "name": "no-tabs",
-        "value": "error",
-        "description": "禁止使用 tabs",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": ""
-    },
     "no-ternary": {
         "name": "no-ternary",
         "value": "off",
@@ -1666,15 +1331,6 @@
         "badExample": "",
         "goodExample": "",
         "reason": "三元表达式很常用"
-    },
-    "no-trailing-spaces": {
-        "name": "no-trailing-spaces",
-        "value": "error",
-        "description": "禁止行尾有空格",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
     },
     "no-underscore-dangle": {
         "name": "no-underscore-dangle",
@@ -1695,51 +1351,6 @@
         "reason": "后者表达的更清晰",
         "fixable": true
     },
-    "no-whitespace-before-property": {
-        "name": "no-whitespace-before-property",
-        "value": "error",
-        "description": "禁止属性前有空格，比如 foo. bar()",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
-    "nonblock-statement-body-position": {
-        "name": "nonblock-statement-body-position",
-        "value": ["error", "beside", { "overrides": { "while": "below" } }],
-        "description": "禁止 if 后面不加大括号而写两行代码",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
-    "object-curly-newline": {
-        "name": "object-curly-newline",
-        "value": ["error", { "multiline": true, "consistent": true }],
-        "description": "大括号内的首尾必须有换行",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
-    "object-curly-spacing": {
-        "name": "object-curly-spacing",
-        "value": ["error", "always", { "arraysInObjects": true, "objectsInObjects": false }],
-        "description": "对象字面量只有一行时，大括号内的首尾必须有空格",
-        "category": "Stylistic Issues",
-        "badExample": "<span class=\"token keyword\">let</span> foo <span class=\"token operator\">=</span> <span class=\"token punctuation\"><mark class=\"eslint-error\" data-tip=\"A space is required after &apos;{&apos;.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(object-curly-spacing)&lt;/span&gt;\">{</mark></span>foo<span class=\"token punctuation\">:</span> <span class=\"token string\">'foo'</span><span class=\"token punctuation\"><mark class=\"eslint-error\" data-tip=\"A space is required before &apos;}&apos;.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(object-curly-spacing)&lt;/span&gt;\">}</mark></span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">let</span> bar <span class=\"token operator\">=</span> <span class=\"token punctuation\">{</span> foo<span class=\"token punctuation\">:</span> <span class=\"token punctuation\">{</span> bar<span class=\"token punctuation\">:</span> <span class=\"token string\">'bar'</span> <span class=\"token punctuation\">}</span> <span class=\"token punctuation\"><mark class=\"eslint-error\" data-tip=\"There should be no space before &apos;}&apos;.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(object-curly-spacing)&lt;/span&gt;\">}</mark></span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">let</span> baz <span class=\"token operator\">=</span> <span class=\"token punctuation\">{</span> foo<span class=\"token punctuation\">:</span> <span class=\"token punctuation\">[</span><span class=\"token string\">'baz'</span><span class=\"token punctuation\">]</span><span class=\"token punctuation\"><mark class=\"eslint-error\" data-tip=\"A space is required before &apos;}&apos;.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(object-curly-spacing)&lt;/span&gt;\">}</mark></span><span class=\"token punctuation\">;</span>",
-        "goodExample": "<span class=\"token keyword\">let</span> foo <span class=\"token operator\">=</span> <span class=\"token punctuation\">{</span> foo<span class=\"token punctuation\">:</span> <span class=\"token string\">'foo'</span> <span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">let</span> bar <span class=\"token operator\">=</span> <span class=\"token punctuation\">{</span> foo<span class=\"token punctuation\">:</span> <span class=\"token punctuation\">{</span> bar<span class=\"token punctuation\">:</span> <span class=\"token string\">'bar'</span> <span class=\"token punctuation\">}</span><span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">let</span> baz <span class=\"token operator\">=</span> <span class=\"token punctuation\">{</span> foo<span class=\"token punctuation\">:</span> <span class=\"token punctuation\">[</span><span class=\"token string\">'baz'</span><span class=\"token punctuation\">]</span> <span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>",
-        "fixable": true
-    },
-    "object-property-newline": {
-        "name": "object-property-newline",
-        "value": "off",
-        "description": "对象字面量内的属性每行必须只有一个",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
     "one-var": {
         "name": "one-var",
         "value": ["error", "never"],
@@ -1748,38 +1359,10 @@
         "badExample": "",
         "goodExample": ""
     },
-    "one-var-declaration-per-line": {
-        "name": "one-var-declaration-per-line",
-        "value": ["error", "always"],
-        "description": "变量申明必须每行一个",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
     "operator-assignment": {
         "name": "operator-assignment",
         "value": "off",
         "description": "必须使用 x = x + y 而不是 x += y",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
-    "operator-linebreak": {
-        "name": "operator-linebreak",
-        "value": "off",
-        "description": "需要换行的时候，操作符必须放在行末",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "reason": "有时放在第二行开始处更易读",
-        "fixable": true
-    },
-    "padded-blocks": {
-        "name": "padded-blocks",
-        "value": "off",
-        "description": "代码块首尾必须要空行",
         "category": "Stylistic Issues",
         "badExample": "",
         "goodExample": "",
@@ -1803,51 +1386,6 @@
         "goodExample": "<span class=\"token keyword\">let</span> foo <span class=\"token operator\">=</span> <span class=\"token punctuation\">{</span> <span class=\"token operator\">...</span>bar <span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>\n\n<span class=\"token comment\">// 第一个参数为变量时允许使用 Object.assign</span>\nObject<span class=\"token punctuation\">.</span><span class=\"token function\">assign</span><span class=\"token punctuation\">(</span>foo<span class=\"token punctuation\">,</span> baz<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>",
         "fixable": true
     },
-    "quote-props": {
-        "name": "quote-props",
-        "value": "off",
-        "description": "对象字面量的键名禁止用引号括起来",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
-    "quotes": {
-        "name": "quotes",
-        "value": ["error", "single", { "avoidEscape": true, "allowTemplateLiterals": true }],
-        "description": "必须使用单引号，禁止使用双引号",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
-    "semi": {
-        "name": "semi",
-        "value": ["error", "always", { "omitLastInOneLineBlock": true }],
-        "description": "结尾必须有分号",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
-    "semi-spacing": {
-        "name": "semi-spacing",
-        "value": ["error", { "before": false, "after": true }],
-        "description": "一行有多个语句时，分号前面禁止有空格，分号后面必须有空格",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
-    "semi-style": {
-        "name": "semi-style",
-        "value": ["error", "last"],
-        "description": "分号必须写在行尾，禁止在行首出现",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
     "sort-keys": {
         "name": "sort-keys",
         "value": "off",
@@ -1865,121 +1403,11 @@
         "goodExample": "",
         "fixable": true
     },
-    "space-before-blocks": {
-        "name": "space-before-blocks",
-        "value": ["error", "always"],
-        "description": "if, function 等的大括号之前必须要有空格，比如 if (a) {",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
-    "space-before-function-paren": {
-        "name": "space-before-function-paren",
-        "value": ["error", { "anonymous": "ignore", "named": "never", "asyncArrow": "always" }],
-        "description": "命名函数表达式括号前禁止有空格，箭头函数表达式括号前面必须有一个空格",
-        "category": "Stylistic Issues",
-        "badExample": "<span class=\"token keyword\">function</span> <span class=\"token function\">foo</span><mark class=\"eslint-error\" data-tip=\"Unexpected space before function parentheses.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(space-before-function-paren)&lt;/span&gt;\"> </mark><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span><span class=\"token string\">'foo'</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>\n\n<span class=\"token keyword\">let</span> <span class=\"token function-variable function\">bar</span> <span class=\"token operator\">=</span> <span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span><span class=\"token operator\">=></span><span class=\"token punctuation\">{</span>\n    console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span><span class=\"token string\">'bar'</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>",
-        "goodExample": "<span class=\"token keyword\">function</span> <span class=\"token function\">foo</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span><span class=\"token string\">'foo'</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>\n\n<span class=\"token keyword\">let</span> <span class=\"token function-variable function\">bar</span> <span class=\"token operator\">=</span> <span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token operator\">=></span> <span class=\"token punctuation\">{</span>\n    console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span><span class=\"token string\">'bar'</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>\n\n<span class=\"token function-variable function\">bar</span> <span class=\"token operator\">=</span> <span class=\"token keyword\">function</span> <span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>\n<span class=\"token function-variable function\">bar</span> <span class=\"token operator\">=</span> <span class=\"token keyword\">function</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>",
-        "fixable": true
-    },
-    "space-in-parens": {
-        "name": "space-in-parens",
-        "value": ["error", "never"],
-        "description": "小括号内的首尾禁止有空格",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
-    "space-infix-ops": {
-        "name": "space-infix-ops",
-        "value": "error",
-        "description": "操作符左右必须有空格",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
-    "space-unary-ops": {
-        "name": "space-unary-ops",
-        "value": ["error", { "words": true, "nonwords": false }],
-        "description": "new, typeof 等后面必须有空格，++, -- 等禁止有空格",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
     "spaced-comment": {
         "name": "spaced-comment",
         "value": ["error", "always", { "block": { "exceptions": ["*"], "balanced": true } }],
         "description": "注释的斜线或 * 后必须有空格",
         "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
-    "switch-colon-spacing": {
-        "name": "switch-colon-spacing",
-        "value": ["error", { "after": true, "before": false }],
-        "description": "case 的冒号前禁止有空格，冒号后必须有空格",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
-    "template-tag-spacing": {
-        "name": "template-tag-spacing",
-        "value": ["error", "never"],
-        "description": "模版字符串的 tag 之后禁止有空格，比如 tag`Hello World`",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
-    "unicode-bom": {
-        "name": "unicode-bom",
-        "value": ["error", "never"],
-        "description": "文件开头禁止有 BOM",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
-    "wrap-regex": {
-        "name": "wrap-regex",
-        "value": "off",
-        "description": "正则表达式必须有括号包起来",
-        "category": "Stylistic Issues",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
-    "arrow-body-style": {
-        "name": "arrow-body-style",
-        "value": "off",
-        "description": "箭头函数能够省略 return 的时候，必须省略，比如必须写成 () => 0，禁止写成 () => { return 0 }",
-        "category": "ECMAScript 6",
-        "badExample": "",
-        "goodExample": "",
-        "reason": "箭头函数的返回值，应该允许灵活设置",
-        "fixable": true
-    },
-    "arrow-parens": {
-        "name": "arrow-parens",
-        "value": "off",
-        "description": "箭头函数只有一个参数的时候，必须加括号",
-        "category": "ECMAScript 6",
-        "badExample": "",
-        "goodExample": "",
-        "reason": "应该允许灵活设置",
-        "fixable": true
-    },
-    "arrow-spacing": {
-        "name": "arrow-spacing",
-        "value": ["error", { "before": true, "after": true }],
-        "description": "箭头函数的箭头前后必须有空格",
-        "category": "ECMAScript 6",
         "badExample": "",
         "goodExample": "",
         "fixable": true
@@ -1992,15 +1420,6 @@
         "badExample": "",
         "goodExample": ""
     },
-    "generator-star-spacing": {
-        "name": "generator-star-spacing",
-        "value": ["error", { "before": false, "after": true }],
-        "description": "generator 的 * 前面禁止有空格，后面必须有空格",
-        "category": "ECMAScript 6",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
     "no-class-assign": {
         "name": "no-class-assign",
         "value": "error",
@@ -2008,15 +1427,6 @@
         "category": "ECMAScript 6",
         "badExample": "",
         "goodExample": ""
-    },
-    "no-confusing-arrow": {
-        "name": "no-confusing-arrow",
-        "value": ["error", { "allowParens": true }],
-        "description": "禁止出现难以理解的箭头函数，比如 let x = a => 1 ? 2 : 3",
-        "category": "ECMAScript 6",
-        "badExample": "<span class=\"token keyword\">let</span> <span class=\"token function-variable function\">x</span> <span class=\"token operator\">=</span> <mark class=\"eslint-error\" data-tip=\"Arrow function used ambiguously with a conditional expression.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(no-confusing-arrow)&lt;/span&gt;\"><span class=\"token parameter\">foo</span> <span class=\"token operator\">=></span> a <span class=\"token operator\">?</span> <span class=\"token number\">1</span> <span class=\"token punctuation\">:</span> <span class=\"token number\">2</span></mark><span class=\"token punctuation\">;</span>",
-        "goodExample": "<span class=\"token keyword\">let</span> <span class=\"token function-variable function\">x</span> <span class=\"token operator\">=</span> <span class=\"token parameter\">foo</span> <span class=\"token operator\">=></span> <span class=\"token punctuation\">(</span>a <span class=\"token operator\">?</span> <span class=\"token number\">1</span> <span class=\"token punctuation\">:</span> <span class=\"token number\">2</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">let</span> <span class=\"token function-variable function\">y</span> <span class=\"token operator\">=</span> <span class=\"token parameter\">foo</span> <span class=\"token operator\">=></span> <span class=\"token punctuation\">{</span> <span class=\"token keyword\">return</span> a <span class=\"token operator\">?</span> <span class=\"token number\">1</span> <span class=\"token punctuation\">:</span> <span class=\"token number\">2</span> <span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>",
-        "fixable": true
     },
     "no-const-assign": {
         "name": "no-const-assign",
@@ -2112,16 +1522,6 @@
         "reason": "没必要强制要求",
         "fixable": true
     },
-    "prefer-arrow-callback": {
-        "name": "prefer-arrow-callback",
-        "value": "off",
-        "description": "必须使用箭头函数作为回调",
-        "category": "ECMAScript 6",
-        "badExample": "",
-        "goodExample": "",
-        "reason": "没必要强制要求",
-        "fixable": true
-    },
     "prefer-const": {
         "name": "prefer-const",
         "value": "off",
@@ -2188,15 +1588,6 @@
         "badExample": "",
         "goodExample": ""
     },
-    "rest-spread-spacing": {
-        "name": "rest-spread-spacing",
-        "value": ["error", "never"],
-        "description": "... 的后面禁止有空格",
-        "category": "ECMAScript 6",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
     "sort-imports": {
         "name": "sort-imports",
         "value": "off",
@@ -2214,23 +1605,5 @@
         "category": "ECMAScript 6",
         "badExample": "",
         "goodExample": ""
-    },
-    "template-curly-spacing": {
-        "name": "template-curly-spacing",
-        "value": ["error", "never"],
-        "description": "${name} 内的首尾禁止有空格",
-        "category": "ECMAScript 6",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
-    },
-    "yield-star-spacing": {
-        "name": "yield-star-spacing",
-        "value": ["error", "after"],
-        "description": "yield* 后面必须要有空格",
-        "category": "ECMAScript 6",
-        "badExample": "",
-        "goodExample": "",
-        "fixable": true
     }
 }

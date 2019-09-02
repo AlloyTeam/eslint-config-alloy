@@ -25,7 +25,6 @@
  * @fixable 支持自动修复
  */
 module.exports = {
-    extends: ['./index.js'],
     parser: 'vue-eslint-parser',
     parserOptions: {
         // 设置 js 的解析器为 babel-eslint
@@ -231,76 +230,11 @@ module.exports = {
          */
         'vue/attribute-hyphenation': 'off',
         /**
-         * 模版中开始标签的反尖括号必须换行
-         * @category Improving Readability
-         * @fixable
-         */
-        'vue/html-closing-bracket-newline': 'error',
-        /**
-         * 模版中开始标签的反尖括号前禁止有空格，自闭和标签前必须有空格
-         * @category Improving Readability
-         * @fixable
-         */
-        'vue/html-closing-bracket-spacing': 'error',
-        /**
-         * html 的结束标签必须符合规定
-         * @category Improving Readability
-         * @reason 有的标签不必严格符合规定，如 <br> 或 <br/> 都应该是合法的
-         * @fixable
-         */
-        'vue/html-end-tags': 'off',
-        /**
-         * 模版中使用 4 个空格缩进
-         * @category Improving Readability
-         * @fixable
-         */
-        'vue/html-indent': ['error', 4],
-        /**
-         * html 属性值必须用双引号括起来
-         * @category Improving Readability
-         */
-        'vue/html-quotes': 'error',
-        /**
-         * 没有内容时，组件必须自闭和
-         * @category Improving Readability
-         * @fixable
-         */
-        'vue/html-self-closing': 'off',
-        /**
-         * 限制每行允许的最多属性数量
-         * @category Improving Readability
-         */
-        'vue/max-attributes-per-line': 'off',
-        /**
-         * 多行内容或多行标签时，内容前必须换行
-         * @category Improving Readability
-         * @fixable
-         */
-        'vue/multiline-html-element-content-newline': 'error',
-        /**
-         * 模版内 mustache 大括号内前后禁止有空格
-         * @category Improving Readability
-         * @fixable
-         */
-        'vue/mustache-interpolation-spacing': ['error', 'never'],
-        /**
          * 限制组件的 name 属性的值的风格
          * @category Improving Readability
          * @fixable
          */
         'vue/name-property-casing': 'off',
-        /**
-         * 禁止出现连续空格
-         * @category Improving Readability
-         * @fixable
-         */
-        'vue/no-multi-spaces': 'error',
-        /**
-         * 属性的等号前后禁止有空格
-         * @category Improving Readability
-         * @fixable
-         */
-        'vue/no-spaces-around-equal-signs-in-attribute': 'error',
         /**
          * 模版中的变量名禁止与前一个作用域重名
          * @category Improving Readability
@@ -322,12 +256,6 @@ module.exports = {
          * @category Improving Readability
          */
         'vue/require-prop-types': 'off',
-        /**
-         * 单行标签内容必须换行
-         * @category Improving Readability
-         * @fixable
-         */
-        'vue/singleline-html-element-content-newline': 'off',
         /**
          * 限制 v-bind 的风格
          * @category Improving Readability
@@ -362,37 +290,6 @@ module.exports = {
          */
         'vue/this-in-template': 'error',
         /**
-         * 数组的括号内的前后禁止有空格
-         * @category Uncategorized
-         * @fixable
-         */
-        'vue/array-bracket-spacing': ['error', 'never'],
-        /**
-         * 箭头函数的箭头前后必须有空格
-         * @category Uncategorized
-         * @fixable
-         */
-        'vue/arrow-spacing': [
-            'error',
-            {
-                before: true,
-                after: true
-            }
-        ],
-        /**
-         * 代码块如果在一行内，那么大括号内的首尾必须有空格
-         * @category Uncategorized
-         * @fixable
-         */
-        'vue/block-spacing': ['error', 'always'],
-        /**
-         * if 与 else 的大括号风格必须一致
-         * @category Uncategorized
-         * @reason else 代码块可能前面需要有一行注释
-         * @fixable
-         */
-        'vue/brace-style': 'off',
-        /**
          * 变量名必须是 camelcase 风格的
          * @category Uncategorized
          * @reason 很多 api 或文件名都不是 camelcase
@@ -405,36 +302,11 @@ module.exports = {
          */
         'vue/comma-dangle': 'off',
         /**
-         * 约束自定义标签的命名规则
+         * 必须使用 === 或 !==，禁止使用 == 或 !=
          * @category Uncategorized
          * @fixable
          */
-        'vue/component-name-in-template-casing': 'off',
-        /**
-         * 必须使用 === 或 !==，禁止使用 == 或 !=，与 null 比较时除外
-         * @category Uncategorized
-         * @fixable
-         */
-        'vue/eqeqeq': [
-            'error',
-            'always',
-            {
-                null: 'ignore'
-            }
-        ],
-        /**
-         * 对象字面量中冒号前面禁止有空格，后面必须有空格
-         * @category Uncategorized
-         * @fixable
-         */
-        'vue/key-spacing': [
-            'error',
-            {
-                beforeColon: false,
-                afterColon: true,
-                mode: 'strict'
-            }
-        ],
+        'vue/eqeqeq': ['error', 'always'],
         /**
          * 组件名称必须和文件名一致
          * @category Uncategorized
@@ -453,52 +325,10 @@ module.exports = {
          */
         'vue/no-restricted-syntax': 'off',
         /**
-         * 对象字面量只有一行时，大括号内的首尾必须有空格
-         * @category Uncategorized
-         * @fixable
-         */
-        'vue/object-curly-spacing': [
-            'error',
-            'always',
-            {
-                arraysInObjects: true,
-                objectsInObjects: false
-            }
-        ],
-        /**
          * 禁止手动 export default
          * @category Uncategorized
          */
         'vue/require-direct-export': 'error',
-        /**
-         * 一个缩进必须用四个空格替代
-         * @category Uncategorized
-         */
-        'vue/script-indent': [
-            'error',
-            4,
-            {
-                switchCase: 1
-            }
-        ],
-        /**
-         * 操作符左右必须有空格
-         * @category Uncategorized
-         * @fixable
-         */
-        'vue/space-infix-ops': 'error',
-        /**
-         * new, typeof 等后面必须有空格，++, -- 等禁止有空格
-         * @category Uncategorized
-         * @fixable
-         */
-        'vue/space-unary-ops': [
-            'error',
-            {
-                words: true,
-                nonwords: false
-            }
-        ],
         /**
          * 禁止在 v-on 的值中调用函数
          * @category Uncategorized

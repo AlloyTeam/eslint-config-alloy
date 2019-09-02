@@ -1,2 +1,0 @@
-foo('one', 'two',
-'three');

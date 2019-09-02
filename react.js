@@ -25,7 +25,6 @@
  * @fixable 支持自动修复
  */
 module.exports = {
-    extends: ['./index.js'],
     plugins: ['react'],
     rules: {
         /**
@@ -211,77 +210,16 @@ module.exports = {
          */
         'react/jsx-boolean-value': 'off',
         /**
-         * 禁止兄弟元素之间有空格
-         * @category JSX-specific
-         */
-        'react/jsx-child-element-spacing': 'off',
-        /**
-         * 自闭和标签的反尖括号必须与尖括号的那一行对齐
-         * @category JSX-specific
-         * @fixable
-         */
-        'react/jsx-closing-bracket-location': [
-            'error',
-            {
-                nonEmpty: false,
-                selfClosing: 'line-aligned'
-            }
-        ],
-        /**
-         * 结束标签必须与开始标签的那一行对齐
-         * @category JSX-specific
-         * @reason 已经在 jsx-indent 中限制了
-         * @fixable
-         */
-        'react/jsx-closing-tag-location': 'off',
-        /**
          * 禁止 jsx 中使用无用的引号
          * @category JSX-specific
          * @fixable
          */
         'react/jsx-curly-brace-presence': ['error', 'never'],
         /**
-         * 限制 jsx 中的大括号内部首尾换行符
-         * @category JSX-specific
-         * @fixable
-         * @reason 要么首尾都换行，要么首尾都不换行
-         */
-        'react/jsx-curly-newline': 'error',
-        /**
-         * 大括号内前后禁止有空格
-         * @category JSX-specific
-         * @fixable
-         */
-        'react/jsx-curly-spacing': [
-            'error',
-            {
-                when: 'never',
-                attributes: {
-                    allowMultiline: true
-                },
-                children: true,
-                spacing: {
-                    objectLiterals: 'never'
-                }
-            }
-        ],
-        /**
-         * props 与 value 之间的等号前后禁止有空格
-         * @category JSX-specific
-         * @fixable
-         */
-        'react/jsx-equals-spacing': ['error', 'never'],
-        /**
          * 限制文件后缀
          * @category JSX-specific
          */
         'react/jsx-filename-extension': 'off',
-        /**
-         * 第一个 prop 必须得换行
-         * @category JSX-specific
-         * @fixable
-         */
-        'react/jsx-first-prop-new-line': 'off',
         /**
          * 必须使用 <></> 而不是 React.Fragment
          * @category JSX-specific
@@ -295,28 +233,10 @@ module.exports = {
          */
         'react/jsx-handler-names': 'off',
         /**
-         * jsx 的 children 缩进必须为四个空格
-         * @category JSX-specific
-         * @fixable
-         */
-        'react/jsx-indent': ['error', 4],
-        /**
-         * jsx 的 props 缩进必须为四个空格
-         * @category JSX-specific
-         * @fixable
-         */
-        'react/jsx-indent-props': ['error', 4],
-        /**
          * 限制 jsx 层级
          * @category JSX-specific
          */
         'react/jsx-max-depth': 'off',
-        /**
-         * 限制每行的 props 数量
-         * @category JSX-specific
-         * @fixable
-         */
-        'react/jsx-max-props-per-line': 'off',
         /**
          * jsx 中禁止使用 bind
          * @category JSX-specific
@@ -333,18 +253,6 @@ module.exports = {
          */
         'react/jsx-no-target-blank': 'off',
         /**
-         * 禁止有内容的元素写在一行内
-         * @category JSX-specific
-         * @fixable
-         */
-        'react/jsx-one-expression-per-line': 'off',
-        /**
-         * 禁止出现多于的空格
-         * @category JSX-specific
-         * @fixable
-         */
-        'react/jsx-props-no-multi-spaces': 'error',
-        /**
          * 禁止使用 {...props}
          * @category JSX-specific
          */
@@ -360,25 +268,6 @@ module.exports = {
          * @fixable
          */
         'react/jsx-sort-props': 'off',
-        /**
-         * jsx 的开始和闭合处禁止有空格
-         * @category JSX-specific
-         * @fixable
-         */
-        'react/jsx-tag-spacing': [
-            'error',
-            {
-                closingSlash: 'never',
-                beforeSelfClosing: 'always',
-                afterOpening: 'never'
-            }
-        ],
-        /**
-         * 多行的 jsx 必须有括号包起来
-         * @category JSX-specific
-         * @fixable
-         */
-        'react/jsx-wrap-multilines': 'off',
         /**
          * 数组中的 jsx 必须有 key
          */

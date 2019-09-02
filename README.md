@@ -4,7 +4,7 @@
 
 AlloyTeam ESLint 规则不仅是一套科学的 ESLint 配置规范，而且也是你配置个性化 ESLint 规则的最佳参考。
 
-此为 v2 版本，如需 v1 版，请[点击这里](https://github.com/AlloyTeam/eslint-config-alloy/tree/v1)。
+此为 v3 版本，如需历史版本，请[点击这里](https://github.com/AlloyTeam/eslint-config-alloy/releases)。
 
 ## 规则列表
 
@@ -31,7 +31,7 @@ AlloyTeam ESLint 规则不仅是一套科学的 ESLint 配置规范，而且也�
 
 1. 能够帮助发现代码错误的规则，全部开启
 2. 配置不应该依赖于某个具体项目，而应尽可能的合理
-3. 帮助保持团队的代码风格统一，而不是限制开发体验
+3. 样式相关的规则交给更专业的 [Prettier](https://prettier.io/) 处理
 
 ## 配置解读
 
@@ -96,6 +96,7 @@ npm install --save-dev eslint babel-eslint eslint-plugin-react eslint-config-all
 ```js
 module.exports = {
     extends: [
+        'eslint-config-alloy',
         'eslint-config-alloy/react',
     ],
     globals: {
@@ -146,6 +147,7 @@ npm install --save-dev eslint babel-eslint vue-eslint-parser@5.0.0 eslint-plugin
 ```js
 module.exports = {
     extends: [
+        'eslint-config-alloy',
         'eslint-config-alloy/vue',
     ],
     globals: {
@@ -178,13 +180,12 @@ module.exports = {
 npm install --save-dev eslint typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-config-alloy
 ```
 
-注意：由于[这个原因](https://github.com/AlloyTeam/eslint-config-alloy/issues/55)，必须也安装 babel-eslint 才能使用 typescript 规则。
-
 在你的项目根目录下创建 `.eslintrc.js`，并将以下内容复制到文件中：
 
 ```js
 module.exports = {
     extends: [
+        'eslint-config-alloy',
         'eslint-config-alloy/typescript',
     ],
     globals: {
@@ -232,6 +233,7 @@ npm install --save-dev eslint typescript @typescript-eslint/parser @typescript-e
 ```js
 module.exports = {
     extends: [
+        'eslint-config-alloy',
         'eslint-config-alloy/react',
         'eslint-config-alloy/typescript',
     ],
@@ -309,6 +311,53 @@ module.exports = {
         }
     ]
 }
+```
+
+### 如何结合 Prettier 使用
+
+AlloyTeam ESLint 规则从 3.0 版本开始，已经不包含所有样式相关的规则了，故不需要引入 `eslint-config-prettier`。只需要安装 `prettier` 及相关 VSCode 插件即可。
+
+下面给出一个 AlloyTeam 使用的 `prettier.config.js` 配置，仅供参考：
+
+```js
+// prettier.config.js or .prettierrc.js
+module.exports = {
+    // 一行最多 100 字符
+    printWidth: 100,
+    // 使用 4 个空格缩进
+    tabWidth: 4,
+    // 不使用缩进符，而使用空格
+    useTabs: false,
+    // 行尾需要有分号
+    semi: true,
+    // 使用单引号
+    singleQuote: true,
+    // 对象的 key 仅在必要时用引号
+    quoteProps: 'as-needed',
+    // jsx 不使用单引号，而使用双引号
+    jsxSingleQuote: false,
+    // 末尾不需要逗号
+    trailingComma: 'none',
+    // 大括号内的首尾需要空格
+    bracketSpacing: true,
+    // jsx 标签的反尖括号需要换行
+    jsxBracketSameLine: false,
+    // 箭头函数，只有一个参数的时候，也需要括号
+    arrowParens: 'always',
+    // 每个文件格式化的范围是文件的全部内容
+    rangeStart: 0,
+    rangeEnd: Infinity,
+    // 不需要写文件开头的 @prettier
+    requirePragma: false,
+    // 不需要自动在文件开头插入 @prettier
+    insertPragma: false,
+    // 使用默认的折行标准
+    proseWrap: 'preserve',
+    // 根据显示样式决定 html 要不要折行
+    htmlWhitespaceSensitivity: 'css',
+    // 换行符使用 lf
+    endOfLine: 'lf'
+};
 ```
 
 ## Testing

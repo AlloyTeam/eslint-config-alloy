@@ -33,12 +33,6 @@ module.exports = {
          */
         'for-direction': 'error',
         /**
-         * 函数参数之间的换行模式必须保持一致
-         * @category Possible Errors
-         * @fixable
-         */
-        'function-call-argument-newline': ['error', 'consistent'],
-        /**
          * getter 必须有返回值，并且禁止返回空
          * @category Possible Errors
          */
@@ -140,18 +134,6 @@ module.exports = {
          */
         'no-extra-boolean-cast': 'error',
         /**
-         * 禁止函数表达式中出现多余的括号
-         * @category Possible Errors
-         * @fixable
-         */
-        'no-extra-parens': ['error', 'functions'],
-        /**
-         * 禁止出现多余的分号
-         * @category Possible Errors
-         * @fixable
-         */
-        'no-extra-semi': 'error',
-        /**
          * 禁止将一个函数声明重新赋值
          * @category Possible Errors
          */
@@ -212,11 +194,6 @@ module.exports = {
          * @category Possible Errors
          */
         'no-template-curly-in-string': 'error',
-        /**
-         * 禁止出现容易出错的多行表达式
-         * @category Possible Errors
-         */
-        'no-unexpected-multiline': 'error',
         /**
          * 禁止在 return, throw, break 或 continue 之后还有代码
          * @category Possible Errors
@@ -294,22 +271,10 @@ module.exports = {
          */
         'consistent-return': 'off',
         /**
-         * if 后面必须要有 {，除非是单行 if
-         * @category Best Practices
-         * @fixable
-         */
-        curly: ['error', 'multi-line', 'consistent'],
-        /**
          * switch 语句必须有 default
          * @category Best Practices
          */
         'default-case': 'off',
-        /**
-         * 链式调用的时候，点号必须放在第二行开头处，禁止放在第一行结尾处
-         * @category Best Practices
-         * @fixable
-         */
-        'dot-location': ['error', 'property'],
         /**
          * 禁止出现 foo['bar']，必须写成 foo.bar
          * @category Best Practices
@@ -318,17 +283,11 @@ module.exports = {
          */
         'dot-notation': 'off',
         /**
-         * 必须使用 === 或 !==，禁止使用 == 或 !=，与 null 比较时除外
+         * 必须使用 === 或 !==，禁止使用 == 或 !=
          * @category Best Practices
          * @fixable
          */
-        eqeqeq: [
-            'error',
-            'always',
-            {
-                null: 'ignore'
-            }
-        ],
+        eqeqeq: ['error', 'always'],
         /**
          * for in 内部必须有 hasOwnProperty
          * @category Best Practices
@@ -382,9 +341,8 @@ module.exports = {
         /**
          * 禁止使用 foo == null，必须使用 foo === null
          * @category Best Practices
-         * @reason foo == null 比较常用，可以用于判断 foo 不是 undefined 并且不是 null，故允许此写法
          */
-        'no-eq-null': 'off',
+        'no-eq-null': 'error',
         /**
          * 禁止使用 eval
          * @category Best Practices
@@ -412,12 +370,6 @@ module.exports = {
          * @category Best Practices
          */
         'no-fallthrough': 'error',
-        /**
-         * 表示小数时，禁止省略 0，比如 .5
-         * @category Best Practices
-         * @fixable
-         */
-        'no-floating-decimal': 'error',
         /**
          * 禁止对全局变量赋值
          * @category Best Practices
@@ -447,9 +399,9 @@ module.exports = {
         /**
          * 禁止在类之外的地方使用 this
          * @category Best Practices
-         * @reason this 的使用很灵活，事件回调中可以表示当前元素，函数也可以先用 this，等以后被调用的时候再 call
+         * @reason 只允许在 class 中使用 this
          */
-        'no-invalid-this': 'off',
+        'no-invalid-this': 'error',
         /**
          * 禁止使用 __iterator__
          * @category Best Practices
@@ -475,23 +427,6 @@ module.exports = {
          * @category Best Practices
          */
         'no-magic-numbers': 'off',
-        /**
-         * 禁止出现连续的多个空格，除非是注释前，或对齐对象的属性、变量定义、导入等
-         * @category Best Practices
-         * @fixable
-         */
-        'no-multi-spaces': [
-            'error',
-            {
-                ignoreEOLComments: true,
-                exceptions: {
-                    Property: true,
-                    BinaryExpression: false,
-                    VariableDeclarator: true,
-                    ImportDeclaration: true
-                }
-            }
-        ],
         /**
          * 禁止使用 \ 来换行字符串
          * @category Best Practices
@@ -681,18 +616,6 @@ module.exports = {
          */
         'vars-on-top': 'off',
         /**
-         * 立即执行的函数必须符合如下格式 (function () { alert('Hello') })()
-         * @category Best Practices
-         * @fixable
-         */
-        'wrap-iife': [
-            'error',
-            'inside',
-            {
-                functionPrototypeMethods: true
-            }
-        ],
-        /**
          * 必须使用 if (foo === 5) 而不是 if (5 === foo)
          * @category Best Practices
          * @fixable
@@ -850,39 +773,6 @@ module.exports = {
          */
         'no-sync': 'off',
         /**
-         * 配置数组的中括号内前后的换行格式
-         * @category Stylistic Issues
-         * @reason 配置项无法配制成想要的样子
-         * @fixable
-         */
-        'array-bracket-newline': 'off',
-        /**
-         * 数组的括号内的前后禁止有空格
-         * @category Stylistic Issues
-         * @fixable
-         */
-        'array-bracket-spacing': ['error', 'never'],
-        /**
-         * 配置数组的元素之间的换行格式
-         * @category Stylistic Issues
-         * @reason 允许一行包含多个元素，方便大数量的数组的书写
-         * @fixable
-         */
-        'array-element-newline': 'off',
-        /**
-         * 代码块如果在一行内，那么大括号内的首尾必须有空格
-         * @category Stylistic Issues
-         * @fixable
-         */
-        'block-spacing': ['error', 'always'],
-        /**
-         * if 与 else 的大括号风格必须一致
-         * @category Stylistic Issues
-         * @reason else 代码块可能前面需要有一行注释
-         * @fixable
-         */
-        'brace-style': 'off',
-        /**
          * 变量名必须是 camelcase 风格的
          * @category Stylistic Issues
          * @reason 很多 api 或文件名都不是 camelcase
@@ -895,52 +785,10 @@ module.exports = {
          */
         'capitalized-comments': 'off',
         /**
-         * 对象的最后一个属性末尾必须有逗号
-         * @category Stylistic Issues
-         * @fixable
-         */
-        'comma-dangle': 'off',
-        /**
-         * 逗号前禁止有空格，逗号后必须要有空格
-         * @category Stylistic Issues
-         * @fixable
-         */
-        'comma-spacing': [
-            'error',
-            {
-                before: false,
-                after: true
-            }
-        ],
-        /**
-         * 禁止在行首写逗号
-         * @category Stylistic Issues
-         * @fixable
-         */
-        'comma-style': ['error', 'last'],
-        /**
-         * 用作对象的计算属性时，中括号内的首尾禁止有空格
-         * @category Stylistic Issues
-         * @fixable
-         */
-        'computed-property-spacing': ['error', 'never'],
-        /**
          * 限制 this 的别名
          * @category Stylistic Issues
          */
         'consistent-this': 'off',
-        /**
-         * 文件最后一行必须有一个空行
-         * @category Stylistic Issues
-         * @fixable
-         */
-        'eol-last': 'off',
-        /**
-         * 函数名和执行它的括号之间禁止有空格
-         * @category Stylistic Issues
-         * @fixable
-         */
-        'func-call-spacing': ['error', 'never'],
         /**
          * 函数赋值给变量的时候，函数名必须与变量名一致
          * @category Stylistic Issues
@@ -963,12 +811,6 @@ module.exports = {
          */
         'func-style': 'off',
         /**
-         * 函数参数要么同在一行要么每行一个
-         * @category Stylistic Issues
-         * @fixable
-         */
-        'function-paren-newline': ['error', 'multiline'],
-        /**
          * 禁止使用指定的标识符
          * @category Stylistic Issues
          * @reason 它用于限制某个具体的标识符不能使用
@@ -987,72 +829,10 @@ module.exports = {
          */
         'id-match': 'off',
         /**
-         * 箭头函数的函数体必须与箭头在同一行
-         * @category Stylistic Issues
-         * @fixable
-         */
-        'implicit-arrow-linebreak': ['error', 'beside'],
-        /**
-         * 一个缩进必须用四个空格替代
-         * @category Stylistic Issues
-         * @fixable
-         */
-        indent: [
-            'error',
-            4,
-            {
-                SwitchCase: 1,
-                flatTernaryExpressions: true
-            }
-        ],
-        /**
-         * jsx 中的属性必须用双引号
-         * @category Stylistic Issues
-         * @fixable
-         */
-        'jsx-quotes': ['error', 'prefer-double'],
-        /**
-         * 对象字面量中冒号前面禁止有空格，后面必须有空格
-         * @category Stylistic Issues
-         * @fixable
-         */
-        'key-spacing': [
-            'error',
-            {
-                beforeColon: false,
-                afterColon: true,
-                mode: 'strict'
-            }
-        ],
-        /**
-         * 关键字前后必须有空格
-         * @category Stylistic Issues
-         * @fixable
-         */
-        'keyword-spacing': [
-            'error',
-            {
-                before: true,
-                after: true
-            }
-        ],
-        /**
          * 单行注释必须写在上一行
          * @category Stylistic Issues
          */
         'line-comment-position': 'off',
-        /**
-         * 限制换行符为 LF 或 CRLF
-         * @category Stylistic Issues
-         * @fixable
-         */
-        'linebreak-style': 'off',
-        /**
-         * 注释前后必须有空行
-         * @category Stylistic Issues
-         * @fixable
-         */
-        'lines-around-comment': 'off',
         /**
          * 类的成员之间是否需要空行
          * @category Stylistic Issues
@@ -1065,12 +845,6 @@ module.exports = {
          * @category Stylistic Issues
          */
         'max-depth': ['error', 5],
-        /**
-         * 限制一行的长度
-         * @category Stylistic Issues
-         * @reason 现在编辑器已经很智能了，不需要限制一行的长度
-         */
-        'max-len': 'off',
         /**
          * 限制一个文件最多的行数
          * @category Stylistic Issues
@@ -1109,12 +883,6 @@ module.exports = {
          */
         'multiline-comment-style': 'off',
         /**
-         * 三元表达式必须得换行
-         * @category Stylistic Issues
-         * @reason 三元表达式可以随意使用
-         */
-        'multiline-ternary': 'off',
-        /**
          * new 后面的类名必须首字母大写
          * @category Stylistic Issues
          */
@@ -1126,17 +894,6 @@ module.exports = {
                 properties: true
             }
         ],
-        /**
-         * new 后面的类必须有小括号
-         * @category Stylistic Issues
-         * @fixable
-         */
-        'new-parens': 'error',
-        /**
-         * 链式调用必须换行
-         * @category Stylistic Issues
-         */
-        'newline-per-chained-call': 'off',
         /**
          * 禁止使用 Array 构造函数
          * @category Stylistic Issues
@@ -1168,34 +925,10 @@ module.exports = {
          */
         'no-lonely-if': 'off',
         /**
-         * 禁止混用不同的操作符，比如 let foo = a && b < 0 || c > 0 || d + 1 === 0
-         * @category Stylistic Issues
-         * @reason 太严格了，可以由使用者自己去判断如何混用操作符
-         */
-        'no-mixed-operators': 'off',
-        /**
-         * 禁止混用空格和缩进
-         * @category Stylistic Issues
-         */
-        'no-mixed-spaces-and-tabs': 'error',
-        /**
          * 禁止连续赋值，比如 a = b = c = 5
          * @category Stylistic Issues
          */
         'no-multi-assign': 'off',
-        /**
-         * 禁止出现超过三行的连续空行
-         * @category Stylistic Issues
-         * @fixable
-         */
-        'no-multiple-empty-lines': [
-            'error',
-            {
-                max: 3,
-                maxEOF: 1,
-                maxBOF: 1
-            }
-        ],
         /**
          * 禁止 if 里面有否定的表达式
          * @category Stylistic Issues
@@ -1224,22 +957,11 @@ module.exports = {
          */
         'no-restricted-syntax': 'off',
         /**
-         * 禁止使用 tabs
-         * @category Stylistic Issues
-         */
-        'no-tabs': 'error',
-        /**
          * 禁止使用三元表达式
          * @category Stylistic Issues
          * @reason 三元表达式很常用
          */
         'no-ternary': 'off',
-        /**
-         * 禁止行尾有空格
-         * @category Stylistic Issues
-         * @fixable
-         */
-        'no-trailing-spaces': 'error',
         /**
          * 禁止变量名出现下划线
          * @category Stylistic Issues
@@ -1254,86 +976,16 @@ module.exports = {
          */
         'no-unneeded-ternary': 'off',
         /**
-         * 禁止属性前有空格，比如 foo. bar()
-         * @category Stylistic Issues
-         * @fixable
-         */
-        'no-whitespace-before-property': 'error',
-        /**
-         * 禁止 if 后面不加大括号而写两行代码
-         * @category Stylistic Issues
-         * @fixable
-         */
-        'nonblock-statement-body-position': [
-            'error',
-            'beside',
-            {
-                overrides: {
-                    while: 'below'
-                }
-            }
-        ],
-        /**
-         * 大括号内的首尾必须有换行
-         * @category Stylistic Issues
-         * @fixable
-         */
-        'object-curly-newline': [
-            'error',
-            {
-                multiline: true,
-                consistent: true
-            }
-        ],
-        /**
-         * 对象字面量只有一行时，大括号内的首尾必须有空格
-         * @category Stylistic Issues
-         * @fixable
-         */
-        'object-curly-spacing': [
-            'error',
-            'always',
-            {
-                arraysInObjects: true,
-                objectsInObjects: false
-            }
-        ],
-        /**
-         * 对象字面量内的属性每行必须只有一个
-         * @category Stylistic Issues
-         * @fixable
-         */
-        'object-property-newline': 'off',
-        /**
          * 禁止变量申明时用逗号一次申明多个
          * @category Stylistic Issues
          */
         'one-var': ['error', 'never'],
-        /**
-         * 变量申明必须每行一个
-         * @category Stylistic Issues
-         * @fixable
-         */
-        'one-var-declaration-per-line': ['error', 'always'],
         /**
          * 必须使用 x = x + y 而不是 x += y
          * @category Stylistic Issues
          * @fixable
          */
         'operator-assignment': 'off',
-        /**
-         * 需要换行的时候，操作符必须放在行末
-         * @category Stylistic Issues
-         * @reason 有时放在第二行开始处更易读
-         * @fixable
-         */
-        'operator-linebreak': 'off',
-        /**
-         * 代码块首尾必须要空行
-         * @category Stylistic Issues
-         * @fixable
-         */
-        'padded-blocks': 'off',
         /**
          * 限制语句之间的空行规则，比如变量定义完之后必须要空行
          * @category Stylistic Issues
@@ -1347,55 +999,6 @@ module.exports = {
          */
         'prefer-object-spread': 'error',
         /**
-         * 对象字面量的键名禁止用引号括起来
-         * @category Stylistic Issues
-         * @fixable
-         */
-        'quote-props': 'off',
-        /**
-         * 必须使用单引号，禁止使用双引号
-         * @category Stylistic Issues
-         * @fixable
-         */
-        quotes: [
-            'error',
-            'single',
-            {
-                avoidEscape: true,
-                allowTemplateLiterals: true
-            }
-        ],
-        /**
-         * 结尾必须有分号
-         * @category Stylistic Issues
-         * @fixable
-         */
-        semi: [
-            'error',
-            'always',
-            {
-                omitLastInOneLineBlock: true
-            }
-        ],
-        /**
-         * 一行有多个语句时，分号前面禁止有空格，分号后面必须有空格
-         * @category Stylistic Issues
-         * @fixable
-         */
-        'semi-spacing': [
-            'error',
-            {
-                before: false,
-                after: true
-            }
-        ],
-        /**
-         * 分号必须写在行尾，禁止在行首出现
-         * @category Stylistic Issues
-         * @fixable
-         */
-        'semi-style': ['error', 'last'],
-        /**
          * 对象字面量的键名必须排好序
          * @category Stylistic Issues
          */
@@ -1406,49 +1009,6 @@ module.exports = {
          * @fixable
          */
         'sort-vars': 'off',
-        /**
-         * if, function 等的大括号之前必须要有空格，比如 if (a) {
-         * @category Stylistic Issues
-         * @fixable
-         */
-        'space-before-blocks': ['error', 'always'],
-        /**
-         * 命名函数表达式括号前禁止有空格，箭头函数表达式括号前面必须有一个空格
-         * @category Stylistic Issues
-         * @fixable
-         */
-        'space-before-function-paren': [
-            'error',
-            {
-                anonymous: 'ignore',
-                named: 'never',
-                asyncArrow: 'always'
-            }
-        ],
-        /**
-         * 小括号内的首尾禁止有空格
-         * @category Stylistic Issues
-         * @fixable
-         */
-        'space-in-parens': ['error', 'never'],
-        /**
-         * 操作符左右必须有空格
-         * @category Stylistic Issues
-         * @fixable
-         */
-        'space-infix-ops': 'error',
-        /**
-         * new, typeof 等后面必须有空格，++, -- 等禁止有空格
-         * @category Stylistic Issues
-         * @fixable
-         */
-        'space-unary-ops': [
-            'error',
-            {
-                words: true,
-                nonwords: false
-            }
-        ],
         /**
          * 注释的斜线或 * 后必须有空格
          * @category Stylistic Issues
@@ -1465,94 +1025,15 @@ module.exports = {
             }
         ],
         /**
-         * case 的冒号前禁止有空格，冒号后必须有空格
-         * @category Stylistic Issues
-         * @fixable
-         */
-        'switch-colon-spacing': [
-            'error',
-            {
-                after: true,
-                before: false
-            }
-        ],
-        /**
-         * 模版字符串的 tag 之后禁止有空格，比如 tag`Hello World`
-         * @category Stylistic Issues
-         * @fixable
-         */
-        'template-tag-spacing': ['error', 'never'],
-        /**
-         * 文件开头禁止有 BOM
-         * @category Stylistic Issues
-         * @fixable
-         */
-        'unicode-bom': ['error', 'never'],
-        /**
-         * 正则表达式必须有括号包起来
-         * @category Stylistic Issues
-         * @fixable
-         */
-        'wrap-regex': 'off',
-        /**
-         * 箭头函数能够省略 return 的时候，必须省略，比如必须写成 () => 0，禁止写成 () => { return 0 }
-         * @category ECMAScript 6
-         * @reason 箭头函数的返回值，应该允许灵活设置
-         * @fixable
-         */
-        'arrow-body-style': 'off',
-        /**
-         * 箭头函数只有一个参数的时候，必须加括号
-         * @category ECMAScript 6
-         * @reason 应该允许灵活设置
-         * @fixable
-         */
-        'arrow-parens': 'off',
-        /**
-         * 箭头函数的箭头前后必须有空格
-         * @category ECMAScript 6
-         * @fixable
-         */
-        'arrow-spacing': [
-            'error',
-            {
-                before: true,
-                after: true
-            }
-        ],
-        /**
          * constructor 中必须有 super
          * @category ECMAScript 6
          */
         'constructor-super': 'error',
         /**
-         * generator 的 * 前面禁止有空格，后面必须有空格
-         * @category ECMAScript 6
-         * @fixable
-         */
-        'generator-star-spacing': [
-            'error',
-            {
-                before: false,
-                after: true
-            }
-        ],
-        /**
          * 禁止对定义过的 class 重新赋值
          * @category ECMAScript 6
          */
         'no-class-assign': 'error',
-        /**
-         * 禁止出现难以理解的箭头函数，比如 let x = a => 1 ? 2 : 3
-         * @category ECMAScript 6
-         * @fixable
-         */
-        'no-confusing-arrow': [
-            'error',
-            {
-                allowParens: true
-            }
-        ],
         /**
          * 禁止对使用 const 定义的常量重新赋值
          * @category ECMAScript 6
@@ -1615,13 +1096,6 @@ module.exports = {
          */
         'object-shorthand': 'off',
         /**
-         * 必须使用箭头函数作为回调
-         * @category ECMAScript 6
-         * @reason 没必要强制要求
-         * @fixable
-         */
-        'prefer-arrow-callback': 'off',
-        /**
          * 申明后不再被修改的变量必须使用 const 来申明
          * @category ECMAScript 6
          * @reason 没必要强制要求
@@ -1667,12 +1141,6 @@ module.exports = {
          */
         'require-yield': 'error',
         /**
-         * ... 的后面禁止有空格
-         * @category ECMAScript 6
-         * @fixable
-         */
-        'rest-spread-spacing': ['error', 'never'],
-        /**
          * 导入必须按规则排序
          * @category ECMAScript 6
          * @reason 没必要强制要求
@@ -1683,18 +1151,6 @@ module.exports = {
          * 创建 Symbol 时必须传入参数
          * @category ECMAScript 6
          */
-        'symbol-description': 'error',
-        /**
-         * ${name} 内的首尾禁止有空格
-         * @category ECMAScript 6
-         * @fixable
-         */
-        'template-curly-spacing': ['error', 'never'],
-        /**
-         * yield* 后面必须要有空格
-         * @category ECMAScript 6
-         * @fixable
-         */
-        'yield-star-spacing': ['error', 'after']
+        'symbol-description': 'error'
     }
 };

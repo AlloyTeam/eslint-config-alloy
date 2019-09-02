@@ -1,3 +1,4 @@
 if (foo == 1) {
-    console.log('foo is 1');
+}
+if (bar == null) {
 }
