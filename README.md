@@ -6,7 +6,10 @@ AlloyTeam ESLint 规则不仅是一套科学的 ESLint 配置规范，而且也�
 
 此为 v3 版本，如需历史版本，请[点击这里](https://github.com/AlloyTeam/eslint-config-alloy/releases)。
 
-**注意**：v3 版本去掉了所有样式相关的规则（比如缩进、分号等），这些规则应该交给更专业的 [Prettier](https://prettier.io/) 来处理
+## 升级到 v3
+
+1. v3 版本去掉了所有样式相关的规则（比如缩进、分号等），这些规则应该交给更专业的 [Prettier](https://prettier.io/) 来处理。
+2. v3 版本需要组合使用各规则，比如 react 需要配置 `extends: ['alloy', 'alloy/react']` 而不是 `extends: ['alloy']`
 
 ## 规则列表
 
@@ -61,7 +64,7 @@ npm install --save-dev eslint babel-eslint eslint-config-alloy
 ```js
 module.exports = {
     extends: [
-        'eslint-config-alloy',
+        'alloy',
     ],
     globals: {
         // 这里填入你的项目需要的全局变量
@@ -99,8 +102,8 @@ npm install --save-dev eslint babel-eslint eslint-plugin-react eslint-config-all
 ```js
 module.exports = {
     extends: [
-        'eslint-config-alloy',
-        'eslint-config-alloy/react',
+        'alloy',
+        'alloy/react',
     ],
     globals: {
         // 这里填入你的项目需要的全局变量
@@ -150,8 +153,8 @@ npm install --save-dev eslint babel-eslint vue-eslint-parser@5.0.0 eslint-plugin
 ```js
 module.exports = {
     extends: [
-        'eslint-config-alloy',
-        'eslint-config-alloy/vue',
+        'alloy',
+        'alloy/vue',
     ],
     globals: {
         // 这里填入你的项目需要的全局变量
@@ -188,8 +191,8 @@ npm install --save-dev eslint typescript @typescript-eslint/parser @typescript-e
 ```js
 module.exports = {
     extends: [
-        'eslint-config-alloy',
-        'eslint-config-alloy/typescript',
+        'alloy',
+        'alloy/typescript',
     ],
     globals: {
         // 这里填入你的项目需要的全局变量
@@ -236,9 +239,9 @@ npm install --save-dev eslint typescript @typescript-eslint/parser @typescript-e
 ```js
 module.exports = {
     extends: [
-        'eslint-config-alloy',
-        'eslint-config-alloy/react',
-        'eslint-config-alloy/typescript',
+        'alloy',
+        'alloy/react',
+        'alloy/typescript',
     ],
     globals: {
         // 这里填入你的项目需要的全局变量
