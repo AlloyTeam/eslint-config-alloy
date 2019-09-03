@@ -6,6 +6,8 @@ AlloyTeam ESLint 规则不仅是一套科学的 ESLint 配置规范，而且也�
 
 此为 v3 版本，如需历史版本，请[点击这里](https://github.com/AlloyTeam/eslint-config-alloy/releases)。
 
+**注意**：v3 版本去掉了所有样式相关的规则（比如缩进、分号等），这些规则应该交给更专业的 [Prettier](https://prettier.io/) 来处理
+
 ## 规则列表
 
 | 名称 | 包含规则 | 解析器 |
@@ -31,7 +33,7 @@ AlloyTeam ESLint 规则不仅是一套科学的 ESLint 配置规范，而且也�
 
 1. 能够帮助发现代码错误的规则，全部开启
 2. 配置不应该依赖于某个具体项目，而应尽可能的合理
-3. 样式相关的规则交给更专业的 [Prettier](https://prettier.io/) 处理
+3. 帮助保持团队的代码风格统一，而不是限制开发体验
 
 ## 配置解读
 
@@ -42,6 +44,7 @@ ESLint 的配置多达几百条，逐个查阅是一项非常繁重的工作，�
 - 每个示例都会在真实的 ESLint 脚本中运行，以保证报错项与配置一一匹配
 - 对于有争议的配置，都在注释中说明了为什么要这么配置的原因
 - 对于能够自动修复的配置，在注释中有标注了 `@fixable`
+- 样式相关的规则交给更专业的 [Prettier](https://prettier.io/) 处理
 
 ## 使用方法
 
@@ -315,7 +318,7 @@ module.exports = {
 
 ### 如何结合 Prettier 使用
 
-AlloyTeam ESLint 规则从 3.0 版本开始，已经不包含所有样式相关的规则了，故不需要引入 `eslint-config-prettier`。只需要安装 `prettier` 及相关 VSCode 插件即可。
+AlloyTeam ESLint 规则从 v3 开始，已经不包含所有样式相关的规则了，故不需要引入 `eslint-config-prettier`。只需要安装 `prettier` 及相关 VSCode 插件即可。
 
 下面给出一个 AlloyTeam 使用的 `prettier.config.js` 配置，仅供参考：
 
