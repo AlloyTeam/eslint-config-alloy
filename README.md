@@ -8,8 +8,8 @@ AlloyTeam ESLint 规则不仅是一套科学的 ESLint 配置规范，而且也�
 
 ## 升级到 v3
 
-1. v3 版本去掉了所有样式相关的规则（比如缩进、分号等），这些规则应该交给更专业的 [Prettier](https://prettier.io/) 来处理
-2. v3 版本需要组合使用各规则，比如 react 需要配置 `extends: ['alloy', 'alloy/react']` 而不是 `extends: ['alloy/react']`
+- v3 版本去掉了所有样式相关的规则（比如缩进、分号等），这些规则应该交给更专业的 [Prettier](https://prettier.io/) 来处理
+- v3 版本需要组合使用各规则，比如 react 需要配置 `extends: ['alloy', 'alloy/react']` 而不是 `extends: ['alloy/react']`
 
 ## 规则列表
 
