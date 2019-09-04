@@ -151,7 +151,6 @@ class Builder {
  *
  * @category 此规则属于哪种分类
  * @reason 为什么要开启（关闭）此规则
- * @fixable 支持自动修复
  */
 `;
     }

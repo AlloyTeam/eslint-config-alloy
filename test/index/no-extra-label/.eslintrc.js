@@ -3,8 +3,8 @@ module.exports = {
         /**
          * 禁止出现没必要的 label
          * @category Best Practices
-         * @fixable
+         * @reason 已经禁止使用 label 了
          */
-        'no-extra-label': 'error'
+        'no-extra-label': 'off'
     }
 };

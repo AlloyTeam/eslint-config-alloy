@@ -125,8 +125,7 @@
         "description": "props 的取值必须是构造函数",
         "category": "Error Prevention",
         "badExample": "",
-        "goodExample": "",
-        "fixable": true
+        "goodExample": ""
     },
     "vue/require-render-return": {
         "name": "vue/require-render-return",
@@ -286,8 +285,7 @@
         "description": "限制自定义组件的属性风格",
         "category": "Improving Readability",
         "badExample": "",
-        "goodExample": "",
-        "fixable": true
+        "goodExample": ""
     },
     "vue/name-property-casing": {
         "name": "vue/name-property-casing",
@@ -295,8 +293,7 @@
         "description": "限制组件的 name 属性的值的风格",
         "category": "Improving Readability",
         "badExample": "",
-        "goodExample": "",
-        "fixable": true
+        "goodExample": ""
     },
     "vue/no-template-shadow": {
         "name": "vue/no-template-shadow",
@@ -312,8 +309,7 @@
         "description": "props 必须用驼峰式",
         "category": "Improving Readability",
         "badExample": "",
-        "goodExample": "",
-        "fixable": true
+        "goodExample": ""
     },
     "vue/require-default-prop": {
         "name": "vue/require-default-prop",
@@ -337,8 +333,7 @@
         "description": "限制 v-bind 的风格",
         "category": "Improving Readability",
         "badExample": "",
-        "goodExample": "",
-        "fixable": true
+        "goodExample": ""
     },
     "vue/v-on-style": {
         "name": "vue/v-on-style",
@@ -346,8 +341,7 @@
         "description": "限制 v-on 的风格",
         "category": "Improving Readability",
         "badExample": "",
-        "goodExample": "",
-        "fixable": true
+        "goodExample": ""
     },
     "vue/attributes-order": {
         "name": "vue/attributes-order",
@@ -355,8 +349,7 @@
         "description": "标签属性必须按规则排序",
         "category": "Minimizing Arbitrary Choices and Cognitive Overhead",
         "badExample": "",
-        "goodExample": "",
-        "fixable": true
+        "goodExample": ""
     },
     "vue/no-v-html": {
         "name": "vue/no-v-html",
@@ -397,8 +390,7 @@
         "description": "对象的最后一个属性末尾必须有逗号",
         "category": "Uncategorized",
         "badExample": "",
-        "goodExample": "",
-        "fixable": true
+        "goodExample": ""
     },
     "vue/eqeqeq": {
         "name": "vue/eqeqeq",
@@ -406,8 +398,7 @@
         "description": "必须使用 === 或 !==，禁止使用 == 或 !=",
         "category": "Uncategorized",
         "badExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>template</span><span class=\"token punctuation\">></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token attr-name\">:attr</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>foo <mark class=\"eslint-error\" data-tip=\"Expected &apos;===&apos; and instead saw &apos;==&apos;.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(vue/eqeqeq)&lt;/span&gt;\">=</mark>= 1<span class=\"token punctuation\">\"</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>template</span><span class=\"token punctuation\">></span></span>",
-        "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>template</span><span class=\"token punctuation\">></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token attr-name\">:attr</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>foo === 1<span class=\"token punctuation\">\"</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>template</span><span class=\"token punctuation\">></span></span>",
-        "fixable": true
+        "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>template</span><span class=\"token punctuation\">></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token attr-name\">:attr</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>foo === 1<span class=\"token punctuation\">\"</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>template</span><span class=\"token punctuation\">></span></span>"
     },
     "vue/match-component-file-name": {
         "name": "vue/match-component-file-name",
@@ -423,8 +414,7 @@
         "description": "禁止给布尔值 props 添加默认值",
         "category": "Uncategorized",
         "badExample": "",
-        "goodExample": "",
-        "fixable": true
+        "goodExample": ""
     },
     "vue/no-restricted-syntax": {
         "name": "vue/no-restricted-syntax",
@@ -449,7 +439,6 @@
         "description": "禁止在 v-on 的值中调用函数",
         "category": "Uncategorized",
         "badExample": "",
-        "goodExample": "",
-        "fixable": true
+        "goodExample": ""
     }
 }

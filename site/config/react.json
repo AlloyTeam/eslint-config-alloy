@@ -69,7 +69,7 @@
     "react/forbid-foreign-prop-types": {
         "name": "react/forbid-foreign-prop-types",
         "value": "off",
-        "description": "禁止直接使用别的组建的 propTypes",
+        "description": "禁止直接使用别的组件的 propTypes",
         "category": "React",
         "badExample": "",
         "goodExample": "",
@@ -149,8 +149,7 @@
         "description": "禁止出现 HTML 中的属性，如 class",
         "category": "React",
         "badExample": "",
-        "goodExample": "",
-        "fixable": true
+        "goodExample": ""
     },
     "react/no-unsafe": {
         "name": "react/no-unsafe",
@@ -235,8 +234,7 @@
         "description": "组件内没有 children 时，必须使用自闭和写法",
         "category": "React",
         "badExample": "",
-        "goodExample": "",
-        "fixable": true
+        "goodExample": ""
     },
     "react/sort-comp": {
         "name": "react/sort-comp",
@@ -244,8 +242,7 @@
         "description": "组件内方法必须按照一定规则排序",
         "category": "React",
         "badExample": "",
-        "goodExample": "",
-        "fixable": true
+        "goodExample": ""
     },
     "react/sort-prop-types": {
         "name": "react/sort-prop-types",
@@ -277,8 +274,7 @@
         "description": "布尔值的属性必须显式的写 someprop={true}",
         "category": "JSX-specific",
         "badExample": "",
-        "goodExample": "",
-        "fixable": true
+        "goodExample": ""
     },
     "react/jsx-curly-brace-presence": {
         "name": "react/jsx-curly-brace-presence",
@@ -286,8 +282,7 @@
         "description": "禁止 jsx 中使用无用的引号",
         "category": "JSX-specific",
         "badExample": "",
-        "goodExample": "",
-        "fixable": true
+        "goodExample": ""
     },
     "react/jsx-filename-extension": {
         "name": "react/jsx-filename-extension",
@@ -304,7 +299,6 @@
         "category": "JSX-specific",
         "badExample": "<span class=\"token keyword\">let</span> foo <span class=\"token operator\">=</span> <mark class=\"eslint-error\" data-tip=\"Prefer fragment shorthand over React.Fragment&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(react/jsx-fragments)&lt;/span&gt;\"><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">React.Fragment</span></span><span class=\"token punctuation\">></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span><span class=\"token class-name\">React.Fragment</span></span><span class=\"token punctuation\">></span></span></mark><span class=\"token punctuation\">;</span>",
         "goodExample": "<span class=\"token keyword\">let</span> foo <span class=\"token operator\">=</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span></span><span class=\"token punctuation\">></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span></span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>",
-        "fixable": true,
         "reason": "<></> 不需要额外引入 Fragment 组件"
     },
     "react/jsx-handler-names": {
@@ -369,8 +363,7 @@
         "description": "props 必须排好序",
         "category": "JSX-specific",
         "badExample": "",
-        "goodExample": "",
-        "fixable": true
+        "goodExample": ""
     },
     "react/jsx-key": {
         "name": "react/jsx-key",
@@ -439,7 +432,7 @@
     "react/no-danger-with-children": {
         "name": "react/no-danger-with-children",
         "value": "error",
-        "description": "禁止在使用了 dangerouslySetInnerHTML 的组建内添加 children",
+        "description": "禁止在使用了 dangerouslySetInnerHTML 的组件内添加 children",
         "category": "",
         "badExample": "",
         "goodExample": ""

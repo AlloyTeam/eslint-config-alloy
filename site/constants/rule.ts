@@ -41,7 +41,6 @@ export interface Rule {
     description: string;
     category: RuleCategory;
     reason?: string;
-    fixable?: boolean;
     comments: string;
     badExample?: string;
     goodExample?: string;

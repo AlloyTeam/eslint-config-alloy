@@ -3,7 +3,6 @@ module.exports = {
         /**
          * 必须使用 === 或 !==，禁止使用 == 或 !=
          * @category Uncategorized
-         * @fixable
          */
         'vue/eqeqeq': ['error', 'always']
     }

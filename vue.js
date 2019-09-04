@@ -22,7 +22,6 @@
  *
  * @category 此规则属于哪种分类
  * @reason 为什么要开启（关闭）此规则
- * @fixable 支持自动修复
  */
 module.exports = {
     parser: 'vue-eslint-parser',
@@ -125,7 +124,6 @@ module.exports = {
         /**
          * props 的取值必须是构造函数
          * @category Error Prevention
-         * @fixable
          */
         'vue/require-prop-type-constructor': 'error',
         /**
@@ -226,13 +224,11 @@ module.exports = {
         /**
          * 限制自定义组件的属性风格
          * @category Improving Readability
-         * @fixable
          */
         'vue/attribute-hyphenation': 'off',
         /**
          * 限制组件的 name 属性的值的风格
          * @category Improving Readability
-         * @fixable
          */
         'vue/name-property-casing': 'off',
         /**
@@ -243,7 +239,6 @@ module.exports = {
         /**
          * props 必须用驼峰式
          * @category Improving Readability
-         * @fixable
          */
         'vue/prop-name-casing': 'off',
         /**
@@ -259,19 +254,16 @@ module.exports = {
         /**
          * 限制 v-bind 的风格
          * @category Improving Readability
-         * @fixable
          */
         'vue/v-bind-style': 'off',
         /**
          * 限制 v-on 的风格
          * @category Improving Readability
-         * @fixable
          */
         'vue/v-on-style': 'off',
         /**
          * 标签属性必须按规则排序
          * @category Minimizing Arbitrary Choices and Cognitive Overhead
-         * @fixable
          */
         'vue/attributes-order': 'error',
         /**
@@ -298,13 +290,11 @@ module.exports = {
         /**
          * 对象的最后一个属性末尾必须有逗号
          * @category Uncategorized
-         * @fixable
          */
         'vue/comma-dangle': 'off',
         /**
          * 必须使用 === 或 !==，禁止使用 == 或 !=
          * @category Uncategorized
-         * @fixable
          */
         'vue/eqeqeq': ['error', 'always'],
         /**
@@ -315,7 +305,6 @@ module.exports = {
         /**
          * 禁止给布尔值 props 添加默认值
          * @category Uncategorized
-         * @fixable
          */
         'vue/no-boolean-default': 'off',
         /**
@@ -332,7 +321,6 @@ module.exports = {
         /**
          * 禁止在 v-on 的值中调用函数
          * @category Uncategorized
-         * @fixable
          */
         'vue/v-on-function-call': 'error'
     }

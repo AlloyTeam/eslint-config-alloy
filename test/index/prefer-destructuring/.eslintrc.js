@@ -1,9 +1,8 @@
 module.exports = {
     rules: {
         /**
-         * 必须使用解构
+         * 必须使用解构赋值
          * @category ECMAScript 6
-         * @reason 没必要强制要求
          */
         'prefer-destructuring': 'off'
     }

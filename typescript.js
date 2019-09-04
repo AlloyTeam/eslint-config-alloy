@@ -22,7 +22,6 @@
  *
  * @category 此规则属于哪种分类
  * @reason 为什么要开启（关闭）此规则
- * @fixable 支持自动修复
  */
 module.exports = {
     parser: '@typescript-eslint/parser',
@@ -41,7 +40,6 @@ module.exports = {
          * 限制数组类型必须使用 Array<T> 或 T[]
          * @category TypeScript
          * @reason 允许灵活运用两者
-         * @fixable
          */
         '@typescript-eslint/array-type': 'off',
         /**
@@ -60,7 +58,6 @@ module.exports = {
          * 禁用特定的类型
          * @category TypeScript
          * @reason 该规则用于禁止某个具体的类型的使用
-         * @fixable
          */
         '@typescript-eslint/ban-types': 'off',
         /**
@@ -90,7 +87,6 @@ module.exports = {
          * 优先使用接口而不是字面类型
          * @category TypeScript
          * @reason 接口可以 implement extend 和 merge
-         * @fixable
          */
         '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
         /**
@@ -164,7 +160,6 @@ module.exports = {
         /**
          * 禁止使用 Array 构造函数
          * @category TypeScript
-         * @fixable
          */
         '@typescript-eslint/no-array-constructor': 'off',
         /**
@@ -192,7 +187,6 @@ module.exports = {
          * 禁止给一个初始化时直接赋值为 number, string 的变量显式的指定类型
          * @category TypeScript
          * @reason 可以简化代码
-         * @fixable
          */
         '@typescript-eslint/no-inferrable-types': 'error',
         /**
@@ -260,14 +254,12 @@ module.exports = {
          * 在命名空间中，可以直接使用内部变量，不需要添加命名空间前缀
          * @category TypeScript
          * @reason 已经禁止使用命名空间了
-         * @fixable
          * @requires-type-information
          */
         '@typescript-eslint/no-unnecessary-qualifier': 'off',
         /**
          * 禁止无用的类型断言
          * @category TypeScript
-         * @fixable
          * @requires-type-information
          */
         '@typescript-eslint/no-unnecessary-type-assertion': 'off',
@@ -304,13 +296,11 @@ module.exports = {
          * 可以简写为函数类型的接口或字面类似，必须简写
          * @category TypeScript
          * @reason reason
-         * @fixable
          */
         '@typescript-eslint/prefer-function-type': 'error',
         /**
          * 使用 includes 而不是 indexOf
          * @category TypeScript
-         * @fixable
          * @requires-types-information
          */
         '@typescript-eslint/prefer-includes': 'off',
@@ -318,7 +308,6 @@ module.exports = {
          * 禁止使用 module 来定义命名空间
          * @category TypeScript
          * @reason module 已成为 js 的关键字
-         * @fixable
          */
         '@typescript-eslint/prefer-namespace-keyword': 'error',
         /**
@@ -336,7 +325,6 @@ module.exports = {
         /**
          * 使用 String#startsWith 而不是其他方式
          * @category TypeScript
-         * @fixable
          * @requires-types-information
          */
         '@typescript-eslint/prefer-string-starts-ends-with': 'off',

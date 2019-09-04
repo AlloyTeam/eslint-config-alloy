@@ -22,7 +22,6 @@
  *
  * @category 此规则属于哪种分类
  * @reason 为什么要开启（关闭）此规则
- * @fixable 支持自动修复
  */
 module.exports = {
     plugins: ['react'],
@@ -71,7 +70,7 @@ module.exports = {
          */
         'react/forbid-elements': 'off',
         /**
-         * 禁止直接使用别的组建的 propTypes
+         * 禁止直接使用别的组件的 propTypes
          * @category React
          * @reason 不强制要求写 propTypes
          */
@@ -123,7 +122,6 @@ module.exports = {
         /**
          * 禁止出现 HTML 中的属性，如 class
          * @category React
-         * @fixable
          */
         'react/no-unknown-property': 'error',
         /**
@@ -179,13 +177,11 @@ module.exports = {
         /**
          * 组件内没有 children 时，必须使用自闭和写法
          * @category React
-         * @fixable
          */
         'react/self-closing-comp': 'off',
         /**
          * 组件内方法必须按照一定规则排序
          * @category React
-         * @fixable
          */
         'react/sort-comp': 'error',
         /**
@@ -206,13 +202,11 @@ module.exports = {
         /**
          * 布尔值的属性必须显式的写 someprop={true}
          * @category JSX-specific
-         * @fixable
          */
         'react/jsx-boolean-value': 'off',
         /**
          * 禁止 jsx 中使用无用的引号
          * @category JSX-specific
-         * @fixable
          */
         'react/jsx-curly-brace-presence': ['error', 'never'],
         /**
@@ -223,7 +217,6 @@ module.exports = {
         /**
          * 必须使用 <></> 而不是 React.Fragment
          * @category JSX-specific
-         * @fixable
          * @reason <></> 不需要额外引入 Fragment 组件
          */
         'react/jsx-fragments': ['error', 'syntax'],
@@ -265,7 +258,6 @@ module.exports = {
         /**
          * props 必须排好序
          * @category JSX-specific
-         * @fixable
          */
         'react/jsx-sort-props': 'off',
         /**
@@ -301,7 +293,7 @@ module.exports = {
          */
         'react/no-children-prop': 'error',
         /**
-         * 禁止在使用了 dangerouslySetInnerHTML 的组建内添加 children
+         * 禁止在使用了 dangerouslySetInnerHTML 的组件内添加 children
          */
         'react/no-danger-with-children': 'error',
         /**

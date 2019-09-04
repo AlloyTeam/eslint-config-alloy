@@ -22,7 +22,6 @@
  *
  * @category 此规则属于哪种分类
  * @reason 为什么要开启（关闭）此规则
- * @fixable 支持自动修复
  */
 module.exports = {
     extends: ['./base.js'],
@@ -130,7 +129,6 @@ module.exports = {
         /**
          * 禁止不必要的布尔类型转换，比如 !! 或 Boolean
          * @category Possible Errors
-         * @fixable
          */
         'no-extra-boolean-cast': 'error',
         /**
@@ -181,7 +179,6 @@ module.exports = {
         /**
          * 禁止在正则表达式中出现连续的空格，必须使用 /foo {3}bar/ 代替
          * @category Possible Errors
-         * @fixable
          */
         'no-regex-spaces': 'error',
         /**
@@ -202,12 +199,12 @@ module.exports = {
         /**
          * 禁止在 finally 中出现 return, throw, break 或 continue
          * @category Possible Errors
+         * @reason finally 中的语句会在 try 之前执行
          */
         'no-unsafe-finally': 'error',
         /**
          * 禁止在 in 或 instanceof 操作符的左侧使用感叹号，如 if (!key in object)
          * @category Possible Errors
-         * @fixable
          */
         'no-unsafe-negation': 'error',
         /**
@@ -224,7 +221,7 @@ module.exports = {
          */
         'use-isnan': 'error',
         /**
-         * typeof 表达式比较的对象必须是 'undefined', 'object', 'boolean', 'number', 'string', 'function' 或 'symbol'
+         * typeof 表达式比较的对象必须是 'undefined', 'object', 'boolean', 'number', 'string', 'function', 'symbol', 或 'bigint'
          * @category Possible Errors
          */
         'valid-typeof': 'error',
@@ -247,8 +244,9 @@ module.exports = {
         /**
          * 将 var 定义的变量视为块作用域，禁止在块外使用
          * @category Best Practices
+         * @reason 已经禁止使用 var 了
          */
-        'block-scoped-var': 'error',
+        'block-scoped-var': 'off',
         /**
          * 在类的非静态方法中，必须存在对 this 的引用
          * @category Best Practices
@@ -268,6 +266,7 @@ module.exports = {
         /**
          * 禁止函数在不同分支返回不同类型的值
          * @category Best Practices
+         * @reason 缺少 TypeScript 的支持，类型判断是不准确的
          */
         'consistent-return': 'off',
         /**
@@ -279,13 +278,11 @@ module.exports = {
          * 禁止出现 foo['bar']，必须写成 foo.bar
          * @category Best Practices
          * @reason 当需要写一系列属性的时候，可以更统一
-         * @fixable
          */
         'dot-notation': 'off',
         /**
          * 必须使用 === 或 !==，禁止使用 == 或 !=
          * @category Best Practices
-         * @fixable
          */
         eqeqeq: ['error', 'always'],
         /**
@@ -307,6 +304,7 @@ module.exports = {
         /**
          * 禁止使用 caller 或 callee
          * @category Best Practices
+         * @reason 它们是已废弃的语法
          */
         'no-caller': 'error',
         /**
@@ -324,7 +322,6 @@ module.exports = {
          * 禁止在 else 内使用 return，必须改为提前结束
          * @category Best Practices
          * @reason else 中使用 return 可以使代码结构更清晰
-         * @fixable
          */
         'no-else-return': 'off',
         /**
@@ -334,7 +331,7 @@ module.exports = {
          */
         'no-empty-function': 'off',
         /**
-         * 禁止解构中出现空 {} 或 []
+         * 禁止解构赋值中出现空 {} 或 []
          * @category Best Practices
          */
         'no-empty-pattern': 'error',
@@ -351,22 +348,22 @@ module.exports = {
         /**
          * 禁止修改原生对象
          * @category Best Practices
+         * @reason 修改原生对象可能会与将来版本的 js 冲突
          */
         'no-extend-native': 'error',
         /**
          * 禁止出现没必要的 bind
          * @category Best Practices
-         * @fixable
          */
         'no-extra-bind': 'error',
         /**
          * 禁止出现没必要的 label
          * @category Best Practices
-         * @fixable
+         * @reason 已经禁止使用 label 了
          */
-        'no-extra-label': 'error',
+        'no-extra-label': 'off',
         /**
-         * switch 的 case 内必须有 break, return 或 throw
+         * switch 的 case 内必须有 break, return 或 throw，空的 case 除外
          * @category Best Practices
          */
         'no-fallthrough': 'error',
@@ -378,7 +375,6 @@ module.exports = {
         /**
          * 禁止使用 !! ~ 等难以理解的运算符，仅允许使用 !!
          * @category Best Practices
-         * @fixable
          */
         'no-implicit-coercion': [
             'error',
@@ -389,10 +385,11 @@ module.exports = {
         /**
          * 禁止在全局作用域下定义变量或申明函数
          * @category Best Practices
+         * @reason 模块化之后，不会出现这种在全局作用域下定义变量的情况
          */
-        'no-implicit-globals': 'error',
+        'no-implicit-globals': 'off',
         /**
-         * 禁止在 setTimeout 或 setInterval 中传入字符串，如 setTimeout('alert("Hi!")', 100);
+         * 禁止在 setTimeout 或 setInterval 中传入字符串
          * @category Best Practices
          */
         'no-implied-eval': 'error',
@@ -405,6 +402,7 @@ module.exports = {
         /**
          * 禁止使用 __iterator__
          * @category Best Practices
+         * @reason __iterator__ 是一个已废弃的属性
          */
         'no-iterator': 'error',
         /**
@@ -420,8 +418,9 @@ module.exports = {
         /**
          * 禁止在循环内的函数中出现循环体条件语句中定义的变量
          * @category Best Practices
+         * @reason 使用 let 就已经解决了这个问题了
          */
-        'no-loop-func': 'error',
+        'no-loop-func': 'off',
         /**
          * 禁止使用 magic numbers
          * @category Best Practices
@@ -435,11 +434,13 @@ module.exports = {
         /**
          * 禁止直接 new 一个类而不赋值
          * @category Best Practices
+         * @reason new 应该作为创建一个类的实例的方法，所以不能不赋值
          */
         'no-new': 'error',
         /**
-         * 禁止使用 new Function，比如 let x = new Function("a", "b", "return a + b");
+         * 禁止使用 new Function
          * @category Best Practices
+         * @reason 这和 eval 是等价的
          */
         'no-new-func': 'error',
         /**
@@ -532,11 +533,11 @@ module.exports = {
             }
         ],
         /**
-         * 禁止出现没用的 label
+         * 禁止出现没用到的 label
          * @category Best Practices
-         * @fixable
+         * @reason 已经禁止使用 label 了
          */
-        'no-unused-labels': 'error',
+        'no-unused-labels': 'off',
         /**
          * 禁止出现没必要的 call 或 apply
          * @category Best Practices
@@ -563,7 +564,6 @@ module.exports = {
          * 禁止没必要的 return
          * @category Best Practices
          * @reason 没必要限制 return
-         * @fixable
          */
         'no-useless-return': 'off',
         /**
@@ -618,7 +618,6 @@ module.exports = {
         /**
          * 必须使用 if (foo === 5) 而不是 if (5 === foo)
          * @category Best Practices
-         * @fixable
          */
         yoda: [
             'error',
@@ -630,7 +629,6 @@ module.exports = {
         /**
          * 禁止使用 'strict';
          * @category Strict Mode
-         * @fixable
          */
         strict: ['error', 'never'],
         /**
@@ -647,8 +645,9 @@ module.exports = {
         /**
          * 禁止 label 名称与定义过的变量重复
          * @category Variables
+         * @reason 已经禁止使用 label 了
          */
-        'no-label-var': 'error',
+        'no-label-var': 'off',
         /**
          * 禁止使用指定的全局变量
          * @category Variables
@@ -679,7 +678,6 @@ module.exports = {
         /**
          * 禁止将 undefined 赋值给变量
          * @category Variables
-         * @fixable
          */
         'no-undef-init': 'error',
         /**
@@ -781,7 +779,6 @@ module.exports = {
         /**
          * 注释的首字母必须大写
          * @category Stylistic Issues
-         * @fixable
          */
         'capitalized-comments': 'off',
         /**
@@ -837,7 +834,6 @@ module.exports = {
          * 类的成员之间是否需要空行
          * @category Stylistic Issues
          * @reason 有时为了紧凑需要挨在一起，有时为了可读性需要空一行
-         * @fixable
          */
         'lines-between-class-members': 'off',
         /**
@@ -879,7 +875,6 @@ module.exports = {
          * 约束多行注释的格式
          * @category Stylistic Issues
          * @reason 能写注释已经不容易了，不需要限制太多
-         * @fixable
          */
         'multiline-comment-style': 'off',
         /**
@@ -921,7 +916,6 @@ module.exports = {
          * 禁止 else 中只有一个单独的 if
          * @category Stylistic Issues
          * @reason 单独的 if 可以把逻辑表达的更清楚
-         * @fixable
          */
         'no-lonely-if': 'off',
         /**
@@ -972,7 +966,6 @@ module.exports = {
          * 必须使用 !a 替代 a ? false : true
          * @category Stylistic Issues
          * @reason 后者表达的更清晰
-         * @fixable
          */
         'no-unneeded-ternary': 'off',
         /**
@@ -983,19 +976,16 @@ module.exports = {
         /**
          * 必须使用 x = x + y 而不是 x += y
          * @category Stylistic Issues
-         * @fixable
          */
         'operator-assignment': 'off',
         /**
          * 限制语句之间的空行规则，比如变量定义完之后必须要空行
          * @category Stylistic Issues
-         * @fixable
          */
         'padding-line-between-statements': 'off',
         /**
          * 使用 ... 而不是 Object.assign
          * @category Stylistic Issues
-         * @fixable
          */
         'prefer-object-spread': 'error',
         /**
@@ -1006,13 +996,11 @@ module.exports = {
         /**
          * 变量申明必须排好序
          * @category Stylistic Issues
-         * @fixable
          */
         'sort-vars': 'off',
         /**
          * 注释的斜线或 * 后必须有空格
          * @category Stylistic Issues
-         * @fixable
          */
         'spaced-comment': [
             'error',
@@ -1068,7 +1056,6 @@ module.exports = {
         /**
          * 禁止出现没必要的计算键名，比如 let a = { ['0']: 0 };
          * @category ECMAScript 6
-         * @fixable
          */
         'no-useless-computed-key': 'error',
         /**
@@ -1077,42 +1064,36 @@ module.exports = {
          */
         'no-useless-constructor': 'error',
         /**
-         * 禁止解构时出现同样名字的的重命名，比如 let { foo: foo } = bar;
+         * 禁止解构赋值时出现同样名字的的重命名，比如 let { foo: foo } = bar;
          * @category ECMAScript 6
-         * @fixable
          */
         'no-useless-rename': 'error',
         /**
          * 禁止使用 var
          * @category ECMAScript 6
-         * @fixable
          */
         'no-var': 'error',
         /**
          * 必须使用 a = {b} 而不是 a = {b: b}
          * @category ECMAScript 6
          * @reason 没必要强制要求
-         * @fixable
          */
         'object-shorthand': 'off',
         /**
          * 申明后不再被修改的变量必须使用 const 来申明
          * @category ECMAScript 6
          * @reason 没必要强制要求
-         * @fixable
          */
         'prefer-const': 'off',
         /**
-         * 必须使用解构
+         * 必须使用解构赋值
          * @category ECMAScript 6
-         * @reason 没必要强制要求
          */
         'prefer-destructuring': 'off',
         /**
          * 必须使用 0b11111011 而不是 parseInt('111110111', 2)
          * @category ECMAScript 6
          * @reason 没必要强制要求
-         * @fixable
          */
         'prefer-numeric-literals': 'off',
         /**
@@ -1125,14 +1106,12 @@ module.exports = {
          * 必须使用 ... 而不是 apply，比如 foo(...args)
          * @category ECMAScript 6
          * @reason apply 很常用
-         * @fixable
          */
         'prefer-spread': 'off',
         /**
          * 必须使用模版字符串而不是字符串连接
          * @category ECMAScript 6
          * @reason 字符串连接很常用
-         * @fixable
          */
         'prefer-template': 'off',
         /**
@@ -1144,7 +1123,6 @@ module.exports = {
          * 导入必须按规则排序
          * @category ECMAScript 6
          * @reason 没必要强制要求
-         * @fixable
          */
         'sort-imports': 'off',
         /**

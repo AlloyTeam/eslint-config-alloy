@@ -15,8 +15,7 @@
         "category": "TypeScript",
         "badExample": "",
         "goodExample": "",
-        "reason": "允许灵活运用两者",
-        "fixable": true
+        "reason": "允许灵活运用两者"
     },
     "@typescript-eslint/await-thenable": {
         "name": "@typescript-eslint/await-thenable",
@@ -43,8 +42,7 @@
         "category": "TypeScript",
         "badExample": "",
         "goodExample": "",
-        "reason": "该规则用于禁止某个具体的类型的使用",
-        "fixable": true
+        "reason": "该规则用于禁止某个具体的类型的使用"
     },
     "@typescript-eslint/camelcase": {
         "name": "@typescript-eslint/camelcase",
@@ -79,8 +77,7 @@
         "category": "TypeScript",
         "badExample": "<span class=\"token keyword\">type</span> <mark class=\"eslint-error\" data-tip=\"Use an `interface` instead of a `type`&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(@typescript-eslint/consistent-type-definitions)&lt;/span&gt;\">Foo1</mark> <span class=\"token operator\">=</span> <span class=\"token punctuation\">{</span>\n    foo<span class=\"token punctuation\">:</span> <span class=\"token builtin\">string</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>",
         "goodExample": "<span class=\"token keyword\">interface</span> <span class=\"token class-name\">Foo2</span> <span class=\"token punctuation\">{</span>\n    foo<span class=\"token punctuation\">:</span> <span class=\"token builtin\">string</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>",
-        "reason": "接口可以 implement extend 和 merge",
-        "fixable": true
+        "reason": "接口可以 implement extend 和 merge"
     },
     "@typescript-eslint/explicit-function-return-type": {
         "name": "@typescript-eslint/explicit-function-return-type",
@@ -171,8 +168,7 @@
         "description": "禁止使用 Array 构造函数",
         "category": "TypeScript",
         "badExample": "",
-        "goodExample": "",
-        "fixable": true
+        "goodExample": ""
     },
     "@typescript-eslint/no-empty-interface": {
         "name": "@typescript-eslint/no-empty-interface",
@@ -214,8 +210,7 @@
         "category": "TypeScript",
         "badExample": "<span class=\"token keyword\">let</span> <mark class=\"eslint-error\" data-tip=\"Type number trivially inferred from a number literal, remove type annotation.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(@typescript-eslint/no-inferrable-types)&lt;/span&gt;\">foo1<span class=\"token punctuation\">:</span> <span class=\"token builtin\">number</span> <span class=\"token operator\">=</span> <span class=\"token number\">1</span></mark><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">let</span> <mark class=\"eslint-error\" data-tip=\"Type string trivially inferred from a string literal, remove type annotation.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(@typescript-eslint/no-inferrable-types)&lt;/span&gt;\">bar1<span class=\"token punctuation\">:</span> <span class=\"token builtin\">string</span> <span class=\"token operator\">=</span> <span class=\"token string\">''</span></mark><span class=\"token punctuation\">;</span>",
         "goodExample": "<span class=\"token keyword\">let</span> foo2 <span class=\"token operator\">=</span> <span class=\"token number\">1</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">let</span> bar2 <span class=\"token operator\">=</span> <span class=\"token string\">''</span><span class=\"token punctuation\">;</span>",
-        "reason": "可以简化代码",
-        "fixable": true
+        "reason": "可以简化代码"
     },
     "@typescript-eslint/no-magic-numbers": {
         "name": "@typescript-eslint/no-magic-numbers",
@@ -301,7 +296,6 @@
         "badExample": "",
         "goodExample": "",
         "reason": "已经禁止使用命名空间了",
-        "fixable": true,
         "requires": true
     },
     "@typescript-eslint/no-unnecessary-type-assertion": {
@@ -311,7 +305,6 @@
         "category": "TypeScript",
         "badExample": "",
         "goodExample": "",
-        "fixable": true,
         "requires": true
     },
     "@typescript-eslint/no-unused-vars": {
@@ -365,8 +358,7 @@
         "category": "TypeScript",
         "badExample": "<span class=\"token keyword\">interface</span> <span class=\"token class-name\">Foo1</span> <span class=\"token punctuation\">{</span>\n    <mark class=\"eslint-error\" data-tip=\"Interface has only a call signature - use &apos;type Foo1 = () =&gt; string;&apos; instead.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(@typescript-eslint/prefer-function-type)&lt;/span&gt;\"><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">:</span> <span class=\"token builtin\">string</span><span class=\"token punctuation\">;</span></mark>\n<span class=\"token punctuation\">}</span>",
         "goodExample": "<span class=\"token keyword\">type</span> <span class=\"token function-variable function\">Foo2</span> <span class=\"token operator\">=</span> <span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token operator\">=></span> <span class=\"token builtin\">string</span><span class=\"token punctuation\">;</span>",
-        "reason": "reason",
-        "fixable": true
+        "reason": "reason"
     },
     "@typescript-eslint/prefer-includes": {
         "name": "@typescript-eslint/prefer-includes",
@@ -375,7 +367,6 @@
         "category": "TypeScript",
         "badExample": "",
         "goodExample": "",
-        "fixable": true,
         "requires": true
     },
     "@typescript-eslint/prefer-namespace-keyword": {
@@ -385,8 +376,7 @@
         "category": "TypeScript",
         "badExample": "<mark class=\"eslint-error\" data-tip=\"Use &apos;namespace&apos; instead of &apos;module&apos; to declare custom TypeScript modules.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(@typescript-eslint/prefer-namespace-keyword)&lt;/span&gt;\"><span class=\"token keyword\">module</span> Foo1 <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span></mark>",
         "goodExample": "<span class=\"token keyword\">namespace</span> Foo2 <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>",
-        "reason": "module 已成为 js 的关键字",
-        "fixable": true
+        "reason": "module 已成为 js 的关键字"
     },
     "@typescript-eslint/prefer-readonly": {
         "name": "@typescript-eslint/prefer-readonly",
@@ -413,7 +403,6 @@
         "category": "TypeScript",
         "badExample": "",
         "goodExample": "",
-        "fixable": true,
         "requires": true
     },
     "@typescript-eslint/promise-function-async": {
