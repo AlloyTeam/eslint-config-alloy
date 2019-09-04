@@ -252,12 +252,19 @@ class Builder {
     private insertMark(badExample: string, eslintMessages: Linter.LintMessage[]) {
         let insertedBadExample = badExample;
         eslintMessages.forEach(({ ruleId, message, line, column, endLine, endColumn }) => {
+            let insertLine = line - 1;
+            let insertColumn = column - 1;
+            let insertLineEnd = (endLine || line) - 1;
+            let insertColumnEnd = (endColumn || column + 1) - 1;
+            if (insertLineEnd === insertLine && insertColumnEnd === insertColumn) {
+                insertColumnEnd = insertColumnEnd + 1;
+            }
             insertedBadExample = insertTag(
                 insertedBadExample,
                 `<mark class="eslint-error" data-tip="${xmlEscape(
                     `${message}<br/><span class='eslint-error-rule-id'>eslint(${ruleId})</span>`
                 )}">`,
-                [line - 1, column - 1, (endLine || line) - 1, (endColumn || column + 1) - 1]
+                [insertLine, insertColumn, insertLineEnd, insertColumnEnd]
             );
         });
         return insertedBadExample;
