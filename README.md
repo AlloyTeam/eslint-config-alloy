@@ -75,25 +75,24 @@ module.exports = {
     extends: [
         'alloy',
     ],
+    env: {
+        // 这里填入你的项目用到的环境
+        // 它们预定义了不同环境的全局变量，比如：
+        //
+        // browser: true,
+        // node: true,
+        // mocha: true,
+        // jest: true,
+        // jquery: true
+    },
     globals: {
         // 这里填入你的项目需要的全局变量
-        // 这里值为 false 表示这个全局变量不允许被重新赋值，比如：
+        // false 表示这个全局变量不允许被重新赋值，比如：
         //
-        // jQuery: false,
-        // $: false
+        // myGlobal: false
     },
     rules: {
-        // 这里填入你的项目需要的个性化配置，比如：
-        //
-        // // 一个缩进必须用两个空格替代
-        // 'indent': [
-        //     'error',
-        //     2,
-        //     {
-        //         SwitchCase: 1,
-        //         flatTernaryExpressions: true
-        //     }
-        // ]
+        // 这里填入你的项目需要的个性化配置
     }
 };
 ```
@@ -114,35 +113,24 @@ module.exports = {
         'alloy',
         'alloy/react',
     ],
+    env: {
+        // 这里填入你的项目用到的环境
+        // 它们预定义了不同环境的全局变量，比如：
+        //
+        // browser: true,
+        // node: true,
+        // mocha: true,
+        // jest: true,
+        // jquery: true
+    },
     globals: {
         // 这里填入你的项目需要的全局变量
-        // 这里值为 false 表示这个全局变量不允许被重新赋值，比如：
+        // false 表示这个全局变量不允许被重新赋值，比如：
         //
-        // React: false,
-        // ReactDOM: false
+        // myGlobal: false
     },
     rules: {
-        // 这里填入你的项目需要的个性化配置，比如：
-        //
-        // // 一个缩进必须用两个空格替代
-        // 'indent': [
-        //     'error',
-        //     2,
-        //     {
-        //         SwitchCase: 1,
-        //         flatTernaryExpressions: true
-        //     }
-        // ],
-        // // jsx 的 children 缩进必须为两个空格
-        // 'react/jsx-indent': [
-        //     'error',
-        //     2
-        // ],
-        // // jsx 的 props 缩进必须为两个空格
-        // 'react/jsx-indent-props': [
-        //     'error',
-        //     2
-        // ]
+        // 这里填入你的项目需要的个性化配置
     }
 };
 ```
@@ -165,24 +153,24 @@ module.exports = {
         'alloy',
         'alloy/vue',
     ],
+    env: {
+        // 这里填入你的项目用到的环境
+        // 它们预定义了不同环境的全局变量，比如：
+        //
+        // browser: true,
+        // node: true,
+        // mocha: true,
+        // jest: true,
+        // jquery: true
+    },
     globals: {
         // 这里填入你的项目需要的全局变量
-        // 这里值为 false 表示这个全局变量不允许被重新赋值，比如：
+        // false 表示这个全局变量不允许被重新赋值，比如：
         //
-        // Vue: false
+        // myGlobal: false
     },
     rules: {
-        // 这里填入你的项目需要的个性化配置，比如：
-        //
-        // // @fixable 一个缩进必须用两个空格替代
-        // 'indent': [
-        //     'error',
-        //     2,
-        //     {
-        //         SwitchCase: 1,
-        //         flatTernaryExpressions: true
-        //     }
-        // ]
+        // 这里填入你的项目需要的个性化配置
     }
 };
 ```
@@ -203,34 +191,24 @@ module.exports = {
         'alloy',
         'alloy/typescript',
     ],
+    env: {
+        // 这里填入你的项目用到的环境
+        // 它们预定义了不同环境的全局变量，比如：
+        //
+        // browser: true,
+        // node: true,
+        // mocha: true,
+        // jest: true,
+        // jquery: true
+    },
     globals: {
         // 这里填入你的项目需要的全局变量
-        // 这里值为 false 表示这个全局变量不允许被重新赋值，比如：
+        // false 表示这个全局变量不允许被重新赋值，比如：
         //
-        // jQuery: false,
-        // $: false
+        // myGlobal: false
     },
     rules: {
-        // 这里填入你的项目需要的个性化配置，比如：
-        //
-        // // 一个缩进必须用两个空格替代
-        // 'indent': [
-        //     'error',
-        //     2,
-        //     {
-        //         SwitchCase: 1,
-        //         flatTernaryExpressions: true
-        //     }
-        // ]
-        // // 一个缩进必须用两个空格替代
-        // '@typescript-eslint/indent': [
-        //     'error',
-        //     2,
-        //     {
-        //         SwitchCase: 1,
-        //         flatTernaryExpressions: true
-        //     }
-        // ]
+        // 这里填入你的项目需要的个性化配置
     }
 };
 ```
@@ -252,34 +230,24 @@ module.exports = {
         'alloy/react',
         'alloy/typescript',
     ],
+    env: {
+        // 这里填入你的项目用到的环境
+        // 它们预定义了不同环境的全局变量，比如：
+        //
+        // browser: true,
+        // node: true,
+        // mocha: true,
+        // jest: true,
+        // jquery: true
+    },
     globals: {
         // 这里填入你的项目需要的全局变量
-        // 这里值为 false 表示这个全局变量不允许被重新赋值，比如：
+        // false 表示这个全局变量不允许被重新赋值，比如：
         //
-        // jQuery: false,
-        // $: false
+        // myGlobal: false
     },
     rules: {
-        // 这里填入你的项目需要的个性化配置，比如：
-        //
-        // // 一个缩进必须用两个空格替代
-        // 'indent': [
-        //     'error',
-        //     2,
-        //     {
-        //         SwitchCase: 1,
-        //         flatTernaryExpressions: true
-        //     }
-        // ]
-        // // 一个缩进必须用两个空格替代
-        // '@typescript-eslint/indent': [
-        //     'error',
-        //     2,
-        //     {
-        //         SwitchCase: 1,
-        //         flatTernaryExpressions: true
-        //     }
-        // ]
+        // 这里填入你的项目需要的个性化配置
     }
 };
 ```
