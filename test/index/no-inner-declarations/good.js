@@ -1,4 +1,3 @@
 if (foo) {
-    let bar = function () {
-    };
+    let bar = function() {};
 }

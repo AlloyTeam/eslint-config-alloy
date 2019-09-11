@@ -3,5 +3,4 @@ if (foo) {
 }
 try {
     // do something
-} catch (e) {
-}
+} catch (e) {}

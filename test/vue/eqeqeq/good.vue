@@ -1,1 +1,3 @@
-<template><div :attr="foo === 1" /></template>
+<template>
+    <div :attr="foo === 1" />
+</template>

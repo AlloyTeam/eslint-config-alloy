@@ -14,12 +14,10 @@
         "clear:docs": "rimraf ./docs",
         "build:html": "parcel build site/index.html --out-dir docs --public-url ./",
         "test": "npm run lint && ts-node ./test/index.ts",
-        "lint": "run-s eslint prettier eclint",
+        "lint": "run-s eslint prettier",
         "eslint": "eslint --ext .js,.jsx,.ts,.tsx,.vue --ignore-pattern \"bad.*\" .",
         "prettier": "prettier -l \"./**/*\"",
-        "prettier:fix": "prettier --write -l \"./**/*\"",
-        "eclint": "eclint check test",
-        "eclint:fix": "eclint fix test"
+        "prettier:fix": "prettier --write -l \"./**/*\""
     },
     "repository": {
         "type": "git",
@@ -74,7 +72,6 @@
         "@typescript-eslint/parser": "^2.0.0",
         "babel-eslint": "^10.0.1",
         "doctrine": "^3.0.0",
-        "eclint": "^2.8.1",
         "eslint": "^6.2.2",
         "eslint-config-prettier": "^6.1.0",
         "eslint-plugin-react": "^7.14.2",

@@ -1,3 +1,3 @@
-let foo = function (a, b) {
+let foo = function(a, b) {
     return a + b;
 };

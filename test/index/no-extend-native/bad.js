@@ -1,4 +1,4 @@
-Array.prototype.flat = function () {
+Array.prototype.flat = function() {
     // do something
 };
 

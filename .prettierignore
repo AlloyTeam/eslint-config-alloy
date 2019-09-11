@@ -12,9 +12,11 @@ package-lock.json
 *ignore
 
 ## Local
-test/**/bad.*
-test/**/good.*
 site/vendor
+test/index/no-cond-assign/bad.js
+test/index/no-irregular-whitespace/bad.js
+test/index/no-labels/bad.js
+test/react/jsx-fragments/bad.js
 
 ## Built-files
 docs

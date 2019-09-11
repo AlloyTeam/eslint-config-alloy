@@ -1,4 +1,3 @@
 if (foo) {
-    function bar() {
-    }
+    function bar() {}
 }
