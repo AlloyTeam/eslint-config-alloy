@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import ReactTooltip = require('react-tooltip');
 
 const { useState, useEffect } = React;

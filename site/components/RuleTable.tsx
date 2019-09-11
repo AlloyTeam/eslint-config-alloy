@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-import * as React from 'react';
+import React from 'react';
 
 import { Rule, RuleNamespaces, RuleNamespacePrismLanguageMap } from '../constants/rule';
 import { parseDescription } from '../utils';

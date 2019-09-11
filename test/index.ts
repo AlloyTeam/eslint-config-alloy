@@ -1,7 +1,7 @@
-import * as path from 'path';
-import * as assert from 'assert';
+import path from 'path';
+import assert from 'assert';
 
-import * as eslint from 'eslint';
+import eslint from 'eslint';
 
 const RULE_PREFIX_MAP = {
     index: '',

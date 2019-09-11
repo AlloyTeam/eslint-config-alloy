@@ -1,9 +1,9 @@
 /* eslint-disable max-depth */
-import * as fs from 'fs';
-import * as path from 'path';
+import fs from 'fs';
+import path from 'path';
 
-import * as doctrine from 'doctrine';
-import * as prettier from 'prettier';
+import doctrine from 'doctrine';
+import prettier from 'prettier';
 import { CLIEngine, Linter } from 'eslint';
 const cli = new CLIEngine({});
 import insertTag from 'insert-tag';

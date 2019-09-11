@@ -2,9 +2,9 @@
 /**
  * 批量删除 eslint-config-prettier 中的规则
  */
-import * as fs from 'fs';
-import * as path from 'path';
-import * as rimraf from 'rimraf';
+import fs from 'fs';
+import path from 'path';
+import rimraf from 'rimraf';
 
 const prettier = require('eslint-config-prettier');
 const prettierReact = require('eslint-config-prettier/react');
