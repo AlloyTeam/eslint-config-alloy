@@ -135,7 +135,7 @@
     "no-extra-boolean-cast": {
         "name": "no-extra-boolean-cast",
         "value": "error",
-        "description": "禁止不必要的布尔类型转换，比如 !! 或 Boolean",
+        "description": "禁止不必要的布尔类型转换",
         "category": "Possible Errors",
         "badExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span><span class=\"token operator\">!</span><mark class=\"eslint-error\" data-tip=\"Redundant double negation.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(no-extra-boolean-cast)&lt;/span&gt;\"><span class=\"token operator\">!</span>foo</mark><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>\n<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span><mark class=\"eslint-error\" data-tip=\"Redundant Boolean call.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(no-extra-boolean-cast)&lt;/span&gt;\"><span class=\"token function\">Boolean</span><span class=\"token punctuation\">(</span>foo<span class=\"token punctuation\">)</span></mark><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>",
         "goodExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>foo<span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>\n<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span><span class=\"token operator\">!</span>foo<span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>"
@@ -209,7 +209,7 @@
     "no-regex-spaces": {
         "name": "no-regex-spaces",
         "value": "error",
-        "description": "禁止在正则表达式中出现连续的空格，必须使用 /foo {3}bar/ 代替",
+        "description": "禁止在正则表达式中出现连续的空格",
         "category": "Possible Errors",
         "badExample": "<span class=\"token keyword\">let</span> reg1 <span class=\"token operator\">=</span> <span class=\"token regex\"><mark class=\"eslint-error\" data-tip=\"Spaces are hard to count. Use {3}.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(no-regex-spaces)&lt;/span&gt;\">/foo   bar/</mark></span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">let</span> reg2 <span class=\"token operator\">=</span> <mark class=\"eslint-error\" data-tip=\"Spaces are hard to count. Use {3}.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(no-regex-spaces)&lt;/span&gt;\"><span class=\"token keyword\">new</span> <span class=\"token class-name\">RegExp</span><span class=\"token punctuation\">(</span><span class=\"token string\">'foo   bar'</span><span class=\"token punctuation\">)</span></mark><span class=\"token punctuation\">;</span>",
         "goodExample": "<span class=\"token keyword\">let</span> reg1 <span class=\"token operator\">=</span> <span class=\"token regex\">/foo {3}bar/</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">let</span> reg2 <span class=\"token operator\">=</span> <span class=\"token keyword\">new</span> <span class=\"token class-name\">RegExp</span><span class=\"token punctuation\">(</span><span class=\"token string\">'foo {3}bar'</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>"
@@ -250,7 +250,7 @@
     "no-unsafe-negation": {
         "name": "no-unsafe-negation",
         "value": "error",
-        "description": "禁止在 in 或 instanceof 操作符的左侧使用感叹号，如 if (!key in object)",
+        "description": "禁止在 in 或 instanceof 操作符的左侧使用感叹号",
         "category": "Possible Errors",
         "badExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span><mark class=\"eslint-error\" data-tip=\"Unexpected negating the left operand of &apos;in&apos; operator.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(no-unsafe-negation)&lt;/span&gt;\"><span class=\"token operator\">!</span>key</mark> <span class=\"token keyword\">in</span> object<span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>\n<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span><mark class=\"eslint-error\" data-tip=\"Unexpected negating the left operand of &apos;instanceof&apos; operator.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(no-unsafe-negation)&lt;/span&gt;\"><span class=\"token operator\">!</span>obj</mark> <span class=\"token keyword\">instanceof</span> <span class=\"token class-name\">SomeClass</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>",
         "goodExample": "<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span><span class=\"token operator\">!</span><span class=\"token punctuation\">(</span>key <span class=\"token keyword\">in</span> object<span class=\"token punctuation\">)</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>\n<span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span><span class=\"token operator\">!</span><span class=\"token punctuation\">(</span>obj <span class=\"token keyword\">instanceof</span> <span class=\"token class-name\">SomeClass</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span>"
@@ -1527,7 +1527,7 @@
     "prefer-numeric-literals": {
         "name": "prefer-numeric-literals",
         "value": "off",
-        "description": "必须使用 0b11111011 而不是 parseInt('111110111', 2)",
+        "description": "必须使用 0b11111011 而不是 parseInt()",
         "category": "ECMAScript 6",
         "badExample": "",
         "goodExample": "",

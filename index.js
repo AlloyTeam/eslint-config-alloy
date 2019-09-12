@@ -127,7 +127,7 @@ module.exports = {
          */
         'no-ex-assign': 'error',
         /**
-         * 禁止不必要的布尔类型转换，比如 !! 或 Boolean
+         * 禁止不必要的布尔类型转换
          * @category Possible Errors
          */
         'no-extra-boolean-cast': 'error',
@@ -177,7 +177,7 @@ module.exports = {
          */
         'no-prototype-builtins': 'off',
         /**
-         * 禁止在正则表达式中出现连续的空格，必须使用 /foo {3}bar/ 代替
+         * 禁止在正则表达式中出现连续的空格
          * @category Possible Errors
          */
         'no-regex-spaces': 'error',
@@ -203,7 +203,7 @@ module.exports = {
          */
         'no-unsafe-finally': 'error',
         /**
-         * 禁止在 in 或 instanceof 操作符的左侧使用感叹号，如 if (!key in object)
+         * 禁止在 in 或 instanceof 操作符的左侧使用感叹号
          * @category Possible Errors
          */
         'no-unsafe-negation': 'error',
@@ -1091,7 +1091,7 @@ module.exports = {
          */
         'prefer-destructuring': 'off',
         /**
-         * 必须使用 0b11111011 而不是 parseInt('111110111', 2)
+         * 必须使用 0b11111011 而不是 parseInt()
          * @category ECMAScript 6
          * @reason 没必要强制要求
          */

@@ -1,4 +1,3 @@
-/* eslint-disable max-depth */
 import fs from 'fs';
 import path from 'path';
 
@@ -7,7 +6,7 @@ import prettier from 'prettier';
 import { CLIEngine, Linter } from 'eslint';
 const cli = new CLIEngine({});
 import insertTag from 'insert-tag';
-import xmlEscape = require('xml-escape');
+import xmlEscape from 'xml-escape';
 
 import {
     RuleNamespaces,
@@ -87,9 +86,7 @@ class Builder {
         this.writeWithPrettier(path.resolve(__dirname, `../${this.namespace}.js`), eslintrcContent);
     }
 
-    /**
-     * 获取规则列表，根据分类和字母排序
-     */
+    /** 获取规则列表，根据分类和字母排序 */
     private getRuleList() {
         const ruleList = fs
             .readdirSync(path.resolve(__dirname, '../test', this.namespace))
