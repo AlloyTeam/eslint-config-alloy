@@ -1,5 +1,5 @@
 /**
- * 解析描述或原因，转换 <, >, \n, ` 等字符串
+ * 解析描述或原因，转换 <, >, \n 等字符串
  * @param str 需要解析的文本
  */
 export function parseDescription(str: string) {
@@ -23,6 +23,11 @@ export function parseDescription(str: string) {
                 const matchSpaces = codes.match(/^( *)(.*?)( *)$/);
                 if (matchSpaces === null) {
                     return `<code>${codes}</code>`;
+                }
+                if (matchSpaces[2].startsWith('http')) {
+                    return `${matchSpaces[1]}<a href="${matchSpaces[2]}" target="_blank">${
+                        matchSpaces[2]
+                    }</a>${matchSpaces[3]}`;
                 }
                 return `${matchSpaces[1]}<code>${matchSpaces[2]}</code>${matchSpaces[3]}`;
             })

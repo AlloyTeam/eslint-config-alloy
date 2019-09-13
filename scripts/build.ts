@@ -12,7 +12,6 @@ import {
     RuleNamespaces,
     RuleNamespaceExtensionMap,
     RuleNamespacePrismLanguageMap,
-    RuleCategoryPriority,
     Rule
 } from '../site/constants/rule';
 
@@ -86,7 +85,7 @@ class Builder {
         this.writeWithPrettier(path.resolve(__dirname, `../${this.namespace}.js`), eslintrcContent);
     }
 
-    /** 获取规则列表，根据分类和字母排序 */
+    /** 获取规则列表，根据字母排序 */
     private getRuleList() {
         const ruleList = fs
             .readdirSync(path.resolve(__dirname, '../test', this.namespace))
@@ -104,18 +103,6 @@ class Builder {
                     '.eslintrc.js'
                 );
                 return this.getRule(filePath);
-            })
-            .sort((aRule, bRule) => {
-                const aRuleCategory = aRule.category;
-                const bRuleCategory = bRule.category;
-
-                if (RuleCategoryPriority[aRuleCategory] > RuleCategoryPriority[bRuleCategory]) {
-                    return 1;
-                }
-                if (RuleCategoryPriority[aRuleCategory] < RuleCategoryPriority[bRuleCategory]) {
-                    return -1;
-                }
-                return aRule.name > bRule.name ? 1 : -1;
             });
 
         return ruleList;

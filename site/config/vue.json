@@ -1,345 +1,9 @@
 {
-    "vue/comment-directive": {
-        "name": "vue/comment-directive",
-        "value": "error",
-        "description": "支持在模版中使用 eslint-disable-next-line 等注释",
-        "category": "Enabling Correct ESLint Parsing",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/jsx-uses-vars": {
-        "name": "vue/jsx-uses-vars",
-        "value": "error",
-        "description": "定义了的 jsx element 必须使用",
-        "category": "Enabling Correct ESLint Parsing",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/no-async-in-computed-properties": {
-        "name": "vue/no-async-in-computed-properties",
-        "value": "error",
-        "description": "计算属性禁止包含异步方法",
-        "category": "Error Prevention",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/no-dupe-keys": {
-        "name": "vue/no-dupe-keys",
-        "value": "off",
-        "description": "禁止重复的二级键名",
-        "category": "Error Prevention",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/no-duplicate-attributes": {
-        "name": "vue/no-duplicate-attributes",
-        "value": "error",
-        "description": "禁止出现重复的属性",
-        "category": "Error Prevention",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/no-parsing-error": {
-        "name": "vue/no-parsing-error",
-        "value": "error",
-        "description": "禁止出现语法错误",
-        "category": "Error Prevention",
-        "badExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>template</span><span class=\"token punctuation\">></span></span>\n    <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span>{{ message. <mark class=\"eslint-error\" data-tip=\"Parsing error: Unexpected end of expression.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(vue/no-parsing-error)&lt;/span&gt;\">}</mark>}<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>template</span><span class=\"token punctuation\">></span></span>",
-        "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>template</span><span class=\"token punctuation\">></span></span>\n    <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span>{{ message }}<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>template</span><span class=\"token punctuation\">></span></span>"
-    },
-    "vue/no-reserved-keys": {
-        "name": "vue/no-reserved-keys",
-        "value": "error",
-        "description": "禁止覆盖保留字",
-        "category": "Error Prevention",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/no-shared-component-data": {
-        "name": "vue/no-shared-component-data",
-        "value": "off",
-        "description": "组件的 data 属性的值必须是一个函数",
-        "category": "Error Prevention",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/no-side-effects-in-computed-properties": {
-        "name": "vue/no-side-effects-in-computed-properties",
-        "value": "off",
-        "description": "禁止在计算属性中对属性修改",
-        "category": "Error Prevention",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/no-template-key": {
-        "name": "vue/no-template-key",
-        "value": "off",
-        "description": "禁止 <template> 使用 key 属性",
-        "category": "Error Prevention",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/no-textarea-mustache": {
-        "name": "vue/no-textarea-mustache",
-        "value": "error",
-        "description": "禁止在 <textarea> 中出现 {{message}}",
-        "category": "Error Prevention",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/no-unused-components": {
-        "name": "vue/no-unused-components",
-        "value": "error",
-        "description": "禁止定义在 components 中的组件未使用",
-        "category": "Error Prevention",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/no-unused-vars": {
-        "name": "vue/no-unused-vars",
-        "value": "error",
-        "description": "禁止模版中定义的变量未使用",
-        "category": "Error Prevention",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/no-use-v-if-with-v-for": {
-        "name": "vue/no-use-v-if-with-v-for",
-        "value": "error",
-        "description": "禁止在同一个元素上使用 v-if 和 v-for 指令",
-        "category": "Error Prevention",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/require-component-is": {
-        "name": "vue/require-component-is",
-        "value": "error",
-        "description": "<component> 必须有 v-bind:is",
-        "category": "Error Prevention",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/require-prop-type-constructor": {
-        "name": "vue/require-prop-type-constructor",
-        "value": "error",
-        "description": "props 的取值必须是构造函数",
-        "category": "Error Prevention",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/require-render-return": {
-        "name": "vue/require-render-return",
-        "value": "error",
-        "description": "render 函数必须有返回值",
-        "category": "Error Prevention",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/require-v-for-key": {
-        "name": "vue/require-v-for-key",
-        "value": "error",
-        "description": "v-for 指令的元素必须有 v-bind:key",
-        "category": "Error Prevention",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/require-valid-default-prop": {
-        "name": "vue/require-valid-default-prop",
-        "value": "off",
-        "description": "prop 的默认值必须匹配它的类型",
-        "category": "Error Prevention",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/return-in-computed-property": {
-        "name": "vue/return-in-computed-property",
-        "value": "error",
-        "description": "计算属性必须有返回值",
-        "category": "Error Prevention",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/use-v-on-exact": {
-        "name": "vue/use-v-on-exact",
-        "value": "error",
-        "description": "当一个节点上出现两个 v-on:click 时，其中一个必须为 exact",
-        "category": "Error Prevention",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/valid-template-root": {
-        "name": "vue/valid-template-root",
-        "value": "error",
-        "description": "template 的根节点必须合法",
-        "category": "Error Prevention",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/valid-v-bind": {
-        "name": "vue/valid-v-bind",
-        "value": "error",
-        "description": "v-bind 指令必须合法",
-        "category": "Error Prevention",
-        "badExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>template</span><span class=\"token punctuation\">></span></span>\n    <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span>\n        <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token attr-name\"><mark class=\"eslint-error\" data-tip=\"&apos;v-bind&apos; directives require an attribute value.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(vue/valid-v-bind)&lt;/span&gt;\">v-bind</mark></span><span class=\"token punctuation\">></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span>\n        <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token attr-name\"><mark class=\"eslint-error\" data-tip=\"&apos;v-bind&apos; directives require an attribute value.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(vue/valid-v-bind)&lt;/span&gt;\">:aaa</mark></span><span class=\"token punctuation\">></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span>\n        <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token attr-name\"><mark class=\"eslint-error\" data-tip=\"&apos;v-bind&apos; directives don&apos;t support the modifier &apos;bbb&apos;.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(vue/valid-v-bind)&lt;/span&gt;\"><span class=\"token namespace\">v-bind:</span>aaa.bbb</mark></span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>foo<span class=\"token punctuation\">\"</span></span><span class=\"token punctuation\">></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span>\n    <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>template</span><span class=\"token punctuation\">></span></span>",
-        "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>template</span><span class=\"token punctuation\">></span></span>\n    <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span>\n        <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token attr-name\">v-bind</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>foo<span class=\"token punctuation\">\"</span></span><span class=\"token punctuation\">></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span>\n        <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token attr-name\"><span class=\"token namespace\">v-bind:</span>aaa</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>foo<span class=\"token punctuation\">\"</span></span><span class=\"token punctuation\">></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span>\n        <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token attr-name\">:aaa</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>foo<span class=\"token punctuation\">\"</span></span><span class=\"token punctuation\">></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span>\n        <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token attr-name\">:aaa.prop</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>foo<span class=\"token punctuation\">\"</span></span><span class=\"token punctuation\">></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span>\n    <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>template</span><span class=\"token punctuation\">></span></span>"
-    },
-    "vue/valid-v-cloak": {
-        "name": "vue/valid-v-cloak",
-        "value": "error",
-        "description": "v-cloak 指令必须合法",
-        "category": "Error Prevention",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/valid-v-else": {
-        "name": "vue/valid-v-else",
-        "value": "error",
-        "description": "v-else 指令必须合法",
-        "category": "Error Prevention",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/valid-v-else-if": {
-        "name": "vue/valid-v-else-if",
-        "value": "error",
-        "description": "v-else-if 指令必须合法",
-        "category": "Error Prevention",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/valid-v-for": {
-        "name": "vue/valid-v-for",
-        "value": "error",
-        "description": "v-for 指令必须合法",
-        "category": "Error Prevention",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/valid-v-html": {
-        "name": "vue/valid-v-html",
-        "value": "error",
-        "description": "v-html 指令必须合法",
-        "category": "Error Prevention",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/valid-v-if": {
-        "name": "vue/valid-v-if",
-        "value": "error",
-        "description": "v-if 指令必须合法",
-        "category": "Error Prevention",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/valid-v-model": {
-        "name": "vue/valid-v-model",
-        "value": "error",
-        "description": "v-model 指令必须合法",
-        "category": "Error Prevention",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/valid-v-on": {
-        "name": "vue/valid-v-on",
-        "value": "error",
-        "description": "v-on 指令必须合法",
-        "category": "Error Prevention",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/valid-v-once": {
-        "name": "vue/valid-v-once",
-        "value": "error",
-        "description": "v-once 指令必须合法",
-        "category": "Error Prevention",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/valid-v-pre": {
-        "name": "vue/valid-v-pre",
-        "value": "error",
-        "description": "v-pre 指令必须合法",
-        "category": "Error Prevention",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/valid-v-show": {
-        "name": "vue/valid-v-show",
-        "value": "error",
-        "description": "v-show 指令必须合法",
-        "category": "Error Prevention",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/valid-v-text": {
-        "name": "vue/valid-v-text",
-        "value": "error",
-        "description": "v-text 指令必须合法",
-        "category": "Error Prevention",
-        "badExample": "",
-        "goodExample": ""
-    },
     "vue/attribute-hyphenation": {
         "name": "vue/attribute-hyphenation",
         "value": "off",
         "description": "限制自定义组件的属性风格",
-        "category": "Improving Readability",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/name-property-casing": {
-        "name": "vue/name-property-casing",
-        "value": "off",
-        "description": "限制组件的 name 属性的值的风格",
-        "category": "Improving Readability",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/no-template-shadow": {
-        "name": "vue/no-template-shadow",
-        "value": "off",
-        "description": "模版中的变量名禁止与前一个作用域重名",
-        "category": "Improving Readability",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/prop-name-casing": {
-        "name": "vue/prop-name-casing",
-        "value": "off",
-        "description": "props 必须用驼峰式",
-        "category": "Improving Readability",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/require-default-prop": {
-        "name": "vue/require-default-prop",
-        "value": "error",
-        "description": "props 如果不是 required 的字段，必须有默认值",
-        "category": "Improving Readability",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/require-prop-types": {
-        "name": "vue/require-prop-types",
-        "value": "off",
-        "description": "prop 必须有类型限制",
-        "category": "Improving Readability",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/v-bind-style": {
-        "name": "vue/v-bind-style",
-        "value": "off",
-        "description": "限制 v-bind 的风格",
-        "category": "Improving Readability",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/v-on-style": {
-        "name": "vue/v-on-style",
-        "value": "off",
-        "description": "限制 v-on 的风格",
-        "category": "Improving Readability",
+        "category": "",
         "badExample": "",
         "goodExample": ""
     },
@@ -347,31 +11,7 @@
         "name": "vue/attributes-order",
         "value": "error",
         "description": "标签属性必须按规则排序",
-        "category": "Minimizing Arbitrary Choices and Cognitive Overhead",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/no-v-html": {
-        "name": "vue/no-v-html",
-        "value": "off",
-        "description": "禁用 v-html",
-        "category": "Minimizing Arbitrary Choices and Cognitive Overhead",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/order-in-components": {
-        "name": "vue/order-in-components",
-        "value": "error",
-        "description": "组件的属性必须为一定的顺序",
-        "category": "Minimizing Arbitrary Choices and Cognitive Overhead",
-        "badExample": "",
-        "goodExample": ""
-    },
-    "vue/this-in-template": {
-        "name": "vue/this-in-template",
-        "value": "error",
-        "description": "禁止在模版中用 this",
-        "category": "Minimizing Arbitrary Choices and Cognitive Overhead",
+        "category": "",
         "badExample": "",
         "goodExample": ""
     },
@@ -379,16 +19,24 @@
         "name": "vue/camelcase",
         "value": "off",
         "description": "变量名必须是 camelcase 风格的",
-        "category": "Uncategorized",
+        "category": "",
         "badExample": "",
         "goodExample": "",
         "reason": "很多 api 或文件名都不是 camelcase"
+    },
+    "vue/comment-directive": {
+        "name": "vue/comment-directive",
+        "value": "error",
+        "description": "支持在模版中使用 eslint-disable-next-line 等注释",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
     },
     "vue/comma-dangle": {
         "name": "vue/comma-dangle",
         "value": "off",
         "description": "对象的最后一个属性末尾必须有逗号",
-        "category": "Uncategorized",
+        "category": "",
         "badExample": "",
         "goodExample": ""
     },
@@ -396,15 +44,39 @@
         "name": "vue/eqeqeq",
         "value": ["error", "always"],
         "description": "必须使用 === 或 !==，禁止使用 == 或 !=",
-        "category": "Uncategorized",
+        "category": "",
         "badExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>template</span><span class=\"token punctuation\">></span></span>\n    <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token attr-name\">:attr</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>foo <mark class=\"eslint-error\" data-tip=\"Expected &apos;===&apos; and instead saw &apos;==&apos;.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(vue/eqeqeq)&lt;/span&gt;\">=</mark>= 1<span class=\"token punctuation\">\"</span></span> <span class=\"token punctuation\">/></span></span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>template</span><span class=\"token punctuation\">></span></span>",
         "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>template</span><span class=\"token punctuation\">></span></span>\n    <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token attr-name\">:attr</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>foo === 1<span class=\"token punctuation\">\"</span></span> <span class=\"token punctuation\">/></span></span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>template</span><span class=\"token punctuation\">></span></span>"
+    },
+    "vue/jsx-uses-vars": {
+        "name": "vue/jsx-uses-vars",
+        "value": "error",
+        "description": "定义了的 jsx element 必须使用",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
     },
     "vue/match-component-file-name": {
         "name": "vue/match-component-file-name",
         "value": "off",
         "description": "组件名称必须和文件名一致",
-        "category": "Uncategorized",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/name-property-casing": {
+        "name": "vue/name-property-casing",
+        "value": "off",
+        "description": "限制组件的 name 属性的值的风格",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/no-async-in-computed-properties": {
+        "name": "vue/no-async-in-computed-properties",
+        "value": "error",
+        "description": "计算属性禁止包含异步方法",
+        "category": "",
         "badExample": "",
         "goodExample": ""
     },
@@ -412,7 +84,39 @@
         "name": "vue/no-boolean-default",
         "value": "off",
         "description": "禁止给布尔值 props 添加默认值",
-        "category": "Uncategorized",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/no-dupe-keys": {
+        "name": "vue/no-dupe-keys",
+        "value": "off",
+        "description": "禁止重复的二级键名",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/no-duplicate-attributes": {
+        "name": "vue/no-duplicate-attributes",
+        "value": "error",
+        "description": "禁止出现重复的属性",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/no-parsing-error": {
+        "name": "vue/no-parsing-error",
+        "value": "error",
+        "description": "禁止出现语法错误",
+        "category": "",
+        "badExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>template</span><span class=\"token punctuation\">></span></span>\n    <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span>{{ message. <mark class=\"eslint-error\" data-tip=\"Parsing error: Unexpected end of expression.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(vue/no-parsing-error)&lt;/span&gt;\">}</mark>}<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>template</span><span class=\"token punctuation\">></span></span>",
+        "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>template</span><span class=\"token punctuation\">></span></span>\n    <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span>{{ message }}<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>template</span><span class=\"token punctuation\">></span></span>"
+    },
+    "vue/no-reserved-keys": {
+        "name": "vue/no-reserved-keys",
+        "value": "error",
+        "description": "禁止覆盖保留字",
+        "category": "",
         "badExample": "",
         "goodExample": ""
     },
@@ -420,16 +124,192 @@
         "name": "vue/no-restricted-syntax",
         "value": "off",
         "description": "禁止使用特定的语法",
-        "category": "Uncategorized",
+        "category": "",
         "badExample": "",
         "goodExample": "",
         "reason": "它用于限制某个具体的语法不能使用"
+    },
+    "vue/no-shared-component-data": {
+        "name": "vue/no-shared-component-data",
+        "value": "off",
+        "description": "组件的 data 属性的值必须是一个函数",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/no-side-effects-in-computed-properties": {
+        "name": "vue/no-side-effects-in-computed-properties",
+        "value": "off",
+        "description": "禁止在计算属性中对属性修改",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/no-template-key": {
+        "name": "vue/no-template-key",
+        "value": "off",
+        "description": "禁止 <template> 使用 key 属性",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/no-template-shadow": {
+        "name": "vue/no-template-shadow",
+        "value": "off",
+        "description": "模版中的变量名禁止与前一个作用域重名",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/no-textarea-mustache": {
+        "name": "vue/no-textarea-mustache",
+        "value": "error",
+        "description": "禁止在 <textarea> 中出现 {{message}}",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/no-unused-components": {
+        "name": "vue/no-unused-components",
+        "value": "error",
+        "description": "禁止定义在 components 中的组件未使用",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/no-unused-vars": {
+        "name": "vue/no-unused-vars",
+        "value": "error",
+        "description": "禁止模版中定义的变量未使用",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/no-use-v-if-with-v-for": {
+        "name": "vue/no-use-v-if-with-v-for",
+        "value": "error",
+        "description": "禁止在同一个元素上使用 v-if 和 v-for 指令",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/no-v-html": {
+        "name": "vue/no-v-html",
+        "value": "off",
+        "description": "禁用 v-html",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/order-in-components": {
+        "name": "vue/order-in-components",
+        "value": "error",
+        "description": "组件的属性必须为一定的顺序",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/prop-name-casing": {
+        "name": "vue/prop-name-casing",
+        "value": "off",
+        "description": "props 必须用驼峰式",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/require-component-is": {
+        "name": "vue/require-component-is",
+        "value": "error",
+        "description": "<component> 必须有 v-bind:is",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/require-default-prop": {
+        "name": "vue/require-default-prop",
+        "value": "error",
+        "description": "props 如果不是 required 的字段，必须有默认值",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
     },
     "vue/require-direct-export": {
         "name": "vue/require-direct-export",
         "value": "error",
         "description": "禁止手动 export default",
-        "category": "Uncategorized",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/require-prop-type-constructor": {
+        "name": "vue/require-prop-type-constructor",
+        "value": "error",
+        "description": "props 的取值必须是构造函数",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/require-prop-types": {
+        "name": "vue/require-prop-types",
+        "value": "off",
+        "description": "prop 必须有类型限制",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/require-render-return": {
+        "name": "vue/require-render-return",
+        "value": "error",
+        "description": "render 函数必须有返回值",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/require-v-for-key": {
+        "name": "vue/require-v-for-key",
+        "value": "error",
+        "description": "v-for 指令的元素必须有 v-bind:key",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/require-valid-default-prop": {
+        "name": "vue/require-valid-default-prop",
+        "value": "off",
+        "description": "prop 的默认值必须匹配它的类型",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/return-in-computed-property": {
+        "name": "vue/return-in-computed-property",
+        "value": "error",
+        "description": "计算属性必须有返回值",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/this-in-template": {
+        "name": "vue/this-in-template",
+        "value": "error",
+        "description": "禁止在模版中用 this",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/use-v-on-exact": {
+        "name": "vue/use-v-on-exact",
+        "value": "error",
+        "description": "当一个节点上出现两个 v-on:click 时，其中一个必须为 exact",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/v-bind-style": {
+        "name": "vue/v-bind-style",
+        "value": "off",
+        "description": "限制 v-bind 的风格",
+        "category": "",
         "badExample": "",
         "goodExample": ""
     },
@@ -437,7 +317,127 @@
         "name": "vue/v-on-function-call",
         "value": "error",
         "description": "禁止在 v-on 的值中调用函数",
-        "category": "Uncategorized",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/v-on-style": {
+        "name": "vue/v-on-style",
+        "value": "off",
+        "description": "限制 v-on 的风格",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/valid-template-root": {
+        "name": "vue/valid-template-root",
+        "value": "error",
+        "description": "template 的根节点必须合法",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/valid-v-bind": {
+        "name": "vue/valid-v-bind",
+        "value": "error",
+        "description": "v-bind 指令必须合法",
+        "category": "",
+        "badExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>template</span><span class=\"token punctuation\">></span></span>\n    <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span>\n        <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token attr-name\"><mark class=\"eslint-error\" data-tip=\"&apos;v-bind&apos; directives require an attribute value.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(vue/valid-v-bind)&lt;/span&gt;\">v-bind</mark></span><span class=\"token punctuation\">></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span>\n        <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token attr-name\"><mark class=\"eslint-error\" data-tip=\"&apos;v-bind&apos; directives require an attribute value.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(vue/valid-v-bind)&lt;/span&gt;\">:aaa</mark></span><span class=\"token punctuation\">></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span>\n        <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token attr-name\"><mark class=\"eslint-error\" data-tip=\"&apos;v-bind&apos; directives don&apos;t support the modifier &apos;bbb&apos;.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(vue/valid-v-bind)&lt;/span&gt;\"><span class=\"token namespace\">v-bind:</span>aaa.bbb</mark></span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>foo<span class=\"token punctuation\">\"</span></span><span class=\"token punctuation\">></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span>\n    <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>template</span><span class=\"token punctuation\">></span></span>",
+        "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>template</span><span class=\"token punctuation\">></span></span>\n    <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span>\n        <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token attr-name\">v-bind</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>foo<span class=\"token punctuation\">\"</span></span><span class=\"token punctuation\">></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span>\n        <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token attr-name\"><span class=\"token namespace\">v-bind:</span>aaa</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>foo<span class=\"token punctuation\">\"</span></span><span class=\"token punctuation\">></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span>\n        <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token attr-name\">:aaa</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>foo<span class=\"token punctuation\">\"</span></span><span class=\"token punctuation\">></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span>\n        <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token attr-name\">:aaa.prop</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>foo<span class=\"token punctuation\">\"</span></span><span class=\"token punctuation\">></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span>\n    <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>template</span><span class=\"token punctuation\">></span></span>"
+    },
+    "vue/valid-v-cloak": {
+        "name": "vue/valid-v-cloak",
+        "value": "error",
+        "description": "v-cloak 指令必须合法",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/valid-v-else": {
+        "name": "vue/valid-v-else",
+        "value": "error",
+        "description": "v-else 指令必须合法",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/valid-v-else-if": {
+        "name": "vue/valid-v-else-if",
+        "value": "error",
+        "description": "v-else-if 指令必须合法",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/valid-v-for": {
+        "name": "vue/valid-v-for",
+        "value": "error",
+        "description": "v-for 指令必须合法",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/valid-v-html": {
+        "name": "vue/valid-v-html",
+        "value": "error",
+        "description": "v-html 指令必须合法",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/valid-v-if": {
+        "name": "vue/valid-v-if",
+        "value": "error",
+        "description": "v-if 指令必须合法",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/valid-v-model": {
+        "name": "vue/valid-v-model",
+        "value": "error",
+        "description": "v-model 指令必须合法",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/valid-v-on": {
+        "name": "vue/valid-v-on",
+        "value": "error",
+        "description": "v-on 指令必须合法",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/valid-v-once": {
+        "name": "vue/valid-v-once",
+        "value": "error",
+        "description": "v-once 指令必须合法",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/valid-v-pre": {
+        "name": "vue/valid-v-pre",
+        "value": "error",
+        "description": "v-pre 指令必须合法",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/valid-v-show": {
+        "name": "vue/valid-v-show",
+        "value": "error",
+        "description": "v-show 指令必须合法",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "vue/valid-v-text": {
+        "name": "vue/valid-v-text",
+        "value": "error",
+        "description": "v-text 指令必须合法",
+        "category": "",
         "badExample": "",
         "goodExample": ""
     }
