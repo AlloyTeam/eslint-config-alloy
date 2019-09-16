@@ -34,6 +34,17 @@
 .site-desc {
     margin: 0.5em 0 0.8em;
 }
+.site-rule-value {
+    margin-top: 5px;
+    font-size: 14px;
+}
+.site-rule-value pre {
+    margin: 0;
+    padding: 0.5em;
+}
+.site-rule-value pre code {
+    font-size: 12px;
+}
 
 /* 代码 */
 .site-code {
