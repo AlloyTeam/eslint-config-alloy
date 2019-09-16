@@ -8,3 +8,4 @@ node_modules
 
 ## Built-files
 .cache
+dist

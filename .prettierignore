@@ -19,5 +19,5 @@ test/index/no-labels/bad.js
 test/react/jsx-fragments/bad.js
 
 ## Built-files
-docs
 .cache
+dist
