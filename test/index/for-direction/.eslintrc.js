@@ -1,7 +1,7 @@
 module.exports = {
     rules: {
         /**
-         * 禁止 for 循环出现方向错误的循环
+         * 禁止方向错误的 for 循环
          */
         'for-direction': 'error'
     }

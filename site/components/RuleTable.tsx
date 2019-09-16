@@ -84,7 +84,7 @@ export const RuleTable: React.SFC<RuleTableProps> = ({ namespace, shouldHideOff 
                             {Array.isArray(value) && (
                                 <>
                                     <p className="text-muted text-small site-rule-value">
-                                        配置项：
+                                        配置：
                                         {typeof value[1] === 'object' ? (
                                             <pre>
                                                 <code>{`["error", ${JSON.stringify(
