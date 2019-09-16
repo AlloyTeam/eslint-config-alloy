@@ -4,14 +4,14 @@
 
 /* 行样式 */
 .site-row-wide {
-    margin-left: -0.9375rem;
-    margin-right: -0.9375rem;
+    margin-left: -15px;
+    margin-right: -15px;
 }
 .site-row-wide > *:first-child {
-    padding-left: 0.9375rem;
+    padding-left: 15px;
 }
 .site-row-wide > *:last-child {
-    padding-right: 0.9375rem;
+    padding-right: 15px;
 }
 .site-row-off {
     background: url('./assets/off.svg');
@@ -48,7 +48,6 @@
 
 /* 代码 */
 .site-code {
-    max-height: 300px;
     border-radius: 0 !important;
 }
 .site-code-tag {
