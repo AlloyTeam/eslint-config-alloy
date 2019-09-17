@@ -1,8 +1,7 @@
 module.exports = {
     rules: {
         /**
-         * 禁用特定的类型
-         * @reason 该规则用于禁止某个具体的类型的使用
+         * 禁止使用特定的类型
          */
         '@typescript-eslint/ban-types': 'off'
     }

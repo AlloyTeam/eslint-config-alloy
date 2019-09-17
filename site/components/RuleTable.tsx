@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-
+/* eslint-disable @typescript-eslint/no-require-imports */
 import React from 'react';
 
 import { Rule, RuleNamespaces, RuleNamespacePrismLanguageMap } from '../constants/rule';

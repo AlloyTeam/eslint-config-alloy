@@ -1,1 +1,0 @@
-const Animal = require('./Animal');

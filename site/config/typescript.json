@@ -38,11 +38,10 @@
     "@typescript-eslint/ban-types": {
         "name": "@typescript-eslint/ban-types",
         "value": "off",
-        "description": "禁用特定的类型",
+        "description": "禁止使用特定的类型",
         "category": "",
         "badExample": "",
-        "goodExample": "",
-        "reason": "该规则用于禁止某个具体的类型的使用"
+        "goodExample": ""
     },
     "@typescript-eslint/camelcase": {
         "name": "@typescript-eslint/camelcase",
@@ -73,11 +72,11 @@
     "@typescript-eslint/consistent-type-definitions": {
         "name": "@typescript-eslint/consistent-type-definitions",
         "value": ["error", "interface"],
-        "description": "优先使用接口而不是字面类型",
+        "description": "优先使用 interface 而不是 type",
         "category": "",
         "badExample": "<span class=\"token keyword\">type</span> <mark class=\"eslint-error\" data-tip=\"Use an `interface` instead of a `type`&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(@typescript-eslint/consistent-type-definitions)&lt;/span&gt;\">Foo1</mark> <span class=\"token operator\">=</span> <span class=\"token punctuation\">{</span>\n    foo<span class=\"token punctuation\">:</span> <span class=\"token builtin\">string</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>",
         "goodExample": "<span class=\"token keyword\">interface</span> <span class=\"token class-name\">Foo2</span> <span class=\"token punctuation\">{</span>\n    foo<span class=\"token punctuation\">:</span> <span class=\"token builtin\">string</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>",
-        "reason": "接口可以 implement extend 和 merge"
+        "reason": "interface 可以 implement, extend 和 merge"
     },
     "@typescript-eslint/explicit-function-return-type": {
         "name": "@typescript-eslint/explicit-function-return-type",
@@ -108,7 +107,7 @@
     "@typescript-eslint/interface-name-prefix": {
         "name": "@typescript-eslint/interface-name-prefix",
         "value": "off",
-        "description": "接口名称必须已 I 开头",
+        "description": "接口名称必须以 I 开头",
         "category": "",
         "badExample": "",
         "goodExample": ""
@@ -206,7 +205,7 @@
     "@typescript-eslint/no-inferrable-types": {
         "name": "@typescript-eslint/no-inferrable-types",
         "value": "error",
-        "description": "禁止给一个初始化时直接赋值为 number, string 的变量显式的指定类型",
+        "description": "禁止给一个初始化时直接赋值为 number, string 的变量显式的声明类型",
         "category": "",
         "badExample": "<span class=\"token keyword\">const</span> <mark class=\"eslint-error\" data-tip=\"Type number trivially inferred from a number literal, remove type annotation.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(@typescript-eslint/no-inferrable-types)&lt;/span&gt;\">foo1<span class=\"token punctuation\">:</span> <span class=\"token builtin\">number</span> <span class=\"token operator\">=</span> <span class=\"token number\">1</span></mark><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">const</span> <mark class=\"eslint-error\" data-tip=\"Type string trivially inferred from a string literal, remove type annotation.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(@typescript-eslint/no-inferrable-types)&lt;/span&gt;\">bar1<span class=\"token punctuation\">:</span> <span class=\"token builtin\">string</span> <span class=\"token operator\">=</span> <span class=\"token string\">''</span></mark><span class=\"token punctuation\">;</span>",
         "goodExample": "<span class=\"token keyword\">const</span> foo2 <span class=\"token operator\">=</span> <span class=\"token number\">1</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">const</span> bar2 <span class=\"token operator\">=</span> <span class=\"token string\">''</span><span class=\"token punctuation\">;</span>",
@@ -244,7 +243,7 @@
         "category": "",
         "badExample": "<mark class=\"eslint-error\" data-tip=\"ES2015 module syntax is preferred over custom TypeScript modules and namespaces.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(@typescript-eslint/no-namespace)&lt;/span&gt;\"><span class=\"token keyword\">namespace</span> foo1 <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span></mark>",
         "goodExample": "<span class=\"token keyword\">declare</span> <span class=\"token keyword\">namespace</span> foo1 <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>",
-        "reason": "使用 es6 引入模块，才是更标准的方式。\n允许使用 declare namespace ... {} 来定义外部命名空间"
+        "reason": "使用 es6 引入模块，才是更标准的方式。\n但是允许使用 declare namespace ... {} 来定义外部命名空间"
     },
     "@typescript-eslint/no-non-null-assertion": {
         "name": "@typescript-eslint/no-non-null-assertion",
@@ -265,12 +264,12 @@
     },
     "@typescript-eslint/no-require-imports": {
         "name": "@typescript-eslint/no-require-imports",
-        "value": "off",
+        "value": "error",
         "description": "禁止使用 require",
         "category": "",
-        "badExample": "",
-        "goodExample": "",
-        "reason": "有时需要动态引入，还是需要用 require"
+        "badExample": "<span class=\"token keyword\">const</span> fs <span class=\"token operator\">=</span> <mark class=\"eslint-error\" data-tip=\"A `require()` style import is forbidden.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(@typescript-eslint/no-require-imports)&lt;/span&gt;\"><span class=\"token keyword\">require</span><span class=\"token punctuation\">(</span><span class=\"token string\">'fs'</span><span class=\"token punctuation\">)</span></mark><span class=\"token punctuation\">;</span>",
+        "goodExample": "<span class=\"token keyword\">import</span> <span class=\"token operator\">*</span> <span class=\"token keyword\">as</span> fs <span class=\"token keyword\">from</span> <span class=\"token string\">'fs'</span><span class=\"token punctuation\">;</span>",
+        "reason": "统一使用 import 来引入模块，特殊情况使用单行注释允许 require 引入"
     },
     "@typescript-eslint/no-this-alias": {
         "name": "@typescript-eslint/no-this-alias",
@@ -334,12 +333,12 @@
     },
     "@typescript-eslint/no-var-requires": {
         "name": "@typescript-eslint/no-var-requires",
-        "value": "error",
+        "value": "off",
         "description": "禁止使用 require 来引入模块",
         "category": "",
-        "badExample": "<span class=\"token keyword\">const</span> Animal <span class=\"token operator\">=</span> <mark class=\"eslint-error\" data-tip=\"Require statement not part of import statement.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(@typescript-eslint/no-var-requires)&lt;/span&gt;\"><span class=\"token keyword\">require</span><span class=\"token punctuation\">(</span><span class=\"token string\">'./Animal'</span><span class=\"token punctuation\">)</span></mark><span class=\"token punctuation\">;</span>",
-        "goodExample": "<span class=\"token keyword\">import</span> Animal <span class=\"token keyword\">from</span> <span class=\"token string\">'./Animal'</span><span class=\"token punctuation\">;</span>",
-        "reason": "统一使用 import 来引入模块，特殊情况使用单行注释允许 require 引入"
+        "badExample": "",
+        "goodExample": "",
+        "reason": "no-require-imports 规则已经约束了 require"
     },
     "@typescript-eslint/prefer-for-of": {
         "name": "@typescript-eslint/prefer-for-of",
@@ -353,11 +352,10 @@
     "@typescript-eslint/prefer-function-type": {
         "name": "@typescript-eslint/prefer-function-type",
         "value": "error",
-        "description": "可以简写为函数类型的接口或字面类似，必须简写",
+        "description": "可以简写为函数类型的接口或字面类型的话，则必须简写",
         "category": "",
         "badExample": "<span class=\"token keyword\">interface</span> <span class=\"token class-name\">Foo1</span> <span class=\"token punctuation\">{</span>\n    <mark class=\"eslint-error\" data-tip=\"Interface has only a call signature - use &apos;type Foo1 = () =&gt; string;&apos; instead.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(@typescript-eslint/prefer-function-type)&lt;/span&gt;\"><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">:</span> <span class=\"token builtin\">string</span><span class=\"token punctuation\">;</span></mark>\n<span class=\"token punctuation\">}</span>",
-        "goodExample": "<span class=\"token keyword\">type</span> <span class=\"token function-variable function\">Foo2</span> <span class=\"token operator\">=</span> <span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token operator\">=></span> <span class=\"token builtin\">string</span><span class=\"token punctuation\">;</span>",
-        "reason": "reason"
+        "goodExample": "<span class=\"token keyword\">type</span> <span class=\"token function-variable function\">Foo2</span> <span class=\"token operator\">=</span> <span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token operator\">=></span> <span class=\"token builtin\">string</span><span class=\"token punctuation\">;</span>"
     },
     "@typescript-eslint/prefer-includes": {
         "name": "@typescript-eslint/prefer-includes",

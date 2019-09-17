@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 import React from 'react';
 import ReactTooltip = require('react-tooltip');
 

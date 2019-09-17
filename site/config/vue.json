@@ -196,7 +196,7 @@
     "vue/no-v-html": {
         "name": "vue/no-v-html",
         "value": "off",
-        "description": "禁用 v-html",
+        "description": "禁止使用 v-html",
         "category": "",
         "badExample": "",
         "goodExample": ""

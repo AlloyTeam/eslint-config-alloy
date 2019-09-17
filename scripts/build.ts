@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 import fs from 'fs';
 import path from 'path';
 
@@ -18,9 +19,7 @@ import {
 import '../site/vendor/prism';
 declare const Prism: any;
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const pkg = require('../package.json');
-
 class Builder {
     private namespace: RuleNamespaces = 'index';
     private ruleList: Rule[] = [];

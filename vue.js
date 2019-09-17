@@ -145,7 +145,7 @@ module.exports = {
          */
         'vue/no-use-v-if-with-v-for': 'error',
         /**
-         * 禁用 v-html
+         * 禁止使用 v-html
          */
         'vue/no-v-html': 'off',
         /**

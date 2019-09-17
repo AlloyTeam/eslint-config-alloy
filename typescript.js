@@ -51,8 +51,7 @@ module.exports = {
          */
         '@typescript-eslint/ban-ts-ignore': 'off',
         /**
-         * 禁用特定的类型
-         * @reason 该规则用于禁止某个具体的类型的使用
+         * 禁止使用特定的类型
          */
         '@typescript-eslint/ban-types': 'off',
         /**
@@ -76,8 +75,8 @@ module.exports = {
             }
         ],
         /**
-         * 优先使用接口而不是字面类型
-         * @reason 接口可以 implement extend 和 merge
+         * 优先使用 interface 而不是 type
+         * @reason interface 可以 implement, extend 和 merge
          */
         '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
         /**
@@ -95,7 +94,7 @@ module.exports = {
          */
         '@typescript-eslint/generic-type-naming': 'off',
         /**
-         * 接口名称必须已 I 开头
+         * 接口名称必须以 I 开头
          */
         '@typescript-eslint/interface-name-prefix': 'off',
         /**
@@ -164,7 +163,7 @@ module.exports = {
          */
         '@typescript-eslint/no-for-in-array': 'off',
         /**
-         * 禁止给一个初始化时直接赋值为 number, string 的变量显式的指定类型
+         * 禁止给一个初始化时直接赋值为 number, string 的变量显式的声明类型
          * @reason 可以简化代码
          */
         '@typescript-eslint/no-inferrable-types': 'error',
@@ -184,7 +183,7 @@ module.exports = {
         /**
          * 禁止使用 namespace 来定义命名空间
          * @reason 使用 es6 引入模块，才是更标准的方式。
-         * 允许使用 declare namespace ... {} 来定义外部命名空间
+         * 但是允许使用 declare namespace ... {} 来定义外部命名空间
          */
         '@typescript-eslint/no-namespace': [
             'error',
@@ -204,9 +203,9 @@ module.exports = {
         '@typescript-eslint/no-parameter-properties': 'error',
         /**
          * 禁止使用 require
-         * @reason 有时需要动态引入，还是需要用 require
+         * @reason 统一使用 import 来引入模块，特殊情况使用单行注释允许 require 引入
          */
-        '@typescript-eslint/no-require-imports': 'off',
+        '@typescript-eslint/no-require-imports': 'error',
         /**
          * 禁止将 this 赋值给其他变量，除非是解构赋值
          */
@@ -246,17 +245,16 @@ module.exports = {
         '@typescript-eslint/no-useless-constructor': 'error',
         /**
          * 禁止使用 require 来引入模块
-         * @reason 统一使用 import 来引入模块，特殊情况使用单行注释允许 require 引入
+         * @reason no-require-imports 规则已经约束了 require
          */
-        '@typescript-eslint/no-var-requires': 'error',
+        '@typescript-eslint/no-var-requires': 'off',
         /**
          * 使用 for 循环遍历数组时，如果 index 仅用于获取成员，则必须使用 for of 循环替代 for 循环
          * @reason for of 循环更加易读
          */
         '@typescript-eslint/prefer-for-of': 'error',
         /**
-         * 可以简写为函数类型的接口或字面类似，必须简写
-         * @reason reason
+         * 可以简写为函数类型的接口或字面类型的话，则必须简写
          */
         '@typescript-eslint/prefer-function-type': 'error',
         /**
