@@ -1,3 +1,3 @@
-let foo = '　';
-let bar = /　/;
-let baz = `　`;
+const foo = '　';
+const bar = /　/;
+const baz = `　`;

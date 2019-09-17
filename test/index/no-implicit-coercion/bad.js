@@ -1,5 +1,5 @@
-let b = ~foo.indexOf('.');
-let n = +foo;
-let m = 1 * foo;
-let s = '' + foo;
-foo += ``;
+const b = ~foo.indexOf('.');
+const n = +foo;
+const m = 1 * foo;
+const s = '' + foo;
+foo += '';

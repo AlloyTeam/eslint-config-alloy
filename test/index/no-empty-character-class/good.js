@@ -1,1 +1,1 @@
-let reg = /abc[a-z]/;
+const reg = /abc[a-z]/;

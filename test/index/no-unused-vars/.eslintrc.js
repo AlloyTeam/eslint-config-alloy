@@ -8,8 +8,8 @@ module.exports = {
             {
                 vars: 'all',
                 args: 'none',
-                caughtErrors: 'none',
-                ignoreRestSiblings: true
+                ignoreRestSiblings: false,
+                caughtErrors: 'none'
             }
         ]
     }

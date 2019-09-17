@@ -208,7 +208,6 @@ module.exports = {
         'react/no-render-return-value': 'error',
         /**
          * 禁止使用 setState
-         * @reason setState 很常用
          */
         'react/no-set-state': 'off',
         /**

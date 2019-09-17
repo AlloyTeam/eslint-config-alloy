@@ -1,1 +1,1 @@
-eval('let foo = 0');
+eval('const foo = 0');

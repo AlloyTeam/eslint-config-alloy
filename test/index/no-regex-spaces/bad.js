@@ -1,2 +1,2 @@
-let reg1 = /foo   bar/;
-let reg2 = new RegExp('foo   bar');
+const reg1 = /foo   bar/;
+const reg2 = new RegExp('foo   bar');

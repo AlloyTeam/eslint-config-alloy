@@ -57,7 +57,7 @@ module.exports = {
         '@typescript-eslint/ban-types': 'off',
         /**
          * 变量名必须是 camelcase 风格的
-         * @reason 很多 api 或文件名都不是 camelcase
+         * @reason 很多 api 或文件名都不是 camelcase 风格的
          */
         '@typescript-eslint/camelcase': 'off',
         /**

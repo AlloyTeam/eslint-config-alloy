@@ -1,7 +1,7 @@
-let b = foo.indexOf('.') !== -1;
-let n = Number(foo);
-let m = Number(foo);
-let s = String(foo);
+const b = foo.indexOf('.') !== -1;
+const n = Number(foo);
+const m = Number(foo);
+const s = String(foo);
 foo = String(foo);
 
-let c = !!foo;
+const c = !!foo;

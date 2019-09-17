@@ -1,1 +1,1 @@
-let foo = 'Hello ${bar}';
+const foo = 'Hello ${bar}';

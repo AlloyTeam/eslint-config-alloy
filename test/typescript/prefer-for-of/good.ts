@@ -1,4 +1,4 @@
-let arr2 = [1, 2, 3];
+const arr2 = [1, 2, 3];
 
 for (const x of arr2) {
     console.log(x);

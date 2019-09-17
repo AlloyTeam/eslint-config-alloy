@@ -51,7 +51,7 @@ module.exports = {
         'callback-return': 'off',
         /**
          * 变量名必须是 camelcase 风格的
-         * @reason 很多 api 或文件名都不是 camelcase
+         * @reason 很多 api 或文件名都不是 camelcase 风格的
          */
         camelcase: 'off',
         /**
@@ -90,7 +90,7 @@ module.exports = {
          */
         'default-case': 'off',
         /**
-         * 禁止出现 foo['bar']，必须写成 foo.bar
+         * 禁止使用 foo['bar']，必须写成 foo.bar
          * @reason 当需要写一系列属性的时候，可以更统一
          */
         'dot-notation': 'off',
@@ -99,7 +99,7 @@ module.exports = {
          */
         eqeqeq: ['error', 'always'],
         /**
-         * 禁止 for 循环出现方向错误的循环
+         * 禁止方向错误的 for 循环
          */
         'for-direction': 'error',
         /**
@@ -123,15 +123,9 @@ module.exports = {
         /**
          * getter 必须有返回值，并且禁止返回空
          */
-        'getter-return': [
-            'error',
-            {
-                allowImplicit: false
-            }
-        ],
+        'getter-return': 'error',
         /**
          * require 必须在全局作用域下
-         * @reason 条件加载很常见
          */
         'global-require': 'off',
         /**
@@ -139,27 +133,24 @@ module.exports = {
          */
         'guard-for-in': 'error',
         /**
-         * callback 中的 error 必须被处理
+         * callback 中的 err 必须被处理
+         * @reason 它是通过字符串匹配来判断函数参数 err 的，不准确
          */
-        'handle-callback-err': 'error',
+        'handle-callback-err': 'off',
         /**
          * 禁止使用指定的标识符
-         * @reason 它用于限制某个具体的标识符不能使用
          */
         'id-blacklist': 'off',
         /**
          * 限制变量名长度
-         * @reason 没必要限制变量名长度
          */
         'id-length': 'off',
         /**
          * 限制变量名必须匹配指定的正则表达式
-         * @reason 没必要限制变量名
          */
         'id-match': 'off',
         /**
          * 变量必须在定义的时候赋值
-         * @reason 先定义后赋值很常见
          */
         'init-declarations': 'off',
         /**
@@ -221,11 +212,12 @@ module.exports = {
         ],
         /**
          * 禁止使用 alert
-         * @reason alert 很常用
          */
         'no-alert': 'off',
         /**
-         * 禁止使用 Array 构造函数
+         * 禁止使用 Array 构造函数时传入的参数超过一个
+         * @reason 参数为一个时表示创建一个指定长度的数组，比较常用
+         * 参数为多个时表示创建一个指定内容的数组，此时可以用数组字面量实现，不必使用构造函数
          */
         'no-array-constructor': 'error',
         /**
@@ -240,11 +232,11 @@ module.exports = {
         'no-await-in-loop': 'off',
         /**
          * 禁止使用位运算
-         * @reason 位运算很常见
          */
         'no-bitwise': 'off',
         /**
          * 禁止直接使用 Buffer
+         * @reason Buffer 构造函数是已废弃的语法
          */
         'no-buffer-constructor': 'error',
         /**
@@ -270,7 +262,6 @@ module.exports = {
         'no-cond-assign': ['error', 'except-parens'],
         /**
          * 禁止使用 console
-         * @reason console 的使用很常见
          */
         'no-console': 'off',
         /**
@@ -288,7 +279,6 @@ module.exports = {
         ],
         /**
          * 禁止使用 continue
-         * @reason continue 很常用
          */
         'no-continue': 'off',
         /**
@@ -301,9 +291,10 @@ module.exports = {
          */
         'no-debugger': 'error',
         /**
-         * 禁止使用 delete
+         * 禁止对一个变量使用 delete
+         * @reason 编译阶段就会报错了
          */
-        'no-delete-var': 'error',
+        'no-delete-var': 'off',
         /**
          * 禁止在正则表达式中出现形似除法操作符的开头，如 let a = /=foo/
          * @reason 有代码高亮的话，在阅读这种代码时，也完全不会产生歧义或理解上的困难
@@ -311,15 +302,15 @@ module.exports = {
         'no-div-regex': 'off',
         /**
          * 禁止在函数参数中出现重复名称的参数
-         * @reason 在编译阶段就会报错了
+         * @reason 编译阶段就会报错了
          */
         'no-dupe-args': 'off',
         /**
-         * 禁止重复定义类
+         * 禁止重复定义类的成员
          */
         'no-dupe-class-members': 'error',
         /**
-         * 禁止在对象字面量中出现重复名称的键名
+         * 禁止在对象字面量中出现重复的键名
          */
         'no-dupe-keys': 'error',
         /**
@@ -400,7 +391,7 @@ module.exports = {
          */
         'no-global-assign': 'error',
         /**
-         * 禁止使用 !! ~ 等难以理解的运算符，仅允许使用 !!
+         * 禁止使用 ~+ 等难以理解的类型转换，仅允许使用 !!
          */
         'no-implicit-coercion': [
             'error',
@@ -418,8 +409,7 @@ module.exports = {
          */
         'no-implied-eval': 'error',
         /**
-         * 禁止在代码后添加内联注释
-         * @reason 内联注释很常用
+         * 禁止在代码后添加单行注释
          */
         'no-inline-comments': 'off',
         /**
@@ -450,6 +440,7 @@ module.exports = {
         /**
          * 禁止使用 __iterator__
          * @reason __iterator__ 是一个已废弃的属性
+         * 使用 [Symbol.iterator] 替代它
          */
         'no-iterator': 'error',
         /**
@@ -471,7 +462,7 @@ module.exports = {
          */
         'no-lonely-if': 'off',
         /**
-         * 禁止在循环内的函数中出现循环体条件语句中定义的变量
+         * 禁止在循环内的函数内部出现循环体条件语句中定义的变量
          * @reason 使用 let 就已经解决了这个问题了
          */
         'no-loop-func': 'off',
@@ -537,18 +528,21 @@ module.exports = {
         'no-obj-calls': 'error',
         /**
          * 禁止使用 0 开头的数字表示八进制数
+         * @reason 编译阶段就会报错了
          */
-        'no-octal': 'error',
+        'no-octal': 'off',
         /**
          * 禁止使用八进制的转义符
+         * @reason 编译阶段就会报错了
          */
-        'no-octal-escape': 'error',
+        'no-octal-escape': 'off',
         /**
          * 禁止对函数的参数重新赋值
          */
         'no-param-reassign': 'error',
         /**
          * 禁止对 __dirname 或 __filename 使用字符串连接
+         * @reason 不同平台下的路径符号不一致，建议使用 path 处理平台差异性
          */
         'no-path-concat': 'error',
         /**
@@ -557,16 +551,15 @@ module.exports = {
         'no-plusplus': 'off',
         /**
          * 禁止使用 process.env.NODE_ENV
-         * @reason 使用很常见
          */
         'no-process-env': 'off',
         /**
          * 禁止使用 process.exit(0)
-         * @reason 使用很常见
          */
         'no-process-exit': 'off',
         /**
          * 禁止使用 __proto__
+         * @reason __proto__ 是已废弃的语法
          */
         'no-proto': 'error',
         /**
@@ -576,35 +569,31 @@ module.exports = {
         'no-prototype-builtins': 'off',
         /**
          * 禁止重复定义变量
+         * @reason 禁用 var 之后，编译阶段就会报错了
          */
-        'no-redeclare': 'error',
+        'no-redeclare': 'off',
         /**
          * 禁止在正则表达式中出现连续的空格
          */
         'no-regex-spaces': 'error',
         /**
          * 禁止使用指定的全局变量
-         * @reason 它用于限制某个具体的变量名不能使用
          */
         'no-restricted-globals': 'off',
         /**
          * 禁止导入指定的模块
-         * @reason 它用于限制某个具体的模块不能使用
          */
         'no-restricted-imports': 'off',
         /**
          * 禁止使用指定的模块
-         * @reason 它用于限制某个具体的模块不能使用
          */
         'no-restricted-modules': 'off',
         /**
          * 禁止使用指定的对象属性
-         * @reason 它用于限制某个具体的 api 不能使用
          */
         'no-restricted-properties': 'off',
         /**
          * 禁止使用特定的语法
-         * @reason 它用于限制某个具体的语法不能使用
          */
         'no-restricted-syntax': 'off',
         /**
@@ -647,7 +636,6 @@ module.exports = {
         'no-sparse-arrays': 'error',
         /**
          * 禁止使用 node 中的同步的方法，比如 fs.readFileSync
-         * @reason 使用很常见
          */
         'no-sync': 'off',
         /**
@@ -656,7 +644,6 @@ module.exports = {
         'no-template-curly-in-string': 'error',
         /**
          * 禁止使用三元表达式
-         * @reason 三元表达式很常用
          */
         'no-ternary': 'off',
         /**
@@ -670,12 +657,7 @@ module.exports = {
         /**
          * 禁止使用未定义的变量
          */
-        'no-undef': [
-            'error',
-            {
-                typeof: false
-            }
-        ],
+        'no-undef': 'error',
         /**
          * 禁止将 undefined 赋值给变量
          */
@@ -686,11 +668,10 @@ module.exports = {
         'no-undefined': 'off',
         /**
          * 禁止变量名出现下划线
-         * @reason 下划线在变量名中很常用
          */
         'no-underscore-dangle': 'off',
         /**
-         * 循环内必须对循环条件的变量有修改
+         * 循环内必须对循环条件中的变量有修改
          */
         'no-unmodified-loop-condition': 'error',
         /**
@@ -708,7 +689,7 @@ module.exports = {
          */
         'no-unsafe-finally': 'error',
         /**
-         * 禁止在 in 或 instanceof 操作符的左侧使用感叹号
+         * 禁止在 in 或 instanceof 操作符的左侧变量前使用感叹号
          */
         'no-unsafe-negation': 'error',
         /**
@@ -735,8 +716,8 @@ module.exports = {
             {
                 vars: 'all',
                 args: 'none',
-                caughtErrors: 'none',
-                ignoreRestSiblings: true
+                ignoreRestSiblings: false,
+                caughtErrors: 'none'
             }
         ],
         /**
@@ -745,9 +726,9 @@ module.exports = {
         'no-use-before-define': [
             'error',
             {
+                variables: false,
                 functions: false,
-                classes: false,
-                variables: false
+                classes: false
             }
         ],
         /**
@@ -760,7 +741,7 @@ module.exports = {
          */
         'no-useless-catch': 'error',
         /**
-         * 禁止出现没必要的计算键名，比如 let a = { ['0']: 0 };
+         * 禁止出现没必要的计算键名
          */
         'no-useless-computed-key': 'error',
         /**
@@ -768,7 +749,7 @@ module.exports = {
          */
         'no-useless-concat': 'error',
         /**
-         * 禁止出现没必要的 constructor，比如 constructor(value) { super(value) }
+         * 禁止出现没必要的 constructor
          */
         'no-useless-constructor': 'error',
         /**
@@ -782,7 +763,6 @@ module.exports = {
         'no-useless-rename': 'error',
         /**
          * 禁止没必要的 return
-         * @reason 没必要限制 return
          */
         'no-useless-return': 'off',
         /**
@@ -795,16 +775,16 @@ module.exports = {
         'no-void': 'error',
         /**
          * 禁止注释中出现 TODO 和 FIXME
-         * @reason TODO 很常用
          */
         'no-warning-comments': 'off',
         /**
          * 禁止使用 with
+         * @reason 编译阶段就会报错了
          */
-        'no-with': 'error',
+        'no-with': 'off',
         /**
          * 必须使用 a = {b} 而不是 a = {b: b}
-         * @reason 没必要强制要求
+         * @reason 有时后者可以使代码结构更清晰
          */
         'object-shorthand': 'off',
         /**
@@ -821,7 +801,6 @@ module.exports = {
         'padding-line-between-statements': 'off',
         /**
          * 申明后不再被修改的变量必须使用 const 来申明
-         * @reason 没必要强制要求
          */
         'prefer-const': 'off',
         /**
@@ -835,11 +814,10 @@ module.exports = {
         'prefer-named-capture-group': 'off',
         /**
          * 必须使用 0b11111011 而不是 parseInt()
-         * @reason 没必要强制要求
          */
         'prefer-numeric-literals': 'off',
         /**
-         * 使用 ... 而不是 Object.assign
+         * 必须使用 ... 而不是 Object.assign，除非 Object.assign 的第一个参数是一个变量
          */
         'prefer-object-spread': 'error',
         /**
@@ -848,17 +826,14 @@ module.exports = {
         'prefer-promise-reject-errors': 'error',
         /**
          * 必须使用 ...args 而不是 arguments
-         * @reason 没必要强制要求
          */
         'prefer-rest-params': 'off',
         /**
          * 必须使用 ... 而不是 apply，比如 foo(...args)
-         * @reason apply 很常用
          */
         'prefer-spread': 'off',
         /**
          * 必须使用模版字符串而不是字符串连接
-         * @reason 字符串连接很常用
          */
         'prefer-template': 'off',
         /**
@@ -874,7 +849,6 @@ module.exports = {
         'require-atomic-updates': 'off',
         /**
          * async 函数中必须存在 await 语句
-         * @reason 统一关闭 requires type information 的规则
          */
         'require-await': 'off',
         /**
@@ -887,7 +861,6 @@ module.exports = {
         'require-yield': 'error',
         /**
          * 导入必须按规则排序
-         * @reason 没必要强制要求
          */
         'sort-imports': 'off',
         /**
@@ -929,7 +902,6 @@ module.exports = {
         'valid-typeof': 'error',
         /**
          * var 必须在作用域的最前面
-         * @reason var 不在最前面也是很常见的用法
          */
         'vars-on-top': 'off',
         /**

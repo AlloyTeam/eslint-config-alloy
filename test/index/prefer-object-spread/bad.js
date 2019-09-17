@@ -1,1 +1,1 @@
-let foo = Object.assign({}, bar);
+const foo = Object.assign({}, bar);

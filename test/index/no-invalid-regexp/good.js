@@ -1,2 +1,2 @@
-let reg1 = new RegExp('[a-z]');
-let reg2 = new RegExp('.', 'g');
+const reg1 = new RegExp('[a-z]');
+const reg2 = new RegExp('.', 'g');

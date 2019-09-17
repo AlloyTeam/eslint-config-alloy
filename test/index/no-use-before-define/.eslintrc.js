@@ -6,9 +6,9 @@ module.exports = {
         'no-use-before-define': [
             'error',
             {
+                variables: false,
                 functions: false,
-                classes: false,
-                variables: false
+                classes: false
             }
         ]
     }

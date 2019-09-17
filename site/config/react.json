@@ -113,8 +113,8 @@
         "value": ["error", "syntax"],
         "description": "必须使用 <></> 而不是 React.Fragment",
         "category": "",
-        "badExample": "<span class=\"token keyword\">let</span> foo <span class=\"token operator\">=</span> <mark class=\"eslint-error\" data-tip=\"Prefer fragment shorthand over React.Fragment&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(react/jsx-fragments)&lt;/span&gt;\"><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">React.Fragment</span></span><span class=\"token punctuation\">></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span><span class=\"token class-name\">React.Fragment</span></span><span class=\"token punctuation\">></span></span></mark><span class=\"token punctuation\">;</span>",
-        "goodExample": "<span class=\"token keyword\">let</span> foo <span class=\"token operator\">=</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span></span><span class=\"token punctuation\">></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span></span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>",
+        "badExample": "<span class=\"token keyword\">const</span> foo <span class=\"token operator\">=</span> <mark class=\"eslint-error\" data-tip=\"Prefer fragment shorthand over React.Fragment&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(react/jsx-fragments)&lt;/span&gt;\"><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">React.Fragment</span></span><span class=\"token punctuation\">></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span><span class=\"token class-name\">React.Fragment</span></span><span class=\"token punctuation\">></span></span></mark><span class=\"token punctuation\">;</span>",
+        "goodExample": "<span class=\"token keyword\">const</span> foo <span class=\"token operator\">=</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span></span><span class=\"token punctuation\">></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span></span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>",
         "reason": "<></> 不需要额外引入 Fragment 组件"
     },
     "react/jsx-handler-names": {
@@ -357,8 +357,7 @@
         "description": "禁止使用 setState",
         "category": "",
         "badExample": "",
-        "goodExample": "",
-        "reason": "setState 很常用"
+        "goodExample": ""
     },
     "react/no-string-refs": {
         "name": "react/no-string-refs",

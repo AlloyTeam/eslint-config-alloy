@@ -1,3 +1,3 @@
-let foo = Math();
-let bar = JSON();
-let baz = Reflect();
+const foo = Math();
+const bar = JSON();
+const baz = Reflect();

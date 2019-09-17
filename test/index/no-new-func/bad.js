@@ -1,1 +1,1 @@
-let foo = new Function('a', 'b', 'return a + b');
+const foo = new Function('a', 'b', 'return a + b');

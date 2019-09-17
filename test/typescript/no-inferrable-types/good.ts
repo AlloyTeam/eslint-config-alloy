@@ -1,2 +1,2 @@
-let foo2 = 1;
-let bar2 = '';
+const foo2 = 1;
+const bar2 = '';

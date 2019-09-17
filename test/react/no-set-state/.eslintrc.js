@@ -2,7 +2,6 @@ module.exports = {
     rules: {
         /**
          * 禁止使用 setState
-         * @reason setState 很常用
          */
         'react/no-set-state': 'off'
     }

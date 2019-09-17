@@ -1,0 +1,2 @@
+doSomething();
+foo = 1;

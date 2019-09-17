@@ -22,7 +22,7 @@
         "category": "",
         "badExample": "",
         "goodExample": "",
-        "reason": "很多 api 或文件名都不是 camelcase"
+        "reason": "很多 api 或文件名都不是 camelcase 风格的"
     },
     "vue/comment-directive": {
         "name": "vue/comment-directive",

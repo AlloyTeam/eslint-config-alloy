@@ -1,4 +1,4 @@
-let user = {
+const user = {
     get name() {
         return 'Alex';
     }

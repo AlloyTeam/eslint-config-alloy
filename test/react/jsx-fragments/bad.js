@@ -1,1 +1,1 @@
-let foo = <React.Fragment></React.Fragment>;
+const foo = <React.Fragment></React.Fragment>;

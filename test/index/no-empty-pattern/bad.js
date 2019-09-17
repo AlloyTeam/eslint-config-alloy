@@ -1,1 +1,1 @@
-let {} = foo;
+const {} = foo;
