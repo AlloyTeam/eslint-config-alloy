@@ -17,7 +17,7 @@ const cli = new CLIEngine({});
 
 const goodReport = cli.executeOnFiles([
     './**/good.js',
-    './**/good.jsx',
+    // './**/good.jsx',
     './**/good.ts',
     './**/good.vue'
 ]);
@@ -29,10 +29,13 @@ goodReport.results.forEach((goodReportForOneFile) => {
 
 const badReport = cli.executeOnFiles([
     './**/bad.js',
-    './**/bad.jsx',
+    // './**/bad.jsx',
     './**/bad.ts',
     './**/bad.vue'
 ]);
+
+// 忽略这些规则的报错信息
+const badWhitelist = ['react/jsx-uses-react', 'react/jsx-uses-vars'];
 
 badReport.results.forEach((badReportForOneFile) => {
     const { errorCount, filePath, messages } = badReportForOneFile;
@@ -45,6 +48,9 @@ badReport.results.forEach((badReportForOneFile) => {
 
     messages.forEach((message) => {
         const fullRuleName = RULE_PREFIX_MAP[rulePrefix] + ruleName;
+        if (badWhitelist.includes(fullRuleName)) {
+            return;
+        }
         if (message.ruleId !== fullRuleName) {
             assert.equal(
                 message.ruleId,

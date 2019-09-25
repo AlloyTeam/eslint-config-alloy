@@ -72,7 +72,7 @@ module.exports = {
          */
         'vue/eqeqeq': ['error', 'always'],
         /**
-         * 定义了的 jsx element 必须使用
+         * 已定义的 jsx element 必须使用
          */
         'vue/jsx-uses-vars': 'error',
         /**
@@ -108,8 +108,7 @@ module.exports = {
          */
         'vue/no-reserved-keys': 'error',
         /**
-         * 禁止使用特定的语法
-         * @reason 它用于限制某个具体的语法不能使用
+         * 禁止使用指定的语法
          */
         'vue/no-restricted-syntax': 'off',
         /**
@@ -137,7 +136,7 @@ module.exports = {
          */
         'vue/no-unused-components': 'error',
         /**
-         * 禁止模版中定义的变量未使用
+         * 模版中已定义的变量必须使用
          */
         'vue/no-unused-vars': 'error',
         /**

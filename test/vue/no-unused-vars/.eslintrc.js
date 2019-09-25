@@ -1,7 +1,7 @@
 module.exports = {
     rules: {
         /**
-         * 禁止模版中定义的变量未使用
+         * 模版中已定义的变量必须使用
          */
         'vue/no-unused-vars': 'error'
     }

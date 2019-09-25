@@ -50,29 +50,29 @@ module.exports = {
          */
         'react/display-name': 'off',
         /**
-         * 禁止在自定义组件中使用一些指定的 props
+         * 禁止在自定义组件中使用指定的 props
          */
         'react/forbid-component-props': 'off',
         /**
-         * 禁止指定的 props
+         * 禁止在 dom 组件中使用指定的 props
          */
         'react/forbid-dom-props': 'off',
         /**
-         * 禁止使用一些指定的 elements
+         * 禁止使用指定的组件
          */
         'react/forbid-elements': 'off',
         /**
-         * 禁止直接使用别的组件的 propTypes
+         * 禁止使用另一个组件的 propTypes
          * @reason 不强制要求写 propTypes
          */
         'react/forbid-foreign-prop-types': 'off',
         /**
-         * 禁止使用一些指定的 propTypes
+         * 禁止使用 PropTypes.any PropTypes.array 和 PropTypes.object
          * @reason 不强制要求写 propTypes
          */
         'react/forbid-prop-types': 'off',
         /**
-         * 布尔值的属性必须显式的写 someprop={true}
+         * 布尔值的属性必须显式的声明值为 true
          */
         'react/jsx-boolean-value': 'off',
         /**
@@ -95,7 +95,12 @@ module.exports = {
         /**
          * 数组中的 jsx 必须有 key
          */
-        'react/jsx-key': 'error',
+        'react/jsx-key': [
+            'error',
+            {
+                checkFragmentShorthand: true
+            }
+        ],
         /**
          * 限制 jsx 层级
          */
@@ -121,11 +126,11 @@ module.exports = {
          */
         'react/jsx-no-target-blank': 'off',
         /**
-         * 禁止使用未定义的 jsx elemet
+         * 禁止使用未定义的组件
          */
         'react/jsx-no-undef': 'error',
         /**
-         * 禁止使用 pascal 写法的 jsx，比如 <TEST_COMPONENT>
+         * 禁止使用 pascal 格式的组件
          */
         'react/jsx-pascal-case': 'error',
         /**
@@ -137,15 +142,15 @@ module.exports = {
          */
         'react/jsx-sort-default-props': 'off',
         /**
-         * props 必须排好序
+         * props 必须按字母排序
          */
         'react/jsx-sort-props': 'off',
         /**
-         * jsx 文件必须导入 React
+         * 修复 React 被误报为未使用的变量的问题（仅在开启 no-unused-vars 时有效）
          */
         'react/jsx-uses-react': 'error',
         /**
-         * 定义了的 jsx element 必须使用
+         * 已定义的组件必须使用
          */
         'react/jsx-uses-vars': 'error',
         /**
@@ -240,7 +245,7 @@ module.exports = {
          */
         'react/no-unused-prop-types': 'off',
         /**
-         * 定义过的 state 必须使用
+         * 已定义的 state 必须使用
          * @reason 没有官方文档，并且存在很多 bug：https://github.com/yannickcr/eslint-plugin-react/search?q=no-unused-state&type=Issues&utf8=%E2%9C%93
          */
         'react/no-unused-state': 'off',

@@ -51,7 +51,7 @@ module.exports = {
          */
         '@typescript-eslint/ban-ts-ignore': 'off',
         /**
-         * 禁止使用特定的类型
+         * 禁止使用指定的类型
          */
         '@typescript-eslint/ban-types': 'off',
         /**
@@ -230,7 +230,7 @@ module.exports = {
          */
         '@typescript-eslint/no-unnecessary-type-assertion': 'off',
         /**
-         * 禁止出现未使用的变量
+         * 已定义的变量必须使用
          * @reason 编译阶段检查就足够了
          */
         '@typescript-eslint/no-unused-vars': 'off',

@@ -1,7 +1,7 @@
 module.exports = {
     rules: {
         /**
-         * 定义过的变量必须使用
+         * 已定义的变量必须使用
          */
         'no-unused-vars': [
             'error',

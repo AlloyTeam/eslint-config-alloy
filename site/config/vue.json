@@ -51,7 +51,7 @@
     "vue/jsx-uses-vars": {
         "name": "vue/jsx-uses-vars",
         "value": "error",
-        "description": "定义了的 jsx element 必须使用",
+        "description": "已定义的 jsx element 必须使用",
         "category": "",
         "badExample": "",
         "goodExample": ""
@@ -123,11 +123,10 @@
     "vue/no-restricted-syntax": {
         "name": "vue/no-restricted-syntax",
         "value": "off",
-        "description": "禁止使用特定的语法",
+        "description": "禁止使用指定的语法",
         "category": "",
         "badExample": "",
-        "goodExample": "",
-        "reason": "它用于限制某个具体的语法不能使用"
+        "goodExample": ""
     },
     "vue/no-shared-component-data": {
         "name": "vue/no-shared-component-data",
@@ -180,7 +179,7 @@
     "vue/no-unused-vars": {
         "name": "vue/no-unused-vars",
         "value": "error",
-        "description": "禁止模版中定义的变量未使用",
+        "description": "模版中已定义的变量必须使用",
         "category": "",
         "badExample": "",
         "goodExample": ""

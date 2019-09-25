@@ -249,7 +249,7 @@ module.exports = {
          */
         'no-case-declarations': 'error',
         /**
-         * 禁止对定义过的 class 重新赋值
+         * 禁止对已定义的 class 重新赋值
          */
         'no-class-assign': 'error',
         /**
@@ -444,7 +444,7 @@ module.exports = {
          */
         'no-iterator': 'error',
         /**
-         * 禁止 label 名称与定义过的变量重复
+         * 禁止 label 名称与已定义的变量重复
          * @reason 已经禁止使用 label 了
          */
         'no-label-var': 'off',
@@ -593,7 +593,7 @@ module.exports = {
          */
         'no-restricted-properties': 'off',
         /**
-         * 禁止使用特定的语法
+         * 禁止使用指定的语法
          */
         'no-restricted-syntax': 'off',
         /**
@@ -622,7 +622,7 @@ module.exports = {
          */
         'no-sequences': 'error',
         /**
-         * 禁止变量名与上层作用域内的定义过的变量重复
+         * 禁止变量名与上层作用域内的已定义的变量重复
          * @reason 很多时候函数的形参和传参是同名的
          */
         'no-shadow': 'off',
@@ -709,7 +709,7 @@ module.exports = {
          */
         'no-unused-labels': 'off',
         /**
-         * 定义过的变量必须使用
+         * 已定义的变量必须使用
          */
         'no-unused-vars': [
             'error',

@@ -383,7 +383,7 @@
     "no-class-assign": {
         "name": "no-class-assign",
         "value": "error",
-        "description": "禁止对定义过的 class 重新赋值",
+        "description": "禁止对已定义的 class 重新赋值",
         "category": "",
         "badExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>\n<mark class=\"eslint-error\" data-tip=\"&apos;Foo&apos; is a class.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(no-class-assign)&lt;/span&gt;\">Foo</mark> <span class=\"token operator\">=</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>",
         "goodExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>"
@@ -722,7 +722,7 @@
     "no-label-var": {
         "name": "no-label-var",
         "value": "off",
-        "description": "禁止 label 名称与定义过的变量重复",
+        "description": "禁止 label 名称与已定义的变量重复",
         "category": "",
         "badExample": "",
         "goodExample": "",
@@ -1007,7 +1007,7 @@
     "no-restricted-syntax": {
         "name": "no-restricted-syntax",
         "value": "off",
-        "description": "禁止使用特定的语法",
+        "description": "禁止使用指定的语法",
         "category": "",
         "badExample": "",
         "goodExample": ""
@@ -1064,7 +1064,7 @@
     "no-shadow": {
         "name": "no-shadow",
         "value": "off",
-        "description": "禁止变量名与上层作用域内的定义过的变量重复",
+        "description": "禁止变量名与上层作用域内的已定义的变量重复",
         "category": "",
         "badExample": "",
         "goodExample": "",
@@ -1226,7 +1226,7 @@
             "error",
             { "vars": "all", "args": "none", "ignoreRestSiblings": false, "caughtErrors": "none" }
         ],
-        "description": "定义过的变量必须使用",
+        "description": "已定义的变量必须使用",
         "category": "",
         "badExample": "<span class=\"token keyword\">let</span> <mark class=\"eslint-error\" data-tip=\"&apos;foo&apos; is assigned a value but never used.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(no-unused-vars)&lt;/span&gt;\">foo</mark> <span class=\"token operator\">=</span> <span class=\"token number\">1</span><span class=\"token punctuation\">;</span>\nfoo <span class=\"token operator\">=</span> <span class=\"token number\">2</span><span class=\"token punctuation\">;</span>\n\n<span class=\"token keyword\">function</span> <span class=\"token function\"><mark class=\"eslint-error\" data-tip=\"&apos;bar&apos; is defined but never used.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(no-unused-vars)&lt;/span&gt;\">bar</mark></span><span class=\"token punctuation\">(</span><span class=\"token parameter\">baz</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>\n\n<span class=\"token keyword\">const</span> <span class=\"token punctuation\">{</span> <mark class=\"eslint-error\" data-tip=\"&apos;baz&apos; is assigned a value but never used.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(no-unused-vars)&lt;/span&gt;\">baz</mark><span class=\"token punctuation\">,</span> <span class=\"token operator\">...</span><mark class=\"eslint-error\" data-tip=\"&apos;rest&apos; is assigned a value but never used.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(no-unused-vars)&lt;/span&gt;\">rest</mark> <span class=\"token punctuation\">}</span> <span class=\"token operator\">=</span> data<span class=\"token punctuation\">;</span>",
         "goodExample": "<span class=\"token keyword\">let</span> foo <span class=\"token operator\">=</span> <span class=\"token number\">1</span><span class=\"token punctuation\">;</span>\nconsole<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>foo<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n\n<span class=\"token keyword\">function</span> <span class=\"token function\">bar</span><span class=\"token punctuation\">(</span><span class=\"token parameter\">baz</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>\n<span class=\"token function\">bar</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n\n<span class=\"token keyword\">const</span> <span class=\"token punctuation\">{</span> baz<span class=\"token punctuation\">,</span> <span class=\"token operator\">...</span>rest <span class=\"token punctuation\">}</span> <span class=\"token operator\">=</span> data<span class=\"token punctuation\">;</span>\nconsole<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>baz<span class=\"token punctuation\">,</span> rest<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n\n<span class=\"token keyword\">try</span> <span class=\"token punctuation\">{</span>\n<span class=\"token punctuation\">}</span> <span class=\"token keyword\">catch</span> <span class=\"token punctuation\">(</span>e<span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>"

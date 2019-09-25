@@ -38,7 +38,7 @@
     "@typescript-eslint/ban-types": {
         "name": "@typescript-eslint/ban-types",
         "value": "off",
-        "description": "禁止使用特定的类型",
+        "description": "禁止使用指定的类型",
         "category": "",
         "badExample": "",
         "goodExample": ""
@@ -308,7 +308,7 @@
     "@typescript-eslint/no-unused-vars": {
         "name": "@typescript-eslint/no-unused-vars",
         "value": "off",
-        "description": "禁止出现未使用的变量",
+        "description": "已定义的变量必须使用",
         "category": "",
         "badExample": "",
         "goodExample": "",
