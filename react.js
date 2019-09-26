@@ -154,15 +154,15 @@ module.exports = {
          */
         'react/jsx-uses-vars': 'error',
         /**
-         * 禁止在 setState 时使用 this.state
+         * 禁止在 setState 中使用 this.state
          */
         'react/no-access-state-in-setstate': 'off',
         /**
-         * 禁止使用数组的 index 作为 key
+         * 禁止使用数组的索引作为 key
          */
         'react/no-array-index-key': 'off',
         /**
-         * 禁止使用 children 做 props
+         * 禁止将 children 作为一个 prop
          */
         'react/no-children-prop': 'error',
         /**
@@ -178,12 +178,12 @@ module.exports = {
          */
         'react/no-deprecated': 'error',
         /**
-         * 禁止在 componentDidMount 里面使用 setState
-         * @reason 同构应用需要在 didMount 里写 setState
+         * 禁止在 componentDidMount 里使用 setState
+         * @reason 同构应用需要在 didMount 里使用 setState
          */
         'react/no-did-mount-set-state': 'off',
         /**
-         * 禁止在 componentDidUpdate 里面使用 setState
+         * 禁止在 componentDidUpdate 里使用 setState
          */
         'react/no-did-update-set-state': 'error',
         /**
@@ -196,6 +196,7 @@ module.exports = {
         'react/no-find-dom-node': 'error',
         /**
          * 禁止使用 isMounted
+         * @reason 它是已废弃的语法
          */
         'react/no-is-mounted': 'error',
         /**

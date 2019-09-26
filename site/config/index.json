@@ -806,7 +806,7 @@
     "no-negated-condition": {
         "name": "no-negated-condition",
         "value": "off",
-        "description": "禁止 if 里面有否定的表达式",
+        "description": "禁止 if 里有否定的表达式",
         "category": "",
         "badExample": "",
         "goodExample": "",
