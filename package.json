@@ -60,7 +60,7 @@
     "dependencies": {},
     "devDependencies": {
         "@types/doctrine": "0.0.3",
-        "@types/eslint": "^4.16.8",
+        "@types/eslint": "^6.1.2",
         "@types/node": "^12.0.2",
         "@types/prettier": "^1.16.4",
         "@types/react": "^16.8.18",
