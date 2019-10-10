@@ -205,7 +205,7 @@ module.exports = {
          */
         'react/no-multi-comp': 'off',
         /**
-         * 禁止在 PureComponent 中使用 shouldComponentUpdate
+         * 禁止在 React.PureComponent 中使用 shouldComponentUpdate
          */
         'react/no-redundant-should-component-update': 'error',
         /**
