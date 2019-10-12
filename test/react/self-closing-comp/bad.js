@@ -1,0 +1,2 @@
+<Foo></Foo>;
+<div></div>;

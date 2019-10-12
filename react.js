@@ -225,7 +225,7 @@ module.exports = {
          */
         'react/no-this-in-sfc': 'error',
         /**
-         * 禁止拼写错误
+         * 禁止组件的属性或生命周期大小写错误
          */
         'react/no-typos': 'error',
         /**
@@ -239,7 +239,12 @@ module.exports = {
         /**
          * 禁止使用不安全的生命周期方法 componentWillMount, componentWillReceiveProps, componentWillUpdate
          */
-        'react/no-unsafe': 'error',
+        'react/no-unsafe': [
+            'error',
+            {
+                checkAliases: true
+            }
+        ],
         /**
          * 禁止出现未使用的 propTypes
          * @reason 不强制要求写 propTypes
@@ -252,8 +257,9 @@ module.exports = {
         'react/no-unused-state': 'off',
         /**
          * 禁止在 componentWillUpdate 中使用 setState
+         * @reason 已经禁止使用 componentWillUpdate 了
          */
-        'react/no-will-update-set-state': 'error',
+        'react/no-will-update-set-state': 'off',
         /**
          * 必须使用 Class 的形式创建组件
          */
@@ -263,7 +269,7 @@ module.exports = {
          */
         'react/prefer-read-only-props': 'off',
         /**
-         * 必须使用 pure function
+         * 必须使用函数式组件
          */
         'react/prefer-stateless-function': 'off',
         /**
@@ -292,13 +298,14 @@ module.exports = {
         /**
          * 组件内没有 children 时，必须使用自闭和写法
          */
-        'react/self-closing-comp': 'off',
+        'react/self-closing-comp': 'error',
         /**
          * 组件内方法必须按照一定规则排序
          */
         'react/sort-comp': 'error',
         /**
-         * propTypes 的熟悉必须按照字母排序
+         * propTypes 的属性必须按照字母排序
+         * @reason 不强制要求写 propTypes
          */
         'react/sort-prop-types': 'off',
         /**
@@ -314,7 +321,7 @@ module.exports = {
          */
         'react/style-prop-object': 'error',
         /**
-         * HTML 中的自闭和标签禁止有 children
+         * img, br 标签中禁止有 children
          */
         'react/void-dom-elements-no-children': 'error'
     }

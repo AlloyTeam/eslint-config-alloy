@@ -19,6 +19,7 @@ test/index/no-labels/bad.js
 test/react/jsx-fragments/bad.js
 test/index/no-sequences/bad.js
 test/index/no-useless-rename/bad.js
+test/react/self-closing-comp/bad.js
 
 ## Built-files
 .cache
