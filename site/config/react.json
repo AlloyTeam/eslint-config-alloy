@@ -192,7 +192,7 @@
     "react/jsx-pascal-case": {
         "name": "react/jsx-pascal-case",
         "value": "error",
-        "description": "禁止使用 pascal 格式的组件",
+        "description": "禁止使用 pascal 风格的组件",
         "category": "",
         "badExample": "<span class=\"token tag\"><mark class=\"eslint-error\" data-tip=\"Imported JSX component FOO must be in PascalCase&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(react/jsx-pascal-case)&lt;/span&gt;\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">FOO</span></span> <span class=\"token punctuation\">/></span></mark></span><span class=\"token punctuation\">;</span>\n<span class=\"token tag\"><mark class=\"eslint-error\" data-tip=\"Imported JSX component FOO_BAR must be in PascalCase&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(react/jsx-pascal-case)&lt;/span&gt;\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">FOO_BAR</span></span> <span class=\"token punctuation\">/></span></mark></span><span class=\"token punctuation\">;</span>",
         "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">Foo</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">FooBar</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>"

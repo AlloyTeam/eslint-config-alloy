@@ -64,9 +64,9 @@ module.exports = {
          */
         'vue/comment-directive': 'error',
         /**
-         * 对象的最后一个属性末尾必须有逗号
+         * 限制组件名的风格
          */
-        'vue/comma-dangle': 'off',
+        'vue/component-name-in-template-casing': 'off',
         /**
          * 必须使用 === 或 !==，禁止使用 == 或 !=
          */

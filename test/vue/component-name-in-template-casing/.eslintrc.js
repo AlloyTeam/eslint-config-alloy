@@ -1,8 +1,8 @@
 module.exports = {
     rules: {
         /**
-         * 对象的最后一个属性末尾必须有逗号
+         * 限制组件名的风格
          */
-        'vue/comma-dangle': 'off'
+        'vue/component-name-in-template-casing': 'off'
     }
 };
