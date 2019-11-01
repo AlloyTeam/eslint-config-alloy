@@ -35,7 +35,7 @@ const badReport = cli.executeOnFiles([
 ]);
 
 // 忽略这些规则的报错信息
-const badWhitelist = ['react/jsx-uses-react', 'react/jsx-uses-vars'];
+const badWhitelist = ['react/jsx-uses-react', 'react/jsx-uses-vars', 'vue/jsx-uses-vars'];
 
 badReport.results.forEach((badReportForOneFile) => {
     const { errorCount, filePath, messages } = badReportForOneFile;

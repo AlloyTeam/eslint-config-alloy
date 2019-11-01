@@ -72,7 +72,7 @@ module.exports = {
          */
         'vue/eqeqeq': ['error', 'always'],
         /**
-         * 已定义的 jsx element 必须使用
+         * 修复 no-unused-vars 不检查 jsx 的问题
          */
         'vue/jsx-uses-vars': 'error',
         /**
@@ -92,13 +92,19 @@ module.exports = {
          */
         'vue/no-boolean-default': 'off',
         /**
-         * 禁止重复的二级键名
+         * 禁止重复的键名
          */
-        'vue/no-dupe-keys': 'off',
+        'vue/no-dupe-keys': 'error',
         /**
          * 禁止出现重复的属性
          */
-        'vue/no-duplicate-attributes': 'error',
+        'vue/no-duplicate-attributes': [
+            'error',
+            {
+                allowCoexistClass: false,
+                allowCoexistStyle: false
+            }
+        ],
         /**
          * 禁止出现语法错误
          */
@@ -128,7 +134,7 @@ module.exports = {
          */
         'vue/no-template-shadow': 'off',
         /**
-         * 禁止在 <textarea> 中出现 {{message}}
+         * 禁止在 <textarea> 中出现模版语法 {{message}}
          */
         'vue/no-textarea-mustache': 'error',
         /**

@@ -1,8 +1,8 @@
 module.exports = {
     rules: {
         /**
-         * 禁止重复的二级键名
+         * 禁止重复的键名
          */
-        'vue/no-dupe-keys': 'off'
+        'vue/no-dupe-keys': 'error'
     }
 };

@@ -232,9 +232,9 @@
     "react/jsx-uses-vars": {
         "name": "react/jsx-uses-vars",
         "value": "error",
-        "description": "已定义的组件必须使用",
+        "description": "修复 no-unused-vars 不检查 jsx 的问题",
         "category": "",
-        "badExample": "<span class=\"token comment\">/* eslint no-unused-vars: \"error\" */</span>\n<span class=\"token keyword\">import</span> <mark class=\"eslint-error\" data-tip=\"&apos;Foo&apos; is defined but never used.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(no-unused-vars)&lt;/span&gt;\">Foo</mark> <span class=\"token keyword\">from</span> <span class=\"token string\">'./Foo'</span><span class=\"token punctuation\">;</span>",
+        "badExample": "<span class=\"token comment\">/* eslint no-unused-vars: \"error\", \"react/jsx-uses-vars\": \"off\" */</span>\n<span class=\"token keyword\">import</span> <mark class=\"eslint-error\" data-tip=\"&apos;Foo&apos; is defined but never used.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(no-unused-vars)&lt;/span&gt;\">Foo</mark> <span class=\"token keyword\">from</span> <span class=\"token string\">'./Foo'</span><span class=\"token punctuation\">;</span>\n\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">Foo</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>",
         "goodExample": "<span class=\"token comment\">/* eslint no-unused-vars: \"error\" */</span>\n<span class=\"token keyword\">import</span> Foo <span class=\"token keyword\">from</span> <span class=\"token string\">'./Foo'</span><span class=\"token punctuation\">;</span>\n\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">Foo</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>"
     },
     "react/no-access-state-in-setstate": {

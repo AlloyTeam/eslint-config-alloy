@@ -150,7 +150,7 @@ module.exports = {
          */
         'react/jsx-uses-react': 'error',
         /**
-         * 已定义的组件必须使用
+         * 修复 no-unused-vars 不检查 jsx 的问题
          */
         'react/jsx-uses-vars': 'error',
         /**

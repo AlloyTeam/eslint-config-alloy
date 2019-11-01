@@ -1,7 +1,7 @@
 module.exports = {
     rules: {
         /**
-         * 已定义的 jsx element 必须使用
+         * 修复 no-unused-vars 不检查 jsx 的问题
          */
         'vue/jsx-uses-vars': 'error'
     }
