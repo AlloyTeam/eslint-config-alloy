@@ -75,7 +75,7 @@
         "eslint": "^6.2.2",
         "eslint-config-prettier": "^6.1.0",
         "eslint-plugin-react": "^7.14.2",
-        "eslint-plugin-vue": "^5.2.3",
+        "eslint-plugin-vue": "^6.0.0",
         "husky": "^3.0.4",
         "insert-tag": "^0.1.2",
         "mobi-plugin-color": "^1.0.0",
