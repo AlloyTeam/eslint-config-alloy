@@ -10,13 +10,13 @@
  *     Swan <noreply@github.com>
  *
  * 依赖版本：
- *     eslint ^6.2.2
- *     babel-eslint ^10.0.1
- *     eslint-plugin-react ^7.14.2
- *     vue-eslint-parser ^5.0.0
- *     eslint-plugin-vue ^5.2.3
- *     @typescript-eslint/parser ^2.0.0
- *     @typescript-eslint/eslint-plugin ^2.0.0
+ *     eslint ^6.6.0
+ *     babel-eslint ^10.0.3
+ *     eslint-plugin-react ^7.16.0
+ *     vue-eslint-parser ^6.0.4
+ *     eslint-plugin-vue ^6.0.0
+ *     @typescript-eslint/parser ^2.6.1
+ *     @typescript-eslint/eslint-plugin ^2.6.1
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  *
@@ -28,7 +28,7 @@ module.exports = {
     rules: {
         /**
          * 布尔值类型的 propTypes 的 name 必须为 is 或 has 开头
-         * @reason 不强制要求写 propTypes
+         * @reason 类型相关的约束交给 TypeScript
          */
         'react/boolean-prop-naming': 'off',
         /**
@@ -37,7 +37,7 @@ module.exports = {
         'react/button-has-type': 'off',
         /**
          * 一个 defaultProps 必须有对应的 propTypes
-         * @reason 不强制要求写 propTypes
+         * @reason 类型相关的约束交给 TypeScript
          */
         'react/default-props-match-prop-types': 'off',
         /**
@@ -63,12 +63,12 @@ module.exports = {
         'react/forbid-elements': 'off',
         /**
          * 禁止使用另一个组件的 propTypes
-         * @reason 不强制要求写 propTypes
+         * @reason 类型相关的约束交给 TypeScript
          */
         'react/forbid-foreign-prop-types': 'off',
         /**
          * 禁止使用 PropTypes.any PropTypes.array 和 PropTypes.object
-         * @reason 不强制要求写 propTypes
+         * @reason 类型相关的约束交给 TypeScript
          */
         'react/forbid-prop-types': 'off',
         /**
@@ -247,7 +247,7 @@ module.exports = {
         ],
         /**
          * 禁止出现未使用的 propTypes
-         * @reason 不强制要求写 propTypes
+         * @reason 类型相关的约束交给 TypeScript
          */
         'react/no-unused-prop-types': 'off',
         /**
@@ -274,7 +274,7 @@ module.exports = {
         'react/prefer-stateless-function': 'off',
         /**
          * 组件必须写 propTypes
-         * @reason 不强制要求写 propTypes
+         * @reason 类型相关的约束交给 TypeScript
          */
         'react/prop-types': 'off',
         /**
@@ -284,7 +284,7 @@ module.exports = {
         'react/react-in-jsx-scope': 'off',
         /**
          * 非 required 的 prop 必须有 defaultProps
-         * @reason 不强制要求写 propTypes
+         * @reason 类型相关的约束交给 TypeScript
          */
         'react/require-default-props': 'off',
         /**
@@ -305,7 +305,7 @@ module.exports = {
         'react/sort-comp': 'error',
         /**
          * propTypes 的属性必须按照字母排序
-         * @reason 不强制要求写 propTypes
+         * @reason 类型相关的约束交给 TypeScript
          */
         'react/sort-prop-types': 'off',
         /**

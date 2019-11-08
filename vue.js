@@ -10,13 +10,13 @@
  *     Swan <noreply@github.com>
  *
  * 依赖版本：
- *     eslint ^6.2.2
- *     babel-eslint ^10.0.1
- *     eslint-plugin-react ^7.14.2
- *     vue-eslint-parser ^5.0.0
- *     eslint-plugin-vue ^5.2.3
- *     @typescript-eslint/parser ^2.0.0
- *     @typescript-eslint/eslint-plugin ^2.0.0
+ *     eslint ^6.6.0
+ *     babel-eslint ^10.0.3
+ *     eslint-plugin-react ^7.16.0
+ *     vue-eslint-parser ^6.0.4
+ *     eslint-plugin-vue ^6.0.0
+ *     @typescript-eslint/parser ^2.6.1
+ *     @typescript-eslint/eslint-plugin ^2.6.1
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  *
@@ -89,8 +89,13 @@ module.exports = {
         'vue/no-async-in-computed-properties': 'error',
         /**
          * 禁止给布尔值 props 添加默认值
+         * @reason 类型相关的约束交给 TypeScript
          */
         'vue/no-boolean-default': 'off',
+        /**
+         * 禁用已废弃的 scope 属性
+         */
+        'vue/no-deprecated-scope-attribute': 'error',
         /**
          * 禁止重复的键名
          */
@@ -105,6 +110,10 @@ module.exports = {
                 allowCoexistStyle: false
             }
         ],
+        /**
+         * 禁止解构赋值中出现空 {} 或 []
+         */
+        'vue/no-empty-pattern': 'error',
         /**
          * 禁止出现语法错误
          */
@@ -162,23 +171,26 @@ module.exports = {
          */
         'vue/prop-name-casing': 'off',
         /**
-         * <component> 必须有 v-bind:is
+         * <component> 必须有绑定的组件
          */
         'vue/require-component-is': 'error',
         /**
          * props 如果不是 required 的字段，必须有默认值
+         * @reason 类型相关的约束交给 TypeScript
          */
-        'vue/require-default-prop': 'error',
+        'vue/require-default-prop': 'off',
         /**
-         * 禁止手动 export default
+         * 必须直接使用 export default 导出组件
          */
-        'vue/require-direct-export': 'error',
+        'vue/require-direct-export': 'off',
         /**
-         * props 的取值必须是构造函数
+         * props 的取值必须是基本类型的构造函数，而不是字符串
+         * @reason 类型相关的约束交给 TypeScript
          */
-        'vue/require-prop-type-constructor': 'error',
+        'vue/require-prop-type-constructor': 'off',
         /**
          * prop 必须有类型限制
+         * @reason 类型相关的约束交给 TypeScript
          */
         'vue/require-prop-types': 'off',
         /**
@@ -191,6 +203,7 @@ module.exports = {
         'vue/require-v-for-key': 'error',
         /**
          * prop 的默认值必须匹配它的类型
+         * @reason 类型相关的约束交给 TypeScript
          */
         'vue/require-valid-default-prop': 'off',
         /**
@@ -206,17 +219,21 @@ module.exports = {
          */
         'vue/use-v-on-exact': 'error',
         /**
-         * 限制 v-bind 的风格
+         * 使用缩写的 : 而不是 v-bind:
          */
-        'vue/v-bind-style': 'off',
+        'vue/v-bind-style': 'error',
         /**
          * 禁止在 v-on 的值中调用函数
          */
         'vue/v-on-function-call': 'error',
         /**
-         * 限制 v-on 的风格
+         * 使用缩写的 @click 而不是 v-on:click
          */
-        'vue/v-on-style': 'off',
+        'vue/v-on-style': 'error',
+        /**
+         * 使用缩写的 #one 而不是 v-slot:one
+         */
+        'vue/v-slot-style': 'off',
         /**
          * template 的根节点必须合法
          */
@@ -269,6 +286,10 @@ module.exports = {
          * v-show 指令必须合法
          */
         'vue/valid-v-show': 'error',
+        /**
+         * v-slot 指令必须合法
+         */
+        'vue/valid-v-slot': 'error',
         /**
          * v-text 指令必须合法
          */

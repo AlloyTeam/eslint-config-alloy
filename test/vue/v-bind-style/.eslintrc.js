@@ -1,8 +1,8 @@
 module.exports = {
     rules: {
         /**
-         * 限制 v-bind 的风格
+         * 使用缩写的 : 而不是 v-bind:
          */
-        'vue/v-bind-style': 'off'
+        'vue/v-bind-style': 'error'
     }
 };

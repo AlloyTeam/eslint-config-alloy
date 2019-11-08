@@ -10,13 +10,13 @@
  *     Swan <noreply@github.com>
  *
  * 依赖版本：
- *     eslint ^6.2.2
- *     babel-eslint ^10.0.1
- *     eslint-plugin-react ^7.14.2
- *     vue-eslint-parser ^5.0.0
- *     eslint-plugin-vue ^5.2.3
- *     @typescript-eslint/parser ^2.0.0
- *     @typescript-eslint/eslint-plugin ^2.0.0
+ *     eslint ^6.6.0
+ *     babel-eslint ^10.0.3
+ *     eslint-plugin-react ^7.16.0
+ *     vue-eslint-parser ^6.0.4
+ *     eslint-plugin-vue ^6.0.0
+ *     @typescript-eslint/parser ^2.6.1
+ *     @typescript-eslint/eslint-plugin ^2.6.1
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  *
@@ -89,6 +89,10 @@ module.exports = {
          * switch 语句必须有 default
          */
         'default-case': 'off',
+        /**
+         * 有默认值的参数必须放在函数参数的末尾
+         */
+        'default-param-last': 'off',
         /**
          * 禁止使用 foo['bar']，必须写成 foo.bar
          * @reason 当需要写一系列属性的时候，可以更统一
@@ -408,6 +412,10 @@ module.exports = {
          * 禁止在 setTimeout 或 setInterval 中传入字符串
          */
         'no-implied-eval': 'error',
+        /**
+         * 禁止对导入的模块进行赋值
+         */
+        'no-import-assign': 'error',
         /**
          * 禁止在代码后添加单行注释
          */
@@ -824,6 +832,10 @@ module.exports = {
          * Promise 的 reject 中必须传入 Error 对象，而不是字面量
          */
         'prefer-promise-reject-errors': 'error',
+        /**
+         * 优先使用正则表达式字面量，而不是 RegExp 构造函数
+         */
+        'prefer-regex-literals': 'error',
         /**
          * 必须使用 ...args 而不是 arguments
          */

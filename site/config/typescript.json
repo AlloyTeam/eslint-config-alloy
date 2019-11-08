@@ -287,6 +287,15 @@
         "badExample": "",
         "goodExample": ""
     },
+    "@typescript-eslint/no-unnecessary-condition": {
+        "name": "@typescript-eslint/no-unnecessary-condition",
+        "value": "off",
+        "description": "条件表达式禁止是永远为真（或永远为假）的",
+        "category": "",
+        "badExample": "",
+        "goodExample": "",
+        "reason": "统一关闭 requires type information 的规则"
+    },
     "@typescript-eslint/no-unnecessary-qualifier": {
         "name": "@typescript-eslint/no-unnecessary-qualifier",
         "value": "off",

@@ -25,9 +25,7 @@ export function parseDescription(str: string) {
                     return `<code>${codes}</code>`;
                 }
                 if (matchSpaces[2].startsWith('http')) {
-                    return `${matchSpaces[1]}<a href="${matchSpaces[2]}" target="_blank">${
-                        matchSpaces[2]
-                    }</a>${matchSpaces[3]}`;
+                    return `${matchSpaces[1]}<a href="${matchSpaces[2]}" target="_blank">${matchSpaces[2]}</a>${matchSpaces[3]}`;
                 }
                 return `${matchSpaces[1]}<code>${matchSpaces[2]}</code>${matchSpaces[3]}`;
             })

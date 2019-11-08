@@ -1,8 +1,8 @@
 module.exports = {
     rules: {
         /**
-         * 限制 v-on 的风格
+         * 使用缩写的 @click 而不是 v-on:click
          */
-        'vue/v-on-style': 'off'
+        'vue/v-on-style': 'error'
     }
 };

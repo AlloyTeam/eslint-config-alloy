@@ -10,13 +10,13 @@
  *     Swan <noreply@github.com>
  *
  * 依赖版本：
- *     eslint ^6.2.2
- *     babel-eslint ^10.0.1
- *     eslint-plugin-react ^7.14.2
- *     vue-eslint-parser ^5.0.0
- *     eslint-plugin-vue ^5.2.3
- *     @typescript-eslint/parser ^2.0.0
- *     @typescript-eslint/eslint-plugin ^2.0.0
+ *     eslint ^6.6.0
+ *     babel-eslint ^10.0.3
+ *     eslint-plugin-react ^7.16.0
+ *     vue-eslint-parser ^6.0.4
+ *     eslint-plugin-vue ^6.0.0
+ *     @typescript-eslint/parser ^2.6.1
+ *     @typescript-eslint/eslint-plugin ^2.6.1
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  *
@@ -27,6 +27,8 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     plugins: ['@typescript-eslint'],
     rules: {
+        // https://github.com/typescript-eslint/typescript-eslint/issues/491
+        'no-invalid-this': 'off',
         'no-magic-numbers': 'off',
         'no-unused-vars': 'off',
         'react/sort-comp': 'off',
@@ -219,6 +221,11 @@ module.exports = {
          * 禁止使用类型别名
          */
         '@typescript-eslint/no-type-alias': 'off',
+        /**
+         * 条件表达式禁止是永远为真（或永远为假）的
+         * @reason 统一关闭 requires type information 的规则
+         */
+        '@typescript-eslint/no-unnecessary-condition': 'off',
         /**
          * 在命名空间中，可以直接使用内部变量，不需要添加命名空间前缀
          * @reason 统一关闭 requires type information 的规则
