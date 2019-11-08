@@ -379,23 +379,6 @@ git push --follow-tags
 npm publish
 ```
 
-### TODOs
-
-如果对此项目感兴趣，欢迎从完成 test 下的示例开始入手，参与贡献！
-
-- [ ] 完成所有的 test/index 下的示例
-- [ ] 完成所有的 test/react 下的示例
-- [x] 完成所有的 test/typescript 下的示例
-- [x] 移植 bak/vue 的规则，完成 eslint-config-alloy/vue 的配置
-- [x] 实现 TypeScript React 配置
-- [ ] 实现 TypeScript Vue 配置
-- [x] 更新至新版 eslint 规则
-- [x] 更新至新版 react 规则
-- [x] 更新至新版 vue 规则
-- [x] 更新至新版 typescript 规则
-- [x] 添加 Greenkeeper 以保证依赖能够及时更新
-- [ ] 完成新版网站建设
-
 ## 参考
 
 - [Alloyteam Code Guide](http://alloyteam.github.io/CodeGuide)
