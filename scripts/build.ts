@@ -44,15 +44,12 @@ class Builder {
             path.resolve(__dirname, `../site/config/${this.namespace}.json`),
             prettier.format(
                 JSON.stringify(
-                    this.ruleList.reduce(
-                        (prev, rule) => {
-                            let newRule = { ...rule };
-                            delete newRule.comments;
-                            prev[newRule.name] = newRule;
-                            return prev;
-                        },
-                        {} as any
-                    )
+                    this.ruleList.reduce((prev, rule) => {
+                        let newRule = { ...rule };
+                        delete newRule.comments;
+                        prev[newRule.name] = newRule;
+                        return prev;
+                    }, {} as any)
                 ),
                 {
                     ...require('../prettier.config'),
