@@ -2,43 +2,79 @@
 
 [![Build Status](https://img.shields.io/travis/AlloyTeam/eslint-config-alloy.svg)](https://travis-ci.org/AlloyTeam/eslint-config-alloy) [![npm package](https://img.shields.io/npm/v/eslint-config-alloy.svg)](https://www.npmjs.org/package/eslint-config-alloy) [![npm downloads](http://img.shields.io/npm/dm/eslint-config-alloy.svg)](https://www.npmjs.org/package/eslint-config-alloy) [![Greenkeeper badge](https://badges.greenkeeper.io/AlloyTeam/eslint-config-alloy.svg)](https://greenkeeper.io/)
 
-AlloyTeam ESLint 规则不仅是一套科学的 ESLint 配置规范，而且也是你配置个性化 ESLint 规则的最佳参考。
+AlloyTeam ESLint 规则不仅是一套先进的 ESLint 配置规范，而且也是你配置个性化 ESLint 规则的最佳参考。
 
-此为 v3 版本，如需历史版本，请[点击这里](https://github.com/AlloyTeam/eslint-config-alloy/releases)。
+## 快速开始
 
-## 升级到 v3
+请根据你的项目使用的技术栈选择以下配置：
 
-- v3 版本去掉了所有样式相关的规则（比如缩进、分号等），这些规则应该交给更专业的 [Prettier](https://prettier.io/) 来处理
-- v3 版本需要组合使用各规则，比如 react 需要配置 `extends: ['alloy', 'alloy/react']`：
+- [标准规则](#标准规则)
+- [React](#react)
+- [Vue](#vue)
+- [TypeScript](#typescript)
+- [TypeScript React](#typescript-react)
 
-```diff
- module.exports = {
-     extends: [
--        'eslint-config-alloy/react',
-+        'alloy',
-+        'alloy/react',
-     ],
-     globals: {
+配置之间可以自由组合，如：
+
+```js
+module.exports = {
+    extends: [
+        'alloy',
+        'alloy/react',
+    ]
+}
 ```
 
-## 规则列表
+## 先进性
 
-| 名称 | 包含规则 | 解析器 |
-| --- | --- | --- |
-| [标准规则](#标准规则) | [ESLint 规则][] | [babel-eslint][] |
-| [React](#react) | ESLint 规则、[eslint-plugin-react][] | babel-eslint |
-| [Vue](#vue) | ESLint 规则、[eslint-plugin-vue][] | [vue-eslint-parser][] |
-| [TypeScript](#typescript) | ESLint 规则、[@typescript-eslint][] |[@typescript-eslint/parser][] |
-| [TypeScript React](#typescript-react) | ESLint 规则、@typescript-eslint、eslint-plugin-react | @typescript-eslint/parser |
-| TypeScript Vue（开发中） | | |
+AlloyTeam ESLint 规则的先进性体现在以下三个方面：
 
-[babel-eslint]: https://github.com/babel/babel-eslint
-[vue-eslint-parser]: https://github.com/mysticatea/vue-eslint-parser
-[@typescript-eslint/parser]: https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/parser
-[ESLint 规则]: https://eslint.org/docs/rules/
-[eslint-plugin-react]: https://github.com/yannickcr/eslint-plugin-react
-[eslint-plugin-vue]: https://eslint.vuejs.org/rules/
-[@typescript-eslint]: https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin#supported-rules
+- 始终保持最新版本的 ESLint
+- 覆盖率 100% 的测试和文档
+- 高度的自动化
+
+### 始终保持最新版本的 ESLint
+
+AlloyTeam ESLint 规则始终保持最新版本的 ESLint 版本，包括解析器：
+
+- [babel-eslint](https://github.com/babel/babel-eslint)
+- [vue-eslint-parser](https://github.com/mysticatea/vue-eslint-parser)
+- [@typescript-eslint/parser](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/parser)
+
+以及规则：
+
+- [标准规则](https://eslint.org/docs/rules/)
+- [eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react)
+- [eslint-plugin-vue](https://eslint.vuejs.org/rules/)
+- [@typescript-eslint/eslint-plugin](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin#supported-rules)
+
+### 覆盖率 100% 的测试和文档
+
+AlloyTeam ESLint 规则奉行「测试即文档」，每个配置不仅配有一句话注释以及对应的错误示例和正确示例，而且还更进一步，将这些示例代码作为测试代码运行，保证了报错项与配置一一匹配。
+
+- 所有 ESLint 配置均在 `test` 目录下
+- 每一项配置存放在对应的目录下，如 `test/react/jsx-key/.eslintrc.js` 描述了规则 `react/jsx-key`
+- 每一条配置都有一句话注释说明此配置的用途
+- 对于有争议的配置，在注释中通过 `@reason` 说明了这么配置的原因
+- 如果配置开启了，则必须有对应的示例，包括 `bad.js` 和 `good.js`
+- 每个示例都会在真实的 ESLint 脚本中运行，以保证每次更新都向前兼容
+- 由于配置和示例在一个目录下，故编辑器中可以直接看到错误信息
+- 将测试中的配置、注释和示例输出为 html，生成[网站](https://alloyteam.github.io/eslint-config-alloy/)
+
+### 高度的自动化
+
+> 无情的推动自动化
+
+- 由 `scripts/build.ts` 脚本将 `test` 目录下分散的配置生成整体的配置，并且生成网站中需要用到的 `site/config`
+- 运行测试脚本 `test/index.ts` 会检查每个示例是否按照要求报错
+- 运行 `scripts/rulesCoverage.ts` 保证当前配置覆盖了最新的 ESLint 规则，即：
+    - 不包含被标记为 `deprecated` 的规则
+    - 不包含 [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier) 的规则（样式相关的规则交给更专业的 [Prettier](https://prettier.io/) 处理）
+    - 包含所有其余可用的规则
+- 通过 Prettier 保证代码样式的一致性
+- 使用 travis-ci 保证主干通过以上测试
+- 使用 travis-ci 自动构建并部署[网站](https://alloyteam.github.io/eslint-config-alloy/)
+- 使用 greenkeeper 保证及时更新版本
 
 ## 配置原则
 
@@ -48,15 +84,7 @@ AlloyTeam ESLint 规则不仅是一套科学的 ESLint 配置规范，而且也�
 2. 配置不应该依赖于某个具体项目，而应该全局合理
 3. 帮助保持团队的代码风格统一，而不是限制开发体验
 
-## 配置解读
-
-ESLint 的配置多达几百条，逐个查阅是一项非常繁重的工作，我们为了简化个性化配置的成本，针对每一条配置都有一句话的注释，以及对应的错误示例和正确示例。这样不仅方便了我们自己查阅某项配置的意义和原因，也使大家更容易配置出自己心目中的规则：
-
-- 每一条配置都有一句话注释说明此配置的用途
-- 每个开启的配置都有对应的错误示例和正确示例
-- 每个示例都会在真实的 ESLint 脚本中运行，以保证报错项与配置一一匹配
-- 对于有争议的配置，都在注释中说明了为什么要这么配置的原因
-- 样式相关的规则交给更专业的 [Prettier](https://prettier.io/) 处理
+当然，也欢迎大家[提出不同的意见](https://github.com/AlloyTeam/eslint-config-alloy/issues/new)。
 
 ## 使用方法
 
@@ -349,17 +377,6 @@ module.exports = {
 npm test
 ```
 
-## Contributing
-
-为了实现高度自动化，此项目的整体架构如下：
-
-- 所有 ESLint 配置均在 `test` 目录下
-- 每一项配置存放在对应的目录下，如 `test/react/jsx-key/.eslintrc.js` 描述了规则 `react/jsx-key`
-- 如果配置开启了，则需要有对应的示例，包括 `bad.js` 和 `good.js`
-- 由于配置和示例在一个目录下，故编辑器中可以直接看到错误信息
-- 由 `scripts/build.ts` 脚本将 `test` 目录下分散的配置生成整体的配置
-- 运行测试脚本 `test/index.ts` 会检查每个示例是否按照要求报错
-
 ### 常用命令
 
 ```bash
@@ -373,6 +390,8 @@ npm test
 npm run eslint:fix
 # 自动修复格式错误
 npm run prettier:fix
+# 检查当前是否覆盖了所有的规则
+npm run test:rulesCoverage
 # 发布新版本
 npm version <major|minor|patch>
 git push --follow-tags
