@@ -169,6 +169,15 @@
         "badExample": "",
         "goodExample": ""
     },
+    "@typescript-eslint/no-empty-function": {
+        "name": "@typescript-eslint/no-empty-function",
+        "value": "off",
+        "description": "不允许有空函数",
+        "category": "",
+        "badExample": "",
+        "goodExample": "",
+        "reason": "有时需要将一个空函数设置为某个项的默认值"
+    },
     "@typescript-eslint/no-empty-interface": {
         "name": "@typescript-eslint/no-empty-interface",
         "value": "error",
@@ -189,6 +198,14 @@
         "name": "@typescript-eslint/no-extraneous-class",
         "value": "off",
         "description": "禁止定义没必要的类，比如只有静态方法的类",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "@typescript-eslint/no-floating-promises": {
+        "name": "@typescript-eslint/no-floating-promises",
+        "value": "off",
+        "description": "禁止调用 Promise 时没有处理异常情况",
         "category": "",
         "badExample": "",
         "goodExample": ""
@@ -304,6 +321,14 @@
         "badExample": "",
         "goodExample": "",
         "reason": "统一关闭 requires type information 的规则"
+    },
+    "@typescript-eslint/no-unnecessary-type-arguments": {
+        "name": "@typescript-eslint/no-unnecessary-type-arguments",
+        "value": "off",
+        "description": "禁止范型的类型有默认值时，将范型设置为该默认值",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
     },
     "@typescript-eslint/no-unnecessary-type-assertion": {
         "name": "@typescript-eslint/no-unnecessary-type-assertion",

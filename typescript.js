@@ -13,7 +13,7 @@
  *     eslint ^6.6.0
  *     babel-eslint ^10.0.3
  *     eslint-plugin-react ^7.16.0
- *     vue-eslint-parser ^6.0.4
+ *     vue-eslint-parser ^7.0.0
  *     eslint-plugin-vue ^6.0.0
  *     @typescript-eslint/parser ^2.6.1
  *     @typescript-eslint/eslint-plugin ^2.6.1
@@ -27,6 +27,7 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     plugins: ['@typescript-eslint'],
     rules: {
+        'no-empty-function': 'off',
         // https://github.com/typescript-eslint/typescript-eslint/issues/491
         'no-invalid-this': 'off',
         'no-magic-numbers': 'off',
@@ -148,6 +149,11 @@ module.exports = {
          */
         '@typescript-eslint/no-array-constructor': 'off',
         /**
+         * 不允许有空函数
+         * @reason 有时需要将一个空函数设置为某个项的默认值
+         */
+        '@typescript-eslint/no-empty-function': 'off',
+        /**
          * 禁止定义空的接口
          */
         '@typescript-eslint/no-empty-interface': 'error',
@@ -159,6 +165,10 @@ module.exports = {
          * 禁止定义没必要的类，比如只有静态方法的类
          */
         '@typescript-eslint/no-extraneous-class': 'off',
+        /**
+         * 禁止调用 Promise 时没有处理异常情况
+         */
+        '@typescript-eslint/no-floating-promises': 'off',
         /**
          * 禁止对 array 使用 for in 循环
          * @reason 统一关闭 requires type information 的规则
@@ -231,6 +241,10 @@ module.exports = {
          * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/no-unnecessary-qualifier': 'off',
+        /**
+         * 禁止范型的类型有默认值时，将范型设置为该默认值
+         */
+        '@typescript-eslint/no-unnecessary-type-arguments': 'off',
         /**
          * 禁止无用的类型断言
          * @reason 统一关闭 requires type information 的规则

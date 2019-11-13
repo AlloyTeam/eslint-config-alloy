@@ -13,7 +13,8 @@
         "build:site": "run-s clear:dist build:html",
         "clear:dist": "rimraf ./dist",
         "build:html": "parcel build site/index.html --public-url ./",
-        "test": "npm run lint && ts-node ./test/index.ts",
+        "test": "npm run lint && ts-node ./test/index.ts && npm run test:rulesCoverage",
+        "test:rulesCoverage": "ts-node ./scripts/rulesCoverage.ts",
         "lint": "run-s eslint prettier",
         "eslint": "eslint --ext .js,.jsx,.ts,.tsx,.vue --ignore-pattern \"bad.*\" .",
         "prettier": "prettier -l \"./**/*\"",
@@ -88,9 +89,14 @@
         "react-dom": "^16.8.6",
         "react-tooltip": "^3.11.1",
         "rimraf": "^3.0.0",
-        "ts-node": "^8.5.0",
+        "ts-node": "^7.0.1",
         "typescript": "^3.7.2",
         "vue-eslint-parser": "^7.0.0",
         "xml-escape": "^1.1.0"
+    },
+    "greenkeeper": {
+        "ignore": [
+            "ts-node"
+        ]
     }
 }

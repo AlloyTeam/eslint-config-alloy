@@ -81,22 +81,20 @@ export const RuleTable: React.SFC<RuleTableProps> = ({ namespace, shouldHideOff 
                                 />
                             )}
                             {Array.isArray(value) && (
-                                <>
-                                    <p className="text-muted text-small site-rule-value">
-                                        配置：
-                                        {typeof value[1] === 'object' ? (
-                                            <pre>
-                                                <code>{`["error", ${JSON.stringify(
-                                                    value[1],
-                                                    null,
-                                                    4
-                                                )}]`}</code>
-                                            </pre>
-                                        ) : (
-                                            <code>{`["error", ${JSON.stringify(value[1])}]`}</code>
-                                        )}
-                                    </p>
-                                </>
+                                <p className="text-muted text-small site-rule-value">
+                                    配置：
+                                    {typeof value[1] === 'object' ? (
+                                        <pre>
+                                            <code>{`["error", ${JSON.stringify(
+                                                value[1],
+                                                null,
+                                                4
+                                            )}]`}</code>
+                                        </pre>
+                                    ) : (
+                                        <code>{`["error", ${JSON.stringify(value[1])}]`}</code>
+                                    )}
+                                </p>
                             )}
                         </div>
                         <div className="unit-1-3 unit-1-on-mobile">

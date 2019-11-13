@@ -13,7 +13,7 @@
  *     eslint ^6.6.0
  *     babel-eslint ^10.0.3
  *     eslint-plugin-react ^7.16.0
- *     vue-eslint-parser ^6.0.4
+ *     vue-eslint-parser ^7.0.0
  *     eslint-plugin-vue ^6.0.0
  *     @typescript-eslint/parser ^2.6.1
  *     @typescript-eslint/eslint-plugin ^2.6.1
@@ -129,6 +129,10 @@ module.exports = {
          * 禁止使用未定义的组件
          */
         'react/jsx-no-undef': 'error',
+        /**
+         * 禁止无意义的 Fragment 组件
+         */
+        'react/jsx-no-useless-fragment': 'error',
         /**
          * 禁止使用 pascal 风格的组件
          */
