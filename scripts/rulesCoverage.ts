@@ -11,8 +11,7 @@ const prettierRules = [
     ...Object.keys(require('eslint-config-prettier/vue').rules),
     ...Object.keys(require('eslint-config-prettier/@typescript-eslint').rules),
     // https://github.com/prettier/eslint-config-prettier/issues/124
-    'vue/dot-location',
-    'vue/keyword-spacing'
+    '@typescript-eslint/space-before-function-paren'
 ];
 
 const RULE_PREFIX_MAP = {

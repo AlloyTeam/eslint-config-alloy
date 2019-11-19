@@ -16,7 +16,7 @@
  *     vue-eslint-parser ^7.0.0
  *     eslint-plugin-vue ^6.0.0
  *     @typescript-eslint/parser ^2.6.1
- *     @typescript-eslint/eslint-plugin ^2.6.1
+ *     @typescript-eslint/eslint-plugin ^2.8.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  *
@@ -149,6 +149,10 @@ module.exports = {
          */
         '@typescript-eslint/no-array-constructor': 'off',
         /**
+         * 禁止 delete 时传入的 key 是动态的
+         */
+        '@typescript-eslint/no-dynamic-delete': 'error',
+        /**
          * 不允许有空函数
          * @reason 有时需要将一个空函数设置为某个项的默认值
          */
@@ -251,6 +255,21 @@ module.exports = {
          */
         '@typescript-eslint/no-unnecessary-type-assertion': 'off',
         /**
+         * public 方法必须定义输入输出参数的类型
+         */
+        '@typescript-eslint/no-untyped-public-signature': 'off',
+        /**
+         * 禁止无用的表达式
+         */
+        '@typescript-eslint/no-unused-expressions': [
+            'error',
+            {
+                allowShortCircuit: true,
+                allowTernary: true,
+                allowTaggedTemplates: true
+            }
+        ],
+        /**
          * 已定义的变量必须使用
          * @reason 编译阶段检查就足够了
          */
@@ -322,6 +341,11 @@ module.exports = {
          * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/restrict-plus-operands': 'off',
+        /**
+         * 模版字符串中的变量类型必须是字符串
+         * @reason 统一关闭 requires type information 的规则
+         */
+        '@typescript-eslint/restrict-template-expressions': 'off',
         /**
          * 条件判断必须传入布尔值
          * @reason 统一关闭 requires type information 的规则

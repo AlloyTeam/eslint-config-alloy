@@ -169,6 +169,14 @@
         "badExample": "",
         "goodExample": ""
     },
+    "@typescript-eslint/no-dynamic-delete": {
+        "name": "@typescript-eslint/no-dynamic-delete",
+        "value": "error",
+        "description": "禁止 delete 时传入的 key 是动态的",
+        "category": "",
+        "badExample": "<span class=\"token keyword\">const</span> foo1 <span class=\"token operator\">=</span> <span class=\"token punctuation\">{</span>\n    bar<span class=\"token punctuation\">:</span> <span class=\"token number\">1</span>\n<span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">let</span> key <span class=\"token operator\">=</span> <span class=\"token string\">'bar'</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">delete</span> foo1<span class=\"token punctuation\">[</span><mark class=\"eslint-error\" data-tip=\"Do not delete dynamically computed property keys.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(@typescript-eslint/no-dynamic-delete)&lt;/span&gt;\">key</mark><span class=\"token punctuation\">]</span><span class=\"token punctuation\">;</span>",
+        "goodExample": "<span class=\"token keyword\">const</span> foo2 <span class=\"token operator\">=</span> <span class=\"token punctuation\">{</span>\n    bar<span class=\"token punctuation\">:</span> <span class=\"token number\">1</span>\n<span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">delete</span> foo2<span class=\"token punctuation\">.</span>bar<span class=\"token punctuation\">;</span>"
+    },
     "@typescript-eslint/no-empty-function": {
         "name": "@typescript-eslint/no-empty-function",
         "value": "off",
@@ -339,6 +347,25 @@
         "goodExample": "",
         "reason": "统一关闭 requires type information 的规则"
     },
+    "@typescript-eslint/no-untyped-public-signature": {
+        "name": "@typescript-eslint/no-untyped-public-signature",
+        "value": "off",
+        "description": "public 方法必须定义输入输出参数的类型",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
+    "@typescript-eslint/no-unused-expressions": {
+        "name": "@typescript-eslint/no-unused-expressions",
+        "value": [
+            "error",
+            { "allowShortCircuit": true, "allowTernary": true, "allowTaggedTemplates": true }
+        ],
+        "description": "禁止无用的表达式",
+        "category": "",
+        "badExample": "<span class=\"token keyword\">declare</span> <span class=\"token keyword\">const</span> foo1<span class=\"token punctuation\">:</span> <span class=\"token builtin\">any</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">declare</span> <span class=\"token keyword\">const</span> bar1<span class=\"token punctuation\">:</span> <span class=\"token builtin\">any</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">declare</span> <span class=\"token keyword\">const</span> baz1<span class=\"token punctuation\">:</span> <span class=\"token builtin\">any</span><span class=\"token punctuation\">;</span>\n<mark class=\"eslint-error\" data-tip=\"Expected an assignment or function call and instead saw an expression.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(@typescript-eslint/no-unused-expressions)&lt;/span&gt;\"><span class=\"token number\">1</span><span class=\"token punctuation\">;</span></mark>\n<mark class=\"eslint-error\" data-tip=\"Expected an assignment or function call and instead saw an expression.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(@typescript-eslint/no-unused-expressions)&lt;/span&gt;\">foo1<span class=\"token punctuation\">;</span></mark>\n<mark class=\"eslint-error\" data-tip=\"Expected an assignment or function call and instead saw an expression.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(@typescript-eslint/no-unused-expressions)&lt;/span&gt;\"><span class=\"token punctuation\">(</span><span class=\"token string\">'foo1'</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span></mark>\n<mark class=\"eslint-error\" data-tip=\"Expected an assignment or function call and instead saw an expression.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(@typescript-eslint/no-unused-expressions)&lt;/span&gt;\">foo1 <span class=\"token operator\">&amp;&amp;</span> bar1<span class=\"token punctuation\">;</span></mark>\n<mark class=\"eslint-error\" data-tip=\"Expected an assignment or function call and instead saw an expression.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(@typescript-eslint/no-unused-expressions)&lt;/span&gt;\">foo1 <span class=\"token operator\">||</span> bar1<span class=\"token punctuation\">;</span></mark>\n<mark class=\"eslint-error\" data-tip=\"Expected an assignment or function call and instead saw an expression.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(@typescript-eslint/no-unused-expressions)&lt;/span&gt;\">foo1 <span class=\"token operator\">?</span> bar1 <span class=\"token punctuation\">:</span> baz1<span class=\"token punctuation\">;</span></mark>\n<mark class=\"eslint-error\" data-tip=\"Expected an assignment or function call and instead saw an expression.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(@typescript-eslint/no-unused-expressions)&lt;/span&gt;\"><span class=\"token template-string\"><span class=\"token string\">`bar1`</span></span><span class=\"token punctuation\">;</span></mark>",
+        "goodExample": "<span class=\"token string\">'use strict'</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">declare</span> <span class=\"token keyword\">const</span> foo2<span class=\"token punctuation\">:</span> <span class=\"token builtin\">any</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">declare</span> <span class=\"token keyword\">const</span> bar2<span class=\"token punctuation\">:</span> <span class=\"token builtin\">any</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">declare</span> <span class=\"token keyword\">const</span> baz2<span class=\"token punctuation\">:</span> <span class=\"token builtin\">any</span><span class=\"token punctuation\">;</span>\nfoo2 <span class=\"token operator\">&amp;&amp;</span> <span class=\"token function\">bar2</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\nfoo2 <span class=\"token operator\">||</span> <span class=\"token function\">bar2</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\nfoo2 <span class=\"token operator\">?</span> <span class=\"token function\">bar2</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">:</span> <span class=\"token function\">baz2</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\nfoo2<span class=\"token template-string\"><span class=\"token string\">`bar2`</span></span><span class=\"token punctuation\">;</span>"
+    },
     "@typescript-eslint/no-unused-vars": {
         "name": "@typescript-eslint/no-unused-vars",
         "value": "off",
@@ -466,6 +493,15 @@
         "name": "@typescript-eslint/restrict-plus-operands",
         "value": "off",
         "description": "使用加号时，两者必须同为数字或同为字符串",
+        "category": "",
+        "badExample": "",
+        "goodExample": "",
+        "reason": "统一关闭 requires type information 的规则"
+    },
+    "@typescript-eslint/restrict-template-expressions": {
+        "name": "@typescript-eslint/restrict-template-expressions",
+        "value": "off",
+        "description": "模版字符串中的变量类型必须是字符串",
         "category": "",
         "badExample": "",
         "goodExample": "",
