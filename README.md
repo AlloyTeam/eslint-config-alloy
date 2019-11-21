@@ -77,6 +77,8 @@ AlloyTeam ESLint 规则奉行「测试即文档」，每个配置不仅配有一
 
 当然，也欢迎大家[提出不同的意见](https://github.com/AlloyTeam/eslint-config-alloy/issues/new)。
 
+---
+
 <details id="en-US" open>
 <summary>Toggle English README</summary>
 <br/>
