@@ -3,7 +3,8 @@
 [![Build Status](https://img.shields.io/travis/AlloyTeam/eslint-config-alloy.svg)](https://travis-ci.org/AlloyTeam/eslint-config-alloy) [![npm package](https://img.shields.io/npm/v/eslint-config-alloy.svg)](https://www.npmjs.org/package/eslint-config-alloy) [![npm downloads](http://img.shields.io/npm/dm/eslint-config-alloy.svg)](https://www.npmjs.org/package/eslint-config-alloy) [![Greenkeeper badge](https://badges.greenkeeper.io/AlloyTeam/eslint-config-alloy.svg)](https://greenkeeper.io/)
 
 <details open>
-<summary><strong>LANGUAGES</strong>: 简体中文 / <a>English</a></summary>
+<summary><strong>LANGUAGES</strong>: 简体中文 / <a href="#">English</a></summary>
+
 
 AlloyTeam ESLint 规则不仅是一套先进的 ESLint 配置规范，而且也是你配置个性化 ESLint 规则的最佳参考。
 
@@ -85,7 +86,8 @@ AlloyTeam ESLint 规则奉行「测试即文档」，每个配置不仅配有一
 <details>
 <summary>Toggle English README</summary>
 
-Website: https://alloyteam.github.io/eslint-config-alloy/?language=en-US
+
+Website: [click me](https://alloyteam.github.io/eslint-config-alloy/?language=en-US)
 
 The AlloyTeam ESLint rule is not only a set of advanced ESLint configuration specifications, but also the best reference for configuring your personalized ESLint rules.
 
