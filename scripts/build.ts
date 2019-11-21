@@ -14,7 +14,7 @@ import {
     RuleNamespaceExtensionMap,
     RuleNamespacePrismLanguageMap,
     Rule
-} from '../site/constants/rule';
+} from '../site/constants/rules';
 
 import '../site/vendor/prism';
 declare const Prism: any;
@@ -39,9 +39,10 @@ class Builder {
         }
     }
 
+    /** 写入 site/config/rules/***.json */
     private buildRulesJson() {
         fs.writeFileSync(
-            path.resolve(__dirname, `../site/config/${this.namespace}.json`),
+            path.resolve(__dirname, `../site/config/rules/${this.namespace}.json`),
             prettier.format(
                 JSON.stringify(
                     this.ruleList.reduce((prev, rule) => {

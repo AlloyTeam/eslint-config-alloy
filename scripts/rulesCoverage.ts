@@ -2,7 +2,7 @@
 import fs from 'fs';
 import path from 'path';
 
-/** 可用的规则（去除废弃的和 Prettier 的规则 */
+/** 可用的规则（去除废弃的和 Prettier 的规则） */
 let activeRules: string[] = [];
 let deprecatedRules: string[] = [];
 const prettierRules = [

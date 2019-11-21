@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
 import React from 'react';
 
-import { Rule, RuleNamespaces, RuleNamespacePrismLanguageMap } from '../constants/rule';
-import { parseDescription } from '../utils';
+import { Rule, RuleNamespaces, RuleNamespacePrismLanguageMap } from '../constants/rules';
+import { parseDescription, t } from '../utils';
 
 interface RuleTableProps {
     namespace: RuleNamespaces;
-    shouldHideOff: boolean;
+    hideOff: boolean;
 }
 
 const configMap: {
@@ -14,10 +14,10 @@ const configMap: {
         [key: string]: Rule;
     };
 } = {
-    index: require('../config/index.json'),
-    react: require('../config/react.json'),
-    vue: require('../config/vue.json'),
-    typescript: require('../config/typescript.json')
+    index: require('../config/rules/index.json'),
+    react: require('../config/rules/react.json'),
+    vue: require('../config/rules/vue.json'),
+    typescript: require('../config/rules/typescript.json')
 };
 
 const docsUrlMap: { [key in RuleNamespaces]: (rule: string) => string } = {
@@ -35,28 +35,31 @@ const docsUrlMap: { [key in RuleNamespaces]: (rule: string) => string } = {
         )}.md`
 };
 
-export const RuleTable: React.SFC<RuleTableProps> = ({ namespace, shouldHideOff }) => {
+export const RuleTable: React.SFC<RuleTableProps> = ({ namespace, hideOff }) => {
     const currentConfig = configMap[namespace];
     return (
         <div className="container-fluid">
             <div className="flex-left flex-wrap units-gap hide-on-mobile">
-                <h3 className="unit-1-3 unit-1-on-mobile site-table-header-text">规则说明</h3>
+                <h3 className="unit-1-3 unit-1-on-mobile site-table-header-text">
+                    {t('规则说明')}
+                </h3>
                 <h3 className="unit-1-3 unit-1-on-mobile text-danger site-table-header-text">
-                    错误的示例
+                    {t('错误的示例')}
                 </h3>
                 <h3 className="unit-1-3 unit-1-on-mobile text-success site-table-header-text">
-                    正确的示例
+                    {t('正确的示例')}
                 </h3>
             </div>
             {Object.values(currentConfig).map(
                 ({ name, value, description, reason, badExample, goodExample }) => (
                     <div
+                        id={name}
                         key={name}
                         className={`flex-left flex-wrap top-gap-big units-gap site-row ${
                             value === 'off' ? 'site-row-off site-row-wide' : ''
                         }`}
                         style={
-                            value === 'off' && shouldHideOff
+                            value === 'off' && hideOff
                                 ? {
                                       display: 'none'
                                   }
@@ -65,10 +68,13 @@ export const RuleTable: React.SFC<RuleTableProps> = ({ namespace, shouldHideOff 
                     >
                         <div className="unit-1-3 unit-1-on-mobile site-desc">
                             <a href={docsUrlMap[namespace](name)}>{name}</a>
+                            <a className="site-anchor" href={`#${name}`}>
+                                #
+                            </a>
                             <p
                                 className="top-gap-0"
                                 dangerouslySetInnerHTML={{
-                                    __html: parseDescription(description)
+                                    __html: parseDescription(t(description))
                                 }}
                             />
                             {reason && (
@@ -81,8 +87,8 @@ export const RuleTable: React.SFC<RuleTableProps> = ({ namespace, shouldHideOff 
                                 />
                             )}
                             {Array.isArray(value) && (
-                                <p className="text-muted text-small site-rule-value">
-                                    配置：
+                                <div className="text-muted text-small site-rule-value">
+                                    {t('配置：')}
                                     {typeof value[1] === 'object' ? (
                                         <pre>
                                             <code>{`["error", ${JSON.stringify(
@@ -94,7 +100,7 @@ export const RuleTable: React.SFC<RuleTableProps> = ({ namespace, shouldHideOff 
                                     ) : (
                                         <code>{`["error", ${JSON.stringify(value[1])}]`}</code>
                                     )}
-                                </p>
+                                </div>
                             )}
                         </div>
                         <div className="unit-1-3 unit-1-on-mobile">

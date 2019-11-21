@@ -17,6 +17,16 @@
     background: url('./assets/off.svg');
 }
 
+.site-title {
+    font-size: 3em;
+    display: inline-block;
+    margin-right: 1em;
+}
+.site-language-separator {
+    color: #ccc;
+    margin: 0 0.2em;
+}
+
 /* 表单 */
 .site-form > label {
     margin-left: 2em;
@@ -44,6 +54,13 @@
 }
 .site-rule-value pre code {
     font-size: 12px;
+}
+.site-anchor {
+    display: none;
+    margin-left: 0.5em;
+}
+.site-desc:hover .site-anchor {
+    display: inline;
 }
 
 /* 代码 */

@@ -1,6 +1,8 @@
-# [AlloyTeam ESLint 规则](https://alloyteam.github.io/eslint-config-alloy/)
+# [eslint-config-alloy](https://alloyteam.github.io/eslint-config-alloy/)
 
 [![Build Status](https://img.shields.io/travis/AlloyTeam/eslint-config-alloy.svg)](https://travis-ci.org/AlloyTeam/eslint-config-alloy) [![npm package](https://img.shields.io/npm/v/eslint-config-alloy.svg)](https://www.npmjs.org/package/eslint-config-alloy) [![npm downloads](http://img.shields.io/npm/dm/eslint-config-alloy.svg)](https://www.npmjs.org/package/eslint-config-alloy) [![Greenkeeper badge](https://badges.greenkeeper.io/AlloyTeam/eslint-config-alloy.svg)](https://greenkeeper.io/)
+
+**Languages**: 简体中文 / [English](#languages)
 
 AlloyTeam ESLint 规则不仅是一套先进的 ESLint 配置规范，而且也是你配置个性化 ESLint 规则的最佳参考。
 
@@ -8,22 +10,11 @@ AlloyTeam ESLint 规则不仅是一套先进的 ESLint 配置规范，而且也�
 
 请根据你的项目使用的技术栈选择以下配置：
 
-- [标准规则](#标准规则)
+- [内置规则](#built-in)
 - [React](#react)
 - [Vue](#vue)
 - [TypeScript](#typescript)
 - [TypeScript React](#typescript-react)
-
-配置之间可以自由组合，如：
-
-```js
-module.exports = {
-    extends: [
-        'alloy',
-        'alloy/react',
-    ]
-}
-```
 
 ## 先进性
 
@@ -43,7 +34,7 @@ AlloyTeam ESLint 规则始终保持最新版本的 ESLint 版本，包括解析�
 
 以及规则：
 
-- [标准规则](https://eslint.org/docs/rules/)
+- [内置规则](https://eslint.org/docs/rules/)
 - [eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react)
 - [eslint-plugin-vue](https://eslint.vuejs.org/rules/)
 - [@typescript-eslint/eslint-plugin](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin#supported-rules)
@@ -65,7 +56,7 @@ AlloyTeam ESLint 规则奉行「测试即文档」，每个配置不仅配有一
 
 > 无情的推动自动化
 
-- 由 `scripts/build.ts` 脚本将 `test` 目录下分散的配置生成整体的配置，并且生成网站中需要用到的 `site/config`
+- 由 `scripts/build.ts` 脚本将 `test` 目录下分散的配置生成整体的配置，并且生成网站中需要用到的 `site/config/rules`
 - 运行测试脚本 `test/index.ts` 会检查每个示例是否按照要求报错
 - 运行 `scripts/rulesCoverage.ts` 保证当前配置覆盖了最新的 ESLint 规则，即：
     - 不包含被标记为 `deprecated` 的规则
@@ -86,17 +77,97 @@ AlloyTeam ESLint 规则奉行「测试即文档」，每个配置不仅配有一
 
 当然，也欢迎大家[提出不同的意见](https://github.com/AlloyTeam/eslint-config-alloy/issues/new)。
 
-## 使用方法
+## Languages
 
-### 标准规则
+<details>
+<summary>Toggle English README</summary>
 
-安装：
+Website: https://alloyteam.github.io/eslint-config-alloy/?language=en-US
+
+The AlloyTeam ESLint rule is not only a set of advanced ESLint configuration specifications, but also the best reference for configuring your personalized ESLint rules.
+
+## Quick start
+
+Please choose the following configuration based on the technology stack used by your project:
+
+- [Built-in](#built-in)
+- [React](#react)
+- [Vue](#vue)
+- [TypeScript](#typescript)
+- [TypeScript React](#typescript-react)
+
+## Advanced
+
+The advancement of the AlloyTeam ESLint rules is reflected in the following three areas:
+
+- Always keep the latest version of ESLint
+- 100% coverage of tests and documentation
+- High degree of automation
+
+### Always keep the latest version of ESLint
+
+The AlloyTeam ESLint rule always maintains the latest version of the ESLint, including the parser:
+
+- [babel-eslint](https://github.com/babel/babel-eslint)
+- [vue-eslint-parser](https://github.com/mysticatea/vue-eslint-parser)
+- [@typescript-eslint/parser](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/parser)
+
+And rules:
+
+- [Built-in](https://eslint.org/docs/rules/)
+- [eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react)
+- [eslint-plugin-vue](https://eslint.vuejs.org/rules/)
+- [@typescript-eslint/eslint-plugin](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin#supported-rules)
+
+### Coverage 100% of tests and documentation
+
+The AlloyTeam ESLint rule pursues "test as a document". Each configuration is not only equipped with a sentence comment and corresponding error examples and correct examples, but further, the sample code is run as test code, ensuring error reporting and configuration. match.
+
+- All ESLint configurations are in the `test` directory
+- Each configuration is stored in the corresponding directory, such as `test/react/jsx-key/.eslintrc.js` describes the rule `react/jsx-key`
+- Each configuration has a sentence comment indicating the purpose of this configuration
+- For controversial configurations, the reason for this configuration is explained in the comments by `@reason`
+- If the configuration is enabled, there must be a corresponding example, including `bad.js` and `good.js`
+- Each example will run in a real ESLint script to ensure that each update is forward compatible
+- Since the configuration and examples are in one directory, you can see the error message directly in the editor.
+- Export the configuration, comments, and examples in the test to html, build [website](https://alloyteam.github.io/eslint-config-alloy/?language=en-US)
+
+### High degree of automation
+
+> Ruthless push automation
+
+- Generate a holistic configuration of the decentralized configuration in the `test` directory by the `scripts/build.ts` script and generate the `site/config/rules` needed in the website.
+- Run the test script `test/index.ts` will check if each example reports an error as required
+- Run `scripts/rulesCoverage.ts` to ensure that the current configuration overrides the latest ESLint rules, namely:
+    - Does not contain rules marked as `deprecated`
+    - Does not include rules for [eslint-config-prettier](https://github.com/prettier/eslint-config-prettier) (style-related rules are passed to more professional [Prettier](https://prettier.io/) deal with)
+    - Contains all remaining rules available
+- Guarantee code style consistency with Prettier
+- Use travis-ci to ensure that the trunk passes the above test
+- Automatically build and deploy [website](https://alloyteam.github.io/eslint-config-alloy/?language=en-US) using travis-ci
+- Use greenkeeper to ensure npm packages are the latest version
+
+## Configuration principle
+
+Based on the following three principles, we have studied all of ESLint's configuration items and customized the "perfect" ESLint configuration.
+
+1. Rules that can help find code errors, all open
+2. Configuration should not depend on a specific project, but should be globally reasonable
+3. Help keep the team's code style unified, rather than limit the development experience
+
+Of course, everyone is welcome to [open an issue](https://github.com/AlloyTeam/eslint-config-alloy/issues/new).
+
+</details>
+
+## Usage
+
+### Built-in
 
 ```bash
 npm install --save-dev eslint babel-eslint eslint-config-alloy
 ```
 
-在你的项目根目录下创建 `.eslintrc.js`，并将以下内容复制到文件中：
+Create an `.eslintrc.js` in the root directory of your project, then copy the following content into it:
 
 ```js
 module.exports = {
@@ -104,8 +175,8 @@ module.exports = {
         'alloy',
     ],
     env: {
-        // 这里填入你的项目用到的环境
-        // 它们预定义了不同环境的全局变量，比如：
+        // 您的环境变量（包含多个预定义的全局变量）
+        // Your environments (which contains several predefined global variables)
         //
         // browser: true,
         // node: true,
@@ -114,26 +185,25 @@ module.exports = {
         // jquery: true
     },
     globals: {
-        // 这里填入你的项目需要的全局变量
-        // false 表示这个全局变量不允许被重新赋值，比如：
+        // 您的全局变量（设置为 false 表示它不允许被重新赋值）
+        // Your global variables (setting to false means it's not allowed to be reassigned)
         //
         // myGlobal: false
     },
     rules: {
-        // 这里填入你的项目需要的个性化配置
+        // 自定义您的规则
+        // Customize your rules
     }
 };
 ```
 
 ### React
 
-安装：
-
 ```bash
 npm install --save-dev eslint babel-eslint eslint-plugin-react eslint-config-alloy
 ```
 
-在你的项目根目录下创建 `.eslintrc.js`，并将以下内容复制到文件中：
+Create an `.eslintrc.js` in the root directory of your project, then copy the following content into it:
 
 ```js
 module.exports = {
@@ -142,8 +212,8 @@ module.exports = {
         'alloy/react',
     ],
     env: {
-        // 这里填入你的项目用到的环境
-        // 它们预定义了不同环境的全局变量，比如：
+        // 您的环境变量（包含多个预定义的全局变量）
+        // Your environments (which contains several predefined global variables)
         //
         // browser: true,
         // node: true,
@@ -152,28 +222,25 @@ module.exports = {
         // jquery: true
     },
     globals: {
-        // 这里填入你的项目需要的全局变量
-        // false 表示这个全局变量不允许被重新赋值，比如：
+        // 您的全局变量（设置为 false 表示它不允许被重新赋值）
+        // Your global variables (setting to false means it's not allowed to be reassigned)
         //
         // myGlobal: false
     },
     rules: {
-        // 这里填入你的项目需要的个性化配置
+        // 自定义您的规则
+        // Customize your rules
     }
 };
 ```
 
 ### Vue
 
-安装：
-
 ```bash
 npm install --save-dev eslint babel-eslint vue-eslint-parser@5.0.0 eslint-plugin-vue eslint-config-alloy
 ```
 
-注意：由于[这个原因](https://github.com/mysticatea/vue-eslint-parser/issues/46)，不能使用最新版的 vue-eslint-parser，必须使用 5.0.0 版本。
-
-在你的项目根目录下创建 `.eslintrc.js`，并将以下内容复制到文件中：
+Create an `.eslintrc.js` in the root directory of your project, then copy the following content into it:
 
 ```js
 module.exports = {
@@ -182,8 +249,8 @@ module.exports = {
         'alloy/vue',
     ],
     env: {
-        // 这里填入你的项目用到的环境
-        // 它们预定义了不同环境的全局变量，比如：
+        // 您的环境变量（包含多个预定义的全局变量）
+        // Your environments (which contains several predefined global variables)
         //
         // browser: true,
         // node: true,
@@ -192,26 +259,25 @@ module.exports = {
         // jquery: true
     },
     globals: {
-        // 这里填入你的项目需要的全局变量
-        // false 表示这个全局变量不允许被重新赋值，比如：
+        // 您的全局变量（设置为 false 表示它不允许被重新赋值）
+        // Your global variables (setting to false means it's not allowed to be reassigned)
         //
         // myGlobal: false
     },
     rules: {
-        // 这里填入你的项目需要的个性化配置
+        // 自定义您的规则
+        // Customize your rules
     }
 };
 ```
 
 ### TypeScript
 
-安装：
-
 ```bash
 npm install --save-dev eslint typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-config-alloy
 ```
 
-在你的项目根目录下创建 `.eslintrc.js`，并将以下内容复制到文件中：
+Create an `.eslintrc.js` in the root directory of your project, then copy the following content into it:
 
 ```js
 module.exports = {
@@ -220,8 +286,8 @@ module.exports = {
         'alloy/typescript',
     ],
     env: {
-        // 这里填入你的项目用到的环境
-        // 它们预定义了不同环境的全局变量，比如：
+        // 您的环境变量（包含多个预定义的全局变量）
+        // Your environments (which contains several predefined global variables)
         //
         // browser: true,
         // node: true,
@@ -230,26 +296,25 @@ module.exports = {
         // jquery: true
     },
     globals: {
-        // 这里填入你的项目需要的全局变量
-        // false 表示这个全局变量不允许被重新赋值，比如：
+        // 您的全局变量（设置为 false 表示它不允许被重新赋值）
+        // Your global variables (setting to false means it's not allowed to be reassigned)
         //
         // myGlobal: false
     },
     rules: {
-        // 这里填入你的项目需要的个性化配置
+        // 自定义您的规则
+        // Customize your rules
     }
 };
 ```
 
 ### TypeScript React
 
-安装：
-
 ```bash
 npm install --save-dev eslint typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-react eslint-config-alloy
 ```
 
-在你的项目根目录下创建 `.eslintrc.js`，并将以下内容复制到文件中：
+Create an `.eslintrc.js` in the root directory of your project, then copy the following content into it:
 
 ```js
 module.exports = {
@@ -259,8 +324,8 @@ module.exports = {
         'alloy/typescript',
     ],
     env: {
-        // 这里填入你的项目用到的环境
-        // 它们预定义了不同环境的全局变量，比如：
+        // 您的环境变量（包含多个预定义的全局变量）
+        // Your environments (which contains several predefined global variables)
         //
         // browser: true,
         // node: true,
@@ -269,13 +334,14 @@ module.exports = {
         // jquery: true
     },
     globals: {
-        // 这里填入你的项目需要的全局变量
-        // false 表示这个全局变量不允许被重新赋值，比如：
+        // 您的全局变量（设置为 false 表示它不允许被重新赋值）
+        // Your global variables (setting to false means it's not allowed to be reassigned)
         //
         // myGlobal: false
     },
     rules: {
-        // 这里填入你的项目需要的个性化配置
+        // 自定义您的规则
+        // Customize your rules
     }
 };
 ```
