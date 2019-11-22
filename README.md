@@ -11,8 +11,6 @@
 <details open>
 <summary>Toggle 简体中文 README</summary>
 
----
-
 AlloyTeam ESLint 规则不仅是一套先进的适用于 React/Vue/Typescript 项目的 ESLint 配置规范，而且也是你配置个性化 ESLint 规则的最佳参考。
 
 ## 快速开始
@@ -94,8 +92,6 @@ AlloyTeam ESLint 规则奉行「测试即文档」，每个配置不仅配有一
 
 <details open>
 <summary>Toggle English README</summary>
-
----
 
 Website: [click me](https://alloyteam.github.io/eslint-config-alloy/?language=en-US)
 
