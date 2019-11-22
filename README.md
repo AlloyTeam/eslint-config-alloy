@@ -88,7 +88,7 @@ AlloyTeam ESLint 规则奉行「测试即文档」，每个配置不仅配有一
 
 Website: [click me](https://alloyteam.github.io/eslint-config-alloy/?language=en-US)
 
-The AlloyTeam ESLint rule is not only a progressive ESLint config for your React/Vue/TypeScript projects, but also the best reference for configuring your personalized ESLint rules.
+The AlloyTeam ESLint config is not only a progressive ESLint config for your React/Vue/TypeScript projects, but also the best reference for configuring your personalized ESLint rules.
 
 ## Quick start
 
