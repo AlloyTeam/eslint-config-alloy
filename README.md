@@ -4,7 +4,7 @@
 
 **LANGUAGES**: 简体中文 / [English](#languages)
 
-AlloyTeam ESLint 规则不仅是一套先进的 ESLint 配置规范，而且也是你配置个性化 ESLint 规则的最佳参考。
+AlloyTeam ESLint 规则不仅是一套先进的适用于 React/Vue/Typescript 项目的 ESLint 配置规范，而且也是你配置个性化 ESLint 规则的最佳参考。
 
 ## 快速开始
 
@@ -88,7 +88,7 @@ AlloyTeam ESLint 规则奉行「测试即文档」，每个配置不仅配有一
 
 Website: [click me](https://alloyteam.github.io/eslint-config-alloy/?language=en-US)
 
-The AlloyTeam ESLint rule is not only a set of advanced ESLint configuration specifications, but also the best reference for configuring your personalized ESLint rules.
+The AlloyTeam ESLint rule is not only a progressive ESLint config for your React/Vue/TypeScript projects, but also the best reference for configuring your personalized ESLint rules.
 
 ## Quick start
 
