@@ -18,9 +18,11 @@
 }
 
 .site-title {
-    font-size: 3em;
     display: inline-block;
     margin-right: 1em;
+}
+.site-languages {
+    display: inline-block;
 }
 .site-language-separator {
     color: #ccc;

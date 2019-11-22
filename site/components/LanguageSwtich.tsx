@@ -30,5 +30,5 @@ export const LanguageSwtich: React.SFC<LanguagesProps> = ({ language }) => {
         }
     });
 
-    return <span>{renderItems}</span>;
+    return <span className="site-languages">{renderItems}</span>;
 };

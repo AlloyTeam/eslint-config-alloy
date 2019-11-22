@@ -29,7 +29,7 @@ export const App: React.SFC = () => {
             <div className="container-fluid">
                 <h1 className="site-title">eslint-config-alloy</h1>
                 <LanguageSwtich language={language} />
-                <form className="top-gap-big site-form">
+                <form className="top-gap site-form">
                     <select
                         value={namespace}
                         onChange={(e) => {
