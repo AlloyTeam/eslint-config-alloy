@@ -2,7 +2,16 @@
 
 [![Build Status](https://img.shields.io/travis/AlloyTeam/eslint-config-alloy.svg)](https://travis-ci.org/AlloyTeam/eslint-config-alloy) [![npm package](https://img.shields.io/npm/v/eslint-config-alloy.svg)](https://www.npmjs.org/package/eslint-config-alloy) [![npm downloads](http://img.shields.io/npm/dm/eslint-config-alloy.svg)](https://www.npmjs.org/package/eslint-config-alloy) [![Greenkeeper badge](https://badges.greenkeeper.io/AlloyTeam/eslint-config-alloy.svg)](https://greenkeeper.io/)
 
+---
+
 **LANGUAGES**: 简体中文 / [English](#en-US)
+
+---
+
+<details open>
+<summary>Toggle 简体中文 README</summary>
+
+---
 
 AlloyTeam ESLint 规则不仅是一套先进的适用于 React/Vue/Typescript 项目的 ESLint 配置规范，而且也是你配置个性化 ESLint 规则的最佳参考。
 
@@ -77,7 +86,7 @@ AlloyTeam ESLint 规则奉行「测试即文档」，每个配置不仅配有一
 
 当然，也欢迎大家[提出不同的意见](https://github.com/AlloyTeam/eslint-config-alloy/issues/new)。
 
-## Languages
+</details>
 
 <span id="en-US"></span>
 
