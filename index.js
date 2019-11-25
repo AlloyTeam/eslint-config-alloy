@@ -10,7 +10,7 @@
  *     Swan <noreply@github.com>
  *
  * 依赖版本：
- *     eslint ^6.6.0
+ *     eslint ^6.7.1
  *     babel-eslint ^10.0.3
  *     eslint-plugin-react ^7.16.0
  *     vue-eslint-parser ^7.0.0
@@ -132,6 +132,10 @@ module.exports = {
          * require 必须在全局作用域下
          */
         'global-require': 'off',
+        /**
+         * setter 和 getter 必须写在一起
+         */
+        'grouped-accessor-pairs': 'error',
         /**
          * for in 内部必须有 hasOwnProperty
          */
@@ -282,6 +286,10 @@ module.exports = {
             }
         ],
         /**
+         * 禁止在构造函数中返回值
+         */
+        'no-constructor-return': 'error',
+        /**
          * 禁止使用 continue
          */
         'no-continue': 'off',
@@ -313,6 +321,10 @@ module.exports = {
          * 禁止重复定义类的成员
          */
         'no-dupe-class-members': 'error',
+        /**
+         * 禁止 if else 的条件判断中出现重复的条件
+         */
+        'no-dupe-else-if': 'error',
         /**
          * 禁止在对象字面量中出现重复的键名
          */
@@ -630,6 +642,10 @@ module.exports = {
          */
         'no-sequences': 'error',
         /**
+         * 禁止 setter 有返回值
+         */
+        'no-setter-return': 'error',
+        /**
          * 禁止变量名与上层作用域内的已定义的变量重复
          * @reason 很多时候函数的形参和传参是同名的
          */
@@ -816,6 +832,10 @@ module.exports = {
          */
         'prefer-destructuring': 'off',
         /**
+         * 使用 ES2016 的语法 ** 替代 Math.pow
+         */
+        'prefer-exponentiation-operator': 'off',
+        /**
          * 使用 ES2018 中的正则表达式命名组
          * @reason 正则表达式已经较难理解了，没必要强制加上命名组
          */
@@ -856,7 +876,7 @@ module.exports = {
          * 禁止将 await 或 yield 的结果做为运算符的后面项
          * @reason 这样会导致不符合预期的结果
          * https://github.com/eslint/eslint/issues/11899
-         * Off this rule until the issue above is resolved
+         * 在上面 issue 修复之前，关闭此规则
          */
         'require-atomic-updates': 'off',
         /**

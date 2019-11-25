@@ -32,6 +32,7 @@ class Builder {
         this.rulesContent = this.getRulesContent();
         this.namespaceEslintrcContent = this.getNamespaceEslintrc();
         this.buildRulesJson();
+        this.buildLocaleJson();
         if (this.namespace === 'index') {
             this.buildIndexEslintrc();
         } else {
@@ -57,6 +58,29 @@ class Builder {
                     parser: 'json'
                 }
             ),
+            'utf-8'
+        );
+    }
+
+    /** 写入 site/config/locale/*.json */
+    private buildLocaleJson() {
+        const current = require(path.resolve(__dirname, '../site/config/locale/en-US.json'));
+
+        Object.values(this.ruleList).forEach((rule) => {
+            if (!current[rule.description]) {
+                current[rule.description] = rule.description;
+            }
+            if (rule.reason && !current[rule.reason]) {
+                current[rule.reason] = rule.reason;
+            }
+        });
+
+        fs.writeFileSync(
+            path.resolve(__dirname, '../site/config/locale/en-US.json'),
+            prettier.format(JSON.stringify(current), {
+                ...require('../prettier.config'),
+                parser: 'json'
+            }),
             'utf-8'
         );
     }

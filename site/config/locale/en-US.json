@@ -439,5 +439,11 @@
     "规则说明": "Rule Description",
     "错误的示例": "Incorrect Example",
     "正确的示例": "Correct Example",
-    "配置：": "Options:"
+    "配置：": "Options:",
+    "setter 和 getter 必须写在一起": "Require grouped accessor pairs in object literals and classes",
+    "禁止在构造函数中返回值": "Disallow returning value in constructor",
+    "禁止 if else 的条件判断中出现重复的条件": "Disallow duplicate conditions in `if-else-if` chains",
+    "禁止 setter 有返回值": "Disallow returning values from setters",
+    "禁止变量名与上层作用域内的已定义的变量重复": "Disallow variable declarations from shadowing variables declared in the outer scope",
+    "使用 ES2016 的语法 ** 替代 Math.pow": "Disallow the use of `Math.pow` in favor of the `**` operator"
 }
