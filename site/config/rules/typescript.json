@@ -413,7 +413,7 @@
     "@typescript-eslint/prefer-function-type": {
         "name": "@typescript-eslint/prefer-function-type",
         "value": "error",
-        "description": "可以简写为函数类型的接口或字面类型的话，则必须简写",
+        "description": "使用函数类型别名替代包含函数调用声明的接口",
         "category": "",
         "badExample": "<span class=\"token keyword\">interface</span> <span class=\"token class-name\">Foo1</span> <span class=\"token punctuation\">{</span>\n    <mark class=\"eslint-error\" data-tip=\"Interface has only a call signature - use &apos;type Foo1 = () =&gt; string;&apos; instead.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(@typescript-eslint/prefer-function-type)&lt;/span&gt;\"><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">:</span> <span class=\"token builtin\">string</span><span class=\"token punctuation\">;</span></mark>\n<span class=\"token punctuation\">}</span>",
         "goodExample": "<span class=\"token keyword\">type</span> <span class=\"token function-variable function\">Foo2</span> <span class=\"token operator\">=</span> <span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token operator\">=></span> <span class=\"token builtin\">string</span><span class=\"token punctuation\">;</span>"

@@ -110,7 +110,7 @@
     "变量必须在定义的时候赋值": "require or disallow initialization in variable declarations",
     "变量申明必须排好序": "require variables within the same declaration block to be sorted",
     "只允许在 class 中使用 this": "只允许在 class 中使用 this",
-    "可以简写为函数类型的接口或字面类型的话，则必须简写": "Use function types instead of interfaces with call signatures",
+    "使用函数类型别名替代包含函数调用声明的接口": "Use function types instead of interfaces with call signatures",
     "可以简化代码": "可以简化代码",
     "同构应用需要在 didMount 里使用 setState": "同构应用需要在 didMount 里使用 setState",
     "后者表达的更清晰": "后者表达的更清晰",

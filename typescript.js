@@ -294,7 +294,7 @@ module.exports = {
          */
         '@typescript-eslint/prefer-for-of': 'error',
         /**
-         * 可以简写为函数类型的接口或字面类型的话，则必须简写
+         * 使用函数类型别名替代包含函数调用声明的接口
          */
         '@typescript-eslint/prefer-function-type': 'error',
         /**
