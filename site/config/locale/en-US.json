@@ -445,5 +445,10 @@
     "禁止 if else 的条件判断中出现重复的条件": "Disallow duplicate conditions in `if-else-if` chains",
     "禁止 setter 有返回值": "Disallow returning values from setters",
     "禁止变量名与上层作用域内的已定义的变量重复": "Disallow variable declarations from shadowing variables declared in the outer scope",
-    "使用 ES2016 的语法 ** 替代 Math.pow": "Disallow the use of `Math.pow` in favor of the `**` operator"
+    "使用 ES2016 的语法 ** 替代 Math.pow": "Disallow the use of `Math.pow` in favor of the `**` operator",
+    "禁止多余的 non-null 断言": "Disallow extra non-null assertion",
+    "禁止已定义的变量未使用": "Disallow unused variables and arguments",
+    "使用 ?? 替代 ||": "Enforce the usage of the nullish coalescing operator instead of logical chaining",
+    "使用 optional chaining 替代 &&": "Prefer using concise optional chain expressions instead of chained logical ands",
+    "async 函数必须返回 await": "Rules for awaiting returned promises"
 }

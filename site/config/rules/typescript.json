@@ -202,6 +202,14 @@
         "badExample": "",
         "goodExample": ""
     },
+    "@typescript-eslint/no-extra-non-null-assertion": {
+        "name": "@typescript-eslint/no-extra-non-null-assertion",
+        "value": "off",
+        "description": "禁止多余的 non-null 断言",
+        "category": "",
+        "badExample": "",
+        "goodExample": ""
+    },
     "@typescript-eslint/no-extraneous-class": {
         "name": "@typescript-eslint/no-extraneous-class",
         "value": "off",
@@ -375,6 +383,15 @@
         "goodExample": "",
         "reason": "编译阶段检查就足够了"
     },
+    "@typescript-eslint/no-unused-vars-experimental": {
+        "name": "@typescript-eslint/no-unused-vars-experimental",
+        "value": "off",
+        "description": "禁止已定义的变量未使用",
+        "category": "",
+        "badExample": "",
+        "goodExample": "",
+        "reason": "统一关闭 requires type information 的规则"
+    },
     "@typescript-eslint/no-use-before-define": {
         "name": "@typescript-eslint/no-use-before-define",
         "value": "off",
@@ -435,6 +452,24 @@
         "badExample": "<mark class=\"eslint-error\" data-tip=\"Use &apos;namespace&apos; instead of &apos;module&apos; to declare custom TypeScript modules.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(@typescript-eslint/prefer-namespace-keyword)&lt;/span&gt;\"><span class=\"token keyword\">module</span> Foo1 <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span></mark>",
         "goodExample": "<span class=\"token keyword\">namespace</span> Foo2 <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>",
         "reason": "module 已成为 js 的关键字"
+    },
+    "@typescript-eslint/prefer-nullish-coalescing": {
+        "name": "@typescript-eslint/prefer-nullish-coalescing",
+        "value": "off",
+        "description": "使用 ?? 替代 ||",
+        "category": "",
+        "badExample": "",
+        "goodExample": "",
+        "reason": "统一关闭 requires type information 的规则"
+    },
+    "@typescript-eslint/prefer-optional-chain": {
+        "name": "@typescript-eslint/prefer-optional-chain",
+        "value": "error",
+        "description": "使用 optional chaining 替代 &&",
+        "category": "",
+        "badExample": "<span class=\"token keyword\">let</span> foo1<span class=\"token punctuation\">:</span> <span class=\"token builtin\">any</span><span class=\"token punctuation\">;</span>\n<span class=\"token builtin\">console</span><span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span><mark class=\"eslint-error\" data-tip=\"Prefer using an optional chain expression instead, as it&apos;s more concise and easier to read.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(@typescript-eslint/prefer-optional-chain)&lt;/span&gt;\">foo1 <span class=\"token operator\">&amp;&amp;</span> foo1<span class=\"token punctuation\">.</span>a <span class=\"token operator\">&amp;&amp;</span> foo1<span class=\"token punctuation\">.</span>a<span class=\"token punctuation\">.</span>b <span class=\"token operator\">&amp;&amp;</span> foo1<span class=\"token punctuation\">.</span>a<span class=\"token punctuation\">.</span>b<span class=\"token punctuation\">.</span>c</mark><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>",
+        "goodExample": "<span class=\"token keyword\">let</span> foo2<span class=\"token punctuation\">:</span> <span class=\"token builtin\">any</span><span class=\"token punctuation\">;</span>\n<span class=\"token builtin\">console</span><span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>foo2<span class=\"token operator\">?</span><span class=\"token punctuation\">.</span>a<span class=\"token operator\">?</span><span class=\"token punctuation\">.</span>b<span class=\"token operator\">?</span><span class=\"token punctuation\">.</span>c<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>",
+        "reason": "统一关闭 requires type information 的规则"
     },
     "@typescript-eslint/prefer-readonly": {
         "name": "@typescript-eslint/prefer-readonly",
@@ -502,6 +537,15 @@
         "name": "@typescript-eslint/restrict-template-expressions",
         "value": "off",
         "description": "模版字符串中的变量类型必须是字符串",
+        "category": "",
+        "badExample": "",
+        "goodExample": "",
+        "reason": "统一关闭 requires type information 的规则"
+    },
+    "@typescript-eslint/return-await": {
+        "name": "@typescript-eslint/return-await",
+        "value": "off",
+        "description": "async 函数必须返回 await",
         "category": "",
         "badExample": "",
         "goodExample": "",

@@ -15,8 +15,8 @@
  *     eslint-plugin-react ^7.16.0
  *     vue-eslint-parser ^7.0.0
  *     eslint-plugin-vue ^6.0.0
- *     @typescript-eslint/parser ^2.6.1
- *     @typescript-eslint/eslint-plugin ^2.8.0
+ *     @typescript-eslint/parser ^2.9.0
+ *     @typescript-eslint/eslint-plugin ^2.9.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  *
@@ -166,6 +166,10 @@ module.exports = {
          */
         '@typescript-eslint/no-explicit-any': 'off',
         /**
+         * 禁止多余的 non-null 断言
+         */
+        '@typescript-eslint/no-extra-non-null-assertion': 'off',
+        /**
          * 禁止定义没必要的类，比如只有静态方法的类
          */
         '@typescript-eslint/no-extraneous-class': 'off',
@@ -275,6 +279,11 @@ module.exports = {
          */
         '@typescript-eslint/no-unused-vars': 'off',
         /**
+         * 禁止已定义的变量未使用
+         * @reason 统一关闭 requires type information 的规则
+         */
+        '@typescript-eslint/no-unused-vars-experimental': 'off',
+        /**
          * 禁止在定义变量之前就使用它
          * @reason 编译阶段检查就足够了
          */
@@ -307,6 +316,16 @@ module.exports = {
          * @reason module 已成为 js 的关键字
          */
         '@typescript-eslint/prefer-namespace-keyword': 'error',
+        /**
+         * 使用 ?? 替代 ||
+         * @reason 统一关闭 requires type information 的规则
+         */
+        '@typescript-eslint/prefer-nullish-coalescing': 'off',
+        /**
+         * 使用 optional chaining 替代 &&
+         * @reason 统一关闭 requires type information 的规则
+         */
+        '@typescript-eslint/prefer-optional-chain': 'error',
         /**
          * 私有变量如果没有在构造函数外被赋值，则必须设为 readonly
          * @reason 统一关闭 requires type information 的规则
@@ -346,6 +365,11 @@ module.exports = {
          * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/restrict-template-expressions': 'off',
+        /**
+         * async 函数必须返回 await
+         * @reason 统一关闭 requires type information 的规则
+         */
+        '@typescript-eslint/return-await': 'off',
         /**
          * 条件判断必须传入布尔值
          * @reason 统一关闭 requires type information 的规则

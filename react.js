@@ -15,8 +15,8 @@
  *     eslint-plugin-react ^7.16.0
  *     vue-eslint-parser ^7.0.0
  *     eslint-plugin-vue ^6.0.0
- *     @typescript-eslint/parser ^2.6.1
- *     @typescript-eslint/eslint-plugin ^2.8.0
+ *     @typescript-eslint/parser ^2.9.0
+ *     @typescript-eslint/eslint-plugin ^2.9.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  *
