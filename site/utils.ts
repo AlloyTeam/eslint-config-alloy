@@ -116,7 +116,7 @@ export function newUrl({ path, query }: UrlOptions) {
                 // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
                 delete newUrlObject.query[key];
             } else if (value === true) {
-                newUrlObject.query[key] = 'true';
+                newUrlObject.query[key] = '1';
             } else {
                 newUrlObject.query[key] = value;
             }

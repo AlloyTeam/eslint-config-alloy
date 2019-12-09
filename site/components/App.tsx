@@ -13,7 +13,7 @@ export const App: React.SFC = () => {
     const [namespace, setNamespace] = useState(
         defaultTo<RuleNamespaces>(query.rule, 'index', ['index', 'react', 'vue', 'typescript'])
     );
-    const [hideOff, toggleHideOff] = useState(query.hideOff === 'true');
+    const [hideOff, toggleHideOff] = useState(query.hideOff === '1');
     const language = getLanguage();
 
     useEffect(() => {
