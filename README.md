@@ -20,12 +20,12 @@ Please choose the following configuration based on the technology stack used by 
 
 ## Philosophy
 
-1. Let [Prettier][] handle style-related rules
-2. Inherit [ESLint's philosophy](https://eslint.org/docs/about/#philosophy) and help everyone build their own rules
-3. High degree of automation: advanced rules management, test as document as [website][]
-4. Keep up with the times, follow up the latest rules as soon as possible
+- Let [Prettier][] handle style-related rules
+- Inherit [ESLint's philosophy](https://eslint.org/docs/about/#philosophy) and help everyone build their own rules
+- High degree of automation: advanced rules management, test as document as [website][]
+- Keep up with the times, follow up the latest rules as soon as possible
 
-### 1. Let [Prettier][] handle style-related rules
+### Let [Prettier][] handle style-related rules
 
 Prettier is a code formatting tool that offers fewer options but is more professional than the style-related rules in ESLint.
 
@@ -33,13 +33,13 @@ Now that Prettier has become a necessary tool in front-end projects, eslint-conf
 
 As for whether two spaces or four spaces are used for indentation and whether there is a semicolon at the end, you can configure it in the project's `prettier.config.js`. Of course, we also provide a recommended Prettier configuration for your reference.
 
-### 2. Inherit [ESLint's philosophy][] and help everyone build their own rules
+### Inherit [ESLint's philosophy][] and help everyone build their own rules
 
 Don't you remember how ESLint defeated JSHint and became the most popular JS code inspection tool? It is because of the plugin and configuration that ESLint advocates, which meets the individual needs of different technology stacks of different teams.
 
 Therefore, eslint-config-alloy also inherits the philosophy of ESLint. It will not emphasize the need to use our config. Instead, we help you to make your own config by reference our completed documents, examples, tests, websites, etc.
 
-### 3. High degree of automation: advanced rules management, test as document as [website][]
+### High degree of automation: advanced rules management, test as document as [website][]
 
 > Relentless push automation
 
@@ -57,7 +57,7 @@ In addition, through automated scripts, we can even divide and conquer thousands
 
 The benefits of this are very obvious, test as document as [website][]. We can maintain the rules and tests in one place. Other tasks are handed over to the automated script, which greatly reduces the maintenance cost. In short, when we have a new rule to add, we only need to write three files `test/index/another-rule/.eslintrc.js`, `test/index/another-rule/bad.js`, `test/index/another-rule/good.js`.
 
-### 4. Keep up with the times, follow up the latest rules as soon as possible
+### Keep up with the times, follow up the latest rules as soon as possible
 
 ESLint is updated very quickly, there is a new version almost every week, sometimes there are new rules, sometimes existing rules are deprecated, and related plug-ins (React/Vue/TypeScript) will be updated from time to time. Without automation tools, it is difficult follow up.
 
