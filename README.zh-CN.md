@@ -349,6 +349,32 @@ git push --follow-tags
 npm publish
 ```
 
+## Q & A
+
+### 为什么要重复造轮子
+
+其实我们团队最开始使用 airbnb 规则，但是由于它过于严格，部分规则还是需要个性化，导致后来越改越多，最后决定重新维护一套。经过两年多的打磨，现在 eslint-config-alloy 已经非常成熟与先进，也受到了公司内外很多团队的欢迎。
+
+### 为什么不用 standard
+
+standard 规范认为大家不应该浪费时间在个性化的规范了，而应该整个社区统一一份规范。这种说法有一定道理，但是它是与 ESLint 的设计理念背道而驰的。大家还记得 ESLint 是怎么打败 JSHint 成为最受欢迎的 js 代码检查工具吗？就是因为 ESLint 推崇的插件化、配置化，满足了不同团队不同技术栈的个性的需求。
+
+所以 eslint-config-alloy 也传承了 ESLint 的设计理念，不会强调必须要使用我们这套规则，而是通过文档、示例、测试、网站等方便大家参考 alloy 的规则，在此基础上做出自己的个性化。
+
+由于 React/Vue/TypeScript 插件的文档没有中文化（或中文的版本很滞后），所以 alloy 的文档很大程度上帮助了国内开发者理解和配置个性化的规则。
+
+实际上国内有很多团队或个人公开的 ESLint 配置，都参考了 alloy 的文档。
+
+### 相比于 airbnb 规则有什么优势
+
+1. eslint-config-alloy 拥有官方维护的 vue、typescript、react+typescript 规则，相比之下 airbnb 的 vue 和 typescript 都是第三方维护的
+2. 先进性，保证能够与时俱进，前面已经重点提到了
+3. 方便个性化定制，包含中文讲解和网站示例
+
+### 你这个确实很好，我还是会选择 airbnb
+
+没关系，eslint-config-alloy 从设计理念上就相信不同团队不同项目可以有不同的配置，虽然你选择使用 airbnb，但是当你有个性化配置需求的时候，还是可以来我们[网站][]上参考一下哦~
+
 ## 参考
 
 - [Alloyteam Code Guide](http://alloyteam.github.io/CodeGuide)

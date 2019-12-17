@@ -4,6 +4,8 @@
 
 English / [简体中文](./README.zh-CN.md)
 
+---
+
 The AlloyTeam ESLint config is not only a progressive ESLint config for your React/Vue/TypeScript projects, but also the best reference for configuring your personalized ESLint rules.
 
 ## Quick start
@@ -33,7 +35,7 @@ As for whether two spaces or four spaces are used for indentation and whether th
 
 ### 2. Inherit [ESLint's philosophy][] and help everyone build their own rules
 
-Do you remember how ESLint defeated JSHint and became the most popular JS code inspection tool? It is because of the plugin and configuration that ESLint advocates, which meets the individual needs of different technology stacks of different teams.
+Don't you remember how ESLint defeated JSHint and became the most popular JS code inspection tool? It is because of the plugin and configuration that ESLint advocates, which meets the individual needs of different technology stacks of different teams.
 
 Therefore, eslint-config-alloy also inherits the philosophy of ESLint. It will not emphasize the need to use our config. Instead, we help you to make your own config by reference our completed documents, examples, tests, websites, etc.
 
@@ -348,6 +350,28 @@ npm version <major|minor|patch>
 git push --follow-tags
 npm publish
 ```
+
+## Q & A
+
+### Why anthor ESLint config
+
+In fact, our team initially used airbnb rules, but because it was too strict, some rules still needed to be personalized, which led to more and more changes in the future, and finally decided to maintain a new set. After more than two years of polishing, eslint-config-alloy is now very mature and progressive, and has been welcomed by many teams inside and outside the company.
+
+### Why not standard
+
+The standard specification believes that everyone should not waste time in personalized specifications, but the entire community should unify a specification. This statement makes some sense, but it runs counter to ESLint's design philosophy. Don't you remember how ESLint defeated JSHint and became the most popular JS code inspection tool? It is because of the plugin and configuration that ESLint advocates, which meets the individual needs of different technology stacks of different teams.
+
+Therefore, eslint-config-alloy also inherits the philosophy of ESLint. It will not emphasize the need to use our config. Instead, we help you to make your own config by reference our completed documents, examples, tests, websites, etc.
+
+### Why not airbnb
+
+1. eslint-config-alloy has officially maintained vue, typescript and react+typescript rules. In contrast, airbnb's vue and typescript are maintained by third parties.
+2. Progressive to ensure that we can keep up with the times, as mentioned earlier
+3. Convenient personalization, including explanations and website examples
+
+### Looks good, but I still choose airbnb
+
+It ’s okay, eslint-config-alloy believes that different teams and projects can have different configurations from the design concept. Although you choose to use airbnb, you can still come to us [website][] when you have personalized configuration needs.
 
 ## Reference
 
