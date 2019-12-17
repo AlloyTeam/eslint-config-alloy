@@ -1,8 +1,8 @@
-# [eslint-config-alloy](https://alloyteam.github.io/eslint-config-alloy/)
+# [eslint-config-alloy][website]
 
 [![Build Status](https://img.shields.io/travis/AlloyTeam/eslint-config-alloy.svg)](https://travis-ci.org/AlloyTeam/eslint-config-alloy) [![npm package](https://img.shields.io/npm/v/eslint-config-alloy.svg)](https://www.npmjs.org/package/eslint-config-alloy) [![npm downloads](http://img.shields.io/npm/dm/eslint-config-alloy.svg)](https://www.npmjs.org/package/eslint-config-alloy) [![Greenkeeper badge](https://badges.greenkeeper.io/AlloyTeam/eslint-config-alloy.svg)](https://greenkeeper.io/)
 
-English / [简体中文][./README.zh-CN.md]
+English / [简体中文](./README.zh-CN.md)
 
 The AlloyTeam ESLint config is not only a progressive ESLint config for your React/Vue/TypeScript projects, but also the best reference for configuring your personalized ESLint rules.
 

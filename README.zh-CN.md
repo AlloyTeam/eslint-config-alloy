@@ -1,4 +1,4 @@
-# [eslint-config-alloy](https://alloyteam.github.io/eslint-config-alloy/?language=zh-CN)
+# [eslint-config-alloy][网站]
 
 AlloyTeam ESLint 规则不仅是一套先进的适用于 React/Vue/Typescript 项目的 ESLint 配置规范，而且也是你配置个性化 ESLint 规则的最佳参考。
 
@@ -356,5 +356,5 @@ npm publish
 - [ESlint Shareable Config](http://eslint.org/docs/developer-guide/shareable-configs)
 
 [Prettier]: https://prettier.io/
-[网站]: https://alloyteam.github.io/eslint-config-alloy/
+[网站]: https://alloyteam.github.io/eslint-config-alloy/?language=zh-CN
 [ESLint 的理念]: https://eslint.org/docs/about/#philosophy
