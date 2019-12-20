@@ -1,4 +1,4 @@
 module.exports = {
-    extends: ['../../base.js'],
+    extends: ['../base/.eslintrc.js'],
     plugins: ['react']
 };

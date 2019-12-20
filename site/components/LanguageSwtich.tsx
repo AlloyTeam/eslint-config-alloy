@@ -1,15 +1,15 @@
-/* eslint-disable @typescript-eslint/no-require-imports */
 import React, { ReactElement } from 'react';
 
 import { newUrl } from '../utils';
-import { languageOptions, Languages } from '../constants/languages';
+import { languageOptions, Languages } from '../../config';
 
 interface LanguagesProps {
     language: Languages;
 }
 
+/** 语言切换组件 */
 export const LanguageSwtich: React.SFC<LanguagesProps> = ({ language }) => {
-    let renderItems: ReactElement[] = [];
+    const renderItems: ReactElement[] = [];
 
     Object.entries(languageOptions).forEach(([key, value], index) => {
         if (key === language) {

@@ -1,10 +1,6 @@
 module.exports = {
-    extends: ['../base/.eslintrc.js'],
-    parser: 'vue-eslint-parser',
+    parser: 'babel-eslint',
     parserOptions: {
-        // 设置 js 的解析器为 babel-eslint
-        // https://github.com/mysticatea/vue-eslint-parser#-options
-        parser: 'babel-eslint',
         ecmaVersion: 2019,
         // ECMAScript modules 模式
         sourceType: 'module',
@@ -20,5 +16,12 @@ module.exports = {
         // 仅允许 import export 语句出现在模块的顶层
         allowImportExportEverywhere: false
     },
-    plugins: ['vue']
+    env: {
+        browser: true,
+        node: true,
+        commonjs: true,
+        es6: true
+    },
+    // 以当前目录为根目录，不再向上查找 .eslintrc.js
+    root: true
 };

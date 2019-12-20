@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/no-require-imports */
 import React, { useState, useEffect } from 'react';
-import ReactTooltip = require('react-tooltip');
+import ReactTooltip from 'react-tooltip';
 
-import { RuleNamespaces } from '../constants/rules';
+import { NAMESPACES, Namespace } from '../../config';
 import { GitHubCorner } from './GitHubCorner';
 import { RuleTable } from './RuleTable';
 import { LanguageSwtich } from './LanguageSwtich';
@@ -11,7 +10,7 @@ import { getLanguage, getQuery, newUrl, replaceUrl, defaultTo, t } from '../util
 export const App: React.SFC = () => {
     const query = getQuery();
     const [namespace, setNamespace] = useState(
-        defaultTo<RuleNamespaces>(query.rule, 'index', ['index', 'react', 'vue', 'typescript'])
+        defaultTo<Namespace>(query.rule, NAMESPACES[0], NAMESPACES)
     );
     const [hideOff, toggleHideOff] = useState(query.hideOff === '1');
     const language = getLanguage();
@@ -33,14 +32,15 @@ export const App: React.SFC = () => {
                     <select
                         value={namespace}
                         onChange={(e) => {
-                            setNamespace(e.target.value as RuleNamespaces);
+                            setNamespace(e.target.value as Namespace);
                             replaceUrl(newUrl({ query: { rule: e.target.value } }));
                         }}
                     >
-                        <option value="index">{t('内置规则')}</option>
-                        <option value="react">React</option>
-                        <option value="vue">Vue</option>
-                        <option value="typescript">TypeScript</option>
+                        {NAMESPACES.map((namespace) => (
+                            <option key={namespace} value={namespace}>
+                                {namespace}
+                            </option>
+                        ))}
                     </select>
                     <label>
                         <input

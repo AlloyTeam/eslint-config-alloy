@@ -3,24 +3,22 @@
  * https://alloyteam.github.io/eslint-config-alloy/
  *
  * 贡献者：
- *     xcatliu <xcatliu@gmail.com>
- *     heyli <lcxfs1991@gmail.com>
- *     DiamondYuan <admin@diamondyuan.com>
- *     Dash Chen <noreply@github.com>
- *     Swan <noreply@github.com>
+ *   heyli <lcxfs1991@gmail.com>
+ *   DiamondYuan <admin@diamondyuan.com>
+ *   Dash Chen <noreply@github.com>
+ *   Swan <noreply@github.com>
  *
  * 依赖版本：
- *     eslint ^6.7.1
- *     babel-eslint ^10.0.3
- *     eslint-plugin-react ^7.16.0
- *     vue-eslint-parser ^7.0.0
- *     eslint-plugin-vue ^6.0.0
- *     @typescript-eslint/parser ^2.9.0
- *     @typescript-eslint/eslint-plugin ^2.9.0
+ *   eslint ^6.7.1
+ *   babel-eslint ^10.0.3
+ *   eslint-plugin-react ^7.16.0
+ *   vue-eslint-parser ^7.0.0
+ *   eslint-plugin-vue ^6.0.0
+ *   @typescript-eslint/parser ^2.9.0
+ *   @typescript-eslint/eslint-plugin ^2.9.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  *
- * @category 此规则属于哪种分类
  * @reason 为什么要开启（关闭）此规则
  */
 module.exports = {
@@ -151,7 +149,7 @@ module.exports = {
         /**
          * 禁止 delete 时传入的 key 是动态的
          */
-        '@typescript-eslint/no-dynamic-delete': 'error',
+        '@typescript-eslint/no-dynamic-delete': 'off',
         /**
          * 不允许有空函数
          * @reason 有时需要将一个空函数设置为某个项的默认值

@@ -1,7 +1,7 @@
 import url from 'url';
 import cookie from 'cookie';
 import querystring from 'querystring';
-import { locale, avaliableLanguages, Languages } from './constants/languages';
+import { locale, avaliableLanguages, Languages } from '../config';
 
 /**
  * 解析描述或原因，转换 <, >, \n 等字符串
@@ -9,7 +9,7 @@ import { locale, avaliableLanguages, Languages } from './constants/languages';
  */
 export function parseDescription(str: string) {
     const language = getLanguage();
-    let description = str
+    const description = str
         .replace(/\</g, '&lt;')
         .replace(/\>/g, '&gt;')
         .replace(/\n/g, '<br/>');
@@ -48,13 +48,13 @@ export function parseDescription(str: string) {
 /** 翻译 */
 export function t(str: string) {
     const language = getLanguage();
-    return locale[language][str] || str;
+    return (locale as any)[language][str] || str;
 }
 
 /** 从 query 和 cookies 获取 language */
 export function getLanguage(): Languages {
     let language: any;
-    let queryLanguage = getQuery().language;
+    const queryLanguage = getQuery().language;
     if (Array.isArray(queryLanguage)) {
         language = queryLanguage[queryLanguage.length - 1];
     } else {
@@ -85,7 +85,7 @@ function setCookie(name: string, value: string, days = 365) {
     }
     let expires = '';
     if (days) {
-        let date = new Date();
+        const date = new Date();
         date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
         expires = '; expires=' + date.toUTCString();
     }
@@ -103,7 +103,7 @@ interface UrlOptions {
 export function newUrl({ path, query }: UrlOptions) {
     const parsedUrl = url.parse(location.href, true);
 
-    let newUrlObject = {
+    const newUrlObject = {
         pathname: parsedUrl.pathname || '',
         query: parsedUrl.query
     };
@@ -113,7 +113,6 @@ export function newUrl({ path, query }: UrlOptions) {
     if (query) {
         Object.entries(query).forEach(([key, value]) => {
             if (value === false) {
-                // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
                 delete newUrlObject.query[key];
             } else if (value === true) {
                 newUrlObject.query[key] = '1';
@@ -124,7 +123,7 @@ export function newUrl({ path, query }: UrlOptions) {
     }
 
     // 排序 query
-    let newQuery: querystring.ParsedUrlQuery = {};
+    const newQuery: querystring.ParsedUrlQuery = {};
     Object.entries(newUrlObject.query)
         .sort(([aKey], [bKey]) => aKey.localeCompare(bKey))
         .forEach(([key, value]) => {

@@ -830,7 +830,7 @@
     "no-multi-assign": {
         "name": "no-multi-assign",
         "value": "off",
-        "description": "禁止连续赋值，比如 a = b = c = 5",
+        "description": "禁止连续赋值，比如 foo = bar = 1",
         "category": "",
         "badExample": "",
         "goodExample": ""

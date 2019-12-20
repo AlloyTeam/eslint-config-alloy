@@ -25,7 +25,7 @@ Prettier 是一个代码格式化工具，相比于 ESLint 中的代码格式规
 
 如今 Prettier 已经成为前端项目中的必备工具，eslint-config-alloy 也没有必要再去维护 ESLint 中的代码格式相关的规则了，所以我们在 v3 版本中彻底去掉了所有 Prettier 相关的规则，用 ESLint 来检查它更擅长的逻辑错误。
 
-至于缩进要两个空格还是四个空格，末尾要不要分号，可以在项目的 `prettier.config.js` 中去配置，当然我们也提供了一份推荐的 Prettier 配置供大家参考。
+至于缩进要两个空格还是四个空格，末尾要不要分号，可以在项目的 `.prettierrc.js` 中去配置，当然我们也提供了一份推荐的 Prettier 配置供大家参考。
 
 ### 传承 [ESLint 的理念][]，帮助大家建立自己的规则
 
@@ -285,10 +285,10 @@ module.exports = {
 
 eslint-config-alloy 从 v3 开始，已经不包含所有样式相关的规则了，故不需要引入 `eslint-config-prettier`。只需要安装 `prettier` 及相关 VSCode 插件即可。
 
-下面给出一个 AlloyTeam 使用的 `prettier.config.js` 配置，仅供参考：
+下面给出一个 AlloyTeam 使用的 `.prettierrc.js` 配置，仅供参考：
 
 ```js
-// prettier.config.js or .prettierrc.js
+// .prettierrc.js
 module.exports = {
     // 一行最多 100 字符
     printWidth: 100,

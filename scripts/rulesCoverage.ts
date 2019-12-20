@@ -2,38 +2,29 @@
 import fs from 'fs';
 import path from 'path';
 
+import { NAMESPACE_CONFIG, NAMESPACES } from '../config';
+
 /** 可用的规则（去除废弃的和 Prettier 的规则） */
 let activeRules: string[] = [];
 let deprecatedRules: string[] = [];
 const prettierRules = [
     ...Object.keys(require('eslint-config-prettier').rules),
-    ...Object.keys(require('eslint-config-prettier/react').rules),
-    ...Object.keys(require('eslint-config-prettier/vue').rules),
     ...Object.keys(require('eslint-config-prettier/@typescript-eslint').rules),
-    // https://github.com/prettier/eslint-config-prettier/issues/124
-    '@typescript-eslint/space-before-function-paren'
+    ...Object.keys(require('eslint-config-prettier/babel').rules),
+    ...Object.keys(require('eslint-config-prettier/flowtype').rules),
+    ...Object.keys(require('eslint-config-prettier/react').rules),
+    ...Object.keys(require('eslint-config-prettier/standard').rules),
+    ...Object.keys(require('eslint-config-prettier/unicorn').rules),
+    ...Object.keys(require('eslint-config-prettier/vue').rules)
 ];
 
-const RULE_PREFIX_MAP = {
-    index: '',
-    react: 'react/',
-    vue: 'vue/',
-    typescript: '@typescript-eslint/'
-};
-const rulesEntriesMap = {
-    index: Array.from<any>(require('eslint/lib/rules').entries()),
-    react: Object.entries<any>(require('eslint-plugin-react').rules),
-    vue: Object.entries<any>(require('eslint-plugin-vue').rules),
-    typescript: Object.entries<any>(require('@typescript-eslint/eslint-plugin').rules)
-};
-
-type RulePrefix = keyof typeof RULE_PREFIX_MAP;
-const namespaces: RulePrefix[] = ['index', 'react', 'vue', 'typescript'];
-
 // 填充 deprecatedRules 和 activeRules
-namespaces.forEach((namespace) => {
-    rulesEntriesMap[namespace].forEach(([ruleName, ruleValue]) => {
-        const fullRuleName = RULE_PREFIX_MAP[namespace] + ruleName;
+Object.values(NAMESPACE_CONFIG).forEach(({ rulePrefix, pluginName }) => {
+    const ruleEntries = pluginName
+        ? Object.entries<any>(require(pluginName).rules)
+        : Array.from<any>(require('eslint/lib/rules').entries());
+    ruleEntries.forEach(([ruleName, ruleValue]) => {
+        const fullRuleName = rulePrefix + ruleName;
         if (ruleValue.meta.deprecated) {
             deprecatedRules.push(fullRuleName);
             return;
@@ -55,13 +46,13 @@ const remainingRules = [...activeRules];
  * 2. 使用了 Prettier 的规则
  * 3. 可用的规则没有被使用
  */
-namespaces.forEach((namespace) => {
+NAMESPACES.forEach((namespace) => {
     fs.readdirSync(path.resolve(__dirname, '../test', namespace))
         .filter((ruleName) =>
             fs.lstatSync(path.resolve(__dirname, '../test', namespace, ruleName)).isDirectory()
         )
         .forEach((ruleName) => {
-            const fullRuleName = RULE_PREFIX_MAP[namespace] + ruleName;
+            const fullRuleName = NAMESPACE_CONFIG[namespace].rulePrefix + ruleName;
             if (deprecatedRules.includes(fullRuleName)) {
                 errors.push(`${fullRuleName} 是已废弃的规则，请删除`);
                 return;
