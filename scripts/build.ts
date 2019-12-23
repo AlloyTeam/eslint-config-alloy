@@ -133,7 +133,7 @@ class Builder {
         return this.ruleList
             .map(
                 (rule) =>
-                    `\n${rule.comments}\n'${rule.name}': ${JSON.stringify(rule.value, null, 2)},`
+                    `\n${rule.comments}\n'${rule.name}': ${JSON.stringify(rule.value, null, 4)},`
             )
             .join('');
     }

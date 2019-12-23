@@ -62,10 +62,11 @@ export function buildEslintrcMeta() {
  * ${pkg.homepage}
  *
  * 贡献者：
- *   ${pkg.contributors.join('\n *   ')}
+ *     ${pkg.author}
+ *     ${pkg.contributors.join('\n *     ')}
  *
  * 依赖版本：
- *   ${[
+ *     ${[
      'eslint',
      'babel-eslint',
      'eslint-plugin-react',
@@ -75,7 +76,7 @@ export function buildEslintrcMeta() {
      '@typescript-eslint/eslint-plugin'
  ]
      .map((key) => `${key} ${(pkg as any).devDependencies[key]}`)
-     .join('\n *   ')}
+     .join('\n *     ')}
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  *
