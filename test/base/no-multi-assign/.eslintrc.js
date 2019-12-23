@@ -1,7 +1,7 @@
 module.exports = {
     rules: {
         /**
-         * 禁止连续赋值，比如 a = b = c = 5
+         * 禁止连续赋值，比如 foo = bar = 1
          */
         'no-multi-assign': 'off'
     }

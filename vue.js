@@ -5,9 +5,12 @@
  * 贡献者：
  *     xcatliu <xcatliu@gmail.com>
  *     heyli <lcxfs1991@gmail.com>
+ *     Swan <noreply@github.com>
  *     DiamondYuan <admin@diamondyuan.com>
  *     Dash Chen <noreply@github.com>
- *     Swan <noreply@github.com>
+ *     lzw <mingxin2014@gmail.com>
+ *     ryoliu <sfesh@163.com>
+ *     sunhui04 <sunhui04@meituan.com>
  *
  * 依赖版本：
  *     eslint ^6.7.1
@@ -20,7 +23,6 @@
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  *
- * @category 此规则属于哪种分类
  * @reason 为什么要开启（关闭）此规则
  */
 module.exports = {

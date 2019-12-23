@@ -40,9 +40,12 @@
     "author": "xcatliu <xcatliu@gmail.com>",
     "contributors": [
         "heyli <lcxfs1991@gmail.com>",
+        "Swan <noreply@github.com>",
         "DiamondYuan <admin@diamondyuan.com>",
         "Dash Chen <noreply@github.com>",
-        "Swan <noreply@github.com>"
+        "lzw <mingxin2014@gmail.com>",
+        "ryoliu <sfesh@163.com>",
+        "sunhui04 <sunhui04@meituan.com>"
     ],
     "license": "MIT",
     "bugs": {
@@ -76,7 +79,7 @@
         "cookie": "^0.4.0",
         "doctrine": "^3.0.0",
         "eslint": "^6.7.1",
-        "eslint-config-prettier": "^6.6.0",
+        "eslint-config-prettier": "^6.7.0",
         "eslint-plugin-react": "^7.16.0",
         "eslint-plugin-vue": "^6.0.0",
         "husky": "^3.0.4",

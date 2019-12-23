@@ -3,6 +3,6 @@ module.exports = {
         /**
          * 禁止 delete 时传入的 key 是动态的
          */
-        '@typescript-eslint/no-dynamic-delete': 'error'
+        '@typescript-eslint/no-dynamic-delete': 'off'
     }
 };

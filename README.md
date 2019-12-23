@@ -31,7 +31,7 @@ Prettier is a code formatting tool that offers fewer options but is more profess
 
 Now that Prettier has become a necessary tool in front-end projects, eslint-config-alloy does not need to maintain the style-related rules in ESLint anymore, so we completely removed all Prettier related rules in the v3 version, and use ESLint to check logical errors which it's good at.
 
-As for whether two spaces or four spaces are used for indentation and whether there is a semicolon at the end, you can configure it in the project's `prettier.config.js`. Of course, we also provide a recommended Prettier configuration for your reference.
+As for whether two spaces or four spaces are used for indentation and whether there is a semicolon at the end, you can configure it in the project's `.prettierrc.js`. Of course, we also provide a recommended Prettier configuration for your reference.
 
 ### Inherit [ESLint's philosophy][] and help everyone build their own rules
 
@@ -287,10 +287,10 @@ If you want to auto fix on save for `.vue`, `.ts` or `.tsx` files, you need to s
 
 eslint-config-alloy do not include all style-related rules in v3, so there is no need to install `eslint-config-prettier`. Just install `prettier` and related VSCode plugins.
 
-Here is a `prettier.config.js` configuration used by AlloyTeam for reference only:
+Here is a `.prettierrc.js` configuration used by AlloyTeam for reference only:
 
 ```js
-// prettier.config.js or .prettierrc.js
+// .prettierrc.js
 module.exports = {
     // max 100 characters per line
     printWidth: 100,

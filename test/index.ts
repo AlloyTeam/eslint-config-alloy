@@ -1,18 +1,9 @@
 import path from 'path';
 import assert from 'assert';
-
 import eslint from 'eslint';
+import { NAMESPACE_CONFIG, Namespace } from '../config';
 
-const RULE_PREFIX_MAP = {
-    index: '',
-    react: 'react/',
-    vue: 'vue/',
-    typescript: '@typescript-eslint/'
-};
-
-type RulePrefix = keyof typeof RULE_PREFIX_MAP;
-
-const CLIEngine = eslint.CLIEngine;
+const { CLIEngine } = eslint;
 const cli = new CLIEngine({});
 
 const goodReport = cli.executeOnFiles([
@@ -42,12 +33,12 @@ badReport.results.forEach((badReportForOneFile) => {
 
     const dirList = path.dirname(filePath).split(path.sep);
     const ruleName = dirList.pop();
-    const rulePrefix = dirList.pop() as RulePrefix;
+    const namespace = dirList.pop() as Namespace;
 
     assert(errorCount > 0, `${filePath} should have at least one error`);
 
     messages.forEach((message) => {
-        const fullRuleName = RULE_PREFIX_MAP[rulePrefix] + ruleName;
+        const fullRuleName = NAMESPACE_CONFIG[namespace].rulePrefix + ruleName;
         if (badWhitelist.includes(fullRuleName)) {
             return;
         }

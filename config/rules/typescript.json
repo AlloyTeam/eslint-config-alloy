@@ -171,11 +171,11 @@
     },
     "@typescript-eslint/no-dynamic-delete": {
         "name": "@typescript-eslint/no-dynamic-delete",
-        "value": "error",
+        "value": "off",
         "description": "禁止 delete 时传入的 key 是动态的",
         "category": "",
-        "badExample": "<span class=\"token keyword\">const</span> foo1 <span class=\"token operator\">=</span> <span class=\"token punctuation\">{</span>\n    bar<span class=\"token punctuation\">:</span> <span class=\"token number\">1</span>\n<span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">let</span> key <span class=\"token operator\">=</span> <span class=\"token string\">'bar'</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">delete</span> foo1<span class=\"token punctuation\">[</span><mark class=\"eslint-error\" data-tip=\"Do not delete dynamically computed property keys.&lt;br/&gt;&lt;span class=&apos;eslint-error-rule-id&apos;&gt;eslint(@typescript-eslint/no-dynamic-delete)&lt;/span&gt;\">key</mark><span class=\"token punctuation\">]</span><span class=\"token punctuation\">;</span>",
-        "goodExample": "<span class=\"token keyword\">const</span> foo2 <span class=\"token operator\">=</span> <span class=\"token punctuation\">{</span>\n    bar<span class=\"token punctuation\">:</span> <span class=\"token number\">1</span>\n<span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">delete</span> foo2<span class=\"token punctuation\">.</span>bar<span class=\"token punctuation\">;</span>"
+        "badExample": "",
+        "goodExample": ""
     },
     "@typescript-eslint/no-empty-function": {
         "name": "@typescript-eslint/no-empty-function",
