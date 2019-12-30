@@ -1,7 +1,7 @@
 module.exports = {
     rules: {
         /**
-         * 禁止使用 pascal 风格的组件
+         * 组件的名称必须符合 PascalCase
          */
         'react/jsx-pascal-case': 'error'
     }

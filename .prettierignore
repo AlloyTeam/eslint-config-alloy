@@ -20,6 +20,8 @@ test/base/no-sequences/bad.js
 test/base/no-useless-rename/bad.js
 test/react/jsx-fragments/bad.js
 test/react/self-closing-comp/bad.js
+test/vue/no-irregular-whitespace/bad.vue
+test/vue/no-irregular-whitespace/good.vue
 
 ## Built-files
 .cache

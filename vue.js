@@ -17,9 +17,9 @@
  *     babel-eslint ^10.0.3
  *     eslint-plugin-react ^7.16.0
  *     vue-eslint-parser ^7.0.0
- *     eslint-plugin-vue ^6.0.0
- *     @typescript-eslint/parser ^2.9.0
- *     @typescript-eslint/eslint-plugin ^2.9.0
+ *     eslint-plugin-vue ^6.1.1
+ *     @typescript-eslint/parser ^2.13.0
+ *     @typescript-eslint/eslint-plugin ^2.13.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  *
@@ -66,9 +66,24 @@ module.exports = {
          */
         'vue/comment-directive': 'error',
         /**
+         * 组件的 name 属性必须符合 PascalCase
+         * @reason 这是官方建议的规范
+         */
+        'vue/component-definition-name-casing': ['error', 'PascalCase'],
+        /**
          * 限制组件名的风格
          */
         'vue/component-name-in-template-casing': 'off',
+        /**
+         * 组件中必须按照 <script>, <template>, <style> 排序
+         * @reason 这是官方建议的顺序
+         */
+        'vue/component-tags-order': [
+            'error',
+            {
+                order: ['script', 'template', 'style']
+            }
+        ],
         /**
          * 必须使用 === 或 !==，禁止使用 == 或 !=
          */
@@ -99,6 +114,14 @@ module.exports = {
          */
         'vue/no-deprecated-scope-attribute': 'error',
         /**
+         * 使用 v-slot 替代已废弃的 slot
+         */
+        'vue/no-deprecated-slot-attribute': 'error',
+        /**
+         * 禁用已废弃的 slot-scope
+         */
+        'vue/no-deprecated-slot-scope-attribute': 'error',
+        /**
          * 禁止重复的键名
          */
         'vue/no-dupe-keys': 'error',
@@ -117,9 +140,26 @@ module.exports = {
          */
         'vue/no-empty-pattern': 'error',
         /**
+         * 禁止使用特殊空白符（比如全角空格），除非是出现在字符串、正则表达式、模版字符串中或 HTML 内容中
+         */
+        'vue/no-irregular-whitespace': [
+            'error',
+            {
+                skipStrings: true,
+                skipComments: false,
+                skipRegExps: true,
+                skipTemplates: true,
+                skipHTMLTextContents: true
+            }
+        ],
+        /**
          * 禁止出现语法错误
          */
         'vue/no-parsing-error': 'error',
+        /**
+         * 组件的 name 属性静止使用保留字
+         */
+        'vue/no-reserved-component-names': 'error',
         /**
          * 禁止覆盖保留字
          */
@@ -137,6 +177,10 @@ module.exports = {
          */
         'vue/no-side-effects-in-computed-properties': 'off',
         /**
+         * 禁止使用 style 属性
+         */
+        'vue/no-static-inline-styles': 'off',
+        /**
          * 禁止 <template> 使用 key 属性
          */
         'vue/no-template-key': 'off',
@@ -148,6 +192,10 @@ module.exports = {
          * 禁止在 <textarea> 中出现模版语法 {{message}}
          */
         'vue/no-textarea-mustache': 'error',
+        /**
+         * 当你的 vue 版本较老时，禁用还未支持的语法
+         */
+        'vue/no-unsupported-features': 'off',
         /**
          * 禁止定义在 components 中的组件未使用
          */
@@ -186,6 +234,10 @@ module.exports = {
          */
         'vue/require-direct-export': 'off',
         /**
+         * 组件必须包含 name 属性
+         */
+        'vue/require-name-property': 'off',
+        /**
          * props 的取值必须是基本类型的构造函数，而不是字符串
          * @reason 类型相关的约束交给 TypeScript
          */
@@ -212,6 +264,10 @@ module.exports = {
          * 计算属性必须有返回值
          */
         'vue/return-in-computed-property': 'error',
+        /**
+         * class 的值必须按字母排序
+         */
+        'vue/static-class-names-order': 'off',
         /**
          * 禁止在模版中用 this
          */
@@ -244,6 +300,10 @@ module.exports = {
          * v-bind 指令必须合法
          */
         'vue/valid-v-bind': 'error',
+        /**
+         * v-bind:foo.sync 指令必须合法
+         */
+        'vue/valid-v-bind-sync': 'error',
         /**
          * v-cloak 指令必须合法
          */

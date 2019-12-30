@@ -17,9 +17,9 @@
  *     babel-eslint ^10.0.3
  *     eslint-plugin-react ^7.16.0
  *     vue-eslint-parser ^7.0.0
- *     eslint-plugin-vue ^6.0.0
- *     @typescript-eslint/parser ^2.9.0
- *     @typescript-eslint/eslint-plugin ^2.9.0
+ *     eslint-plugin-vue ^6.1.1
+ *     @typescript-eslint/parser ^2.13.0
+ *     @typescript-eslint/eslint-plugin ^2.13.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  *
@@ -65,7 +65,7 @@ module.exports = {
          */
         '@typescript-eslint/camelcase': 'off',
         /**
-         * 类名与接口名必须为驼峰式
+         * 类名与接口名必须为 PascalCase
          */
         '@typescript-eslint/class-name-casing': 'error',
         /**
@@ -237,6 +237,11 @@ module.exports = {
                 allowDestructuring: true
             }
         ],
+        /**
+         * 禁止 throw 字面量，必须 throw 一个 Error 对象
+         * @reason 统一关闭 requires type information 的规则
+         */
+        '@typescript-eslint/no-throw-literal': 'off',
         /**
          * 禁止使用类型别名
          */

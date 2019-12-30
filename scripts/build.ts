@@ -217,9 +217,9 @@ class Builder {
             }
             insertedBadExample = insertTag(
                 insertedBadExample,
-                `<mark class="eslint-error" data-tip="${xmlEscape(
-                    `${message}<br/><span class='eslint-error-rule-id'>eslint(${ruleId})</span>`
-                )}">`,
+                `<mark class="eslint-error" data-tip="${`${xmlEscape(
+                    xmlEscape(message)
+                )}<br/><span class='eslint-error-rule-id'>eslint(${ruleId})</span>`}">`,
                 [insertLine, insertColumn, insertLineEnd, insertColumnEnd]
             );
         });
