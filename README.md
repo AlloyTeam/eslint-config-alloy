@@ -139,7 +139,7 @@ module.exports = {
 ### Vue
 
 ```bash
-npm install --save-dev eslint babel-eslint vue-eslint-parser@5.0.0 eslint-plugin-vue eslint-config-alloy
+npm install --save-dev eslint babel-eslint vue-eslint-parser eslint-plugin-vue eslint-config-alloy
 ```
 
 Create an `.eslintrc.js` in the root directory of your project, then copy the following content into it:
