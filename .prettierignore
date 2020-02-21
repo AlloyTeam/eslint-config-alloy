@@ -3,6 +3,7 @@
 .idea
 .editorconfig
 package-lock.json
+.npmrc
 
 # Ignored suffix
 *.log

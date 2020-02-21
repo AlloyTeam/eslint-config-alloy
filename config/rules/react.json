@@ -84,6 +84,15 @@
         "goodExample": "",
         "reason": "类型相关的约束交给 TypeScript"
     },
+    "react/function-component-definition": {
+        "name": "react/function-component-definition",
+        "value": "off",
+        "description": "限制函数式组件的函数形式（函数声明、函数表达式或箭头函数）",
+        "category": "",
+        "badExample": "",
+        "goodExample": "",
+        "reason": "一些场景还不能覆盖，如 export default function，自动修复功能在 ts 中有些问题"
+    },
     "react/jsx-boolean-value": {
         "name": "react/jsx-boolean-value",
         "value": "off",
@@ -173,6 +182,15 @@
         "badExample": "",
         "goodExample": ""
     },
+    "react/jsx-no-script-url": {
+        "name": "react/jsx-no-script-url",
+        "value": "error",
+        "description": "禁止出现 href=\"javascript:void(0)\"",
+        "category": "",
+        "badExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>a</span> <mark class=\"eslint-error\" data-tip=\"A future version of React will block javascript: URLs as a security precaution. Use event handlers instead if you can. If you need to generate unsafe HTML, try using dangerouslySetInnerHTML instead.<br/><span class='eslint-error-rule-id'>eslint(react/jsx-no-script-url)</span>\"><span class=\"token attr-name\">href</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>javascript:void(0);<span class=\"token punctuation\">\"</span></span></mark><span class=\"token punctuation\">></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>a</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>",
+        "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>a</span>\n    <span class=\"token attr-name\">href</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>#<span class=\"token punctuation\">\"</span></span>\n    <span class=\"token attr-name\">onClick</span><span class=\"token script language-javascript\"><span class=\"token script-punctuation punctuation\">=</span><span class=\"token punctuation\">{</span><span class=\"token punctuation\">(</span><span class=\"token parameter\">e</span><span class=\"token punctuation\">)</span> <span class=\"token operator\">=></span> <span class=\"token punctuation\">{</span>\n        e<span class=\"token punctuation\">.</span><span class=\"token function\">preventDefault</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n    <span class=\"token punctuation\">}</span><span class=\"token punctuation\">}</span></span>\n<span class=\"token punctuation\">></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>a</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>",
+        "reason": "React 已经有 warning 了，并且会在将来禁止此类属性值"
+    },
     "react/jsx-no-target-blank": {
         "name": "react/jsx-no-target-blank",
         "value": "off",
@@ -252,6 +270,15 @@
         "category": "",
         "badExample": "",
         "goodExample": ""
+    },
+    "react/no-adjacent-inline-elements": {
+        "name": "react/no-adjacent-inline-elements",
+        "value": "off",
+        "description": "两个 inline 元素之间必须有空格，否则视觉上它们就贴在一起了",
+        "category": "",
+        "badExample": "",
+        "goodExample": "",
+        "reason": "这是样式的问题，不应该由空格约束"
     },
     "react/no-array-index-key": {
         "name": "react/no-array-index-key",
@@ -389,7 +416,7 @@
         "value": "error",
         "description": "禁止组件的属性或生命周期大小写错误",
         "category": "",
-        "badExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">static</span> defaultprops <span class=\"token operator\">=</span> <mark class=\"eslint-error\" data-tip=\"Typo in static class property declaration<br/><span class='eslint-error-rule-id'>eslint(react/no-typos)</span>\"><span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span></mark><span class=\"token punctuation\">;</span>\n    <mark class=\"eslint-error\" data-tip=\"Typo in component lifecycle method declaration<br/><span class='eslint-error-rule-id'>eslint(react/no-typos)</span>\"><span class=\"token function\">componentdidupdate</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span></mark>\n<span class=\"token punctuation\">}</span>",
+        "badExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">static</span> <mark class=\"eslint-error\" data-tip=\"Typo in static class property declaration<br/><span class='eslint-error-rule-id'>eslint(react/no-typos)</span>\">defaultprops</mark> <span class=\"token operator\">=</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>\n    <mark class=\"eslint-error\" data-tip=\"Typo in component lifecycle method declaration: componentdidupdate should be componentDidUpdate<br/><span class='eslint-error-rule-id'>eslint(react/no-typos)</span>\"><span class=\"token function\">componentdidupdate</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span></mark>\n<span class=\"token punctuation\">}</span>",
         "goodExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">static</span> defaultProps <span class=\"token operator\">=</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>\n    <span class=\"token function\">componentDidUpdate</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span>"
     },
     "react/no-unescaped-entities": {

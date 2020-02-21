@@ -15,11 +15,11 @@
  * 依赖版本：
  *     eslint ^6.7.1
  *     babel-eslint ^10.0.3
- *     eslint-plugin-react ^7.16.0
+ *     eslint-plugin-react ^7.18.3
  *     vue-eslint-parser ^7.0.0
- *     eslint-plugin-vue ^6.1.1
- *     @typescript-eslint/parser ^2.13.0
- *     @typescript-eslint/eslint-plugin ^2.13.0
+ *     eslint-plugin-vue ^6.2.1
+ *     @typescript-eslint/parser ^2.20.0
+ *     @typescript-eslint/eslint-plugin ^2.20.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  *
@@ -217,6 +217,11 @@ module.exports = {
          */
         'vue/order-in-components': 'error',
         /**
+         * <template> <script> <style> 之间必须由空行
+         * @reason 代码格式问题，最好由 Prettier 解决
+         */
+        'vue/padding-line-between-blocks': 'off',
+        /**
          * props 必须用驼峰式
          */
         'vue/prop-name-casing': 'off',
@@ -264,6 +269,10 @@ module.exports = {
          * 计算属性必须有返回值
          */
         'vue/return-in-computed-property': 'error',
+        /**
+         * props 的键名必须排好序
+         */
+        'vue/sort-keys': 'off',
         /**
          * class 的值必须按字母排序
          */

@@ -15,11 +15,11 @@
  * 依赖版本：
  *     eslint ^6.7.1
  *     babel-eslint ^10.0.3
- *     eslint-plugin-react ^7.16.0
+ *     eslint-plugin-react ^7.18.3
  *     vue-eslint-parser ^7.0.0
- *     eslint-plugin-vue ^6.1.1
- *     @typescript-eslint/parser ^2.13.0
- *     @typescript-eslint/eslint-plugin ^2.13.0
+ *     eslint-plugin-vue ^6.2.1
+ *     @typescript-eslint/parser ^2.20.0
+ *     @typescript-eslint/eslint-plugin ^2.20.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  *
@@ -29,6 +29,7 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     plugins: ['@typescript-eslint'],
     rules: {
+        'no-dupe-class-members': 'off',
         'no-empty-function': 'off',
         // https://github.com/typescript-eslint/typescript-eslint/issues/491
         'no-invalid-this': 'off',
@@ -51,23 +52,14 @@ module.exports = {
          */
         '@typescript-eslint/await-thenable': 'off',
         /**
-         * 是否允许使用 // @ts-ignore 来忽略编译错误
-         * @reason 既然已经使用注释来忽略编译错误了，说明已经清楚可能带来的后果
+         * 禁止使用 // @ts-ignore // @ts-nocheck // @ts-check
+         * @reason 这种注释本身就是对特殊代码的说明
          */
-        '@typescript-eslint/ban-ts-ignore': 'off',
+        '@typescript-eslint/ban-ts-comment': 'off',
         /**
          * 禁止使用指定的类型
          */
         '@typescript-eslint/ban-types': 'off',
-        /**
-         * 变量名必须是 camelcase 风格的
-         * @reason 很多 api 或文件名都不是 camelcase 风格的
-         */
-        '@typescript-eslint/camelcase': 'off',
-        /**
-         * 类名与接口名必须为 PascalCase
-         */
-        '@typescript-eslint/class-name-casing': 'error',
         /**
          * 类型断言必须使用 as Type，禁止使用 <Type>，禁止对对象字面量进行类型断言（断言成 any 是允许的）
          * @reason <Type> 容易被理解为 jsx
@@ -85,6 +77,10 @@ module.exports = {
          */
         '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
         /**
+         * 有默认值或可选的参数必须放到最后
+         */
+        '@typescript-eslint/default-param-last': 'off',
+        /**
          * 函数返回值必须与声明的类型一致
          * @reason 编译阶段检查就足够了
          */
@@ -95,18 +91,9 @@ module.exports = {
          */
         '@typescript-eslint/explicit-member-accessibility': 'error',
         /**
-         * 约束泛型的命名规则
+         * 导出的函数或类中的 public 方法必须定义输入输出参数的类型
          */
-        '@typescript-eslint/generic-type-naming': 'off',
-        /**
-         * 接口名称必须以 I 开头
-         */
-        '@typescript-eslint/interface-name-prefix': 'off',
-        /**
-         * 私有成员必须以 _ 开头
-         * @reason 已有 private 修饰符了，没必要限制变量名
-         */
-        '@typescript-eslint/member-naming': 'off',
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
         /**
          * 指定类成员的排序规则
          * @reason 优先级：
@@ -147,9 +134,19 @@ module.exports = {
             }
         ],
         /**
+         * 限制各种变量或类型的命名规则
+         * @reason 统一关闭 requires type information 的规则
+         */
+        '@typescript-eslint/naming-convention': 'off',
+        /**
          * 禁止使用 Array 构造函数
          */
         '@typescript-eslint/no-array-constructor': 'off',
+        /**
+         * 禁止重复定义类的成员
+         * @reason 编译阶段就会报错了
+         */
+        '@typescript-eslint/no-dupe-class-members': 'off',
         /**
          * 禁止 delete 时传入的 key 是动态的
          */
@@ -185,6 +182,11 @@ module.exports = {
          */
         '@typescript-eslint/no-for-in-array': 'off',
         /**
+         * 禁止使用 eval
+         * @reason 统一关闭 requires type information 的规则
+         */
+        '@typescript-eslint/no-implied-eval': 'off',
+        /**
          * 禁止给一个初始化时直接赋值为 number, string 的变量显式的声明类型
          * @reason 可以简化代码
          */
@@ -214,6 +216,11 @@ module.exports = {
                 allowDefinitionFiles: true
             }
         ],
+        /**
+         * 禁止在 optional chaining 之后使用 non-null 断言（感叹号）
+         * @reason optional chaining 后面的属性一定是非空的
+         */
+        '@typescript-eslint/no-non-null-asserted-optional-chain': 'error',
         /**
          * 禁止使用 non-null 断言（感叹号）
          * @reason 使用 non-null 断言时就已经清楚了风险
@@ -247,6 +254,11 @@ module.exports = {
          */
         '@typescript-eslint/no-type-alias': 'off',
         /**
+         * 测试表达式中的布尔类型禁止与 true 或 false 直接比较
+         * @reason 统一关闭 requires type information 的规则
+         */
+        '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'off',
+        /**
          * 条件表达式禁止是永远为真（或永远为假）的
          * @reason 统一关闭 requires type information 的规则
          */
@@ -265,10 +277,6 @@ module.exports = {
          * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/no-unnecessary-type-assertion': 'off',
-        /**
-         * public 方法必须定义输入输出参数的类型
-         */
-        '@typescript-eslint/no-untyped-public-signature': 'off',
         /**
          * 禁止无用的表达式
          */
@@ -304,6 +312,11 @@ module.exports = {
          * @reason no-require-imports 规则已经约束了 require
          */
         '@typescript-eslint/no-var-requires': 'off',
+        /**
+         * 使用 as const 替代 as 'bar'
+         * @reason as const 是新语法，不是很常见
+         */
+        '@typescript-eslint/prefer-as-const': 'off',
         /**
          * 使用 for 循环遍历数组时，如果索引仅用于获取成员，则必须使用 for of 循环替代 for 循环
          * @reason for of 循环更加易读
@@ -381,6 +394,11 @@ module.exports = {
          * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/strict-boolean-expressions': 'off',
+        /**
+         * 使用联合类型作为 switch 的对象时，必须包含每一个类型的 case
+         * @reason 统一关闭 requires type information 的规则
+         */
+        '@typescript-eslint/switch-exhaustiveness-check': 'off',
         /**
          * 禁止使用三斜杠导入文件
          * @reason 三斜杠是已废弃的语法，但在类型声明文件中还是可以使用的

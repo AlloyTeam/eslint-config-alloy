@@ -15,11 +15,11 @@
  * 依赖版本：
  *     eslint ^6.7.1
  *     babel-eslint ^10.0.3
- *     eslint-plugin-react ^7.16.0
+ *     eslint-plugin-react ^7.18.3
  *     vue-eslint-parser ^7.0.0
- *     eslint-plugin-vue ^6.1.1
- *     @typescript-eslint/parser ^2.13.0
- *     @typescript-eslint/eslint-plugin ^2.13.0
+ *     eslint-plugin-vue ^6.2.1
+ *     @typescript-eslint/parser ^2.20.0
+ *     @typescript-eslint/eslint-plugin ^2.20.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  *
@@ -74,6 +74,11 @@ module.exports = {
          */
         'react/forbid-prop-types': 'off',
         /**
+         * 限制函数式组件的函数形式（函数声明、函数表达式或箭头函数）
+         * @reason 一些场景还不能覆盖，如 export default function，自动修复功能在 ts 中有些问题
+         */
+        'react/function-component-definition': 'off',
+        /**
          * 布尔值的属性必须显式的声明值为 true
          */
         'react/jsx-boolean-value': 'off',
@@ -124,6 +129,11 @@ module.exports = {
          */
         'react/jsx-no-literals': 'off',
         /**
+         * 禁止出现 href="javascript:void(0)"
+         * @reason React 已经有 warning 了，并且会在将来禁止此类属性值
+         */
+        'react/jsx-no-script-url': 'error',
+        /**
          * 禁止使用 target="_blank"
          */
         'react/jsx-no-target-blank': 'off',
@@ -163,6 +173,11 @@ module.exports = {
          * 禁止在 setState 中使用 this.state
          */
         'react/no-access-state-in-setstate': 'off',
+        /**
+         * 两个 inline 元素之间必须有空格，否则视觉上它们就贴在一起了
+         * @reason 这是样式的问题，不应该由空格约束
+         */
+        'react/no-adjacent-inline-elements': 'off',
         /**
          * 禁止使用数组的索引作为 key
          */
