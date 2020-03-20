@@ -71,7 +71,7 @@
         "@types/react": "^16.9.15",
         "@types/react-dom": "^16.8.4",
         "@types/react-tooltip": "^3.11.0",
-        "@types/rimraf": "^2.0.2",
+        "@types/rimraf": "^3.0.0",
         "@types/xml-escape": "^1.1.0",
         "@typescript-eslint/eslint-plugin": "^2.20.0",
         "@typescript-eslint/parser": "^2.20.0",
