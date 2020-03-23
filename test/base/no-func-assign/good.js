@@ -1,2 +1,2 @@
-let foo = function() {};
+let foo = function () {};
 foo = 1;

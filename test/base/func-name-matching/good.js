@@ -1,2 +1,2 @@
-const foo = function() {};
+const foo = function () {};
 const bar = function bar() {};

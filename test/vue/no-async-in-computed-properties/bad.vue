@@ -1,7 +1,7 @@
 <script>
 export default {
     computed: {
-        foo: async function() {
+        foo: async function () {
             return await someFunc();
         },
         bar() {

@@ -9,10 +9,7 @@ import { locale, avaliableLanguages, Languages } from '../config';
  */
 export function parseDescription(str: string) {
     const language = getLanguage();
-    const description = str
-        .replace(/\</g, '&lt;')
-        .replace(/\>/g, '&gt;')
-        .replace(/\n/g, '<br/>');
+    const description = str.replace(/\</g, '&lt;').replace(/\>/g, '&gt;').replace(/\n/g, '<br/>');
     if (language === 'zh-CN') {
         return description
             .replace(/[a-zA-Z0-9\(\)\[\]\{\}\\\/'"_\-\+\?\.\*!=\&\@\#%~:; ]+/g, (codes) => {

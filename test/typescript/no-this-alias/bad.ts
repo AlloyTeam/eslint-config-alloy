@@ -1,6 +1,6 @@
 function foo() {
     const self = this;
-    setTimeout(function() {
+    setTimeout(function () {
         self.doWork();
     });
 }
