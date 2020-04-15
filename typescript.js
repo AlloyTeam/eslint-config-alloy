@@ -18,8 +18,8 @@
  *     eslint-plugin-react ^7.18.3
  *     vue-eslint-parser ^7.0.0
  *     eslint-plugin-vue ^6.2.1
- *     @typescript-eslint/parser ^2.20.0
- *     @typescript-eslint/eslint-plugin ^2.20.0
+ *     @typescript-eslint/parser ^2.28.0
+ *     @typescript-eslint/eslint-plugin ^2.28.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  *
@@ -60,6 +60,10 @@ module.exports = {
          * 禁止使用指定的类型
          */
         '@typescript-eslint/ban-types': 'off',
+        /**
+         * 类的只读属性若是一个字面量，则必须使用只读属性而不是 getter
+         */
+        '@typescript-eslint/class-literal-property-style': ['error', 'fields'],
         /**
          * 类型断言必须使用 as Type，禁止使用 <Type>，禁止对对象字面量进行类型断言（断言成 any 是允许的）
          * @reason <Type> 容易被理解为 jsx
@@ -134,6 +138,10 @@ module.exports = {
             }
         ],
         /**
+         * 接口中的方法必须用属性的方式定义
+         */
+        '@typescript-eslint/method-signature-style': 'error',
+        /**
          * 限制各种变量或类型的命名规则
          * @reason 统一关闭 requires type information 的规则
          */
@@ -142,6 +150,11 @@ module.exports = {
          * 禁止使用 Array 构造函数
          */
         '@typescript-eslint/no-array-constructor': 'off',
+        /**
+         * 禁止滥用 toString 方法
+         * @reason 统一关闭 requires type information 的规则
+         */
+        '@typescript-eslint/no-base-to-string': 'off',
         /**
          * 禁止重复定义类的成员
          * @reason 编译阶段就会报错了
@@ -278,6 +291,26 @@ module.exports = {
          */
         '@typescript-eslint/no-unnecessary-type-assertion': 'off',
         /**
+         * 禁止将变量或属性的类型设置为 any
+         * @reason 统一关闭 requires type information 的规则
+         */
+        '@typescript-eslint/no-unsafe-assignment': 'off',
+        /**
+         * 禁止调用 any 类型的变量上的方法
+         * @reason 统一关闭 requires type information 的规则
+         */
+        '@typescript-eslint/no-unsafe-call': 'off',
+        /**
+         * 禁止获取 any 类型的变量中的属性
+         * @reason 统一关闭 requires type information 的规则
+         */
+        '@typescript-eslint/no-unsafe-member-access': 'off',
+        /**
+         * 禁止函数的返回值的类型是 any
+         * @reason 统一关闭 requires type information 的规则
+         */
+        '@typescript-eslint/no-unsafe-return': 'off',
+        /**
          * 禁止无用的表达式
          */
         '@typescript-eslint/no-unused-expressions': [
@@ -351,6 +384,16 @@ module.exports = {
          */
         '@typescript-eslint/prefer-readonly': 'off',
         /**
+         * 函数的参数必须设置为 readonly
+         * @reason 统一关闭 requires type information 的规则
+         */
+        '@typescript-eslint/prefer-readonly-parameter-types': 'off',
+        /**
+         * 使用 reduce 方法时，必须传入范型，而不是对第二个参数使用 as
+         * @reason 统一关闭 requires type information 的规则
+         */
+        '@typescript-eslint/prefer-reduce-type-parameter': 'off',
+        /**
          * 使用 RegExp#exec 而不是 String#match
          * @reason 统一关闭 requires type information 的规则
          */
@@ -360,6 +403,12 @@ module.exports = {
          * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/prefer-string-starts-ends-with': 'off',
+        /**
+         * 当需要忽略下一行的 ts 错误时，必须使用 @ts-expect-error 而不是 @ts-ignore
+         * @reason 使用 @ts-expect-error 可以避免对不会报错的代码设置了 @ts-ignore
+         * @TODO TypeScript 3.9 发布后开启
+         */
+        '@typescript-eslint/prefer-ts-expect-error': 'off',
         /**
          * async 函数的返回值必须是 Promise
          * @reason 统一关闭 requires type information 的规则

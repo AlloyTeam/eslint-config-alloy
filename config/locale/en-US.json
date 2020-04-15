@@ -482,5 +482,16 @@
     "测试表达式中的布尔类型禁止与 true 或 false 直接比较": "Flags unnecessary equality comparisons against boolean literals",
     "使用 as const 替代 as 'bar'": "Prefer usage of `as const` over literal type",
     "as const 是新语法，不是很常见": "`as const` is a new grammar which is not common used",
-    "使用联合类型作为 switch 的对象时，必须包含每一个类型的 case": "Exhaustiveness checking in switch with union type"
+    "使用联合类型作为 switch 的对象时，必须包含每一个类型的 case": "Exhaustiveness checking in switch with union type",
+    "类的只读属性若是一个字面量，则必须使用只读属性而不是 getter": "Ensures that literals on classes are exposed in a consistent style",
+    "接口中的方法必须用属性的方式定义": "Enforces using a particular method signature syntax",
+    "禁止滥用 toString 方法": "Requires that `.toString()` is only called on objects which provide useful information when stringified",
+    "禁止将变量或属性的类型设置为 any": "Disallows assigning any to variables and properties",
+    "禁止调用 any 类型的变量上的方法": "Disallows calling an any type value",
+    "禁止获取 any 类型的变量中的属性": "Disallows member access on any typed variables",
+    "禁止函数的返回值的类型是 any": "Disallows returning any from a function",
+    "函数的参数必须设置为 readonly": "Requires that function parameters are typed as readonly to prevent accidental mutation of inputs",
+    "使用 reduce 方法时，必须传入范型，而不是对第二个参数使用 as": "Prefer using type parameter when calling Array#reduce instead of casting",
+    "当需要忽略下一行的 ts 错误时，必须使用 @ts-expect-error 而不是 @ts-ignore": "Recommends using `// @ts-expect-error` over `// @ts-ignore`",
+    "使用 @ts-expect-error 可以避免对不会报错的代码设置了 @ts-ignore": "Using `@ts-expect-error` can prevent use wrong usage of `@ts-ignore`"
 }
