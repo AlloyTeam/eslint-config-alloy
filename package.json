@@ -1,6 +1,6 @@
 {
     "name": "eslint-config-alloy",
-    "version": "3.7.0",
+    "version": "3.7.1",
     "description": "AlloyTeam ESLint 规则",
     "main": "index.js",
     "scripts": {
