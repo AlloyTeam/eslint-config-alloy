@@ -9,7 +9,7 @@ import { locale, avaliableLanguages, Languages } from '../config';
  */
 export function parseDescription(str: string) {
     const language = getLanguage();
-    const description = str.replace(/\</g, '&lt;').replace(/\>/g, '&gt;').replace(/\n/g, '<br/>');
+    const description = str.replace(/\</g, '&lt;').replace(/\>/g, '&gt;');
     if (language === 'zh-CN') {
         return description
             .replace(/[a-zA-Z0-9\(\)\[\]\{\}\\\/'"_\-\+\?\.\*!=\&\@\#%~:; ]+/g, (codes) => {
@@ -22,11 +22,13 @@ export function parseDescription(str: string) {
                 }
                 return `${matchSpaces[1]}<code>${matchSpaces[2]}</code>${matchSpaces[3]}`;
             })
+            .replace(/\n/g, '<br />')
             .replace(/禁止/g, '<strong style="color:#db5757; font-weight:600;">$&</strong>')
             .replace(/必须/g, '<strong style="color:#267fd9; font-weight:600;">$&</strong>');
     } else {
         let isOpen = false;
         return description
+            .replace(/\n/g, '<br />')
             .split('')
             .map((letter) => {
                 if (letter !== '`') {
