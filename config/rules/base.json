@@ -1062,11 +1062,11 @@
     },
     "no-return-await": {
         "name": "no-return-await",
-        "value": "error",
+        "value": "off",
         "description": "禁止在 return 语句里使用 await",
         "category": "",
-        "badExample": "<span class=\"token keyword\">async</span> <span class=\"token keyword\">function</span> <span class=\"token function\">foo</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">return</span> <mark class=\"eslint-error\" data-tip=\"Redundant use of `await` on a return value.<br/><span class='eslint-error-rule-id'>eslint(no-return-await)</span>\"><span class=\"token keyword\">await</span> <span class=\"token function\">bar</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span></mark><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>",
-        "goodExample": "<span class=\"token keyword\">async</span> <span class=\"token keyword\">function</span> <span class=\"token function\">foo</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">const</span> b <span class=\"token operator\">=</span> <span class=\"token keyword\">await</span> <span class=\"token function\">bar</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n    <span class=\"token keyword\">return</span> b<span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>"
+        "badExample": "",
+        "goodExample": ""
     },
     "no-script-url": {
         "name": "no-script-url",

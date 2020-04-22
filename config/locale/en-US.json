@@ -493,5 +493,7 @@
     "函数的参数必须设置为 readonly": "Requires that function parameters are typed as readonly to prevent accidental mutation of inputs",
     "使用 reduce 方法时，必须传入范型，而不是对第二个参数使用 as": "Prefer using type parameter when calling Array#reduce instead of casting",
     "当需要忽略下一行的 ts 错误时，必须使用 @ts-expect-error 而不是 @ts-ignore": "Recommends using `// @ts-expect-error` over `// @ts-ignore`",
-    "使用 @ts-expect-error 可以避免对不会报错的代码设置了 @ts-ignore": "Using `@ts-expect-error` can prevent use wrong usage of `@ts-ignore`"
+    "使用 @ts-expect-error 可以避免对不会报错的代码设置了 @ts-ignore": "Using `@ts-expect-error` can prevent use wrong usage of `@ts-ignore`",
+    "配置了 strictFunctionTypes 之后，用属性的方式定义方法可以获得更严格的检查": "Setting `strictFunctionTypes` to true will makes typecheck more strict for property with function type",
+    "强制所有属性都定义到类里面，比较统一": "Forcing the user to explicitly declare all properties in the class, makes code style more unified"
 }

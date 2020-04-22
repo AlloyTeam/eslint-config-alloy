@@ -49,7 +49,7 @@
         "description": "类的只读属性若是一个字面量，则必须使用只读属性而不是 getter",
         "category": "",
         "badExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo1</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">public</span> <span class=\"token keyword\">get</span> <span class=\"token function\"><mark class=\"eslint-error\" data-tip=\"Literals should be exposed using readonly fields.<br/><span class='eslint-error-rule-id'>eslint(@typescript-eslint/class-literal-property-style)</span>\">bar</mark></span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <span class=\"token keyword\">return</span> <span class=\"token number\">1</span><span class=\"token punctuation\">;</span>\n    <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span>",
-        "goodExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">public</span> <span class=\"token keyword\">readonly</span> bar <span class=\"token operator\">=</span> <span class=\"token number\">1</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>"
+        "goodExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo2</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">public</span> <span class=\"token keyword\">readonly</span> bar <span class=\"token operator\">=</span> <span class=\"token number\">1</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>"
     },
     "@typescript-eslint/consistent-type-assertions": {
         "name": "@typescript-eslint/consistent-type-assertions",
@@ -149,7 +149,8 @@
         "description": "接口中的方法必须用属性的方式定义",
         "category": "",
         "badExample": "<span class=\"token keyword\">interface</span> <span class=\"token class-name\">Foo1</span> <span class=\"token punctuation\">{</span>\n    <mark class=\"eslint-error\" data-tip=\"Shorthand method signature is forbidden. Use a function property instead.<br/><span class='eslint-error-rule-id'>eslint(@typescript-eslint/method-signature-style)</span>\"><span class=\"token function\">bar</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">:</span> <span class=\"token builtin\">number</span><span class=\"token punctuation\">;</span></mark>\n<span class=\"token punctuation\">}</span>",
-        "goodExample": "<span class=\"token keyword\">interface</span> <span class=\"token class-name\">Foo1</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token function-variable function\">bar</span><span class=\"token punctuation\">:</span> <span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token operator\">=></span> <span class=\"token builtin\">number</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>"
+        "goodExample": "<span class=\"token keyword\">interface</span> <span class=\"token class-name\">Foo1</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token function-variable function\">bar</span><span class=\"token punctuation\">:</span> <span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token operator\">=></span> <span class=\"token builtin\">number</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>",
+        "reason": "配置了 strictFunctionTypes 之后，用属性的方式定义方法可以获得更严格的检查"
     },
     "@typescript-eslint/naming-convention": {
         "name": "@typescript-eslint/naming-convention",
@@ -328,7 +329,8 @@
         "description": "禁止给类的构造函数的参数添加修饰符",
         "category": "",
         "badExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo1</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">constructor</span><span class=\"token punctuation\">(</span><span class=\"token parameter\"><mark class=\"eslint-error\" data-tip=\"Property name cannot be declared in the constructor.<br/><span class='eslint-error-rule-id'>eslint(@typescript-eslint/no-parameter-properties)</span>\"><span class=\"token keyword\">private</span> name<span class=\"token punctuation\">:</span> <span class=\"token builtin\">string</span></mark></span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span>",
-        "goodExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo2</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">constructor</span><span class=\"token punctuation\">(</span><span class=\"token parameter\">name<span class=\"token punctuation\">:</span> <span class=\"token builtin\">string</span></span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span>"
+        "goodExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo2</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">constructor</span><span class=\"token punctuation\">(</span><span class=\"token parameter\">name<span class=\"token punctuation\">:</span> <span class=\"token builtin\">string</span></span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span>",
+        "reason": "强制所有属性都定义到类里面，比较统一"
     },
     "@typescript-eslint/no-require-imports": {
         "name": "@typescript-eslint/no-require-imports",
@@ -397,7 +399,8 @@
         "description": "禁止范型的类型有默认值时，将范型设置为该默认值",
         "category": "",
         "badExample": "",
-        "goodExample": ""
+        "goodExample": "",
+        "reason": "统一关闭 requires type information 的规则"
     },
     "@typescript-eslint/no-unnecessary-type-assertion": {
         "name": "@typescript-eslint/no-unnecessary-type-assertion",

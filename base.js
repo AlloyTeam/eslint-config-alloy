@@ -649,7 +649,7 @@ module.exports = {
         /**
          * 禁止在 return 语句里使用 await
          */
-        'no-return-await': 'error',
+        'no-return-await': 'off',
         /**
          * 禁止出现 location.href = 'javascript:void(0)';
          * @reason 有些场景下还是需要用到这个

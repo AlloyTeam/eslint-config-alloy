@@ -139,6 +139,7 @@ module.exports = {
         ],
         /**
          * 接口中的方法必须用属性的方式定义
+         * @reason 配置了 strictFunctionTypes 之后，用属性的方式定义方法可以获得更严格的检查
          */
         '@typescript-eslint/method-signature-style': 'error',
         /**
@@ -241,6 +242,7 @@ module.exports = {
         '@typescript-eslint/no-non-null-assertion': 'off',
         /**
          * 禁止给类的构造函数的参数添加修饰符
+         * @reason 强制所有属性都定义到类里面，比较统一
          */
         '@typescript-eslint/no-parameter-properties': 'error',
         /**
@@ -283,6 +285,7 @@ module.exports = {
         '@typescript-eslint/no-unnecessary-qualifier': 'off',
         /**
          * 禁止范型的类型有默认值时，将范型设置为该默认值
+         * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/no-unnecessary-type-arguments': 'off',
         /**
