@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 import fs from 'fs';
 import path from 'path';
 
@@ -22,21 +23,56 @@ declare const Prism: any;
 
 class Builder {
     private namespace: Namespace = NAMESPACES[0];
+    /** 插件的 meta 信息 */
+    private ruleMetaMap: {
+        [key: string]: {
+            fixable: boolean;
+            extendsBaseRule: string;
+            requiresTypeChecking: boolean;
+        };
+    } = {};
     /** 当前 namespace 的规则列表 */
     private ruleList: Rule[] = [];
     /** 当前 namespace 的所有规则合并后的文本，包含注释 */
     private rulesContent = '';
     /** 插件初始配置的内容，如 test/react/.eslintrc.js */
     private initialEslintrcContent = '';
+    /** build base 时，暂存当前 ruleConfig，供后续继承用 */
+    private baseRuleConfig: {
+        [key: string]: Rule;
+    } = {};
 
     public build(namespace: Namespace) {
         this.namespace = namespace;
+        this.ruleMetaMap = this.getRuleMetaMap();
         this.ruleList = this.getRuleList();
         this.rulesContent = this.getRulesContent();
         this.initialEslintrcContent = this.getInitialEslintrc();
         this.buildRulesJson();
         this.buildLocaleJson();
         this.buildEslintrc();
+    }
+
+    /** 获取插件的 meta 信息 */
+    private getRuleMetaMap() {
+        const { rulePrefix, pluginName } = NAMESPACE_CONFIG[this.namespace];
+        const ruleEntries = pluginName
+            ? Object.entries<any>(require(pluginName).rules)
+            : Array.from<any>(require('eslint/lib/rules').entries());
+        return ruleEntries.reduce((prev, [ruleName, ruleValue]) => {
+            const fullRuleName = rulePrefix + ruleName;
+            const meta = ruleValue.meta;
+            prev[fullRuleName] = {
+                fixable: meta.fixable === 'code',
+                extendsBaseRule:
+                    // 若为 string，则表示继承的规则，若为 true，则提取继承的规则的名称
+                    meta.docs.extendsBaseRule === true
+                        ? ruleName.replace(NAMESPACE_CONFIG[this.namespace].rulePrefix, '')
+                        : meta.docs.extendsBaseRule ?? '',
+                requiresTypeChecking: meta.docs.requiresTypeChecking ?? false
+            };
+            return prev;
+        }, {});
     }
 
     /** 获取规则列表，根据字母排序 */
@@ -48,30 +84,32 @@ class Builder {
                     .lstatSync(path.resolve(__dirname, '../test', this.namespace, ruleName))
                     .isDirectory()
             )
-            .map((ruleName) =>
-                this.getRule(
-                    path.resolve(__dirname, '../test', this.namespace, ruleName, '.eslintrc.js')
-                )
-            );
+            .map((ruleName) => this.getRule(ruleName));
 
         return ruleList;
     }
 
     /** 解析单条规则为一个规则对象 */
-    private getRule(filePath: string) {
-        /* eslint-disable-next-line @typescript-eslint/no-require-imports */
+    private getRule(ruleName: string) {
+        const filePath = path.resolve(
+            __dirname,
+            '../test',
+            this.namespace,
+            ruleName,
+            '.eslintrc.js'
+        );
         const fileModule = require(filePath);
-        const ruleName = Object.keys(fileModule.rules)[0];
         const fileContent = fs.readFileSync(filePath, 'utf-8');
+        const fullRuleName = NAMESPACE_CONFIG[this.namespace].rulePrefix + ruleName;
         const comments = /\/\*\*.*\*\//gms.exec(fileContent);
         const rule: Rule = {
-            name: ruleName,
-            value: fileModule.rules[ruleName],
+            name: fullRuleName,
+            value: fileModule.rules[fullRuleName],
             description: '',
-            category: '',
-            comments: '',
+            reason: '',
             badExample: '',
-            goodExample: ''
+            goodExample: '',
+            ...this.ruleMetaMap[fullRuleName]
         };
         if (comments !== null) {
             // 通过 doctrine 解析注释
@@ -79,11 +117,21 @@ class Builder {
             // 将注释体解析为 description
             rule.description = commentsAST.description;
             // 解析其他的注释内容，如 @reason
-            commentsAST.tags.forEach(({ title, description }) => {
-                rule[title] = description === null ? true : description;
-            });
-            // 保留整体注释文本
-            rule.comments = comments[0];
+            rule.reason =
+                commentsAST.tags.find(({ title }) => title === 'reason')?.description ?? '';
+        }
+        // 若没有描述，并且有继承的规则，则使用继承的规则的描述
+        if (!rule.description && rule.extendsBaseRule) {
+            rule.description = this.baseRuleConfig[rule.extendsBaseRule].description;
+        }
+        // 若没有原因，并且有继承的规则，并且本规则的配置项与继承的规则的配置项一致，则使用继承的规则的原因
+        if (
+            !rule.reason &&
+            rule.extendsBaseRule &&
+            JSON.stringify(rule.value) ===
+                JSON.stringify(this.baseRuleConfig[rule.extendsBaseRule].value)
+        ) {
+            rule.reason = this.baseRuleConfig[rule.extendsBaseRule].reason;
         }
         const badFilePath = path.resolve(
             path.dirname(filePath),
@@ -131,25 +179,48 @@ class Builder {
     /** 获取当前 namespace 的所有规则合并后的文本，包含注释 */
     private getRulesContent() {
         return this.ruleList
-            .map(
-                (rule) =>
-                    `\n${rule.comments}\n'${rule.name}': ${JSON.stringify(rule.value, null, 4)},`
-            )
+            .map((rule) => {
+                let content = [
+                    '\n/**',
+                    ...rule.description.split('\n').map((line) => ` * ${line}`)
+                ];
+                if (rule.reason) {
+                    content = [
+                        ...content,
+                        ...rule.reason
+                            .split('\n')
+                            .map((line, index) =>
+                                index === 0 ? ` * @reason ${line}` : ` * ${line}`
+                            )
+                    ];
+                }
+                content.push(' */');
+                // 若继承自基础规则，则需要先关闭基础规则
+                const extendsBaseRule = this.ruleMetaMap[rule.name].extendsBaseRule;
+                if (extendsBaseRule) {
+                    content.push(`'${extendsBaseRule}': 'off',`);
+                }
+                content.push(`'${rule.name}': ${JSON.stringify(rule.value, null, 4)},`);
+                return content.join('\n        ');
+            })
             .join('');
     }
 
     /** 写入 config/rules/***.json */
     private buildRulesJson() {
+        const ruleConfig = this.ruleList.reduce<{
+            [key: string]: Rule;
+        }>((prev, rule) => {
+            prev[rule.name] = rule;
+            return prev;
+        }, {});
+        /** build base 时，暂存当前 ruleConfig，供后续继承用 */
+        if (this.namespace === 'base') {
+            this.baseRuleConfig = ruleConfig;
+        }
         this.writeWithPrettier(
             path.resolve(__dirname, `../config/rules/${this.namespace}.json`),
-            JSON.stringify(
-                this.ruleList.reduce((prev, rule) => {
-                    const newRule = { ...rule };
-                    delete newRule.comments;
-                    prev[newRule.name] = newRule;
-                    return prev;
-                }, {} as any)
-            ),
+            JSON.stringify(ruleConfig),
             'json'
         );
     }
@@ -196,7 +267,6 @@ class Builder {
             filePath,
             // 使用 prettier 格式化文件内容
             prettier.format(content, {
-                /* eslint-disable-next-line @typescript-eslint/no-require-imports */
                 ...require('../.prettierrc'),
                 parser
             }),

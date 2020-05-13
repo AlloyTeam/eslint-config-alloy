@@ -5,9 +5,10 @@ export interface Rule {
     name: string;
     value: any;
     description: string;
-    reason?: string;
-    comments: string;
-    badExample?: string;
-    goodExample?: string;
-    [key: string]: string | boolean | undefined;
+    reason: string;
+    badExample: string;
+    goodExample: string;
+    fixable: boolean;
+    extendsBaseRule: string;
+    requiresTypeChecking: boolean;
 }

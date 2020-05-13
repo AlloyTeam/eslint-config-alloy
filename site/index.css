@@ -58,11 +58,10 @@
     font-size: 12px;
 }
 .site-anchor {
-    display: none;
-    margin-left: 0.5em;
+    opacity: 0;
 }
 .site-desc:hover .site-anchor {
-    display: inline;
+    opacity: 1;
 }
 
 /* 代码 */

@@ -3,595 +3,792 @@
         "name": "react/boolean-prop-naming",
         "value": "off",
         "description": "布尔值类型的 propTypes 的 name 必须为 is 或 has 开头",
-        "category": "",
+        "reason": "类型相关的约束交给 TypeScript",
         "badExample": "",
         "goodExample": "",
-        "reason": "类型相关的约束交给 TypeScript"
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/button-has-type": {
         "name": "react/button-has-type",
         "value": "off",
         "description": "<button> 必须有 type 属性",
-        "category": "",
+        "reason": "",
         "badExample": "",
-        "goodExample": ""
+        "goodExample": "",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/default-props-match-prop-types": {
         "name": "react/default-props-match-prop-types",
         "value": "off",
         "description": "一个 defaultProps 必须有对应的 propTypes",
-        "category": "",
+        "reason": "类型相关的约束交给 TypeScript",
         "badExample": "",
         "goodExample": "",
-        "reason": "类型相关的约束交给 TypeScript"
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/destructuring-assignment": {
         "name": "react/destructuring-assignment",
         "value": "off",
         "description": "props, state, context 必须用解构赋值",
-        "category": "",
+        "reason": "",
         "badExample": "",
-        "goodExample": ""
+        "goodExample": "",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/display-name": {
         "name": "react/display-name",
         "value": "off",
         "description": "组件必须有 displayName 属性",
-        "category": "",
+        "reason": "不强制要求写 displayName",
         "badExample": "",
         "goodExample": "",
-        "reason": "不强制要求写 displayName"
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/forbid-component-props": {
         "name": "react/forbid-component-props",
         "value": "off",
         "description": "禁止在自定义组件中使用指定的 props",
-        "category": "",
+        "reason": "",
         "badExample": "",
-        "goodExample": ""
+        "goodExample": "",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/forbid-dom-props": {
         "name": "react/forbid-dom-props",
         "value": "off",
         "description": "禁止在 dom 组件中使用指定的 props",
-        "category": "",
+        "reason": "",
         "badExample": "",
-        "goodExample": ""
+        "goodExample": "",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/forbid-elements": {
         "name": "react/forbid-elements",
         "value": "off",
         "description": "禁止使用指定的组件",
-        "category": "",
+        "reason": "",
         "badExample": "",
-        "goodExample": ""
+        "goodExample": "",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/forbid-foreign-prop-types": {
         "name": "react/forbid-foreign-prop-types",
         "value": "off",
         "description": "禁止使用另一个组件的 propTypes",
-        "category": "",
+        "reason": "类型相关的约束交给 TypeScript",
         "badExample": "",
         "goodExample": "",
-        "reason": "类型相关的约束交给 TypeScript"
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/forbid-prop-types": {
         "name": "react/forbid-prop-types",
         "value": "off",
         "description": "禁止使用 PropTypes.any PropTypes.array 和 PropTypes.object",
-        "category": "",
+        "reason": "类型相关的约束交给 TypeScript",
         "badExample": "",
         "goodExample": "",
-        "reason": "类型相关的约束交给 TypeScript"
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/function-component-definition": {
         "name": "react/function-component-definition",
         "value": "off",
         "description": "限制函数式组件的函数形式（函数声明、函数表达式或箭头函数）",
-        "category": "",
+        "reason": "一些场景还不能覆盖，如 export default function，自动修复功能在 ts 中有些问题",
         "badExample": "",
         "goodExample": "",
-        "reason": "一些场景还不能覆盖，如 export default function，自动修复功能在 ts 中有些问题"
+        "fixable": true,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/jsx-boolean-value": {
         "name": "react/jsx-boolean-value",
         "value": "off",
         "description": "布尔值的属性必须显式的声明值为 true",
-        "category": "",
+        "reason": "",
         "badExample": "",
-        "goodExample": ""
+        "goodExample": "",
+        "fixable": true,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/jsx-curly-brace-presence": {
         "name": "react/jsx-curly-brace-presence",
         "value": ["error", "never"],
         "description": "禁止 jsx 中使用无用的引号",
-        "category": "",
+        "reason": "",
         "badExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">App</span></span> <span class=\"token attr-name\">prop</span><span class=\"token script language-javascript\"><span class=\"token script-punctuation punctuation\">=</span><mark class=\"eslint-error\" data-tip=\"Curly braces are unnecessary here.<br/><span class='eslint-error-rule-id'>eslint(r<mark class=\"eslint-error\" data-tip=\"Curly braces are unnecessary here.<br/><span class='eslint-error-rule-id'>eslint(react/jsx-curly-brace-presence)</span>\">eact/jsx-curly-</mark>brace-presence)</span>\"><span class=\"token punctuation\">{</span><span class=\"token string\">'foo'</span><span class=\"token punctuation\">}</span></mark></span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">{</span><span class=\"token string\">'Hello World'</span><span class=\"token punctuation\">}</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span><span class=\"token class-name\">App</span></span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>",
-        "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">App</span></span> <span class=\"token attr-name\">prop</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>foo<span class=\"token punctuation\">\"</span></span><span class=\"token punctuation\">></span></span><span class=\"token plain-text\">Hello World</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span><span class=\"token class-name\">App</span></span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>"
+        "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">App</span></span> <span class=\"token attr-name\">prop</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>foo<span class=\"token punctuation\">\"</span></span><span class=\"token punctuation\">></span></span><span class=\"token plain-text\">Hello World</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span><span class=\"token class-name\">App</span></span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>",
+        "fixable": true,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/jsx-filename-extension": {
         "name": "react/jsx-filename-extension",
         "value": "off",
         "description": "限制文件后缀",
-        "category": "",
+        "reason": "",
         "badExample": "",
-        "goodExample": ""
+        "goodExample": "",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/jsx-fragments": {
         "name": "react/jsx-fragments",
         "value": ["error", "syntax"],
         "description": "必须使用 <></> 而不是 React.Fragment",
-        "category": "",
+        "reason": "<></> 不需要额外引入 Fragment 组件",
         "badExample": "<mark class=\"eslint-error\" data-tip=\"Prefer fragment shorthand over React.Fragment<br/><span class='eslint-error-rule-id'>eslint(react/jsx-fragments)</span>\"><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">React.Fragment</span></span><span class=\"token punctuation\">></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span><span class=\"token class-name\">React.Fragment</span></span><span class=\"token punctuation\">></span></span></mark><span class=\"token punctuation\">;</span>",
         "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span></span><span class=\"token punctuation\">></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span></span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>\n\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token plain-text\">\n    </span><span class=\"token punctuation\">{</span><span class=\"token punctuation\">[</span><span class=\"token number\">1</span><span class=\"token punctuation\">,</span> <span class=\"token number\">2</span><span class=\"token punctuation\">,</span> <span class=\"token number\">3</span><span class=\"token punctuation\">]</span><span class=\"token punctuation\">.</span><span class=\"token function\">map</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">(</span><span class=\"token parameter\">value</span><span class=\"token punctuation\">)</span> <span class=\"token operator\">=></span> <span class=\"token punctuation\">(</span>\n        <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">React.Fragment</span></span> <span class=\"token attr-name\">key</span><span class=\"token script language-javascript\"><span class=\"token script-punctuation punctuation\">=</span><span class=\"token punctuation\">{</span>value<span class=\"token punctuation\">}</span></span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">{</span>value<span class=\"token punctuation\">}</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span><span class=\"token class-name\">React.Fragment</span></span><span class=\"token punctuation\">></span></span>\n    <span class=\"token punctuation\">)</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">}</span><span class=\"token plain-text\">\n</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>",
-        "reason": "<></> 不需要额外引入 Fragment 组件"
+        "fixable": true,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/jsx-handler-names": {
         "name": "react/jsx-handler-names",
         "value": "off",
         "description": "handler 的名称必须是 onXXX 或 handleXXX",
-        "category": "",
+        "reason": "",
         "badExample": "",
-        "goodExample": ""
+        "goodExample": "",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/jsx-key": {
         "name": "react/jsx-key",
         "value": ["error", { "checkFragmentShorthand": true }],
         "description": "数组中的 jsx 必须有 key",
-        "category": "",
+        "reason": "",
         "badExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>ul</span><span class=\"token punctuation\">></span></span><span class=\"token plain-text\">\n    </span><span class=\"token punctuation\">{</span><span class=\"token punctuation\">[</span><span class=\"token number\">1</span><span class=\"token punctuation\">,</span> <span class=\"token number\">2</span><span class=\"token punctuation\">,</span> <span class=\"token number\">3</span><span class=\"token punctuation\">]</span><span class=\"token punctuation\">.</span><span class=\"token function\">map</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">(</span><span class=\"token parameter\">value</span><span class=\"token punctuation\">)</span> <span class=\"token operator\">=></span> <span class=\"token punctuation\">(</span>\n        <mark class=\"eslint-error\" data-tip=\"Missing &amp;quot;key&amp;quot; prop for element in iterator<br/><span class='eslint-error-rule-id'>eslint(react/jsx-key)</span>\"><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>li</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">{</span>value<span class=\"token punctuation\">}</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>li</span><span class=\"token punctuation\">></span></span></mark>\n    <span class=\"token punctuation\">)</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">}</span><span class=\"token plain-text\">\n</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>ul</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token plain-text\">\n    </span><span class=\"token punctuation\">{</span><span class=\"token punctuation\">[</span><span class=\"token number\">1</span><span class=\"token punctuation\">,</span> <span class=\"token number\">2</span><span class=\"token punctuation\">,</span> <span class=\"token number\">3</span><span class=\"token punctuation\">]</span><span class=\"token punctuation\">.</span><span class=\"token function\">map</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">(</span><span class=\"token parameter\">value</span><span class=\"token punctuation\">)</span> <span class=\"token operator\">=></span> <span class=\"token punctuation\">(</span>\n        <mark class=\"eslint-error\" data-tip=\"Missing &amp;quot;key&amp;quot; prop for element in iterator. Shorthand fragment syntax does not support providing keys. Use React.Fragment instead<br/><span class='eslint-error-rule-id'>eslint(react/jsx-key)</span>\"><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span></span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">{</span>value<span class=\"token punctuation\">}</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span></span><span class=\"token punctuation\">></span></span></mark>\n    <span class=\"token punctuation\">)</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">}</span><span class=\"token plain-text\">\n</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>",
-        "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>ul</span><span class=\"token punctuation\">></span></span><span class=\"token plain-text\">\n    </span><span class=\"token punctuation\">{</span><span class=\"token punctuation\">[</span><span class=\"token number\">1</span><span class=\"token punctuation\">,</span> <span class=\"token number\">2</span><span class=\"token punctuation\">,</span> <span class=\"token number\">3</span><span class=\"token punctuation\">]</span><span class=\"token punctuation\">.</span><span class=\"token function\">map</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">(</span><span class=\"token parameter\">value</span><span class=\"token punctuation\">)</span> <span class=\"token operator\">=></span> <span class=\"token punctuation\">(</span>\n        <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>li</span> <span class=\"token attr-name\">key</span><span class=\"token script language-javascript\"><span class=\"token script-punctuation punctuation\">=</span><span class=\"token punctuation\">{</span>value<span class=\"token punctuation\">}</span></span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">{</span>value<span class=\"token punctuation\">}</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>li</span><span class=\"token punctuation\">></span></span>\n    <span class=\"token punctuation\">)</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">}</span><span class=\"token plain-text\">\n</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>ul</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token plain-text\">\n    </span><span class=\"token punctuation\">{</span><span class=\"token punctuation\">[</span><span class=\"token number\">1</span><span class=\"token punctuation\">,</span> <span class=\"token number\">2</span><span class=\"token punctuation\">,</span> <span class=\"token number\">3</span><span class=\"token punctuation\">]</span><span class=\"token punctuation\">.</span><span class=\"token function\">map</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">(</span><span class=\"token parameter\">value</span><span class=\"token punctuation\">)</span> <span class=\"token operator\">=></span> <span class=\"token punctuation\">(</span>\n        <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">React.Fragment</span></span> <span class=\"token attr-name\">key</span><span class=\"token script language-javascript\"><span class=\"token script-punctuation punctuation\">=</span><span class=\"token punctuation\">{</span>value<span class=\"token punctuation\">}</span></span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">{</span>value<span class=\"token punctuation\">}</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span><span class=\"token class-name\">React.Fragment</span></span><span class=\"token punctuation\">></span></span>\n    <span class=\"token punctuation\">)</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">}</span><span class=\"token plain-text\">\n</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>"
+        "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>ul</span><span class=\"token punctuation\">></span></span><span class=\"token plain-text\">\n    </span><span class=\"token punctuation\">{</span><span class=\"token punctuation\">[</span><span class=\"token number\">1</span><span class=\"token punctuation\">,</span> <span class=\"token number\">2</span><span class=\"token punctuation\">,</span> <span class=\"token number\">3</span><span class=\"token punctuation\">]</span><span class=\"token punctuation\">.</span><span class=\"token function\">map</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">(</span><span class=\"token parameter\">value</span><span class=\"token punctuation\">)</span> <span class=\"token operator\">=></span> <span class=\"token punctuation\">(</span>\n        <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>li</span> <span class=\"token attr-name\">key</span><span class=\"token script language-javascript\"><span class=\"token script-punctuation punctuation\">=</span><span class=\"token punctuation\">{</span>value<span class=\"token punctuation\">}</span></span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">{</span>value<span class=\"token punctuation\">}</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>li</span><span class=\"token punctuation\">></span></span>\n    <span class=\"token punctuation\">)</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">}</span><span class=\"token plain-text\">\n</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>ul</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token plain-text\">\n    </span><span class=\"token punctuation\">{</span><span class=\"token punctuation\">[</span><span class=\"token number\">1</span><span class=\"token punctuation\">,</span> <span class=\"token number\">2</span><span class=\"token punctuation\">,</span> <span class=\"token number\">3</span><span class=\"token punctuation\">]</span><span class=\"token punctuation\">.</span><span class=\"token function\">map</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">(</span><span class=\"token parameter\">value</span><span class=\"token punctuation\">)</span> <span class=\"token operator\">=></span> <span class=\"token punctuation\">(</span>\n        <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">React.Fragment</span></span> <span class=\"token attr-name\">key</span><span class=\"token script language-javascript\"><span class=\"token script-punctuation punctuation\">=</span><span class=\"token punctuation\">{</span>value<span class=\"token punctuation\">}</span></span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">{</span>value<span class=\"token punctuation\">}</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span><span class=\"token class-name\">React.Fragment</span></span><span class=\"token punctuation\">></span></span>\n    <span class=\"token punctuation\">)</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">}</span><span class=\"token plain-text\">\n</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/jsx-max-depth": {
         "name": "react/jsx-max-depth",
         "value": "off",
         "description": "限制 jsx 层级",
-        "category": "",
+        "reason": "",
         "badExample": "",
-        "goodExample": ""
+        "goodExample": "",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/jsx-no-bind": {
         "name": "react/jsx-no-bind",
         "value": "off",
         "description": "jsx 中禁止使用 bind",
-        "category": "",
+        "reason": "",
         "badExample": "",
-        "goodExample": ""
+        "goodExample": "",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/jsx-no-comment-textnodes": {
         "name": "react/jsx-no-comment-textnodes",
         "value": "error",
         "description": "禁止在 jsx 中使用像注释的字符串",
-        "category": "",
+        "reason": "",
         "badExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token plain-text\"><mark class=\"eslint-error\" data-tip=\"Comments inside children section of tag should be placed inside braces<br/><span class='eslint-error-rule-id'>eslint(react/jsx-no-comment-textnodes)</span>\">// empty div</mark>&lt;/div>;\n</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token plain-text\"><mark class=\"eslint-error\" data-tip=\"Comments inside children section of tag should be placed inside braces<br/><span class='eslint-error-rule-id'>eslint(react/jsx-no-comment-textnodes)</span>\">/* empty div */</mark></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token plain-text\">;\n</span>",
-        "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">{</span><span class=\"token comment\">/* empty div */</span><span class=\"token punctuation\">}</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>\n<span class=\"token operator\">&lt;</span>div <span class=\"token comment\">/* empty div */</span> <span class=\"token operator\">/</span><span class=\"token operator\">></span><span class=\"token punctuation\">;</span>"
+        "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">{</span><span class=\"token comment\">/* empty div */</span><span class=\"token punctuation\">}</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>\n<span class=\"token operator\">&lt;</span>div <span class=\"token comment\">/* empty div */</span> <span class=\"token operator\">/</span><span class=\"token operator\">></span><span class=\"token punctuation\">;</span>",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/jsx-no-duplicate-props": {
         "name": "react/jsx-no-duplicate-props",
         "value": "error",
         "description": "禁止出现重复的 props",
-        "category": "",
+        "reason": "",
         "badExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">Foo</span></span> <span class=\"token attr-name\">name</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>foo<span class=\"token punctuation\">\"</span></span> <mark class=\"eslint-error\" data-tip=\"No duplicate props allowed<br/><span class='eslint-error-rule-id'>eslint(react/jsx-no-duplicate-props)</span>\"><span class=\"token attr-name\">name</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>bar<span class=\"token punctuation\">\"</span></span></mark> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>",
-        "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">Foo</span></span> <span class=\"token attr-name\">name</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>foo<span class=\"token punctuation\">\"</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>"
+        "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">Foo</span></span> <span class=\"token attr-name\">name</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>foo<span class=\"token punctuation\">\"</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/jsx-no-literals": {
         "name": "react/jsx-no-literals",
         "value": "off",
         "description": "禁止在 jsx 中出现字符串",
-        "category": "",
+        "reason": "",
         "badExample": "",
-        "goodExample": ""
+        "goodExample": "",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/jsx-no-script-url": {
         "name": "react/jsx-no-script-url",
         "value": "error",
         "description": "禁止出现 href=\"javascript:void(0)\"",
-        "category": "",
+        "reason": "React 已经有 warning 了，并且会在将来禁止此类属性值",
         "badExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>a</span> <mark class=\"eslint-error\" data-tip=\"A future version of React will block javascript: URLs as a security precaution. Use event handlers instead if you can. If you need to generate unsafe HTML, try using dangerouslySetInnerHTML instead.<br/><span class='eslint-error-rule-id'>eslint(react/jsx-no-script-url)</span>\"><span class=\"token attr-name\">href</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>javascript:void(0);<span class=\"token punctuation\">\"</span></span></mark><span class=\"token punctuation\">></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>a</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>",
         "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>a</span>\n    <span class=\"token attr-name\">href</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>#<span class=\"token punctuation\">\"</span></span>\n    <span class=\"token attr-name\">onClick</span><span class=\"token script language-javascript\"><span class=\"token script-punctuation punctuation\">=</span><span class=\"token punctuation\">{</span><span class=\"token punctuation\">(</span><span class=\"token parameter\">e</span><span class=\"token punctuation\">)</span> <span class=\"token operator\">=></span> <span class=\"token punctuation\">{</span>\n        e<span class=\"token punctuation\">.</span><span class=\"token function\">preventDefault</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n    <span class=\"token punctuation\">}</span><span class=\"token punctuation\">}</span></span>\n<span class=\"token punctuation\">></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>a</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>",
-        "reason": "React 已经有 warning 了，并且会在将来禁止此类属性值"
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/jsx-no-target-blank": {
         "name": "react/jsx-no-target-blank",
         "value": "off",
         "description": "禁止使用 target=\"_blank\"",
-        "category": "",
+        "reason": "",
         "badExample": "",
-        "goodExample": ""
+        "goodExample": "",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/jsx-no-undef": {
         "name": "react/jsx-no-undef",
         "value": "error",
         "description": "禁止使用未定义的组件",
-        "category": "",
+        "reason": "",
         "badExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\"><mark class=\"eslint-error\" data-tip=\"&amp;apos;Foo&amp;apos; is not defined.<br/><span class='eslint-error-rule-id'>eslint(react/jsx-no-undef)</span>\">Foo</mark></span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>",
-        "goodExample": "<span class=\"token keyword\">import</span> Foo <span class=\"token keyword\">from</span> <span class=\"token string\">'./Foo'</span><span class=\"token punctuation\">;</span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">Foo</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>"
+        "goodExample": "<span class=\"token keyword\">import</span> Foo <span class=\"token keyword\">from</span> <span class=\"token string\">'./Foo'</span><span class=\"token punctuation\">;</span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">Foo</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/jsx-no-useless-fragment": {
         "name": "react/jsx-no-useless-fragment",
         "value": "error",
         "description": "禁止无意义的 Fragment 组件",
-        "category": "",
+        "reason": "",
         "badExample": "<mark class=\"eslint-error\" data-tip=\"Fragments should contain more than one child - otherwise, there‘s no need for a Fragment at all.<br/><span class='eslint-error-rule-id'>eslint(react/jsx-no-useless-fragment)</span>\"><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span></span><span class=\"token punctuation\">></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span></span><span class=\"token punctuation\">></span></span></mark><span class=\"token punctuation\">;</span>\n<mark class=\"eslint-error\" data-tip=\"Fragments should contain more than one child - otherwise, there‘s no need for a Fragment at all.<br/><span class='eslint-error-rule-id'>eslint(react/jsx-no-useless-fragment)</span>\"><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span></span><span class=\"token punctuation\">></span></span><span class=\"token plain-text\">\n    </span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">Foo</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token plain-text\">\n</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span></span><span class=\"token punctuation\">></span></span></mark><span class=\"token punctuation\">;</span>",
-        "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span></span><span class=\"token punctuation\">></span></span><span class=\"token plain-text\">foo</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span></span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">React.Fragment</span></span> <span class=\"token attr-name\">key</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>foo<span class=\"token punctuation\">\"</span></span><span class=\"token punctuation\">></span></span><span class=\"token plain-text\">\n    </span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">Foo</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token plain-text\">\n</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span><span class=\"token class-name\">React.Fragment</span></span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>"
+        "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span></span><span class=\"token punctuation\">></span></span><span class=\"token plain-text\">foo</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span></span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">React.Fragment</span></span> <span class=\"token attr-name\">key</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>foo<span class=\"token punctuation\">\"</span></span><span class=\"token punctuation\">></span></span><span class=\"token plain-text\">\n    </span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">Foo</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token plain-text\">\n</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span><span class=\"token class-name\">React.Fragment</span></span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>",
+        "fixable": true,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/jsx-pascal-case": {
         "name": "react/jsx-pascal-case",
         "value": "error",
         "description": "组件的名称必须符合 PascalCase",
-        "category": "",
+        "reason": "",
         "badExample": "<span class=\"token tag\"><mark class=\"eslint-error\" data-tip=\"Imported JSX component FOO must be in PascalCase<br/><span class='eslint-error-rule-id'>eslint(react/jsx-pascal-case)</span>\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">FOO</span></span> <span class=\"token punctuation\">/></span></mark></span><span class=\"token punctuation\">;</span>\n<span class=\"token tag\"><mark class=\"eslint-error\" data-tip=\"Imported JSX component FOO_BAR must be in PascalCase<br/><span class='eslint-error-rule-id'>eslint(react/jsx-pascal-case)</span>\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">FOO_BAR</span></span> <span class=\"token punctuation\">/></span></mark></span><span class=\"token punctuation\">;</span>",
-        "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">Foo</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">FooBar</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>"
+        "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">Foo</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">FooBar</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/jsx-props-no-spreading": {
         "name": "react/jsx-props-no-spreading",
         "value": "off",
         "description": "禁止使用 {...props}",
-        "category": "",
+        "reason": "",
         "badExample": "",
-        "goodExample": ""
+        "goodExample": "",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/jsx-sort-default-props": {
         "name": "react/jsx-sort-default-props",
         "value": "off",
         "description": "defaultProps 必须按字母排序",
-        "category": "",
+        "reason": "",
         "badExample": "",
-        "goodExample": ""
+        "goodExample": "",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/jsx-sort-props": {
         "name": "react/jsx-sort-props",
         "value": "off",
         "description": "props 必须按字母排序",
-        "category": "",
+        "reason": "",
         "badExample": "",
-        "goodExample": ""
+        "goodExample": "",
+        "fixable": true,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/jsx-uses-react": {
         "name": "react/jsx-uses-react",
         "value": "error",
         "description": "修复 React 被误报为未使用的变量的问题（仅在开启 no-unused-vars 时有效）",
-        "category": "",
+        "reason": "",
         "badExample": "<span class=\"token comment\">/* eslint no-unused-vars: \"error\", react/jsx-uses-react: \"off\" */</span>\n<span class=\"token keyword\">import</span> <mark class=\"eslint-error\" data-tip=\"&amp;apos;React&amp;apos; is defined but never used.<br/><span class='eslint-error-rule-id'>eslint(no-unused-vars)</span>\">React</mark> <span class=\"token keyword\">from</span> <span class=\"token string\">'react'</span><span class=\"token punctuation\">;</span>\n\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>",
-        "goodExample": "<span class=\"token comment\">/* eslint no-unused-vars: \"error\" */</span>\n<span class=\"token keyword\">import</span> React <span class=\"token keyword\">from</span> <span class=\"token string\">'react'</span><span class=\"token punctuation\">;</span>\n\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>"
+        "goodExample": "<span class=\"token comment\">/* eslint no-unused-vars: \"error\" */</span>\n<span class=\"token keyword\">import</span> React <span class=\"token keyword\">from</span> <span class=\"token string\">'react'</span><span class=\"token punctuation\">;</span>\n\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/jsx-uses-vars": {
         "name": "react/jsx-uses-vars",
         "value": "error",
         "description": "修复 no-unused-vars 不检查 jsx 的问题",
-        "category": "",
+        "reason": "",
         "badExample": "<span class=\"token comment\">/* eslint no-unused-vars: \"error\", \"react/jsx-uses-vars\": \"off\" */</span>\n<span class=\"token keyword\">import</span> <mark class=\"eslint-error\" data-tip=\"&amp;apos;Foo&amp;apos; is defined but never used.<br/><span class='eslint-error-rule-id'>eslint(no-unused-vars)</span>\">Foo</mark> <span class=\"token keyword\">from</span> <span class=\"token string\">'./Foo'</span><span class=\"token punctuation\">;</span>\n\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">Foo</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>",
-        "goodExample": "<span class=\"token comment\">/* eslint no-unused-vars: \"error\" */</span>\n<span class=\"token keyword\">import</span> Foo <span class=\"token keyword\">from</span> <span class=\"token string\">'./Foo'</span><span class=\"token punctuation\">;</span>\n\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">Foo</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>"
+        "goodExample": "<span class=\"token comment\">/* eslint no-unused-vars: \"error\" */</span>\n<span class=\"token keyword\">import</span> Foo <span class=\"token keyword\">from</span> <span class=\"token string\">'./Foo'</span><span class=\"token punctuation\">;</span>\n\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">Foo</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/no-access-state-in-setstate": {
         "name": "react/no-access-state-in-setstate",
         "value": "off",
         "description": "禁止在 setState 中使用 this.state",
-        "category": "",
+        "reason": "",
         "badExample": "",
-        "goodExample": ""
+        "goodExample": "",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/no-adjacent-inline-elements": {
         "name": "react/no-adjacent-inline-elements",
         "value": "off",
         "description": "两个 inline 元素之间必须有空格，否则视觉上它们就贴在一起了",
-        "category": "",
+        "reason": "这是样式的问题，不应该由空格约束",
         "badExample": "",
         "goodExample": "",
-        "reason": "这是样式的问题，不应该由空格约束"
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/no-array-index-key": {
         "name": "react/no-array-index-key",
         "value": "off",
         "description": "禁止使用数组的索引作为 key",
-        "category": "",
+        "reason": "",
         "badExample": "",
-        "goodExample": ""
+        "goodExample": "",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/no-children-prop": {
         "name": "react/no-children-prop",
         "value": "error",
         "description": "禁止将 children 作为一个 prop",
-        "category": "",
+        "reason": "",
         "badExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <mark class=\"eslint-error\" data-tip=\"Do not pass children as props. Instead, nest children between the opening and closing tags.<br/><span class='eslint-error-rule-id'>eslint(react/no-children-prop)</span>\"><span class=\"token attr-name\">children</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>Hello World<span class=\"token punctuation\">\"</span></span></mark> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">Foo</span></span> <mark class=\"eslint-error\" data-tip=\"Do not pass children as props. Instead, nest children between the opening and closing tags.<br/><span class='eslint-error-rule-id'>eslint(react/no-children-prop)</span>\"><span class=\"token attr-name\">children</span><span class=\"token script language-javascript\"><span class=\"token script-punctuation punctuation\">=</span><span class=\"token punctuation\">{</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">Bar</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">}</span></span></mark> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>",
-        "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token plain-text\">Hello World</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">Foo</span></span><span class=\"token punctuation\">></span></span><span class=\"token plain-text\">\n    </span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">Bar</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token plain-text\">\n</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span><span class=\"token class-name\">Foo</span></span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>"
+        "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token plain-text\">Hello World</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">Foo</span></span><span class=\"token punctuation\">></span></span><span class=\"token plain-text\">\n    </span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">Bar</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token plain-text\">\n</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span><span class=\"token class-name\">Foo</span></span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/no-danger": {
         "name": "react/no-danger",
         "value": "off",
         "description": "禁止使用 dangerouslySetInnerHTML",
-        "category": "",
+        "reason": "",
         "badExample": "",
-        "goodExample": ""
+        "goodExample": "",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/no-danger-with-children": {
         "name": "react/no-danger-with-children",
         "value": "error",
         "description": "禁止在使用了 dangerouslySetInnerHTML 的组件内添加 children",
-        "category": "",
+        "reason": "",
         "badExample": "<mark class=\"eslint-error\" data-tip=\"Only set one of `children` or `props.dangerouslySetInnerHTML`<br/><span class='eslint-error-rule-id'>eslint(react/no-danger-with-children)</span>\"><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token attr-name\">dangerouslySetInnerHTML</span><span class=\"token script language-javascript\"><span class=\"token script-punctuation punctuation\">=</span><span class=\"token punctuation\">{</span><span class=\"token punctuation\">{</span> __html<span class=\"token punctuation\">:</span> <span class=\"token string\">'Foo'</span> <span class=\"token punctuation\">}</span><span class=\"token punctuation\">}</span></span><span class=\"token punctuation\">></span></span><span class=\"token plain-text\">Hello World</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span></mark><span class=\"token punctuation\">;</span>",
-        "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token attr-name\">dangerouslySetInnerHTML</span><span class=\"token script language-javascript\"><span class=\"token script-punctuation punctuation\">=</span><span class=\"token punctuation\">{</span><span class=\"token punctuation\">{</span> __html<span class=\"token punctuation\">:</span> <span class=\"token string\">'Foo'</span> <span class=\"token punctuation\">}</span><span class=\"token punctuation\">}</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token plain-text\">Hello World</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>"
+        "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token attr-name\">dangerouslySetInnerHTML</span><span class=\"token script language-javascript\"><span class=\"token script-punctuation punctuation\">=</span><span class=\"token punctuation\">{</span><span class=\"token punctuation\">{</span> __html<span class=\"token punctuation\">:</span> <span class=\"token string\">'Foo'</span> <span class=\"token punctuation\">}</span><span class=\"token punctuation\">}</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token plain-text\">Hello World</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/no-deprecated": {
         "name": "react/no-deprecated",
         "value": "error",
         "description": "禁止使用已废弃的 api",
-        "category": "",
+        "reason": "",
         "badExample": "<mark class=\"eslint-error\" data-tip=\"React.render is deprecated since React 0.14.0, use ReactDOM.render instead<br/><span class='eslint-error-rule-id'>eslint(react/no-deprecated)</span>\">React<span class=\"token punctuation\">.</span><span class=\"token function\">render</span></mark><span class=\"token punctuation\">(</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">Foo</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">,</span> app<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n\n<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token function\"><mark class=\"eslint-error\" data-tip=\"componentWillMount is deprecated since React 16.9.0, use UNSAFE_componentWillMount instead, see https://reactjs.org/docs/react-component.html#unsafe_componentwillmount. Use https://github.com/reactjs/react-codemod#rename-unsafe-lifecycles to automatically update your components.<br/><span class='eslint-error-rule-id'>eslint(react/no-deprecated)</span>\">componentWillMount</mark></span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>\n    <span class=\"token function\"><mark class=\"eslint-error\" data-tip=\"componentWillReceiveProps is deprecated since React 16.9.0, use UNSAFE_componentWillReceiveProps instead, see https://reactjs.org/docs/react-component.html#unsafe_componentwillreceiveprops. Use https://github.com/reactjs/react-codemod#rename-unsafe-lifecycles to automatically update your components.<br/><span class='eslint-error-rule-id'>eslint(react/no-deprecated)</span>\">componentWillReceiveProps</mark></span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>\n    <span class=\"token function\"><mark class=\"eslint-error\" data-tip=\"componentWillUpdate is deprecated since React 16.9.0, use UNSAFE_componentWillUpdate instead, see https://reactjs.org/docs/react-component.html#unsafe_componentwillupdate. Use https://github.com/reactjs/react-codemod#rename-unsafe-lifecycles to automatically update your components.<br/><span class='eslint-error-rule-id'>eslint(react/no-deprecated)</span>\">componentWillUpdate</mark></span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span>",
-        "goodExample": "ReactDOM<span class=\"token punctuation\">.</span><span class=\"token function\">render</span><span class=\"token punctuation\">(</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">Foo</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">,</span> app<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n\n<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>"
+        "goodExample": "ReactDOM<span class=\"token punctuation\">.</span><span class=\"token function\">render</span><span class=\"token punctuation\">(</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">Foo</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">,</span> app<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n\n<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/no-did-mount-set-state": {
         "name": "react/no-did-mount-set-state",
         "value": "off",
         "description": "禁止在 componentDidMount 里使用 setState",
-        "category": "",
+        "reason": "同构应用需要在 didMount 里使用 setState",
         "badExample": "",
         "goodExample": "",
-        "reason": "同构应用需要在 didMount 里使用 setState"
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/no-did-update-set-state": {
         "name": "react/no-did-update-set-state",
         "value": "error",
         "description": "禁止在 componentDidUpdate 里使用 setState",
-        "category": "",
+        "reason": "",
         "badExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token function\">componentDidUpdate</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <mark class=\"eslint-error\" data-tip=\"Do not use setState in componentDidUpdate<br/><span class='eslint-error-rule-id'>eslint(react/no-did-update-set-state)</span>\"><span class=\"token keyword\">this</span><span class=\"token punctuation\">.</span><span class=\"token function\">setState</span></mark><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n    <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span>",
-        "goodExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token function\">componentDidUpdate</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span>"
+        "goodExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token function\">componentDidUpdate</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span>",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/no-direct-mutation-state": {
         "name": "react/no-direct-mutation-state",
         "value": "error",
         "description": "禁止直接修改 this.state",
-        "category": "",
+        "reason": "",
         "badExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token function\">componentDidMount</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <mark class=\"eslint-error\" data-tip=\"Do not mutate state directly. Use setState().<br/><span class='eslint-error-rule-id'>eslint(react/no-direct-mutation-state)</span>\"><span class=\"token keyword\">this</span><span class=\"token punctuation\">.</span>state</mark><span class=\"token punctuation\">.</span>name <span class=\"token operator\">=</span> <span class=\"token string\">'foo'</span><span class=\"token punctuation\">;</span>\n    <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span>",
-        "goodExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token function\">constructor</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <span class=\"token keyword\">this</span><span class=\"token punctuation\">.</span>state <span class=\"token operator\">=</span> <span class=\"token punctuation\">{</span>\n            name<span class=\"token punctuation\">:</span> <span class=\"token string\">'foo'</span>\n        <span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>\n    <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span>"
+        "goodExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token function\">constructor</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <span class=\"token keyword\">this</span><span class=\"token punctuation\">.</span>state <span class=\"token operator\">=</span> <span class=\"token punctuation\">{</span>\n            name<span class=\"token punctuation\">:</span> <span class=\"token string\">'foo'</span>\n        <span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>\n    <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span>",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/no-find-dom-node": {
         "name": "react/no-find-dom-node",
         "value": "error",
         "description": "禁止使用 findDOMNode",
-        "category": "",
+        "reason": "",
         "badExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token function\">componentDidMount</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <span class=\"token keyword\">const</span> root <span class=\"token operator\">=</span> <span class=\"token function\"><mark class=\"eslint-error\" data-tip=\"Do not use findDOMNode<br/><span class='eslint-error-rule-id'>eslint(react/no-find-dom-node)</span>\">findDOMNode</mark></span><span class=\"token punctuation\">(</span><span class=\"token keyword\">this</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n    <span class=\"token punctuation\">}</span>\n    <span class=\"token function\">render</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <span class=\"token keyword\">return</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>\n    <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span>",
-        "goodExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token function\">constructor</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <span class=\"token keyword\">this</span><span class=\"token punctuation\">.</span>myRef <span class=\"token operator\">=</span> React<span class=\"token punctuation\">.</span><span class=\"token function\">createRef</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n    <span class=\"token punctuation\">}</span>\n    <span class=\"token function\">render</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <span class=\"token keyword\">return</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token attr-name\">ref</span><span class=\"token script language-javascript\"><span class=\"token script-punctuation punctuation\">=</span><span class=\"token punctuation\">{</span><span class=\"token keyword\">this</span><span class=\"token punctuation\">.</span>myRef<span class=\"token punctuation\">}</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>\n    <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span>"
+        "goodExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token function\">constructor</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <span class=\"token keyword\">this</span><span class=\"token punctuation\">.</span>myRef <span class=\"token operator\">=</span> React<span class=\"token punctuation\">.</span><span class=\"token function\">createRef</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n    <span class=\"token punctuation\">}</span>\n    <span class=\"token function\">render</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <span class=\"token keyword\">return</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token attr-name\">ref</span><span class=\"token script language-javascript\"><span class=\"token script-punctuation punctuation\">=</span><span class=\"token punctuation\">{</span><span class=\"token keyword\">this</span><span class=\"token punctuation\">.</span>myRef<span class=\"token punctuation\">}</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>\n    <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span>",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/no-is-mounted": {
         "name": "react/no-is-mounted",
         "value": "error",
         "description": "禁止使用 isMounted",
-        "category": "",
+        "reason": "它是已废弃的语法",
         "badExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token function\">updateName</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span><mark class=\"eslint-error\" data-tip=\"Do not use isMounted<br/><span class='eslint-error-rule-id'>eslint(react/no-is-mounted)</span>\"><span class=\"token keyword\">this</span><span class=\"token punctuation\">.</span><span class=\"token function\">isMounted</span></mark><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n            <span class=\"token keyword\">this</span><span class=\"token punctuation\">.</span><span class=\"token function\">setState</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n        <span class=\"token punctuation\">}</span>\n    <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span>",
         "goodExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token function\">updateName</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span><span class=\"token keyword\">this</span><span class=\"token punctuation\">.</span>_isMounted<span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n            <span class=\"token keyword\">this</span><span class=\"token punctuation\">.</span><span class=\"token function\">setState</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n        <span class=\"token punctuation\">}</span>\n    <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span>",
-        "reason": "它是已废弃的语法"
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/no-multi-comp": {
         "name": "react/no-multi-comp",
         "value": "off",
         "description": "禁止在一个文件创建两个组件",
-        "category": "",
+        "reason": "有一个 bug：https://github.com/yannickcr/eslint-plugin-react/issues/1181",
         "badExample": "",
         "goodExample": "",
-        "reason": "有一个 bug：https://github.com/yannickcr/eslint-plugin-react/issues/1181"
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/no-redundant-should-component-update": {
         "name": "react/no-redundant-should-component-update",
         "value": "error",
         "description": "禁止在 React.PureComponent 中使用 shouldComponentUpdate",
-        "category": "",
+        "reason": "",
         "badExample": "<mark class=\"eslint-error\" data-tip=\"Foo does not need shouldComponentUpdate when extending React.PureComponent.<br/><span class='eslint-error-rule-id'>eslint(react/no-redundant-should-component-update)</span>\"><span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>PureComponent</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token function\">shouldComponentUpdate</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span></mark>",
-        "goodExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token function\">shouldComponentUpdate</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span>"
+        "goodExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token function\">shouldComponentUpdate</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span>",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/no-render-return-value": {
         "name": "react/no-render-return-value",
         "value": "error",
         "description": "禁止使用 ReactDOM.render 的返回值",
-        "category": "",
+        "reason": "",
         "badExample": "<span class=\"token keyword\">const</span> app <span class=\"token operator\">=</span> <mark class=\"eslint-error\" data-tip=\"Do not depend on the return value from ReactDOM.render<br/><span class='eslint-error-rule-id'>eslint(react/no-render-return-value)</span>\">ReactDOM<span class=\"token punctuation\">.</span><span class=\"token function\">render</span></mark><span class=\"token punctuation\">(</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">App</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">,</span> document<span class=\"token punctuation\">.</span><span class=\"token function\">getElementById</span><span class=\"token punctuation\">(</span><span class=\"token string\">'app'</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>",
-        "goodExample": "ReactDOM<span class=\"token punctuation\">.</span><span class=\"token function\">render</span><span class=\"token punctuation\">(</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">App</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">,</span> document<span class=\"token punctuation\">.</span><span class=\"token function\">getElementById</span><span class=\"token punctuation\">(</span><span class=\"token string\">'app'</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>"
+        "goodExample": "ReactDOM<span class=\"token punctuation\">.</span><span class=\"token function\">render</span><span class=\"token punctuation\">(</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">App</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">,</span> document<span class=\"token punctuation\">.</span><span class=\"token function\">getElementById</span><span class=\"token punctuation\">(</span><span class=\"token string\">'app'</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/no-set-state": {
         "name": "react/no-set-state",
         "value": "off",
         "description": "禁止使用 setState",
-        "category": "",
+        "reason": "",
         "badExample": "",
-        "goodExample": ""
+        "goodExample": "",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/no-string-refs": {
         "name": "react/no-string-refs",
         "value": "error",
         "description": "禁止使用字符串 ref",
-        "category": "",
+        "reason": "",
         "badExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token function\">componentDidMount</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span><span class=\"token keyword\">this</span><span class=\"token punctuation\">.</span>refs<span class=\"token punctuation\">.</span>foo<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n    <span class=\"token punctuation\">}</span>\n    <span class=\"token function\">render</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <span class=\"token keyword\">return</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <mark class=\"eslint-error\" data-tip=\"Using string literals in ref attributes is deprecated.<br/><span class='eslint-error-rule-id'>eslint(react/no-string-refs)</span>\"><span class=\"token attr-name\">ref</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>foo<span class=\"token punctuation\">\"</span></span></mark> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>\n    <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span>",
-        "goodExample": "<span class=\"token keyword\">import</span> <span class=\"token punctuation\">{</span> useRef<span class=\"token punctuation\">,</span> useEffect <span class=\"token punctuation\">}</span> <span class=\"token keyword\">from</span> <span class=\"token string\">'react'</span><span class=\"token punctuation\">;</span>\n\n<span class=\"token keyword\">function</span> <span class=\"token function\">Foo</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">const</span> foo <span class=\"token operator\">=</span> <span class=\"token function\">useRef</span><span class=\"token punctuation\">(</span><span class=\"token keyword\">null</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n    <span class=\"token function\">useEffect</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token operator\">=></span> <span class=\"token punctuation\">{</span>\n        console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>foo<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n    <span class=\"token punctuation\">}</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n    <span class=\"token keyword\">return</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token attr-name\">ref</span><span class=\"token script language-javascript\"><span class=\"token script-punctuation punctuation\">=</span><span class=\"token punctuation\">{</span>foo<span class=\"token punctuation\">}</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>"
+        "goodExample": "<span class=\"token keyword\">import</span> <span class=\"token punctuation\">{</span> useRef<span class=\"token punctuation\">,</span> useEffect <span class=\"token punctuation\">}</span> <span class=\"token keyword\">from</span> <span class=\"token string\">'react'</span><span class=\"token punctuation\">;</span>\n\n<span class=\"token keyword\">function</span> <span class=\"token function\">Foo</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">const</span> foo <span class=\"token operator\">=</span> <span class=\"token function\">useRef</span><span class=\"token punctuation\">(</span><span class=\"token keyword\">null</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n    <span class=\"token function\">useEffect</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token operator\">=></span> <span class=\"token punctuation\">{</span>\n        console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>foo<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n    <span class=\"token punctuation\">}</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n    <span class=\"token keyword\">return</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token attr-name\">ref</span><span class=\"token script language-javascript\"><span class=\"token script-punctuation punctuation\">=</span><span class=\"token punctuation\">{</span>foo<span class=\"token punctuation\">}</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/no-this-in-sfc": {
         "name": "react/no-this-in-sfc",
         "value": "error",
         "description": "禁止在函数组件中使用 this",
-        "category": "",
-        "badExample": "<span class=\"token keyword\">function</span> <span class=\"token function\">Foo</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">return</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">{</span><mark class=\"eslint-error\" data-tip=\"Stateless functional components should not use this<br/><span class='eslint-error-rule-id'>eslint(react/no-this-in-sfc)</span>\"><span class=\"token keyword\">this</span><span class=\"token punctuation\">.</span>props</mark><span class=\"token punctuation\">.</span>foo<span class=\"token punctuation\">}</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>",
-        "goodExample": "<span class=\"token keyword\">function</span> <span class=\"token function\">Foo</span><span class=\"token punctuation\">(</span><span class=\"token parameter\">props</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">return</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">{</span>props<span class=\"token punctuation\">.</span>foo<span class=\"token punctuation\">}</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>"
+        "reason": "",
+        "badExample": "<span class=\"token keyword\">function</span> <span class=\"token function\">Foo</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">return</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">{</span><mark class=\"eslint-error\" data-tip=\"Stateless functional components should not use `this`<br/><span class='eslint-error-rule-id'>eslint(react/no-this-in-sfc)</span>\"><span class=\"token keyword\">this</span><span class=\"token punctuation\">.</span>props</mark><span class=\"token punctuation\">.</span>foo<span class=\"token punctuation\">}</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>",
+        "goodExample": "<span class=\"token keyword\">function</span> <span class=\"token function\">Foo</span><span class=\"token punctuation\">(</span><span class=\"token parameter\">props</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">return</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">{</span>props<span class=\"token punctuation\">.</span>foo<span class=\"token punctuation\">}</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/no-typos": {
         "name": "react/no-typos",
         "value": "error",
         "description": "禁止组件的属性或生命周期大小写错误",
-        "category": "",
+        "reason": "",
         "badExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">static</span> <mark class=\"eslint-error\" data-tip=\"Typo in static class property declaration<br/><span class='eslint-error-rule-id'>eslint(react/no-typos)</span>\">defaultprops</mark> <span class=\"token operator\">=</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>\n    <mark class=\"eslint-error\" data-tip=\"Typo in component lifecycle method declaration: componentdidupdate should be componentDidUpdate<br/><span class='eslint-error-rule-id'>eslint(react/no-typos)</span>\"><span class=\"token function\">componentdidupdate</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span></mark>\n<span class=\"token punctuation\">}</span>",
-        "goodExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">static</span> defaultProps <span class=\"token operator\">=</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>\n    <span class=\"token function\">componentDidUpdate</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span>"
+        "goodExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">static</span> defaultProps <span class=\"token operator\">=</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>\n    <span class=\"token function\">componentDidUpdate</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span>",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/no-unescaped-entities": {
         "name": "react/no-unescaped-entities",
         "value": "error",
         "description": "禁止在组件的内部存在未转义的 >, \", ' 或 }",
-        "category": "",
+        "reason": "",
         "badExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">Foo</span></span><span class=\"token punctuation\">></span></span><span class=\"token plain-text\">Hel<mark class=\"eslint-error\" data-tip=\"`&amp;gt;` can be escaped with `&amp;amp;gt;`.<br/><span class='eslint-error-rule-id'>eslint(react/no-unescaped-entities)</span>\">></mark>lo</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span><span class=\"token class-name\">Foo</span></span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>",
-        "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">Foo</span></span><span class=\"token punctuation\">></span></span><span class=\"token plain-text\">Hel&amp;gt;lo</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span><span class=\"token class-name\">Foo</span></span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>"
+        "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">Foo</span></span><span class=\"token punctuation\">></span></span><span class=\"token plain-text\">Hel&amp;gt;lo</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span><span class=\"token class-name\">Foo</span></span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/no-unknown-property": {
         "name": "react/no-unknown-property",
         "value": "error",
         "description": "禁止出现 HTML 中的属性，如 class",
-        "category": "",
+        "reason": "",
         "badExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <mark class=\"eslint-error\" data-tip=\"Unknown property &amp;apos;class&amp;apos; found, use &amp;apos;className&amp;apos; instead<br/><span class='eslint-error-rule-id'>eslint(react/no-unknown-property)</span>\"><span class=\"token attr-name\">class</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>foo<span class=\"token punctuation\">\"</span></span></mark> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>",
-        "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token attr-name\">className</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>foo<span class=\"token punctuation\">\"</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>"
+        "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token attr-name\">className</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>foo<span class=\"token punctuation\">\"</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>",
+        "fixable": true,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/no-unsafe": {
         "name": "react/no-unsafe",
         "value": ["error", { "checkAliases": true }],
         "description": "禁止使用不安全的生命周期方法 componentWillMount, componentWillReceiveProps, componentWillUpdate",
-        "category": "",
+        "reason": "",
         "badExample": "<mark class=\"eslint-error\" data-tip=\"componentWillMount is unsafe for use in async rendering. Update the component to use componentDidMount instead. See https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html.<br/><mark class=\"eslint-error\" data-tip=\"UNSAFE_componentWillMount is unsafe for use in async rendering. Update the component to use componentDidMount instead. See https://reactjs.org/blog/2018/03/27/update-on-async-rendering.html.<br/><span class='eslint-error-rule-id'>eslint(react/no-unsafe)</span>\"><span class='eslint-error-rule-id'>eslint(react/no-unsafe)</span>\"><span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token function\">componentWillMount</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>\n    <span class=\"token function\">UNSAFE_componentWillMount</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span></mark></mark>",
-        "goodExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>"
+        "goodExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/no-unused-prop-types": {
         "name": "react/no-unused-prop-types",
         "value": "off",
         "description": "禁止出现未使用的 propTypes",
-        "category": "",
+        "reason": "类型相关的约束交给 TypeScript",
         "badExample": "",
         "goodExample": "",
-        "reason": "类型相关的约束交给 TypeScript"
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/no-unused-state": {
         "name": "react/no-unused-state",
         "value": "off",
         "description": "已定义的 state 必须使用",
-        "category": "",
+        "reason": "没有官方文档，并且存在很多 bug：https://github.com/yannickcr/eslint-plugin-react/search?q=no-unused-state&type=Issues&utf8=%E2%9C%93",
         "badExample": "",
         "goodExample": "",
-        "reason": "没有官方文档，并且存在很多 bug：https://github.com/yannickcr/eslint-plugin-react/search?q=no-unused-state&type=Issues&utf8=%E2%9C%93"
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/no-will-update-set-state": {
         "name": "react/no-will-update-set-state",
         "value": "off",
         "description": "禁止在 componentWillUpdate 中使用 setState",
-        "category": "",
+        "reason": "已经禁止使用 componentWillUpdate 了",
         "badExample": "",
         "goodExample": "",
-        "reason": "已经禁止使用 componentWillUpdate 了"
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/prefer-es6-class": {
         "name": "react/prefer-es6-class",
         "value": ["error", "always"],
         "description": "必须使用 Class 的形式创建组件",
-        "category": "",
+        "reason": "",
         "badExample": "<span class=\"token keyword\">const</span> Foo <span class=\"token operator\">=</span> <span class=\"token function\">createReactClass</span><span class=\"token punctuation\">(</span><mark class=\"eslint-error\" data-tip=\"Component should use es6 class instead of createClass<br/><span class='eslint-error-rule-id'>eslint(react/prefer-es6-class)</span>\"><span class=\"token punctuation\">{</span>\n    <span class=\"token function\">render</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <span class=\"token keyword\">return</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>\n    <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span></mark><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>",
-        "goodExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token function\">render</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <span class=\"token keyword\">return</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>\n    <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span>"
+        "goodExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token function\">render</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <span class=\"token keyword\">return</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>\n    <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span>",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/prefer-read-only-props": {
         "name": "react/prefer-read-only-props",
         "value": "off",
         "description": "使用 Flow 时，props 必须设置为只读的",
-        "category": "",
+        "reason": "",
         "badExample": "",
-        "goodExample": ""
+        "goodExample": "",
+        "fixable": true,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/prefer-stateless-function": {
         "name": "react/prefer-stateless-function",
         "value": "off",
         "description": "必须使用函数式组件",
-        "category": "",
+        "reason": "",
         "badExample": "",
-        "goodExample": ""
+        "goodExample": "",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/prop-types": {
         "name": "react/prop-types",
         "value": "off",
         "description": "组件必须写 propTypes",
-        "category": "",
+        "reason": "类型相关的约束交给 TypeScript",
         "badExample": "",
         "goodExample": "",
-        "reason": "类型相关的约束交给 TypeScript"
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/react-in-jsx-scope": {
         "name": "react/react-in-jsx-scope",
         "value": "off",
         "description": "出现 jsx 的地方必须导入 React",
-        "category": "",
+        "reason": "已经在 no-undef 中限制了",
         "badExample": "",
         "goodExample": "",
-        "reason": "已经在 no-undef 中限制了"
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/require-default-props": {
         "name": "react/require-default-props",
         "value": "off",
         "description": "非 required 的 prop 必须有 defaultProps",
-        "category": "",
+        "reason": "类型相关的约束交给 TypeScript",
         "badExample": "",
         "goodExample": "",
-        "reason": "类型相关的约束交给 TypeScript"
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/require-optimization": {
         "name": "react/require-optimization",
         "value": "off",
         "description": "组件必须有 shouldComponentUpdate",
-        "category": "",
+        "reason": "",
         "badExample": "",
-        "goodExample": ""
+        "goodExample": "",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/require-render-return": {
         "name": "react/require-render-return",
         "value": "error",
         "description": "render 方法中必须有返回值",
-        "category": "",
-        "badExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span>\n    <mark class=\"eslint-error\" data-tip=\"Your render method should have return statement<br/><span class='eslint-error-rule-id'>eslint(react/require-render-return)</span>\"><span class=\"token function\">render</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>\n    <span class=\"token punctuation\">}</span></mark>\n<span class=\"token punctuation\">}</span>",
-        "goodExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token function\">render</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <span class=\"token keyword\">return</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>\n    <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span>"
+        "reason": "",
+        "badExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span>\n    <mark class=\"eslint-error\" data-tip=\"Your render method should have a return statement<br/><span class='eslint-error-rule-id'>eslint(react/require-render-return)</span>\"><span class=\"token function\">render</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>\n    <span class=\"token punctuation\">}</span></mark>\n<span class=\"token punctuation\">}</span>",
+        "goodExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token function\">render</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <span class=\"token keyword\">return</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>\n    <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span>",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/self-closing-comp": {
         "name": "react/self-closing-comp",
         "value": "error",
         "description": "组件内没有 children 时，必须使用自闭和写法",
-        "category": "",
+        "reason": "",
         "badExample": "<span class=\"token tag\"><mark class=\"eslint-error\" data-tip=\"Empty components are self-closing<br/><span class='eslint-error-rule-id'>eslint(react/self-closing-comp)</span>\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">Foo</span></span><span class=\"token punctuation\">></span></mark></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span><span class=\"token class-name\">Foo</span></span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>\n<span class=\"token tag\"><mark class=\"eslint-error\" data-tip=\"Empty components are self-closing<br/><span class='eslint-error-rule-id'>eslint(react/self-closing-comp)</span>\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></mark></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>",
-        "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">Foo</span></span><span class=\"token punctuation\">></span></span><span class=\"token plain-text\">Not empty</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span><span class=\"token class-name\">Foo</span></span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token plain-text\">Not empty</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">Bar</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>"
+        "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">Foo</span></span><span class=\"token punctuation\">></span></span><span class=\"token plain-text\">Not empty</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span><span class=\"token class-name\">Foo</span></span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token plain-text\">Not empty</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">Bar</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>",
+        "fixable": true,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/sort-comp": {
         "name": "react/sort-comp",
         "value": "error",
         "description": "组件内方法必须按照一定规则排序",
-        "category": "",
+        "reason": "",
         "badExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span>\n    <mark class=\"eslint-error\" data-tip=\"render should be placed after componentWillUnmount<br/><span class='eslint-error-rule-id'>eslint(react/sort-comp)</span>\"><span class=\"token function\">render</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <span class=\"token keyword\">return</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>\n    <span class=\"token punctuation\">}</span></mark>\n    <span class=\"token function\">componentWillUnmount</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>\n    <span class=\"token function\">componentDidMount</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>\n    <mark class=\"eslint-error\" data-tip=\"constructor should be placed after defaultProps<br/><span class='eslint-error-rule-id'>eslint(react/sort-comp)</span>\"><span class=\"token function\">constructor</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span></mark>\n    <span class=\"token keyword\">static</span> defaultProps <span class=\"token operator\">=</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>",
-        "goodExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">static</span> defaultProps <span class=\"token operator\">=</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>\n    <span class=\"token function\">constructor</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>\n    <span class=\"token function\">componentDidMount</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>\n    <span class=\"token function\">componentWillUnmount</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>\n    <span class=\"token function\">render</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <span class=\"token keyword\">return</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>\n    <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span>"
+        "goodExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">static</span> defaultProps <span class=\"token operator\">=</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>\n    <span class=\"token function\">constructor</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>\n    <span class=\"token function\">componentDidMount</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>\n    <span class=\"token function\">componentWillUnmount</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>\n    <span class=\"token function\">render</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n        <span class=\"token keyword\">return</span> <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>\n    <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span>",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/sort-prop-types": {
         "name": "react/sort-prop-types",
         "value": "off",
         "description": "propTypes 的属性必须按照字母排序",
-        "category": "",
+        "reason": "类型相关的约束交给 TypeScript",
         "badExample": "",
         "goodExample": "",
-        "reason": "类型相关的约束交给 TypeScript"
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/state-in-constructor": {
         "name": "react/state-in-constructor",
         "value": "off",
         "description": "必须在构造函数中初始化 state",
-        "category": "",
+        "reason": "",
         "badExample": "",
-        "goodExample": ""
+        "goodExample": "",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/static-property-placement": {
         "name": "react/static-property-placement",
         "value": "error",
         "description": "类的静态属性必须使用 static 关键字定义",
-        "category": "",
+        "reason": "",
         "badExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>\n<mark class=\"eslint-error\" data-tip=\"&amp;apos;defaultProps&amp;apos; should be declared as a static class property.<br/><span class='eslint-error-rule-id'>eslint(react/static-property-placement)</span>\">Foo<span class=\"token punctuation\">.</span>defaultProps</mark> <span class=\"token operator\">=</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>",
-        "goodExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">static</span> defaultProps <span class=\"token operator\">=</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>"
+        "goodExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">React<span class=\"token punctuation\">.</span>Component</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">static</span> defaultProps <span class=\"token operator\">=</span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/style-prop-object": {
         "name": "react/style-prop-object",
         "value": "error",
         "description": "style 属性的取值必须是 object",
-        "category": "",
+        "reason": "",
         "badExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token style-attr language-css\"><span class=\"token attr-name\"> </span><mark class=\"eslint-error\" data-tip=\"Style prop value must be an object<br/><span class='eslint-error-rule-id'>eslint(react/style-prop-object)</span>\"><span class=\"token attr-name\"><span class=\"token attr-name\">style</span></span><span class=\"token punctuation\">=\"</span><span class=\"token attr-value\"><span class=\"token property\">color</span><span class=\"token punctuation\">:</span> <span class=\"token string\">'red'</span></span><span class=\"token punctuation\">\"</span></mark></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>",
-        "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token attr-name\">style</span><span class=\"token script language-javascript\"><span class=\"token script-punctuation punctuation\">=</span><span class=\"token punctuation\">{</span><span class=\"token punctuation\">{</span> color<span class=\"token punctuation\">:</span> <span class=\"token string\">'red'</span> <span class=\"token punctuation\">}</span><span class=\"token punctuation\">}</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>"
+        "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token attr-name\">style</span><span class=\"token script language-javascript\"><span class=\"token script-punctuation punctuation\">=</span><span class=\"token punctuation\">{</span><span class=\"token punctuation\">{</span> color<span class=\"token punctuation\">:</span> <span class=\"token string\">'red'</span> <span class=\"token punctuation\">}</span><span class=\"token punctuation\">}</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "react/void-dom-elements-no-children": {
         "name": "react/void-dom-elements-no-children",
         "value": "error",
         "description": "img, br 标签中禁止有 children",
-        "category": "",
+        "reason": "",
         "badExample": "<mark class=\"eslint-error\" data-tip=\"Void DOM element &amp;lt;img /&amp;gt; cannot receive children.<br/><span class='eslint-error-rule-id'>eslint(react/void-dom-elements-no-children)</span>\"><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>img</span><span class=\"token punctuation\">></span></span><span class=\"token plain-text\">foo</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>img</span><span class=\"token punctuation\">></span></span></mark><span class=\"token punctuation\">;</span>\n<mark class=\"eslint-error\" data-tip=\"Void DOM element &amp;lt;br /&amp;gt; cannot receive children.<br/><span class='eslint-error-rule-id'>eslint(react/void-dom-elements-no-children)</span>\"><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>br</span><span class=\"token punctuation\">></span></span><span class=\"token plain-text\">bar</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>br</span><span class=\"token punctuation\">></span></span></mark><span class=\"token punctuation\">;</span>",
-        "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>img</span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>br</span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token plain-text\">foo</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>"
+        "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>img</span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>br</span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token plain-text\">foo</span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span><span class=\"token punctuation\">;</span>",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     }
 }

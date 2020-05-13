@@ -13,13 +13,13 @@
  *     sunhui04 <sunhui04@meituan.com>
  *
  * 依赖版本：
- *     eslint ^6.7.1
- *     babel-eslint ^10.0.3
- *     eslint-plugin-react ^7.18.3
+ *     eslint ^7.0.0
+ *     babel-eslint ^10.1.0
+ *     eslint-plugin-react ^7.20.0
  *     vue-eslint-parser ^7.0.0
- *     eslint-plugin-vue ^6.2.1
- *     @typescript-eslint/parser ^2.28.0
- *     @typescript-eslint/eslint-plugin ^2.28.0
+ *     eslint-plugin-vue ^6.2.2
+ *     @typescript-eslint/parser ^2.33.0
+ *     @typescript-eslint/eslint-plugin ^2.33.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  *
@@ -72,10 +72,6 @@ module.exports = {
          */
         'block-scoped-var': 'off',
         /**
-         * callback 之后必须立即 return
-         */
-        'callback-return': 'off',
-        /**
          * 变量名必须是 camelcase 风格的
          * @reason 很多 api 或文件名都不是 camelcase 风格的
          */
@@ -116,6 +112,10 @@ module.exports = {
          */
         'default-case': 'off',
         /**
+         * switch 语句中的 default 必须在最后
+         */
+        'default-case-last': 'error',
+        /**
          * 有默认值的参数必须放在函数参数的末尾
          */
         'default-param-last': 'off',
@@ -155,10 +155,6 @@ module.exports = {
          */
         'getter-return': 'error',
         /**
-         * require 必须在全局作用域下
-         */
-        'global-require': 'off',
-        /**
          * setter 和 getter 必须写在一起
          */
         'grouped-accessor-pairs': 'error',
@@ -166,11 +162,6 @@ module.exports = {
          * for in 内部必须有 hasOwnProperty
          */
         'guard-for-in': 'error',
-        /**
-         * callback 中的 err 必须被处理
-         * @reason 它是通过字符串匹配来判断函数参数 err 的，不准确
-         */
-        'handle-callback-err': 'off',
         /**
          * 禁止使用指定的标识符
          */
@@ -268,11 +259,6 @@ module.exports = {
          * 禁止使用位运算
          */
         'no-bitwise': 'off',
-        /**
-         * 禁止直接使用 Buffer
-         * @reason Buffer 构造函数是已废弃的语法
-         */
-        'no-buffer-constructor': 'error',
         /**
          * 禁止使用 caller 或 callee
          * @reason 它们是已废弃的语法
@@ -522,10 +508,6 @@ module.exports = {
          */
         'no-misleading-character-class': 'error',
         /**
-         * 相同类型的 require 必须放在一起
-         */
-        'no-mixed-requires': 'off',
-        /**
          * 禁止连续赋值，比如 foo = bar = 1
          */
         'no-multi-assign': 'off',
@@ -557,10 +539,6 @@ module.exports = {
          */
         'no-new-object': 'error',
         /**
-         * 禁止直接 new require('foo')
-         */
-        'no-new-require': 'error',
-        /**
          * 禁止使用 new 来生成 Symbol
          */
         'no-new-symbol': 'error',
@@ -587,22 +565,9 @@ module.exports = {
          */
         'no-param-reassign': 'error',
         /**
-         * 禁止对 __dirname 或 __filename 使用字符串连接
-         * @reason 不同平台下的路径符号不一致，建议使用 path 处理平台差异性
-         */
-        'no-path-concat': 'error',
-        /**
          * 禁止使用 ++ 或 --
          */
         'no-plusplus': 'off',
-        /**
-         * 禁止使用 process.env.NODE_ENV
-         */
-        'no-process-env': 'off',
-        /**
-         * 禁止使用 process.exit(0)
-         */
-        'no-process-exit': 'off',
         /**
          * 禁止使用 __proto__
          * @reason __proto__ 是已废弃的语法
@@ -623,6 +588,10 @@ module.exports = {
          */
         'no-regex-spaces': 'error',
         /**
+         * 禁止导出指定的变量名
+         */
+        'no-restricted-exports': 'off',
+        /**
          * 禁止使用指定的全局变量
          */
         'no-restricted-globals': 'off',
@@ -630,10 +599,6 @@ module.exports = {
          * 禁止导入指定的模块
          */
         'no-restricted-imports': 'off',
-        /**
-         * 禁止使用指定的模块
-         */
-        'no-restricted-modules': 'off',
         /**
          * 禁止使用指定的对象属性
          */
@@ -684,10 +649,6 @@ module.exports = {
          * 禁止在数组中出现连续的逗号
          */
         'no-sparse-arrays': 'error',
-        /**
-         * 禁止使用 node 中的同步的方法，比如 fs.readFileSync
-         */
-        'no-sync': 'off',
         /**
          * 禁止在普通字符串中出现模版字符串里的变量形式
          */
@@ -781,6 +742,11 @@ module.exports = {
                 classes: false
             }
         ],
+        /**
+         * 禁止正则表达式中出现无用的回溯引用
+         * @reason 某些回溯引用语法上没问题，但是会永远匹配到空字符串
+         */
+        'no-useless-backreference': 'error',
         /**
          * 禁止出现没必要的 call 或 apply
          */

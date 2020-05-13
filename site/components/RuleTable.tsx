@@ -23,7 +23,17 @@ export const RuleTable: React.SFC<RuleTableProps> = ({ namespace, hideOff }) => 
                 </h3>
             </div>
             {Object.values<Rule>(NAMESPACE_CONFIG[namespace].ruleConfig).map(
-                ({ name, value, description, reason, badExample, goodExample }) => (
+                ({
+                    name,
+                    value,
+                    description,
+                    reason,
+                    badExample,
+                    goodExample,
+                    fixable,
+                    extendsBaseRule,
+                    requiresTypeChecking
+                }) => (
                     <div
                         id={name}
                         key={name}
@@ -40,6 +50,20 @@ export const RuleTable: React.SFC<RuleTableProps> = ({ namespace, hideOff }) => 
                     >
                         <div className="unit-1-3 unit-1-on-mobile site-desc">
                             <a href={NAMESPACE_CONFIG[namespace].getDocsUrl(name)}>{name}</a>
+                            &nbsp;&nbsp;
+                            <span data-tip={t('可使用 --fix 自动修复')} data-type="success">
+                                {fixable && '🔧'}
+                            </span>
+                            <span data-tip={t('需要类型信息')} data-type="warning">
+                                {requiresTypeChecking && '💭'}
+                            </span>
+                            <a
+                                data-tip={t('继承自 ') + extendsBaseRule}
+                                data-type="warning"
+                                href={`?rule=base#${extendsBaseRule}`}
+                            >
+                                {extendsBaseRule && '👀'}
+                            </a>
                             <a className="site-anchor" href={`#${name}`}>
                                 #
                             </a>

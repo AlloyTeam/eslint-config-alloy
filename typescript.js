@@ -13,13 +13,13 @@
  *     sunhui04 <sunhui04@meituan.com>
  *
  * 依赖版本：
- *     eslint ^6.7.1
- *     babel-eslint ^10.0.3
- *     eslint-plugin-react ^7.18.3
+ *     eslint ^7.0.0
+ *     babel-eslint ^10.1.0
+ *     eslint-plugin-react ^7.20.0
  *     vue-eslint-parser ^7.0.0
- *     eslint-plugin-vue ^6.2.1
- *     @typescript-eslint/parser ^2.28.0
- *     @typescript-eslint/eslint-plugin ^2.28.0
+ *     eslint-plugin-vue ^6.2.2
+ *     @typescript-eslint/parser ^2.33.0
+ *     @typescript-eslint/eslint-plugin ^2.33.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  *
@@ -29,12 +29,6 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     plugins: ['@typescript-eslint'],
     rules: {
-        'no-dupe-class-members': 'off',
-        'no-empty-function': 'off',
-        // https://github.com/typescript-eslint/typescript-eslint/issues/491
-        'no-invalid-this': 'off',
-        'no-magic-numbers': 'off',
-        'no-unused-vars': 'off',
         'react/sort-comp': 'off',
         /**
          * 重载的函数必须写在一起
@@ -48,7 +42,6 @@ module.exports = {
         '@typescript-eslint/array-type': 'off',
         /**
          * 禁止对没有 then 方法的对象使用 await
-         * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/await-thenable': 'off',
         /**
@@ -83,7 +76,14 @@ module.exports = {
         /**
          * 有默认值或可选的参数必须放到最后
          */
+        'default-param-last': 'off',
         '@typescript-eslint/default-param-last': 'off',
+        /**
+         * 禁止使用 foo['bar']，必须写成 foo.bar
+         * @reason 当需要写一系列属性的时候，可以更统一
+         */
+        'dot-notation': 'off',
+        '@typescript-eslint/dot-notation': 'off',
         /**
          * 函数返回值必须与声明的类型一致
          * @reason 编译阶段检查就足够了
@@ -98,6 +98,17 @@ module.exports = {
          * 导出的函数或类中的 public 方法必须定义输入输出参数的类型
          */
         '@typescript-eslint/explicit-module-boundary-types': 'off',
+        /**
+         * 变量必须在定义的时候赋值
+         */
+        'init-declarations': 'off',
+        '@typescript-eslint/init-declarations': 'off',
+        /**
+         * 类的成员之间是否需要空行
+         * @reason 有时为了紧凑需要挨在一起，有时为了可读性需要空一行
+         */
+        'lines-between-class-members': 'off',
+        '@typescript-eslint/lines-between-class-members': 'off',
         /**
          * 指定类成员的排序规则
          * @reason 优先级：
@@ -144,22 +155,22 @@ module.exports = {
         '@typescript-eslint/method-signature-style': 'error',
         /**
          * 限制各种变量或类型的命名规则
-         * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/naming-convention': 'off',
         /**
          * 禁止使用 Array 构造函数
          */
+        'no-array-constructor': 'off',
         '@typescript-eslint/no-array-constructor': 'off',
         /**
          * 禁止滥用 toString 方法
-         * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/no-base-to-string': 'off',
         /**
          * 禁止重复定义类的成员
          * @reason 编译阶段就会报错了
          */
+        'no-dupe-class-members': 'off',
         '@typescript-eslint/no-dupe-class-members': 'off',
         /**
          * 禁止 delete 时传入的 key 是动态的
@@ -169,6 +180,7 @@ module.exports = {
          * 不允许有空函数
          * @reason 有时需要将一个空函数设置为某个项的默认值
          */
+        'no-empty-function': 'off',
         '@typescript-eslint/no-empty-function': 'off',
         /**
          * 禁止定义空的接口
@@ -192,12 +204,10 @@ module.exports = {
         '@typescript-eslint/no-floating-promises': 'off',
         /**
          * 禁止对 array 使用 for in 循环
-         * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/no-for-in-array': 'off',
         /**
          * 禁止使用 eval
-         * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/no-implied-eval': 'off',
         /**
@@ -206,8 +216,20 @@ module.exports = {
          */
         '@typescript-eslint/no-inferrable-types': 'error',
         /**
+         * 禁止在类之外的地方使用 this
+         * @reason 只允许在 class 中使用 this
+         */
+        'no-invalid-this': 'off',
+        '@typescript-eslint/no-invalid-this': 'error',
+        /**
+         * 禁止使用无意义的 void 类型
+         * @reason void 只能用在函数的返回值中
+         */
+        '@typescript-eslint/no-invalid-void-type': 'error',
+        /**
          * 禁止使用 magic numbers
          */
+        'no-magic-numbers': 'off',
         '@typescript-eslint/no-magic-numbers': 'off',
         /**
          * 禁止在接口中定义 constructor，或在类中定义 new
@@ -215,7 +237,6 @@ module.exports = {
         '@typescript-eslint/no-misused-new': 'off',
         /**
          * 避免错误的使用 Promise
-         * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/no-misused-promises': 'off',
         /**
@@ -261,7 +282,6 @@ module.exports = {
         ],
         /**
          * 禁止 throw 字面量，必须 throw 一个 Error 对象
-         * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/no-throw-literal': 'off',
         /**
@@ -270,52 +290,44 @@ module.exports = {
         '@typescript-eslint/no-type-alias': 'off',
         /**
          * 测试表达式中的布尔类型禁止与 true 或 false 直接比较
-         * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'off',
         /**
          * 条件表达式禁止是永远为真（或永远为假）的
-         * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/no-unnecessary-condition': 'off',
         /**
          * 在命名空间中，可以直接使用内部变量，不需要添加命名空间前缀
-         * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/no-unnecessary-qualifier': 'off',
         /**
          * 禁止范型的类型有默认值时，将范型设置为该默认值
-         * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/no-unnecessary-type-arguments': 'off',
         /**
          * 禁止无用的类型断言
-         * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/no-unnecessary-type-assertion': 'off',
         /**
          * 禁止将变量或属性的类型设置为 any
-         * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/no-unsafe-assignment': 'off',
         /**
          * 禁止调用 any 类型的变量上的方法
-         * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/no-unsafe-call': 'off',
         /**
          * 禁止获取 any 类型的变量中的属性
-         * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/no-unsafe-member-access': 'off',
         /**
          * 禁止函数的返回值的类型是 any
-         * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/no-unsafe-return': 'off',
         /**
          * 禁止无用的表达式
          */
+        'no-unused-expressions': 'off',
         '@typescript-eslint/no-unused-expressions': [
             'error',
             {
@@ -328,20 +340,22 @@ module.exports = {
          * 已定义的变量必须使用
          * @reason 编译阶段检查就足够了
          */
+        'no-unused-vars': 'off',
         '@typescript-eslint/no-unused-vars': 'off',
         /**
          * 禁止已定义的变量未使用
-         * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/no-unused-vars-experimental': 'off',
         /**
          * 禁止在定义变量之前就使用它
          * @reason 编译阶段检查就足够了
          */
+        'no-use-before-define': 'off',
         '@typescript-eslint/no-use-before-define': 'off',
         /**
          * 禁止出现没必要的 constructor
          */
+        'no-useless-constructor': 'off',
         '@typescript-eslint/no-useless-constructor': 'error',
         /**
          * 禁止使用 require 来引入模块
@@ -364,7 +378,6 @@ module.exports = {
         '@typescript-eslint/prefer-function-type': 'error',
         /**
          * 使用 includes 而不是 indexOf
-         * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/prefer-includes': 'off',
         /**
@@ -374,7 +387,6 @@ module.exports = {
         '@typescript-eslint/prefer-namespace-keyword': 'error',
         /**
          * 使用 ?? 替代 ||
-         * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/prefer-nullish-coalescing': 'off',
         /**
@@ -383,72 +395,61 @@ module.exports = {
         '@typescript-eslint/prefer-optional-chain': 'error',
         /**
          * 私有变量如果没有在构造函数外被赋值，则必须设为 readonly
-         * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/prefer-readonly': 'off',
         /**
          * 函数的参数必须设置为 readonly
-         * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/prefer-readonly-parameter-types': 'off',
         /**
          * 使用 reduce 方法时，必须传入范型，而不是对第二个参数使用 as
-         * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/prefer-reduce-type-parameter': 'off',
         /**
          * 使用 RegExp#exec 而不是 String#match
-         * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/prefer-regexp-exec': 'off',
         /**
          * 使用 String#startsWith 而不是其他方式
-         * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/prefer-string-starts-ends-with': 'off',
         /**
          * 当需要忽略下一行的 ts 错误时，必须使用 @ts-expect-error 而不是 @ts-ignore
          * @reason 使用 @ts-expect-error 可以避免对不会报错的代码设置了 @ts-ignore
-         * @TODO TypeScript 3.9 发布后开启
          */
         '@typescript-eslint/prefer-ts-expect-error': 'off',
         /**
          * async 函数的返回值必须是 Promise
-         * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/promise-function-async': 'off',
         /**
          * 使用 sort 时必须传入比较函数
-         * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/require-array-sort-compare': 'off',
         /**
          * async 函数中必须存在 await 语句
          */
+        'require-await': 'off',
         '@typescript-eslint/require-await': 'off',
         /**
          * 使用加号时，两者必须同为数字或同为字符串
-         * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/restrict-plus-operands': 'off',
         /**
          * 模版字符串中的变量类型必须是字符串
-         * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/restrict-template-expressions': 'off',
         /**
-         * async 函数必须返回 await
-         * @reason 统一关闭 requires type information 的规则
+         * 禁止在 return 语句里使用 await
          */
+        'no-return-await': 'off',
         '@typescript-eslint/return-await': 'off',
         /**
          * 条件判断必须传入布尔值
-         * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/strict-boolean-expressions': 'off',
         /**
          * 使用联合类型作为 switch 的对象时，必须包含每一个类型的 case
-         * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/switch-exhaustiveness-check': 'off',
         /**
@@ -480,7 +481,6 @@ module.exports = {
         ],
         /**
          * 方法调用时需要绑定到正确的 this 上
-         * @reason 统一关闭 requires type information 的规则
          */
         '@typescript-eslint/unbound-method': 'off',
         /**

@@ -495,5 +495,11 @@
     "当需要忽略下一行的 ts 错误时，必须使用 @ts-expect-error 而不是 @ts-ignore": "Recommends using `// @ts-expect-error` over `// @ts-ignore`",
     "使用 @ts-expect-error 可以避免对不会报错的代码设置了 @ts-ignore": "Using `@ts-expect-error` can prevent use wrong usage of `@ts-ignore`",
     "配置了 strictFunctionTypes 之后，用属性的方式定义方法可以获得更严格的检查": "Setting `strictFunctionTypes` to true will makes typecheck more strict for property with function type",
-    "强制所有属性都定义到类里面，比较统一": "Forcing the user to explicitly declare all properties in the class, makes code style more unified"
+    "强制所有属性都定义到类里面，比较统一": "Forcing the user to explicitly declare all properties in the class, makes code style more unified",
+    "switch 语句中的 default 必须在最后": "Enforce default parameters to be last",
+    "禁止导出指定的变量名": "Disallow specified names in exports",
+    "禁止正则表达式中出现无用的回溯引用": "Disallow useless backreferences in regular expressions",
+    "某些回溯引用语法上没问题，但是会永远匹配到空字符串": "Useless backreferences always ends up matching only zero-length (the empty string)",
+    "禁止使用无意义的 void 类型": "Disallows usage of `void` type outside of generic or return types",
+    "void 只能用在函数的返回值中": "`void` type can only be the return type of function"
 }
