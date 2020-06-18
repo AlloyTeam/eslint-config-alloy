@@ -13,13 +13,13 @@
  *     sunhui04 <sunhui04@meituan.com>
  *
  * 依赖版本：
- *     eslint ^7.0.0
+ *     eslint ^7.2.0
  *     babel-eslint ^10.1.0
  *     eslint-plugin-react ^7.20.0
  *     vue-eslint-parser ^7.0.0
  *     eslint-plugin-vue ^6.2.2
- *     @typescript-eslint/parser ^2.33.0
- *     @typescript-eslint/eslint-plugin ^2.33.0
+ *     @typescript-eslint/parser ^3.3.0
+ *     @typescript-eslint/eslint-plugin ^3.3.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  *
@@ -49,6 +49,10 @@ module.exports = {
          * @reason 这种注释本身就是对特殊代码的说明
          */
         '@typescript-eslint/ban-ts-comment': 'off',
+        /**
+         * 禁止使用类似 tslint:disable-next-line 这样的注释
+         */
+        '@typescript-eslint/ban-tslint-comment': 'off',
         /**
          * 禁止使用指定的类型
          */
@@ -166,6 +170,10 @@ module.exports = {
          * 禁止滥用 toString 方法
          */
         '@typescript-eslint/no-base-to-string': 'off',
+        /**
+         * 禁止使用容易混淆的非空断言
+         */
+        '@typescript-eslint/no-confusing-non-null-assertion': 'off',
         /**
          * 禁止重复定义类的成员
          * @reason 编译阶段就会报错了

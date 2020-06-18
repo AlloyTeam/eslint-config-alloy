@@ -501,5 +501,8 @@
     "禁止正则表达式中出现无用的回溯引用": "Disallow useless backreferences in regular expressions",
     "某些回溯引用语法上没问题，但是会永远匹配到空字符串": "Useless backreferences always ends up matching only zero-length (the empty string)",
     "禁止使用无意义的 void 类型": "Disallows usage of `void` type outside of generic or return types",
-    "void 只能用在函数的返回值中": "`void` type can only be the return type of function"
+    "void 只能用在函数的返回值中": "`void` type can only be the return type of function",
+    "禁止使用超出 js 精度范围的数字": "Disallow Number Literals That Lose Precision",
+    "禁止使用类似 tslint:disable-next-line 这样的注释": "Bans `// tslint:<rule-flag>` comments from being used",
+    "禁止使用容易混淆的非空断言": "Disallow non-null assertion in locations that may be confusing"
 }

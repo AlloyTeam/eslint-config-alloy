@@ -13,13 +13,13 @@
  *     sunhui04 <sunhui04@meituan.com>
  *
  * 依赖版本：
- *     eslint ^7.0.0
+ *     eslint ^7.2.0
  *     babel-eslint ^10.1.0
  *     eslint-plugin-react ^7.20.0
  *     vue-eslint-parser ^7.0.0
  *     eslint-plugin-vue ^6.2.2
- *     @typescript-eslint/parser ^2.33.0
- *     @typescript-eslint/eslint-plugin ^2.33.0
+ *     @typescript-eslint/parser ^3.3.0
+ *     @typescript-eslint/eslint-plugin ^3.3.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  *
@@ -498,6 +498,10 @@ module.exports = {
          * @reason 使用 let 就已经解决了这个问题了
          */
         'no-loop-func': 'off',
+        /**
+         * 禁止使用超出 js 精度范围的数字
+         */
+        'no-loss-of-precision': 'error',
         /**
          * 禁止使用 magic numbers
          */

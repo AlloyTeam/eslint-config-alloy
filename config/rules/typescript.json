@@ -43,6 +43,17 @@
         "extendsBaseRule": "",
         "requiresTypeChecking": false
     },
+    "@typescript-eslint/ban-tslint-comment": {
+        "name": "@typescript-eslint/ban-tslint-comment",
+        "value": "off",
+        "description": "禁止使用类似 tslint:disable-next-line 这样的注释",
+        "reason": "",
+        "badExample": "",
+        "goodExample": "",
+        "fixable": true,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
+    },
     "@typescript-eslint/ban-types": {
         "name": "@typescript-eslint/ban-types",
         "value": "off",
@@ -250,6 +261,17 @@
         "extendsBaseRule": "",
         "requiresTypeChecking": true
     },
+    "@typescript-eslint/no-confusing-non-null-assertion": {
+        "name": "@typescript-eslint/no-confusing-non-null-assertion",
+        "value": "off",
+        "description": "禁止使用容易混淆的非空断言",
+        "reason": "",
+        "badExample": "",
+        "goodExample": "",
+        "fixable": true,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
+    },
     "@typescript-eslint/no-dupe-class-members": {
         "name": "@typescript-eslint/no-dupe-class-members",
         "value": "off",
@@ -442,8 +464,8 @@
         "value": "error",
         "description": "禁止在 optional chaining 之后使用 non-null 断言（感叹号）",
         "reason": "optional chaining 后面的属性一定是非空的",
-        "badExample": "<span class=\"token keyword\">let</span> foo1<span class=\"token punctuation\">:</span> <span class=\"token punctuation\">{</span> bar<span class=\"token punctuation\">:</span> <span class=\"token punctuation\">{</span> baz<span class=\"token punctuation\">:</span> <span class=\"token builtin\">string</span> <span class=\"token punctuation\">}</span> <span class=\"token punctuation\">}</span> <span class=\"token operator\">|</span> undefined<span class=\"token punctuation\">;</span>\n\n<span class=\"token builtin\">console</span><span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span><mark class=\"eslint-error\" data-tip=\"Optional chain expressions can return undefined by design - using a non-null assertion is unsafe and wrong.<br/><span class='eslint-error-rule-id'>eslint(@typescript-eslint/no-non-null-asserted-optional-chain)</span>\">foo1<span class=\"token operator\">?</span><span class=\"token punctuation\">.</span>bar</mark><span class=\"token operator\">!</span><span class=\"token punctuation\">.</span>baz<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>",
-        "goodExample": "<span class=\"token keyword\">let</span> foo2<span class=\"token punctuation\">:</span> <span class=\"token punctuation\">{</span> bar<span class=\"token punctuation\">:</span> <span class=\"token punctuation\">{</span> baz<span class=\"token punctuation\">:</span> <span class=\"token builtin\">string</span> <span class=\"token punctuation\">}</span> <span class=\"token punctuation\">}</span> <span class=\"token operator\">|</span> undefined<span class=\"token punctuation\">;</span>\n\n<span class=\"token builtin\">console</span><span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>foo2<span class=\"token operator\">?</span><span class=\"token punctuation\">.</span>bar<span class=\"token punctuation\">.</span>baz<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>",
+        "badExample": "<span class=\"token keyword\">let</span> foo1<span class=\"token punctuation\">:</span> <span class=\"token punctuation\">{</span> bar<span class=\"token punctuation\">:</span> <span class=\"token punctuation\">{</span> baz<span class=\"token punctuation\">:</span> <span class=\"token builtin\">string</span> <span class=\"token punctuation\">}</span> <span class=\"token punctuation\">}</span> <span class=\"token operator\">|</span> undefined<span class=\"token punctuation\">;</span>\n\n<span class=\"token builtin\">console</span><span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span><mark class=\"eslint-error\" data-tip=\"Optional chain expressions can return undefined by design - using a non-null assertion is unsafe and wrong.<br/><span class='eslint-error-rule-id'>eslint(@typescript-eslint/no-non-null-asserted-optional-chain)</span>\">foo1<span class=\"token operator\">?</span><span class=\"token punctuation\">.</span>bar</mark><span class=\"token operator\">!</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>",
+        "goodExample": "<span class=\"token keyword\">let</span> foo2<span class=\"token punctuation\">:</span> <span class=\"token punctuation\">{</span> bar<span class=\"token punctuation\">:</span> <span class=\"token punctuation\">{</span> baz<span class=\"token punctuation\">:</span> <span class=\"token builtin\">string</span> <span class=\"token punctuation\">}</span> <span class=\"token punctuation\">}</span> <span class=\"token operator\">|</span> undefined<span class=\"token punctuation\">;</span>\n\n<span class=\"token builtin\">console</span><span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>foo2<span class=\"token operator\">?</span><span class=\"token punctuation\">.</span>bar<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>",
         "fixable": false,
         "extendsBaseRule": "",
         "requiresTypeChecking": false
@@ -647,7 +669,7 @@
         "goodExample": "",
         "fixable": false,
         "extendsBaseRule": "",
-        "requiresTypeChecking": true
+        "requiresTypeChecking": false
     },
     "@typescript-eslint/no-use-before-define": {
         "name": "@typescript-eslint/no-use-before-define",
@@ -744,7 +766,7 @@
         "reason": "",
         "badExample": "",
         "goodExample": "",
-        "fixable": true,
+        "fixable": false,
         "extendsBaseRule": "",
         "requiresTypeChecking": true
     },
@@ -755,7 +777,7 @@
         "reason": "",
         "badExample": "<span class=\"token keyword\">let</span> foo1<span class=\"token punctuation\">:</span> <span class=\"token builtin\">any</span><span class=\"token punctuation\">;</span>\n<span class=\"token builtin\">console</span><span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span><mark class=\"eslint-error\" data-tip=\"Prefer using an optional chain expression instead, as it&amp;apos;s more concise and easier to read.<br/><span class='eslint-error-rule-id'>eslint(@typescript-eslint/prefer-optional-chain)</span>\">foo1 <span class=\"token operator\">&amp;&amp;</span> foo1<span class=\"token punctuation\">.</span>a <span class=\"token operator\">&amp;&amp;</span> foo1<span class=\"token punctuation\">.</span>a<span class=\"token punctuation\">.</span>b <span class=\"token operator\">&amp;&amp;</span> foo1<span class=\"token punctuation\">.</span>a<span class=\"token punctuation\">.</span>b<span class=\"token punctuation\">.</span>c</mark><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>",
         "goodExample": "<span class=\"token keyword\">let</span> foo2<span class=\"token punctuation\">:</span> <span class=\"token builtin\">any</span><span class=\"token punctuation\">;</span>\n<span class=\"token builtin\">console</span><span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>foo2<span class=\"token operator\">?</span><span class=\"token punctuation\">.</span>a<span class=\"token operator\">?</span><span class=\"token punctuation\">.</span>b<span class=\"token operator\">?</span><span class=\"token punctuation\">.</span>c<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>",
-        "fixable": true,
+        "fixable": false,
         "extendsBaseRule": "",
         "requiresTypeChecking": false
     },
