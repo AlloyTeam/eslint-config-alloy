@@ -415,6 +415,17 @@
         "extendsBaseRule": "",
         "requiresTypeChecking": false
     },
+    "@typescript-eslint/no-loss-of-precision": {
+        "name": "@typescript-eslint/no-loss-of-precision",
+        "value": "error",
+        "description": "禁止使用超出 js 精度范围的数字",
+        "reason": "",
+        "badExample": "<span class=\"token keyword\">const</span> foo1 <span class=\"token operator\">=</span> <span class=\"token number\"><mark class=\"eslint-error\" data-tip=\"This number literal will lose precision at runtime.<br/><span class='eslint-error-rule-id'>eslint(@typescript-eslint/no-loss-of-precision)</span>\">5123000000000000000000000000001</mark></span><span class=\"token punctuation\">;</span>",
+        "goodExample": "<span class=\"token keyword\">const</span> foo2 <span class=\"token operator\">=</span> <span class=\"token number\">12345</span><span class=\"token punctuation\">;</span>",
+        "fixable": false,
+        "extendsBaseRule": "no-loss-of-precision",
+        "requiresTypeChecking": false
+    },
     "@typescript-eslint/no-magic-numbers": {
         "name": "@typescript-eslint/no-magic-numbers",
         "value": "off",
@@ -747,6 +758,17 @@
         "fixable": true,
         "extendsBaseRule": "",
         "requiresTypeChecking": true
+    },
+    "@typescript-eslint/prefer-literal-enum-member": {
+        "name": "@typescript-eslint/prefer-literal-enum-member",
+        "value": "off",
+        "description": "枚举类型的值必须是字面量，禁止是计算值",
+        "reason": "编译阶段检查就足够了",
+        "badExample": "",
+        "goodExample": "",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
     },
     "@typescript-eslint/prefer-namespace-keyword": {
         "name": "@typescript-eslint/prefer-namespace-keyword",

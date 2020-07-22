@@ -13,13 +13,13 @@
  *     sunhui04 <sunhui04@meituan.com>
  *
  * 依赖版本：
- *     eslint ^7.2.0
+ *     eslint ^7.5.0
  *     babel-eslint ^10.1.0
- *     eslint-plugin-react ^7.20.0
- *     vue-eslint-parser ^7.0.0
+ *     eslint-plugin-react ^7.20.3
+ *     vue-eslint-parser ^7.1.0
  *     eslint-plugin-vue ^6.2.2
- *     @typescript-eslint/parser ^3.3.0
- *     @typescript-eslint/eslint-plugin ^3.3.0
+ *     @typescript-eslint/parser ^3.7.0
+ *     @typescript-eslint/eslint-plugin ^3.7.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  *
@@ -165,7 +165,7 @@ module.exports = {
         /**
          * 禁止使用指定的标识符
          */
-        'id-blacklist': 'off',
+        'id-denylist': 'off',
         /**
          * 限制变量名长度
          */
@@ -573,6 +573,10 @@ module.exports = {
          */
         'no-plusplus': 'off',
         /**
+         * 禁止在 Promise 的回调函数中直接 return
+         */
+        'no-promise-executor-return': 'error',
+        /**
          * 禁止使用 __proto__
          * @reason __proto__ 是已废弃的语法
          */
@@ -698,6 +702,10 @@ module.exports = {
          * 禁止在 return, throw, break 或 continue 之后还有代码
          */
         'no-unreachable': 'error',
+        /**
+         * 禁止在第一轮循环时就一定会退出循环的情况出现
+         */
+        'no-unreachable-loop': 'error',
         /**
          * 禁止在 finally 中出现 return, throw, break 或 continue
          * @reason finally 中的语句会在 try 之前执行

@@ -3,6 +3,6 @@ module.exports = {
         /**
          * 禁止使用指定的标识符
          */
-        'id-blacklist': 'off'
+        'id-denylist': 'off'
     }
 };

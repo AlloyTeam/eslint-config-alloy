@@ -504,5 +504,8 @@
     "void 只能用在函数的返回值中": "`void` type can only be the return type of function",
     "禁止使用超出 js 精度范围的数字": "Disallow Number Literals That Lose Precision",
     "禁止使用类似 tslint:disable-next-line 这样的注释": "Bans `// tslint:<rule-flag>` comments from being used",
-    "禁止使用容易混淆的非空断言": "Disallow non-null assertion in locations that may be confusing"
+    "禁止使用容易混淆的非空断言": "Disallow non-null assertion in locations that may be confusing",
+    "禁止在 Promise 的回调函数中直接 return": "Disallow returning values from Promise executor functions",
+    "禁止在第一轮循环时就一定会退出循环的情况出现": "Disallow loops with a body that allows only one iteration",
+    "枚举类型的值必须是字面量，禁止是计算值": "Require that all enum members be literal values to prevent unintended enum member name shadow issues"
 }
