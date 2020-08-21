@@ -54,11 +54,11 @@ NAMESPACES.forEach((namespace) => {
         .forEach((ruleName) => {
             const fullRuleName = NAMESPACE_CONFIG[namespace].rulePrefix + ruleName;
             if (deprecatedRules.includes(fullRuleName)) {
-                errors.push(`${fullRuleName} 是已废弃的规则，请删除`);
+                errors.push(`${fullRuleName} is deprecated, please REMOVE it`);
                 return;
             }
             if (prettierRules.includes(fullRuleName)) {
-                errors.push(`${fullRuleName} 是 Prettier 的规则，请删除`);
+                errors.push(`${fullRuleName} is ignored by prettier, please REMOVE it`);
                 return;
             }
             if (activeRules.includes(fullRuleName)) {
@@ -70,10 +70,21 @@ NAMESPACES.forEach((namespace) => {
 
 if (remainingRules.length > 0) {
     errors.push(
-        `以下规则需要补充：${remainingRules.map((ruleName) => `\n  - ${ruleName}`).join('')}`
+        `Missing rules: ${remainingRules
+            .map((ruleName) => `\n  - ${ruleName} ${getDocsUrlFromRuleName(ruleName)}`)
+            .join('')}`
     );
 }
 
 if (errors.length > 0) {
     throw new Error(errors.map((error) => `\n- ${error}`).join(''));
+}
+
+function getDocsUrlFromRuleName(ruleName: string) {
+    for (const namespaceConfig of Object.values(NAMESPACE_CONFIG).reverse()) {
+        const { rulePrefix, getDocsUrl } = namespaceConfig;
+        if (ruleName.startsWith(rulePrefix)) {
+            return getDocsUrl(ruleName);
+        }
+    }
 }

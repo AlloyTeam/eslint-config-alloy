@@ -13,13 +13,13 @@
  *     sunhui04 <sunhui04@meituan.com>
  *
  * 依赖版本：
- *     eslint ^7.5.0
+ *     eslint ^7.7.0
  *     babel-eslint ^10.1.0
- *     eslint-plugin-react ^7.20.3
+ *     eslint-plugin-react ^7.20.6
  *     vue-eslint-parser ^7.1.0
  *     eslint-plugin-vue ^6.2.2
- *     @typescript-eslint/parser ^3.7.0
- *     @typescript-eslint/eslint-plugin ^3.7.0
+ *     @typescript-eslint/parser ^3.9.1
+ *     @typescript-eslint/eslint-plugin ^3.9.1
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  *
@@ -380,6 +380,10 @@ module.exports = {
          * @reason as const 是新语法，不是很常见
          */
         '@typescript-eslint/prefer-as-const': 'off',
+        /**
+         * 枚举值必须初始化
+         */
+        '@typescript-eslint/prefer-enum-initializers': 'off',
         /**
          * 使用 for 循环遍历数组时，如果索引仅用于获取成员，则必须使用 for of 循环替代 for 循环
          * @reason for of 循环更加易读

@@ -726,6 +726,17 @@
         "extendsBaseRule": "",
         "requiresTypeChecking": false
     },
+    "@typescript-eslint/prefer-enum-initializers": {
+        "name": "@typescript-eslint/prefer-enum-initializers",
+        "value": "off",
+        "description": "枚举值必须初始化",
+        "reason": "",
+        "badExample": "",
+        "goodExample": "",
+        "fixable": false,
+        "extendsBaseRule": "",
+        "requiresTypeChecking": false
+    },
     "@typescript-eslint/prefer-for-of": {
         "name": "@typescript-eslint/prefer-for-of",
         "value": "error",
