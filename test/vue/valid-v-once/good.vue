@@ -1,3 +1,3 @@
 <template>
-    <div v-once />
+  <div v-once />
 </template>

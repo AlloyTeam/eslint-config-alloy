@@ -1,5 +1,5 @@
 class Foo extends Bar {
-    constructor() {
-        super();
-    }
+  constructor() {
+    super();
+  }
 }

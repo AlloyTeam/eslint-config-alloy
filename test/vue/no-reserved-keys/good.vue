@@ -1,18 +1,18 @@
 <script>
 export default {
-    props: {
-        $element: String
+  props: {
+    $element: String,
+  },
+  computed: {
+    $listen: {
+      get() {},
     },
-    computed: {
-        $listen: {
-            get() {}
-        }
-    },
-    data: {
-        foo: null
-    },
-    methods: {
-        $next() {}
-    }
+  },
+  data: {
+    foo: null,
+  },
+  methods: {
+    $next() {},
+  },
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-    <ul v-if="complete">
-        <TodoItem v-for="todo in todos" />
-    </ul>
+  <ul v-if="complete">
+    <TodoItem v-for="todo in todos" />
+  </ul>
 </template>

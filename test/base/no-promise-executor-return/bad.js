@@ -1,12 +1,12 @@
 new Promise((resolve, reject) => {
-    if (someCondition) {
-        return defaultResult;
+  if (someCondition) {
+    return defaultResult;
+  }
+  getSomething((err, result) => {
+    if (err) {
+      reject(err);
+    } else {
+      resolve(result);
     }
-    getSomething((err, result) => {
-        if (err) {
-            reject(err);
-        } else {
-            resolve(result);
-        }
-    });
+  });
 });

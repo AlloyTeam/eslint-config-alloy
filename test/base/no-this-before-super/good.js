@@ -1,6 +1,6 @@
 class Foo extends Bar {
-    constructor() {
-        super();
-        this.foo = 1;
-    }
+  constructor() {
+    super();
+    this.foo = 1;
+  }
 }

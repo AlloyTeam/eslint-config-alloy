@@ -1,8 +1,8 @@
 class Foo {
-    constructor() {}
+  constructor() {}
 }
 class Bar extends Foo {
-    constructor(...args) {
-        super(...args);
-    }
+  constructor(...args) {
+    super(...args);
+  }
 }

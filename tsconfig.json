@@ -1,41 +1,41 @@
 {
-    "compilerOptions": {
-        // 开启的特性
-        //
-        // 兼容 babel 模块导入的模式（不需要 * as）
-        "esModuleInterop": true,
-        // 支持引入 json 模块
-        "resolveJsonModule": true,
-        // React 项目需要配置此项
-        "jsx": "react",
-        // 禁止导入模块时大小写错误
-        "forceConsistentCasingInFileNames": true,
+  "compilerOptions": {
+    // 开启的特性
+    //
+    // 兼容 babel 模块导入的模式（不需要 * as）
+    "esModuleInterop": true,
+    // 支持引入 json 模块
+    "resolveJsonModule": true,
+    // React 项目需要配置此项
+    "jsx": "react",
+    // 禁止导入模块时大小写错误
+    "forceConsistentCasingInFileNames": true,
 
-        // 生成文件的配置
-        //
-        // 指定生成文件的 ECMAScript 版本
-        "target": "es2018",
-        // 指定生成哪个模块系统代码
-        "module": "commonjs",
-        // 决定如何处理模块
-        "moduleResolution": "node",
-        // 生成的文件的换行符
-        "newLine": "lf",
-        // 不生成输出
-        "noEmit": true,
+    // 生成文件的配置
+    //
+    // 指定生成文件的 ECMAScript 版本
+    "target": "es2018",
+    // 指定生成哪个模块系统代码
+    "module": "commonjs",
+    // 决定如何处理模块
+    "moduleResolution": "node",
+    // 生成的文件的换行符
+    "newLine": "lf",
+    // 不生成输出
+    "noEmit": true,
 
-        // 严格模式，可选择性的开启，建议开启的越多越好
-        //
-        // 严格模式
-        "strict": true,
-        // 若有未使用的局部变量则抛错
-        "noUnusedLocals": true,
-        // 若有未使用的参数则抛错
-        "noUnusedParameters": true,
+    // 严格模式，可选择性的开启，建议开启的越多越好
+    //
+    // 严格模式
+    "strict": true,
+    // 若有未使用的局部变量则抛错
+    "noUnusedLocals": true,
+    // 若有未使用的参数则抛错
+    "noUnusedParameters": true,
 
-        // stdout 输出
-        //
-        // 给错误和消息设置样式，使用颜色和上下文
-        "pretty": true
-    }
+    // stdout 输出
+    //
+    // 给错误和消息设置样式，使用颜色和上下文
+    "pretty": true
+  }
 }

@@ -1,4 +1,4 @@
 <template>
-    <component />
-    <component is="currentComponnet" />
+  <component />
+  <component is="currentComponnet" />
 </template>

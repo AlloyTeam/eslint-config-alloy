@@ -1,4 +1,4 @@
 class Foo extends React.Component {
-    static defaultprops = {};
-    componentdidupdate() {}
+  static defaultprops = {};
+  componentdidupdate() {}
 }

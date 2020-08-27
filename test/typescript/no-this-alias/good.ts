@@ -1,6 +1,6 @@
 function foo() {
-    const { bar } = this;
-    setTimeout(() => {
-        this.doWork();
-    });
+  const { bar } = this;
+  setTimeout(() => {
+    this.doWork();
+  });
 }

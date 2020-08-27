@@ -1,10 +1,10 @@
 const user = {
-    get name() {
-        return 'Alex';
-    }
+  get name() {
+    return 'Alex';
+  },
 };
 class User {
-    get name() {
-        return this.name;
-    }
+  get name() {
+    return this.name;
+  }
 }

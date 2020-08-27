@@ -1,3 +1,3 @@
 <template>
-    <div v-pre />
+  <div v-pre />
 </template>

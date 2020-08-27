@@ -1,3 +1,3 @@
 <template>
-    <div v-cloak />
+  <div v-cloak />
 </template>

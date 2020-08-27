@@ -1,4 +1,4 @@
 <template>
-    <div v-if="foo" />
-    <div v-else />
+  <div v-if="foo" />
+  <div v-else />
 </template>

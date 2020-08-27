@@ -1,10 +1,10 @@
 const user = {
-    get name() {
-        // do something
-    }
+  get name() {
+    // do something
+  },
 };
 class User {
-    get name() {
-        return;
-    }
+  get name() {
+    return;
+  }
 }

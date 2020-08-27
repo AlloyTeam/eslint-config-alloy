@@ -1,8 +1,8 @@
 class Foo {
-    constructor(bar) {
-        if (!bar) {
-            return;
-        }
-        this.bar = bar;
+  constructor(bar) {
+    if (!bar) {
+      return;
     }
+    this.bar = bar;
+  }
 }

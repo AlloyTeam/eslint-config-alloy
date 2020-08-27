@@ -1,3 +1,3 @@
 <template>
-    <div @click="foo" />
+  <div @click="foo" />
 </template>

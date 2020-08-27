@@ -1,3 +1,3 @@
 <template>
-    <textarea v-model="message" />
+  <textarea v-model="message" />
 </template>

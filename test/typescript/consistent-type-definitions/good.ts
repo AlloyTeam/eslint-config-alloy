@@ -1,3 +1,3 @@
 interface Foo2 {
-    foo: string;
+  foo: string;
 }

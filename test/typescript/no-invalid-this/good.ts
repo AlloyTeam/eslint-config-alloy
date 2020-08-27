@@ -1,6 +1,6 @@
 class Foo {
-    a: number;
-    constructor() {
-        this.a = 0;
-    }
+  a: number;
+  constructor() {
+    this.a = 0;
+  }
 }

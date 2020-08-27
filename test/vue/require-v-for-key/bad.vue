@@ -1,3 +1,3 @@
 <template>
-    <div v-for="todo in todos" />
+  <div v-for="todo in todos" />
 </template>

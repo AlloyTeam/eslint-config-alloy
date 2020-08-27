@@ -1,4 +1,4 @@
 type Foo2 = {
-    bar: boolean;
-    baz: string;
+  bar: boolean;
+  baz: string;
 };

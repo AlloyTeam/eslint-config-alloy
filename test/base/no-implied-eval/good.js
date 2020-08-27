@@ -1,3 +1,3 @@
 setTimeout(() => {
-    alert('Hello World');
+  alert('Hello World');
 }, 1000);

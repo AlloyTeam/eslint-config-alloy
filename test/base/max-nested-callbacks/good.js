@@ -1,5 +1,5 @@
 foo(async () => {
-    await bar();
-    await baz();
-    await qux();
+  await bar();
+  await baz();
+  await qux();
 });

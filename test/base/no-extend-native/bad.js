@@ -1,5 +1,5 @@
 Array.prototype.flat = function () {
-    // do something
+  // do something
 };
 
 [1, [2, 3]].flat();

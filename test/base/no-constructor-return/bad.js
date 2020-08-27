@@ -1,6 +1,6 @@
 class Foo {
-    constructor(bar) {
-        this.bar = bar;
-        return bar;
-    }
+  constructor(bar) {
+    this.bar = bar;
+    return bar;
+  }
 }

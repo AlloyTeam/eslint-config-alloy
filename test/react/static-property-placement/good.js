@@ -1,3 +1,3 @@
 class Foo extends React.Component {
-    static defaultProps = {};
+  static defaultProps = {};
 }

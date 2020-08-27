@@ -1,6 +1,6 @@
 for (foo of bar) {
-    if (foo.id === id) {
-        doSomething(foo);
-        break;
-    }
+  if (foo.id === id) {
+    doSomething(foo);
+    break;
+  }
 }

@@ -1,5 +1,5 @@
 module.exports = {
-    rules: {
-        '@typescript-eslint/return-await': 'off'
-    }
+  rules: {
+    '@typescript-eslint/return-await': 'off',
+  },
 };

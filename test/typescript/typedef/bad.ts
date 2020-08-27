@@ -1,4 +1,4 @@
 type Foo1 = {
-    bar;
-    baz;
+  bar;
+  baz;
 };

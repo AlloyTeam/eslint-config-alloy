@@ -1,3 +1,3 @@
 <template>
-    <div :attr="foo == 1" />
+  <div :attr="foo == 1" />
 </template>

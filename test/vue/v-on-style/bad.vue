@@ -1,3 +1,3 @@
 <template>
-    <div v-on:click="foo" />
+  <div v-on:click="foo" />
 </template>

@@ -1,3 +1,3 @@
 (function () {
-    foo();
+  foo();
 }.bind(bar));

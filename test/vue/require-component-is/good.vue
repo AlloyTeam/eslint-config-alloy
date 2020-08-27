@@ -1,4 +1,4 @@
 <template>
-    <component :is="currentComponnet" />
-    <component v-bind:is="currentComponnet" />
+  <component :is="currentComponnet" />
+  <component v-bind:is="currentComponnet" />
 </template>

@@ -1,6 +1,6 @@
 if (foo) {
-    // do something
+  // do something
 }
 try {
-    // do something
+  // do something
 } catch (e) {}

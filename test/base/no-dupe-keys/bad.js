@@ -1,4 +1,4 @@
 const foo = {
-    bar: 1,
-    bar: 2
+  bar: 1,
+  bar: 2,
 };

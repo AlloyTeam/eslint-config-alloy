@@ -1,5 +1,5 @@
 <script>
 export default {
-    name: 'div'
+  name: 'div',
 };
 </script>

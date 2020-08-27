@@ -1,5 +1,5 @@
 <script>
 export default {
-    name: 'FooBar'
+  name: 'FooBar',
 };
 </script>

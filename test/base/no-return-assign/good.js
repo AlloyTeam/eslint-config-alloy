@@ -1,4 +1,4 @@
 function foo() {
-    bar = 1;
-    return bar;
+  bar = 1;
+  return bar;
 }

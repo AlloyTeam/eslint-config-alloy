@@ -1,5 +1,5 @@
 const Foo = createReactClass({
-    render() {
-        return <div />;
-    }
+  render() {
+    return <div />;
+  },
 });

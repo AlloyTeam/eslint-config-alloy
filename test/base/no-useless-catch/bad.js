@@ -1,5 +1,5 @@
 try {
-    doSomethingThatMightThrow();
+  doSomethingThatMightThrow();
 } catch (e) {
-    throw e;
+  throw e;
 }

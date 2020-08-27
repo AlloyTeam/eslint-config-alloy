@@ -1,4 +1,4 @@
 <>foo</>;
 <React.Fragment key="foo">
-    <Foo />
+  <Foo />
 </React.Fragment>;

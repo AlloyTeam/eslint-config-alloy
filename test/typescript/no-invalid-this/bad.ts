@@ -1,3 +1,3 @@
 function foo() {
-    this.a = 0;
+  this.a = 0;
 }

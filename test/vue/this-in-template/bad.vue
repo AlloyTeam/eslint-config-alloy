@@ -1,5 +1,5 @@
 <template>
-    <a :href="this.url">
-        {{ this.text }}
-    </a>
+  <a :href="this.url">
+    {{ this.text }}
+  </a>
 </template>

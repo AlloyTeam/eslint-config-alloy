@@ -1,5 +1,5 @@
 module.exports = {
-    rules: {
-        '@typescript-eslint/no-useless-constructor': 'error'
-    }
+  rules: {
+    '@typescript-eslint/no-useless-constructor': 'error',
+  },
 };

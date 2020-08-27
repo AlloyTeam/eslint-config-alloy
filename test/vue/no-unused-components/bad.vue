@@ -2,12 +2,12 @@
 import Foo from 'components/Foo.vue';
 
 export default {
-    components: {
-        Foo
-    }
+  components: {
+    Foo,
+  },
 };
 </script>
 
 <template>
-    <Bar />
+  <Bar />
 </template>

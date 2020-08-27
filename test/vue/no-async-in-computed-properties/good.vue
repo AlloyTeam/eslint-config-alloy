@@ -1,9 +1,9 @@
 <script>
 export default {
-    computed: {
-        foo() {
-            return someFunc();
-        }
-    }
+  computed: {
+    foo() {
+      return someFunc();
+    },
+  },
 };
 </script>

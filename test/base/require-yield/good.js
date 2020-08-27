@@ -1,4 +1,4 @@
 function* foo() {
-    yield 1;
-    return 2;
+  yield 1;
+  return 2;
 }

@@ -1,3 +1,3 @@
 new Promise((resolve) => {
-    setTimeout(resolve, 1000);
+  setTimeout(resolve, 1000);
 });

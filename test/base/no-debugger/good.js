@@ -1,3 +1,3 @@
 if (foo) {
-    // debugger;
+  // debugger;
 }

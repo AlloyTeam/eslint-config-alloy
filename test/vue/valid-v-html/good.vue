@@ -1,3 +1,3 @@
 <template>
-    <div v-html="foo" />
+  <div v-html="foo" />
 </template>

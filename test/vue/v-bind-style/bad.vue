@@ -1,3 +1,3 @@
 <template>
-    <div v-bind:foo="bar" />
+  <div v-bind:foo="bar" />
 </template>

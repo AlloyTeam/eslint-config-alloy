@@ -1,3 +1,3 @@
 if (foo) {
-    const bar = function () {};
+  const bar = function () {};
 }

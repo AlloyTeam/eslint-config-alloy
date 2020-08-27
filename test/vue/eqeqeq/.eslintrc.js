@@ -1,8 +1,8 @@
 module.exports = {
-    rules: {
-        /**
-         * 必须使用 === 或 !==，禁止使用 == 或 !=
-         */
-        'vue/eqeqeq': ['error', 'always']
-    }
+  rules: {
+    /**
+     * 必须使用 === 或 !==，禁止使用 == 或 !=
+     */
+    'vue/eqeqeq': ['error', 'always'],
+  },
 };

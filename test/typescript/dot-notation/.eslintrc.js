@@ -1,5 +1,5 @@
 module.exports = {
-    rules: {
-        '@typescript-eslint/dot-notation': 'off'
-    }
+  rules: {
+    '@typescript-eslint/dot-notation': 'off',
+  },
 };

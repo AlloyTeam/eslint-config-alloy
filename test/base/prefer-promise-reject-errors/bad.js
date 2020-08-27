@@ -1,9 +1,9 @@
 Promise.reject('foo');
 
 new Promise((resolve, reject) => {
-    reject();
+  reject();
 });
 
 new Promise((resolve, reject) => {
-    reject('foo');
+  reject('foo');
 });

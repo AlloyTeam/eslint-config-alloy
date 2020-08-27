@@ -1,18 +1,18 @@
 <script>
 export default {
-    props: {
-        $el: String
+  props: {
+    $el: String,
+  },
+  computed: {
+    $on: {
+      get() {},
     },
-    computed: {
-        $on: {
-            get() {}
-        }
-    },
-    data: {
-        _foo: null
-    },
-    methods: {
-        $nextTick() {}
-    }
+  },
+  data: {
+    _foo: null,
+  },
+  methods: {
+    $nextTick() {},
+  },
 };
 </script>

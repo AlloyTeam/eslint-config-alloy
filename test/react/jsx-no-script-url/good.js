@@ -1,6 +1,6 @@
 <a
-    href="#"
-    onClick={(e) => {
-        e.preventDefault();
-    }}
+  href="#"
+  onClick={(e) => {
+    e.preventDefault();
+  }}
 ></a>;

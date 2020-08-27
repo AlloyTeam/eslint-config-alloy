@@ -1,9 +1,9 @@
 <template>
-    <div
-        @click="
-            () => {
-                const { bar } = foo;
-            }
-        "
-    ></div>
+  <div
+    @click="
+      () => {
+        const { bar } = foo;
+      }
+    "
+  ></div>
 </template>

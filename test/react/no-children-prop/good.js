@@ -1,4 +1,4 @@
 <div>Hello World</div>;
 <Foo>
-    <Bar />
+  <Bar />
 </Foo>;

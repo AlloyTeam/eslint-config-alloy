@@ -1,7 +1,7 @@
 class Foo extends React.Component {
-    updateName() {
-        if (this.isMounted()) {
-            this.setState({});
-        }
+  updateName() {
+    if (this.isMounted()) {
+      this.setState({});
     }
+  }
 }

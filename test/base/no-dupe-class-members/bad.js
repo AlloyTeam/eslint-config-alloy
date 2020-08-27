@@ -1,4 +1,4 @@
 class Foo {
-    bar() {}
-    bar() {}
+  bar() {}
+  bar() {}
 }

@@ -1,5 +1,5 @@
 if (foo) {
-    console.log(foo);
+  console.log(foo);
 } else if (bar) {
-    console.log(bar);
+  console.log(bar);
 }

@@ -1,7 +1,7 @@
 class Foo extends React.Component {
-    constructor() {
-        this.state = {
-            name: 'foo'
-        };
-    }
+  constructor() {
+    this.state = {
+      name: 'foo',
+    };
+  }
 }

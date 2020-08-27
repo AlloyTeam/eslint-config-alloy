@@ -1,3 +1,3 @@
 function Foo(props) {
-    return <div>{props.foo}</div>;
+  return <div>{props.foo}</div>;
 }

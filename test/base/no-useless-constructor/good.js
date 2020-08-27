@@ -1,11 +1,11 @@
 class Foo {
-    constructor() {
-        doSomething();
-    }
+  constructor() {
+    doSomething();
+  }
 }
 class Bar extends Foo {
-    constructor(...args) {
-        super(...args);
-        doSomething();
-    }
+  constructor(...args) {
+    super(...args);
+    doSomething();
+  }
 }

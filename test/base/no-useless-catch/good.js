@@ -1,8 +1,8 @@
 doSomethingThatMightThrow();
 
 try {
-    doSomethingThatMightThrow();
+  doSomethingThatMightThrow();
 } catch (e) {
-    doSomethingBeforeRethrow();
-    throw e;
+  doSomethingBeforeRethrow();
+  throw e;
 }

@@ -1,5 +1,5 @@
 function flat(arr) {
-    // do something
+  // do something
 }
 
 flat([1, [2, 3]]);

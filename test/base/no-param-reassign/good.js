@@ -1,3 +1,3 @@
 function foo(bar_) {
-    bar = bar_ || '';
+  bar = bar_ || '';
 }

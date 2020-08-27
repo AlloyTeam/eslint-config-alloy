@@ -1,3 +1,3 @@
 function foo() {
-    return void 0;
+  return void 0;
 }

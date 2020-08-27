@@ -1,3 +1,3 @@
 class Foo1 {
-    constructor(private name: string) {}
+  constructor(private name: string) {}
 }
