@@ -1,6 +1,6 @@
 # [eslint-config-alloy][website]
 
-[![Build Status](https://img.shields.io/travis/AlloyTeam/eslint-config-alloy.svg)](https://travis-ci.org/AlloyTeam/eslint-config-alloy) [![npm package](https://img.shields.io/npm/v/eslint-config-alloy.svg)](https://www.npmjs.org/package/eslint-config-alloy) [![npm downloads](http://img.shields.io/npm/dm/eslint-config-alloy.svg)](https://www.npmjs.org/package/eslint-config-alloy) [![Greenkeeper badge](https://badges.greenkeeper.io/AlloyTeam/eslint-config-alloy.svg)](https://greenkeeper.io/)
+[![Build Status](https://img.shields.io/travis/AlloyTeam/eslint-config-alloy.svg)](https://travis-ci.org/AlloyTeam/eslint-config-alloy) [![npm package](https://img.shields.io/npm/v/eslint-config-alloy.svg)](https://www.npmjs.org/package/eslint-config-alloy) [![npm downloads](http://img.shields.io/npm/dm/eslint-config-alloy.svg)](https://www.npmjs.org/package/eslint-config-alloy)
 
 English / [简体中文](./README.zh-CN.md)
 
@@ -79,26 +79,26 @@ Create an `.eslintrc.js` in the root directory of your project, then copy the fo
 
 ```js
 module.exports = {
-    extends: [
-        'alloy',
-    ],
-    env: {
-        // Your environments (which contains several predefined global variables)
-        //
-        // browser: true,
-        // node: true,
-        // mocha: true,
-        // jest: true,
-        // jquery: true
-    },
-    globals: {
-        // Your global variables (setting to false means it's not allowed to be reassigned)
-        //
-        // myGlobal: false
-    },
-    rules: {
-        // Customize your rules
-    }
+  extends: [
+    'alloy',
+  ],
+  env: {
+    // Your environments (which contains several predefined global variables)
+    //
+    // browser: true,
+    // node: true,
+    // mocha: true,
+    // jest: true,
+    // jquery: true
+  },
+  globals: {
+    // Your global variables (setting to false means it's not allowed to be reassigned)
+    //
+    // myGlobal: false
+  },
+  rules: {
+    // Customize your rules
+  },
 };
 ```
 
@@ -112,27 +112,27 @@ Create an `.eslintrc.js` in the root directory of your project, then copy the fo
 
 ```js
 module.exports = {
-    extends: [
-        'alloy',
-        'alloy/react',
-    ],
-    env: {
-        // Your environments (which contains several predefined global variables)
-        //
-        // browser: true,
-        // node: true,
-        // mocha: true,
-        // jest: true,
-        // jquery: true
-    },
-    globals: {
-        // Your global variables (setting to false means it's not allowed to be reassigned)
-        //
-        // myGlobal: false
-    },
-    rules: {
-        // Customize your rules
-    }
+  extends: [
+    'alloy',
+    'alloy/react',
+  ],
+  env: {
+    // Your environments (which contains several predefined global variables)
+    //
+    // browser: true,
+    // node: true,
+    // mocha: true,
+    // jest: true,
+    // jquery: true
+  },
+  globals: {
+    // Your global variables (setting to false means it's not allowed to be reassigned)
+    //
+    // myGlobal: false
+  },
+  rules: {
+    // Customize your rules
+  },
 };
 ```
 
@@ -146,27 +146,27 @@ Create an `.eslintrc.js` in the root directory of your project, then copy the fo
 
 ```js
 module.exports = {
-    extends: [
-        'alloy',
-        'alloy/vue',
-    ],
-    env: {
-        // Your environments (which contains several predefined global variables)
-        //
-        // browser: true,
-        // node: true,
-        // mocha: true,
-        // jest: true,
-        // jquery: true
-    },
-    globals: {
-        // Your global variables (setting to false means it's not allowed to be reassigned)
-        //
-        // myGlobal: false
-    },
-    rules: {
-        // Customize your rules
-    }
+  extends: [
+    'alloy',
+    'alloy/vue',
+  ],
+  env: {
+    // Your environments (which contains several predefined global variables)
+    //
+    // browser: true,
+    // node: true,
+    // mocha: true,
+    // jest: true,
+    // jquery: true
+  },
+  globals: {
+    // Your global variables (setting to false means it's not allowed to be reassigned)
+    //
+    // myGlobal: false
+  },
+  rules: {
+    // Customize your rules
+  },
 };
 ```
 
@@ -180,27 +180,27 @@ Create an `.eslintrc.js` in the root directory of your project, then copy the fo
 
 ```js
 module.exports = {
-    extends: [
-        'alloy',
-        'alloy/typescript',
-    ],
-    env: {
-        // Your environments (which contains several predefined global variables)
-        //
-        // browser: true,
-        // node: true,
-        // mocha: true,
-        // jest: true,
-        // jquery: true
-    },
-    globals: {
-        // Your global variables (setting to false means it's not allowed to be reassigned)
-        //
-        // myGlobal: false
-    },
-    rules: {
-        // Customize your rules
-    }
+  extends: [
+    'alloy',
+    'alloy/typescript',
+  ],
+  env: {
+    // Your environments (which contains several predefined global variables)
+    //
+    // browser: true,
+    // node: true,
+    // mocha: true,
+    // jest: true,
+    // jquery: true
+  },
+  globals: {
+    // Your global variables (setting to false means it's not allowed to be reassigned)
+    //
+    // myGlobal: false
+  },
+  rules: {
+    // Customize your rules
+  },
 };
 ```
 
@@ -214,28 +214,28 @@ Create an `.eslintrc.js` in the root directory of your project, then copy the fo
 
 ```js
 module.exports = {
-    extends: [
-        'alloy',
-        'alloy/react',
-        'alloy/typescript',
-    ],
-    env: {
-        // Your environments (which contains several predefined global variables)
-        //
-        // browser: true,
-        // node: true,
-        // mocha: true,
-        // jest: true,
-        // jquery: true
-    },
-    globals: {
-        // Your global variables (setting to false means it's not allowed to be reassigned)
-        //
-        // myGlobal: false
-    },
-    rules: {
-        // Customize your rules
-    }
+  extends: [
+    'alloy',
+    'alloy/react',
+    'alloy/typescript',
+  ],
+  env: {
+    // Your environments (which contains several predefined global variables)
+    //
+    // browser: true,
+    // node: true,
+    // mocha: true,
+    // jest: true,
+    // jquery: true
+  },
+  globals: {
+    // Your global variables (setting to false means it's not allowed to be reassigned)
+    //
+    // myGlobal: false
+  },
+  rules: {
+    // Customize your rules
+  },
 };
 ```
 
@@ -247,13 +247,13 @@ ESLint will not lint `.vue`, `.ts` or `.tsx` files in VSCode by default, you nee
 
 ```json
 {
-    "eslint.validate": [
-        "javascript",
-        "javascriptreact",
-        "vue",
-        "typescript",
-        "typescriptreact"
-    ]
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "vue",
+    "typescript",
+    "typescriptreact"
+  ]
 }
 ```
 
@@ -263,23 +263,23 @@ If you want to auto fix-on-save for `.vue`, `.ts` or `.tsx` files, you need to s
 
 ```json
 {
-    "eslint.autoFixOnSave": true,
-    "eslint.validate": [
-        "javascript",
-        "javascriptreact",
-        {
-            "language": "vue",
-            "autoFix": true
-        },
-        {
-            "language": "typescript",
-            "autoFix": true
-        },
-        {
-            "language": "typescriptreact",
-            "autoFix": true
-        }
-    ]
+  "eslint.autoFixOnSave": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    {
+      "language": "vue",
+      "autoFix": true
+    },
+    {
+      "language": "typescript",
+      "autoFix": true
+    },
+    {
+      "language": "typescriptreact",
+      "autoFix": true
+    }
+  ]
 }
 ```
 
@@ -292,41 +292,45 @@ Here is a `.prettierrc.js` configuration used by AlloyTeam for reference only:
 ```js
 // .prettierrc.js
 module.exports = {
-    // max 100 characters per line
-    printWidth: 100,
-    // use 4 spaces for indentation
-    tabWidth: 4,
-    // use spaces instead of indentations
-    useTabs: false,
-    // semicolon at the end of the line
-    semi: true,
-    // use single quotes
-    singleQuote: true,
-    // object's key is quoted only when necessary
-    quoteProps: 'as-needed',
-    // use double quotes instead of single quotes in jsx
-    jsxSingleQuote: false,
-    // no comma at the end
-    trailingComma: 'none',
-    // spaces are required at the beginning and end of the braces
-    bracketSpacing: true,
-    // end tag of jsx need to wrap
-    jsxBracketSameLine: false,
-    // brackets are required for arrow function parameter, even when there is only one parameter
-    arrowParens: 'always',
-    // format the entire contents of the file
-    rangeStart: 0,
-    rangeEnd: Infinity,
-    // no need to write the beginning @prettier of the file
-    requirePragma: false,
-    // No need to automatically insert @prettier at the beginning of the file
-    insertPragma: false,
-    // use default break criteria
-    proseWrap: 'preserve',
-    // decide whether to break the html according to the display style
-    htmlWhitespaceSensitivity: 'css',
-    // lf for newline
-    endOfLine: 'lf'
+  // max 120 characters per line
+  printWidth: 120,
+  // use 2 spaces for indentation
+  tabWidth: 2,
+  // use spaces instead of indentations
+  useTabs: false,
+  // semicolon at the end of the line
+  semi: true,
+  // use single quotes
+  singleQuote: true,
+  // object's key is quoted only when necessary
+  quoteProps: 'as-needed',
+  // use double quotes instead of single quotes in jsx
+  jsxSingleQuote: false,
+  // no comma at the end
+  trailingComma: 'all',
+  // spaces are required at the beginning and end of the braces
+  bracketSpacing: true,
+  // end tag of jsx need to wrap
+  jsxBracketSameLine: false,
+  // brackets are required for arrow function parameter, even when there is only one parameter
+  arrowParens: 'always',
+  // format the entire contents of the file
+  rangeStart: 0,
+  rangeEnd: Infinity,
+  // no need to write the beginning @prettier of the file
+  requirePragma: false,
+  // No need to automatically insert @prettier at the beginning of the file
+  insertPragma: false,
+  // use default break criteria
+  proseWrap: 'preserve',
+  // decide whether to break the html according to the display style
+  htmlWhitespaceSensitivity: 'css',
+  // vue files script and style tags indentation
+  vueIndentScriptAndStyle: false,
+  // lf for newline
+  endOfLine: 'lf',
+  // formats quoted code embedded
+  embeddedLanguageFormatting: 'auto',
 };
 ```
 

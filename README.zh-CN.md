@@ -77,26 +77,26 @@ npm install --save-dev eslint babel-eslint eslint-config-alloy
 
 ```js
 module.exports = {
-    extends: [
-        'alloy',
-    ],
-    env: {
-        // 你的环境变量（包含多个预定义的全局变量）
-        //
-        // browser: true,
-        // node: true,
-        // mocha: true,
-        // jest: true,
-        // jquery: true
-    },
-    globals: {
-        // 你的全局变量（设置为 false 表示它不允许被重新赋值）
-        //
-        // myGlobal: false
-    },
-    rules: {
-        // 自定义你的规则
-    }
+  extends: [
+    'alloy',
+  ],
+  env: {
+    // 你的环境变量（包含多个预定义的全局变量）
+    //
+    // browser: true,
+    // node: true,
+    // mocha: true,
+    // jest: true,
+    // jquery: true
+  },
+  globals: {
+    // 你的全局变量（设置为 false 表示它不允许被重新赋值）
+    //
+    // myGlobal: false
+  },
+  rules: {
+    // 自定义你的规则
+  },
 };
 ```
 
@@ -110,27 +110,27 @@ npm install --save-dev eslint babel-eslint eslint-plugin-react eslint-config-all
 
 ```js
 module.exports = {
-    extends: [
-        'alloy',
-        'alloy/react',
-    ],
-    env: {
-        // 你的环境变量（包含多个预定义的全局变量）
-        //
-        // browser: true,
-        // node: true,
-        // mocha: true,
-        // jest: true,
-        // jquery: true
-    },
-    globals: {
-        // 你的全局变量（设置为 false 表示它不允许被重新赋值）
-        //
-        // myGlobal: false
-    },
-    rules: {
-        // 自定义你的规则
-    }
+  extends: [
+    'alloy',
+    'alloy/react',
+  ],
+  env: {
+    // 你的环境变量（包含多个预定义的全局变量）
+    //
+    // browser: true,
+    // node: true,
+    // mocha: true,
+    // jest: true,
+    // jquery: true
+  },
+  globals: {
+    // 你的全局变量（设置为 false 表示它不允许被重新赋值）
+    //
+    // myGlobal: false
+  },
+  rules: {
+    // 自定义你的规则
+  },
 };
 ```
 
@@ -144,27 +144,27 @@ npm install --save-dev eslint babel-eslint vue-eslint-parser eslint-plugin-vue e
 
 ```js
 module.exports = {
-    extends: [
-        'alloy',
-        'alloy/vue',
-    ],
-    env: {
-        // 你的环境变量（包含多个预定义的全局变量）
-        //
-        // browser: true,
-        // node: true,
-        // mocha: true,
-        // jest: true,
-        // jquery: true
-    },
-    globals: {
-        // 你的全局变量（设置为 false 表示它不允许被重新赋值）
-        //
-        // myGlobal: false
-    },
-    rules: {
-        // 自定义你的规则
-    }
+  extends: [
+    'alloy',
+    'alloy/vue',
+  ],
+  env: {
+    // 你的环境变量（包含多个预定义的全局变量）
+    //
+    // browser: true,
+    // node: true,
+    // mocha: true,
+    // jest: true,
+    // jquery: true
+  },
+  globals: {
+    // 你的全局变量（设置为 false 表示它不允许被重新赋值）
+    //
+    // myGlobal: false
+  },
+  rules: {
+    // 自定义你的规则
+  },
 };
 ```
 
@@ -178,27 +178,27 @@ npm install --save-dev eslint typescript @typescript-eslint/parser @typescript-e
 
 ```js
 module.exports = {
-    extends: [
-        'alloy',
-        'alloy/typescript',
-    ],
-    env: {
-        // 你的环境变量（包含多个预定义的全局变量）
-        //
-        // browser: true,
-        // node: true,
-        // mocha: true,
-        // jest: true,
-        // jquery: true
-    },
-    globals: {
-        // 你的全局变量（设置为 false 表示它不允许被重新赋值）
-        //
-        // myGlobal: false
-    },
-    rules: {
-        // 自定义你的规则
-    }
+  extends: [
+    'alloy',
+    'alloy/typescript',
+  ],
+  env: {
+    // 你的环境变量（包含多个预定义的全局变量）
+    //
+    // browser: true,
+    // node: true,
+    // mocha: true,
+    // jest: true,
+    // jquery: true
+  },
+  globals: {
+    // 你的全局变量（设置为 false 表示它不允许被重新赋值）
+    //
+    // myGlobal: false
+  },
+  rules: {
+    // 自定义你的规则
+  },
 };
 ```
 
@@ -212,28 +212,28 @@ npm install --save-dev eslint typescript @typescript-eslint/parser @typescript-e
 
 ```js
 module.exports = {
-    extends: [
-        'alloy',
-        'alloy/react',
-        'alloy/typescript',
-    ],
-    env: {
-        // 你的环境变量（包含多个预定义的全局变量）
-        //
-        // browser: true,
-        // node: true,
-        // mocha: true,
-        // jest: true,
-        // jquery: true
-    },
-    globals: {
-        // 你的全局变量（设置为 false 表示它不允许被重新赋值）
-        //
-        // myGlobal: false
-    },
-    rules: {
-        // 自定义你的规则
-    }
+  extends: [
+    'alloy',
+    'alloy/react',
+    'alloy/typescript',
+  ],
+  env: {
+    // 你的环境变量（包含多个预定义的全局变量）
+    //
+    // browser: true,
+    // node: true,
+    // mocha: true,
+    // jest: true,
+    // jquery: true
+  },
+  globals: {
+    // 你的全局变量（设置为 false 表示它不允许被重新赋值）
+    //
+    // myGlobal: false
+  },
+  rules: {
+    // 自定义你的规则
+  },
 };
 ```
 
@@ -245,13 +245,13 @@ module.exports = {
 
 ```json
 {
-    "eslint.validate": [
-        "javascript",
-        "javascriptreact",
-        "vue",
-        "typescript",
-        "typescriptreact"
-    ]
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "vue",
+    "typescript",
+    "typescriptreact"
+  ]
 }
 ```
 
@@ -261,23 +261,23 @@ module.exports = {
 
 ```json
 {
-    "eslint.autoFixOnSave": true,
-    "eslint.validate": [
-        "javascript",
-        "javascriptreact",
-        {
-            "language": "vue",
-            "autoFix": true
-        },
-        {
-            "language": "typescript",
-            "autoFix": true
-        },
-        {
-            "language": "typescriptreact",
-            "autoFix": true
-        }
-    ]
+  "eslint.autoFixOnSave": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    {
+      "language": "vue",
+      "autoFix": true
+    },
+    {
+      "language": "typescript",
+      "autoFix": true
+    },
+    {
+      "language": "typescriptreact",
+      "autoFix": true
+    }
+  ]
 }
 ```
 
@@ -290,41 +290,45 @@ eslint-config-alloy 从 v3 开始，已经不包含所有样式相关的规则�
 ```js
 // .prettierrc.js
 module.exports = {
-    // 一行最多 100 字符
-    printWidth: 100,
-    // 使用 4 个空格缩进
-    tabWidth: 4,
-    // 不使用缩进符，而使用空格
-    useTabs: false,
-    // 行尾需要有分号
-    semi: true,
-    // 使用单引号
-    singleQuote: true,
-    // 对象的 key 仅在必要时用引号
-    quoteProps: 'as-needed',
-    // jsx 不使用单引号，而使用双引号
-    jsxSingleQuote: false,
-    // 末尾不需要逗号
-    trailingComma: 'none',
-    // 大括号内的首尾需要空格
-    bracketSpacing: true,
-    // jsx 标签的反尖括号需要换行
-    jsxBracketSameLine: false,
-    // 箭头函数，只有一个参数的时候，也需要括号
-    arrowParens: 'always',
-    // 每个文件格式化的范围是文件的全部内容
-    rangeStart: 0,
-    rangeEnd: Infinity,
-    // 不需要写文件开头的 @prettier
-    requirePragma: false,
-    // 不需要自动在文件开头插入 @prettier
-    insertPragma: false,
-    // 使用默认的折行标准
-    proseWrap: 'preserve',
-    // 根据显示样式决定 html 要不要折行
-    htmlWhitespaceSensitivity: 'css',
-    // 换行符使用 lf
-    endOfLine: 'lf'
+  // 一行最多 120 字符
+  printWidth: 120,
+  // 使用 2 个空格缩进
+  tabWidth: 2,
+  // 不使用缩进符，而使用空格
+  useTabs: false,
+  // 行尾需要有分号
+  semi: true,
+  // 使用单引号
+  singleQuote: true,
+  // 对象的 key 仅在必要时用引号
+  quoteProps: 'as-needed',
+  // jsx 不使用单引号，而使用双引号
+  jsxSingleQuote: false,
+  // 末尾需要有逗号
+  trailingComma: 'all',
+  // 大括号内的首尾需要空格
+  bracketSpacing: true,
+  // jsx 标签的反尖括号需要换行
+  jsxBracketSameLine: false,
+  // 箭头函数，只有一个参数的时候，也需要括号
+  arrowParens: 'always',
+  // 每个文件格式化的范围是文件的全部内容
+  rangeStart: 0,
+  rangeEnd: Infinity,
+  // 不需要写文件开头的 @prettier
+  requirePragma: false,
+  // 不需要自动在文件开头插入 @prettier
+  insertPragma: false,
+  // 使用默认的折行标准
+  proseWrap: 'preserve',
+  // 根据显示样式决定 html 要不要折行
+  htmlWhitespaceSensitivity: 'css',
+  // vue 文件中的 script 和 style 内不用缩进
+  vueIndentScriptAndStyle: false,
+  // 换行符使用 lf
+  endOfLine: 'lf',
+  // 格式化嵌入的内容
+  embeddedLanguageFormatting: 'auto',
 };
 ```
 
