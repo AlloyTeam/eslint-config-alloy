@@ -13,13 +13,13 @@
  *   sunhui04 <sunhui04@meituan.com>
  *
  * 依赖版本：
- *   eslint ^7.7.0
+ *   eslint ^7.10.0
  *   babel-eslint ^10.1.0
- *   eslint-plugin-react ^7.20.6
+ *   eslint-plugin-react ^7.21.2
  *   vue-eslint-parser ^7.1.0
  *   eslint-plugin-vue ^6.2.2
- *   @typescript-eslint/parser ^3.10.1
- *   @typescript-eslint/eslint-plugin ^3.10.1
+ *   @typescript-eslint/parser ^4.2.0
+ *   @typescript-eslint/eslint-plugin ^4.2.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  */
@@ -76,6 +76,10 @@ module.exports = {
      * @reason interface 可以 implement, extend 和 merge
      */
     '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
+    /**
+     * 必须使用 import type 导入类型
+     */
+    '@typescript-eslint/consistent-type-imports': 'off',
     /**
      * 有默认值或可选的参数必须放到最后
      */
@@ -238,6 +242,12 @@ module.exports = {
      */
     '@typescript-eslint/no-invalid-void-type': 'error',
     /**
+     * 禁止在循环内的函数内部出现循环体条件语句中定义的变量
+     * @reason 使用 let 就已经解决了这个问题了
+     */
+    'no-loop-func': 'off',
+    '@typescript-eslint/no-loop-func': 'off',
+    /**
      * 禁止使用超出 js 精度范围的数字
      */
     'no-loss-of-precision': 'off',
@@ -283,10 +293,22 @@ module.exports = {
      */
     '@typescript-eslint/no-parameter-properties': 'error',
     /**
+     * 禁止重复定义变量
+     * @reason 禁用 var 之后，编译阶段就会报错了
+     */
+    'no-redeclare': 'off',
+    '@typescript-eslint/no-redeclare': 'off',
+    /**
      * 禁止使用 require
      * @reason 统一使用 import 来引入模块，特殊情况使用单行注释允许 require 引入
      */
     '@typescript-eslint/no-require-imports': 'error',
+    /**
+     * 禁止变量名与上层作用域内的已定义的变量重复
+     * @reason 很多时候函数的形参和传参是同名的
+     */
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': 'off',
     /**
      * 禁止将 this 赋值给其他变量，除非是解构赋值
      */
@@ -358,10 +380,6 @@ module.exports = {
      */
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': 'off',
-    /**
-     * 禁止已定义的变量未使用
-     */
-    '@typescript-eslint/no-unused-vars-experimental': 'off',
     /**
      * 禁止在定义变量之前就使用它
      * @reason 编译阶段检查就足够了

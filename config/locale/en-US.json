@@ -509,5 +509,6 @@
   "禁止在第一轮循环时就一定会退出循环的情况出现": "Disallow loops with a body that allows only one iteration",
   "枚举类型的值必须是字面量，禁止是计算值": "Require that all enum members be literal values to prevent unintended enum member name shadow issues",
   "枚举值必须初始化": "Prefer initializing each enums member value",
-  "catch 的参数必须指定具体类型": "Disallow usage of the implicit `any` type in catch clauses"
+  "catch 的参数必须指定具体类型": "Disallow usage of the implicit `any` type in catch clauses",
+  "必须使用 import type 导入类型": "Enforces consistent usage of type imports"
 }
