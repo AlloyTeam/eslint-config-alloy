@@ -257,29 +257,39 @@ ESLint will not lint `.vue`, `.ts` or `.tsx` files in VSCode by default, you nee
 }
 ```
 
-### autoFixOnSave is not working
+### Fix on save is not working
 
-If you want to auto fix-on-save for `.vue`, `.ts` or `.tsx` files, you need to set your `.vscode/settings.json` like this:
+If you want fix-on-save for your files, you need to set your `.vscode/settings.json` like this:
 
 ```json
 {
-  "eslint.autoFixOnSave": true,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": ["source.fixAll.eslint"],
   "eslint.validate": [
     "javascript",
     "javascriptreact",
-    {
-      "language": "vue",
-      "autoFix": true
-    },
-    {
-      "language": "typescript",
-      "autoFix": true
-    },
-    {
-      "language": "typescriptreact",
-      "autoFix": true
-    }
+    "vue",
+    "typescript",
+    "typescriptreact"
   ]
+}
+```
+
+If you want fix-on-save only for your `.tsx` files, you need to set your `.vscode/settings.json` like this:
+
+```json
+{
+  "editor.formatOnSave": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "vue",
+    "typescript",
+    "typescriptreact"
+  ],
+  "[typescriptreact]": {
+    "editor.codeActionsOnSave": ["source.fixAll.eslint"]
+  }
 }
 ```
 
