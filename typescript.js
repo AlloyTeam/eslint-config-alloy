@@ -13,13 +13,13 @@
  *   sunhui04 <sunhui04@meituan.com>
  *
  * 依赖版本：
- *   eslint ^7.10.0
+ *   eslint ^7.11.0
  *   babel-eslint ^10.1.0
- *   eslint-plugin-react ^7.21.2
- *   vue-eslint-parser ^7.1.0
+ *   eslint-plugin-react ^7.21.4
+ *   vue-eslint-parser ^7.1.1
  *   eslint-plugin-vue ^6.2.2
- *   @typescript-eslint/parser ^4.2.0
- *   @typescript-eslint/eslint-plugin ^4.2.0
+ *   @typescript-eslint/parser ^4.4.1
+ *   @typescript-eslint/eslint-plugin ^4.4.1
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  */
@@ -60,6 +60,10 @@ module.exports = {
      * 类的只读属性若是一个字面量，则必须使用只读属性而不是 getter
      */
     '@typescript-eslint/class-literal-property-style': ['error', 'fields'],
+    /**
+     * 必须使用内置的 Record<K, T> 来描述仅包含可索引成员的接口
+     */
+    '@typescript-eslint/consistent-indexed-object-style': 'off',
     /**
      * 类型断言必须使用 as Type，禁止使用 <Type>，禁止对对象字面量进行类型断言（断言成 any 是允许的）
      * @reason <Type> 容易被理解为 jsx
@@ -183,6 +187,11 @@ module.exports = {
      */
     'no-dupe-class-members': 'off',
     '@typescript-eslint/no-dupe-class-members': 'off',
+    /**
+     * 禁止重复导入模块
+     */
+    'no-duplicate-imports': 'off',
+    '@typescript-eslint/no-duplicate-imports': 'error',
     /**
      * 禁止 delete 时传入的 key 是动态的
      */
