@@ -255,6 +255,19 @@ module.exports = {
 }
 ```
 
+### 保存时自动修复 ESLint 错误
+
+如果想要开启「保存时自动修复」的功能，你需要配置 `.vscode/settings.json`：
+
+```json
+{
+  "eslint.validate": ["javascript", "javascriptreact", "vue", "typescript", "typescriptreact"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+}
+```
+
 ### VSCode 中的 autoFixOnSave 没有效果
 
 如果需要针对 `.vue`、`.ts` 和 `.tsx` 文件开启 ESLint 的 autoFix，则需要配置成：
@@ -330,6 +343,21 @@ module.exports = {
   // 格式化嵌入的内容
   embeddedLanguageFormatting: 'auto',
 };
+```
+
+VSCode 的一个最佳实践就是通过配置 `.vscode/settings.json` 来支持自动修复 Prettier 和 ESLint 错误：
+
+```json
+{
+  "files.eol": "\n",
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.validate": ["javascript", "javascriptreact", "vue", "typescript", "typescriptreact"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
 ```
 
 ## 常用命令

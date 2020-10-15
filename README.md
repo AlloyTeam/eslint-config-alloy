@@ -257,29 +257,16 @@ ESLint will not lint `.vue`, `.ts` or `.tsx` files in VSCode by default, you nee
 }
 ```
 
-### autoFixOnSave is not working
+### Autofix ESLint errors on save
 
-If you want to auto fix-on-save for `.vue`, `.ts` or `.tsx` files, you need to set your `.vscode/settings.json` like this:
+If you want to enable auto-fix-on-save, you need to set your `.vscode/settings.json` like this:
 
 ```json
 {
-  "eslint.autoFixOnSave": true,
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    {
-      "language": "vue",
-      "autoFix": true
-    },
-    {
-      "language": "typescript",
-      "autoFix": true
-    },
-    {
-      "language": "typescriptreact",
-      "autoFix": true
-    }
-  ]
+  "eslint.validate": ["javascript", "javascriptreact", "vue", "typescript", "typescriptreact"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
 }
 ```
 
@@ -332,6 +319,21 @@ module.exports = {
   // formats quoted code embedded
   embeddedLanguageFormatting: 'auto',
 };
+```
+
+A best practice for VSCode is to auto format code with Prettier and autofix errors with ESLint by setting `.vscode/settings.json` to this:
+
+```json
+{
+  "files.eol": "\n",
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.validate": ["javascript", "javascriptreact", "vue", "typescript", "typescriptreact"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
 ```
 
 ## Scripts

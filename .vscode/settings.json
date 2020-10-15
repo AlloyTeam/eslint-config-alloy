@@ -5,11 +5,9 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "eslint.validate": ["javascript", "javascriptreact", "vue", "typescript", "typescriptreact"],
   "editor.codeActionsOnSave": {
-    // 保存时自动修复 ESLint 错误
     // "source.fixAll.eslint": true
   },
   "vetur.format.enable": false,
   "vetur.validation.template": false,
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "prettier.disableLanguages": []
+  "typescript.tsdk": "node_modules/typescript/lib"
 }
