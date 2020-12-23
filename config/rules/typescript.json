@@ -294,6 +294,17 @@
     "extendsBaseRule": "",
     "requiresTypeChecking": false
   },
+  "@typescript-eslint/no-confusing-void-expression": {
+    "name": "@typescript-eslint/no-confusing-void-expression",
+    "value": "off",
+    "description": "禁止使用返回值为 void 的函数的返回值",
+    "reason": "",
+    "badExample": "",
+    "goodExample": "",
+    "fixable": true,
+    "extendsBaseRule": "",
+    "requiresTypeChecking": true
+  },
   "@typescript-eslint/no-dupe-class-members": {
     "name": "@typescript-eslint/no-dupe-class-members",
     "value": "off",
@@ -423,7 +434,7 @@
     "badExample": "",
     "goodExample": "",
     "fixable": false,
-    "extendsBaseRule": "",
+    "extendsBaseRule": "no-implied-eval",
     "requiresTypeChecking": true
   },
   "@typescript-eslint/no-inferrable-types": {
@@ -610,7 +621,7 @@
     "badExample": "",
     "goodExample": "",
     "fixable": false,
-    "extendsBaseRule": "",
+    "extendsBaseRule": "no-throw-literal",
     "requiresTypeChecking": true
   },
   "@typescript-eslint/no-type-alias": {
@@ -678,6 +689,17 @@
     "fixable": true,
     "extendsBaseRule": "",
     "requiresTypeChecking": true
+  },
+  "@typescript-eslint/no-unnecessary-type-constraint": {
+    "name": "@typescript-eslint/no-unnecessary-type-constraint",
+    "value": "error",
+    "description": "禁止没用的类型限制",
+    "reason": "",
+    "badExample": "<span class=\"token keyword\">interface</span> <span class=\"token class-name\">FooAny</span><span class=\"token operator\">&lt;</span><mark class=\"eslint-error\" data-tip=\"Constraining the generic type `T` to `any` does nothing and is unnecessary.<br/><span class='eslint-error-rule-id'>eslint(@typescript-eslint/no-unnecessary-type-constraint)</span>\"><span class=\"token constant\">T</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">any</span></mark><span class=\"token operator\">></span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>\n<span class=\"token keyword\">interface</span> <span class=\"token class-name\">FooUnknown</span><span class=\"token operator\">&lt;</span><mark class=\"eslint-error\" data-tip=\"Constraining the generic type `T` to `unknown` does nothing and is unnecessary.<br/><span class='eslint-error-rule-id'>eslint(@typescript-eslint/no-unnecessary-type-constraint)</span>\"><span class=\"token constant\">T</span> <span class=\"token keyword\">extends</span> <span class=\"token class-name\">unknown</span></mark><span class=\"token operator\">></span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>",
+    "goodExample": "<span class=\"token keyword\">interface</span> <span class=\"token class-name\">Foo</span><span class=\"token operator\">&lt;</span><span class=\"token constant\">T</span><span class=\"token operator\">></span> <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>",
+    "fixable": true,
+    "extendsBaseRule": "",
+    "requiresTypeChecking": false
   },
   "@typescript-eslint/no-unsafe-assignment": {
     "name": "@typescript-eslint/no-unsafe-assignment",
@@ -777,6 +799,17 @@
     "fixable": false,
     "extendsBaseRule": "",
     "requiresTypeChecking": false
+  },
+  "@typescript-eslint/non-nullable-type-assertion-style": {
+    "name": "@typescript-eslint/non-nullable-type-assertion-style",
+    "value": "off",
+    "description": "必须使用 ! 而不是 as",
+    "reason": "",
+    "badExample": "",
+    "goodExample": "",
+    "fixable": true,
+    "extendsBaseRule": "",
+    "requiresTypeChecking": true
   },
   "@typescript-eslint/prefer-as-const": {
     "name": "@typescript-eslint/prefer-as-const",
@@ -950,7 +983,7 @@
     "reason": "",
     "badExample": "",
     "goodExample": "",
-    "fixable": false,
+    "fixable": true,
     "extendsBaseRule": "",
     "requiresTypeChecking": true
   },

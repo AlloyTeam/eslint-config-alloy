@@ -19,7 +19,7 @@
     "eslint": "eslint --ext .js,.jsx,.ts,.tsx,.vue --ignore-pattern \"bad.*\" .",
     "prettier": "prettier -l \"./**/*\"",
     "prettier:fix": "prettier --write -l \"./**/*\"",
-    "update": "npm install --save-dev @types/cookie@latest @types/doctrine@latest @types/eslint@latest @types/node@latest @types/prettier@latest @types/react@latest @types/react-dom@latest @types/react-tooltip@latest @types/rimraf@latest @types/xml-escape@latest @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest babel-eslint@latest cookie@latest doctrine@latest eslint@latest eslint-config-prettier@latest eslint-plugin-react@latest eslint-plugin-vue@latest husky@latest insert-tag@latest mobi-plugin-color@latest mobi.css@latest nodemon@latest npm-run-all@latest parcel-bundler@latest prettier@latest react@latest react-dom@latest react-tooltip@latest rimraf@latest ts-node@latest typescript@latest vue-eslint-parser@latest xml-escape@latest"
+    "update": "npm install --save-dev @types/cookie@latest @types/doctrine@latest @types/eslint@latest @types/node@latest @types/prettier@latest @types/react@latest @types/react-dom@latest @types/rimraf@latest @types/xml-escape@latest @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest babel-eslint@latest cookie@latest doctrine@latest eslint@latest eslint-config-prettier@latest eslint-plugin-react@latest eslint-plugin-vue@latest husky@latest insert-tag@latest mobi-plugin-color@latest mobi.css@latest nodemon@latest npm-run-all@latest parcel-bundler@latest prettier@latest react@latest react-dom@latest react-tooltip@latest rimraf@latest ts-node@latest typescript@latest vue-eslint-parser@latest xml-escape@latest"
   },
   "repository": {
     "type": "git",
@@ -62,47 +62,40 @@
       "pre-push": "npm test"
     }
   },
-  "dependencies": {},
   "devDependencies": {
     "@types/cookie": "^0.4.0",
-    "@types/doctrine": "0.0.3",
-    "@types/eslint": "^7.2.4",
-    "@types/node": "^14.11.8",
-    "@types/prettier": "^2.1.2",
-    "@types/react": "^16.9.52",
-    "@types/react-dom": "^16.9.8",
-    "@types/react-tooltip": "^4.2.4",
+    "@types/doctrine": "^0.0.3",
+    "@types/eslint": "^7.2.6",
+    "@types/node": "^14.14.14",
+    "@types/prettier": "^2.1.5",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
     "@types/rimraf": "^3.0.0",
     "@types/xml-escape": "^1.1.0",
-    "@typescript-eslint/eslint-plugin": "^4.4.1",
-    "@typescript-eslint/parser": "^4.4.1",
+    "@typescript-eslint/eslint-plugin": "^4.11.0",
+    "@typescript-eslint/parser": "^4.11.0",
     "babel-eslint": "^10.1.0",
     "cookie": "^0.4.1",
     "doctrine": "^3.0.0",
-    "eslint": "^7.11.0",
-    "eslint-config-prettier": "^6.12.0",
-    "eslint-plugin-react": "^7.21.4",
-    "eslint-plugin-vue": "^6.2.2",
-    "husky": "^4.3.0",
+    "eslint": "^7.16.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-vue": "^7.3.0",
+    "husky": "^4.3.6",
     "insert-tag": "^0.1.2",
     "mobi-plugin-color": "^1.0.0",
     "mobi.css": "^3.1.1",
-    "nodemon": "^2.0.5",
+    "nodemon": "^2.0.6",
     "npm-run-all": "^4.1.5",
     "parcel-bundler": "^1.12.4",
-    "prettier": "^2.1.2",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
-    "react-tooltip": "^4.2.10",
+    "prettier": "^2.2.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-tooltip": "^4.2.11",
     "rimraf": "^3.0.2",
-    "ts-node": "^9.0.0",
-    "typescript": "^4.0.3",
-    "vue-eslint-parser": "^7.1.1",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3",
+    "vue-eslint-parser": "^7.3.0",
     "xml-escape": "^1.1.0"
-  },
-  "greenkeeper": {
-    "ignore": [
-      "ts-node"
-    ]
   }
 }

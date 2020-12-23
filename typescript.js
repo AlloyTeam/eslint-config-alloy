@@ -13,13 +13,13 @@
  *   sunhui04 <sunhui04@meituan.com>
  *
  * 依赖版本：
- *   eslint ^7.11.0
+ *   eslint ^7.16.0
  *   babel-eslint ^10.1.0
- *   eslint-plugin-react ^7.21.4
- *   vue-eslint-parser ^7.1.1
- *   eslint-plugin-vue ^6.2.2
- *   @typescript-eslint/parser ^4.4.1
- *   @typescript-eslint/eslint-plugin ^4.4.1
+ *   eslint-plugin-react ^7.21.5
+ *   vue-eslint-parser ^7.3.0
+ *   eslint-plugin-vue ^7.3.0
+ *   @typescript-eslint/parser ^4.11.0
+ *   @typescript-eslint/eslint-plugin ^4.11.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  */
@@ -182,6 +182,10 @@ module.exports = {
      */
     '@typescript-eslint/no-confusing-non-null-assertion': 'off',
     /**
+     * 禁止使用返回值为 void 的函数的返回值
+     */
+    '@typescript-eslint/no-confusing-void-expression': 'off',
+    /**
      * 禁止重复定义类的成员
      * @reason 编译阶段就会报错了
      */
@@ -233,6 +237,7 @@ module.exports = {
     /**
      * 禁止使用 eval
      */
+    'no-implied-eval': 'off',
     '@typescript-eslint/no-implied-eval': 'off',
     /**
      * 禁止给一个初始化时直接赋值为 number, string 的变量显式的声明类型
@@ -330,6 +335,7 @@ module.exports = {
     /**
      * 禁止 throw 字面量，必须 throw 一个 Error 对象
      */
+    'no-throw-literal': 'off',
     '@typescript-eslint/no-throw-literal': 'off',
     /**
      * 禁止使用类型别名
@@ -355,6 +361,10 @@ module.exports = {
      * 禁止无用的类型断言
      */
     '@typescript-eslint/no-unnecessary-type-assertion': 'off',
+    /**
+     * 禁止没用的类型限制
+     */
+    '@typescript-eslint/no-unnecessary-type-constraint': 'error',
     /**
      * 禁止将变量或属性的类型设置为 any
      */
@@ -405,6 +415,10 @@ module.exports = {
      * @reason no-require-imports 规则已经约束了 require
      */
     '@typescript-eslint/no-var-requires': 'off',
+    /**
+     * 必须使用 ! 而不是 as
+     */
+    '@typescript-eslint/non-nullable-type-assertion-style': 'off',
     /**
      * 使用 as const 替代 as 'bar'
      * @reason as const 是新语法，不是很常见

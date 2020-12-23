@@ -21,6 +21,17 @@
     "extendsBaseRule": "",
     "requiresTypeChecking": false
   },
+  "arrow-body-style": {
+    "name": "arrow-body-style",
+    "value": "off",
+    "description": "箭头函数体必须由大括号包裹",
+    "reason": "代码格式问题，最好由 Prettier 解决",
+    "badExample": "",
+    "goodExample": "",
+    "fixable": true,
+    "extendsBaseRule": "",
+    "requiresTypeChecking": false
+  },
   "block-scoped-var": {
     "name": "block-scoped-var",
     "value": "off",
@@ -35,8 +46,8 @@
   "camelcase": {
     "name": "camelcase",
     "value": "off",
-    "description": "变量名必须是 camelcase 风格的",
-    "reason": "很多 api 或文件名都不是 camelcase 风格的",
+    "description": "变量名必须是 camelCase 风格的",
+    "reason": "很多 api 或文件名都不是 camelCase 风格的",
     "badExample": "",
     "goodExample": "",
     "fixable": false,
@@ -1154,6 +1165,17 @@
     "extendsBaseRule": "",
     "requiresTypeChecking": false
   },
+  "no-nonoctal-decimal-escape": {
+    "name": "no-nonoctal-decimal-escape",
+    "value": "off",
+    "description": "禁止在字符串中使用 \\8 \\9",
+    "reason": "代码格式问题，最好由 Prettier 解决",
+    "badExample": "",
+    "goodExample": "",
+    "fixable": false,
+    "extendsBaseRule": "",
+    "requiresTypeChecking": false
+  },
   "no-obj-calls": {
     "name": "no-obj-calls",
     "value": "error",
@@ -1583,6 +1605,17 @@
     "extendsBaseRule": "",
     "requiresTypeChecking": false
   },
+  "no-unsafe-optional-chaining": {
+    "name": "no-unsafe-optional-chaining",
+    "value": "error",
+    "description": "禁止使用不安全的 optional chaining",
+    "reason": "",
+    "badExample": "<span class=\"token punctuation\">(</span><mark class=\"eslint-error\" data-tip=\"Unsafe usage of optional chaining. If it short-circuits with &amp;apos;undefined&amp;apos; the evaluation will throw TypeError.<br/><span class='eslint-error-rule-id'>eslint(no-unsafe-optional-chaining)</span>\">obj<span class=\"token operator\">?</span><span class=\"token punctuation\">.</span>foo</mark><span class=\"token punctuation\">)</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n\n<span class=\"token punctuation\">(</span>obj<span class=\"token operator\">?</span><span class=\"token punctuation\">.</span>foo <span class=\"token operator\">?</span><span class=\"token operator\">?</span> <mark class=\"eslint-error\" data-tip=\"Unsafe usage of optional chaining. If it short-circuits with &amp;apos;undefined&amp;apos; the evaluation will throw TypeError.<br/><span class='eslint-error-rule-id'>eslint(no-unsafe-optional-chaining)</span>\">obj<span class=\"token operator\">?</span><span class=\"token punctuation\">.</span>bar</mark><span class=\"token punctuation\">)</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>",
+    "goodExample": "obj<span class=\"token operator\">?</span><span class=\"token punctuation\">.</span><span class=\"token function\">foo</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n\n<span class=\"token punctuation\">(</span>obj<span class=\"token operator\">?</span><span class=\"token punctuation\">.</span>foo <span class=\"token operator\">?</span><span class=\"token operator\">?</span> bar<span class=\"token punctuation\">)</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>",
+    "fixable": false,
+    "extendsBaseRule": "",
+    "requiresTypeChecking": false
+  },
   "no-unused-expressions": {
     "name": "no-unused-expressions",
     "value": ["error", { "allowShortCircuit": true, "allowTernary": true, "allowTaggedTemplates": true }],
@@ -1811,6 +1844,17 @@
     "badExample": "",
     "goodExample": "",
     "fixable": false,
+    "extendsBaseRule": "",
+    "requiresTypeChecking": false
+  },
+  "prefer-arrow-callback": {
+    "name": "prefer-arrow-callback",
+    "value": "error",
+    "description": "回调函数必须使用箭头函数",
+    "reason": "",
+    "badExample": "<span class=\"token function\">foo</span><span class=\"token punctuation\">(</span><mark class=\"eslint-error\" data-tip=\"Unexpected function expression.<br/><span class='eslint-error-rule-id'>eslint(prefer-arrow-callback)</span>\"><span class=\"token keyword\">function</span> <span class=\"token punctuation\">(</span><span class=\"token parameter\">a</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n  <span class=\"token keyword\">return</span> a<span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span></mark><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>",
+    "goodExample": "<span class=\"token function\">oo</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">(</span><span class=\"token parameter\">a</span><span class=\"token punctuation\">)</span> <span class=\"token operator\">=></span> a<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>",
+    "fixable": true,
     "extendsBaseRule": "",
     "requiresTypeChecking": false
   },

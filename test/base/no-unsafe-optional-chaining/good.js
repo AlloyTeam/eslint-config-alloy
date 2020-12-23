@@ -1,0 +1,3 @@
+obj?.foo();
+
+(obj?.foo ?? bar)();

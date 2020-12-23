@@ -13,13 +13,13 @@
  *   sunhui04 <sunhui04@meituan.com>
  *
  * 依赖版本：
- *   eslint ^7.11.0
+ *   eslint ^7.16.0
  *   babel-eslint ^10.1.0
- *   eslint-plugin-react ^7.21.4
- *   vue-eslint-parser ^7.1.1
- *   eslint-plugin-vue ^6.2.2
- *   @typescript-eslint/parser ^4.4.1
- *   @typescript-eslint/eslint-plugin ^4.4.1
+ *   eslint-plugin-react ^7.21.5
+ *   vue-eslint-parser ^7.3.0
+ *   eslint-plugin-vue ^7.3.0
+ *   @typescript-eslint/parser ^4.11.0
+ *   @typescript-eslint/eslint-plugin ^4.11.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  */
@@ -65,13 +65,18 @@ module.exports = {
      */
     'array-callback-return': 'error',
     /**
+     * 箭头函数体必须由大括号包裹
+     * @reason 代码格式问题，最好由 Prettier 解决
+     */
+    'arrow-body-style': 'off',
+    /**
      * 将 var 定义的变量视为块作用域，禁止在块外使用
      * @reason 已经禁止使用 var 了
      */
     'block-scoped-var': 'off',
     /**
-     * 变量名必须是 camelcase 风格的
-     * @reason 很多 api 或文件名都不是 camelcase 风格的
+     * 变量名必须是 camelCase 风格的
+     * @reason 很多 api 或文件名都不是 camelCase 风格的
      */
     camelcase: 'off',
     /**
@@ -549,6 +554,11 @@ module.exports = {
      */
     'no-new-wrappers': 'error',
     /**
+     * 禁止在字符串中使用 \8 \9
+     * @reason 代码格式问题，最好由 Prettier 解决
+     */
+    'no-nonoctal-decimal-escape': 'off',
+    /**
      * 禁止将 Math, JSON 或 Reflect 直接作为函数调用
      */
     'no-obj-calls': 'error',
@@ -714,6 +724,10 @@ module.exports = {
      */
     'no-unsafe-negation': 'error',
     /**
+     * 禁止使用不安全的 optional chaining
+     */
+    'no-unsafe-optional-chaining': 'error',
+    /**
      * 禁止无用的表达式
      */
     'no-unused-expressions': [
@@ -825,6 +839,10 @@ module.exports = {
      * 限制语句之间的空行规则，比如变量定义完之后必须要空行
      */
     'padding-line-between-statements': 'off',
+    /**
+     * 回调函数必须使用箭头函数
+     */
+    'prefer-arrow-callback': 'error',
     /**
      * 申明后不再被修改的变量必须使用 const 来申明
      */
