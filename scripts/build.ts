@@ -4,8 +4,8 @@ import path from 'path';
 
 import doctrine from 'doctrine';
 import prettier from 'prettier';
-import { CLIEngine, Linter } from 'eslint';
-const cli = new CLIEngine({});
+import { ESLint, Linter } from 'eslint';
+const eslintInstance = new ESLint({});
 import insertTag from 'insert-tag';
 import xmlEscape from 'xml-escape';
 
@@ -35,10 +35,10 @@ class Builder {
     [key: string]: Rule;
   } = {};
 
-  public build(namespace: Namespace) {
+  public async build(namespace: Namespace) {
     this.namespace = namespace;
     this.ruleMetaMap = this.getRuleMetaMap();
-    this.ruleList = this.getRuleList();
+    this.ruleList = await this.getRuleList();
     this.rulesContent = this.getRulesContent();
     this.initialEslintrcContent = this.getInitialEslintrc();
     this.buildRulesJson();
@@ -69,17 +69,19 @@ class Builder {
   }
 
   /** 获取规则列表，根据字母排序 */
-  private getRuleList() {
-    const ruleList = fs
-      .readdirSync(path.resolve(__dirname, '../test', this.namespace))
-      .filter((ruleName) => fs.lstatSync(path.resolve(__dirname, '../test', this.namespace, ruleName)).isDirectory())
-      .map((ruleName) => this.getRule(ruleName));
+  private async getRuleList() {
+    const ruleList = await Promise.all(
+      fs
+        .readdirSync(path.resolve(__dirname, '../test', this.namespace))
+        .filter((ruleName) => fs.lstatSync(path.resolve(__dirname, '../test', this.namespace, ruleName)).isDirectory())
+        .map((ruleName) => this.getRule(ruleName)),
+    );
 
     return ruleList;
   }
 
   /** 解析单条规则为一个规则对象 */
-  private getRule(ruleName: string) {
+  private async getRule(ruleName: string) {
     const filePath = path.resolve(__dirname, '../test', this.namespace, ruleName, '.eslintrc.js');
     const fileModule = require(filePath);
     const fileContent = fs.readFileSync(filePath, 'utf-8');
@@ -124,7 +126,7 @@ class Builder {
     );
 
     if (fs.existsSync(badFilePath)) {
-      const { results } = cli.executeOnFiles([badFilePath]);
+      const results = await eslintInstance.lintFiles([badFilePath]);
       // 通过 Prism 和 insertMark 生成 html 格式的代码
       rule.badExample = this.insertMark(
         Prism.highlight(
@@ -264,5 +266,10 @@ class Builder {
   }
 }
 
-const builder = new Builder();
-NAMESPACES.forEach((namespace) => builder.build(namespace));
+main();
+async function main() {
+  const builder = new Builder();
+  for (const namespace of NAMESPACES) {
+    await builder.build(namespace);
+  }
+}

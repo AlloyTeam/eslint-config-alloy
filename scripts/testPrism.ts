@@ -1,7 +1,9 @@
-import { CLIEngine } from 'eslint';
+import { ESLint } from 'eslint';
 
-const cli = new CLIEngine({});
+const eslintInstance = new ESLint({});
 
-const report = cli.executeOnFiles(['./test/index/no-cond-assign/bad.js']);
-
-console.log(report.results[0].messages);
+main();
+async function main() {
+  const results = await eslintInstance.lintFiles(['./test/index/no-cond-assign/bad.js']);
+  console.log(results[0].messages);
+}
