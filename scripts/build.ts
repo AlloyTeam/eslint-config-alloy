@@ -14,6 +14,8 @@ import { NAMESPACE_CONFIG, NAMESPACES, buildEslintrcMeta, Namespace, Rule, local
 import '../site/vendor/prism';
 declare const Prism: any;
 
+// const DEBUT_WHITELIST = ['jsx-curly-brace-presence'];
+
 class Builder {
   private namespace: Namespace = NAMESPACES[0];
   /** 插件的 meta 信息 */
@@ -74,6 +76,7 @@ class Builder {
       fs
         .readdirSync(path.resolve(__dirname, '../test', this.namespace))
         .filter((ruleName) => fs.lstatSync(path.resolve(__dirname, '../test', this.namespace, ruleName)).isDirectory())
+        // .filter((ruleName) => DEBUT_WHITELIST.includes(ruleName))
         .map((ruleName) => this.getRule(ruleName)),
     );
 
@@ -258,7 +261,7 @@ class Builder {
         insertedBadExample,
         `<mark class="eslint-error" data-tip="${`${xmlEscape(
           xmlEscape(message),
-        )}<br/><span class='eslint-error-rule-id'>eslint(${ruleId})</span>`}">`,
+        )}&lt;br/&gt;&lt;span class='eslint-error-rule-id'&gt;eslint(${ruleId})&lt;/span&gt;`}">`,
         [insertLine, insertColumn, insertLineEnd, insertColumnEnd],
       );
     });
