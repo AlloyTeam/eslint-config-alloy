@@ -58,8 +58,8 @@ class Builder {
       prev[fullRuleName] = {
         fixable: meta.fixable === 'code',
         extendsBaseRule:
-          // 若为 string，则表示继承的规则，若为 true，则提取继承的规则的名称
-          meta.docs.extendsBaseRule === true
+          // meta.docs.extendsBaseRule 若为 string，则表示继承的规则，若为 true，则提取继承的规则的名称
+          meta.docs.extensionRule === true || meta.docs.extendsBaseRule === true
             ? ruleName.replace(NAMESPACE_CONFIG[this.namespace].rulePrefix, '')
             : meta.docs.extendsBaseRule ?? '',
         requiresTypeChecking: meta.docs.requiresTypeChecking ?? false,

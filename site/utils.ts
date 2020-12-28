@@ -12,7 +12,7 @@ export function parseDescription(str: string) {
   const description = str.replace(/\</g, '&lt;').replace(/\>/g, '&gt;');
   if (language === 'zh-CN') {
     return description
-      .replace(/[a-zA-Z0-9\(\)\[\]\{\}\\\/'"_\-\+\?\.\*!=\&\@\#%~:; ]+/g, (codes) => {
+      .replace(/[a-zA-Z0-9\(\)\[\]\{\}\\\/'"_\-\+\?\.\*!=\&\@\#$%~:; ]+/g, (codes) => {
         const matchSpaces = codes.match(/^( *)(.*?)( *)$/);
         if (matchSpaces === null) {
           return `<code>${codes}</code>`;

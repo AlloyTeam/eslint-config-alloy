@@ -29,7 +29,7 @@
     "badExample": "",
     "goodExample": "",
     "fixable": false,
-    "extendsBaseRule": "",
+    "extendsBaseRule": "camelcase",
     "requiresTypeChecking": false
   },
   "vue/comment-directive": {
@@ -90,12 +90,12 @@
   "vue/dot-notation": {
     "name": "vue/dot-notation",
     "value": "off",
-    "description": "",
-    "reason": "",
+    "description": "禁止使用 foo['bar']，必须写成 foo.bar",
+    "reason": "当需要写一系列属性的时候，可以更统一",
     "badExample": "",
     "goodExample": "",
     "fixable": true,
-    "extendsBaseRule": "",
+    "extendsBaseRule": "dot-notation",
     "requiresTypeChecking": false
   },
   "vue/eqeqeq": {
@@ -106,7 +106,7 @@
     "badExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>template</span><span class=\"token punctuation\">></span></span>\n  <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token attr-name\">:attr</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>foo <mark class=\"eslint-error\" data-tip=\"Expected &amp;apos;===&amp;apos; and instead saw &amp;apos;==&amp;apos;.<br/><span class='eslint-error-rule-id'>eslint(vue/eqeqeq)</span>\">==</mark> 1<span class=\"token punctuation\">\"</span></span> <span class=\"token punctuation\">/></span></span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>template</span><span class=\"token punctuation\">></span></span>",
     "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>template</span><span class=\"token punctuation\">></span></span>\n  <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token attr-name\">:attr</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>foo === 1<span class=\"token punctuation\">\"</span></span> <span class=\"token punctuation\">/></span></span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>template</span><span class=\"token punctuation\">></span></span>",
     "fixable": true,
-    "extendsBaseRule": "",
+    "extendsBaseRule": "eqeqeq",
     "requiresTypeChecking": false
   },
   "vue/experimental-script-setup-vars": {
@@ -491,7 +491,7 @@
     "badExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>template</span><span class=\"token punctuation\">></span></span>\n  <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span>\n    <span class=\"token attr-name\">@click</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>\n      () => {\n        const <mark class=\"eslint-error\" data-tip=\"Unexpected empty object pattern.<br/><span class='eslint-error-rule-id'>eslint(vue/no-empty-pattern)</span>\">{}</mark> = foo;\n      }\n    <span class=\"token punctuation\">\"</span></span>\n  <span class=\"token punctuation\">></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>template</span><span class=\"token punctuation\">></span></span>",
     "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>template</span><span class=\"token punctuation\">></span></span>\n  <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span>\n    <span class=\"token attr-name\">@click</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>\n      () => {\n        const { bar } = foo;\n      }\n    <span class=\"token punctuation\">\"</span></span>\n  <span class=\"token punctuation\">></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>template</span><span class=\"token punctuation\">></span></span>",
     "fixable": false,
-    "extendsBaseRule": "",
+    "extendsBaseRule": "no-empty-pattern",
     "requiresTypeChecking": false
   },
   "vue/no-irregular-whitespace": {
@@ -511,7 +511,7 @@
     "badExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>script</span><span class=\"token punctuation\">></span></span><span class=\"token script\"><span class=\"token language-javascript\">\n<span class=\"token keyword\">const</span> foo<mark class=\"eslint-error\" data-tip=\"Irregular whitespace not allowed.<br/><span class='eslint-error-rule-id'>eslint(vue/no-irregular-whitespace)</span>\">　</mark><span class=\"token operator\">=</span> <span class=\"token string\">''</span>\n</span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>script</span><span class=\"token punctuation\">></span></span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>template</span><span class=\"token punctuation\">></span></span>\n    <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token attr-name\">class</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>foo<mark class=\"eslint-error\" data-tip=\"Irregular whitespace not allowed.<br/><span class='eslint-error-rule-id'>eslint(vue/no-irregular-whitespace)</span>\">　</mark>bar<span class=\"token punctuation\">\"</span></span><span class=\"token punctuation\">></span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>template</span><span class=\"token punctuation\">></span></span>",
     "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>script</span><span class=\"token punctuation\">></span></span><span class=\"token script\"><span class=\"token language-javascript\">\n<span class=\"token keyword\">const</span> foo <span class=\"token operator\">=</span> <span class=\"token string\">'　'</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">const</span> bar <span class=\"token operator\">=</span> <span class=\"token regex\">/　/</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">const</span> baz <span class=\"token operator\">=</span> <span class=\"token template-string\"><span class=\"token string\">`　`</span></span><span class=\"token punctuation\">;</span>\n</span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>script</span><span class=\"token punctuation\">></span></span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>template</span><span class=\"token punctuation\">></span></span>\n    <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token attr-name\">class</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>foo bar<span class=\"token punctuation\">\"</span></span><span class=\"token punctuation\">></span></span>　<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>template</span><span class=\"token punctuation\">></span></span>",
     "fixable": false,
-    "extendsBaseRule": "",
+    "extendsBaseRule": "no-irregular-whitespace",
     "requiresTypeChecking": false
   },
   "vue/no-lifecycle-after-await": {
@@ -528,7 +528,7 @@
   "vue/no-lone-template": {
     "name": "vue/no-lone-template",
     "value": "error",
-    "description": "disallow unnecessary `<template>`",
+    "description": "禁止出现没必要的 <template>",
     "reason": "",
     "badExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>template</span><span class=\"token punctuation\">></span></span>\n  <span class=\"token tag\"><mark class=\"eslint-error\" data-tip=\"`&amp;lt;template&amp;gt;` require directive.<br/><span class='eslint-error-rule-id'>eslint(vue/no-lone-template)</span>\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>template</span><span class=\"token punctuation\">></span></mark></span>...<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>template</span><span class=\"token punctuation\">></span></span>\n  <span class=\"token tag\"><mark class=\"eslint-error\" data-tip=\"`&amp;lt;template&amp;gt;` require directive.<br/><span class='eslint-error-rule-id'>eslint(vue/no-lone-template)</span>\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>template</span> <span class=\"token punctuation\">/></span></mark></span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>template</span><span class=\"token punctuation\">></span></span>",
     "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>template</span><span class=\"token punctuation\">></span></span>\n  <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>template</span> <span class=\"token attr-name\">v-if</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>foo<span class=\"token punctuation\">\"</span></span><span class=\"token punctuation\">></span></span>...<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>template</span><span class=\"token punctuation\">></span></span>\n  <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>template</span> <span class=\"token attr-name\">v-else-if</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>bar<span class=\"token punctuation\">\"</span></span><span class=\"token punctuation\">></span></span>...<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>template</span><span class=\"token punctuation\">></span></span>\n  <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>template</span> <span class=\"token attr-name\">v-else</span><span class=\"token punctuation\">></span></span>...<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>template</span><span class=\"token punctuation\">></span></span>\n  <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>template</span> <span class=\"token attr-name\">v-for</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>e in list<span class=\"token punctuation\">\"</span></span><span class=\"token punctuation\">></span></span>...<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>template</span><span class=\"token punctuation\">></span></span>\n  <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>template</span> <span class=\"token attr-name\">v-slot</span><span class=\"token punctuation\">></span></span>...<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>template</span><span class=\"token punctuation\">></span></span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>template</span><span class=\"token punctuation\">></span></span>",
@@ -539,7 +539,7 @@
   "vue/no-multiple-objects-in-class": {
     "name": "vue/no-multiple-objects-in-class",
     "value": "error",
-    "description": "disallow to pass multiple objects into array to class",
+    "description": "禁止 class 中出现复数的对象",
     "reason": "",
     "badExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>template</span><span class=\"token punctuation\">></span></span>\n  <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span>\n    <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <mark class=\"eslint-error\" data-tip=\"Unexpected multiple objects. Merge objects.<br/><span class='eslint-error-rule-id'>eslint(vue/no-multiple-objects-in-class)</span>\"><span class=\"token attr-name\">:class</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>[{ foo: isFoo }, { bar: isBar }]<span class=\"token punctuation\">\"</span></span></mark> <span class=\"token punctuation\">/></span></span>\n  <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>template</span><span class=\"token punctuation\">></span></span>",
     "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>template</span><span class=\"token punctuation\">></span></span>\n  <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span><span class=\"token punctuation\">></span></span>\n    <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>div</span> <span class=\"token attr-name\">:class</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>[{ foo: isFoo, bar: isBar }]<span class=\"token punctuation\">\"</span></span> <span class=\"token punctuation\">/></span></span>\n  <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>div</span><span class=\"token punctuation\">></span></span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>template</span><span class=\"token punctuation\">></span></span>",
@@ -687,7 +687,7 @@
     "badExample": "",
     "goodExample": "",
     "fixable": false,
-    "extendsBaseRule": "",
+    "extendsBaseRule": "no-restricted-syntax",
     "requiresTypeChecking": false
   },
   "vue/no-restricted-v-bind": {
@@ -737,12 +737,12 @@
   "vue/no-sparse-arrays": {
     "name": "vue/no-sparse-arrays",
     "value": "error",
-    "description": "",
+    "description": "禁止在数组中出现连续的逗号",
     "reason": "",
     "badExample": "",
     "goodExample": "",
     "fixable": false,
-    "extendsBaseRule": "",
+    "extendsBaseRule": "no-sparse-arrays",
     "requiresTypeChecking": false
   },
   "vue/no-static-inline-styles": {
@@ -869,12 +869,12 @@
   "vue/no-useless-concat": {
     "name": "vue/no-useless-concat",
     "value": "error",
-    "description": "",
+    "description": "禁止出现没必要的字符串连接",
     "reason": "",
     "badExample": "",
     "goodExample": "",
     "fixable": false,
-    "extendsBaseRule": "",
+    "extendsBaseRule": "no-useless-concat",
     "requiresTypeChecking": false
   },
   "vue/no-useless-mustaches": {
@@ -990,12 +990,12 @@
   "vue/prefer-template": {
     "name": "vue/prefer-template",
     "value": "off",
-    "description": "",
+    "description": "必须使用模版字符串而不是字符串连接",
     "reason": "",
     "badExample": "",
     "goodExample": "",
     "fixable": true,
-    "extendsBaseRule": "",
+    "extendsBaseRule": "prefer-template",
     "requiresTypeChecking": false
   },
   "vue/prop-name-casing": {
