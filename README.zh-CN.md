@@ -1,5 +1,8 @@
 # [eslint-config-alloy][网站]
 
+**最新特性：eslint-config-alloy 现已支持 Vue 3.0**  
+如果你使用的是 Vue 2.0，请安装旧版 `npm install --save-dev eslint-config-alloy@3`
+
 AlloyTeam ESLint 规则不仅是一套先进的适用于 React/Vue/Typescript 项目的 ESLint 配置规范，而且也是你配置个性化 ESLint 规则的最佳参考。
 
 ## 快速开始

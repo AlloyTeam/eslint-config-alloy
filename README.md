@@ -4,6 +4,9 @@
 
 English / [简体中文](./README.zh-CN.md)
 
+**NEWS: eslint-config-alloy now support Vue 3.0**  
+If you are using Vue 2.0, please `npm install --save-dev eslint-config-alloy@3`
+
 ---
 
 The AlloyTeam ESLint config is not only a progressive ESLint config for your React/Vue/TypeScript projects but also the best reference for configuring your personalized ESLint rules.
