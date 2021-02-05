@@ -75,7 +75,7 @@ In this way, we can follow the latest rules in a time when the front-end communi
 ### Built-in
 
 ```bash
-npm install --save-dev eslint babel-eslint eslint-config-alloy
+npm install --save-dev eslint-config-alloy
 ```
 
 Create an `.eslintrc.js` in the root directory of your project, then copy the following content into it:
@@ -108,7 +108,7 @@ module.exports = {
 ### React
 
 ```bash
-npm install --save-dev eslint babel-eslint eslint-plugin-react eslint-config-alloy
+npm install --save-dev eslint-config-alloy
 ```
 
 Create an `.eslintrc.js` in the root directory of your project, then copy the following content into it:
@@ -142,7 +142,7 @@ module.exports = {
 ### Vue
 
 ```bash
-npm install --save-dev eslint babel-eslint vue-eslint-parser eslint-plugin-vue eslint-config-alloy
+npm install --save-dev eslint-config-alloy
 ```
 
 Create an `.eslintrc.js` in the root directory of your project, then copy the following content into it:
@@ -176,7 +176,7 @@ module.exports = {
 ### TypeScript
 
 ```bash
-npm install --save-dev eslint typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-config-alloy
+npm install --save-dev eslint-config-alloy
 ```
 
 Create an `.eslintrc.js` in the root directory of your project, then copy the following content into it:
@@ -210,7 +210,7 @@ module.exports = {
 ### TypeScript React
 
 ```bash
-npm install --save-dev eslint typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-react eslint-config-alloy
+npm install --save-dev eslint-config-alloy
 ```
 
 Create an `.eslintrc.js` in the root directory of your project, then copy the following content into it:
@@ -243,6 +243,31 @@ module.exports = {
 ```
 
 ## Troubleshooting
+
+### How to set the git commit bayonet and check it before submitting
+
+Can be achieved with the help of `husky` + `lint-staged`, in addition, the built-in `alloy-eslint` command can be used directly instead of `eslint`, no need to install `eslint` again
+
+```bash
+# install deps
+npm i --save-dev husky lint-staged
+```
+
+```json
+// package.json
+// ...
+"husky": {
+  "hooks": {
+    "pre-commit": "lint-staged"
+  }
+},
+"lint-staged": {
+  "*.{js,jsx,ts,tsx}": [
+    "alloy-eslint --fix"
+  ]
+},
+// ...
+```
 
 ### With VSCode
 

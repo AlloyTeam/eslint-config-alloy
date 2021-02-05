@@ -73,7 +73,7 @@ ESLint 的更新很快，几乎每周都有一个新版本，有时有新规则�
 ### 内置规则
 
 ```bash
-npm install --save-dev eslint babel-eslint eslint-config-alloy
+npm install --save-dev eslint-config-alloy
 ```
 
 在你的项目的根目录下创建一个 `.eslintrc.js` 文件，并将以下内容复制进去：
@@ -106,7 +106,7 @@ module.exports = {
 ### React
 
 ```bash
-npm install --save-dev eslint babel-eslint eslint-plugin-react eslint-config-alloy
+npm install --save-dev eslint-config-alloy
 ```
 
 在你的项目的根目录下创建一个 `.eslintrc.js` 文件，并将以下内容复制进去：
@@ -140,7 +140,7 @@ module.exports = {
 ### Vue
 
 ```bash
-npm install --save-dev eslint babel-eslint vue-eslint-parser eslint-plugin-vue eslint-config-alloy
+npm install --save-dev eslint-config-alloy
 ```
 
 在你的项目的根目录下创建一个 `.eslintrc.js` 文件，并将以下内容复制进去：
@@ -174,7 +174,7 @@ module.exports = {
 ### TypeScript
 
 ```bash
-npm install --save-dev eslint typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-config-alloy
+npm install --save-dev eslint-config-alloy
 ```
 
 在你的项目的根目录下创建一个 `.eslintrc.js` 文件，并将以下内容复制进去：
@@ -208,7 +208,7 @@ module.exports = {
 ### TypeScript React
 
 ```bash
-npm install --save-dev eslint typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-react eslint-config-alloy
+npm install --save-dev eslint-config-alloy
 ```
 
 在你的项目的根目录下创建一个 `.eslintrc.js` 文件，并将以下内容复制进去：
@@ -241,6 +241,31 @@ module.exports = {
 ```
 
 ## 常见问题
+
+### 如何设置 git commit 卡口，在提交前做校验
+
+可以借助 `husky` + `lint-staged` 实现，另外内置 `alloy-eslint` 命令，可直接代替 `eslint` 使用，无需再次安装 `eslint`
+
+```bash
+# 安装依赖
+npm i --save-dev husky lint-staged
+```
+
+```json
+// package.json
+// ...
+"husky": {
+  "hooks": {
+    "pre-commit": "lint-staged"
+  }
+},
+"lint-staged": {
+  "*.{js,jsx,ts,tsx}": [
+    "alloy-eslint --fix"
+  ]
+},
+// ...
+```
 
 ### 在 VSCode 中使用
 
