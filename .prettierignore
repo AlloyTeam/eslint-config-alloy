@@ -23,6 +23,7 @@ test/react/jsx-fragments/bad.js
 test/react/self-closing-comp/bad.js
 test/vue/no-irregular-whitespace/bad.vue
 test/vue/no-irregular-whitespace/good.vue
+.husky
 
 ## Built-files
 .cache

@@ -13,13 +13,13 @@
  *   sunhui04 <sunhui04@meituan.com>
  *
  * 依赖版本：
- *   eslint ^7.16.0
+ *   eslint ^7.24.0
  *   babel-eslint ^10.1.0
- *   eslint-plugin-react ^7.21.5
- *   vue-eslint-parser ^7.3.0
- *   eslint-plugin-vue ^7.3.0
- *   @typescript-eslint/parser ^4.11.0
- *   @typescript-eslint/eslint-plugin ^4.11.0
+ *   eslint-plugin-react ^7.23.2
+ *   vue-eslint-parser ^7.6.0
+ *   eslint-plugin-vue ^7.9.0
+ *   @typescript-eslint/parser ^4.22.0
+ *   @typescript-eslint/eslint-plugin ^4.22.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  */
@@ -118,6 +118,10 @@ module.exports = {
      * 禁止在 jsx 中使用像注释的字符串
      */
     'react/jsx-no-comment-textnodes': 'error',
+    /**
+     * 禁止使用不稳定的值作为 Context.Provider 的 value
+     */
+    'react/jsx-no-constructed-context-values': 'error',
     /**
      * 禁止出现重复的 props
      */
@@ -264,6 +268,10 @@ module.exports = {
         checkAliases: true,
       },
     ],
+    /**
+     * 禁止在组件内使用不稳定的组件
+     */
+    'react/no-unstable-nested-components': 'error',
     /**
      * 禁止出现未使用的 propTypes
      * @reason 类型相关的约束交给 TypeScript

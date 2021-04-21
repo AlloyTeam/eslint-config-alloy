@@ -701,6 +701,17 @@
     "extendsBaseRule": "",
     "requiresTypeChecking": false
   },
+  "@typescript-eslint/no-unsafe-argument": {
+    "name": "@typescript-eslint/no-unsafe-argument",
+    "value": "off",
+    "description": "禁止将 any 类型的变量作为函数参数调用",
+    "reason": "",
+    "badExample": "",
+    "goodExample": "",
+    "fixable": false,
+    "extendsBaseRule": "",
+    "requiresTypeChecking": true
+  },
   "@typescript-eslint/no-unsafe-assignment": {
     "name": "@typescript-eslint/no-unsafe-assignment",
     "value": "off",
@@ -950,7 +961,7 @@
     "reason": "",
     "badExample": "",
     "goodExample": "",
-    "fixable": false,
+    "fixable": true,
     "extendsBaseRule": "",
     "requiresTypeChecking": true
   },
@@ -1042,6 +1053,17 @@
     "extendsBaseRule": "no-return-await",
     "requiresTypeChecking": true
   },
+  "@typescript-eslint/sort-type-union-intersection-members": {
+    "name": "@typescript-eslint/sort-type-union-intersection-members",
+    "value": "off",
+    "description": "联合类型和交叉类型的每一项必须按字母排序",
+    "reason": "",
+    "badExample": "",
+    "goodExample": "",
+    "fixable": true,
+    "extendsBaseRule": "",
+    "requiresTypeChecking": false
+  },
   "@typescript-eslint/strict-boolean-expressions": {
     "name": "@typescript-eslint/strict-boolean-expressions",
     "value": "off",
@@ -1049,7 +1071,7 @@
     "reason": "",
     "badExample": "",
     "goodExample": "",
-    "fixable": false,
+    "fixable": true,
     "extendsBaseRule": "",
     "requiresTypeChecking": true
   },

@@ -13,13 +13,13 @@
  *   sunhui04 <sunhui04@meituan.com>
  *
  * 依赖版本：
- *   eslint ^7.16.0
+ *   eslint ^7.24.0
  *   babel-eslint ^10.1.0
- *   eslint-plugin-react ^7.21.5
- *   vue-eslint-parser ^7.3.0
- *   eslint-plugin-vue ^7.3.0
- *   @typescript-eslint/parser ^4.11.0
- *   @typescript-eslint/eslint-plugin ^4.11.0
+ *   eslint-plugin-react ^7.23.2
+ *   vue-eslint-parser ^7.6.0
+ *   eslint-plugin-vue ^7.9.0
+ *   @typescript-eslint/parser ^4.22.0
+ *   @typescript-eslint/eslint-plugin ^4.22.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  */
@@ -103,6 +103,10 @@ module.exports = {
      */
     'vue/experimental-script-setup-vars': 'error',
     /**
+     * button 标签必须有 type 属性
+     */
+    'vue/html-button-has-type': 'off',
+    /**
      * HTML 注释的 <!-- 后必须有空格或换行符
      * @reason 代码格式问题，最好由 Prettier 解决
      */
@@ -131,6 +135,10 @@ module.exports = {
      */
     'vue/new-line-between-multi-line-property': 'off',
     /**
+     * nextTick 必须使用 Promise 模式调用
+     */
+    'vue/next-tick-style': 'off',
+    /**
      * watch 中禁止使用箭头函数
      */
     'vue/no-arrow-functions-in-watch': 'error',
@@ -147,6 +155,11 @@ module.exports = {
      * @reason 类型相关的约束交给 TypeScript
      */
     'vue/no-boolean-default': 'off',
+    /**
+     * 禁止将常量作为分支条件判断中的测试表达式，但允许作为循环条件判断中的测试表达式
+     */
+    'no-constant-condition': 'off',
+    'vue/no-constant-condition': 'off',
     /**
      * 禁止自定义的 v-modal 修饰语
      */
@@ -251,6 +264,10 @@ module.exports = {
     'no-empty-pattern': 'off',
     'vue/no-empty-pattern': 'error',
     /**
+     * 禁止 model 中出现错误的属性
+     */
+    'vue/no-invalid-model-keys': 'error',
+    /**
      * 禁止使用特殊空白符（比如全角空格），除非是出现在字符串、正则表达式、模版字符串中或 HTML 内容中
      */
     'no-irregular-whitespace': 'off',
@@ -308,6 +325,14 @@ module.exports = {
      * 禁止覆盖保留字
      */
     'vue/no-reserved-keys': 'error',
+    /**
+     * 禁止在模版中使用指定的 block
+     */
+    'vue/no-restricted-block': 'off',
+    /**
+     * 禁止 await 后调用指定的函数
+     */
+    'vue/no-restricted-call-after-await': 'off',
     /**
      * 禁止使用指定的组件选项
      */
@@ -386,6 +411,11 @@ module.exports = {
      * 禁止属性定义了却未使用
      */
     'vue/no-unused-properties': 'off',
+    /**
+     * 标签属性必须按规则排序
+     * @reason 识别有限制，无法识别在其他组件中使用的情况
+     */
+    'vue/no-unused-refs': 'off',
     /**
      * 模版中已定义的变量必须使用
      */
@@ -534,6 +564,10 @@ module.exports = {
      */
     'vue/v-for-delimiter-style': 'off',
     /**
+     * 禁止在 v-on 的事件名使用横杠
+     */
+    'vue/v-on-event-hyphenation': 'error',
+    /**
      * 禁止在 v-on 的值中调用函数
      */
     'vue/v-on-function-call': 'error',
@@ -545,6 +579,10 @@ module.exports = {
      * 使用缩写的 #one 而不是 v-slot:one
      */
     'vue/v-slot-style': 'off',
+    /**
+     * 禁止调用 Vue.nextTick 或 vm.$nextTick 时不使用 await
+     */
+    'vue/valid-next-tick': 'error',
     /**
      * template 的根节点必须合法
      */

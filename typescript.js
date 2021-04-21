@@ -13,13 +13,13 @@
  *   sunhui04 <sunhui04@meituan.com>
  *
  * 依赖版本：
- *   eslint ^7.16.0
+ *   eslint ^7.24.0
  *   babel-eslint ^10.1.0
- *   eslint-plugin-react ^7.21.5
- *   vue-eslint-parser ^7.3.0
- *   eslint-plugin-vue ^7.3.0
- *   @typescript-eslint/parser ^4.11.0
- *   @typescript-eslint/eslint-plugin ^4.11.0
+ *   eslint-plugin-react ^7.23.2
+ *   vue-eslint-parser ^7.6.0
+ *   eslint-plugin-vue ^7.9.0
+ *   @typescript-eslint/parser ^4.22.0
+ *   @typescript-eslint/eslint-plugin ^4.22.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  */
@@ -366,6 +366,10 @@ module.exports = {
      */
     '@typescript-eslint/no-unnecessary-type-constraint': 'error',
     /**
+     * 禁止将 any 类型的变量作为函数参数调用
+     */
+    '@typescript-eslint/no-unsafe-argument': 'off',
+    /**
      * 禁止将变量或属性的类型设置为 any
      */
     '@typescript-eslint/no-unsafe-assignment': 'off',
@@ -510,6 +514,10 @@ module.exports = {
      */
     'no-return-await': 'off',
     '@typescript-eslint/return-await': 'off',
+    /**
+     * 联合类型和交叉类型的每一项必须按字母排序
+     */
+    '@typescript-eslint/sort-type-union-intersection-members': 'off',
     /**
      * 条件判断必须传入布尔值
      */

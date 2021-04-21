@@ -578,5 +578,16 @@
   "禁止使用返回值为 void 的函数的返回值": "Requires expressions of type void to appear in statement position",
   "禁止没用的类型限制": "Disallows unnecessary constraints on generic types",
   "必须使用 ! 而不是 as": "Prefers a non-null assertion over explicit type cast when possible",
-  "": ""
+  "禁止使用不稳定的值作为 Context.Provider 的 value": "Prevent react contexts from taking non-stable values",
+  "禁止在组件内使用不稳定的组件": "Prevent creating unstable components inside components",
+  "button 标签必须有 type 属性": "Disallow usage of button without an explicit type attribute",
+  "nextTick 必须使用 Promise 模式调用": "Enforce Promise or callback style in `nextTick`",
+  "禁止 model 中出现错误的属性": "Require valid keys in model option",
+  "禁止在模版中使用指定的 block": "Disallow specific block",
+  "禁止 await 后调用指定的函数": "Disallow asynchronously called restricted methods",
+  "识别有限制，无法识别在其他组件中使用的情况": "This rule cannot be checked for use in other components",
+  "禁止在 v-on 的事件名使用横杠": "Enforce v-on event naming style on custom components in template",
+  "禁止调用 Vue.nextTick 或 vm.$nextTick 时不使用 await": "Enforce valid `nextTick` function calls",
+  "禁止将 any 类型的变量作为函数参数调用": "Disallows calling an function with an any type value",
+  "联合类型和交叉类型的每一项必须按字母排序": "Enforces that members of a type union/intersection are sorted alphabetically"
 }
