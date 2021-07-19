@@ -13,18 +13,19 @@
  *   sunhui04 <sunhui04@meituan.com>
  *
  * 依赖版本：
- *   eslint ^7.24.0
- *   babel-eslint ^10.1.0
- *   eslint-plugin-react ^7.23.2
- *   vue-eslint-parser ^7.6.0
- *   eslint-plugin-vue ^7.9.0
- *   @typescript-eslint/parser ^4.22.0
- *   @typescript-eslint/eslint-plugin ^4.22.0
+ *   eslint ^7.31.0
+ *   @babel/eslint-parser ^7.14.7
+ *   @babel/preset-react ^7.14.5
+ *   eslint-plugin-react ^7.24.0
+ *   vue-eslint-parser ^7.9.0
+ *   eslint-plugin-vue ^7.14.0
+ *   @typescript-eslint/parser ^4.28.3
+ *   @typescript-eslint/eslint-plugin ^4.28.3
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  */
 module.exports = {
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   parserOptions: {
     ecmaVersion: 2019,
     // ECMAScript modules 模式
@@ -36,7 +37,7 @@ module.exports = {
       impliedStrict: true,
       jsx: true,
     },
-    // 即使没有 babelrc 配置文件，也使用 babel-eslint 来解析
+    // 即使没有 babelrc 配置文件，也使用 @babel/eslint-parser 来解析
     requireConfigFile: false,
     // 仅允许 import export 语句出现在模块的顶层
     allowImportExportEverywhere: false,

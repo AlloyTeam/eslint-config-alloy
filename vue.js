@@ -13,22 +13,23 @@
  *   sunhui04 <sunhui04@meituan.com>
  *
  * 依赖版本：
- *   eslint ^7.24.0
- *   babel-eslint ^10.1.0
- *   eslint-plugin-react ^7.23.2
- *   vue-eslint-parser ^7.6.0
- *   eslint-plugin-vue ^7.9.0
- *   @typescript-eslint/parser ^4.22.0
- *   @typescript-eslint/eslint-plugin ^4.22.0
+ *   eslint ^7.31.0
+ *   @babel/eslint-parser ^7.14.7
+ *   @babel/preset-react ^7.14.5
+ *   eslint-plugin-react ^7.24.0
+ *   vue-eslint-parser ^7.9.0
+ *   eslint-plugin-vue ^7.14.0
+ *   @typescript-eslint/parser ^4.28.3
+ *   @typescript-eslint/eslint-plugin ^4.28.3
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  */
 module.exports = {
   parser: 'vue-eslint-parser',
   parserOptions: {
-    // 设置 js 的解析器为 babel-eslint
+    // 设置 js 的解析器为 @babel/eslint-parser
     // https://github.com/mysticatea/vue-eslint-parser#-options
-    parser: 'babel-eslint',
+    parser: '@babel/eslint-parser',
     ecmaVersion: 2019,
     // ECMAScript modules 模式
     sourceType: 'module',
@@ -39,7 +40,7 @@ module.exports = {
       impliedStrict: true,
       jsx: true,
     },
-    // 即使没有 babelrc 配置文件，也使用 babel-eslint 来解析
+    // 即使没有 babelrc 配置文件，也使用 @babel/eslint-parser 来解析
     requireConfigFile: false,
     // 仅允许 import export 语句出现在模块的顶层
     allowImportExportEverywhere: false,
@@ -98,10 +99,6 @@ module.exports = {
      */
     eqeqeq: 'off',
     'vue/eqeqeq': ['error', 'always'],
-    /**
-     * 避免 <script setup> 中的变量被视为未定义
-     */
-    'vue/experimental-script-setup-vars': 'error',
     /**
      * button 标签必须有 type 属性
      */
@@ -221,6 +218,10 @@ module.exports = {
      */
     'vue/no-deprecated-v-bind-sync': 'error',
     /**
+     * 禁用已废弃的 v-is 指令
+     */
+    'vue/no-deprecated-v-is': 'error',
+    /**
      * 禁止使用已废弃的 .native 修饰符
      */
     'vue/no-deprecated-v-on-native-modifier': 'error',
@@ -263,6 +264,10 @@ module.exports = {
      */
     'no-empty-pattern': 'off',
     'vue/no-empty-pattern': 'error',
+    /**
+     * 禁止在 <script setup> 中使用 export
+     */
+    'vue/no-export-in-script-setup': 'error',
     /**
      * 禁止 model 中出现错误的属性
      */
@@ -396,6 +401,10 @@ module.exports = {
      */
     'vue/no-textarea-mustache': 'error',
     /**
+     * 禁止在 beforeRouteEnter 方法中使用 this
+     */
+    'vue/no-this-in-before-route-enter': 'error',
+    /**
      * 禁止使用未注册的组件
      */
     'vue/no-unregistered-components': 'off',
@@ -493,9 +502,17 @@ module.exports = {
      */
     'vue/require-direct-export': 'off',
     /**
+     * emits 必须为函数
+     */
+    'vue/require-emit-validator': 'off',
+    /**
      * emits 属性必须包含 $emit() 中的值
      */
     'vue/require-explicit-emits': 'error',
+    /**
+     * 必须导出 expose
+     */
+    'vue/require-expose': 'off',
     /**
      * 组件必须包含 name 属性
      */
@@ -540,6 +557,10 @@ module.exports = {
      */
     'vue/return-in-emits-validator': 'error',
     /**
+     * script setup 中定义的变量必须使用
+     */
+    'vue/script-setup-uses-vars': 'error',
+    /**
      * props 的键名必须排好序
      */
     'vue/sort-keys': 'off',
@@ -579,6 +600,14 @@ module.exports = {
      * 使用缩写的 #one 而不是 v-slot:one
      */
     'vue/v-slot-style': 'off',
+    /**
+     * defineEmits 必须使用合法的语法
+     */
+    'vue/valid-define-emits': 'off',
+    /**
+     * defineProps 必须使用合法的语法
+     */
+    'vue/valid-define-props': 'off',
     /**
      * 禁止调用 Vue.nextTick 或 vm.$nextTick 时不使用 await
      */

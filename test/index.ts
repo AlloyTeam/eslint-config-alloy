@@ -33,6 +33,7 @@ async function main() {
     'react/jsx-uses-vars',
     'vue/jsx-uses-vars',
     'vue/experimental-script-setup-vars',
+    'vue/script-setup-uses-vars',
   ];
 
   badResults.forEach((badReportForOneFile) => {

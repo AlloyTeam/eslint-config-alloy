@@ -73,7 +73,7 @@ ESLint 的更新很快，几乎每周都有一个新版本，有时有新规则�
 ### 内置规则
 
 ```bash
-npm install --save-dev eslint babel-eslint eslint-config-alloy
+npm install --save-dev eslint @babel/eslint-parser eslint-config-alloy
 ```
 
 在你的项目的根目录下创建一个 `.eslintrc.js` 文件，并将以下内容复制进去：
@@ -106,7 +106,7 @@ module.exports = {
 ### React
 
 ```bash
-npm install --save-dev eslint babel-eslint eslint-plugin-react eslint-config-alloy
+npm install --save-dev eslint @babel/eslint-parser @babel/preset-react@latest eslint-plugin-react eslint-config-alloy
 ```
 
 在你的项目的根目录下创建一个 `.eslintrc.js` 文件，并将以下内容复制进去：
@@ -140,7 +140,7 @@ module.exports = {
 ### Vue
 
 ```bash
-npm install --save-dev eslint babel-eslint vue-eslint-parser eslint-plugin-vue eslint-config-alloy
+npm install --save-dev eslint @babel/eslint-parser vue-eslint-parser eslint-plugin-vue eslint-config-alloy
 ```
 
 在你的项目的根目录下创建一个 `.eslintrc.js` 文件，并将以下内容复制进去：

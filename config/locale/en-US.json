@@ -589,5 +589,13 @@
   "禁止在 v-on 的事件名使用横杠": "Enforce v-on event naming style on custom components in template",
   "禁止调用 Vue.nextTick 或 vm.$nextTick 时不使用 await": "Enforce valid `nextTick` function calls",
   "禁止将 any 类型的变量作为函数参数调用": "Disallows calling an function with an any type value",
-  "联合类型和交叉类型的每一项必须按字母排序": "Enforces that members of a type union/intersection are sorted alphabetically"
+  "联合类型和交叉类型的每一项必须按字母排序": "Enforces that members of a type union/intersection are sorted alphabetically",
+  "禁用已废弃的 v-is 指令": "Disallow deprecated `v-is` directive",
+  "禁止在 <script setup> 中使用 export": "Disallow `export` in `<script setup>`",
+  "禁止在 beforeRouteEnter 方法中使用 this": "Disallow `this` usage in a `beforeRouteEnter` method",
+  "emits 必须为函数": "Require type definitions in emits",
+  "必须导出 expose": "Require declare public properties using `expose`",
+  "script setup 中定义的变量必须使用": "Prevent `<script setup>` variables used in `<template>` to be marked as unused",
+  "defineEmits 必须使用合法的语法": "Enforce valid `defineEmits` compiler macro",
+  "defineProps 必须使用合法的语法": "Enforce valid `defineProps` compiler macro"
 }
