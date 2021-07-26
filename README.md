@@ -24,7 +24,7 @@ Please choose the following configuration based on the technology stack used by 
 ## Philosophy
 
 - Let [Prettier][] handle style-related rules
-- Inherit [ESLint's philosophy](https://eslint.org/docs/about/#philosophy) and help everyone build their own rules
+- Inherit [ESLint's philosophy][] and help everyone build their own rules
 - High degree of automation: advanced rules management, test as a document, as a [website][]
 - Keep up with the times, follow up the latest rules as soon as possible
 
