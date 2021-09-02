@@ -13,14 +13,14 @@
  *   sunhui04 <sunhui04@meituan.com>
  *
  * 依赖版本：
- *   eslint ^7.31.0
- *   @babel/eslint-parser ^7.14.7
+ *   eslint ^7.32.0
+ *   @babel/eslint-parser ^7.15.0
  *   @babel/preset-react ^7.14.5
- *   eslint-plugin-react ^7.24.0
- *   vue-eslint-parser ^7.9.0
- *   eslint-plugin-vue ^7.14.0
- *   @typescript-eslint/parser ^4.28.3
- *   @typescript-eslint/eslint-plugin ^4.28.3
+ *   eslint-plugin-react ^7.25.1
+ *   vue-eslint-parser ^7.10.0
+ *   eslint-plugin-vue ^7.17.0
+ *   @typescript-eslint/parser ^4.30.0
+ *   @typescript-eslint/eslint-plugin ^4.30.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  */

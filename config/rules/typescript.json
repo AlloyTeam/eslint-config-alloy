@@ -965,6 +965,17 @@
     "extendsBaseRule": "",
     "requiresTypeChecking": true
   },
+  "@typescript-eslint/prefer-return-this-type": {
+    "name": "@typescript-eslint/prefer-return-this-type",
+    "value": "off",
+    "description": "类的方法返回值是 this 时，类型必须设置为 this",
+    "reason": "",
+    "badExample": "",
+    "goodExample": "",
+    "fixable": true,
+    "extendsBaseRule": "",
+    "requiresTypeChecking": true
+  },
   "@typescript-eslint/prefer-string-starts-ends-with": {
     "name": "@typescript-eslint/prefer-string-starts-ends-with",
     "value": "off",

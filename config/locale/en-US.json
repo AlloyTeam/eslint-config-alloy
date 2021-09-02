@@ -597,5 +597,11 @@
   "必须导出 expose": "Require declare public properties using `expose`",
   "script setup 中定义的变量必须使用": "Prevent `<script setup>` variables used in `<template>` to be marked as unused",
   "defineEmits 必须使用合法的语法": "Enforce valid `defineEmits` compiler macro",
-  "defineProps 必须使用合法的语法": "Enforce valid `defineProps` compiler macro"
+  "defineProps 必须使用合法的语法": "Enforce valid `defineProps` compiler macro",
+  "使用 Flow 时，props 必须设置为精确的类型": "Prefer exact proptype definitions",
+  "<script> 标签必须有 lang 属性": "Disallow use other than available `lang`",
+  "禁止将计算熟悉当作方法调用": "Disallow use computed property like method",
+  "禁止使用 v-text": "Disallow use of `v-text`",
+  "valid-v-memo 指令必须合法": "Enforce valid `v-memo` directives",
+  "类的方法返回值是 this 时，类型必须设置为 this": "Enforce that `this` is used when only `this` type is returned"
 }

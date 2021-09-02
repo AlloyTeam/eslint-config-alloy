@@ -13,14 +13,14 @@
  *   sunhui04 <sunhui04@meituan.com>
  *
  * 依赖版本：
- *   eslint ^7.31.0
- *   @babel/eslint-parser ^7.14.7
+ *   eslint ^7.32.0
+ *   @babel/eslint-parser ^7.15.0
  *   @babel/preset-react ^7.14.5
- *   eslint-plugin-react ^7.24.0
- *   vue-eslint-parser ^7.9.0
- *   eslint-plugin-vue ^7.14.0
- *   @typescript-eslint/parser ^4.28.3
- *   @typescript-eslint/eslint-plugin ^4.28.3
+ *   eslint-plugin-react ^7.25.1
+ *   vue-eslint-parser ^7.10.0
+ *   eslint-plugin-vue ^7.17.0
+ *   @typescript-eslint/parser ^4.30.0
+ *   @typescript-eslint/eslint-plugin ^4.30.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  */
@@ -55,6 +55,10 @@ module.exports = {
      * 标签属性必须按规则排序
      */
     'vue/attributes-order': 'error',
+    /**
+     * <script> 标签必须有 lang 属性
+     */
+    'vue/block-lang': 'off',
     /**
      * 变量名必须是 camelCase 风格的
      * @reason 很多 api 或文件名都不是 camelCase 风格的
@@ -430,6 +434,10 @@ module.exports = {
      */
     'vue/no-unused-vars': 'error',
     /**
+     * 禁止将计算熟悉当作方法调用
+     */
+    'vue/no-use-computed-property-like-method': 'error',
+    /**
      * 禁止在同一个元素上使用 v-if 和 v-for 指令
      */
     'vue/no-use-v-if-with-v-for': 'error',
@@ -462,6 +470,10 @@ module.exports = {
      * 禁止给 v-model 属性添加参数
      */
     'vue/no-v-model-argument': 'error',
+    /**
+     * 禁止使用 v-text
+     */
+    'vue/no-v-text': 'off',
     /**
      * 禁止在 await 之后调用 watch
      */
@@ -652,6 +664,10 @@ module.exports = {
      * v-is 指令必须合法
      */
     'vue/valid-v-is': 'error',
+    /**
+     * valid-v-memo 指令必须合法
+     */
+    'vue/valid-v-memo': 'off',
     /**
      * v-model 指令必须合法
      */
