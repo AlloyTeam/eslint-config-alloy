@@ -59,6 +59,7 @@
     "access": "public"
   },
   "devDependencies": {
+    "@babel/core": "^7.15.5",
     "@babel/eslint-parser": "^7.15.0",
     "@babel/preset-react": "^7.14.5",
     "@types/cookie": "^0.4.1",
