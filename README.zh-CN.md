@@ -46,7 +46,7 @@ Prettier 是一个代码格式化工具，相比于 ESLint 中的代码格式规
 
 eslint-config-alloy 通过高度的自动化，将一切能自动化管理的过程都交给脚本处理，其中包括了：
 
-- 通过 greenkeeper 和 travis-ci，自动检查 ESLint 及相关插件是否有新版本，新版本中是否有新规则需要我们添加
+- 通过 GitHub Actions，自动每周检查 ESLint 及相关插件是否有新版本，新版本中是否有新规则需要我们添加
 - 自动检查我们的规则是否包含了 Prettier 的规则
 - 自动检查我们的规则是否包含了已废弃（deprecated）的规则
 
@@ -62,7 +62,7 @@ eslint-config-alloy 通过高度的自动化，将一切能自动化管理的过
 
 ESLint 的更新很快，几乎每周都有一个新版本，有时有新规则，有时会废弃已有规则，而且相关插件（React/Vue/TypeScript）也会时而更新，没有自动化工具的话，实在是难以跟进。
 
-而 eslint-config-alloy 通过上述的自动化工具，可以在第一时间就收到 greenkeeper [提的 issue](https://github.com/AlloyTeam/eslint-config-alloy/issues/127)，告诉我们哪个插件更新了，其中的 [travis-ci 构建日志](https://travis-ci.org/AlloyTeam/eslint-config-alloy/builds/616828848)会告诉我们哪些规则需要添加：
+而 eslint-config-alloy 通过上述的自动化工具，可以在第一时间就收到 GitHub Actions 的通知，告诉我们哪些规则需要添加：
 
 ![](https://i.v2ex.co/zDK6Uao4.png)
 
@@ -376,8 +376,8 @@ npm test
 npm run eslint:fix
 # 自动修复格式错误
 npm run prettier:fix
-# 检查当前是否覆盖了所有的规则
-npm run test:rulesCoverage
+# 检查是否覆盖了所有的规则
+npm run rulesCoverage
 # 发布新版本
 npm version <major|minor|patch>
 git push --follow-tags

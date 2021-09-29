@@ -21,8 +21,6 @@
     "moduleResolution": "node",
     // 生成的文件的换行符
     "newLine": "lf",
-    // 不生成输出
-    "noEmit": true,
 
     // 严格模式，可选择性的开启，建议开启的越多越好
     //
@@ -37,5 +35,6 @@
     //
     // 给错误和消息设置样式，使用颜色和上下文
     "pretty": true
-  }
+  },
+  "include": ["site/**/*"]
 }

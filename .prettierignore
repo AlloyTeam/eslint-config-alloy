@@ -13,7 +13,7 @@ package-lock.json
 *ignore
 
 ## Local
-site/vendor
+site/public
 test/base/no-cond-assign/bad.js
 test/base/no-irregular-whitespace/bad.js
 test/base/no-labels/bad.js

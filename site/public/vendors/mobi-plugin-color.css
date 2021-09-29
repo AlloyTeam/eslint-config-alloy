@@ -1,0 +1,47 @@
+/*! mobi-plugin-color v1.0.0 https://github.com/mobi-css/mobi-plugin-color */
+.text-success,
+a.text-success {
+  color: #5eba5e; }
+
+.text-warning,
+a.text-warning {
+  color: #f0a742; }
+
+.text-inverse,
+a.text-inverse {
+  color: white; }
+
+a.text-success,
+a.text-warning,
+a.text-inverse {
+  text-decoration: underline; }
+
+.bg-primary {
+  background-color: #2680d9; }
+
+.bg-success {
+  background-color: #5eba5e; }
+
+.bg-warning {
+  background-color: #f0a742; }
+
+.bg-danger {
+  background-color: #db5757; }
+
+.bg-inverse {
+  background-color: #333; }
+
+.bg-primary-faded {
+  background-color: #d4e6f7; }
+
+.bg-success-faded {
+  background-color: #dff1df; }
+
+.bg-warning-faded {
+  background-color: #fcedd9; }
+
+.bg-danger-faded {
+  background-color: #f8dddd; }
+
+.bg-faded {
+  background-color: #f2f2f2; }

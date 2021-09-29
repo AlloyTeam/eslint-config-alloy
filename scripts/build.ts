@@ -11,7 +11,7 @@ import xmlEscape from 'xml-escape';
 
 import { NAMESPACE_CONFIG, NAMESPACES, buildEslintrcMeta, Namespace, Rule, locale } from '../config';
 
-import '../site/vendor/prism';
+import '../site/public/vendors/prism';
 declare const Prism: any;
 
 // const DEBUT_WHITELIST = ['jsx-curly-brace-presence'];

@@ -1,0 +1,25 @@
+name: rulesCoverage
+
+on:
+  schedule:
+    # Runs on every Monday 18:00
+    - cron: '0 18 * * 1'
+
+jobs:
+  build:
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install
+        run: npm run update
+
+      - name: Run tests
+        run: |
+          npm test &&
+          npm run rulesCoverage

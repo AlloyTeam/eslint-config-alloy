@@ -1,6 +1,6 @@
-@import '../node_modules/mobi.css/dist/mobi.css';
-@import '../node_modules/mobi-plugin-color/dist/mobi-plugin-color.css';
-@import './vendor/prism.css';
+@import './vendors/mobi.css';
+@import './vendors/mobi-plugin-color.css';
+@import './vendors/prism.css';
 
 /* 行样式 */
 .site-row-wide {

@@ -1,0 +1,32 @@
+name: ci
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install
+        run: npm install
+
+      - name: Run tests
+        run: npm test
+
+      - name: Build gh-pages
+        run: npm run build
+
+      - name: Deploy gh-pages
+        if: |
+          github.event_name == 'push' &&
+          github.ref == 'refs/heads/master'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist

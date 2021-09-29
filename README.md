@@ -1,6 +1,6 @@
 # [eslint-config-alloy][website]
 
-[![Build Status](https://img.shields.io/travis/AlloyTeam/eslint-config-alloy.svg)](https://travis-ci.org/AlloyTeam/eslint-config-alloy) [![npm package](https://img.shields.io/npm/v/eslint-config-alloy.svg)](https://www.npmjs.org/package/eslint-config-alloy) [![npm downloads](http://img.shields.io/npm/dm/eslint-config-alloy.svg)](https://www.npmjs.org/package/eslint-config-alloy)
+[![Build Status](https://github.com/AlloyTeam/eslint-config-alloy/workflows/ci/badge.svg)](https://github.com/AlloyTeam/eslint-config-alloy/actions/workflows/ci.yml) [![Build Status](https://github.com/AlloyTeam/eslint-config-alloy/workflows/rulesCoverage/badge.svg)](https://github.com/AlloyTeam/eslint-config-alloy/actions/workflows/rulesCoverage.yml) [![npm package](https://img.shields.io/npm/v/eslint-config-alloy.svg)](https://www.npmjs.org/package/eslint-config-alloy) [![npm downloads](http://img.shields.io/npm/dm/eslint-config-alloy.svg)](https://www.npmjs.org/package/eslint-config-alloy)
 
 English / [简体中文](./README.zh-CN.md)
 
@@ -48,7 +48,7 @@ Therefore, eslint-config-alloy also inherits the philosophy of ESLint. It will n
 
 `eslint-config-alloy` uses a high degree of automation to hand over all processes that can be managed automatically, including:
 
-- Through greenkeeper and travis-ci, automatically check whether ESLint and related plugins have new versions and if there are new rules in the new version which we need to add
+- Through GitHub Actions, automatically weekly check whether ESLint and related plugins have new versions and if there are new rules in the new version which we need to add
 - Automatically check if our rules include Prettier rules
 - Automatically check if our rules include deprecated rules
 
@@ -64,7 +64,7 @@ The benefits of this are very obvious — test as a document, as a [website][]. 
 
 ESLint is updated very quickly, there is a new version almost every week, sometimes there are new rules, sometimes existing rules are deprecated, and related plug-ins (React/Vue/TypeScript) will be updated from time to time. Without automation tools, it is difficult to follow up.
 
-And `eslint-config-alloy` can receive the [greenkeeper issue] (https://github.com/AlloyTeam/eslint-config-alloy/issues/127) as soon as possible through the above automation tools, tell us which plugin has been updated, and the [travis-ci build log](https://travis-ci.org/AlloyTeam/eslint-config-alloy/builds/616828848) will tell us which rules need to be added:
+And `eslint-config-alloy`, through the above-mentioned automated tools, can receive notifications from GitHub Actions at the first time, telling us which rules need to be added:
 
 ![](https://i.v2ex.co/zDK6Uao4.png)
 
@@ -352,8 +352,8 @@ npm test
 npm run eslint:fix
 # autofix prettier errors
 npm run prettier:fix
-# check if all rules are currently covered
-npm run test:rulesCoverage
+# check if all rules are covered
+npm run rulesCoverage
 # publish new version
 npm version <major|minor|patch>
 git push --follow-tags
