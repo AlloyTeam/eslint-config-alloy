@@ -4,6 +4,9 @@ on:
   schedule:
     # Runs on every Monday 18:00
     - cron: '0 18 * * 1'
+  push:
+    branches:
+      - master
 
 jobs:
   build:
