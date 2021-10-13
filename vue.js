@@ -14,13 +14,13 @@
  *
  * 依赖版本：
  *   eslint ^7.32.0
- *   @babel/eslint-parser ^7.15.0
+ *   @babel/eslint-parser ^7.15.8
  *   @babel/preset-react ^7.14.5
- *   eslint-plugin-react ^7.25.1
- *   vue-eslint-parser ^7.10.0
- *   eslint-plugin-vue ^7.17.0
- *   @typescript-eslint/parser ^4.30.0
- *   @typescript-eslint/eslint-plugin ^4.30.0
+ *   eslint-plugin-react ^7.26.1
+ *   vue-eslint-parser ^7.11.0
+ *   eslint-plugin-vue ^7.19.1
+ *   @typescript-eslint/parser ^5.0.0
+ *   @typescript-eslint/eslint-plugin ^5.0.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  */
@@ -69,6 +69,10 @@ module.exports = {
      * 支持在模版中使用 eslint-disable-next-line 等注释
      */
     'vue/comment-directive': 'error',
+    /**
+     * 限制组件接口定义的模式
+     */
+    'vue/component-api-style': 'off',
     /**
      * 组件的 name 属性必须符合 PascalCase
      * @reason 这是官方建议的规范
@@ -343,6 +347,10 @@ module.exports = {
      */
     'vue/no-restricted-call-after-await': 'off',
     /**
+     * 限制使用特定的 class
+     */
+    'vue/no-restricted-class': 'off',
+    /**
      * 禁止使用指定的组件选项
      */
     'vue/no-restricted-component-options': 'off',
@@ -450,6 +458,10 @@ module.exports = {
      * 禁止出现无用的 mustache 字符串
      */
     'vue/no-useless-mustaches': 'error',
+    /**
+     * 禁止模版中使用未生效的属性
+     */
+    'vue/no-useless-template-attributes': 'error',
     /**
      * 禁止出现无用的 v-bind
      */

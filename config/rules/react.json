@@ -505,6 +505,17 @@
     "extendsBaseRule": "",
     "requiresTypeChecking": false
   },
+  "react/no-namespace": {
+    "name": "react/no-namespace",
+    "value": "error",
+    "description": "禁止在 jsx 中使用命名空间",
+    "reason": "",
+    "badExample": "<span class=\"token tag\"><mark class=\"eslint-error\" data-tip=\"React component Ns:TestComponent must not be in a namespace, as React does not support them&lt;br/&gt;&lt;span class='eslint-error-rule-id'&gt;eslint(react/no-namespace)&lt;/span&gt;\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token namespace\">Ns:</span><span class=\"token class-name\">TestComponent</span></span> <span class=\"token punctuation\">/></span></mark></span><span class=\"token punctuation\">;</span>",
+    "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">TestComponent</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>",
+    "fixable": false,
+    "extendsBaseRule": "",
+    "requiresTypeChecking": false
+  },
   "react/no-redundant-should-component-update": {
     "name": "react/no-redundant-should-component-update",
     "value": "error",

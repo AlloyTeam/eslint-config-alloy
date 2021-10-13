@@ -603,5 +603,12 @@
   "禁止将计算熟悉当作方法调用": "Disallow use computed property like method",
   "禁止使用 v-text": "Disallow use of `v-text`",
   "valid-v-memo 指令必须合法": "Enforce valid `v-memo` directives",
-  "类的方法返回值是 this 时，类型必须设置为 this": "Enforce that `this` is used when only `this` type is returned"
+  "类的方法返回值是 this 时，类型必须设置为 this": "Enforce that `this` is used when only `this` type is returned",
+  "禁止在 jsx 中使用命名空间": "Enforce that namespaces are not used in React elements",
+  "限制组件接口定义的模式": "Enforce component API style",
+  "限制使用特定的 class": "Disallow specific classes in Vue components",
+  "禁止模版中使用未生效的属性": "Disallow useless attribute on `<template>`",
+  "返回值类型可以推导出来": "The return value type can be deduced",
+  "禁止 void 抛出空": "Disallow the `void` operator except when used to discard a value",
+  "禁止非空断言后面跟着双问号": "Disallows using a non-null assertion in the left operand of the nullish coalescing operator"
 }

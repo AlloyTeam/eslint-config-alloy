@@ -301,7 +301,7 @@ module.exports = {
   // spaces are required at the beginning and end of the braces
   bracketSpacing: true,
   // end tag of jsx need to wrap
-  jsxBracketSameLine: false,
+  bracketSameLine: false,
   // brackets are required for arrow function parameter, even when there is only one parameter
   arrowParens: 'always',
   // format the entire contents of the file

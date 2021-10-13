@@ -14,13 +14,13 @@
  *
  * 依赖版本：
  *   eslint ^7.32.0
- *   @babel/eslint-parser ^7.15.0
+ *   @babel/eslint-parser ^7.15.8
  *   @babel/preset-react ^7.14.5
- *   eslint-plugin-react ^7.25.1
- *   vue-eslint-parser ^7.10.0
- *   eslint-plugin-vue ^7.17.0
- *   @typescript-eslint/parser ^4.30.0
- *   @typescript-eslint/eslint-plugin ^4.30.0
+ *   eslint-plugin-react ^7.26.1
+ *   vue-eslint-parser ^7.11.0
+ *   eslint-plugin-vue ^7.19.1
+ *   @typescript-eslint/parser ^5.0.0
+ *   @typescript-eslint/eslint-plugin ^5.0.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  */
@@ -233,6 +233,10 @@ module.exports = {
      * @reason 有一个 bug：https://github.com/yannickcr/eslint-plugin-react/issues/1181
      */
     'react/no-multi-comp': 'off',
+    /**
+     * 禁止在 jsx 中使用命名空间
+     */
+    'react/no-namespace': 'error',
     /**
      * 禁止在 React.PureComponent 中使用 shouldComponentUpdate
      */

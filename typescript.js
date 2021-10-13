@@ -14,13 +14,13 @@
  *
  * 依赖版本：
  *   eslint ^7.32.0
- *   @babel/eslint-parser ^7.15.0
+ *   @babel/eslint-parser ^7.15.8
  *   @babel/preset-react ^7.14.5
- *   eslint-plugin-react ^7.25.1
- *   vue-eslint-parser ^7.10.0
- *   eslint-plugin-vue ^7.17.0
- *   @typescript-eslint/parser ^4.30.0
- *   @typescript-eslint/eslint-plugin ^4.30.0
+ *   eslint-plugin-react ^7.26.1
+ *   vue-eslint-parser ^7.11.0
+ *   eslint-plugin-vue ^7.19.1
+ *   @typescript-eslint/parser ^5.0.0
+ *   @typescript-eslint/eslint-plugin ^5.0.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  */
@@ -98,7 +98,7 @@ module.exports = {
     '@typescript-eslint/dot-notation': 'off',
     /**
      * 函数返回值必须与声明的类型一致
-     * @reason 编译阶段检查就足够了
+     * @reason 返回值类型可以推导出来
      */
     '@typescript-eslint/explicit-function-return-type': 'off',
     /**
@@ -232,10 +232,6 @@ module.exports = {
      */
     '@typescript-eslint/no-for-in-array': 'off',
     /**
-     * catch 的参数必须指定具体类型
-     */
-    '@typescript-eslint/no-implicit-any-catch': 'off',
-    /**
      * 禁止使用 eval
      */
     'no-implied-eval': 'off',
@@ -273,6 +269,10 @@ module.exports = {
     'no-magic-numbers': 'off',
     '@typescript-eslint/no-magic-numbers': 'off',
     /**
+     * 禁止 void 抛出空
+     */
+    '@typescript-eslint/no-meaningless-void-operator': 'off',
+    /**
      * 禁止在接口中定义 constructor，或在类中定义 new
      */
     '@typescript-eslint/no-misused-new': 'off',
@@ -292,6 +292,10 @@ module.exports = {
         allowDefinitionFiles: true,
       },
     ],
+    /**
+     * 禁止非空断言后面跟着双问号
+     */
+    '@typescript-eslint/no-non-null-asserted-nullish-coalescing': 'error',
     /**
      * 禁止在 optional chaining 之后使用 non-null 断言（感叹号）
      * @reason optional chaining 后面的属性一定是非空的
@@ -318,6 +322,11 @@ module.exports = {
      * @reason 统一使用 import 来引入模块，特殊情况使用单行注释允许 require 引入
      */
     '@typescript-eslint/no-require-imports': 'error',
+    /**
+     * 禁止导入指定的模块
+     */
+    'no-restricted-imports': 'off',
+    '@typescript-eslint/no-restricted-imports': 'off',
     /**
      * 禁止变量名与上层作用域内的已定义的变量重复
      * @reason 很多时候函数的形参和传参是同名的
@@ -400,7 +409,6 @@ module.exports = {
     ],
     /**
      * 已定义的变量必须使用
-     * @reason 编译阶段检查就足够了
      */
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': 'off',
@@ -424,6 +432,11 @@ module.exports = {
      * 必须使用 ! 而不是 as
      */
     '@typescript-eslint/non-nullable-type-assertion-style': 'off',
+    /**
+     * 限制语句之间的空行规则，比如变量定义完之后必须要空行
+     */
+    'padding-line-between-statements': 'off',
+    '@typescript-eslint/padding-line-between-statements': 'off',
     /**
      * 使用 as const 替代 as 'bar'
      * @reason as const 是新语法，不是很常见
