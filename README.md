@@ -330,7 +330,9 @@ A best practice for VSCode is to auto format code with Prettier and autofix erro
 {
   "files.eol": "\n",
   "editor.tabSize": 2,
-  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "eslint.validate": ["javascript", "javascriptreact", "vue", "typescript", "typescriptreact"],
   "editor.codeActionsOnSave": {
@@ -364,7 +366,7 @@ npm publish
 
 ### Why another ESLint config
 
-Our team initially used Airbnb rules, but because it was too strict, some rules still needed to be personalized, which led to more and more changes in the future and finally decided to maintain a new set. After more than two years of polishing, `eslint-config-alloy` is now very mature and progressive and has been welcomed by many teams inside and outside the company.
+Our team initially used Airbnb rules, but because it was too strict, some rules still needed to be personalized, which led to more and more changes in the future and finally decided to maintain a new set. After more than four years of maintaining, `eslint-config-alloy` is now very mature and progressive and has been welcomed by many teams inside and outside the company.
 
 ### Why not standard
 

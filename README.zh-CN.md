@@ -38,7 +38,7 @@ Prettier 是一个代码格式化工具，相比于 ESLint 中的代码格式规
 
 由于 React/Vue/TypeScript 插件的文档没有中文化（或中文的版本很滞后），所以 alloy 的文档很大程度上帮助了国内开发者理解和配置个性化的规则。
 
-实际上国内有很多团队或个人公开的 ESLint 配置，都参考了 alloy 的文档。
+实际上国内有很多团队或个人的 ESLint 配置，都参考了 alloy 的文档。
 
 ### 高度的自动化：先进的规则管理，测试即文档即[网站][]
 
@@ -56,7 +56,7 @@ eslint-config-alloy 通过高度的自动化，将一切能自动化管理的过
 - 通过脚本将单个配置中的 description 和 reason 构建成文档[网站][]，方便大家查看
 - 通过脚本将单个配置中的 `bad.js` 和 `good.js` 输出到[网站][]中，甚至可以直接在[网站][]中看到 `bad.js` 的（真实运行 ESLint 脚本后的）报错信息
 
-这样的好处是非常明显的，测试即文档即[网站][]，我们可以只在一个地方维护规则和测试，其他工作都交给自动化脚本，极大的降低了维护的成本。简单来说，当我们有个新规则需要添加时，只需要写三个文件 `test/index/another-rule/.eslintrc.js`, `test/index/another-rule/bad.js`, `test/index/another-rule/good.js` 即可。
+这样的好处是显而易见的，测试即文档即[网站][]，我们可以只在一个地方维护规则和测试，其他工作都交给自动化脚本，极大的降低了维护的成本。简单来说，当我们有个新规则需要添加时，只需要写三个文件 `test/index/another-rule/.eslintrc.js`, `test/index/another-rule/bad.js`, `test/index/another-rule/good.js` 即可。
 
 ### 与时俱进，第一时间跟进最新的规则
 
@@ -277,7 +277,9 @@ module.exports = {
 
 ```json
 {
-  "eslint.autoFixOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
   "eslint.validate": [
     "javascript",
     "javascriptreact",
@@ -343,7 +345,7 @@ module.exports = {
   vueIndentScriptAndStyle: false,
   // 换行符使用 lf
   endOfLine: 'lf',
-  // 格式化嵌入的内容
+  // 格式化内嵌代码
   embeddedLanguageFormatting: 'auto',
 };
 ```
@@ -354,7 +356,9 @@ VSCode 的一个最佳实践就是通过配置 `.vscode/settings.json` 来支持
 {
   "files.eol": "\n",
   "editor.tabSize": 2,
-  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "eslint.validate": ["javascript", "javascriptreact", "vue", "typescript", "typescriptreact"],
   "editor.codeActionsOnSave": {
@@ -388,7 +392,7 @@ npm publish
 
 ### 为什么要重复造轮子
 
-其实我们团队最开始使用 airbnb 规则，但是由于它过于严格，部分规则还是需要个性化，导致后来越改越多，最后决定重新维护一套。经过两年多的打磨，现在 eslint-config-alloy 已经非常成熟与先进，也受到了公司内外很多团队的欢迎。
+其实我们团队最开始使用 airbnb 规则，但是由于它过于严格，部分规则还是需要个性化，导致后来越改越多，最后决定重新维护一套。经过四年多的打磨，现在 eslint-config-alloy 已经非常成熟与先进，也受到了公司内外很多团队的欢迎。
 
 ### 为什么不用 standard
 
