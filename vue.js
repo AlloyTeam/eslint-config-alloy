@@ -187,10 +187,6 @@ module.exports = {
     'no-constant-condition': 'off',
     'vue/no-constant-condition': 'off',
     /**
-     * 禁止自定义的 v-modal 修饰语
-     */
-    'vue/no-custom-modifiers-on-v-model': 'error',
-    /**
      * 禁止在 data 中使用已废弃的对象定义
      */
     'vue/no-deprecated-data-object-declaration': 'error',
@@ -344,10 +340,6 @@ module.exports = {
      * 禁止给 scoped slots 传递多个参数
      */
     'vue/no-multiple-slot-args': 'error',
-    /**
-     * 禁止模版中有多个根节点
-     */
-    'vue/no-multiple-template-root': 'error',
     /**
      * 禁止修改组件的 props
      */
@@ -509,21 +501,9 @@ module.exports = {
      */
     'vue/no-useless-v-bind': 'error',
     /**
-     * 禁止有 v-for 属性时又有 key 属性
-     */
-    'vue/no-v-for-template-key': 'error',
-    /**
-     * 禁止 v-for 属性的子节点有 key 属性
-     */
-    'vue/no-v-for-template-key-on-child': 'error',
-    /**
      * 禁止使用 v-html
      */
     'vue/no-v-html': 'off',
-    /**
-     * 禁止给 v-model 属性添加参数
-     */
-    'vue/no-v-model-argument': 'error',
     /**
      * 禁止使用 v-text
      */
@@ -700,10 +680,6 @@ module.exports = {
      * v-bind 指令必须合法
      */
     'vue/valid-v-bind': 'error',
-    /**
-     * v-bind:foo.sync 指令必须合法
-     */
-    'vue/valid-v-bind-sync': 'error',
     /**
      * v-cloak 指令必须合法
      */
