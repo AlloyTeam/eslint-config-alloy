@@ -931,6 +931,7 @@ module.exports = {
       'error',
       'always',
       {
+        markers: ['/'],
         block: {
           exceptions: ['*'],
           balanced: true,
