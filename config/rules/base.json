@@ -2069,7 +2069,7 @@
   },
   "spaced-comment": {
     "name": "spaced-comment",
-    "value": ["error", "always", { "block": { "exceptions": ["*"], "balanced": true } }],
+    "value": ["error", "always", { "markers": ["/"], "block": { "exceptions": ["*"], "balanced": true } }],
     "description": "注释的斜线或 * 后必须有空格",
     "reason": "",
     "badExample": "<span class=\"token comment\"><mark class=\"eslint-error\" data-tip=\"Expected space or tab after &amp;apos;//&amp;apos; in comment.&lt;br/&gt;&lt;span class='eslint-error-rule-id'&gt;eslint(spaced-comment)&lt;/span&gt;\">//foo</mark></span>\n<span class=\"token comment\"><mark class=\"eslint-error\" data-tip=\"Expected exception block, space or tab after &amp;apos;/*&amp;apos; in comment.&lt;br/&gt;&lt;span class='eslint-error-rule-id'&gt;eslint(spaced-comment)&lt;/span&gt;\">/*bar */</mark></span>\n<span class=\"token comment\"><mark class=\"eslint-error\" data-tip=\"Expected exception block, space or tab after &amp;apos;/**&amp;apos; in comment.&lt;br/&gt;&lt;span class='eslint-error-rule-id'&gt;eslint(spaced-comment)&lt;/span&gt;\">/**baz */</mark></span>",
