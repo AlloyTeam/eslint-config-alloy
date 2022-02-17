@@ -9,6 +9,14 @@ let activeRules: string[] = [];
 let deprecatedRules: string[] = [];
 // https://github.com/prettier/eslint-config-prettier/pull/217
 const prettierRules = [...Object.keys(require('eslint-config-prettier').rules), 'vue/quote-props'];
+const vue2Rules = [
+  'vue/no-custom-modifiers-on-v-model',
+  'vue/no-multiple-template-root',
+  'vue/no-v-for-template-key',
+  'vue/no-v-for-template-key-on-child',
+  'vue/no-v-model-argument',
+  'vue/valid-v-bind-sync',
+];
 
 // 填充 deprecatedRules 和 activeRules
 Object.values(NAMESPACE_CONFIG).forEach(({ rulePrefix, pluginName }) => {
@@ -22,6 +30,9 @@ Object.values(NAMESPACE_CONFIG).forEach(({ rulePrefix, pluginName }) => {
       return;
     }
     if (prettierRules.includes(fullRuleName)) {
+      return;
+    }
+    if (vue2Rules.includes(fullRuleName)) {
       return;
     }
     activeRules.push(fullRuleName);
@@ -49,6 +60,10 @@ NAMESPACES.forEach((namespace) => {
       }
       if (prettierRules.includes(fullRuleName)) {
         errors.push(`${fullRuleName} is ignored by prettier, please REMOVE it`);
+        return;
+      }
+      if (vue2Rules.includes(fullRuleName)) {
+        errors.push(`${fullRuleName} is ignored by vue2, please REMOVE it`);
         return;
       }
       if (activeRules.includes(fullRuleName)) {
