@@ -109,6 +109,17 @@
     "extendsBaseRule": "",
     "requiresTypeChecking": false
   },
+  "@typescript-eslint/consistent-type-exports": {
+    "name": "@typescript-eslint/consistent-type-exports",
+    "value": "off",
+    "description": "一致的类型导出语法",
+    "reason": "",
+    "badExample": "",
+    "goodExample": "",
+    "fixable": true,
+    "extendsBaseRule": "",
+    "requiresTypeChecking": true
+  },
   "@typescript-eslint/consistent-type-imports": {
     "name": "@typescript-eslint/consistent-type-imports",
     "value": "off",

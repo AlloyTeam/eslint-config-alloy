@@ -7,7 +7,8 @@ import { NAMESPACE_CONFIG, NAMESPACES } from '../config';
 /** 可用的规则（去除废弃的和 Prettier 的规则） */
 let activeRules: string[] = [];
 let deprecatedRules: string[] = [];
-const prettierRules = Object.keys(require('eslint-config-prettier').rules);
+// https://github.com/prettier/eslint-config-prettier/pull/217
+const prettierRules = [...Object.keys(require('eslint-config-prettier').rules), 'vue/quote-props'];
 
 // 填充 deprecatedRules 和 activeRules
 Object.values(NAMESPACE_CONFIG).forEach(({ rulePrefix, pluginName }) => {
@@ -63,6 +64,22 @@ if (remainingRules.length > 0) {
       .map((ruleName) => `\n  - ${ruleName} ${getDocsUrlFromRuleName(ruleName)}`)
       .join('')}`,
   );
+  //   remainingRules.forEach((ruleName) => {
+  //     fs.mkdirSync(path.resolve(__dirname, '../test', ruleName));
+  //     fs.writeFileSync(
+  //       path.resolve(__dirname, '../test', ruleName, '.eslintrc.js'),
+  //       `module.exports = {
+  //   rules: {
+  //     /**
+  //      *
+  //      */
+  //     '${ruleName.split('/')[1]}': 'off',
+  //   },
+  // };
+  // `,
+  //       'utf-8',
+  //     );
+  //   });
 }
 
 if (errors.length > 0) {

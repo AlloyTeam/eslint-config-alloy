@@ -373,8 +373,6 @@ npm i
 npm run build
 # 执行测试
 npm test
-# 自动修复 ESLint 错误
-npm run eslint:fix
 # 自动修复格式错误
 npm run prettier:fix
 # 检查是否覆盖了所有的规则

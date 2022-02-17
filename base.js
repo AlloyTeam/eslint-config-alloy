@@ -14,13 +14,13 @@
  *
  * 依赖版本：
  *   eslint ^7.32.0
- *   @babel/eslint-parser ^7.15.8
- *   @babel/preset-react ^7.14.5
- *   eslint-plugin-react ^7.26.1
- *   vue-eslint-parser ^7.11.0
- *   eslint-plugin-vue ^7.19.1
- *   @typescript-eslint/parser ^5.0.0
- *   @typescript-eslint/eslint-plugin ^5.0.0
+ *   @babel/eslint-parser ^7.17.0
+ *   @babel/preset-react ^7.16.7
+ *   eslint-plugin-react ^7.28.0
+ *   vue-eslint-parser ^8.2.0
+ *   eslint-plugin-vue ^8.4.1
+ *   @typescript-eslint/parser ^5.12.0
+ *   @typescript-eslint/eslint-plugin ^5.12.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  */

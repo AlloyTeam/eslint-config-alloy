@@ -14,13 +14,13 @@
  *
  * 依赖版本：
  *   eslint ^7.32.0
- *   @babel/eslint-parser ^7.15.8
- *   @babel/preset-react ^7.14.5
- *   eslint-plugin-react ^7.26.1
- *   vue-eslint-parser ^7.11.0
- *   eslint-plugin-vue ^7.19.1
- *   @typescript-eslint/parser ^5.0.0
- *   @typescript-eslint/eslint-plugin ^5.0.0
+ *   @babel/eslint-parser ^7.17.0
+ *   @babel/preset-react ^7.16.7
+ *   eslint-plugin-react ^7.28.0
+ *   vue-eslint-parser ^8.2.0
+ *   eslint-plugin-vue ^8.4.1
+ *   @typescript-eslint/parser ^5.12.0
+ *   @typescript-eslint/eslint-plugin ^5.12.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  */
@@ -83,6 +83,10 @@ module.exports = {
      */
     'vue/component-name-in-template-casing': 'off',
     /**
+     * 限制组件名称的命名规范
+     */
+    'vue/component-options-name-casing': 'off',
+    /**
      * 组件中必须按照 <script>, <template>, <style> 排序
      * @reason 这是官方建议的顺序
      */
@@ -107,6 +111,11 @@ module.exports = {
      */
     eqeqeq: 'off',
     'vue/eqeqeq': ['error', 'always'],
+    /**
+     * 标签的第一个属性必须换行
+     * @reason 代码格式问题，最好由 Prettier 解决
+     */
+    'vue/first-attribute-linebreak': 'off',
     /**
      * button 标签必须有 type 属性
      */
@@ -135,6 +144,10 @@ module.exports = {
      */
     'vue/match-component-file-name': 'off',
     /**
+     * 组件名称必须是两个以上的单词
+     */
+    'vue/multi-word-component-names': 'off',
+    /**
      * 多行属性之间必须有空行
      * @reason 代码格式问题，最好由 Prettier 解决
      */
@@ -160,6 +173,14 @@ module.exports = {
      * @reason 类型相关的约束交给 TypeScript
      */
     'vue/no-boolean-default': 'off',
+    /**
+     * 禁止有 v-html 或 v-text 属性的标签内部还有内容
+     */
+    'vue/no-child-content': 'error',
+    /**
+     * 禁止 data() 中有计算属性
+     */
+    'vue/no-computed-properties-in-data': 'error',
     /**
      * 禁止将常量作为分支条件判断中的测试表达式，但允许作为循环条件判断中的测试表达式
      */
@@ -209,6 +230,10 @@ module.exports = {
      * 禁止使用已废弃的 this
      */
     'vue/no-deprecated-props-default-this': 'error',
+    /**
+     * 禁止使用已废弃的 tag 属性
+     */
+    'vue/no-deprecated-router-link-tag-prop': 'error',
     /**
      * 禁用已废弃的 scope 属性
      */
@@ -277,6 +302,10 @@ module.exports = {
      */
     'vue/no-export-in-script-setup': 'error',
     /**
+     * 禁止在 await 之后调用 expose
+     */
+    'vue/no-expose-after-await': 'error',
+    /**
      * 禁止 model 中出现错误的属性
      */
     'vue/no-invalid-model-keys': 'error',
@@ -302,6 +331,11 @@ module.exports = {
      * 禁止出现没必要的 <template>
      */
     'vue/no-lone-template': 'error',
+    /**
+     * 禁止使用超出 js 精度范围的数字
+     */
+    'no-loss-of-precision': 'off',
+    'vue/no-loss-of-precision': 'error',
     /**
      * 禁止 class 中出现复数的对象
      */
@@ -338,6 +372,10 @@ module.exports = {
      * 禁止覆盖保留字
      */
     'vue/no-reserved-keys': 'error',
+    /**
+     * 禁止使用保留的 props
+     */
+    'vue/no-reserved-props': 'error',
     /**
      * 禁止在模版中使用指定的 block
      */
@@ -417,9 +455,13 @@ module.exports = {
      */
     'vue/no-this-in-before-route-enter': 'error',
     /**
-     * 禁止使用未注册的组件
+     * 禁止使用未定义的组件
      */
-    'vue/no-unregistered-components': 'off',
+    'vue/no-undef-components': 'off',
+    /**
+     * 禁止使用未定义的属性
+     */
+    'vue/no-undef-properties': 'off',
     /**
      * 当你的 vue 版本较老时，禁用还未支持的语法
      */
@@ -487,9 +529,19 @@ module.exports = {
      */
     'vue/no-v-text': 'off',
     /**
+     * 禁止在组件中使用 v-text v-html
+     */
+    'vue/no-v-text-v-html-on-component': 'error',
+    /**
      * 禁止在 await 之后调用 watch
      */
     'vue/no-watch-after-await': 'error',
+    /**
+     * 必须使用 a = {b} 而不是 a = {b: b}
+     * @reason 有时后者可以使代码结构更清晰
+     */
+    'object-shorthand': 'off',
+    'vue/object-shorthand': 'off',
     /**
      * 一个文件必须仅包含一个组件
      */
@@ -499,10 +551,14 @@ module.exports = {
      */
     'vue/order-in-components': 'error',
     /**
-     * <template> <script> <style> 之间必须由空行
+     * <template> <script> <style> 之间必须有空行
      * @reason 代码格式问题，最好由 Prettier 解决
      */
     'vue/padding-line-between-blocks': 'off',
+    /**
+     * 在模版中必须用单独的 class 属性表达静态类的名字
+     */
+    'vue/prefer-separate-static-class': 'off',
     /**
      * 必须使用模版字符串而不是字符串连接
      */

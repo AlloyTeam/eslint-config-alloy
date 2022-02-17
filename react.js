@@ -14,13 +14,13 @@
  *
  * 依赖版本：
  *   eslint ^7.32.0
- *   @babel/eslint-parser ^7.15.8
- *   @babel/preset-react ^7.14.5
- *   eslint-plugin-react ^7.26.1
- *   vue-eslint-parser ^7.11.0
- *   eslint-plugin-vue ^7.19.1
- *   @typescript-eslint/parser ^5.0.0
- *   @typescript-eslint/eslint-plugin ^5.0.0
+ *   @babel/eslint-parser ^7.17.0
+ *   @babel/preset-react ^7.16.7
+ *   eslint-plugin-react ^7.28.0
+ *   vue-eslint-parser ^8.2.0
+ *   eslint-plugin-vue ^8.4.1
+ *   @typescript-eslint/parser ^5.12.0
+ *   @typescript-eslint/eslint-plugin ^5.12.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  */
@@ -191,6 +191,10 @@ module.exports = {
      */
     'react/no-array-index-key': 'off',
     /**
+     * 类组件中的生命周期函数不要使用箭头函数
+     */
+    'react/no-arrow-function-lifecycle': 'off',
+    /**
      * 禁止将 children 作为一个 prop
      */
     'react/no-children-prop': 'error',
@@ -223,6 +227,11 @@ module.exports = {
      * 禁止使用 findDOMNode
      */
     'react/no-find-dom-node': 'error',
+    /**
+     * 禁用指定的 html 属性
+     * @reason 需要指定特定属性时才需要开启
+     */
+    'react/no-invalid-html-attribute': 'off',
     /**
      * 禁止使用 isMounted
      * @reason 它是已废弃的语法
@@ -282,6 +291,10 @@ module.exports = {
      * 禁止在组件内使用不稳定的组件
      */
     'react/no-unstable-nested-components': 'error',
+    /**
+     * 禁止在类组件中定义未使用的方法
+     */
+    'react/no-unused-class-component-methods': 'off',
     /**
      * 禁止出现未使用的 propTypes
      * @reason 类型相关的约束交给 TypeScript

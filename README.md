@@ -347,8 +347,6 @@ npm i
 npm run build
 # run tests
 npm test
-# autofix ESLint errors
-npm run eslint:fix
 # autofix prettier errors
 npm run prettier:fix
 # check if all rules are covered
