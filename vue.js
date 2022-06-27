@@ -5,22 +5,26 @@
  * 贡献者：
  *   xcatliu <xcatliu@gmail.com>
  *   heyli <lcxfs1991@gmail.com>
- *   Swan <noreply@github.com>
+ *   Xuing <admin@xuing.cn>
+ *   Dash Chen <dc3671@users.noreply.github.com>
  *   DiamondYuan <admin@diamondyuan.com>
- *   Dash Chen <noreply@github.com>
+ *   Roy Revelt <roy@codsen.com>
+ *   Swan <1021808625@qq.com>
+ *   kenve <zwei.xie@gmail.com>
  *   lzw <mingxin2014@gmail.com>
  *   ryoliu <sfesh@163.com>
  *   sunhui04 <sunhui04@meituan.com>
+ *   zoubingwu <zoubingwu@gmail.com>
  *
  * 依赖版本：
- *   eslint ^7.32.0
- *   @babel/eslint-parser ^7.17.0
- *   @babel/preset-react ^7.16.7
- *   eslint-plugin-react ^7.28.0
- *   vue-eslint-parser ^8.2.0
- *   eslint-plugin-vue ^8.4.1
- *   @typescript-eslint/parser ^5.12.0
- *   @typescript-eslint/eslint-plugin ^5.12.0
+ *   eslint ^8.18.0
+ *   @babel/eslint-parser ^7.18.2
+ *   @babel/preset-react ^7.17.12
+ *   eslint-plugin-react ^7.30.1
+ *   vue-eslint-parser ^9.0.3
+ *   eslint-plugin-vue ^9.1.1
+ *   @typescript-eslint/parser ^5.29.0
+ *   @typescript-eslint/eslint-plugin ^5.29.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  */
@@ -97,9 +101,13 @@ module.exports = {
       },
     ],
     /**
-     * 自定义事件名必须用 kebab-case 风格
+     * 自定义事件名必须用 camelCase 风格
      */
     'vue/custom-event-name-casing': 'error',
+    /**
+     * 必须按规则排序 defineEmits 和 defineProps
+     */
+    'vue/define-macros-order': 'error',
     /**
      * 禁止使用 foo['bar']，必须写成 foo.bar
      * @reason 当需要写一系列属性的时候，可以更统一
@@ -143,6 +151,10 @@ module.exports = {
      * 组件名称必须和文件名一致
      */
     'vue/match-component-file-name': 'off',
+    /**
+     * 导出的组件名称必须保持一致性
+     */
+    'vue/match-component-import-name': 'off',
     /**
      * 组件名称必须是两个以上的单词
      */
@@ -302,10 +314,6 @@ module.exports = {
      */
     'vue/no-expose-after-await': 'error',
     /**
-     * 禁止 model 中出现错误的属性
-     */
-    'vue/no-invalid-model-keys': 'error',
-    /**
      * 禁止使用特殊空白符（比如全角空格），除非是出现在字符串、正则表达式、模版字符串中或 HTML 内容中
      */
     'no-irregular-whitespace': 'off',
@@ -388,6 +396,10 @@ module.exports = {
      * 禁止使用特定的自定义事件
      */
     'vue/no-restricted-custom-event': 'off',
+    /**
+     * 禁止使用指定的元素
+     */
+    'vue/no-restricted-html-elements': 'off',
     /**
      * 禁止使用特定的 props
      */
@@ -536,6 +548,14 @@ module.exports = {
      */
     'vue/padding-line-between-blocks': 'off',
     /**
+     * 必须导入 vue 而不是 @vue/*
+     */
+    'vue/prefer-import-from-vue': 'error',
+    /**
+     * Boolean 必须是组件 prop 的第一个参数
+     */
+    'vue/prefer-prop-type-boolean-first': 'off',
+    /**
      * 在模版中必须用单独的 class 属性表达静态类的名字
      */
     'vue/prefer-separate-static-class': 'off',
@@ -544,6 +564,10 @@ module.exports = {
      */
     'prefer-template': 'off',
     'vue/prefer-template': 'off',
+    /**
+     * v-bind 值为 true 时，必须省略显示声明
+     */
+    'vue/prefer-true-attribute-shorthand': 'error',
     /**
      * props 必须用驼峰式
      */
@@ -617,10 +641,6 @@ module.exports = {
      */
     'vue/return-in-emits-validator': 'error',
     /**
-     * script setup 中定义的变量必须使用
-     */
-    'vue/script-setup-uses-vars': 'error',
-    /**
      * props 的键名必须排好序
      */
     'vue/sort-keys': 'off',
@@ -661,6 +681,10 @@ module.exports = {
      */
     'vue/v-slot-style': 'off',
     /**
+     * 属性名必须合法
+     */
+    'vue/valid-attribute-name': 'error',
+    /**
      * defineEmits 必须使用合法的语法
      */
     'vue/valid-define-emits': 'off',
@@ -668,6 +692,10 @@ module.exports = {
      * defineProps 必须使用合法的语法
      */
     'vue/valid-define-props': 'off',
+    /**
+     * model 的属性名必须合法
+     */
+    'vue/valid-model-definition': 'error',
     /**
      * 禁止调用 Vue.nextTick 或 vm.$nextTick 时不使用 await
      */

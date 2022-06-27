@@ -4,10 +4,10 @@ import ReactTooltip from 'react-tooltip';
 import { NAMESPACES, Namespace } from '../../config';
 import { GitHubCorner } from './GitHubCorner';
 import { RuleTable } from './RuleTable';
-import { LanguageSwtich } from './LanguageSwtich';
+import { LanguageSwitch } from './LanguageSwitch';
 import { getLanguage, getQuery, newUrl, replaceUrl, defaultTo, t } from '../utils';
 
-export const App: React.SFC = () => {
+export const App: React.FC = () => {
   const query = getQuery();
   const [namespace, setNamespace] = useState(defaultTo<Namespace>(query.rule, NAMESPACES[0], NAMESPACES));
   const [hideOff, toggleHideOff] = useState(query.hideOff === '1');
@@ -25,7 +25,7 @@ export const App: React.SFC = () => {
     <div className="flex-center">
       <div className="container-fluid">
         <h1 className="site-title">eslint-config-alloy</h1>
-        <LanguageSwtich language={language} />
+        <LanguageSwitch language={language} />
         <form className="top-gap site-form">
           <select
             value={namespace}

@@ -5,22 +5,26 @@
  * 贡献者：
  *   xcatliu <xcatliu@gmail.com>
  *   heyli <lcxfs1991@gmail.com>
- *   Swan <noreply@github.com>
+ *   Xuing <admin@xuing.cn>
+ *   Dash Chen <dc3671@users.noreply.github.com>
  *   DiamondYuan <admin@diamondyuan.com>
- *   Dash Chen <noreply@github.com>
+ *   Roy Revelt <roy@codsen.com>
+ *   Swan <1021808625@qq.com>
+ *   kenve <zwei.xie@gmail.com>
  *   lzw <mingxin2014@gmail.com>
  *   ryoliu <sfesh@163.com>
  *   sunhui04 <sunhui04@meituan.com>
+ *   zoubingwu <zoubingwu@gmail.com>
  *
  * 依赖版本：
- *   eslint ^7.32.0
- *   @babel/eslint-parser ^7.17.0
- *   @babel/preset-react ^7.16.7
- *   eslint-plugin-react ^7.28.0
- *   vue-eslint-parser ^8.2.0
- *   eslint-plugin-vue ^8.4.1
- *   @typescript-eslint/parser ^5.12.0
- *   @typescript-eslint/eslint-plugin ^5.12.0
+ *   eslint ^8.18.0
+ *   @babel/eslint-parser ^7.18.2
+ *   @babel/preset-react ^7.17.12
+ *   eslint-plugin-react ^7.30.1
+ *   vue-eslint-parser ^9.0.3
+ *   eslint-plugin-vue ^9.1.1
+ *   @typescript-eslint/parser ^5.29.0
+ *   @typescript-eslint/eslint-plugin ^5.29.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  */
@@ -292,6 +296,10 @@ module.exports = {
      * 禁止对使用 const 定义的常量重新赋值
      */
     'no-const-assign': 'error',
+    /**
+     * 禁止出现不影响值的表达式
+     */
+    'no-constant-binary-expression': 'error',
     /**
      * 禁止将常量作为分支条件判断中的测试表达式，但允许作为循环条件判断中的测试表达式
      */
@@ -745,6 +753,10 @@ module.exports = {
      */
     'no-unused-labels': 'off',
     /**
+     * 禁止类出现未使用的私有成员
+     */
+    'no-unused-private-class-members': 'error',
+    /**
      * 已定义的变量必须使用
      */
     'no-unused-vars': [
@@ -865,6 +877,10 @@ module.exports = {
      * 必须使用 0b11111011 而不是 parseInt()
      */
     'prefer-numeric-literals': 'off',
+    /**
+     * 使用 Object.hasOwn() 而不是 Object.prototype.hasOwnProperty.call()
+     */
+    'prefer-object-has-own': 'error',
     /**
      * 必须使用 ... 而不是 Object.assign，除非 Object.assign 的第一个参数是一个变量
      */

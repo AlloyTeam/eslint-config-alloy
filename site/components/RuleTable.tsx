@@ -8,7 +8,7 @@ interface RuleTableProps {
   hideOff: boolean;
 }
 
-export const RuleTable: React.SFC<RuleTableProps> = ({ namespace, hideOff }) => {
+export const RuleTable: React.FC<RuleTableProps> = ({ namespace, hideOff }) => {
   return (
     <div className="container-fluid">
       <div className="flex-left flex-wrap units-gap hide-on-mobile">

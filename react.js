@@ -5,22 +5,26 @@
  * 贡献者：
  *   xcatliu <xcatliu@gmail.com>
  *   heyli <lcxfs1991@gmail.com>
- *   Swan <noreply@github.com>
+ *   Xuing <admin@xuing.cn>
+ *   Dash Chen <dc3671@users.noreply.github.com>
  *   DiamondYuan <admin@diamondyuan.com>
- *   Dash Chen <noreply@github.com>
+ *   Roy Revelt <roy@codsen.com>
+ *   Swan <1021808625@qq.com>
+ *   kenve <zwei.xie@gmail.com>
  *   lzw <mingxin2014@gmail.com>
  *   ryoliu <sfesh@163.com>
  *   sunhui04 <sunhui04@meituan.com>
+ *   zoubingwu <zoubingwu@gmail.com>
  *
  * 依赖版本：
- *   eslint ^7.32.0
- *   @babel/eslint-parser ^7.17.0
- *   @babel/preset-react ^7.16.7
- *   eslint-plugin-react ^7.28.0
- *   vue-eslint-parser ^8.2.0
- *   eslint-plugin-vue ^8.4.1
- *   @typescript-eslint/parser ^5.12.0
- *   @typescript-eslint/eslint-plugin ^5.12.0
+ *   eslint ^8.18.0
+ *   @babel/eslint-parser ^7.18.2
+ *   @babel/preset-react ^7.17.12
+ *   eslint-plugin-react ^7.30.1
+ *   vue-eslint-parser ^9.0.3
+ *   eslint-plugin-vue ^9.1.1
+ *   @typescript-eslint/parser ^5.29.0
+ *   @typescript-eslint/eslint-plugin ^5.29.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  */
@@ -83,6 +87,14 @@ module.exports = {
      */
     'react/function-component-definition': 'off',
     /**
+     * hook 的返回值必须与 useState 的解构对应
+     */
+    'react/hook-use-state': 'off',
+    /**
+     * iframe 组件必须添加 sandbox 属性
+     */
+    'react/iframe-missing-sandbox': 'error',
+    /**
      * 布尔值的属性必须显式的声明值为 true
      */
     'react/jsx-boolean-value': 'off',
@@ -132,6 +144,10 @@ module.exports = {
      * 禁止出现重复的 props
      */
     'react/jsx-no-duplicate-props': 'error',
+    /**
+     * 使用 && 渲染组件时，禁止条件是 0 '' 或 NaN
+     */
+    'react/jsx-no-leaked-render': 'off',
     /**
      * 禁止在 jsx 中出现字符串
      */

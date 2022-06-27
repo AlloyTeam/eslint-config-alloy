@@ -9,5 +9,30 @@
   },
   "vetur.format.enable": false,
   "vetur.validation.template": false,
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "cSpell.words": [
+    "alloyteam",
+    "copyfiles",
+    "eslintconfig",
+    "heyli",
+    "iframe",
+    "kenve",
+    "mobi",
+    "pnpm",
+    "Revelt",
+    "ryoliu",
+    "styleguide",
+    "sunhui",
+    "xcatliu",
+    "Xuing",
+    "zoubingwu"
+  ],
+  "cSpell.ignorePaths": [
+    "pnpm-lock.yaml",
+    "node_modules",
+    "vscode-extension",
+    ".git/objects",
+    ".vscode",
+    ".vscode-insiders"
+  ]
 }

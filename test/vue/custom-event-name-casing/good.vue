@@ -1,11 +1,11 @@
 <template>
-  <button @click="$emit('my-event')" />
+  <button @click="$emit('myEvent')" />
 </template>
 <script>
 export default {
   methods: {
     onClick() {
-      this.$emit('my-event');
+      this.$emit('myEvent');
       this.$emit('update:myProp', myProp);
     },
   },

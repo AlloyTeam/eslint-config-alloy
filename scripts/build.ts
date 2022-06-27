@@ -53,7 +53,7 @@ class Builder {
     const { rulePrefix, pluginName } = NAMESPACE_CONFIG[this.namespace];
     const ruleEntries = pluginName
       ? Object.entries<any>(require(pluginName).rules)
-      : Array.from<any>(require('eslint/lib/rules').entries());
+      : Array.from<any>(require('eslint/use-at-your-own-risk').builtinRules.entries());
     return ruleEntries.reduce((prev, [ruleName, ruleValue]) => {
       const fullRuleName = rulePrefix + ruleName;
       const meta = ruleValue.meta;

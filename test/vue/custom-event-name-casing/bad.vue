@@ -1,11 +1,11 @@
 <template>
-  <button @click="$emit('myEvent')" />
+  <button @click="$emit('my-event')" />
 </template>
 <script>
 export default {
   methods: {
     onClick() {
-      this.$emit('myEvent');
+      this.$emit('my-event');
     },
   },
 };

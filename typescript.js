@@ -5,22 +5,26 @@
  * 贡献者：
  *   xcatliu <xcatliu@gmail.com>
  *   heyli <lcxfs1991@gmail.com>
- *   Swan <noreply@github.com>
+ *   Xuing <admin@xuing.cn>
+ *   Dash Chen <dc3671@users.noreply.github.com>
  *   DiamondYuan <admin@diamondyuan.com>
- *   Dash Chen <noreply@github.com>
+ *   Roy Revelt <roy@codsen.com>
+ *   Swan <1021808625@qq.com>
+ *   kenve <zwei.xie@gmail.com>
  *   lzw <mingxin2014@gmail.com>
  *   ryoliu <sfesh@163.com>
  *   sunhui04 <sunhui04@meituan.com>
+ *   zoubingwu <zoubingwu@gmail.com>
  *
  * 依赖版本：
- *   eslint ^7.32.0
- *   @babel/eslint-parser ^7.17.0
- *   @babel/preset-react ^7.16.7
- *   eslint-plugin-react ^7.28.0
- *   vue-eslint-parser ^8.2.0
- *   eslint-plugin-vue ^8.4.1
- *   @typescript-eslint/parser ^5.12.0
- *   @typescript-eslint/eslint-plugin ^5.12.0
+ *   eslint ^8.18.0
+ *   @babel/eslint-parser ^7.18.2
+ *   @babel/preset-react ^7.17.12
+ *   eslint-plugin-react ^7.30.1
+ *   vue-eslint-parser ^9.0.3
+ *   eslint-plugin-vue ^9.1.1
+ *   @typescript-eslint/parser ^5.29.0
+ *   @typescript-eslint/eslint-plugin ^5.29.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  */
@@ -61,6 +65,10 @@ module.exports = {
      * 类的只读属性若是一个字面量，则必须使用只读属性而不是 getter
      */
     '@typescript-eslint/class-literal-property-style': ['error', 'fields'],
+    /**
+     * 使用 Map 或 Set 时，必须在构造函数上用泛型定义类型
+     */
+    '@typescript-eslint/consistent-generic-constructors': 'off',
     /**
      * 必须使用内置的 Record<K, T> 来描述仅包含可索引成员的接口
      */
@@ -197,10 +205,9 @@ module.exports = {
     'no-dupe-class-members': 'off',
     '@typescript-eslint/no-dupe-class-members': 'off',
     /**
-     * 禁止重复导入模块
+     * 禁止枚举类型存在两个相同的值
      */
-    'no-duplicate-imports': 'off',
-    '@typescript-eslint/no-duplicate-imports': 'error',
+    '@typescript-eslint/no-duplicate-enum-values': 'error',
     /**
      * 禁止 delete 时传入的 key 是动态的
      */
@@ -311,16 +318,15 @@ module.exports = {
      */
     '@typescript-eslint/no-non-null-assertion': 'off',
     /**
-     * 禁止给类的构造函数的参数添加修饰符
-     * @reason 强制所有属性都定义到类里面，比较统一
-     */
-    '@typescript-eslint/no-parameter-properties': 'error',
-    /**
      * 禁止重复定义变量
      * @reason 禁用 var 之后，编译阶段就会报错了
      */
     'no-redeclare': 'off',
     '@typescript-eslint/no-redeclare': 'off',
+    /**
+     * 禁止无用的联合类型或交叉类型
+     */
+    '@typescript-eslint/no-redundant-type-constituents': 'off',
     /**
      * 禁止使用 require
      * @reason 统一使用 import 来引入模块，特殊情况使用单行注释允许 require 引入
@@ -428,6 +434,10 @@ module.exports = {
     'no-useless-constructor': 'off',
     '@typescript-eslint/no-useless-constructor': 'error',
     /**
+     * 禁止导出空对象
+     */
+    '@typescript-eslint/no-useless-empty-export': 'off',
+    /**
      * 禁止使用 require 来引入模块
      * @reason no-require-imports 规则已经约束了 require
      */
@@ -441,6 +451,10 @@ module.exports = {
      */
     'padding-line-between-statements': 'off',
     '@typescript-eslint/padding-line-between-statements': 'off',
+    /**
+     * 类的构造函数参数作为类属性时，必须加上可访问性修饰符
+     */
+    '@typescript-eslint/parameter-properties': 'off',
     /**
      * 使用 as const 替代 as 'bar'
      * @reason as const 是新语法，不是很常见

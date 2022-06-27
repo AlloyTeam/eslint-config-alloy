@@ -2,7 +2,7 @@
 .DS_Store
 .idea
 .editorconfig
-package-lock.json
+pnpm-lock.yaml
 .npmrc
 
 # Ignored suffix
