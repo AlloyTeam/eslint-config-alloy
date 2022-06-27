@@ -15,13 +15,13 @@ jobs:
           node-version: '14'
 
       - name: Install
-        run: npm install
+        run: npm i pnpm -g && pnpm i
 
       - name: Run tests
-        run: npm test
+        run: pnpm test
 
       - name: Build gh-pages
-        run: npm run build
+        run: pnpm build
 
       - name: Deploy gh-pages
         if: |
