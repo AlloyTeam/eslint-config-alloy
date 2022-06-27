@@ -342,15 +342,15 @@ A best practice for VSCode is to auto format code with Prettier and autofix erro
 
 ```bash
 # install dependencies
-npm i
+pnpm i
 # build eslintrc like index.js, react.js, etc.
-npm run build
+pnpm build
 # run tests
-npm test
+pnpm test
 # autofix prettier errors
-npm run prettier:fix
+pnpm prettier:fix
 # check if all rules are covered
-npm run rulesCoverage
+pnpm rulesCoverage
 # publish new version
 npm version <major|minor|patch>
 git push --follow-tags

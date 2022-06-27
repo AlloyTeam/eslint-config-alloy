@@ -368,15 +368,15 @@ VSCode 的一个最佳实践就是通过配置 `.vscode/settings.json` 来支持
 
 ```bash
 # 安装依赖
-npm i
+pnpm i
 # 构建 index.js react.js 等 eslintrc 配置
-npm run build
+pnpm build
 # 执行测试
-npm test
+pnpm test
 # 自动修复格式错误
-npm run prettier:fix
+pnpm prettier:fix
 # 检查是否覆盖了所有的规则
-npm run rulesCoverage
+pnpm rulesCoverage
 # 发布新版本
 npm version <major|minor|patch>
 git push --follow-tags
