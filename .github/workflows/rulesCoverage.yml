@@ -21,9 +21,11 @@ jobs:
           node-version: '14'
 
       - name: Install
-        run: npm run update
+        run: |
+          npm i pnpm -g &&
+          pnpm i && pnpm update
 
       - name: Run tests
         run: |
-          npm test &&
-          npm run rulesCoverage
+          pnpm test &&
+          pnpm rulesCoverage

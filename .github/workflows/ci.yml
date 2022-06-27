@@ -15,7 +15,9 @@ jobs:
           node-version: '14'
 
       - name: Install
-        run: npm i pnpm -g && pnpm i
+        run: |
+          npm i pnpm -g &&
+          pnpm i && pnpm update
 
       - name: Run tests
         run: pnpm test
