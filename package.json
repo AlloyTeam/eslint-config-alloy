@@ -2,31 +2,6 @@
   "name": "eslint-config-alloy",
   "version": "4.6.0",
   "description": "AlloyTeam ESLint 规则",
-  "main": "index.js",
-  "scripts": {
-    "start": "pnpm dev",
-    "dev": "run-p dev:*",
-    "dev:eslintrc": "nodemon",
-    "dev:copyfiles": "pnpm build:copyfiles && chokidar \"site/public/**/*\" -c \"pnpm build:copyfiles\"",
-    "dev:webpack-dev-server": "webpack serve --open",
-    "build": "run-s build:*",
-    "build:eslintrc": "ts-node scripts/build.ts",
-    "build:clean": "rimraf ./dist",
-    "build:copyfiles": "copyfiles -u 2 \"site/public/**/*\" dist/public",
-    "build:site": "webpack",
-    "test": "pnpm lint && ts-node ./test/index.ts",
-    "lint": "run-s eslint prettier",
-    "eslint": "eslint --ext .js,.jsx,.ts,.tsx,.vue --ignore-pattern \"bad.*\" .",
-    "prettier": "prettier -l \"./**/*\"",
-    "prettier:fix": "prettier --write -l \"./**/*\"",
-    "prepare": "husky install",
-    "update": "pnpm up --latest",
-    "rulesCoverage": "ts-node ./scripts/rulesCoverage.ts"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AlloyTeam/eslint-config-alloy.git"
-  },
   "keywords": [
     "eslint",
     "eslintrc",
@@ -40,6 +15,11 @@
     "vue",
     "typescript"
   ],
+  "homepage": "https://alloyteam.github.io/eslint-config-alloy/",
+  "bugs": {
+    "url": "https://github.com/AlloyTeam/eslint-config-alloy/issues"
+  },
+  "license": "MIT",
   "author": "xcatliu <xcatliu@gmail.com>",
   "contributors": [
     "heyli <lcxfs1991@gmail.com>",
@@ -54,13 +34,31 @@
     "sunhui04 <sunhui04@meituan.com>",
     "zoubingwu <zoubingwu@gmail.com>"
   ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/AlloyTeam/eslint-config-alloy/issues"
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlloyTeam/eslint-config-alloy.git"
   },
-  "homepage": "https://alloyteam.github.io/eslint-config-alloy/",
-  "publishConfig": {
-    "access": "public"
+  "scripts": {
+    "start": "pnpm dev",
+    "dev": "run-p dev:*",
+    "dev:eslintrc": "nodemon",
+    "dev:copyfiles": "pnpm build:copyfiles && chokidar \"site/public/**/*\" -c \"pnpm build:copyfiles\"",
+    "dev:webpack-dev-server": "webpack serve --open",
+    "build": "run-s build:*",
+    "build:eslintrc": "ts-node scripts/build.ts",
+    "build:clean": "rimraf dist",
+    "build:copyfiles": "copyfiles -u 2 \"site/public/**/*\" dist/public",
+    "build:site": "webpack",
+    "clean": "rimraf dist node_modules",
+    "test": "pnpm lint && ts-node ./test/index.ts",
+    "lint": "run-s eslint prettier",
+    "eslint": "eslint --ext .js,.jsx,.ts,.tsx,.vue --ignore-pattern \"bad.*\" .",
+    "prettier": "prettier -l \"./**/*\"",
+    "prettier:fix": "prettier --write -l \"./**/*\"",
+    "prepare": "husky install",
+    "update": "pnpm up --latest",
+    "rulesCoverage": "ts-node ./scripts/rulesCoverage.ts"
   },
   "devDependencies": {
     "@babel/core": "^7.18.5",
@@ -107,5 +105,42 @@
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.9.2",
     "xml-escape": "^1.1.0"
+  },
+  "peerDependencies": {
+    "@babel/eslint-parser": "7.x",
+    "@babel/preset-react": "7.x",
+    "@typescript-eslint/eslint-plugin": "5.x",
+    "@typescript-eslint/parser": "5.x",
+    "eslint": ">=8.18.0",
+    "eslint-plugin-react": ">=7.30.1",
+    "eslint-plugin-vue": ">=9.1.1",
+    "typescript": "4.x",
+    "vue-eslint-parser": "9.x"
+  },
+  "peerDependenciesMeta": {
+    "@babel/eslint-parser": {
+      "optional": true
+    },
+    "@babel/preset-react": {
+      "optional": true
+    },
+    "@typescript-eslint/eslint-plugin": {
+      "optional": true
+    },
+    "@typescript-eslint/parser": {
+      "optional": true
+    },
+    "eslint-plugin-react": {
+      "optional": true
+    },
+    "eslint-plugin-vue": {
+      "optional": true
+    },
+    "typescript": {
+      "optional": true
+    },
+    "vue-eslint-parser": {
+      "optional": true
+    }
   }
 }

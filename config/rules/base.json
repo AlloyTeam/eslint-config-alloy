@@ -705,11 +705,11 @@
   },
   "no-duplicate-imports": {
     "name": "no-duplicate-imports",
-    "value": "error",
+    "value": "off",
     "description": "禁止重复导入模块",
     "reason": "",
-    "badExample": "<span class=\"token keyword\">import</span> <span class=\"token punctuation\">{</span> readFile <span class=\"token punctuation\">}</span> <span class=\"token keyword\">from</span> <span class=\"token string\">'fs'</span><span class=\"token punctuation\">;</span>\n<mark class=\"eslint-error\" data-tip=\"&amp;apos;fs&amp;apos; import is duplicated.&lt;br/&gt;&lt;span class='eslint-error-rule-id'&gt;eslint(no-duplicate-imports)&lt;/span&gt;\"><span class=\"token keyword\">import</span> <span class=\"token punctuation\">{</span> writeFile <span class=\"token punctuation\">}</span> <span class=\"token keyword\">from</span> <span class=\"token string\">'fs'</span><span class=\"token punctuation\">;</span></mark>",
-    "goodExample": "<span class=\"token keyword\">import</span> <span class=\"token punctuation\">{</span> readFile<span class=\"token punctuation\">,</span> writeFile <span class=\"token punctuation\">}</span> <span class=\"token keyword\">from</span> <span class=\"token string\">'fs'</span><span class=\"token punctuation\">;</span>",
+    "badExample": "",
+    "goodExample": "",
     "fixable": false,
     "extendsBaseRule": "",
     "requiresTypeChecking": false
