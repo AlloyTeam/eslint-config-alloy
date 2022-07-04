@@ -109,7 +109,7 @@
   "peerDependencies": {
     "@babel/eslint-parser": "7.x",
     "@babel/preset-react": "7.x",
-    "@typescript-eslint/eslint-plugin": "5.x",
+    "@typescript-eslint/eslint-plugin": ">=5.29.0",
     "@typescript-eslint/parser": "5.x",
     "eslint": ">=8.18.0",
     "eslint-plugin-react": ">=7.30.1",
