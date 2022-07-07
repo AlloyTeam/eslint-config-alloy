@@ -1,0 +1,4 @@
+*.ico
+*ignore
+
+pnpm-lock.yaml

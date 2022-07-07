@@ -39,4 +39,6 @@ module.exports = {
   endOfLine: 'lf',
   // 格式化嵌入的内容
   embeddedLanguageFormatting: 'auto',
+  // html, vue, jsx 中每个属性占一行
+  singleAttributePerLine: false,
 };

@@ -20,6 +20,7 @@ Please choose the following configuration based on the technology stack used by 
 - [Vue](#vue)
 - [TypeScript](#typescript)
 - [TypeScript React](#typescript-react)
+- [TypeScript Vue](#typescript-vue)
 
 ## Philosophy
 
@@ -242,6 +243,10 @@ module.exports = {
 };
 ```
 
+### TypeScript Vue
+
+It is recommended to use `npm init vue@3` to create a project which integrated Vue, TypeScript and ESLint, and then refer to [this example](./examples/typescript-vue/.eslintrc.js) to adjust its ESLint configuration.
+
 ## Troubleshooting
 
 ### With VSCode
@@ -275,53 +280,12 @@ If you want to enable auto-fix-on-save, you need to set your `.vscode/settings.j
 
 ### With Prettier
 
-`eslint-config-alloy` does not include all style-related rules in v3, so there is no need to install `eslint-config-prettier`. Just install `prettier` and related VSCode plugins.
+`eslint-config-alloy` does not include any style-related rules in v3, so there is no need to install `eslint-config-prettier`. Just install `prettier` and related VSCode plugins.
 
-Here is a `.prettierrc.js` configuration used by AlloyTeam for reference only:
+AlloyTeam provides a set of Prettier configuration, you can create a `.prettierrc` to extends it:
 
-```js
-// .prettierrc.js
-module.exports = {
-  // max 120 characters per line
-  printWidth: 120,
-  // use 2 spaces for indentation
-  tabWidth: 2,
-  // use spaces instead of indentations
-  useTabs: false,
-  // semicolon at the end of the line
-  semi: true,
-  // use single quotes
-  singleQuote: true,
-  // object's key is quoted only when necessary
-  quoteProps: 'as-needed',
-  // use double quotes instead of single quotes in jsx
-  jsxSingleQuote: false,
-  // no comma at the end
-  trailingComma: 'all',
-  // spaces are required at the beginning and end of the braces
-  bracketSpacing: true,
-  // end tag of jsx need to wrap
-  bracketSameLine: false,
-  // brackets are required for arrow function parameter, even when there is only one parameter
-  arrowParens: 'always',
-  // format the entire contents of the file
-  rangeStart: 0,
-  rangeEnd: Infinity,
-  // no need to write the beginning @prettier of the file
-  requirePragma: false,
-  // No need to automatically insert @prettier at the beginning of the file
-  insertPragma: false,
-  // use default break criteria
-  proseWrap: 'preserve',
-  // decide whether to break the html according to the display style
-  htmlWhitespaceSensitivity: 'css',
-  // vue files script and style tags indentation
-  vueIndentScriptAndStyle: false,
-  // lf for newline
-  endOfLine: 'lf',
-  // formats quoted code embedded
-  embeddedLanguageFormatting: 'auto',
-};
+```json
+"eslint-config-alloy/.prettierrc.js"
 ```
 
 A best practice for VSCode is to auto format code with Prettier and autofix errors with ESLint by setting `.vscode/settings.json` to this:
@@ -331,6 +295,9 @@ A best practice for VSCode is to auto format code with Prettier and autofix erro
   "files.eol": "\n",
   "editor.tabSize": 2,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "eslint.validate": ["javascript", "javascriptreact", "vue", "typescript", "typescriptreact"],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
