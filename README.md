@@ -76,7 +76,7 @@ In this way, we can follow the latest rules in a time when the front-end communi
 ### Built-in
 
 ```bash
-npm install --save-dev eslint @babel/eslint-parser eslint-config-alloy
+npm install --save-dev eslint @babel/core @babel/eslint-parser eslint-config-alloy
 ```
 
 Create an `.eslintrc.js` in the root directory of your project, then copy the following content into it:
@@ -109,7 +109,7 @@ module.exports = {
 ### React
 
 ```bash
-npm install --save-dev eslint @babel/eslint-parser @babel/preset-react@latest eslint-plugin-react eslint-config-alloy
+npm install --save-dev eslint @babel/core @babel/eslint-parser @babel/preset-react@latest eslint-plugin-react eslint-config-alloy
 ```
 
 Create an `.eslintrc.js` in the root directory of your project, then copy the following content into it:
@@ -143,7 +143,7 @@ module.exports = {
 ### Vue
 
 ```bash
-npm install --save-dev eslint @babel/eslint-parser vue-eslint-parser eslint-plugin-vue eslint-config-alloy
+npm install --save-dev eslint @babel/core @babel/eslint-parser vue-eslint-parser eslint-plugin-vue eslint-config-alloy
 ```
 
 Create an `.eslintrc.js` in the root directory of your project, then copy the following content into it:

@@ -16,6 +16,7 @@
     "vue": "^3.2.37"
   },
   "devDependencies": {
+    "@babel/core": "^7.18.5",
     "@babel/eslint-parser": "^7.18.2",
     "@rushstack/eslint-patch": "^1.1.0",
     "@types/node": "^16.11.41",

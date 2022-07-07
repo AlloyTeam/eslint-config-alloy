@@ -64,6 +64,7 @@ export function buildEslintrcMeta() {
  * 依赖版本：
  *   ${[
    'eslint',
+   '@babel/core',
    '@babel/eslint-parser',
    '@babel/preset-react',
    'eslint-plugin-react',

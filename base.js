@@ -18,6 +18,7 @@
  *
  * 依赖版本：
  *   eslint ^8.18.0
+ *   @babel/core ^7.18.5
  *   @babel/eslint-parser ^7.18.2
  *   @babel/preset-react ^7.17.12
  *   eslint-plugin-react ^7.30.1

@@ -50,7 +50,7 @@
     "build:clean": "rimraf dist",
     "build:copyfiles": "copyfiles -u 2 \"site/public/**/*\" dist/public",
     "build:site": "webpack",
-    "clean": "rimraf dist node_modules",
+    "clean": "rimraf dist node_modules && pnpm -r exec rm -rf node_modules dist",
     "test": "pnpm lint && ts-node ./test/index.ts",
     "lint": "run-s eslint prettier",
     "eslint": "eslint --ext .js,.jsx,.ts,.tsx,.vue --ignore-pattern \"bad.*\" .",
