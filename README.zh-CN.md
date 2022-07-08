@@ -23,6 +23,9 @@ AlloyTeam ESLint 规则不仅是一套先进的适用于 React/Vue/Typescript �
 - 高度的自动化：先进的规则管理，测试即文档即[网站][]
 - 与时俱进，第一时间跟进最新的规则
 
+<details>
+<summary>详细说明</summary>
+
 ### 样式相关的规则交给 [Prettier][] 管理
 
 Prettier 是一个代码格式化工具，相比于 ESLint 中的代码格式规则，它提供了更少的选项，但是却更加专业。
@@ -68,6 +71,8 @@ ESLint 的更新很快，几乎每周都有一个新版本，有时有新规则�
 ![](https://i.v2ex.co/zDK6Uao4.png)
 
 这样就实现了，在前端社区快速更迭的时候能够及时跟进最新的规则，永远保持 eslint-config-alloy 的活力和先进。
+
+</details>
 
 ## 使用方法
 

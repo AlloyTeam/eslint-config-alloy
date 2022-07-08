@@ -29,6 +29,9 @@ Please choose the following configuration based on the technology stack used by 
 - High degree of automation: advanced rules management, test as a document, as a [website][]
 - Keep up with the times, follow up the latest rules as soon as possible
 
+<details>
+<summary>Details</summary>
+
 ### Let [Prettier][] handle style-related rules
 
 Prettier is a code formatting tool that offers fewer options but is more professional than the style-related rules in ESLint.
@@ -70,6 +73,8 @@ And `eslint-config-alloy`, through the above-mentioned automated tools, can rece
 ![](https://i.v2ex.co/zDK6Uao4.png)
 
 In this way, we can follow the latest rules in a time when the front-end community is changing rapidly, and always keep the vitality and advanced of `eslint-config-alloy`.
+
+</details>
 
 ## Usage
 
