@@ -245,6 +245,54 @@ module.exports = {
 
 建议使用 `npm init vue@3` 创建集成了 Vue, TypeScript 和 ESLint 的项目，然后再参考[此示例](./examples/typescript-vue/.eslintrc.js)调整其 ESLint 配置。
 
+常规方法如下：
+
+```bash
+npm install --save-dev @babel/core @babel/eslint-parser @typescript-eslint/eslint-plugin @typescript-eslint/parser @vue/eslint-config-typescript eslint eslint-config-alloy eslint-plugin-vue vue-eslint-parser
+```
+
+在你的项目的根目录下创建一个 `.eslintrc.js` 文件，并将以下内容复制进去：
+
+```js
+module.exports = {
+  extends: ['alloy', 'alloy/vue', 'alloy/typescript'],
+  parser: 'vue-eslint-parser',
+  parserOptions: {
+    parser: {
+      js: '@babel/eslint-parser',
+      jsx: '@babel/eslint-parser',
+
+      ts: '@typescript-eslint/parser',
+      tsx: '@typescript-eslint/parser',
+
+      // Leave the template parser unspecified, so that it could be determined by `<script lang="...">`
+    },
+  },
+  env: {
+    // Your environments (which contains several predefined global variables)
+    //
+    // browser: true,
+    // node: true,
+    // mocha: true,
+    // jest: true,
+    // jquery: true
+  },
+  globals: {
+    // Your global variables (setting to false means it's not allowed to be reassigned)
+    //
+    // myGlobal: false
+  },
+  rules: {
+    // Customize your rules
+    //
+    // Please keep this rule off because it requiresTypeChecking
+    // https://github.com/vuejs/vue-eslint-parser/issues/104
+    // https://github.com/typescript-eslint/typescript-eslint/pull/5318
+    '@typescript-eslint/prefer-optional-chain': 'off',
+  },
+};
+```
+
 ## 常见问题
 
 ### 在 VSCode 中使用

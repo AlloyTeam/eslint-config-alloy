@@ -18,12 +18,10 @@
   "devDependencies": {
     "@babel/core": "^7.18.5",
     "@babel/eslint-parser": "^7.18.2",
-    "@rushstack/eslint-patch": "^1.1.0",
     "@types/node": "^16.11.41",
     "@typescript-eslint/eslint-plugin": "^5.30.5",
     "@typescript-eslint/parser": "^5.30.5",
     "@vitejs/plugin-vue": "^2.3.3",
-    "@vue/eslint-config-prettier": "^7.0.0",
     "@vue/eslint-config-typescript": "^11.0.0",
     "@vue/tsconfig": "^0.1.3",
     "eslint": "^8.19.0",
