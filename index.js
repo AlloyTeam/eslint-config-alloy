@@ -4985,7 +4985,7 @@ exports.NAMESPACE_CONFIG = {
         prismLanguage: 'ts',
         rulePrefix: '@typescript-eslint/',
         ruleConfig: __webpack_require__(/*! ./rules/typescript.json */ "./config/rules/typescript.json"),
-        getDocsUrl: (rule) => `https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/${rule.replace(/.*\//, '')}.md`,
+        getDocsUrl: (rule) => `https://typescript-eslint.io/rules/${rule.replace(/.*\//, '')}/`,
         pluginName: '@typescript-eslint/eslint-plugin',
     },
 };
