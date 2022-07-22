@@ -333,7 +333,7 @@ module.exports = {
 
 eslint-config-alloy 从 v3 开始，已经不包含所有样式相关的规则了，故不需要引入 `eslint-config-prettier`。只需要安装 `prettier` 及相关 VSCode 插件即可。
 
-AlloyTeam 提供了一套 Prettier 配置，你可以创建一个 `.prettierrc` 文件，直接继承此配置：
+AlloyTeam 提供了一套 Prettier 配置，你可以创建一个 `.prettierrc` 文件，直接复用此配置：
 
 ```json
 "eslint-config-alloy/.prettierrc.js"

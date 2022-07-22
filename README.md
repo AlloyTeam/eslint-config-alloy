@@ -335,7 +335,7 @@ If you want to enable auto-fix-on-save, you need to set your `.vscode/settings.j
 
 `eslint-config-alloy` does not include any style-related rules in v3, so there is no need to install `eslint-config-prettier`. Just install `prettier` and related VSCode plugins.
 
-AlloyTeam provides a set of Prettier configuration, you can create a `.prettierrc` to extends it:
+AlloyTeam provides a set of Prettier configuration, you can create a `.prettierrc` to reuse it:
 
 ```json
 "eslint-config-alloy/.prettierrc.js"
