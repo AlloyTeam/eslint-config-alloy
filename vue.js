@@ -366,7 +366,7 @@ module.exports = {
      */
     'vue/no-ref-as-operand': 'error',
     /**
-     * 组件的 name 属性静止使用保留字
+     * 组件的 name 属性禁止使用保留字
      */
     'vue/no-reserved-component-names': 'error',
     /**

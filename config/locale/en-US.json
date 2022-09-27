@@ -457,7 +457,7 @@
   "使用 v-slot 替代已废弃的 slot": "Use `v-slot` instead of `slot`",
   "禁用已废弃的 slot-scope": "Disallow deprecated `slot-scope` attribute",
   "禁止使用特殊空白符（比如全角空格），除非是出现在字符串、正则表达式、模版字符串中或 HTML 内容中": "Disallow irregular whitespace",
-  "组件的 name 属性静止使用保留字": "Disallow the use of reserved names in component definitions",
+  "组件的 name 属性禁止使用保留字": "Disallow the use of reserved names in component definitions",
   "禁止使用 style 属性": "Disallow static inline `style` attributes",
   "当你的 vue 版本较老时，禁用还未支持的语法": "Disallow unsupported Vue.js syntax on the specified version",
   "组件必须包含 name 属性": "Require a `name` property in Vue components",
