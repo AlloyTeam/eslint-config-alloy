@@ -318,6 +318,17 @@
     "extendsBaseRule": "",
     "requiresTypeChecking": false
   },
+  "logical-assignment-operators": {
+    "name": "logical-assignment-operators",
+    "value": "off",
+    "description": "使用 a ||= b 替代 a = a || b",
+    "reason": "",
+    "badExample": "",
+    "goodExample": "",
+    "fixable": true,
+    "extendsBaseRule": "",
+    "requiresTypeChecking": false
+  },
   "max-classes-per-file": {
     "name": "max-classes-per-file",
     "value": "off",

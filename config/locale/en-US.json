@@ -646,5 +646,10 @@
   "禁止无用的联合类型或交叉类型": "Disallow members of unions and intersections that do nothing or override type information",
   "禁止导出空对象": "Disallow empty exports that don't change anything in a module file",
   "类的构造函数参数作为类属性时，必须加上可访问性修饰符": "Require or disallow parameter properties in class constructors",
-  "自定义事件名必须用 camelCase 风格": "自定义事件名必须用 camelCase 风格"
+  "自定义事件名必须用 camelCase 风格": "Enforce specific casing for custom event name",
+  "使用 a ||= b 替代 a = a || b": "Require or disallow logical assignment logical operator shorthand",
+  "约束 defineEmits 定义 emit 的格式": "enforce declaration style of `defineEmits`",
+  "约束 defineProps 定义 props 的格式": "enforce declaration style of `defineProps`",
+  "禁止解构 ref": "disallow destructuring of ref objects that can lead to loss of reactivity",
+  "模版中兄弟节点之间必须换行": "require or disallow newlines between sibling tags in template"
 }

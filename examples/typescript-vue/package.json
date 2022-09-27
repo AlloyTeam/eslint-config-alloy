@@ -10,28 +10,29 @@
     "eslint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore",
     "eslint:fix": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "prettier": "prettier -l \"./**/*\"",
-    "prettier:fix": "prettier --write -l \"./**/*\""
+    "prettier:fix": "prettier --write -l \"./**/*\"",
+    "update": "npm i vue@latest && npm i -D @babel/core@latest @babel/eslint-parser@latest @types/node@latest @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser@latest @vitejs/plugin-vue@latest @vue/eslint-config-typescript@latest @vue/tsconfig@latest eslint@latest eslint-config-alloy@latest eslint-plugin-vue@latest npm-run-all@latest prettier@latest typescript@latest vite@latest vue-eslint-parser@latest vue-tsc@latest"
   },
   "dependencies": {
-    "vue": "^3.2.37"
+    "vue": "^3.2.39"
   },
   "devDependencies": {
-    "@babel/core": "^7.18.5",
-    "@babel/eslint-parser": "^7.18.2",
-    "@types/node": "^16.11.41",
-    "@typescript-eslint/eslint-plugin": "^5.30.5",
-    "@typescript-eslint/parser": "^5.30.5",
-    "@vitejs/plugin-vue": "^2.3.3",
-    "@vue/eslint-config-typescript": "^11.0.0",
+    "@babel/core": "^7.19.1",
+    "@babel/eslint-parser": "^7.19.1",
+    "@types/node": "^18.7.23",
+    "@typescript-eslint/eslint-plugin": "^5.38.1",
+    "@typescript-eslint/parser": "^5.38.1",
+    "@vitejs/plugin-vue": "^3.1.0",
+    "@vue/eslint-config-typescript": "^11.0.2",
     "@vue/tsconfig": "^0.1.3",
-    "eslint": "^8.19.0",
+    "eslint": "^8.24.0",
     "eslint-config-alloy": "^4.6.2",
-    "eslint-plugin-vue": "^9.2.0",
+    "eslint-plugin-vue": "^9.5.1",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.7.1",
-    "typescript": "~4.7.4",
-    "vite": "^2.9.12",
-    "vue-eslint-parser": "^9.0.3",
+    "typescript": "^4.8.3",
+    "vite": "^3.1.3",
+    "vue-eslint-parser": "^9.1.0",
     "vue-tsc": "^0.38.1"
   }
 }

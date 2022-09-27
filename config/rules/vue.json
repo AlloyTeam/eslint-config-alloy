@@ -120,6 +120,17 @@
     "extendsBaseRule": "",
     "requiresTypeChecking": false
   },
+  "vue/define-emits-declaration": {
+    "name": "vue/define-emits-declaration",
+    "value": "off",
+    "description": "约束 defineEmits 定义 emit 的格式",
+    "reason": "",
+    "badExample": "",
+    "goodExample": "",
+    "fixable": false,
+    "extendsBaseRule": "",
+    "requiresTypeChecking": false
+  },
   "vue/define-macros-order": {
     "name": "vue/define-macros-order",
     "value": "error",
@@ -128,6 +139,17 @@
     "badExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>script</span> <span class=\"token attr-name\">setup</span><span class=\"token punctuation\">></span></span><span class=\"token script\"><span class=\"token language-javascript\">\n<span class=\"token function\">defineEmits</span><span class=\"token punctuation\">(</span><span class=\"token comment\">/* ... */</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n<mark class=\"eslint-error\" data-tip=\"defineProps should be the first statement in `&amp;lt;script setup&amp;gt;` (after any potential import statements or type definitions).&lt;br/&gt;&lt;span class='eslint-error-rule-id'&gt;eslint(vue/define-macros-order)&lt;/span&gt;\"><span class=\"token function\">defineProps</span><span class=\"token punctuation\">(</span><span class=\"token comment\">/* ... */</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span></mark>\n</span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>script</span><span class=\"token punctuation\">></span></span>",
     "goodExample": "<span class=\"token comment\">&lt;!-- ✓ GOOD --></span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>script</span> <span class=\"token attr-name\">setup</span><span class=\"token punctuation\">></span></span><span class=\"token script\"><span class=\"token language-javascript\">\n<span class=\"token function\">defineProps</span><span class=\"token punctuation\">(</span><span class=\"token comment\">/* ... */</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n<span class=\"token function\">defineEmits</span><span class=\"token punctuation\">(</span><span class=\"token comment\">/* ... */</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n</span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>script</span><span class=\"token punctuation\">></span></span>",
     "fixable": true,
+    "extendsBaseRule": "",
+    "requiresTypeChecking": false
+  },
+  "vue/define-props-declaration": {
+    "name": "vue/define-props-declaration",
+    "value": "off",
+    "description": "约束 defineProps 定义 props 的格式",
+    "reason": "",
+    "badExample": "",
+    "goodExample": "",
+    "fixable": false,
     "extendsBaseRule": "",
     "requiresTypeChecking": false
   },
@@ -767,6 +789,17 @@
     "extendsBaseRule": "",
     "requiresTypeChecking": false
   },
+  "vue/no-ref-object-destructure": {
+    "name": "vue/no-ref-object-destructure",
+    "value": "error",
+    "description": "禁止解构 ref",
+    "reason": "",
+    "badExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>script</span><span class=\"token punctuation\">></span></span><span class=\"token script\"><span class=\"token language-javascript\">\n<span class=\"token keyword\">import</span> <span class=\"token punctuation\">{</span> ref <span class=\"token punctuation\">}</span> <span class=\"token keyword\">from</span> <span class=\"token string\">'vue'</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">const</span> count <span class=\"token operator\">=</span> <span class=\"token function\">ref</span><span class=\"token punctuation\">(</span><span class=\"token number\">0</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">const</span> v1 <span class=\"token operator\">=</span> <mark class=\"eslint-error\" data-tip=\"Getting a value from the ref object in the same scope will cause the value to lose reactivity.&lt;br/&gt;&lt;span class='eslint-error-rule-id'&gt;eslint(vue/no-ref-object-destructure)&lt;/span&gt;\">count</mark><span class=\"token punctuation\">.</span>value<span class=\"token punctuation\">;</span> <span class=\"token comment\">/* ✗ BAD */</span>\n<span class=\"token keyword\">const</span> <mark class=\"eslint-error\" data-tip=\"Getting a value from the ref object in the same scope will cause the value to lose reactivity.&lt;br/&gt;&lt;span class='eslint-error-rule-id'&gt;eslint(vue/no-ref-object-destructure)&lt;/span&gt;\"><span class=\"token punctuation\">{</span> value<span class=\"token punctuation\">:</span> v2 <span class=\"token punctuation\">}</span></mark> <span class=\"token operator\">=</span> count<span class=\"token punctuation\">;</span> <span class=\"token comment\">/* ✗ BAD */</span>\n<span class=\"token keyword\">const</span> v4 <span class=\"token operator\">=</span> <span class=\"token function\">fn</span><span class=\"token punctuation\">(</span><mark class=\"eslint-error\" data-tip=\"Getting a value from the ref object in the same scope will cause the value to lose reactivity.&lt;br/&gt;&lt;span class='eslint-error-rule-id'&gt;eslint(vue/no-ref-object-destructure)&lt;/span&gt;\">count</mark><span class=\"token punctuation\">.</span>value<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token comment\">/* ✗ BAD */</span>\n</span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>script</span><span class=\"token punctuation\">></span></span>",
+    "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>script</span><span class=\"token punctuation\">></span></span><span class=\"token script\"><span class=\"token language-javascript\">\n<span class=\"token keyword\">import</span> <span class=\"token punctuation\">{</span> ref <span class=\"token punctuation\">}</span> <span class=\"token keyword\">from</span> <span class=\"token string\">'vue'</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">const</span> count <span class=\"token operator\">=</span> <span class=\"token function\">ref</span><span class=\"token punctuation\">(</span><span class=\"token number\">0</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">const</span> v3 <span class=\"token operator\">=</span> <span class=\"token function\">computed</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token operator\">=></span> count<span class=\"token punctuation\">.</span>value <span class=\"token comment\">/* ✓ GOOD */</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">const</span> v5 <span class=\"token operator\">=</span> <span class=\"token function\">fn</span><span class=\"token punctuation\">(</span>count<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span> <span class=\"token comment\">/* ✓ GOOD */</span>\n<span class=\"token keyword\">const</span> v6 <span class=\"token operator\">=</span> <span class=\"token function\">computed</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token operator\">=></span> <span class=\"token function\">fn</span><span class=\"token punctuation\">(</span>count<span class=\"token punctuation\">.</span>value<span class=\"token punctuation\">)</span> <span class=\"token comment\">/* ✓ GOOD */</span><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>\n</span></span><span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>script</span><span class=\"token punctuation\">></span></span>",
+    "fixable": false,
+    "extendsBaseRule": "",
+    "requiresTypeChecking": false
+  },
   "vue/no-reserved-component-names": {
     "name": "vue/no-reserved-component-names",
     "value": "error",
@@ -1245,6 +1278,17 @@
     "value": "off",
     "description": "<template> <script> <style> 之间必须有空行",
     "reason": "代码格式问题，最好由 Prettier 解决",
+    "badExample": "",
+    "goodExample": "",
+    "fixable": false,
+    "extendsBaseRule": "",
+    "requiresTypeChecking": false
+  },
+  "vue/padding-line-between-tags": {
+    "name": "vue/padding-line-between-tags",
+    "value": "off",
+    "description": "模版中兄弟节点之间必须换行",
+    "reason": "",
     "badExample": "",
     "goodExample": "",
     "fixable": false,

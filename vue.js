@@ -17,15 +17,15 @@
  *   zoubingwu <zoubingwu@gmail.com>
  *
  * 依赖版本：
- *   eslint ^8.18.0
- *   @babel/core ^7.18.5
- *   @babel/eslint-parser ^7.18.2
- *   @babel/preset-react ^7.17.12
- *   eslint-plugin-react ^7.30.1
- *   vue-eslint-parser ^9.0.3
- *   eslint-plugin-vue ^9.1.1
- *   @typescript-eslint/parser ^5.29.0
- *   @typescript-eslint/eslint-plugin ^5.29.0
+ *   eslint ^8.24.0
+ *   @babel/core ^7.19.1
+ *   @babel/eslint-parser ^7.19.1
+ *   @babel/preset-react ^7.18.6
+ *   eslint-plugin-react ^7.31.8
+ *   vue-eslint-parser ^9.1.0
+ *   eslint-plugin-vue ^9.5.1
+ *   @typescript-eslint/parser ^5.38.1
+ *   @typescript-eslint/eslint-plugin ^5.38.1
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  */
@@ -106,9 +106,17 @@ module.exports = {
      */
     'vue/custom-event-name-casing': 'error',
     /**
+     * 约束 defineEmits 定义 emit 的格式
+     */
+    'vue/define-emits-declaration': 'off',
+    /**
      * 必须按规则排序 defineEmits 和 defineProps
      */
     'vue/define-macros-order': 'error',
+    /**
+     * 约束 defineProps 定义 props 的格式
+     */
+    'vue/define-props-declaration': 'off',
     /**
      * 禁止使用 foo['bar']，必须写成 foo.bar
      * @reason 当需要写一系列属性的时候，可以更统一
@@ -366,6 +374,10 @@ module.exports = {
      */
     'vue/no-ref-as-operand': 'error',
     /**
+     * 禁止解构 ref
+     */
+    'vue/no-ref-object-destructure': 'error',
+    /**
      * 组件的 name 属性禁止使用保留字
      */
     'vue/no-reserved-component-names': 'error',
@@ -548,6 +560,10 @@ module.exports = {
      * @reason 代码格式问题，最好由 Prettier 解决
      */
     'vue/padding-line-between-blocks': 'off',
+    /**
+     * 模版中兄弟节点之间必须换行
+     */
+    'vue/padding-line-between-tags': 'off',
     /**
      * 必须导入 vue 而不是 @vue/*
      */
