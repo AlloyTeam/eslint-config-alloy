@@ -302,19 +302,9 @@ module.exports = {
 
 ### 在 VSCode 中使用
 
-在 VSCode 中，默认 ESLint 并不能识别 `.vue`、`.ts` 或 `.tsx` 文件，需要在「文件 => 首选项 => 设置」里做如下配置：
+在 VSCode 中安装 ESLint 扩展即可。
 
-```json
-{
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "vue",
-    "typescript",
-    "typescriptreact"
-  ]
-}
-```
+参考[这里](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)可以对扩展进行配置。
 
 ### 保存时自动修复 ESLint 错误
 
@@ -322,7 +312,6 @@ module.exports = {
 
 ```json
 {
-  "eslint.validate": ["javascript", "javascriptreact", "vue", "typescript", "typescriptreact"],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
@@ -349,7 +338,6 @@ VSCode 的一个最佳实践就是通过配置 `.vscode/settings.json` 来支持
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "eslint.validate": ["javascript", "javascriptreact", "vue", "typescript", "typescriptreact"],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   }

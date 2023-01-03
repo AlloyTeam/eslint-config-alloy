@@ -304,19 +304,9 @@ module.exports = {
 
 ### With VSCode
 
-ESLint will not lint `.vue`, `.ts` or `.tsx` files in VSCode by default, you need to set your `.vscode/settings.json` like this:
+Just install the ESLint extension in VSCode.
 
-```json
-{
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "vue",
-    "typescript",
-    "typescriptreact"
-  ]
-}
-```
+Refer to [here](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) to configure the extension.
 
 ### Autofix ESLint errors on save
 
@@ -324,7 +314,6 @@ If you want to enable auto-fix-on-save, you need to set your `.vscode/settings.j
 
 ```json
 {
-  "eslint.validate": ["javascript", "javascriptreact", "vue", "typescript", "typescriptreact"],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
@@ -351,7 +340,6 @@ A best practice for VSCode is to auto format code with Prettier and autofix erro
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "eslint.validate": ["javascript", "javascriptreact", "vue", "typescript", "typescriptreact"],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   }
