@@ -800,6 +800,17 @@
     "extendsBaseRule": "",
     "requiresTypeChecking": false
   },
+  "vue/no-required-prop-with-default": {
+    "name": "vue/no-required-prop-with-default",
+    "value": "off",
+    "description": "禁止将有默认值的 prop 设为必选属性",
+    "reason": "",
+    "badExample": "",
+    "goodExample": "",
+    "fixable": true,
+    "extendsBaseRule": "",
+    "requiresTypeChecking": false
+  },
   "vue/no-reserved-component-names": {
     "name": "vue/no-reserved-component-names",
     "value": "error",
@@ -1438,6 +1449,17 @@
     "extendsBaseRule": "",
     "requiresTypeChecking": false
   },
+  "vue/require-prop-comment": {
+    "name": "vue/require-prop-comment",
+    "value": "off",
+    "description": "props 必须有注释",
+    "reason": "",
+    "badExample": "",
+    "goodExample": "",
+    "fixable": false,
+    "extendsBaseRule": "",
+    "requiresTypeChecking": false
+  },
   "vue/require-prop-type-constructor": {
     "name": "vue/require-prop-type-constructor",
     "value": "off",
@@ -1614,13 +1636,13 @@
     "extendsBaseRule": "",
     "requiresTypeChecking": false
   },
-  "vue/v-on-function-call": {
-    "name": "vue/v-on-function-call",
-    "value": "error",
-    "description": "禁止在 v-on 的值中调用函数",
+  "vue/v-on-handler-style": {
+    "name": "vue/v-on-handler-style",
+    "value": "off",
+    "description": "禁止 v-on 的值使用函数调用的格式",
     "reason": "",
-    "badExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>template</span><span class=\"token punctuation\">></span></span>\n  <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>button</span> <span class=\"token attr-name\"><span class=\"token namespace\">v-on:</span>click</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span><mark class=\"eslint-error\" data-tip=\"Method calls without arguments inside of &amp;apos;v-on&amp;apos; directives must not have parentheses.&lt;br/&gt;&lt;span class='eslint-error-rule-id'&gt;eslint(vue/v-on-function-call)&lt;/span&gt;\">closeModal()</mark><span class=\"token punctuation\">\"</span></span><span class=\"token punctuation\">></span></span>Close<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>button</span><span class=\"token punctuation\">></span></span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>template</span><span class=\"token punctuation\">></span></span>",
-    "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>template</span><span class=\"token punctuation\">></span></span>\n  <span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span>button</span> <span class=\"token attr-name\"><span class=\"token namespace\">v-on:</span>click</span><span class=\"token attr-value\"><span class=\"token punctuation\">=</span><span class=\"token punctuation\">\"</span>closeModal<span class=\"token punctuation\">\"</span></span><span class=\"token punctuation\">></span></span>Close<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>button</span><span class=\"token punctuation\">></span></span>\n<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;/</span>template</span><span class=\"token punctuation\">></span></span>",
+    "badExample": "",
+    "goodExample": "",
     "fixable": true,
     "extendsBaseRule": "",
     "requiresTypeChecking": false

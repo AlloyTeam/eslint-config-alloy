@@ -475,7 +475,7 @@
     "value": "error",
     "description": "禁止使用无意义的 void 类型",
     "reason": "void 只能用在函数的返回值中",
-    "badExample": "<span class=\"token keyword\">type</span> Foo1 <span class=\"token operator\">=</span> <span class=\"token keyword\"><mark class=\"eslint-error\" data-tip=\"void is only valid as a return type or generic type variable.&lt;br/&gt;&lt;span class='eslint-error-rule-id'&gt;eslint(@typescript-eslint/no-invalid-void-type)&lt;/span&gt;\">void</mark></span><span class=\"token punctuation\">;</span>",
+    "badExample": "<span class=\"token keyword\">type</span> Foo1 <span class=\"token operator\">=</span> <span class=\"token keyword\"><mark class=\"eslint-error\" data-tip=\"void is only valid as a return type or generic type argument.&lt;br/&gt;&lt;span class='eslint-error-rule-id'&gt;eslint(@typescript-eslint/no-invalid-void-type)&lt;/span&gt;\">void</mark></span><span class=\"token punctuation\">;</span>",
     "goodExample": "<span class=\"token keyword\">type</span> <span class=\"token function-variable function\">Foo2</span> <span class=\"token operator\">=</span> <span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token operator\">=></span> <span class=\"token keyword\">void</span><span class=\"token punctuation\">;</span>",
     "fixable": false,
     "extendsBaseRule": "",
@@ -552,7 +552,7 @@
     "value": ["error", { "allowDeclarations": true, "allowDefinitionFiles": true }],
     "description": "禁止使用 namespace 来定义命名空间",
     "reason": "使用 es6 引入模块，才是更标准的方式。\n但是允许使用 declare namespace ... {} 来定义外部命名空间",
-    "badExample": "<mark class=\"eslint-error\" data-tip=\"ES2015 module syntax is preferred over custom TypeScript modules and namespaces.&lt;br/&gt;&lt;span class='eslint-error-rule-id'&gt;eslint(@typescript-eslint/no-namespace)&lt;/span&gt;\"><span class=\"token keyword\">namespace</span> foo1 <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span></mark>",
+    "badExample": "<mark class=\"eslint-error\" data-tip=\"ES2015 module syntax is preferred over namespaces.&lt;br/&gt;&lt;span class='eslint-error-rule-id'&gt;eslint(@typescript-eslint/no-namespace)&lt;/span&gt;\"><span class=\"token keyword\">namespace</span> foo1 <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span></mark>",
     "goodExample": "<span class=\"token keyword\">declare</span> <span class=\"token keyword\">namespace</span> foo1 <span class=\"token punctuation\">{</span><span class=\"token punctuation\">}</span>",
     "fixable": false,
     "extendsBaseRule": "",
@@ -777,6 +777,17 @@
     "fixable": false,
     "extendsBaseRule": "",
     "requiresTypeChecking": true
+  },
+  "@typescript-eslint/no-unsafe-declaration-merging": {
+    "name": "@typescript-eslint/no-unsafe-declaration-merging",
+    "value": "off",
+    "description": "禁止 class 和 interface 合并类型",
+    "reason": "",
+    "badExample": "",
+    "goodExample": "",
+    "fixable": false,
+    "extendsBaseRule": "",
+    "requiresTypeChecking": false
   },
   "@typescript-eslint/no-unsafe-member-access": {
     "name": "@typescript-eslint/no-unsafe-member-access",
@@ -1141,10 +1152,10 @@
     "extendsBaseRule": "no-return-await",
     "requiresTypeChecking": true
   },
-  "@typescript-eslint/sort-type-union-intersection-members": {
-    "name": "@typescript-eslint/sort-type-union-intersection-members",
+  "@typescript-eslint/sort-type-constituents": {
+    "name": "@typescript-eslint/sort-type-constituents",
     "value": "off",
-    "description": "联合类型和交叉类型的每一项必须按字母排序",
+    "description": "联合类型和交叉类型必须排序",
     "reason": "",
     "badExample": "",
     "goodExample": "",

@@ -651,5 +651,13 @@
   "约束 defineEmits 定义 emit 的格式": "enforce declaration style of `defineEmits`",
   "约束 defineProps 定义 props 的格式": "enforce declaration style of `defineProps`",
   "禁止解构 ref": "disallow destructuring of ref objects that can lead to loss of reactivity",
-  "模版中兄弟节点之间必须换行": "require or disallow newlines between sibling tags in template"
+  "模版中兄弟节点之间必须换行": "require or disallow newlines between sibling tags in template",
+  "禁止 class 中出现空的 static 代码块": "Disallow empty static blocks",
+  "禁止错误的使用 new 来实例化一个非构造函数": "Disallow `new` operators with global non-constructor functions",
+  "模版中的三元操作必须换行": "Enforce newlines between operands of ternary expressions in `<template>`",
+  "禁止将有默认值的 prop 设为必选属性": "enforce props with default values to be optional",
+  "props 必须有注释": "require props to have a comment",
+  "禁止 v-on 的值使用函数调用的格式": "enforce writing style for handlers in `v-on` directives",
+  "禁止 class 和 interface 合并类型": "Disallow unsafe declaration merging",
+  "联合类型和交叉类型必须排序": "Enforce constituents of a type union/intersection to be sorted alphabetically"
 }

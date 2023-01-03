@@ -112,12 +112,17 @@ class Builder {
       rule.description = this.baseRuleConfig[rule.extendsBaseRule].description;
     }
     // 若没有原因，并且有继承的规则，并且本规则的配置项与继承的规则的配置项一致，则使用继承的规则的原因
-    if (
-      !rule.reason &&
-      rule.extendsBaseRule &&
-      JSON.stringify(rule.value) === JSON.stringify(this.baseRuleConfig[rule.extendsBaseRule].value)
-    ) {
-      rule.reason = this.baseRuleConfig[rule.extendsBaseRule].reason;
+    try {
+      if (
+        !rule.reason &&
+        rule.extendsBaseRule &&
+        JSON.stringify(rule.value) === JSON.stringify(this.baseRuleConfig[rule.extendsBaseRule].value)
+      ) {
+        rule.reason = this.baseRuleConfig[rule.extendsBaseRule].reason;
+      }
+    } catch (e) {
+      console.log(e);
+      console.log(rule.extendsBaseRule);
     }
     const badFilePath = path.resolve(
       path.dirname(filePath),

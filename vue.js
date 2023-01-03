@@ -17,15 +17,15 @@
  *   zoubingwu <zoubingwu@gmail.com>
  *
  * 依赖版本：
- *   eslint ^8.24.0
- *   @babel/core ^7.19.1
+ *   eslint ^8.31.0
+ *   @babel/core ^7.20.7
  *   @babel/eslint-parser ^7.19.1
  *   @babel/preset-react ^7.18.6
- *   eslint-plugin-react ^7.31.8
+ *   eslint-plugin-react ^7.31.11
  *   vue-eslint-parser ^9.1.0
- *   eslint-plugin-vue ^9.5.1
- *   @typescript-eslint/parser ^5.38.1
- *   @typescript-eslint/eslint-plugin ^5.38.1
+ *   eslint-plugin-vue ^9.8.0
+ *   @typescript-eslint/parser ^5.48.0
+ *   @typescript-eslint/eslint-plugin ^5.48.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  */
@@ -378,6 +378,10 @@ module.exports = {
      */
     'vue/no-ref-object-destructure': 'error',
     /**
+     * 禁止将有默认值的 prop 设为必选属性
+     */
+    'vue/no-required-prop-with-default': 'off',
+    /**
      * 组件的 name 属性禁止使用保留字
      */
     'vue/no-reserved-component-names': 'error',
@@ -619,6 +623,10 @@ module.exports = {
      */
     'vue/require-name-property': 'off',
     /**
+     * props 必须有注释
+     */
+    'vue/require-prop-comment': 'off',
+    /**
      * props 的取值必须是基本类型的构造函数，而不是字符串
      * @reason 类型相关的约束交给 TypeScript
      */
@@ -686,9 +694,9 @@ module.exports = {
      */
     'vue/v-on-event-hyphenation': 'error',
     /**
-     * 禁止在 v-on 的值中调用函数
+     * 禁止 v-on 的值使用函数调用的格式
      */
-    'vue/v-on-function-call': 'error',
+    'vue/v-on-handler-style': 'off',
     /**
      * 使用缩写的 @click 而不是 v-on:click
      */

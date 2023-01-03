@@ -1,2 +1,3 @@
-const foo = 'Line 1\
+const foo =
+  'Line 1\
 Line 2';

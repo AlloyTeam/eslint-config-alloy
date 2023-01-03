@@ -17,15 +17,15 @@
  *   zoubingwu <zoubingwu@gmail.com>
  *
  * 依赖版本：
- *   eslint ^8.24.0
- *   @babel/core ^7.19.1
+ *   eslint ^8.31.0
+ *   @babel/core ^7.20.7
  *   @babel/eslint-parser ^7.19.1
  *   @babel/preset-react ^7.18.6
- *   eslint-plugin-react ^7.31.8
+ *   eslint-plugin-react ^7.31.11
  *   vue-eslint-parser ^9.1.0
- *   eslint-plugin-vue ^9.5.1
- *   @typescript-eslint/parser ^5.38.1
- *   @typescript-eslint/eslint-plugin ^5.38.1
+ *   eslint-plugin-vue ^9.8.0
+ *   @typescript-eslint/parser ^5.48.0
+ *   @typescript-eslint/eslint-plugin ^5.48.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  */
@@ -394,6 +394,10 @@ module.exports = {
      */
     'no-empty-pattern': 'error',
     /**
+     * 禁止 class 中出现空的 static 代码块
+     */
+    'no-empty-static-block': 'off',
+    /**
      * 禁止使用 foo == null，必须使用 foo === null
      */
     'no-eq-null': 'error',
@@ -555,6 +559,10 @@ module.exports = {
      * @reason 这和 eval 是等价的
      */
     'no-new-func': 'error',
+    /**
+     * 禁止错误的使用 new 来实例化一个非构造函数
+     */
+    'no-new-native-nonconstructor': 'error',
     /**
      * 禁止直接 new Object
      */

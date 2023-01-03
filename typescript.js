@@ -17,15 +17,15 @@
  *   zoubingwu <zoubingwu@gmail.com>
  *
  * 依赖版本：
- *   eslint ^8.24.0
- *   @babel/core ^7.19.1
+ *   eslint ^8.31.0
+ *   @babel/core ^7.20.7
  *   @babel/eslint-parser ^7.19.1
  *   @babel/preset-react ^7.18.6
- *   eslint-plugin-react ^7.31.8
+ *   eslint-plugin-react ^7.31.11
  *   vue-eslint-parser ^9.1.0
- *   eslint-plugin-vue ^9.5.1
- *   @typescript-eslint/parser ^5.38.1
- *   @typescript-eslint/eslint-plugin ^5.38.1
+ *   eslint-plugin-vue ^9.8.0
+ *   @typescript-eslint/parser ^5.48.0
+ *   @typescript-eslint/eslint-plugin ^5.48.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  */
@@ -399,6 +399,10 @@ module.exports = {
      */
     '@typescript-eslint/no-unsafe-call': 'off',
     /**
+     * 禁止 class 和 interface 合并类型
+     */
+    '@typescript-eslint/no-unsafe-declaration-merging': 'off',
+    /**
      * 禁止获取 any 类型的变量中的属性
      */
     '@typescript-eslint/no-unsafe-member-access': 'off',
@@ -552,9 +556,9 @@ module.exports = {
     'no-return-await': 'off',
     '@typescript-eslint/return-await': 'off',
     /**
-     * 联合类型和交叉类型的每一项必须按字母排序
+     * 联合类型和交叉类型必须排序
      */
-    '@typescript-eslint/sort-type-union-intersection-members': 'off',
+    '@typescript-eslint/sort-type-constituents': 'off',
     /**
      * 条件判断必须传入布尔值
      */
