@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-alloy",
-  "version": "4.8.0",
+  "version": "4.9.0",
   "description": "AlloyTeam ESLint 规则",
   "keywords": [
     "eslint",
