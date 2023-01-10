@@ -1,3 +1,3 @@
 (function () {
   this.foo();
-}.bind(bar));
+}).bind(bar);
