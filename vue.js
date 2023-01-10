@@ -68,7 +68,6 @@ module.exports = {
      * 变量名必须是 camelCase 风格的
      * @reason 很多 api 或文件名都不是 camelCase 风格的
      */
-    camelcase: 'off',
     'vue/camelcase': 'off',
     /**
      * 支持在模版中使用 eslint-disable-next-line 等注释
@@ -121,12 +120,10 @@ module.exports = {
      * 禁止使用 foo['bar']，必须写成 foo.bar
      * @reason 当需要写一系列属性的时候，可以更统一
      */
-    'dot-notation': 'off',
     'vue/dot-notation': 'off',
     /**
      * 必须使用 === 或 !==，禁止使用 == 或 !=
      */
-    eqeqeq: 'off',
     'vue/eqeqeq': ['error', 'always'],
     /**
      * 标签的第一个属性必须换行
@@ -205,7 +202,6 @@ module.exports = {
     /**
      * 禁止将常量作为分支条件判断中的测试表达式，但允许作为循环条件判断中的测试表达式
      */
-    'no-constant-condition': 'off',
     'vue/no-constant-condition': 'off',
     /**
      * 禁止在 data 中使用已废弃的对象定义
@@ -312,7 +308,6 @@ module.exports = {
     /**
      * 禁止解构赋值中出现空 {} 或 []
      */
-    'no-empty-pattern': 'off',
     'vue/no-empty-pattern': 'error',
     /**
      * 禁止在 <script setup> 中使用 export
@@ -325,7 +320,6 @@ module.exports = {
     /**
      * 禁止使用特殊空白符（比如全角空格），除非是出现在字符串、正则表达式、模版字符串中或 HTML 内容中
      */
-    'no-irregular-whitespace': 'off',
     'vue/no-irregular-whitespace': [
       'error',
       {
@@ -347,7 +341,6 @@ module.exports = {
     /**
      * 禁止使用超出 js 精度范围的数字
      */
-    'no-loss-of-precision': 'off',
     'vue/no-loss-of-precision': 'error',
     /**
      * 禁止 class 中出现复数的对象
@@ -428,7 +421,6 @@ module.exports = {
     /**
      * 禁止使用指定的语法
      */
-    'no-restricted-syntax': 'off',
     'vue/no-restricted-syntax': 'off',
     /**
      * 禁止使用指定的 v-bind 参数
@@ -449,7 +441,6 @@ module.exports = {
     /**
      * 禁止在数组中出现连续的逗号
      */
-    'no-sparse-arrays': 'off',
     'vue/no-sparse-arrays': 'error',
     /**
      * 禁止使用 style 属性
@@ -515,7 +506,6 @@ module.exports = {
     /**
      * 禁止出现没必要的字符串连接
      */
-    'no-useless-concat': 'off',
     'vue/no-useless-concat': 'error',
     /**
      * 禁止出现无用的 mustache 字符串
@@ -549,7 +539,6 @@ module.exports = {
      * 必须使用 a = {b} 而不是 a = {b: b}
      * @reason 有时后者可以使代码结构更清晰
      */
-    'object-shorthand': 'off',
     'vue/object-shorthand': 'off',
     /**
      * 一个文件必须仅包含一个组件
@@ -583,7 +572,6 @@ module.exports = {
     /**
      * 必须使用模版字符串而不是字符串连接
      */
-    'prefer-template': 'off',
     'vue/prefer-template': 'off',
     /**
      * v-bind 值为 true 时，必须省略显示声明

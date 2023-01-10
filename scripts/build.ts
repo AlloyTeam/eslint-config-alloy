@@ -176,9 +176,9 @@ class Builder {
           ];
         }
         content.push(' */');
-        // 若继承自基础规则，则需要先关闭基础规则
+        // 若继承自基础规则，并且是 ts 规则，则需要先关闭基础规则
         const extendsBaseRule = this.ruleMetaMap[rule.name].extendsBaseRule;
-        if (extendsBaseRule) {
+        if (extendsBaseRule && this.namespace === 'typescript') {
           content.push(`'${extendsBaseRule}': 'off',`);
         }
         content.push(`'${rule.name}': ${JSON.stringify(rule.value, null, 4)},`);
