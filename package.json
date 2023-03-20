@@ -142,5 +142,6 @@
     "vue-eslint-parser": {
       "optional": true
     }
-  }
+  },
+  "packageManager": "pnpm@7.30.0"
 }
