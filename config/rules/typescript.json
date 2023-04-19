@@ -822,6 +822,17 @@
     "extendsBaseRule": "",
     "requiresTypeChecking": false
   },
+  "@typescript-eslint/no-unsafe-enum-comparison": {
+    "name": "@typescript-eslint/no-unsafe-enum-comparison",
+    "value": "off",
+    "description": "禁止将枚举值与非枚举值进行比较",
+    "reason": "",
+    "badExample": "",
+    "goodExample": "",
+    "fixable": false,
+    "extendsBaseRule": "",
+    "requiresTypeChecking": true
+  },
   "@typescript-eslint/no-unsafe-member-access": {
     "name": "@typescript-eslint/no-unsafe-member-access",
     "value": "off",

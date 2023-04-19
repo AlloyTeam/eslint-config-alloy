@@ -17,15 +17,15 @@
  *   zoubingwu <zoubingwu@gmail.com>
  *
  * 依赖版本：
- *   eslint ^8.31.0
- *   @babel/core ^7.21.3
- *   @babel/eslint-parser ^7.19.1
+ *   eslint ^8.38.0
+ *   @babel/core ^7.21.4
+ *   @babel/eslint-parser ^7.21.3
  *   @babel/preset-react ^7.18.6
- *   eslint-plugin-react ^7.31.11
- *   vue-eslint-parser ^9.1.0
- *   eslint-plugin-vue ^9.8.0
- *   @typescript-eslint/parser ^5.57.0
- *   @typescript-eslint/eslint-plugin ^5.57.0
+ *   eslint-plugin-react ^7.32.2
+ *   vue-eslint-parser ^9.1.1
+ *   eslint-plugin-vue ^9.11.0
+ *   @typescript-eslint/parser ^5.59.0
+ *   @typescript-eslint/eslint-plugin ^5.59.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  */
@@ -52,6 +52,10 @@ module.exports = {
   },
   plugins: ['vue'],
   rules: {
+    /**
+     * 在 `<template>` 中的每个数组元素后强制添加换行符
+     */
+    'vue/array-element-newline': 'off',
     /**
      * 限制自定义组件的属性风格
      */
@@ -557,6 +561,10 @@ module.exports = {
      * 模版中兄弟节点之间必须换行
      */
     'vue/padding-line-between-tags': 'off',
+    /**
+     * 要求或禁止组件定义中的填充行
+     */
+    'vue/padding-lines-in-component-definition': 'off',
     /**
      * 必须导入 vue 而不是 @vue/*
      */

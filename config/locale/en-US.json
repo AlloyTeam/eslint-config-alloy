@@ -662,5 +662,10 @@
   "联合类型和交叉类型必须排序": "Enforce constituents of a type union/intersection to be sorted alphabetically",
   "不允许重复的联合类型或交叉类型成员": "Disallow duplicate constituents of union or intersection types",
   "强制要求在只有内联类型限定符的情况下使用顶级导入类型限定符": "Enforce the use of top-level import type qualifier when an import only has specifiers with inline type qualifiers",
-  "不允许枚举同时具有数字和字符串成员": "Disallow enums from having both number and string members"
+  "不允许枚举同时具有数字和字符串成员": "Disallow enums from having both number and string members",
+  "在功能性组件中禁止将引用类型变量用作默认参数": "Disallow usage of referential-type variables as default param in functional component",
+  "强制实施 defaultProps 声明按字母顺序排序": "Enforce defaultProps declarations alphabetical sorting",
+  "在 `<template>` 中的每个数组元素后强制添加换行符": "Enforce line breaks after each array element in `<template>`",
+  "要求或禁止组件定义中的填充行": "require or disallow padding lines in component definition",
+  "禁止将枚举值与非枚举值进行比较": "Disallow comparing an enum value with a non-enum value"
 }

@@ -351,17 +351,6 @@
     "extendsBaseRule": "",
     "requiresTypeChecking": false
   },
-  "react/jsx-sort-default-props": {
-    "name": "react/jsx-sort-default-props",
-    "value": "off",
-    "description": "defaultProps 必须按字母排序",
-    "reason": "",
-    "badExample": "",
-    "goodExample": "",
-    "fixable": false,
-    "extendsBaseRule": "",
-    "requiresTypeChecking": false
-  },
   "react/jsx-sort-props": {
     "name": "react/jsx-sort-props",
     "value": "off",
@@ -534,7 +523,7 @@
     "reason": "需要指定特定属性时才需要开启",
     "badExample": "",
     "goodExample": "",
-    "fixable": true,
+    "fixable": false,
     "extendsBaseRule": "",
     "requiresTypeChecking": false
   },
@@ -567,6 +556,17 @@
     "reason": "",
     "badExample": "<span class=\"token tag\"><mark class=\"eslint-error\" data-tip=\"React component Ns:TestComponent must not be in a namespace, as React does not support them&lt;br/&gt;&lt;span class='eslint-error-rule-id'&gt;eslint(react/no-namespace)&lt;/span&gt;\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token namespace\">Ns:</span><span class=\"token class-name\">TestComponent</span></span> <span class=\"token punctuation\">/></span></mark></span><span class=\"token punctuation\">;</span>",
     "goodExample": "<span class=\"token tag\"><span class=\"token tag\"><span class=\"token punctuation\">&lt;</span><span class=\"token class-name\">TestComponent</span></span> <span class=\"token punctuation\">/></span></span><span class=\"token punctuation\">;</span>",
+    "fixable": false,
+    "extendsBaseRule": "",
+    "requiresTypeChecking": false
+  },
+  "react/no-object-type-as-default-prop": {
+    "name": "react/no-object-type-as-default-prop",
+    "value": "off",
+    "description": "在功能性组件中禁止将引用类型变量用作默认参数",
+    "reason": "",
+    "badExample": "",
+    "goodExample": "",
     "fixable": false,
     "extendsBaseRule": "",
     "requiresTypeChecking": false
@@ -846,6 +846,17 @@
     "extendsBaseRule": "",
     "requiresTypeChecking": false
   },
+  "react/sort-default-props": {
+    "name": "react/sort-default-props",
+    "value": "off",
+    "description": "强制实施 defaultProps 声明按字母顺序排序",
+    "reason": "",
+    "badExample": "",
+    "goodExample": "",
+    "fixable": false,
+    "extendsBaseRule": "",
+    "requiresTypeChecking": false
+  },
   "react/sort-prop-types": {
     "name": "react/sort-prop-types",
     "value": "off",
@@ -853,7 +864,7 @@
     "reason": "类型相关的约束交给 TypeScript",
     "badExample": "",
     "goodExample": "",
-    "fixable": false,
+    "fixable": true,
     "extendsBaseRule": "",
     "requiresTypeChecking": false
   },

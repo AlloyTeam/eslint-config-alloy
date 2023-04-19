@@ -17,15 +17,15 @@
  *   zoubingwu <zoubingwu@gmail.com>
  *
  * 依赖版本：
- *   eslint ^8.31.0
- *   @babel/core ^7.21.3
- *   @babel/eslint-parser ^7.19.1
+ *   eslint ^8.38.0
+ *   @babel/core ^7.21.4
+ *   @babel/eslint-parser ^7.21.3
  *   @babel/preset-react ^7.18.6
- *   eslint-plugin-react ^7.31.11
- *   vue-eslint-parser ^9.1.0
- *   eslint-plugin-vue ^9.8.0
- *   @typescript-eslint/parser ^5.57.0
- *   @typescript-eslint/eslint-plugin ^5.57.0
+ *   eslint-plugin-react ^7.32.2
+ *   vue-eslint-parser ^9.1.1
+ *   eslint-plugin-vue ^9.11.0
+ *   @typescript-eslint/parser ^5.59.0
+ *   @typescript-eslint/eslint-plugin ^5.59.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  */
@@ -179,10 +179,6 @@ module.exports = {
      */
     'react/jsx-props-no-spreading': 'off',
     /**
-     * defaultProps 必须按字母排序
-     */
-    'react/jsx-sort-default-props': 'off',
-    /**
      * props 必须按字母排序
      */
     'react/jsx-sort-props': 'off',
@@ -263,6 +259,10 @@ module.exports = {
      * 禁止在 jsx 中使用命名空间
      */
     'react/no-namespace': 'error',
+    /**
+     * 在功能性组件中禁止将引用类型变量用作默认参数
+     */
+    'react/no-object-type-as-default-prop': 'off',
     /**
      * 禁止在 React.PureComponent 中使用 shouldComponentUpdate
      */
@@ -374,6 +374,10 @@ module.exports = {
      * 组件内方法必须按照一定规则排序
      */
     'react/sort-comp': 'error',
+    /**
+     * 强制实施 defaultProps 声明按字母顺序排序
+     */
+    'react/sort-default-props': 'off',
     /**
      * propTypes 的属性必须按照字母排序
      * @reason 类型相关的约束交给 TypeScript

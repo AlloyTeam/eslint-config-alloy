@@ -1,4 +1,15 @@
 {
+  "vue/array-element-newline": {
+    "name": "vue/array-element-newline",
+    "value": "off",
+    "description": "在 `<template>` 中的每个数组元素后强制添加换行符",
+    "reason": "",
+    "badExample": "",
+    "goodExample": "",
+    "fixable": false,
+    "extendsBaseRule": "array-element-newline",
+    "requiresTypeChecking": false
+  },
   "vue/attribute-hyphenation": {
     "name": "vue/attribute-hyphenation",
     "value": "off",
@@ -1299,6 +1310,17 @@
     "name": "vue/padding-line-between-tags",
     "value": "off",
     "description": "模版中兄弟节点之间必须换行",
+    "reason": "",
+    "badExample": "",
+    "goodExample": "",
+    "fixable": false,
+    "extendsBaseRule": "",
+    "requiresTypeChecking": false
+  },
+  "vue/padding-lines-in-component-definition": {
+    "name": "vue/padding-lines-in-component-definition",
+    "value": "off",
+    "description": "要求或禁止组件定义中的填充行",
     "reason": "",
     "badExample": "",
     "goodExample": "",
