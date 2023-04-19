@@ -5,8 +5,9 @@
 English / [简体中文](./README.zh-CN.md)
 
 **NEWS: eslint-config-alloy now support TypeScript 5.0**  
+If you are using TypeScript 4.0, please `npm install --save-dev eslint-config-alloy@4`
+
 **NEWS: eslint-config-alloy now support Vue 3.0**  
-If you are using TypeScript 4.0, please `npm install --save-dev eslint-config-alloy@4`  
 If you are using Vue 2.0, please `npm install --save-dev eslint-config-alloy@3`
 
 ---
