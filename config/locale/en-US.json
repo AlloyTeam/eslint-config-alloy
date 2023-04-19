@@ -659,5 +659,8 @@
   "props 必须有注释": "require props to have a comment",
   "禁止 v-on 的值使用函数调用的格式": "enforce writing style for handlers in `v-on` directives",
   "禁止 class 和 interface 合并类型": "Disallow unsafe declaration merging",
-  "联合类型和交叉类型必须排序": "Enforce constituents of a type union/intersection to be sorted alphabetically"
+  "联合类型和交叉类型必须排序": "Enforce constituents of a type union/intersection to be sorted alphabetically",
+  "不允许重复的联合类型或交叉类型成员": "Disallow duplicate constituents of union or intersection types",
+  "强制要求在只有内联类型限定符的情况下使用顶级导入类型限定符": "Enforce the use of top-level import type qualifier when an import only has specifiers with inline type qualifiers",
+  "不允许枚举同时具有数字和字符串成员": "Disallow enums from having both number and string members"
 }

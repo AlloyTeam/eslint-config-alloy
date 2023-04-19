@@ -18,14 +18,14 @@
  *
  * 依赖版本：
  *   eslint ^8.31.0
- *   @babel/core ^7.20.12
+ *   @babel/core ^7.21.3
  *   @babel/eslint-parser ^7.19.1
  *   @babel/preset-react ^7.18.6
  *   eslint-plugin-react ^7.31.11
  *   vue-eslint-parser ^9.1.0
  *   eslint-plugin-vue ^9.8.0
- *   @typescript-eslint/parser ^5.48.1
- *   @typescript-eslint/eslint-plugin ^5.48.1
+ *   @typescript-eslint/parser ^5.57.0
+ *   @typescript-eslint/eslint-plugin ^5.57.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  */
@@ -210,6 +210,10 @@ module.exports = {
      */
     '@typescript-eslint/no-duplicate-enum-values': 'error',
     /**
+     * 不允许枚举同时具有数字和字符串成员
+     */
+    '@typescript-eslint/no-duplicate-type-constituents': 'off',
+    /**
      * 禁止 delete 时传入的 key 是动态的
      */
     '@typescript-eslint/no-dynamic-delete': 'off',
@@ -248,6 +252,10 @@ module.exports = {
      */
     'no-implied-eval': 'off',
     '@typescript-eslint/no-implied-eval': 'off',
+    /**
+     * 强制要求在只有内联类型限定符的情况下使用顶级导入类型限定符
+     */
+    '@typescript-eslint/no-import-type-side-effects': 'error',
     /**
      * 禁止给一个初始化时直接赋值为 number, string 的变量显式的声明类型
      * @reason 可以简化代码
@@ -292,6 +300,10 @@ module.exports = {
      * 避免错误的使用 Promise
      */
     '@typescript-eslint/no-misused-promises': 'off',
+    /**
+     * 不允许枚举同时具有数字和字符串成员
+     */
+    '@typescript-eslint/no-mixed-enums': 'off',
     /**
      * 禁止使用 namespace 来定义命名空间
      * @reason 使用 es6 引入模块，才是更标准的方式。

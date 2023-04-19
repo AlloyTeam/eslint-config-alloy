@@ -105,7 +105,7 @@
     "reason": "<Type> 容易被理解为 jsx",
     "badExample": "<span class=\"token keyword\">let</span> bar1<span class=\"token punctuation\">:</span> <span class=\"token builtin\">string</span> <span class=\"token operator\">|</span> <span class=\"token builtin\">number</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">const</span> foo1 <span class=\"token operator\">=</span> <mark class=\"eslint-error\" data-tip=\"Use &amp;apos;as string&amp;apos; instead of &amp;apos;&amp;lt;string&amp;gt;&amp;apos;.&lt;br/&gt;&lt;span class='eslint-error-rule-id'&gt;eslint(@typescript-eslint/consistent-type-assertions)&lt;/span&gt;\"><span class=\"token operator\">&lt;</span><span class=\"token builtin\">string</span><span class=\"token operator\">></span>bar1</mark><span class=\"token punctuation\">;</span>\n\n<span class=\"token keyword\">const</span> baz1 <span class=\"token operator\">=</span> <mark class=\"eslint-error\" data-tip=\"Always prefer const x: T = { ... }.&lt;br/&gt;&lt;span class='eslint-error-rule-id'&gt;eslint(@typescript-eslint/consistent-type-assertions)&lt;/span&gt;\"><span class=\"token punctuation\">{</span>\n  bar<span class=\"token punctuation\">:</span> <span class=\"token number\">1</span><span class=\"token punctuation\">,</span>\n<span class=\"token punctuation\">}</span> <span class=\"token keyword\">as</span> object</mark><span class=\"token punctuation\">;</span>",
     "goodExample": "<span class=\"token keyword\">let</span> bar2<span class=\"token punctuation\">:</span> <span class=\"token builtin\">string</span> <span class=\"token operator\">|</span> <span class=\"token builtin\">number</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">const</span> foo2 <span class=\"token operator\">=</span> bar2 <span class=\"token keyword\">as</span> <span class=\"token builtin\">string</span><span class=\"token punctuation\">;</span>\n\n<span class=\"token keyword\">const</span> baz2 <span class=\"token operator\">=</span> <span class=\"token punctuation\">{</span>\n  bar<span class=\"token punctuation\">:</span> <span class=\"token number\">1</span><span class=\"token punctuation\">,</span>\n<span class=\"token punctuation\">}</span> <span class=\"token keyword\">as</span> <span class=\"token builtin\">any</span><span class=\"token punctuation\">;</span>",
-    "fixable": false,
+    "fixable": true,
     "extendsBaseRule": "",
     "requiresTypeChecking": false
   },
@@ -349,6 +349,17 @@
     "extendsBaseRule": "",
     "requiresTypeChecking": false
   },
+  "@typescript-eslint/no-duplicate-type-constituents": {
+    "name": "@typescript-eslint/no-duplicate-type-constituents",
+    "value": "off",
+    "description": "不允许枚举同时具有数字和字符串成员",
+    "reason": "",
+    "badExample": "",
+    "goodExample": "",
+    "fixable": true,
+    "extendsBaseRule": "",
+    "requiresTypeChecking": true
+  },
   "@typescript-eslint/no-dynamic-delete": {
     "name": "@typescript-eslint/no-dynamic-delete",
     "value": "off",
@@ -448,6 +459,17 @@
     "extendsBaseRule": "no-implied-eval",
     "requiresTypeChecking": true
   },
+  "@typescript-eslint/no-import-type-side-effects": {
+    "name": "@typescript-eslint/no-import-type-side-effects",
+    "value": "error",
+    "description": "强制要求在只有内联类型限定符的情况下使用顶级导入类型限定符",
+    "reason": "",
+    "badExample": "<mark class=\"eslint-error\" data-tip=\"TypeScript will only remove the inline type specifiers which will leave behind a side effect import at runtime. Convert this to a top-level type qualifier to properly remove the entire import.&lt;br/&gt;&lt;span class='eslint-error-rule-id'&gt;eslint(@typescript-eslint/no-import-type-side-effects)&lt;/span&gt;\"><span class=\"token keyword\">import</span> <span class=\"token punctuation\">{</span> <span class=\"token keyword\">type</span> ArrowFunction <span class=\"token punctuation\">}</span> <span class=\"token keyword\">from</span> <span class=\"token string\">'typescript'</span><span class=\"token punctuation\">;</span></mark>",
+    "goodExample": "<span class=\"token keyword\">import</span> <span class=\"token keyword\">type</span> <span class=\"token punctuation\">{</span> ArrowFunction <span class=\"token punctuation\">}</span> <span class=\"token keyword\">from</span> <span class=\"token string\">'typescript'</span><span class=\"token punctuation\">;</span>",
+    "fixable": true,
+    "extendsBaseRule": "",
+    "requiresTypeChecking": false
+  },
   "@typescript-eslint/no-inferrable-types": {
     "name": "@typescript-eslint/no-inferrable-types",
     "value": "error",
@@ -540,6 +562,17 @@
     "name": "@typescript-eslint/no-misused-promises",
     "value": "off",
     "description": "避免错误的使用 Promise",
+    "reason": "",
+    "badExample": "",
+    "goodExample": "",
+    "fixable": false,
+    "extendsBaseRule": "",
+    "requiresTypeChecking": true
+  },
+  "@typescript-eslint/no-mixed-enums": {
+    "name": "@typescript-eslint/no-mixed-enums",
+    "value": "off",
+    "description": "不允许枚举同时具有数字和字符串成员",
     "reason": "",
     "badExample": "",
     "goodExample": "",
