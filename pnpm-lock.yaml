@@ -178,7 +178,7 @@ importers:
         version: 8.24.0
       eslint-config-alloy:
         specifier: ^4.6.2
-        version: link:../..
+        version: 4.6.2(@babel/eslint-parser@7.19.1)(@babel/preset-react@7.18.6)(@typescript-eslint/eslint-plugin@5.57.0)(@typescript-eslint/parser@5.57.0)(eslint-plugin-react@7.32.2)(eslint-plugin-vue@9.5.1)(eslint@8.24.0)(typescript@5.0.2)(vue-eslint-parser@9.1.0)
       eslint-plugin-vue:
         specifier: ^9.5.1
         version: 9.5.1(eslint@8.24.0)
@@ -1846,8 +1846,10 @@ packages:
       indent-string: 4.0.0
     dev: true
 
-  /ajv-formats@2.1.1:
+  /ajv-formats@2.1.1(ajv@8.12.0):
     resolution: {integrity: sha512-Wx0Kx52hxE7C18hkMEggYlEifqWZtYaRgouJor+WMdPnQyEK13vgEWyVNup7SoeeoLMsr4kf5h6dOW11I15MUA==}
+    peerDependencies:
+      ajv: ^8.0.0
     peerDependenciesMeta:
       ajv:
         optional: true
@@ -2952,6 +2954,47 @@ packages:
   /escape-string-regexp@4.0.0:
     resolution: {integrity: sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==}
     engines: {node: '>=10'}
+    dev: true
+
+  /eslint-config-alloy@4.6.2(@babel/eslint-parser@7.19.1)(@babel/preset-react@7.18.6)(@typescript-eslint/eslint-plugin@5.57.0)(@typescript-eslint/parser@5.57.0)(eslint-plugin-react@7.32.2)(eslint-plugin-vue@9.5.1)(eslint@8.24.0)(typescript@5.0.2)(vue-eslint-parser@9.1.0):
+    resolution: {integrity: sha512-mntO/1jazNIJJCb3mwtaH4D9uLnEIzI0EM2aYnllYVBmET0t490yBSLdPz+5cWtJsHU2DkW7aPI/kFtal9Vopg==}
+    peerDependencies:
+      '@babel/eslint-parser': 7.x
+      '@babel/preset-react': 7.x
+      '@typescript-eslint/eslint-plugin': '>=5.29.0'
+      '@typescript-eslint/parser': 5.x
+      eslint: '>=8.18.0'
+      eslint-plugin-react: '>=7.30.1'
+      eslint-plugin-vue: '>=9.1.1'
+      typescript: 4.x
+      vue-eslint-parser: 9.x
+    peerDependenciesMeta:
+      '@babel/eslint-parser':
+        optional: true
+      '@babel/preset-react':
+        optional: true
+      '@typescript-eslint/eslint-plugin':
+        optional: true
+      '@typescript-eslint/parser':
+        optional: true
+      eslint-plugin-react:
+        optional: true
+      eslint-plugin-vue:
+        optional: true
+      typescript:
+        optional: true
+      vue-eslint-parser:
+        optional: true
+    dependencies:
+      '@babel/eslint-parser': 7.19.1(@babel/core@7.19.1)(eslint@8.24.0)
+      '@babel/preset-react': 7.18.6(@babel/core@7.21.4)
+      '@typescript-eslint/eslint-plugin': 5.57.0(@typescript-eslint/parser@5.57.0)(eslint@8.24.0)(typescript@5.0.2)
+      '@typescript-eslint/parser': 5.57.0(eslint@8.24.0)(typescript@5.0.2)
+      eslint: 8.24.0
+      eslint-plugin-react: 7.32.2(eslint@8.38.0)
+      eslint-plugin-vue: 9.5.1(eslint@8.24.0)
+      typescript: 5.0.2
+      vue-eslint-parser: 9.1.0(eslint@8.24.0)
     dev: true
 
   /eslint-config-prettier@8.8.0(eslint@8.38.0):
@@ -4755,7 +4798,7 @@ packages:
       levn: 0.4.1
       prelude-ls: 1.2.1
       type-check: 0.4.0
-      word-wrap: 1.2.3
+      word-wrap: 1.2.4
     dev: true
 
   /p-limit@2.3.0:
@@ -5331,7 +5374,7 @@ packages:
     dependencies:
       '@types/json-schema': 7.0.11
       ajv: 8.12.0
-      ajv-formats: 2.1.1
+      ajv-formats: 2.1.1(ajv@8.12.0)
       ajv-keywords: 5.1.0(ajv@8.12.0)
     dev: true
 
@@ -6410,8 +6453,8 @@ packages:
     resolution: {integrity: sha512-JcKqAHLPxcdb9KM49dufGXn2x3ssnfjbcaQdLlfZsL9rH9wgDQjUtDxbo8NE0F6SFvydeu1VhZe7hZuHsB2/pw==}
     dev: true
 
-  /word-wrap@1.2.3:
-    resolution: {integrity: sha512-Hz/mrNwitNRh/HUAtM/VT/5VH+ygD6DV7mYKZAtHOrbs8U7lvPS6xf7EJKMF0uW1KJCl0H701g3ZGus+muE5vQ==}
+  /word-wrap@1.2.4:
+    resolution: {integrity: sha512-2V81OA4ugVo5pRo46hAoD2ivUJx8jXmWXfUkY4KFNw0hEptvN0QfH3K4nHiwzGeKl5rFKedV48QVoqYavy4YpA==}
     engines: {node: '>=0.10.0'}
     dev: true
 
