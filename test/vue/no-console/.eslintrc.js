@@ -1,5 +1,5 @@
 module.exports = {
   rules: {
-    'vue/camelcase': 'off',
+    'vue/no-console': 'off',
   },
 };

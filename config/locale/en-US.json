@@ -667,5 +667,14 @@
   "强制实施 defaultProps 声明按字母顺序排序": "Enforce defaultProps declarations alphabetical sorting",
   "在 `<template>` 中的每个数组元素后强制添加换行符": "Enforce line breaks after each array element in `<template>`",
   "要求或禁止组件定义中的填充行": "require or disallow padding lines in component definition",
-  "禁止将枚举值与非枚举值进行比较": "Disallow comparing an enum value with a non-enum value"
+  "禁止将枚举值与非枚举值进行比较": "Disallow comparing an enum value with a non-enum value",
+  "限制单文件组件块中的最大行数": "enforce maximum number of lines in Vue SFC blocks",
+  "禁止特定的组件名称": "disallow specific component names",
+  "禁止在根元素上使用 v-if 指令": "disallow `v-if` directives on root element",
+  "强制使用 defineOptions 而不是默认导出": "enforce use of `defineOptions` instead of default export.",
+  "需要特定的宏变量名称": "require a certain macro variable name",
+  "要求 ref 和 shallowRef 函数需要强制类型化": "require `ref` and `shallowRef` functions to be strongly typed",
+  "强制执行有效的 defineOptions 编译器宏": "enforce valid `defineOptions` compiler macro",
+  "需要 ts 支持": "需要 ts 支持",
+  "可以防止错误的使用 defineOptions": "可以防止错误的使用 defineOptions"
 }

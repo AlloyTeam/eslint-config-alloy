@@ -72,8 +72,19 @@
     "reason": "",
     "badExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo1</span> <span class=\"token punctuation\">{</span>\n  <span class=\"token keyword\">public</span> <span class=\"token keyword\">get</span> <span class=\"token function\"><mark class=\"eslint-error\" data-tip=\"Literals should be exposed using readonly fields.&lt;br/&gt;&lt;span class='eslint-error-rule-id'&gt;eslint(@typescript-eslint/class-literal-property-style)&lt;/span&gt;\">bar</mark></span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">return</span> <span class=\"token number\">1</span><span class=\"token punctuation\">;</span>\n  <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span>",
     "goodExample": "<span class=\"token keyword\">class</span> <span class=\"token class-name\">Foo2</span> <span class=\"token punctuation\">{</span>\n  <span class=\"token keyword\">public</span> <span class=\"token keyword\">readonly</span> bar <span class=\"token operator\">=</span> <span class=\"token number\">1</span><span class=\"token punctuation\">;</span>\n<span class=\"token punctuation\">}</span>",
-    "fixable": true,
+    "fixable": false,
     "extendsBaseRule": "",
+    "requiresTypeChecking": false
+  },
+  "@typescript-eslint/class-methods-use-this": {
+    "name": "@typescript-eslint/class-methods-use-this",
+    "value": "off",
+    "description": "在类的非静态方法中，必须存在对 this 的引用",
+    "reason": "",
+    "badExample": "",
+    "goodExample": "",
+    "fixable": true,
+    "extendsBaseRule": "class-methods-use-this",
     "requiresTypeChecking": false
   },
   "@typescript-eslint/consistent-generic-constructors": {
@@ -701,17 +712,6 @@
     "extendsBaseRule": "no-throw-literal",
     "requiresTypeChecking": true
   },
-  "@typescript-eslint/no-type-alias": {
-    "name": "@typescript-eslint/no-type-alias",
-    "value": "off",
-    "description": "禁止使用类型别名",
-    "reason": "",
-    "badExample": "",
-    "goodExample": "",
-    "fixable": false,
-    "extendsBaseRule": "",
-    "requiresTypeChecking": false
-  },
   "@typescript-eslint/no-unnecessary-boolean-literal-compare": {
     "name": "@typescript-eslint/no-unnecessary-boolean-literal-compare",
     "value": "off",
@@ -1044,14 +1044,14 @@
   },
   "@typescript-eslint/prefer-optional-chain": {
     "name": "@typescript-eslint/prefer-optional-chain",
-    "value": "error",
+    "value": "off",
     "description": "使用 optional chaining 替代 &&",
     "reason": "",
-    "badExample": "<span class=\"token keyword\">let</span> foo1<span class=\"token punctuation\">:</span> <span class=\"token builtin\">any</span><span class=\"token punctuation\">;</span>\n<span class=\"token builtin\">console</span><span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span><mark class=\"eslint-error\" data-tip=\"Prefer using an optional chain expression instead, as it&amp;apos;s more concise and easier to read.&lt;br/&gt;&lt;span class='eslint-error-rule-id'&gt;eslint(@typescript-eslint/prefer-optional-chain)&lt;/span&gt;\">foo1 <span class=\"token operator\">&amp;&amp;</span> foo1<span class=\"token punctuation\">.</span>a <span class=\"token operator\">&amp;&amp;</span> foo1<span class=\"token punctuation\">.</span>a<span class=\"token punctuation\">.</span>b <span class=\"token operator\">&amp;&amp;</span> foo1<span class=\"token punctuation\">.</span>a<span class=\"token punctuation\">.</span>b<span class=\"token punctuation\">.</span>c</mark><span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>",
-    "goodExample": "<span class=\"token keyword\">let</span> foo2<span class=\"token punctuation\">:</span> <span class=\"token builtin\">any</span><span class=\"token punctuation\">;</span>\n<span class=\"token builtin\">console</span><span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span>foo2<span class=\"token operator\">?</span><span class=\"token punctuation\">.</span>a<span class=\"token operator\">?</span><span class=\"token punctuation\">.</span>b<span class=\"token operator\">?</span><span class=\"token punctuation\">.</span>c<span class=\"token punctuation\">)</span><span class=\"token punctuation\">;</span>",
-    "fixable": false,
+    "badExample": "",
+    "goodExample": "",
+    "fixable": true,
     "extendsBaseRule": "",
-    "requiresTypeChecking": false
+    "requiresTypeChecking": true
   },
   "@typescript-eslint/prefer-readonly": {
     "name": "@typescript-eslint/prefer-readonly",

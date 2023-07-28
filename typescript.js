@@ -17,15 +17,15 @@
  *   zoubingwu <zoubingwu@gmail.com>
  *
  * 依赖版本：
- *   eslint ^8.38.0
- *   @babel/core ^7.21.4
- *   @babel/eslint-parser ^7.21.3
- *   @babel/preset-react ^7.18.6
- *   eslint-plugin-react ^7.32.2
- *   vue-eslint-parser ^9.1.1
- *   eslint-plugin-vue ^9.11.0
- *   @typescript-eslint/parser ^5.59.0
- *   @typescript-eslint/eslint-plugin ^5.59.0
+ *   eslint ^8.45.0
+ *   @babel/core ^7.22.9
+ *   @babel/eslint-parser ^7.22.9
+ *   @babel/preset-react ^7.22.5
+ *   eslint-plugin-react ^7.33.0
+ *   vue-eslint-parser ^9.3.1
+ *   eslint-plugin-vue ^9.15.1
+ *   @typescript-eslint/parser ^6.2.0
+ *   @typescript-eslint/eslint-plugin ^6.2.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  */
@@ -66,6 +66,11 @@ module.exports = {
      * 类的只读属性若是一个字面量，则必须使用只读属性而不是 getter
      */
     '@typescript-eslint/class-literal-property-style': ['error', 'fields'],
+    /**
+     * 在类的非静态方法中，必须存在对 this 的引用
+     */
+    'class-methods-use-this': 'off',
+    '@typescript-eslint/class-methods-use-this': 'off',
     /**
      * 使用 Map 或 Set 时，必须在构造函数上用泛型定义类型
      */
@@ -371,10 +376,6 @@ module.exports = {
     'no-throw-literal': 'off',
     '@typescript-eslint/no-throw-literal': 'off',
     /**
-     * 禁止使用类型别名
-     */
-    '@typescript-eslint/no-type-alias': 'off',
-    /**
      * 测试表达式中的布尔类型禁止与 true 或 false 直接比较
      */
     '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'off',
@@ -515,7 +516,7 @@ module.exports = {
     /**
      * 使用 optional chaining 替代 &&
      */
-    '@typescript-eslint/prefer-optional-chain': 'error',
+    '@typescript-eslint/prefer-optional-chain': 'off',
     /**
      * 私有变量如果没有在构造函数外被赋值，则必须设为 readonly
      */

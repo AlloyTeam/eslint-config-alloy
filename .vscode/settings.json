@@ -9,6 +9,9 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   // 默认值已经包含了大多数文件类型了，故不需要再特殊配制
   // "eslint.probe": ["javascript", "javascriptreact", "typescript", "typescriptreact", "html", "vue", "markdown"],
   "editor.codeActionsOnSave": {

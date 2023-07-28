@@ -17,15 +17,15 @@
  *   zoubingwu <zoubingwu@gmail.com>
  *
  * 依赖版本：
- *   eslint ^8.38.0
- *   @babel/core ^7.21.4
- *   @babel/eslint-parser ^7.21.3
- *   @babel/preset-react ^7.18.6
- *   eslint-plugin-react ^7.32.2
- *   vue-eslint-parser ^9.1.1
- *   eslint-plugin-vue ^9.11.0
- *   @typescript-eslint/parser ^5.59.0
- *   @typescript-eslint/eslint-plugin ^5.59.0
+ *   eslint ^8.45.0
+ *   @babel/core ^7.22.9
+ *   @babel/eslint-parser ^7.22.9
+ *   @babel/preset-react ^7.22.5
+ *   eslint-plugin-react ^7.33.0
+ *   vue-eslint-parser ^9.3.1
+ *   eslint-plugin-vue ^9.15.1
+ *   @typescript-eslint/parser ^6.2.0
+ *   @typescript-eslint/eslint-plugin ^6.2.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  */

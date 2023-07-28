@@ -17,15 +17,15 @@
  *   zoubingwu <zoubingwu@gmail.com>
  *
  * 依赖版本：
- *   eslint ^8.38.0
- *   @babel/core ^7.21.4
- *   @babel/eslint-parser ^7.21.3
- *   @babel/preset-react ^7.18.6
- *   eslint-plugin-react ^7.32.2
- *   vue-eslint-parser ^9.1.1
- *   eslint-plugin-vue ^9.11.0
- *   @typescript-eslint/parser ^5.59.0
- *   @typescript-eslint/eslint-plugin ^5.59.0
+ *   eslint ^8.45.0
+ *   @babel/core ^7.22.9
+ *   @babel/eslint-parser ^7.22.9
+ *   @babel/preset-react ^7.22.5
+ *   eslint-plugin-react ^7.33.0
+ *   vue-eslint-parser ^9.3.1
+ *   eslint-plugin-vue ^9.15.1
+ *   @typescript-eslint/parser ^6.2.0
+ *   @typescript-eslint/eslint-plugin ^6.2.0
  *
  * 此文件是由脚本 scripts/build.ts 自动生成
  */
@@ -52,10 +52,6 @@ module.exports = {
   },
   plugins: ['vue'],
   rules: {
-    /**
-     * 在 `<template>` 中的每个数组元素后强制添加换行符
-     */
-    'vue/array-element-newline': 'off',
     /**
      * 限制自定义组件的属性风格
      */
@@ -166,6 +162,10 @@ module.exports = {
      */
     'vue/match-component-import-name': 'off',
     /**
+     * 限制单文件组件块中的最大行数
+     */
+    'vue/max-lines-per-block': 'off',
+    /**
      * 组件名称必须是两个以上的单词
      */
     'vue/multi-word-component-names': 'off',
@@ -203,6 +203,10 @@ module.exports = {
      * 禁止 data() 中有计算属性
      */
     'vue/no-computed-properties-in-data': 'error',
+    /**
+     * 禁止使用 console
+     */
+    'vue/no-console': 'off',
     /**
      * 禁止将常量作为分支条件判断中的测试表达式，但允许作为循环条件判断中的测试表达式
      */
@@ -322,7 +326,7 @@ module.exports = {
      */
     'vue/no-expose-after-await': 'error',
     /**
-     * 禁止使用特殊空白符（比如全角空格），除非是出现在字符串、正则表达式、模版字符串中或 HTML 内容中
+     * 禁止使用特殊空白符（比如全角空格），除非是出现在字符串、正则表达式或模版字符串中
      */
     'vue/no-irregular-whitespace': [
       'error',
@@ -403,6 +407,10 @@ module.exports = {
      */
     'vue/no-restricted-class': 'off',
     /**
+     * 禁止特定的组件名称
+     */
+    'vue/no-restricted-component-names': 'off',
+    /**
      * 禁止使用指定的组件选项
      */
     'vue/no-restricted-component-options': 'off',
@@ -430,6 +438,10 @@ module.exports = {
      * 禁止使用指定的 v-bind 参数
      */
     'vue/no-restricted-v-bind': 'off',
+    /**
+     * 禁止在根元素上使用 v-if 指令
+     */
+    'vue/no-root-v-if': 'off',
     /**
      * 禁止对 setup 中的 props 解构
      */
@@ -566,6 +578,10 @@ module.exports = {
      */
     'vue/padding-lines-in-component-definition': 'off',
     /**
+     * 强制使用 defineOptions 而不是默认导出
+     */
+    'vue/prefer-define-options': 'error',
+    /**
      * 必须导入 vue 而不是 @vue/*
      */
     'vue/prefer-import-from-vue': 'error',
@@ -615,6 +631,10 @@ module.exports = {
      */
     'vue/require-expose': 'off',
     /**
+     * 需要特定的宏变量名称
+     */
+    'vue/require-macro-variable-name': 'off',
+    /**
      * 组件必须包含 name 属性
      */
     'vue/require-name-property': 'off',
@@ -644,6 +664,11 @@ module.exports = {
      * transition 内部必须有条件指令
      */
     'vue/require-toggle-inside-transition': 'error',
+    /**
+     * 要求 ref 和 shallowRef 函数需要强制类型化
+     * @reason 需要 ts 支持
+     */
+    'vue/require-typed-ref': 'off',
     /**
      * v-for 指令的元素必须有 v-bind:key
      */
@@ -709,6 +734,11 @@ module.exports = {
      * defineEmits 必须使用合法的语法
      */
     'vue/valid-define-emits': 'off',
+    /**
+     * 强制执行有效的 defineOptions 编译器宏
+     * @reason 可以防止错误的使用 defineOptions
+     */
+    'vue/valid-define-options': 'error',
     /**
      * defineProps 必须使用合法的语法
      */
