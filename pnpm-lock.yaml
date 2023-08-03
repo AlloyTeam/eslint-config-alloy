@@ -1,9 +1,5 @@
 lockfileVersion: '6.0'
 
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
-
 importers:
 
   .:
@@ -1611,7 +1607,7 @@ packages:
       '@vue/shared': 3.2.37
       estree-walker: 2.0.2
       magic-string: 0.25.9
-      postcss: 8.4.14
+      postcss: 8.4.27
       source-map: 0.6.1
     dev: true
 
@@ -1626,7 +1622,7 @@ packages:
       '@vue/shared': 3.2.39
       estree-walker: 2.0.2
       magic-string: 0.25.9
-      postcss: 8.4.14
+      postcss: 8.4.27
       source-map: 0.6.1
 
   /@vue/compiler-ssr@3.2.37:
@@ -4166,12 +4162,6 @@ packages:
       has: 1.0.3
     dev: true
 
-  /is-core-module@2.12.0:
-    resolution: {integrity: sha512-RECHCBCd/viahWmwj6enj19sKbHfJrddi/6cBDsNTKbNq0f7VeaUkBo60BqzvPqo/W54ChS62Z5qyun7cfOMqQ==}
-    dependencies:
-      has: 1.0.3
-    dev: true
-
   /is-core-module@2.12.1:
     resolution: {integrity: sha512-Q4ZuBAe2FUsKtyQJoQHlvP8OvBERxO3jEmy1I7hcRXcJBGGHFh/aJBswbXuS9sgrDH2QUO8ilkwNPHvHMd8clg==}
     dependencies:
@@ -4809,6 +4799,12 @@ packages:
     resolution: {integrity: sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
+    dev: true
+
+  /nanoid@3.3.6:
+    resolution: {integrity: sha512-BGcqMMJuToF7i1rt+2PWSNVnWIkGCU78jBG3RxO/bZlnZPK2Cmi2QaffxGO/2RvWi9sL+FAiRiXMgsyxQ1DIDA==}
+    engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
+    hasBin: true
 
   /natural-compare-lite@1.4.0:
     resolution: {integrity: sha512-Tj+HTDSJJKaZnfiuw+iaF9skdPpTo2GtEly5JHnWV/hfv2Qj/9RKsGISQtLh2ox3l5EAGw487hnBee0sIJ6v2g==}
@@ -5254,14 +5250,6 @@ packages:
       util-deprecate: 1.0.2
     dev: true
 
-  /postcss@8.4.14:
-    resolution: {integrity: sha512-E398TUmfAYFPBSdzgeieK2Y1+1cpdxJx8yXbK/m57nRhKSmk1GB2tO4lbLBtlkfPQTDKfe4Xqv1ASWPpayPEig==}
-    engines: {node: ^10 || ^12 || >=14}
-    dependencies:
-      nanoid: 3.3.4
-      picocolors: 1.0.0
-      source-map-js: 1.0.2
-
   /postcss@8.4.16:
     resolution: {integrity: sha512-ipHE1XBvKzm5xI7hiHCZJCSugxvsdq2mPnsq5+UF+VHCjiBvtDrlxJfMBToWaP9D5XlgNmcFGqoHmUn0EYEaRQ==}
     engines: {node: ^10 || ^12 || >=14}
@@ -5270,6 +5258,14 @@ packages:
       picocolors: 1.0.0
       source-map-js: 1.0.2
     dev: true
+
+  /postcss@8.4.27:
+    resolution: {integrity: sha512-gY/ACJtJPSmUFPDCHtX78+01fHa64FaU4zaaWfuh1MhGJISufJAH4cun6k/8fwsHYeK4UQmENQK+tRLCFJE8JQ==}
+    engines: {node: ^10 || ^12 || >=14}
+    dependencies:
+      nanoid: 3.3.6
+      picocolors: 1.0.0
+      source-map-js: 1.0.2
 
   /prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
@@ -5537,7 +5533,7 @@ packages:
     resolution: {integrity: sha512-Sb+mjNHOULsBv818T40qSPeRiuWLyaGMa5ewydRLFimneixmVy2zdivRl+AF6jaYPC8ERxGDmFSiqui6SfPd+g==}
     hasBin: true
     dependencies:
-      is-core-module: 2.12.0
+      is-core-module: 2.12.1
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
     dev: true
@@ -6927,3 +6923,7 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
