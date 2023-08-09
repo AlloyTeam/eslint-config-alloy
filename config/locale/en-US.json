@@ -676,5 +676,6 @@
   "要求 ref 和 shallowRef 函数需要强制类型化": "require `ref` and `shallowRef` functions to be strongly typed",
   "强制执行有效的 defineOptions 编译器宏": "enforce valid `defineOptions` compiler macro",
   "需要 ts 支持": "需要 ts 支持",
-  "可以防止错误的使用 defineOptions": "可以防止错误的使用 defineOptions"
+  "可以防止错误的使用 defineOptions": "可以防止错误的使用 defineOptions",
+  "ES2022 的新接口，兼容性不太好": "ES2022 的新接口，兼容性不太好"
 }
