@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import ReactTooltip from 'react-tooltip';
 
-import { NAMESPACES, Namespace } from '../../config';
+import type { Namespace } from '../../config';
+import { NAMESPACES } from '../../config';
 import { GitHubCorner } from './GitHubCorner';
 import { RuleTable } from './RuleTable';
 import { LanguageSwitch } from './LanguageSwitch';

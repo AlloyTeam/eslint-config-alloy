@@ -104,7 +104,7 @@ module.exports = {
     /**
      * 必须使用 import type 导入类型
      */
-    '@typescript-eslint/consistent-type-imports': 'off',
+    '@typescript-eslint/consistent-type-imports': 'error',
     /**
      * 有默认值或可选的参数必须放到最后
      */

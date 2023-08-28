@@ -4,12 +4,14 @@ import path from 'path';
 
 import doctrine from 'doctrine';
 import prettier from 'prettier';
-import { ESLint, Linter } from 'eslint';
+import type { Linter } from 'eslint';
+import { ESLint } from 'eslint';
 const eslintInstance = new ESLint({});
 import insertTag from 'insert-tag';
 import xmlEscape from 'xml-escape';
 
-import { NAMESPACE_CONFIG, NAMESPACES, buildEslintrcMeta, Namespace, Rule, locale } from '../config';
+import type { Namespace, Rule } from '../config';
+import { NAMESPACE_CONFIG, NAMESPACES, buildEslintrcMeta, locale } from '../config';
 
 import '../site/public/vendors/prism';
 declare const Prism: any;

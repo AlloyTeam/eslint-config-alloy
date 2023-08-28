@@ -144,11 +144,11 @@
   },
   "@typescript-eslint/consistent-type-imports": {
     "name": "@typescript-eslint/consistent-type-imports",
-    "value": "off",
+    "value": "error",
     "description": "必须使用 import type 导入类型",
     "reason": "",
-    "badExample": "",
-    "goodExample": "",
+    "badExample": "<mark class=\"eslint-error\" data-tip=\"All imports in the declaration are only used as types. Use `import type`.&lt;br/&gt;&lt;span class='eslint-error-rule-id'&gt;eslint(@typescript-eslint/consistent-type-imports)&lt;/span&gt;\"><span class=\"token keyword\">import</span> <span class=\"token punctuation\">{</span> Foo <span class=\"token punctuation\">}</span> <span class=\"token keyword\">from</span> <span class=\"token string\">'./FooType'</span><span class=\"token punctuation\">;</span></mark>\n<span class=\"token keyword\">const</span> x<span class=\"token punctuation\">:</span> Foo <span class=\"token operator\">=</span> <span class=\"token number\">1</span><span class=\"token punctuation\">;</span>",
+    "goodExample": "<span class=\"token keyword\">import</span> <span class=\"token keyword\">type</span> <span class=\"token punctuation\">{</span> Foo <span class=\"token punctuation\">}</span> <span class=\"token keyword\">from</span> <span class=\"token string\">'./FooType'</span><span class=\"token punctuation\">;</span>\n<span class=\"token keyword\">const</span> x<span class=\"token punctuation\">:</span> Foo <span class=\"token operator\">=</span> <span class=\"token number\">1</span><span class=\"token punctuation\">;</span>",
     "fixable": true,
     "extendsBaseRule": "",
     "requiresTypeChecking": false

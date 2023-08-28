@@ -1,7 +1,8 @@
 import path from 'path';
 import assert from 'assert';
 import eslint from 'eslint';
-import { NAMESPACE_CONFIG, Namespace } from '../config';
+import type { Namespace } from '../config';
+import { NAMESPACE_CONFIG } from '../config';
 
 const { ESLint } = eslint;
 const eslintInstance = new ESLint({});

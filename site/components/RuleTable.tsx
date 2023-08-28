@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { NAMESPACE_CONFIG, Namespace, Rule } from '../../config';
+import type { Namespace, Rule } from '../../config';
+import { NAMESPACE_CONFIG } from '../../config';
 import { parseDescription, t } from '../utils';
 
 interface RuleTableProps {

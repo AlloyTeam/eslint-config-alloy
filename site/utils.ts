@@ -1,7 +1,8 @@
 import url from 'url';
 import cookie from 'cookie';
 import querystring from 'querystring';
-import { locale, avaliableLanguages, Languages } from '../config';
+import type { Languages } from '../config';
+import { locale, avaliableLanguages } from '../config';
 
 /**
  * 解析描述或原因，转换 <, >, \n 等字符串
